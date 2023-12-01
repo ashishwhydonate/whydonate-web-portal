@@ -1,0 +1,32 @@
+name: ssr-deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.16.0]
+
+    name: angular-deployment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Deploy project
+        run: |
+          CLOUDFLARE_ACCOUNT_ID=$CLOUDFLARE_ACCOUNT_ID
+          CLOUDFLARE_API_TOKEN=$CLOUDFLARE_API_TOKEN
+          npm run build:ssr
+        env:
+          CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
+          CLOUDFLARE_ACCOUNT_ID: ${{secrets.CLOUDFLARE_ACCOUNT_ID}}
