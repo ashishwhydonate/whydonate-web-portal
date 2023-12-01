@@ -1,0 +1,365 @@
+<ng-template [ngIf]="this.currentFundraiserData" [ngIfElse]="whydonateLoader">
+	<!-- Important Ternary Operator -->
+	<div fxLayout="row wrap">
+		<mat-card class="mat-elevation-z0" fxFlex.gt-sm="50" fxFlex.lt-md="100">
+			<div [style.marginTop.px]="20" [style.marginLeft.%]="1">
+				<!-- Edit Fundraiser Form -->
+				<form [formGroup]="editFundraiserForm">
+					<div
+						fxLayout="column"
+						[ngStyle]="{
+							width: _media.isActive('xs') == true ? '100%' : '60%'
+						}"
+					>
+						<div
+							*ngIf="this.currentFundraiserData?.is_draft == false"
+							ngClass="m-b-m"
+						>
+							<mat-slide-toggle
+								color="primary"
+								formControlName="open_status"
+								(change)="targetOpenStatus($event)"
+								id="fundraiserstatus-Toggle"
+							>
+								<div *ngIf="this.editFundraiserForm.value['open_status']">
+									<span
+										i18n="@@create_fundraiser_fundraiser_status_radioGroup_open"
+										>Open</span
+									>
+								</div>
+								<div *ngIf="!this.editFundraiserForm.value['open_status']">
+									<span
+										i18n="
+											@@create_fundraiser_fundraiser_status_radioGroup_close"
+										>Close</span
+									>
+								</div>
+							</mat-slide-toggle>
+						</div>
+						<ng-template
+							[ngIf]="
+								this.disableEndButton == true ||
+								this.editFundraiserForm.value['open_status'] ||
+								(this.currentFundraiserData?.is_draft == 'true' &&
+									this.editFundraiserForm.value['open_status']) ||
+								(this.currentFundraiserData?.is_draft == 'false' &&
+									this.editFundraiserForm.value['open_status'])
+							"
+						>
+							<mat-form-field color="primary" appearance="outline">
+								<mat-label i18n="@@edit_fundraiser_amount_edit_end_date_label"
+									>End Date (Optional)</mat-label
+								>
+								<input
+									matInput
+									[formControlName]="'end_date'"
+									(ngModelChange)="endDateChange($event)"
+									[matDatepicker]="picker"
+									[min]="minEndDate"
+								/>
+								<mat-datepicker-toggle
+									matSuffix
+									[for]="picker"
+								></mat-datepicker-toggle>
+								<mat-datepicker #picker></mat-datepicker>
+								<mat-error
+									i18n="@@custom_donation_form_endDateInvalid_error"
+									*ngIf="
+										editFundraiserForm.controls &&
+										editFundraiserForm.controls['end_date'].errors
+									"
+									>Please provide a valid Fromdate</mat-error
+								>
+							</mat-form-field>
+						</ng-template>
+
+						<div ngClass="m-b-m">
+							<mat-slide-toggle
+								color="primary"
+								formControlName="show_donation_details"
+								(change)="targetToggleChange()"
+							>
+								<span
+									i18n="
+										@@custom_donation_amount_edit_show_total_amount_donated_label"
+								>
+									Show total amount donated</span
+								>
+							</mat-slide-toggle>
+						</div>
+						<mat-form-field color="primary" appearance="outline">
+							<mat-label
+								i18n="@@custom_donation_form_amount_edit_target_amount_label"
+								>Target Amount (Optional)
+							</mat-label>
+							<div matPrefix class="currency-input-field">
+								{{ currency_symbol }}&nbsp;
+							</div>
+							<input
+								matInput
+								[formControlName]="'amount_target'"
+								(input)="
+									editFundraiserForm.controls['amount_target'].markAsTouched()
+								"
+								(ngModelChange)="targetAmountChange($event)"
+								type="number"
+							/>
+							<mat-error
+								*ngIf="
+									editFundraiserForm.controls['amount_target'].errors &&
+									editFundraiserForm.controls['amount_target'].errors['min']
+								"
+							>
+								<span i18n="@@custom_donation_form_amountTargetMin_error"
+									>Minimum required amount is</span
+								>&nbsp;{{ currency_symbol }}{{ minTargetAmount | number }}
+							</mat-error>
+							<mat-error
+								*ngIf="
+									editFundraiserForm.controls.amount_target.errors &&
+									editFundraiserForm.controls.amount_target.errors.max
+								"
+								><span i18n="@@custom_donation_form_amountTargetMax_error">
+									Maximum required amount is</span
+								>&nbsp;{{ currency_symbol }}{{ maxTargetAmount | number }}
+							</mat-error>
+						</mat-form-field>
+
+						<div>
+							<mat-slide-toggle
+								color="primary"
+								formControlName="visible_status"
+								(change)="targetToggleChange()"
+								id="FindableToggle"
+							>
+								<div *ngIf="this.editFundraiserForm.value['visible_status']">
+									<span i18n="@@target_amount_findable_on_search_page_toggle"
+										>Findable on search page</span
+									>
+								</div>
+								<div *ngIf="!this.editFundraiserForm.value['visible_status']">
+									<span
+										i18n="@@target_amount_not_findable_on_search_page_toggle"
+										>Not Findable on search page</span
+									>
+								</div>
+							</mat-slide-toggle>
+						</div>
+						<!-- <mat-slide-toggle
+							[style.marginTop.px]="20"
+							color="primary"
+							formControlName="allow_connected_fundraisers"
+							(change)="targetToggleChange()"
+						>
+							<span i18n="@@custom_donation_amount_edit_all_connected_label"
+								>Allow connected fundraisers</span
+							>
+						</mat-slide-toggle> -->
+						<div ngClass="m-t-m">
+							<mat-divider class="w-100"></mat-divider>
+						</div>
+						<div fxLayout="row" ngClass="m-t-m">
+							<h3 i18n="@@target_amount_set_fundraiser_draft_title">
+								Set Fundraiser As Draft
+							</h3>
+						</div>
+						<div>
+							<p i18n="@@target_amount_draft_button_information">
+								This will set your fundraiser page in draft mode, deactivate url
+								and fundraiser will not be findable
+							</p>
+							<button
+								mat-stroked-button
+								color="accent"
+								[disabled]="this.disableButton"
+								id="DraftButton"
+							>
+								<span
+									(click)="saveAndApplyFundraiserStatus()"
+									i18n="@@target_amount_set_fundaiser_as_draft_button"
+								>
+									Set Fundraiser As Draft
+								</span>
+								<mat-icon *ngIf="isSave" class="m-l-xs">
+									<mat-spinner color="accent" diameter="20"> </mat-spinner>
+								</mat-icon>
+							</button>
+						</div>
+						<!-- Submit verify button -->
+						<div [style.marginTop.px]="33">
+							<div fxLayout="row" fxLayoutAlign="end center">
+								<!-- Verify button (check if the form is valid then disable form else enable) -->
+								<button
+									mat-stroked-button
+									color="accent"
+									(click)="discardTargetAmountChanges()"
+									[disabled]="isTargetAmountDisable"
+								>
+									<span i18n="@@button_discard"> Discard</span>
+								</button>
+								&nbsp;&nbsp;&nbsp;
+								<!-- Verify button (check if the form is valid then disable form else enable) -->
+								<button
+									mat-flat-button
+									color="accent"
+									(click)="saveAndApply()"
+									[disabled]="isTargetAmountDisable"
+									id="SaveandApply"
+								>
+									<span i18n="@@button_saveAndApply">Save and Apply</span>
+									<mat-icon *ngIf="isSaveTargetAmount" class="m-l-xs">
+										<mat-spinner color="accent" diameter="20"> </mat-spinner>
+									</mat-icon>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</mat-card>
+		<mat-divider vertical="true"></mat-divider>
+		<mat-card class="mat-elevation-z0" fxFlex.gt-sm="49" fxFlex.lt-md="100">
+			<div fxLayout="row" fxLayoutAlign="start center">
+				<p fxLayout="row" class="mat-body-1">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+					/>
+					<span fxFlexOffset="8px" i18n="@@button_preview"> Preview </span>
+				</p>
+			</div>
+			<br />
+			<!-- Preview -->
+			<mat-card
+				[ngStyle]="{
+					width: _media.isActive('xs') == true ? '250px' : '400px'
+				}"
+			>
+				<div fxLayout="row" fxLayoutAlign="start start">
+					<div fxFlex>
+						<h2>Donation Status</h2>
+					</div>
+				</div>
+				<div ngClass="m-b-m">
+					<mat-chip-list
+						aria-label="category selection"
+						id="chip-list"
+						name="chip-list"
+						class="whydonate-light"
+					>
+						<div *ngIf="this.editFundraiserForm.value['visible_status']">
+							<mat-chip
+								id="chip"
+								name="chip"
+								class="mat-chip-list-stacked my-chip"
+								color="accent"
+								selected
+								removable="true"
+							>
+								<caption i18n="@@target_amount_findable_on_search_page_toggle">
+									Findable on search
+								</caption>
+							</mat-chip>
+						</div>
+						<div *ngIf="!this.editFundraiserForm.value['visible_status']">
+							<mat-chip
+								id="chip"
+								name="chip"
+								class="mat-chip-list-stacked my-chip"
+								color="accent"
+								selected
+								removable="true"
+							>
+								<caption
+									i18n="@@target_amount_not_findable_on_search_page_toggle"
+								>
+									Not Findable on search
+								</caption>
+							</mat-chip>
+						</div>
+
+						<div *ngIf="this.editFundraiserForm.value['open_status']">
+							<mat-chip
+								id="chip"
+								name="chip"
+								class="mat-chip-list-stacked my-chip"
+								color="accent"
+								selected
+								removable="true"
+							>
+								<caption
+									i18n="@@create_fundraiser_fundraiser_status_radioGroup_open"
+								>
+									open
+								</caption>
+							</mat-chip>
+						</div>
+						<div *ngIf="!this.editFundraiserForm.value['open_status']">
+							<mat-chip
+								id="chip"
+								name="chip"
+								class="mat-chip-list-stacked my-chip"
+								color="accent"
+								selected
+								removable="true"
+							>
+								<caption
+									i18n="@@create_fundraiser_fundraiser_status_radioGroup_close"
+								>
+									close
+								</caption>
+							</mat-chip>
+						</div>
+					</mat-chip-list>
+				</div>
+				<div>
+					<h1>
+						<app-amount-view
+							[fundraiserCardData]="fundraiserCardData"
+							[symbol]="currency_symbol"
+						></app-amount-view>
+					</h1>
+				</div>
+
+				<app-donation-progress-bar
+					class="m-b-m"
+					[fundraiserCardData]="fundraiserCardData"
+				></app-donation-progress-bar>
+
+				<div
+					[style.marginTop.px]="20"
+					[style.marginBottom.px]="20"
+					fxLayoutAlign="space-between"
+				>
+					<p id="fundedPercentage">
+						<app-donation-progress-percentage
+							[fundraiserCardData]="fundraiserCardData"
+							[showLabel]="true"
+						></app-donation-progress-percentage>
+					</p>
+					<ng-container *ngIf="this.unlimitedDateCheck == true">
+						<p [style.textAlign]="'right'">
+							<app-days-left-view
+								[fundraiserCardData]="fundraiserCardData"
+							></app-days-left-view>
+						</p>
+					</ng-container>
+				</div>
+
+				<button
+					mat-flat-button
+					class="buttonStyle"
+					[style.width.%]="100"
+					color="accent"
+					[disabled]="this.disableEndButton == false"
+				>
+					<span i18n="@@button_donate">Donate</span>
+				</button>
+			</mat-card>
+		</mat-card>
+	</div>
+</ng-template>
+
+<!-- Page loader / whydonate loader -->
+<ng-template #whydonateLoader>
+	<app-page-loader class="m-t-m"></app-page-loader>
+</ng-template>

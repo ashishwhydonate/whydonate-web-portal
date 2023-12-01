@@ -1,0 +1,277 @@
+<div
+	fxLayout="row"
+	fxLayout.xs="column"
+	fxLayout.lt-sm="column"
+	fxLayout.lt-md="column"
+	fxFlex="100%"
+>
+	<div fxLayout="row wrap" fxFlex.lg="60%">
+		<mat-card class="mat-elevation-z0" fxFlex.lt-sm="100%" fxFlex="100%">
+			<div
+				fxLayout="row wrap"
+				fxLayout.xs="column"
+				fxLayoutAlign="space-between baseline"
+			>
+				<h2 i18n="@@paymentRequest_makeAPaymentRequest_title">
+					Make a Payment request
+				</h2>
+				<mat-icon *ngIf="isLoading">
+					<mat-spinner color="accent" diameter="20"></mat-spinner>
+				</mat-icon>
+			</div>
+			<mat-card-content>
+				<form [formGroup]="paymentForm">
+					<div
+						fxLayout="row wrap"
+						fxLayoutGap.xs="2%"
+						fxLayoutGap.lg="2%"
+						fxLayoutGap.lt-md="2%"
+						fxLayoutGap.lt-sm="2%"
+						fxLayoutGap.lt-lg="2%"
+						fxLayoutAlign="start end"
+					>
+						<div class="p-b-xs">
+							<button
+								mat-button
+								[ngClass]="
+									paymentAmountButton === 1
+										? 'mat-flat-button'
+										: 'mat-stroked-button'
+								"
+								[color]="paymentAmountButton === 1 ? 'primary' : null"
+								(click)="setPaymentAmount(1)"
+							>
+								{{ this.currency_symbol }} {{ this.onetime_first }}
+							</button>
+						</div>
+						<div class="p-b-xs">
+							<button
+								mat-button
+								[ngClass]="
+									paymentAmountButton === 2
+										? 'mat-flat-button'
+										: 'mat-stroked-button'
+								"
+								[color]="paymentAmountButton === 2 ? 'primary' : null"
+								(click)="setPaymentAmount(2)"
+							>
+								{{ this.currency_symbol }} {{ this.onetime_second }}
+							</button>
+						</div>
+						<div class="p-b-xs">
+							<button
+								mat-button
+								[ngClass]="
+									paymentAmountButton === 3
+										? 'mat-flat-button'
+										: 'mat-stroked-button'
+								"
+								[color]="paymentAmountButton === 3 ? 'primary' : null"
+								(click)="setPaymentAmount(3)"
+							>
+								{{ this.currency_symbol }} {{ this.onetime_third }}
+							</button>
+						</div>
+						<div class="p-b-xs" ngClass.lt-sm="m-t-xs">
+							<button
+								mat-button
+								[ngClass]="
+									paymentAmountButton === 4
+										? 'mat-flat-button'
+										: 'mat-stroked-button'
+								"
+								[color]="paymentAmountButton === 4 ? 'primary' : null"
+								(click)="setPaymentAmount(4)"
+							>
+								{{ this.currency_symbol }} {{ this.onetime_forth }}
+							</button>
+						</div>
+						<div class="p-b-xs" ngClass.lt-sm="m-t-xs">
+							<button
+								mat-button
+								[ngClass]="
+									paymentAmountButton === 5
+										? 'mat-flat-button'
+										: 'mat-stroked-button'
+								"
+								[color]="paymentAmountButton === 5 ? 'primary' : null"
+								(click)="setPaymentAmount(5)"
+								(click)="checkOtherButton()"
+								i18n="@@button_otherAmount"
+							>
+								Other
+							</button>
+						</div>
+						<mat-form-field
+							ngClass="m-t-m"
+							class="w-100"
+							appearance="outline"
+							*ngIf="!this.isOtherSelected"
+						>
+							<mat-label i18n="@@paymentRequest_enterAmount_title"
+								>Enter Amount</mat-label
+							>
+							<div matPrefix class="currency-input-field">
+								{{ currency_symbol }}&nbsp;
+							</div>
+							<input
+								required
+								formControlName="otherAmountInput"
+								(click)="setPaymentAmount(5)"
+								i18n="@@paymentRequest_enterAmount_input"
+								matInput
+								type="number"
+								name="otherAmount"
+								[placeholder]="onetime_first"
+								[(ngModel)]="otherAmount"
+								(ngModelChange)="updateSelectedAmount($event)"
+							/>
+							<mat-error
+								*ngIf="paymentForm.hasError('required', 'otherAmountInput')"
+								i18n="@@payment_request_shareFundraiser_donationAmountRequired"
+							>
+								Please enter the donation amount
+							</mat-error>
+							<mat-error
+								*ngIf="paymentForm.hasError('min', 'otherAmountInput')"
+								i18n="@@payment_request_shareFundraiser_donationAmountMinimum"
+							>
+								<span>Minimum donation amount is</span>&nbsp;
+								{{ this.currency_symbol }}{{ min_donation_amount }}
+							</mat-error>
+							<mat-error
+								*ngIf="paymentForm.hasError('max', 'otherAmountInput')"
+								i18n="@@payment_request_shareFundraiser_donationAmountMaximum"
+							>
+								<span>Maximum donation amount is</span>&nbsp;
+								{{ this.currency_symbol }}{{ max_donation_amount }}
+							</mat-error>
+							<!-- (click)="getOtherValue(input.value)" -->
+						</mat-form-field>
+						<div class="p-b-xs" ngClass.lt-sm="m-t-xs">
+							<button
+								fxLayout.xs="row wrap"
+								id="preset-button"
+								mat-flat-button
+								color="accent"
+								(click)="getPreset()"
+								i18n="@@button_save"
+								[disabled]="
+									getAmount() == undefined ||
+									otherAmount < min_donation_amount ||
+									otherAmount > max_donation_amount
+								"
+							>
+								Save
+							</button>
+						</div>
+					</div>
+					&nbsp;
+				</form>
+				<mat-divider></mat-divider>
+				<app-share-fundraiser-page
+					[type]="presetUrl"
+					[preview]="true"
+					[disablePayment]="currentPaymentValue"
+					[applyPadding]="false"
+				>
+				</app-share-fundraiser-page>
+			</mat-card-content>
+		</mat-card>
+	</div>
+	<mat-divider vertical="true"></mat-divider>
+	<!-- Preview -->
+	<mat-card
+		class="mat-elevation-z0 section-background-grey"
+		fxFlex="45%"
+		ngClass.lt-sm="m-t-xl"
+		ngClass.sm="m-t-xl"
+	>
+		<div fxLayout="column" fxFill fxFlex="100%" fxLayoutAlign="start center">
+			<div fxLayout="row" fxFlex="100%" fxFill fxLayoutAlign="start center">
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start center"
+					class="mat-body-1"
+					ngClass.lt-sm="m-t-m"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+					/>
+					<span i18n="@@embed_donationFormPreview_icon" fxFlexOffset="8px">
+						Donation Form Preview
+					</span>
+				</div>
+			</div>
+			<br />
+			<!-- Preview Container-->
+			<ng-container [ngTemplateOutlet]="paymentRequest"></ng-container>
+
+			<mat-hint
+				class="mat-caption"
+				i18n="@@paymentRequest_actualPaymentScreen_hint"
+				>NOTE: Actual payment screen may vary
+			</mat-hint>
+		</div>
+	</mat-card>
+</div>
+
+<!-- Preview Templates -->
+<ng-template #paymentRequest>
+	<mat-card>
+		<p fxLayoutAlign="center" class="mat-headline">
+			{{ currency_symbol }}
+			{{ selectedAmount || onetime_first || '- - -' }}
+		</p>
+		<br />
+		<p fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3%">
+			&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173328/whydonate-production/platform/svg-icons/visa.svg"
+			/>&nbsp;&nbsp;&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173332/whydonate-production/platform/svg-icons/master-card.svg"
+			/>&nbsp;&nbsp;&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173343/whydonate-production/platform/svg-icons/bancontact.svg"
+			/>&nbsp;
+		</p>
+		<p fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3%">
+			&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173325/whydonate-production/platform/svg-icons/sofort.svg"
+			/>&nbsp;&nbsp;&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173341/whydonate-production/platform/svg-icons/ideal.svg"
+			/>&nbsp;&nbsp;&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/paypal.svg"
+			/>&nbsp;
+		</p>
+		<p fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="3%">
+			&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/belfius.svg"
+			/>&nbsp;&nbsp;&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173342/whydonate-production/platform/svg-icons/kbc.svg"
+			/>&nbsp;&nbsp;&nbsp;
+			<img
+				class="logos"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173336/whydonate-production/platform/svg-icons/eps.svg"
+			/>&nbsp;
+		</p>
+		<br />
+		<p fxLayoutAlign="center">
+			<button mat-flat-button color="accent" i18n="@@button_pay">Pay</button>
+		</p>
+	</mat-card>
+</ng-template>

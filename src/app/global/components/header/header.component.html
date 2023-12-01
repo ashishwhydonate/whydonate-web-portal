@@ -1,0 +1,260 @@
+<mat-toolbar id="header" name="header" class="mat-elevation-z4">
+	<mat-toolbar-row>
+		<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+			<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+				<!--LEFT MENU ITEMS-->
+				<div
+					fxFill
+					fxLayout="row"
+					fxLayoutAlign="start center"
+					fxLayoutGap="3%"
+				>
+					<!--MENU BUTTON-->
+					<button
+						*ngIf="this.isLoggedIn"
+						mat-icon-button
+						(click)="toggleSidenav()"
+					>
+						<mat-icon>menu</mat-icon>
+					</button>
+					<!--LOGO-->
+					<img
+						id="headerLogo"
+						class="pointer logo"
+						[src]="this.logo"
+						(click)="routeToHome()"
+					/>
+					<!-- onerror="this.src='https:\/\/res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/new_design_logo';this.onerror='';" -->
+
+					<!--HIDE IF MOBILE-->
+
+					<button
+						class="search"
+						fxHide.sm="true"
+						fxHide.xs="true"
+						i18n="@@header_menu_button_searchFundraisers"
+						mat-flat-button
+						id="headerSearchFundraiser"
+						(click)="routeToSearch()"
+					>
+						Search Fundraisers
+					</button>
+
+					<button
+						fxHide.sm="true"
+						fxHide.xs="true"
+						mat-flat-button
+						[matMenuTriggerFor]="productsMenu"
+					>
+						<span i18n="@@header_productButton">Products</span>
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/keyboard_arrow_down.svg"
+						/>
+					</button>
+
+					<mat-menu #productsMenu="matMenu" id="headerProductsMenu">
+						<button
+							i18n="@@header_label_whydonatePlatform"
+							(click)="languageForWhydonatePlatform()"
+							mat-menu-item
+							id="headerWhydonatePlatform"
+						>
+							Whydonate Platform
+						</button>
+						<button
+							i18n="@@header_menu_button_donationPlugin"
+							(click)="languageForDonationPlugin()"
+							mat-menu-item
+							id="headerDonationPlugin"
+						>
+							Donation Plugin
+						</button>
+						<!-- <button
+							i18n="@@header_menu_button_digitalPinBox"
+							(click)="languageForDigitalPinBox()"
+							mat-menu-item
+							id="headerDigitalPinBox"
+						>
+							Digital PIN Box
+						</button> -->
+					</mat-menu>
+					<!--END OF HIDE IF MOBILE-->
+				</div>
+			</div>
+			<!--END LEFT MENU ITEMS-->
+
+			<!--RIGHT MENU ITEMS-->
+			<div fxFlex="100%" fxLayout="column" fxLayoutAlign="end end">
+				<div fxLayout="row" fxLayoutAlign="end end">
+					<div
+						fxHide.lg="true"
+						fxHide.lt-lg="true"
+						fxHide.sm="false"
+						fxHide.lt-sm="false"
+					>
+						<button mat-icon-button (click)="routeToSearch()">
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/search.svg"
+							/>
+						</button>
+					</div>
+					<app-start-fundraiser-button
+						fxHide.xs="true"
+						buttonType="stroked"
+						themeColor="accent"
+						id="startFundraiserButton"
+					>
+					</app-start-fundraiser-button>
+					<!--IF USER IS LOGGED IN-->
+					<button
+						*ngIf="this.isLoggedIn"
+						mat-flat-button
+						[matMenuTriggerFor]="userMenu"
+					>
+						<img
+							id="headerMenu"
+							class="profile-image"
+							[src]="this.profileImage"
+							(error)="handleImageError($event)"
+						/>
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/keyboard_arrow_down.svg"
+						/>
+					</button>
+					<mat-menu #userMenu="matMenu">
+						<mat-card class="mat-elevation-z0">
+							<!-- Profile Info -->
+							<mat-card-header>
+								<img
+									*ngIf="profileImage"
+									mat-card-avatar
+									[src]="profileImage"
+									i18n="@@profile_image_alt_description"
+									alt="This is the profile image"
+								/>
+
+								<!-- Profile name -->
+								<mat-card-title>
+									{{ this.userProfile?.data?.profile?.name }}
+								</mat-card-title>
+								<mat-card-subtitle>{{
+									this.userProfile?.data?.profile?.email
+								}}</mat-card-subtitle>
+							</mat-card-header>
+						</mat-card>
+
+						<mat-divider></mat-divider>
+
+						<button
+							mat-menu-item
+							(click)="this.userMenuClick('myAccount')"
+							id="headerMyAccount"
+						>
+							<img
+								class="icon-position"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1666203388/whydonate-production/platform/svg-icons/account_circle.svg"
+							/>&nbsp;&nbsp;&nbsp;
+							<span i18n="@@header_userMenu_button_myAccount">
+								My Account
+							</span>
+						</button>
+
+						<button
+							mat-menu-item
+							(click)="this.userMenuClick('helpCenter')"
+							id="headerMyAccount"
+						>
+							<img
+								class="icon-position"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/helpNav.svg"
+							/>&nbsp;&nbsp;&nbsp;
+							<span i18n="@@header_userMenu_button_helpCenter">
+								Help Center
+							</span>
+						</button>
+
+						<button
+							mat-menu-item
+							(click)="this.userMenuClick('logout')"
+							id="headerLogout"
+						>
+							<img
+								class="icon-position"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1666207799/whydonate-production/platform/svg-icons/logout.svg"
+							/>&nbsp;&nbsp;&nbsp;
+							<span i18n="@@header_userMenu_button_logout">Logout </span>
+						</button>
+					</mat-menu>
+					<!--END IF USER IS LOGGED IN-->
+
+					<!--IF USER IS NOT LOGGED IN-->
+
+					<button
+						id="loginButton"
+						fxHide.sm="true"
+						fxHide.xs="true"
+						*ngIf="!this.isLoggedIn"
+						i18n="@@button_login"
+						mat-flat-button
+						(click)="routeToLogin()"
+					>
+						Login
+					</button>
+
+					<!--MENU FOR MOBILE-->
+					<button
+						mat-button
+						fxHide.lg="true"
+						fxHide.md="true"
+						fxHide.xl="true"
+						*ngIf="!this.isLoggedIn"
+						[matMenuTriggerFor]="mobileMenu"
+					>
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666517723/whydonate-production/platform/svg-icons/menu.svg"
+						/>
+					</button>
+					<mat-menu #mobileMenu="matMenu">
+						<button
+							i18n="@@header_menu_button_searchFundraisers"
+							mat-menu-item
+							(click)="routeToSearch()"
+						>
+							Search Fundraisers
+						</button>
+						<button
+							i18n="@@mobileHeader_menu_button_productsMenu"
+							mat-menu-item
+							[matMenuTriggerFor]="productsMenu"
+						>
+							Products
+						</button>
+						<button
+							i18n="@@button_startFundraiser"
+							mat-menu-item
+							(click)="startFundraiser()"
+							id="headerStartFundraiser"
+						>
+							Start Fundraiser
+						</button>
+						<button
+							i18n="@@button_login"
+							mat-menu-item
+							(click)="routeToLogin()"
+						>
+							Login
+						</button>
+					</mat-menu>
+					<!--MENU FOR MOBILE-->
+					<!--END OF IF USER IS NOT LOGGED IN-->
+				</div>
+			</div>
+		</div>
+	</mat-toolbar-row>
+	<mat-toolbar-row fxHide.gt-xs="true">
+		<div fxLayout="column" fxFlex="100%" class="white-bg">
+			<app-start-fundraiser-button buttonType="stroked" themeColor="accent">
+			</app-start-fundraiser-button>
+		</div>
+	</mat-toolbar-row>
+</mat-toolbar>

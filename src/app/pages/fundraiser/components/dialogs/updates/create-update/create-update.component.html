@@ -1,0 +1,78 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<h2 mat-dialog-title i18n="@@createUpdate_title">Create Update</h2>
+<mat-dialog-content class="mat-typography">
+	<!-- <h3>Original language</h3> -->
+	<div class="m-l-xs" fxLayout="row" fxLayoutAlign="start center">
+		<mat-label class="mat-body-2" i18n="@@createUpdate_originalLanguage_title"
+			>Original Language</mat-label
+		>
+		<div fxLayout="row" class="p-xs">
+			<img
+				width="20"
+				src="{{ languageIconPath + originalLocale + '.png' }}"
+			/>&nbsp;
+			<span>{{ allLanguages[originalLocale] }}</span>
+		</div>
+	</div>
+	<br />
+	<app-quill-editor
+		[quillContent]="data.update?.content"
+		(onContentChange)="changeUpdateContent($event)"
+		(allTextCheck)="allCheck($event)"
+	>
+	</app-quill-editor>
+	<div class="m-r-xs" fxLayoutAlign="end end">
+		<mat-error
+			*ngIf="!isContentValidFlag"
+			i18n="@@createUpdate_invalidOrEmpty_Content_error"
+			>Content is invalid or empty</mat-error
+		>
+	</div>
+	<div
+		class="m-l-xs"
+		fxLayout="row wrap"
+		fxLayoutAlign="start center"
+		fxLayoutGap="16px"
+		(click)="isContentValid()"
+	>
+		<fieldset class="disable" [disabled]="newUpdate?.content?.length < 1">
+			<app-fundraiser-media-edit
+				[matTooltip]="
+					newUpdate?.content?.length < 1
+						? 'Update content cannot be empty'
+						: 'Upload media for Update'
+				"
+				[fundraiserMediaList]="data.update?.mediaList"
+				(onMediaChange)="changeUpdateMedia($event)"
+			>
+			</app-fundraiser-media-edit>
+		</fieldset>
+	</div>
+</mat-dialog-content>
+<div ngClass="m-t-m">
+	<mat-dialog-actions align="end">
+		<button
+			[disabled]="
+				!(newUpdate.content || newUpdate.imageList) ||
+				isLoading ||
+				!this.allTextCheck
+			"
+			mat-flat-button
+			color="accent"
+			id="addUpdatesFundraiserPageCreateButton"
+			(click)="createUpdateContentAndMedia()"
+		>
+			<span i18n="@@button_create">create</span>
+			<mat-icon *ngIf="isLoading" class="m-l-xs">
+				<mat-spinner color="accent" diameter="20" i18n="@@createUpdate_spinner">
+				</mat-spinner>
+			</mat-icon>
+		</button>
+	</mat-dialog-actions>
+</div>

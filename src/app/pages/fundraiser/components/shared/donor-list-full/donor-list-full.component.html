@@ -1,0 +1,189 @@
+<div class="p-t-m p-b-m p-l-m p-r-m">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+
+	<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5%">
+		<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+			<h2>
+				<span i18n="@@donorList_donations_title">Donations</span>
+				({{ this.donationCount }})
+			</h2>
+		</div>
+	</div>
+
+	<!--SINGLE DONOR ROW-->
+	<div
+		fxLayout="column"
+		fxLayoutAlign="start start"
+		fxLayoutGap.xs="7%"
+		fxLayoutGap="0px"
+		[style.border-bottom]="'1px solid #ddd'"
+		[style.last-child]="'0px'"
+		*ngFor="let donor of donorData; let i = index"
+	>
+		<!--Avatar-->
+		<div
+			ngClass="m-t-m"
+			fxLayout="row"
+			fxFill
+			fxFlex.xs="20%"
+			fxLayoutGap="1%"
+			fxLayoutAlign="start center"
+		>
+			<img
+				mat-card-avatar
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173321/whydonate-production/platform/svg-icons/donor.svg"
+			/>
+			<div fxLayout="column" fxFlex="20%" fxLayoutAlign="start start">
+				<div id="donationName">
+					<strong> {{ donor?.name }} </strong>
+				</div>
+				<div fxLayout="row" fxFlex="100%" fxLayoutAlign="start start">
+					<div>
+						{{ donor?.message }}
+					</div>
+				</div>
+			</div>
+
+			<div
+				fxLayout="column"
+				fxFlex="100%"
+				fxFlex.xs="80%"
+				fxLayoutAlign="end end"
+			>
+				<span class="mat-option">
+					{{ donor?.amount | currency : donor?.symbol : 'symbol' : '1.0-0' }}
+				</span>
+				<!-- [style.marginTop.px]="this.media.isActive('sm') ? '-10' : '0'" -->
+				<a
+					fxLayout.xs="column"
+					i18n="@@button_reply"
+					color="accent"
+					(click)="replyMessage(i)"
+					mat-button
+					*ngIf="
+						(isLoggedInUserAdmin && donor?.reply_message?.length <= 1) ||
+						(isLoggedInUserAdmin && !donor?.reply_message)
+					"
+				>
+					Reply
+				</a>
+			</div>
+		</div>
+		<!--Name and Message-->
+
+		<div
+			fxLayout="row"
+			fxLayout="center center"
+			fxFlex="20%"
+			fxFlex.xs="80%"
+			ngClass.lg="m-t-l"
+			[style.marginTop.px]="this.media.isActive('lg') ? '10' : '0'"
+			ngClass.lg="m-b-m"
+			ngClass.xs="m-t-l"
+			ngClass.xs="m-l-l"
+			ngClass=""
+			ngClass.sm="m-t-l"
+		>
+			<div
+				ngClass.lt-lg="m-l-xl m-t-m m-b-m"
+				ngClass.lg="m-l-xl m-t-m m-b-m"
+				ngClass.xs="m-b-l"
+				ngClass=""
+				fxLayout="row"
+				fxLayoutAlign="start center"
+				*ngIf="donor?.reply_message && donor?.reply_message?.length > 1"
+			>
+				<img
+					*ngIf="donor?.reply_message"
+					width="30"
+					height="30"
+					loading="lazy"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1666173321/whydonate-production/platform/svg-icons/donor_small.svg"
+				/>
+				<div fxLayout="column" class="m-l-xs">
+					{{ donor?.reply_message }}
+				</div>
+			</div>
+		</div>
+
+		<div
+			fxFlex="50%"
+			fxFill
+			fxLayout="column"
+			fxLayoutAlign="start end"
+			ngClass="m-b-m"
+			*ngIf="
+				isLoggedInUserAdmin &&
+				i == this.replyIndex &&
+				donor?.reply_message?.length <= 1 &&
+				donor?.reply_message?.length != undefined
+			"
+		>
+			<mat-form-field
+				class="example-full-width"
+				appearance="outline"
+				class="w-100"
+			>
+				<textarea
+					matInput
+					placeholder="{{ donorPlaceholder }}"
+					required
+					[formControl]="replyForm"
+					#input
+				>
+				</textarea>
+				<mat-hint align="end">{{ input.value.length || 0 }}/200</mat-hint>
+			</mat-form-field>
+
+			<button
+				mat-raised-button
+				[disabled]="replyForm.invalid"
+				color="accent"
+				(click)="postReply(input.value, donor.id, i)"
+				i18n="@@button_send"
+			>
+				Send
+			</button>
+		</div>
+
+		<!--Amount-->
+		<!--Thank you donor-->
+		<!-- <div
+			fxLayout="column"
+			fxLayout.xs="row"
+			fxFlex="10%"
+			fxLayoutAlign="start center"
+		>
+			<a
+				i18n
+				color="accent"
+				mat-button
+				*ngIf="isLoggedInUserAdmin && !donor.reply_message"
+				(click)="replyMessage(i)"
+				mat-button
+				*ngIf="
+					(isLoggedInUserAdmin && donor?.reply_message.length <= 1) ||
+					(isLoggedInUserAdmin && !donor?.reply_message)
+				"
+			>
+				Reply
+			</a>
+		</div> -->
+	</div>
+	<div
+		*ngIf="!this.loadDataCheck"
+		fxLayout="column"
+		ngClass="m-t-xl"
+		fxLayoutAlign="center center"
+	>
+		<a class="link-decorate-style cursor-pointer" (click)="showMoreData()"
+			><span i18n="@@donor_list_full_viewMore_label">View More</span>
+			<mat-icon *ngIf="isLoading" class="m-l-xs">
+				<mat-spinner color="accent" diameter="20"> </mat-spinner> </mat-icon
+		></a>
+	</div>
+</div>

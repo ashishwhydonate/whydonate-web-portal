@@ -1,0 +1,6 @@
+<ng-container *ngIf="isShowBothDonationAndTargetAmount">
+	{{ donation_progress_percentage | number: '1.0-1' }}%
+	<ng-container *ngIf="showLabel">
+		<span i18n="@@editFundraisers_funded_label">funded</span>
+	</ng-container>
+</ng-container>

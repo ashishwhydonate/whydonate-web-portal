@@ -1,0 +1,110 @@
+<mat-card
+	fxFlex="0 1 calc(40vw)"
+	fxFlex.sm="100%"
+	fxFlex.xs="1 1 calc(40vw)"
+	class="mat-elevation-z0 h-100"
+>
+	<div ngClass.lt-lg="m-t-xl">
+		<mat-card-title-group>
+			<mat-card-subtitle
+				[style.width.%]="85"
+				i18n="@@profile_api_key_connect_fundraiser_to_wordpress"
+			>
+				Take your fundraiser to next level with whydonate easy to use
+				integration options Like wordpress plugin
+			</mat-card-subtitle>
+			<!-- Show loading when fetching data -->
+			<mat-icon *ngIf="isLoading">
+				<mat-spinner color="primary" diameter="20" i18n="@@apiKey_spinner">
+				</mat-spinner>
+			</mat-icon>
+		</mat-card-title-group>
+		<mat-card-content>
+			<!-- API key form -->
+			<form [formGroup]="apiKeyForm">
+				<!-- API key field -->
+				<mat-form-field color="primary" appearance="outline" class="w-100">
+					<mat-label i18n="@@profile_api_key_form_label">API Key</mat-label>
+					<input
+						matInput
+						formControlName="apikeyCtrl"
+						type="password"
+						#passwordField
+					/>
+					<button
+						[color]="passwordField.type === 'text' ? 'primary' : ''"
+						mat-icon-button
+						style="position: relative; bottom: 7px"
+						matSuffix
+						[disabled]="!apiKey"
+						(click)="
+							passwordField.type === 'password'
+								? (passwordField.type = 'text')
+								: (passwordField.type = 'password')
+						"
+						[matTooltip]="
+							passwordField.type === 'password'
+								? 'See your API Key'
+								: 'Hide your API Key'
+						"
+					>
+						<img
+							*ngIf="passwordField.type === 'password'"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667507211/whydonate-production/platform/svg-icons/visibilityOff.svg"
+						/>
+						<img
+							*ngIf="passwordField.type === 'text'"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667510891/whydonate-production/platform/svg-icons/visibilityOnPrimary.svg"
+						/>
+					</button>
+				</mat-form-field>
+
+				<ng-container *ngIf="showGenerateApiKeyButton === true">
+					<div fxLayout="row wrap" fxLayoutAlign="end center">
+						<button
+							mat-flat-button
+							(click)="generateNewApiKey()"
+							color="accent"
+							[disabled]="isNewApiKeyLoading"
+						>
+							<span i18n="@@profile_api_key_button_generate">
+								Generate API Key
+							</span>
+							<mat-icon *ngIf="isNewApiKeyLoading" class="m-l-xs">
+								<mat-spinner
+									color="accent"
+									diameter="20"
+									i18n="@@editAbout_spinner"
+								>
+								</mat-spinner>
+							</mat-icon>
+						</button>
+					</div>
+				</ng-container>
+				<ng-container *ngIf="showGenerateApiKeyButton === false">
+					<div fxLayout="row wrap" fxLayoutAlign="end center">
+						<div fxFlex>
+							<mat-slide-toggle
+								formControlName="isActive"
+								color="primary"
+								i18n="@@profile_api_key_toggle_activate"
+								>Activate API Key</mat-slide-toggle
+							>
+						</div>
+						<!-- Button to copy API code -->
+						<button
+							mat-flat-button
+							class="button-button-style"
+							(click)="copyApiCode()"
+							[cdkCopyToClipboard]="apiKey"
+							i18n="@@profile_api_key_button_copy_code"
+							color="accent"
+							id="copyCode"
+						>
+							Copy Code
+						</button>
+					</div>
+				</ng-container>
+			</form>
+		</mat-card-content>
+	</div>

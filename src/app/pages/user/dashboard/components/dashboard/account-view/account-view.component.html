@@ -1,0 +1,396 @@
+<mat-card class="mat-elevation-z0 pale-grey-bg m-m" *ngIf="this.isReceiver">
+	<!--  -->
+	<mat-card-content>
+		<!-- <ng-template [ngIf]="this.accountData" [ngIfElse]="loading"></ng-template> -->
+		<!--STRIPE ONLY-->
+		<ng-template [ngIf]="this.showStripeOnly == true">
+			<p class="mat-body-2" i18n="@@account_view_accountVerification_label">
+				Stripe Account
+			</p>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_setting_charges_title">
+						Charges
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.chargesEnabled == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.chargesEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == false && this.chargesEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<mat-icon class="material-icons-outlined">error_outline</mat-icon>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_settings_payout_title">
+						Payout
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.payoutEnabled == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.payoutEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == false && this.payoutEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<mat-icon class="material-icons-outlined">error_outline</mat-icon>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<a
+				mat-button
+				color="accent"
+				id="viewSummary"
+				(click)="routeToPayoutSettings()"
+				><span i18n="@@account_view_goToAccount_button">Go to Account</span></a
+			>
+		</ng-template>
+
+		<!--OPP ONLY-->
+		<ng-template [ngIf]="this.showOppOnly == true">
+			<p class="mat-body-2" i18n="@@account_view_accountVerification_label_opp">
+				OPP Account
+			</p>
+			<div *ngIf="this.disapprovedStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<span i18n="@@disapproved_status">Unverified</span>
+				</div>
+			</div>
+			<div *ngIf="this.verificationStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<span i18n="@@verified_status">Verified</span>
+				</div>
+			</div>
+			<div *ngIf="this.pendingStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<mat-icon class="material-icons-outlined">error_outline</mat-icon>
+					<span i18n="@@pending_status">Verification Pending</span>
+				</div>
+			</div>
+			<div *ngIf="this.initialStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+					/>
+					<span i18n="@@initial_status">Not Yet Initiated</span>
+				</div>
+			</div>
+			<br />
+			<a
+				mat-button
+				color="accent"
+				id="viewSummary"
+				(click)="routeToPayoutSettings()"
+				><span i18n="@@account_view_goToAccount_button">Go to Account</span></a
+			>
+		</ng-template>
+
+		<!-- Stripe and OPP-->
+		<ng-template [ngIf]="this.showStripeAndOpp == true">
+			<p class="mat-body-2" i18n="@@account_view_accountVerification_label_opp">
+				OPP Account
+			</p>
+			<div *ngIf="this.disapprovedStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<span i18n="@@disapproved_status">Unverified</span>
+				</div>
+			</div>
+			<div *ngIf="this.verificationStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<span i18n="@@verified_status">Verified</span>
+				</div>
+			</div>
+			<div *ngIf="this.pendingStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<mat-icon class="material-icons-outlined">error_outline</mat-icon>
+					<span i18n="@@pending_status">Verification Pending</span>
+				</div>
+			</div>
+			<div *ngIf="this.initialStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+					/>
+					<span i18n="@@initial_status">Not Yet Initiated</span>
+				</div>
+			</div>
+			<div ngClass="m-t-s m-b-xs">
+				<mat-divider></mat-divider>
+			</div>
+			<p class="mat-body-2" i18n="@@account_view_accountVerification_label">
+				Stripe Account
+			</p>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_setting_charges_title">
+						Charges
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.chargesEnabled == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.chargesEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == false && this.chargesEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<mat-icon class="material-icons-outlined">error_outline</mat-icon>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_settings_payout_title">
+						Payout
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.payoutEnabled == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.payoutEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == false && this.payoutEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<mat-icon class="material-icons-outlined">error_outline</mat-icon>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<a
+				mat-button
+				color="accent"
+				id="viewSummary"
+				(click)="routeToPayoutSettings()"
+				><span i18n="@@account_view_goToAccount_button">Go to Account</span></a
+			>
+		</ng-template>
+	</mat-card-content>
+</mat-card>
+
+<div class="m-m">
+	<p class="mat-body-2" i18n="@@account_view_thingsYouCan_title">
+		Things you can do here
+	</p>
+	<mat-card class="mat-elevation-z0 pale-grey-bg mat-body-2">
+		<mat-card-content (click)="routeToStart()">
+			<div fxLayout="row" fxLayoutGap="2%">
+				<div>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1670001637/whydonate-production/platform/svg-icons/create-dark.svg"
+					/>
+				</div>
+				<div>
+					<span
+						i18n="@@account_view_startFundraiser_button"
+						class="cursor-pointer"
+						>Start Fundraiser</span
+					>
+				</div>
+			</div>
+		</mat-card-content>
+	</mat-card>
+	<mat-card ngClass="m-t-m" class="mat-elevation-z0 pale-grey-bg mat-body-2">
+		<mat-card-content (click)="routeToCustomBranding()"
+			><div fxLayout="row" fxLayoutGap="2%">
+				<div>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1670001638/whydonate-production/platform/svg-icons/widget.svg"
+					/>
+				</div>
+				<div>
+					<span i18n="@@account_view_customize_button" class="cursor-pointer"
+						>Customize</span
+					>
+				</div>
+			</div>
+		</mat-card-content>
+	</mat-card>
+	<mat-card ngClass="m-t-m" class="mat-elevation-z0 pale-grey-bg mat-body-2">
+		<mat-card-content (click)="routeToSearch()">
+			<div fxLayout="row" fxLayoutGap="2%">
+				<div>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1670001638/whydonate-production/platform/svg-icons/volunteer.svg"
+					/>
+				</div>
+				<div>
+					<span i18n="@@account_view_beADonor_button" class="cursor-pointer"
+						>Be a donor</span
+					>
+				</div>
+			</div></mat-card-content
+		>
+	</mat-card>
+</div>
+<!----------------------LOADING SPINNER TEMPLATE---------------------->
+<!-- <ng-template #loading>
+	<br /><br />
+	<div fxLayoutAlign="center center">
+		<mat-icon
+			><mat-spinner color="accent" diameter="20"></mat-spinner
+		></mat-icon>
+	</div>
+	<br /><br />
+</ng-template> -->

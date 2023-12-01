@@ -1,0 +1,818 @@
+<div class="p-t-m p-l-m">
+	<button mat-button color="accent" (click)="goBack()" id="goBackButton">
+		<img
+			height="16px"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667417025/whydonate-production/platform/svg-icons/arrowBackAccent.svg"
+		/>
+		<span i18n="@@custom_donationForm_fundraiserPage_button"
+			>Fundraiser page</span
+		>
+	</button>
+</div>
+<mat-tab-group color="accent" selectedIndex="0">
+	<mat-tab label="{{ targetAmountTab }}">
+		<app-target-amount
+			[currentFundraiserData]="fundraiserData"
+		></app-target-amount>
+	</mat-tab>
+	<mat-tab label="{{ donationAmountTab }}" id="donationAmount">
+		<div fxLayout="row wrap">
+			<mat-card class="mat-elevation-z0" fxFlex.gt-sm="49" fxFlex.lt-md="100">
+				<div
+					fxLayout="row wrap"
+					fxLayout.xs="column"
+					fxLayoutAlign="space-between baseline"
+				>
+					<h2 i18n="@@custom_donation_form_customizeDonationAmount_label">
+						Customise Donation Amount (Euro)
+					</h2>
+					<mat-icon *ngIf="!fundraiserData?.slug" class="m-l-xs">
+						<mat-spinner
+							color="accent"
+							diameter="20"
+							i18n="@@custom_donation_page_spinner"
+						>
+						</mat-spinner>
+					</mat-icon>
+					<button
+						mat-button
+						color="accent"
+						(click)="setToDefault()"
+						i18n="@@button_resetToDefaultValues"
+					>
+						Reset to default values
+					</button>
+				</div>
+				<mat-card-content>
+					<form [formGroup]="customDonationForm">
+						<br />
+						<!-- One Time -->
+						<div>
+							<p>
+								<mat-slide-toggle
+									id="oneTimeCheckbox"
+									type="checkbox"
+									color="primary"
+									formControlName="onetimeFlag"
+								>
+									<span i18n="@@custom_donation_form_allowOneTimeDonation_label"
+										>Allow One Time Donation</span
+									>
+								</mat-slide-toggle>
+							</p>
+							<div
+								formGroupName="onetimeCtrls"
+								fxLayout="row wrap"
+								fxLayoutAlign="start center"
+							>
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+								>
+									<div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="onetime1" matInput type="number" />
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime1', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime1', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+								>
+									<div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="onetime2" matInput type="number" />
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime2', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime2', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+								>
+									<div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="onetime3" matInput type="number" />
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime3', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime3', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+								>
+									<div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="onetime4" matInput type="number" />
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime4', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('onetimeCtrls', 'onetime4', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+							</div>
+							<p>
+								<!-- OR &nbsp;&nbsp;&nbsp;<mat-checkbox
+									color="primary"
+									formControlName="onetimeOpenAmountFlag"
+									i18n="@@custom_donation_form_setOpenDonationStyle_label"
+									>Set Open donation style</mat-checkbox
+								> -->
+
+								OR &nbsp;&nbsp;&nbsp;<mat-slide-toggle
+								color="primary"
+								formControlName="onetimeOpenAmountFlag"
+								i18n="@@custom_donation_form_setOpenDonationStyle_label"
+								>Set Open donation style</mat-slide-toggle
+							>
+							</p>
+						</div>
+
+						<br />
+						<!-- Monthly -->
+						<div>
+							<p>
+								<mat-slide-toggle
+									type="checkbox"
+									formControlName="monthlyFlag"
+									color="primary"
+									><span
+										i18n="@@custom_donation_form_allowMonthlyDonation_label"
+										>Allow Monthly Donation</span
+									>
+								</mat-slide-toggle>
+							</p>
+							<div
+								formGroupName="monthlyCtrls"
+								fxLayout="row wrap"
+								fxLayoutAlign="start center"
+							>
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+								>
+									<div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="monthly1" matInput type="number" />
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly1', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly1', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="monthly2" matInput type="number" />
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly2', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly2', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="monthly3" matInput type="number" />
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly3', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly3', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="monthly4" matInput type="number" />
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly4', 'max')"
+									>
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error
+										*ngIf="showError('monthlyCtrls', 'monthly4', 'min')"
+									>
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+							</div>
+							<p>
+								<!-- OR &nbsp;&nbsp;&nbsp;<mat-checkbox
+									formControlName="monthlyOpenAmountFlag"
+									color="primary"
+									i18n="@@custom_donation_form_setOpenDonationStyle_label"
+									>Set Open donation style</mat-checkbox
+								> -->
+
+								OR &nbsp;&nbsp;&nbsp;<mat-slide-toggle
+								formControlName="monthlyOpenAmountFlag"
+								color="primary"
+								i18n="@@custom_donation_form_setOpenDonationStyle_label"
+								>Set Open donation style</mat-slide-toggle
+							>
+							</p>
+						</div>
+
+						<br />
+						<!-- Yearly -->
+						<div>
+							<p>
+								<mat-slide-toggle
+									type="checkbox"
+									formControlName="yearlyFlag"
+									color="primary"
+									><span
+										i18n="@@custom_donation_form_allowYearlyDonation_label"
+									>
+										Allow Yearly Donation</span
+									></mat-slide-toggle
+								>
+							</p>
+							<div
+								formGroupName="yearlyCtrls"
+								fxLayout="row wrap"
+								fxLayoutAlign="start center"
+							>
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="yearly1" matInput type="number" />
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly1', 'max')">
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly1', 'min')">
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="yearly2" matInput type="number" />
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly2', 'max')">
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly2', 'min')">
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="yearly3" matInput type="number" />
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly3', 'max')">
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly3', 'min')">
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+								&nbsp;&nbsp;&nbsp;
+								<mat-form-field
+									appearance="outline"
+									color="primary"
+									fxFlex.xs="35"
+									fxFlex.gt-xs="20"
+									><div matPrefix class="currency-input-field">
+										{{ this.currency.symbol }}&nbsp;
+									</div>
+									<input formControlName="yearly4" matInput type="number" />
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly4', 'max')">
+										<span i18n="@@custom_donation_form_maximumAmountShort"
+											>Max:</span
+										>
+										{{ this.currency.symbol }}{{ this.max_donation_amount }}
+									</mat-error>
+									<mat-error *ngIf="showError('yearlyCtrls', 'yearly4', 'min')">
+										<span i18n="@@custom_donation_form_minimumAmountShort"
+											>Min:</span
+										>
+										{{ this.currency.symbol }}{{ this.min_donation_amount }}
+									</mat-error>
+								</mat-form-field>
+							</div>
+							<p>
+								<!-- OR &nbsp;&nbsp;&nbsp;<mat-checkbox
+									formControlName="yearlyOpenAmountFlag"
+									color="primary"
+									i18n="@@custom_donation_form_setOpenDonationStyle_label"
+									>Set Open donation style</mat-checkbox
+								> -->
+
+								OR &nbsp;&nbsp;&nbsp;<mat-slide-toggle
+								formControlName="yearlyOpenAmountFlag"
+								color="primary"
+								i18n="@@custom_donation_form_setOpenDonationStyle_label"
+								>Set Open donation style</mat-slide-toggle
+							>
+							</p>
+						</div>
+
+						<br />
+						<div>
+							<mat-slide-toggle
+								formControlName="otherAmountFlag"
+								color="primary"
+								><span i18n="@@custom_donationForm_allowOtherAmount_toggle"
+									>Allow Other amount</span
+								>
+								<mat-hint class="mat-caption"
+									><span i18n="custom_donation_form_allowDonorToDecide_hint"
+										>(Allow donor to decide donation amount)</span
+									></mat-hint
+								>
+							</mat-slide-toggle>
+						</div>
+						<br />
+						<div>
+							<mat-slide-toggle formControlName="tipBoxFlag" color="primary"
+								><span i18n="@@custom_donationForm_tipBoxEnabled_toggle"
+									>Tip box enabled</span
+								></mat-slide-toggle
+							>
+							<div fxLayout="column" fxLayoutAlign="start start">
+								<mat-hint
+									class="mat-caption"
+									i18n="@@custom_donationForm_disablingTheTio_hint"
+									>Disabling the tip box will change the pricing for this
+									fundraiser.</mat-hint
+								>
+								<button
+									mat-button
+									color="accent"
+									i18n="@@button_pricingOptions"
+									(click)="goToPricingOptions()"
+								>
+									Pricing options
+								</button>
+							</div>
+						</div>
+					</form>
+					<div fxLayout="row" fxLayoutAlign="end center">
+						<button
+							mat-stroked-button
+							color="accent"
+							(click)="discardChanges()"
+							[disabled]="isCustomDonationDisable"
+							i18n="@@button_discard"
+						>
+							Discard
+						</button>
+						&nbsp;&nbsp;&nbsp;
+						<button
+							id="saveAndApply"
+							mat-flat-button
+							color="accent"
+							[disabled]="isCustomDonationDisable || !customDonationForm.valid"
+							(click)="saveAndApplyCustomDonation()"
+						>
+							<span i18n="@@button_saveAndApply">Save and Apply</span>
+
+							<mat-icon *ngIf="isSaveCustomDonation" class="m-l-xs">
+								<mat-spinner
+									color="accent"
+									diameter="20"
+									i18n="@@custom_donation_form_spinner"
+								>
+								</mat-spinner>
+							</mat-icon>
+						</button>
+					</div>
+				</mat-card-content>
+			</mat-card>
+			<mat-divider vertical="true"></mat-divider>
+			<mat-card class="mat-elevation-z0" fxFlex.gt-sm="50" fxFlex.lt-md="100">
+				<div fxLayout="row" fxLayoutAlign="start center">
+					<p fxLayout="row" class="mat-body-1">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+						/>
+						<span
+							fxFlexOffset="8px"
+							i18n="@@share_dialog_custom_donation_donationFormPreview_icon"
+						>
+							Donation Form Preview
+						</span>
+					</p>
+				</div>
+				<br />
+				<!-- Preview -->
+				<mat-card fxLayout="row" class="donation-form-preview">
+					<div fxFlex="60">
+						<mat-tab-group
+							mat-align-tabs="center"
+							mat-stretch-tabs
+							color="primary"
+						>
+							<mat-tab label="{{ oneTimeLabel }}" *ngIf="getFlagValue(ONCE)">
+								<div
+									*ngIf="!getOpenAmountFlagValue(ONCE)"
+									fxLayout="row wrap"
+									fxLayoutAlign="center"
+									class="m-b-m"
+								>
+									<div class="p-t-s">
+										<button mat-button class="mat-flat-button" color="primary">
+											{{ this.currency.symbol }}
+											{{ getAmountValue(ONCE, 1) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(ONCE, 2) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(ONCE, 3) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(ONCE, 4) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button
+											mat-stroked-button
+											*ngIf="getFlagValue('otherAmount')"
+											i18n="@@button_otherAmount"
+										>
+											Other
+										</button>
+									</div>
+								</div>
+								<div
+									*ngIf="getOpenAmountFlagValue(ONCE)"
+									fxLayout="row"
+									fxLayoutAlign="start center"
+									class="p-r-m"
+								>
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label
+											i18n="
+												@@share_dialog_payment_request_onetime_otherAmount_label"
+											>Enter Amount (EURO)</mat-label
+										>
+										<div matPrefix class="currency-input-field">
+											{{ this.currency.symbol }}&nbsp;
+										</div>
+										<input matInput type="number" value="0" />
+									</mat-form-field>
+								</div>
+							</mat-tab>
+							<mat-tab label="{{ monthlyLabel }}" *ngIf="getFlagValue(MONTHLY)">
+								<div
+									*ngIf="!getOpenAmountFlagValue(MONTHLY)"
+									fxLayout="row wrap"
+									fxLayoutAlign="center"
+									class="m-b-m"
+								>
+									<div class="p-t-s">
+										<button mat-button class="mat-flat-button" color="primary">
+											{{ this.currency.symbol }}
+											{{ getAmountValue(MONTHLY, 1) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(MONTHLY, 2) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(MONTHLY, 3) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(MONTHLY, 4) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button
+											mat-stroked-button
+											*ngIf="getFlagValue('otherAmount')"
+											i18n="@@button_otherAmount"
+										>
+											Other
+										</button>
+									</div>
+								</div>
+								<div
+									*ngIf="getOpenAmountFlagValue(MONTHLY)"
+									fxLayout="row"
+									fxLayoutAlign="start center"
+									class="p-r-m"
+								>
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label
+											i18n="
+												@@share_dialog_payment_request_onetime_otherAmount_label"
+											>Enter Amount (EURO)</mat-label
+										>
+										<div matPrefix class="currency-input-field">
+											{{ this.currency.symbol }}&nbsp;
+										</div>
+										<input matInput type="number" value="0" />
+									</mat-form-field>
+								</div>
+							</mat-tab>
+							<mat-tab label="{{ yearlyLabel }}" *ngIf="getFlagValue(YEARLY)">
+								<div
+									*ngIf="!getOpenAmountFlagValue(YEARLY)"
+									fxLayout="row wrap"
+									fxLayoutAlign="center"
+									class="m-b-m"
+								>
+									<div class="p-t-s">
+										<button mat-button class="mat-flat-button" color="primary">
+											{{ this.currency.symbol }}
+											{{ getAmountValue(YEARLY, 1) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(YEARLY, 2) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(YEARLY, 3) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button mat-stroked-button>
+											{{ this.currency.symbol }}
+											{{ getAmountValue(YEARLY, 4) | number }}</button
+										>&nbsp;&nbsp;&nbsp;
+									</div>
+									<div class="p-t-s">
+										<button
+											mat-stroked-button
+											*ngIf="getFlagValue('otherAmount')"
+											i18n="@@button_otherAmount"
+										>
+											Other
+										</button>
+									</div>
+								</div>
+								<div
+									*ngIf="getOpenAmountFlagValue(YEARLY)"
+									fxLayout="row"
+									fxLayoutAlign="start center"
+									class="p-r-m"
+								>
+									<mat-form-field class="w-100" appearance="outline">
+										<mat-label
+											i18n="
+												@@share_dialog_payment_request_onetime_otherAmount_label"
+											>Enter Amount (EURO)</mat-label
+										>
+										<div matPrefix class="currency-input-field">
+											{{ this.currency.symbol }}&nbsp;
+										</div>
+										<input matInput type="number" value="0" />
+									</mat-form-field>
+								</div>
+							</mat-tab>
+						</mat-tab-group>
+						<div fxLayout="column" fxLayoutAlign="center center">
+							<div
+								fxLayout="row"
+								fxLayoutAlign="space-around center"
+								*ngIf="getFlagValue('tipBox')"
+							>
+								Tip box enabled &nbsp;
+								<mat-form-field appearance="outline">
+									<mat-label
+										i18n="
+											@@edit_fundraiser_custom_donationForm_onetime_tipamount_label"
+										>Tip amount</mat-label
+									>
+									<mat-select value="10">
+										<mat-option value="10">10% </mat-option>
+									</mat-select>
+								</mat-form-field>
+							</div>
+							<br />
+							<button mat-flat-button color="accent" i18n="@@button_donate">
+								Donate
+							</button>
+						</div>
+					</div>
+					<mat-divider vertical="true"></mat-divider>
+					<div fxLayout="column" fxFlex="40">
+						<!-- Display image if available -->
+						<img
+							*ngIf="
+								fundraiserData?.image?.src != null &&
+								this.fundraiserData?.image?.src != '' &&
+								!this.fundraiserData?.image?.video
+							"
+							[src]="
+								'https://res.cloudinary.com/whydonate/image/upload/v1/' +
+								fundraiserBackgroundImage
+							"
+							loading="lazy"
+						/>
+						<!-- Display video if available or both image and video are available -->
+						<img
+							i18n="@@fundraiserCard_createBackgroundImage"
+							*ngIf="
+								this.fundraiserData?.image?.video ||
+								(this.fundraiserData?.image?.src != null &&
+									this.fundraiserData?.image?.video)
+							"
+							src="{{ this.youtubeThumbnail }}"
+							loading="lazy"
+						/>
+						<!-- Display a default image if none of the above conditions are met -->
+						<img
+							*ngIf="
+								!(
+									this.fundraiserData?.image?.src &&
+									this.fundraiserData?.image?.video
+								) && fundraiserData?.image?.src == null
+							"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1689704507/whydonate-production/platform/svg-icons/fundraiser_default_bg.png"
+							loading="lazy"
+						/>
+						<br />
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/custom-donation.svg"
+						/>
+					</div>
+				</mat-card>
+			</mat-card>
+		</div>
+	</mat-tab>
+</mat-tab-group>

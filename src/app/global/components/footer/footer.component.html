@@ -1,0 +1,97 @@
+<!--Footer 1 ( Available mostly throughout the Application)----------------------->
+<div
+	*ngIf="!hideFooter"
+	fxFlex="100"
+	fxLayout="row"
+	class="footer-background"
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-s"
+	id="footer"
+	name="footer"
+>
+	<div
+		fxLayout="column"
+		fxLayoutAlign="center center"
+		fxFlex="100%"
+		fxLayoutAlign="center space-between"
+	>
+		<!--FIRST ROW STARTS-->
+		<div
+			fxFlex="100"
+			fxLayout="row"
+			fxLayout.sm="column"
+			fxLayout.xs="column"
+			fxLayoutAlign="space-between start"
+			fxLayoutGap.sm="2%"
+			fxLayoutGap.xs="5%"
+		>
+			<!--LOGO AND APP LINKS-------------------------------------------------------------------->
+			<app-logo-app-links></app-logo-app-links>
+
+			<!--FUNDRAISER FOR---------------------------------------------------------------------->
+			<app-fundraiser-for></app-fundraiser-for>
+
+			<!--PRODUCTS-------------------------------------------------------------------------------->
+			<app-products></app-products>
+
+			<!--FEATURES-------------------------------------------------------------------------------->
+			<app-features></app-features>
+
+			<!--SUPPORT-------------------------------------------------------------------------------->
+			<app-support></app-support>
+		</div>
+
+		<!--FIRST ROW ENDS-->
+
+		<!--SECOND ROW STARTS------------------------------------------------------------------------------->
+
+		<div
+			fxFill
+			fxLayout="row"
+			fxLayout.sm="column"
+			fxLayout.xs="column"
+			fxFlex="100%"
+			fxLayoutAlign="space-between end"
+			fxLayoutAlign.sm="space-between start"
+			fxLayoutAlign.xs="space-between start"
+		>
+			<!--FIRST COLUMN-->
+			<app-ratings></app-ratings>
+			<!--SECOND COLUMN-->
+			<app-copyright></app-copyright>
+		</div>
+
+		<!--SECOND ROW ENDS------------------------------------------------------------------------------->
+	</div>
+</div>
+
+<!--FOOTER 2 (Available during accessing USER menu dashboard)------------------------------------------------------------------------------------------------------------------->
+<div
+	*ngIf="this.hideFooter"
+	fxFill
+	fxLayout="row"
+	fxLayoutAlign="space-between center"
+	id="footer2"
+	name="footer2"
+	class="minimal-footer"
+	fxFlex="100%"
+>
+	<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+		<app-language-chooser></app-language-chooser>
+	</div>
+
+	<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center end">
+		<div
+			fxLayout="row"
+			fxFlex="100%"
+			fxLayoutAlign="end center"
+			fxLayoutGap="5%"
+		>
+			<label i18n="@@footer_label_poweredBy" class="footer-no-wrap"
+				>Powered by:&nbsp;</label
+			>
+			<img class="minimal-footer-logo" src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,q_auto/whydonate-staging/platform/visuals/new_design_logo.svg" />
+		</div>
+	</div>
+</div>

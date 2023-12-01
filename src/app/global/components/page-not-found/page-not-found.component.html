@@ -1,0 +1,20 @@
+<div fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<br><img  width="310px" src="https://res.cloudinary.com/whydonate/image/upload/v1666173323/whydonate-production/platform/svg-icons/404.svg" id="pageNotFoundImg" /><br><br>
+		<h2 i18n="@@pageNotFound_sorry_label">Sorry!</h2>
+		<h2 i18n="@@pageNotFound_requestedPage_label">Requested Page Not Found</h2>
+		<h4 i18n="@@pageNotFound_ifYouWant_label">
+			If you want to search for another fundraiser
+		</h4>
+
+		<button
+			mat-flat-button
+			color="accent"
+			[routerLink]="['/search']"
+			i18n="@@pageNotFound_backToSearchPage"
+			id="pageNotFoundBackToSearch"
+		>
+			Back to search page
+		</button>
+	</div>
+</div>

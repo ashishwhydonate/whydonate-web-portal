@@ -1,0 +1,658 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  Window</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pages/account/components/registration/registration-form/registration-form.component.ts</code>
+        </p>
+
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#dataLayer" 
+>
+                                            dataLayer
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="dataLayer"></a>
+                                        <span class="name "><b>dataLayer</b>
+                                            <a href="#dataLayer">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>dataLayer:     <code>any[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>any[]</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {
+	AbstractControl,
+	AsyncValidatorFn,
+	UntypedFormBuilder,
+	UntypedFormControl,
+	UntypedFormGroup,
+	ValidationErrors,
+	Validators,
+} from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import heic2any from &#x27;heic2any&#x27;;
+import { ImageCroppedEvent } from &#x27;ngx-image-cropper&#x27;;
+import { CropperSettings } from &#x27;ngx-image-cropper/lib/interfaces/cropper.settings&#x27;;
+import { JWT } from &#x27;src/app/global/models/jwt&#x27;;
+import { User } from &#x27;src/app/global/models/user&#x27;;
+import { APIService } from &#x27;src/app/global/services/api.service&#x27;;
+import { NotificationService } from &#x27;src/app/shared/services/notification.service&#x27;;
+import { Tools } from &#x27;src/utilities/tools&#x27;;
+import { UserRegistration } from &#x27;../../../models/user-registration-model&#x27;;
+import { AccountMetaDataService } from &#x27;../../../services/account-meta-data.service&#x27;;
+import { AccountService } from &#x27;../../../services/account.service&#x27;;
+import { DomSanitizer, SafeResourceUrl } from &#x27;@angular/platform-browser&#x27;;
+import { CustomBrandingService } from &#x27;src/app/pages/user/custom-branding/services/custom-branding.service&#x27;;
+import { Observable, of } from &#x27;rxjs&#x27;;
+
+declare global {
+	interface Window {
+		dataLayer: any[];
+	}
+}
+
+@Component({
+	selector: &#x27;app-registration-form&#x27;,
+	templateUrl: &#x27;./registration-form.component.html&#x27;,
+	styleUrls: [&#x27;./registration-form.component.scss&#x27;],
+})
+
+/*
+ * *Registration Component
+ */
+export class RegistrationFormComponent implements OnInit {
+	isPersonal: boolean &#x3D; true;
+	isOrganization: boolean &#x3D; false;
+	registrationForm: any;
+	fieldPassword: any;
+	imageChangedEvent: any &#x3D; &#x27;&#x27;;
+	croppedImage: any &#x3D; &#x27;&#x27;;
+	show: boolean &#x3D; false;
+	imageBase64: any;
+	cropperSettings: CropperSettings | undefined;
+	imageFile!: File;
+	contactNamePlaceholder &#x3D; $localize&#x60;:@@account_registeration_contactName_placeholder:Contact Number (Optional)&#x60;;
+	currentLocale: string &#x3D; &#x27;&#x27;;
+	homeUrl &#x3D; &#x27;https://whydonate.com&#x27;;
+	termsAndCondition &#x3D; $localize&#x60;:@@donation_form_terms&amp;conditions:terms-and-conditions&#x60;;
+	termsHref: any;
+	profileResponse: any;
+	onlinePaymentHref &#x3D; &#x27;https://onlinepaymentplatform.com/en/terms-policies&#x27;;
+	public isLoading: boolean | undefined;
+
+	/*
+	 * Constructor
+	 * @param _accountMetaDataService
+	 * @param _accountService
+	 * @param _router
+	 * @param _apiService
+	 * @param notificationService
+	 * @param formBuilder
+	 * @param iconRegistry
+	 * @param sanitizer
+	 * @param _customBrandingService
+	 */
+	constructor(
+		private _accountMetaDataService: AccountMetaDataService,
+		private _accountService: AccountService,
+		private _router: Router,
+		private _apiService: APIService,
+		private notificationService: NotificationService,
+		public formBuilder: UntypedFormBuilder,
+		public sanitizer: DomSanitizer,
+		private _customBrandingService: CustomBrandingService
+	) {}
+
+	ngOnInit(): void {
+		// set meta data in registration screen
+		this._accountMetaDataService.updateRegisterMetaTag();
+
+		//Registration Form Group
+		this.registrationForm &#x3D; new UntypedFormGroup({
+			organisation_name: new UntypedFormControl(&#x27;&#x27;, []),
+
+			image: new UntypedFormControl(&#x27;&#x27;, []),
+			first_name: new UntypedFormControl(&#x27;&#x27;, [
+				Validators.required,
+				Validators.minLength(1),
+				Validators.maxLength(100),
+				Validators.pattern(&#x27;^[a-zA-Z ]*$&#x27;),
+			]),
+
+			last_name: new UntypedFormControl(&#x27;&#x27;, [
+				Validators.required,
+				Validators.minLength(1),
+				Validators.maxLength(100),
+				Validators.pattern(&#x27;^[a-zA-Z ]*$&#x27;),
+			]),
+			email: new UntypedFormControl(
+				&#x27;&#x27;,
+				[
+					Validators.required,
+					Validators.email,
+					Validators.pattern(
+						&#x27;^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$&#x27;
+					),
+				],
+				[this.isEmailUnique()]
+			),
+			password: new UntypedFormControl(&#x27;&#x27;, [
+				Validators.required,
+				Validators.minLength(8),
+				Validators.maxLength(100),
+				Validators.pattern(&#x27;^(?&#x3D;.*?[A-Z])(?&#x3D;.*?[a-z])(?&#x3D;.*?[0-9]).{8,}$&#x27;),
+			]),
+			password_confirm: new UntypedFormControl(
+				&#x27;&#x27;,
+				[Validators.required],
+				[this.passwordsMustMatch()]
+			),
+			contactNumber: new UntypedFormControl(&#x27;&#x27;, [
+				Validators.minLength(10),
+				Validators.maxLength(20),
+				Validators.pattern(&#x27;^[0-9]*$&#x27;),
+			]),
+		});
+
+		// Manually set the href of terms and conditions
+		this.currentLocale &#x3D; this._accountService.getLocaleId();
+		if (this.currentLocale &#x3D;&#x3D; &#x27;nl&#x27;) {
+			this.termsHref &#x3D; &#x60;${this.homeUrl}/${this.termsAndCondition}&#x60;;
+		} else {
+			this.termsHref &#x3D; &#x60;${this.homeUrl}/${this.currentLocale}/${this.termsAndCondition}&#x60;;
+		}
+	}
+
+	/*
+	 * Function to get safe resource url
+	 * @param url
+	 * @returns
+	 */
+	getSafeResourceUrl(url: string): SafeResourceUrl {
+		return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+	}
+
+	/*
+	 * Function to submit the proper values for registration
+	 */
+	registerMethod() {
+		/** *stop here if form is invalid */
+		if (this.registrationForm.invalid) {
+			this.notificationService.openNotification(
+				$localize&#x60;:@@account_register_registrationFailed:Registration Failed ! Kindly Check The Form&#x60;,
+				&#x27;&#x27;,
+				&#x27;error&#x27;
+			);
+			return;
+		}
+		/** *else continue */
+		//Identify User Type
+		let userType &#x3D; &#x27;personal&#x27;;
+		if (this.isOrganization) {
+			userType &#x3D; &#x27;organization&#x27;;
+		}
+
+		// Check if previous_path exists else send blank
+		let previous_path &#x3D; Tools.getPreviousPath() || &#x27;&#x27;;
+
+		
+
+		let user;
+		if (this.croppedImage.toString().length &gt; 0) {
+			user &#x3D; new UserRegistration(
+				this.registrationForm.value.first_name,
+				this.registrationForm.value.last_name,
+				this._accountService.getLocaleId(),
+				this.registrationForm.value.email,
+				this.registrationForm.value.password,
+				userType,
+				this.registrationForm.value.organisation_name,
+				previous_path,
+				this.registrationForm.value.contactNumber || &#x27; &#x27;,
+				this.croppedImage,
+				this.imageFile &amp;&amp; this.imageFile.name,
+				this.imageFile &amp;&amp; this.imageFile.type
+			);
+		} else {
+			user &#x3D; new UserRegistration(
+				this.registrationForm.value.first_name,
+				this.registrationForm.value.last_name,
+				this._accountService.getLocaleId(),
+				this.registrationForm.value.email,
+				this.registrationForm.value.password,
+				userType,
+				this.registrationForm.value.organisation_name,
+				previous_path,
+				this.registrationForm.value.contactNumber || &#x27; &#x27;
+			);
+		}
+
+		this.isLoading &#x3D; true;
+		this._accountService.register(user).subscribe((res: any) &#x3D;&gt; {
+			if (res[&#x27;status&#x27;] &#x3D;&#x3D; 200 || res[&#x27;status&#x27;] &#x3D;&#x3D; 201) {
+				let user_val &#x3D; new User(
+					res.data.id,
+					new JWT(res.data.jwt, &#x27;&#x27;),
+					res.is_email_verified
+				);
+
+				/** *SET USER LANGUAGE */
+				Tools.setUserlanguage(this._accountService.getLocaleId());
+
+				this._router.navigate([
+					&#x27;account/registration-complete&#x27;,
+					{ email: this.registrationForm.value.email },
+				]);
+
+				this.isLoading &#x3D; false;
+			} else {
+				this.notificationService.openNotification(
+					$localize&#x60;:@@account_register_errorOccured_notification:Error Occurred&#x60;,
+					&#x27;&#x27;,
+					&#x27;error&#x27;
+				);
+			}
+		}, this._apiService.handleError);
+	}
+
+	/*
+	 * File Change Event
+	 */
+	fileChangeEvent(event: any, newFile?: any): void {
+		this.imageChangedEvent &#x3D; event;
+		this.imageFile &#x3D; event.target.files[0];
+		//console.log(&quot;WOWW&quot;,this.imageFile);
+		if (
+			!(
+				this.imageFile?.type?.toString().toLocaleLowerCase() &#x3D;&#x3D; &#x27;image/jpg&#x27; ||
+				this.imageFile?.type?.toString().toLocaleLowerCase() &#x3D;&#x3D; &#x27;image/jpeg&#x27; ||
+				this.imageFile?.type?.toString().toLocaleLowerCase() &#x3D;&#x3D; &#x27;image/png&#x27; ||
+				this.imageFile?.type?.toString().toLocaleLowerCase() &#x3D;&#x3D; &#x27;image/webp&#x27;
+			)
+		) {
+			if (
+				this.imageFile?.name?.includes(&#x27;.heic&#x27;) ||
+				this.imageFile?.name?.includes(&#x27;.HEIC&#x27;)
+			) {
+				//TCOVERTING TO JPG
+				let f: File &#x3D; this.imageFile;
+
+				let blob: Blob &#x3D; f;
+				let file: File &#x3D; f;
+
+				heic2any({ blob, toType: &#x27;image/jpeg&#x27;, quality: 0 }).then(
+					(jpgBlob: any) &#x3D;&gt; {
+						//Change the name of the file according to the new format
+						let newName &#x3D; f.name.replace(/\.[^/.]+$/, &#x27;.jpg&#x27;);
+						//Convert blob back to file
+						file &#x3D; this.blobToFile(jpgBlob, newName);
+						this.imageFile &#x3D; file;
+						this.getBase64(this.imageFile);
+					}
+				);
+			} else {
+				this.notificationService.openNotification(
+					&#x27;Upsupported image format&#x27;,
+					&#x27;OK&#x27;,
+					&#x27;error&#x27;
+				);
+				this.imageChangedEvent &#x3D; null;
+				return;
+			}
+		}
+	}
+
+	blobToFile &#x3D; (theBlob: Blob, fileName: string): File &#x3D;&gt; {
+		let b: any &#x3D; theBlob;
+
+		//A Blob() is almost a File() - it&#x27;s just missing the two properties below which we will add
+		b.lastModified &#x3D; new Date();
+		b.name &#x3D; fileName;
+
+		//Cast to a File() type
+		return &lt;File&gt;theBlob;
+	};
+
+	getBase64(file: any) {
+		let reader &#x3D; new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload &#x3D; () &#x3D;&gt; {
+			//me.modelvalue &#x3D; reader.result;
+			this.imageBase64 &#x3D; reader.result;
+			console.log(reader.result);
+		};
+		reader.onerror &#x3D; function (error) {
+			console.log(&#x27;Error: &#x27;, error);
+		};
+	}
+
+	imageCropped(event: ImageCroppedEvent) {
+		this.croppedImage &#x3D; event.base64;
+	}
+
+	imageLoaded() {
+		/** *show cropper */
+	}
+	cropperReady() {
+		/** *cropper ready */
+	}
+	loadImageFailed() {
+		/** *show message */
+	}
+
+	/*
+	 * Convert data uri to blob-----------------------------------------------
+	 */
+	dataURItoBlob(dataURI: any) {
+		var byteString &#x3D; atob(dataURI.toString().split(&#x27;,&#x27;)[1]);
+		var ab &#x3D; new ArrayBuffer(byteString.length);
+		var ia &#x3D; new Uint8Array(ab);
+		for (var i &#x3D; 0; i &lt; byteString.length; i++) {
+			ia[i] &#x3D; byteString.charCodeAt(i);
+		}
+		var blob &#x3D; new Blob([ia], { type: &#x27;image/jpeg&#x27; });
+		return new File([blob], &#x27;blob&#x27;, { type: &#x27;image/jpeg;charset&#x3D;utf-8&#x27; });
+	}
+
+	/*
+	 * Function to check if given email is unique / already registered
+	 * @returns
+	 */
+	isEmailUnique(): AsyncValidatorFn {
+		return (control: AbstractControl) &#x3D;&gt; {
+			const validationPromise: Promise&lt;ValidationErrors | null&gt; &#x3D; new Promise(
+				(resolve, reject) &#x3D;&gt; {
+					this._accountService.isEmailInUse(control.value).subscribe(
+						(result: any) &#x3D;&gt; {
+							if (result[&#x27;data&#x27;][&#x27;email_in_use&#x27;]) {
+								resolve({ emailInUse: true });
+							} else {
+								resolve(null);
+							}
+						},
+						() &#x3D;&gt; {
+							resolve(null);
+						}
+					);
+				}
+			);
+			return validationPromise;
+		};
+	}
+
+	/*
+	 * Function to check if passwords match
+	 * @param control
+	 * @returns
+	 */
+	passwordsMustMatch(): AsyncValidatorFn {
+		return (control: AbstractControl): Observable&lt;ValidationErrors | null&gt; &#x3D;&gt; {
+			const password &#x3D; this.registrationForm.get(&#x27;password&#x27;)?.value;
+			const confirmPassword &#x3D; control.value;
+
+			if (password &#x3D;&#x3D;&#x3D; confirmPassword) {
+				return of(null); // Return null if passwords match
+			} else {
+				return of({ passwordMismatch: true }); // Return error object if passwords do not match
+			}
+		};
+	}
+
+	/*
+	 * Function to switch user type (Personal/Organisation)
+	 * @param value
+	 */
+	switchRegisterType(value: string) {
+		if (value &#x3D;&#x3D; &#x27;personal&#x27;) {
+			this.show &#x3D; false;
+			this.registrationForm.removeControl(&#x27;organisation_name&#x27;);
+			this.isPersonal &#x3D; true;
+			this.isOrganization &#x3D; false;
+		} else {
+			this.show &#x3D; true;
+
+			this.registrationForm.addControl(
+				&#x27;organisation_name&#x27;,
+				this.formBuilder.control(&#x27;&#x27;, {
+					validators: [
+						Validators.required,
+						Validators.minLength(1),
+						Validators.maxLength(100),
+						Validators.pattern(&#x27;^[a-zA-Z0-9]*$&#x27;),
+					],
+				})
+			);
+
+			this.isOrganization &#x3D; true;
+			this.isPersonal &#x3D; false;
+		}
+	}
+
+	togglePassword() {
+		this.fieldPassword &#x3D; !this.fieldPassword;
+	}
+
+	/*
+	 * Function to route to login page
+	 */
+	routeToLogin() {
+		this._router.navigate([&#x27;account/login&#x27;]);
+	}
+	/*
+	 *Email getErrorMessage
+	 */
+	getErrorMessage() {
+		return this.registrationForm?.controls[&#x27;email&#x27;].hasError(&#x27;required&#x27;)
+			? $localize&#x60;:@@account_registeration_emailIsRequired_mat_error:Email is required&#x60;
+			: this.registrationForm?.controls[&#x27;email&#x27;].hasError(&#x27;emailInUse&#x27;)
+			? $localize&#x60;:@@account_registeration_emailIsInUse_mat_error:Email is in use&#x60;
+			: &#x27;&#x27;;
+	}
+
+	/*
+	 *Password getErrorMessage
+	 */
+	getPasswordErrorMessage() {
+		return this.registrationForm?.controls[&#x27;password&#x27;].hasError(&#x27;required&#x27;)
+			? $localize&#x60;:@@account_registeration_passwordIsRequired_mat_error:Password is required&#x60;
+			: this.registrationForm?.controls[&#x27;password&#x27;].hasError(&#x27;pattern&#x27;)
+			? $localize&#x60;:@@account_registeration_minimum8Digits_mat_error:Minimum 8 digit. Must contains 1 Uppercase, 1 number &amp; 0 special characters&#x60;
+			: &#x27;&#x27;;
+	}
+
+	/*
+	 * Route to terms &amp; payment
+	 */
+	routeToTerms() {
+		window.open(this.termsHref, &#x27;_blank&#x27;);
+	}
+
+	/** *Route to Online Payment Platform */
+	routeToOnlinePayment() {
+		window.open(this.onlinePaymentHref, &#x27;_blank&#x27;);
+	}
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'Window.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

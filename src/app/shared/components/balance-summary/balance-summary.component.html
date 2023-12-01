@@ -1,0 +1,142 @@
+<!--FOR NO DONATIONS-->
+<div *ngIf="noDonations">
+	<mat-card class="mat-elevation-z0">
+		<div fxLayout="column" fxLayoutGap="16%">
+			<div fxLayout="row" fxLayoutAlign="space-between baseline">
+				<div>
+					<span i18n="@@header_userMenu_button_balance" class="mat-body-2"
+						>Balance</span
+					>
+				</div>
+				<div *ngIf="this.isShowViewButton" class="grey-texts">
+					<span
+						(click)="redirectToBalance()"
+						class="mat-body-2 cursor-pointer"
+						i18n="@@dashboard_summary_view_button"
+					>
+						View
+					</span>
+				</div>
+			</div>
+			<div
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutGap="3%"
+				ngClass="p-b-xl"
+			>
+				<div ngClass="p-b-xl">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/noBalanceWallet.svg"
+					/>
+				</div>
+				<div ngClass="p-b-xl">
+					<h2
+						class=""
+						style="text-align: start"
+						i18n="@@dashboard_balance_summary_start_collecting"
+					>
+						Start Collecting<br />Donations
+					</h2>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+</div>
+
+<!--IF DONATIONS ARE AVAILABLE-->
+
+<div *ngIf="!noDonations">
+	<mat-card class="mat-elevation-z0"
+		><div
+			fxLayout="row"
+			fxLayoutAlign="space-between baseline"
+			fxLayoutGap="5%"
+			ngClass="p-b-m"
+		>
+			<div>
+				<span class="mat-body-2" i18n="@@header_userMenu_button_balance"
+					>Balance</span
+				>&nbsp;
+				<img
+					height="13px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1683319026/whydonate-production/platform/svg-icons/infoWarnBlack.svg"
+					matTooltip="{{ this.currencyTooltip }}"
+				/>
+			</div>
+			<div *ngIf="this.isShowViewButton" class="mat-tab-label-active">
+				<span
+					(click)="redirectToBalance()"
+					class="mat-body-2 cursor-pointer"
+					i18n="@@dashboard_summary_view_button"
+				>
+					View
+				</span>
+			</div>
+		</div>
+
+		<app-currency-selector></app-currency-selector>
+
+		<!--AVAILABLE FOR PAYOUT-->
+		<div fxLayout="row" fxLayoutAlign="space-between baseline" fxLayoutGap="5%">
+			<div fxLayout="column">
+				<h5 i18n="@@dashboard_balance_summary_ready_payout">
+					Available to pay out to your bank
+				</h5>
+			</div>
+			<div fxLayout="column" class="mat-body-2">
+				<h5>
+					{{ this.currency.symbol
+					}}{{ this.stripeBalanceAvailable | number : '1.2-2' }}
+				</h5>
+			</div>
+		</div>
+
+		<!--PENDING-->
+		<div fxLayout="row" fxLayoutAlign="space-between baseline" fxLayoutGap="5%">
+			<div fxLayout="column">
+				<h5 i18n="@@dashboard_balance_summary_pending">
+					Available to pay out soon
+				</h5>
+			</div>
+			<div fxLayout="column" class="mat-body-2">
+				<h5>
+					{{ this.currency.symbol
+					}}{{ this.stripeBalancePending | number : '1.2-2' }}
+				</h5>
+			</div>
+		</div>
+
+		<!--IN TRANSIT-->
+		<div fxLayout="row" fxLayoutAlign="space-between baseline" fxLayoutGap="5%">
+			<div fxLayout="column">
+				<h5 i18n="@@dashboard_balance_summary_inTransit">
+					In transit to your bank account
+				</h5>
+			</div>
+			<div fxLayout="column" class="mat-body-2">
+				<h5>
+					{{ this.currency.symbol
+					}}{{ this.stripeBalanceInTransit | number : '1.2-2' }}
+				</h5>
+			</div>
+		</div>
+
+		<!--TOTAL-->
+		<div
+			fxLayout="row"
+			fxLayoutAlign="space-between baseline"
+			fxLayoutGap="5%"
+			ngClass="p-b-s"
+		>
+			<div fxLayout="column">
+				<span class="mat-body-2" i18n="@@dashboard_balance_summary_payout_bal"
+					>Total
+				</span>
+			</div>
+			<div fxLayout="column" class="mat-body-2">
+				{{ this.currency.symbol
+				}}{{ this.stripeBalanceTotal | number : '1.2-2' }}
+			</div>
+		</div>
+	</mat-card>
+</div>

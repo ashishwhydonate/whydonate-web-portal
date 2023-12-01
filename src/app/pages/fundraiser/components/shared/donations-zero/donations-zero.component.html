@@ -1,0 +1,49 @@
+<div fxLayout="row" fxLayoutAlign="start start">
+	<!--  Toggle switch visible only to the Admin  -->
+	<div *ngIf="isLoggedInUserAdmin && !hideToggleSwitch">
+		<mat-slide-toggle
+			[(ngModel)]="showDonorList"
+			(change)="onToggleChange($event)"
+			id="hide_donor_list_toggle"
+			color="primary"
+		>
+			<span i18n="@@donor_list_show_donation_received"
+				>Show Donation Recieved</span
+			>
+		</mat-slide-toggle>
+		<img
+			style="position: relative; left: 10px; top: 3px"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1671475989/whydonate-production/platform/svg-icons/infoDark.svg"
+			matTooltip="{{ this.tooltip }}"
+		/>
+	</div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start center" ngClass="m-t-m">
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="5%">
+			<div fxLayout="column">
+				<span class="whydonate-light xxl-icon">
+					<img
+						style="position: relative; left: 5px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666210002/whydonate-production/platform/svg-icons/donation-support.svg"
+					/>
+				</span>
+			</div>
+			<div fxLayout="column" fxLayoutGap="3%">
+				<div
+					[ngStyle]="{
+						'font-size': _media.isActive('lg') === true ? '20px' : '20px'
+					}"
+					i18n="@@donations_zero_donation_heading"
+				>
+					Donation
+				</div>
+				<div i18n="@@donations_zero_supportYourCause_label">
+					Support your cause by being the first donor.
+				</div>
+			</div>
+			<div fxLayout="column"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use '../_variables/_typography.scss' as type;
+
+/** DESCRIPTION: Used by home module.
+	GUIDE: apply class "home-typography" and all the headers within the class will reflect custom typography
+**/
+.home-typography {
+	h1 {
+		@include mat.typography-level(type.$custom-typography-config, 'custom-h1');
+	}
+	h2 {
+		@include mat.typography-level(type.$custom-typography-config, 'custom-h2');
+	}
+	h3 {
+		@include mat.typography-level(type.$custom-typography-config, 'custom-h3');
+	}
+	h4 {
+		@include mat.typography-level(type.$custom-typography-config, 'custom-h4');
+	}
+}

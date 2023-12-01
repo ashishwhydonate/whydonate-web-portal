@@ -1,0 +1,61 @@
+<app-page-loader *ngIf="!this.currentFundraiser"></app-page-loader>
+<div fxLayout="column">
+	<div
+		*ngIf="this.currentFundraiser"
+		fxLayout="row"
+		fxFlex="100%"
+		fxLayoutAlign="start baseline"
+		ngClass="p-t-xs"
+		ngClass.lg="p-l-xxl p-t-s"
+	>
+		<button mat-button color="accent" (click)="redirectToFundraiser()">
+			<img
+				height="16px"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667417025/whydonate-production/platform/svg-icons/arrowBackAccent.svg"
+			/>&nbsp;
+			<span i18n="@@balance_fundraiserName_header_label">Fundraiser</span>
+		</button>
+	</div>
+	<div
+		*ngIf="this.currentFundraiser"
+		fxLayout="row"
+		fxFlex="100%"
+		fxLayoutAlign="center center"
+		ngClass="p-l"
+		ngClass.md="p-m"
+		ngClass.sm="p-m"
+		ngClass.xs="p-0"
+		class="branding"
+	>
+		<div
+			fxLayout="row"
+			fxFlex="100%"
+			fxFlex.lg="75%"
+			fxLayoutAlign="center start"
+			fxLayoutGap="4%"
+			fxLayoutGap.sm="20%"
+			fxLayoutGap.xs="20%"
+			fxLayout.sm="column"
+			fxLayout.xs="column"
+			class="mat-typography"
+		>
+			<div fxLayout="column">
+				<app-donation-form
+					[isDraftOrClosed]="isDraftOrClosed"
+					[defaultCurrency]="this.currency"
+					[slug]="this.slug"
+				></app-donation-form>
+			</div>
+			<div class="fundraiser-card" fxLayout="column" *ngIf="!this.isLoading">
+				<app-fundraiser-card
+					id="fundraiser-card"
+					name="fundraiser-card"
+					[isClickAllowed]="false"
+					[slug]="this.slug"
+					[fundraiserCardData]="this.fundraiserCardData[0]?.fundraiserCardData"
+				>
+				</app-fundraiser-card>
+			</div>
+		</div>
+	</div>
+</div>

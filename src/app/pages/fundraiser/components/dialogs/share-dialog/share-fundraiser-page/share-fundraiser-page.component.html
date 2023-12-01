@@ -1,0 +1,289 @@
+<!-- [style.marginTop.px]="this.media.isActive('xs') ? '20' : '0'" -->
+<div
+	ngClass="p-m"
+	fxLayout.lt-md="column"
+	ngClass.sm="p-m"
+	ngClass.xs="p-0"
+	fxLayout="row"
+	fxLayout.xs="column"
+	fxFlex="100%"
+	fxFlex.md="100%"
+	fxLayoutAlign="start start"
+>
+	<!--FIRST COLUMN-->
+	<div
+		fxLayout="column"
+		fxFlex.lg="100%"
+		fxLayoutAlign="start center"
+		class="social-share"
+	>
+		<div
+			fxLayout="row"
+			fxFlex="100%"
+			fxLayoutAlign="start start"
+			fxFill
+			ngClass.lt-sm="m-t-s"
+		>
+			<app-social-share-buttons
+				[sharedLink]="this.shareLink"
+				[disableSocialShare]="disablePayment"
+			></app-social-share-buttons>
+		</div>
+
+		<br />
+
+		<p
+			[style.marginRight.px]="this.media.isActive('lg') ? '20' : '0'"
+			style="width: 97% !important"
+		>
+			<mat-divider></mat-divider>
+		</p>
+		<br />
+		<div
+			fxLayout="row"
+			fxFlex="100%"
+			fxLayoutAlign="start baseline"
+			fxLayoutAlign.lt-sm="start space-around"
+			fxLayoutGap.lt-sm="8%"
+			fxLayoutGap="0px"
+			fxFill
+		>
+			<div
+				fxLayoutAlign="space-between center"
+				[ngClass]="{ 'p-l-s p-t-xs p-b-xs': applyPadding }"
+				class="donateGreyBackground"
+				fxFlex.gt-md="70%"
+				fxFlex.lt-md="100%"
+			>
+				<div fxLayout="column" fxFlex="90%" fxLayoutAlign="start start">
+					<div class="mat-body-1">
+						{{ this.shareLink }}
+					</div>
+				</div>
+
+				<!--Share Fundraiser-->
+				<div
+					fxLayout="column"
+					fxLayout.lt-sm="row wrap"
+					fxFlex="10%"
+					fxLayoutAlign="start start"
+					fXFlexAlign="start"
+					[style.marginTop.px]="this.media.isActive('gt-sm') ? '-8' : '0'"
+					*ngIf="!disablePayment"
+				>
+					<button
+						class="copyLink"
+						mat-icon-button
+						matTooltip="{{ matTooltip }}"
+						(click)="copyLink()"
+						class="hover-class"
+					>
+						<mat-icon size="3x">content_copy</mat-icon>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END FIRST COLUMN-->
+
+	<!--SECOND COLUMN-->
+	<!-- [style.marginTop.px]="this.media.isActive('xs') ? '30' : '0'" -->
+	<mat-card
+		ngClass.lt-sm="m-t-xl"
+		ngClass.sm="m-t-xl"
+		*ngIf="!preview"
+		class="mat-elevation-z0 section-background-grey"
+		fxFlex="44%"
+		fxLayoutAlign="start start"
+	>
+		<div fxFlex="100%">
+			<div fxLayoutAlign="flex-start center" class="mat-body-1">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+				/>
+				<span
+					fxFlex.gt-md="40%"
+					fxLayoutAlign.gt-md="start center"
+					fxFlexOffset="8px"
+					*ngIf="type === 'fundraiser'"
+					i18n="@@shareFundraiserPage_fundraiserPagePreview_label"
+				>
+					Fundraiser Page Preview
+				</span>
+				<span
+					fxFlexOffset="8px"
+					*ngIf="type === 'donate'"
+					i18n="@@shareFundraiserPage_donationPagePreview_label"
+				>
+					Donate Page Preview
+				</span>
+			</div>
+			<div fxLayout="column" fxLayoutAlign="start end">
+				<br />
+				<ng-container
+					*ngIf="type === 'donate'"
+					[ngTemplateOutlet]="donationFormPreview"
+				></ng-container>
+				<ng-container
+					*ngIf="type === 'fundraiser'"
+					[ngTemplateOutlet]="fundraiserPreview"
+				>
+				</ng-container>
+			</div>
+			<br />
+		</div>
+	</mat-card>
+</div>
+
+<ng-template #fundraiserPreview>
+	<div ngClass.lg="m-r-l" fxFlex.lt-sm="100%">
+		<img
+			ngClass.lg="m-r-l"
+			fxLayoutAlign.gt-md="end center"
+			fxFlex.gt-md="110"
+			class="w-100"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1689709335/whydonate-production/platform/svg-icons/fundraiserpage.png"
+		/>
+	</div>
+</ng-template>
+
+<ng-template #donationFormPreview>
+	<mat-card
+		fxLayout="row"
+		fxLayout.lt-sm="row wrap"
+		class="donation-form-preview"
+	>
+		<div fxFlex.lt-sm="100%" fxFlex="60">
+			<mat-tab-group mat-stretch-tabs>
+				<mat-tab label="{{ oneTimeLabel }}">
+					<div fxLayout="row wrap" fxLayoutAlign="center">
+						<div class="p-t-s">
+							<button mat-button class="mat-flat-button" color="primary">
+								{{ this.currency_symbol }}
+								{{ this.onetime_first | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }}
+								{{ this.onetime_second | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }}
+								{{ this.onetime_third | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }} {{ this.onetime_forth | number }}
+							</button>
+						</div>
+					</div>
+					<br />
+				</mat-tab>
+				<mat-tab label="{{ monthlyLabel }}">
+					<div fxLayout="row wrap" fxLayoutAlign="center">
+						<div class="p-t-s">
+							<button mat-button class="mat-flat-button" color="primary">
+								{{ this.currency_symbol }}
+								{{ this.monthly_first | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }}
+								{{ this.monthly_second | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }}
+								{{ this.monthly_third | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }} {{ this.monthly_forth | number }}
+							</button>
+						</div>
+					</div>
+					<br />
+				</mat-tab>
+				<mat-tab label="{{ yearlyLabel }}">
+					<div fxLayout="row wrap" fxLayoutAlign="center">
+						<div class="p-t-s">
+							<button mat-button class="mat-flat-button" color="primary">
+								{{ this.currency_symbol }}
+								{{ this.yearly_first | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }}
+								{{ this.yearly_second | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }}
+								{{ this.yearly_third | number }}</button
+							>&nbsp;&nbsp;&nbsp;
+						</div>
+						<div class="p-t-s">
+							<button mat-stroked-button>
+								{{ this.currency_symbol }} {{ this.yearly_forth | number }}
+							</button>
+						</div>
+					</div>
+					<br />
+				</mat-tab>
+			</mat-tab-group>
+			<br />
+			<div
+				fxLayout="column"
+				fxLayout.lt-sm="row"
+				fxLayoutAlign="center center"
+				ngClass.lt-sm="m-b-l"
+			>
+				<br />
+				<button mat-flat-button color="accent" i18n="@@button_donate">
+					Donate
+				</button>
+			</div>
+		</div>
+		<mat-divider vertical="true"></mat-divider>
+		<div fxLayout="column" fxFlex.lt-sm="100%" fxFlex="40">
+			<!-- Display image if available -->
+			<img
+				*ngIf="
+					fundraiserBackgroundImage != '' && fundraiserBackgroundVideo == ''
+				"
+				[src]="fundraiserBackgroundImage"
+				loading="lazy"
+			/>
+			<!-- Display video if available or both image and video are available -->
+			<img
+				i18n="@@fundraiserCard_createBackgroundImage"
+				*ngIf="
+					fundraiserBackgroundVideo ||
+					(fundraiserBackgroundImage != '' && fundraiserBackgroundVideo)
+				"
+				src="{{ this.youtubeThumbnail }}"
+				loading="lazy"
+			/>
+			<!-- Display a default image if none of the above conditions are met -->
+			<img
+				*ngIf="!fundraiserBackgroundImage && !fundraiserBackgroundVideo"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1689704507/whydonate-production/platform/svg-icons/fundraiser_default_bg.png"
+				loading="lazy"
+			/>
+			<br />
+
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/custom-donation.svg"
+			/>
+		</div>
+	</mat-card>
+</ng-template>

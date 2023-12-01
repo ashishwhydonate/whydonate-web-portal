@@ -1,0 +1,146 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" [mat-dialog-close]="false">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<div>
+	<div fxLayout="column" fxLayoutAlign="center center" ngClass="m-t-xs p-l-xl">
+		<div class="m-b-xs" fxLayout="row" ngClass="p-l-l">
+			<mat-label class="mat-title" i18n="@@upload_fundraiser_cover_page">
+				Upload Fundraiser Cover Page
+			</mat-label>
+		</div>
+		<div
+			class="center"
+			i18n="@@upload_fundraiser_max_size"
+			fxLayout="row"
+			ngClass="p-l-l"
+		>
+			Image should be Max 5MB for High-resolution image in png or jpg format.
+			Video from Vimeo and YouTube are supported.
+		</div>
+	</div>
+
+	<div
+		fxLayout="row"
+		fxLayoutAlign="space-between center"
+		class="m-t-xs"
+		ngClass="m-m"
+	>
+		<div
+			fxFlex="calc(50% - 10px)"
+			class="pale-grey-bg p-xl"
+			fxLayoutAlign="center center"
+			*ngIf="!this.isMobileView"
+		>
+			<div fxLayout="column" fxLayoutAlign="start center">
+				<input fxHide type="file" id="change_upload_image_input" />
+
+				<img
+					height="50"
+					width="50"
+					class="m-b-m"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+				/>
+				<button
+					id="change_image_create_fundraiser"
+					(click)="this.openImageCropperDialog()"
+					mat-stroked-button
+					color="accent"
+					i18n="@@button_edit_changeImage"
+				>
+					Change Image
+				</button>
+			</div>
+		</div>
+
+		<div
+			fxFlex="calc(50% - 10px)"
+			fxLayoutAlign="center center"
+			*ngIf="this.isMobileView"
+		>
+			<div
+				class="whydonate-light"
+				fxFlex="100%"
+				fxLayout="column"
+				fxLayoutAlign="start center"
+			>
+				<input fxHide type="file" id="change_upload_image_input" />
+
+				<button
+					mat-fab
+					class="mat-elevation-z0"
+					color="primary"
+					[ngStyle]="{ width: '66px', height: '66px' }"
+					id="change_image_create_fundraiser_mobile"
+					(click)="this.openImageCropperDialog()"
+				>
+					<img
+						height="33"
+						width="33"
+						class="m-b-m"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/addPhoto.svg"
+					/>
+				</button>
+			</div>
+		</div>
+		&nbsp;
+		<span fxFlex="20px" i18n="@@span_or">Or</span>
+
+		<div
+			fxFlex="calc(50% - 10px)"
+			class="pale-grey-bg p-xl"
+			fxLayoutAlign="center center"
+			*ngIf="!this.isMobileView"
+		>
+			<div fxLayout="column" fxLayoutAlign="start center">
+				<img
+					height="50"
+					width="50"
+					class="m-b-m"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+				/>
+				<button
+					id="change_video_create_fundraiser"
+					(click)="this.openVideoDialog()"
+					mat-stroked-button
+					color="accent"
+					i18n="@@button_change_video"
+				>
+					Change Video
+				</button>
+			</div>
+		</div>
+
+		<div
+			fxFlex="calc(50% - 10px)"
+			fxLayoutAlign="center center"
+			*ngIf="this.isMobileView"
+		>
+			<div
+				class="whydonate-light"
+				fxFlex="100%"
+				fxLayout="column"
+				fxLayoutAlign="start center"
+			>
+				<button
+					mat-fab
+					id="change_video_create_fundraise_mobile"
+					class="mat-elevation-z0"
+					color="primary"
+					[ngStyle]="{ width: '66px', height: '66px' }"
+					(click)="this.openVideoDialog()"
+				>
+					<img
+						height="33"
+						width="33"
+						class="m-b-m"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+					/>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

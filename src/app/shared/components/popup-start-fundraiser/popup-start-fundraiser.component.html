@@ -1,0 +1,197 @@
+<mat-dialog-content
+	class="min-h-100v-mobile mat-dialog-content-start-fundraiser-popup"
+>
+	<button class="close-button cursor-pointer" (click)="close()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+	<div
+		ngClass="p-xl"
+		ngClass.sm="p-m"
+		ngClass.xs="p-s"
+		fxLayout="row"
+		fxLayoutAlign="center"
+	>
+		<div fxFill fxLayout="column" fxLayoutAlign="center center">
+			<!--TITLE ROW-->
+			<div
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutAlign="start start"
+			>
+				<div
+					fxFill
+					fxLayout="column"
+					fxLayoutAlign="center center"
+					fxLayoutAlign.xs="start start"
+				>
+					<h2 i18n="@@shared_popupStartFundraiser_startFundraiser_heading">
+						Start A Fundraiser
+					</h2>
+					<h3 i18n="@@shared_popupStartFundraiser_startNewCause_heading">
+						Start a new cause or teamup to support the existing cause
+					</h3>
+				</div>
+			</div>
+			<!--END TITLE ROW-->
+			<div fxLayout="column" fxLayoutGap="5%">
+				<!--FIRST ROW-->
+				<div
+					fxFlex="100%"
+					fxLayout="row"
+					fxLayout.xs="column"
+					fxLayoutAlign="space-around center"
+					fxLayoutGap="10%"
+					fxLayoutGap.md="5%"
+					fxLayoutGap.xs="2%"
+					fxLayoutGap.sm="5%"
+				>
+					<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+						<mat-card>
+							<div
+								fxLayout="row"
+								fxLayoutAlign="center center"
+								fxLayoutGap="3%"
+								fxLayoutGap.xs="10%"
+							>
+								<div
+									fxFlex="10%"
+									fxLayout="column"
+									fxLayoutAlign="center center"
+									fxLayoutGap="2%"
+								>
+									<img
+										src="https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/create.svg"
+									/>
+								</div>
+								<div
+									fxFlex="100%"
+									fxLayout="column"
+									fxLayoutAlign="center start"
+								>
+									<h2 i18n="@@shared_popupStartFundraiser_StandaloneFundraiser">
+										Standalone Fundraiser
+									</h2>
+								</div>
+							</div>
+							<br />
+							<h4
+								i18n="@@shared_popupStartFundraiser_howItWorks"
+								class="primary-text"
+							>
+								How it works:
+							</h4>
+							<p class = "mat-body-1" i18n="@@shared_popupStartFundraiser_standaloneFundraiserInfo">
+								If you are creating a standalone fundraiser, we will ask you for
+								the bank details to which the donations may be transferred
+								<br />
+							</p>
+							<p class = "mat-body-1" i18n="@@shared_popupStartFundraiser_note">
+								Note: donations are transferred monthly around the 15th of the
+								following month.
+							</p>
+							<div fxLayout="row" fxFill fxLayoutAlign="end center">
+								<button
+									i18n="@@shared_popupStartFundraiser_newFundraiser_button"
+									mat-flat-button
+									color="accent"
+									(click)="routeToCreateFundraiser()"
+									class="newFundraiser"
+								>
+									New Fundraiser
+								</button>
+							</div>
+						</mat-card>
+					</div>
+
+					<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+						<mat-card>
+							<div
+								fxLayout="row"
+								fxLayoutAlign="center center"
+								fxLayoutGap="3%"
+								fxLayoutGap.xs="10%"
+							>
+								<div
+									fxFlex="10%"
+									fxLayout="column"
+									fxLayoutAlign="center center"
+								>
+									<img
+										src="https://res.cloudinary.com/whydonate/image/upload/v1666173344/whydonate-production/platform/svg-icons/connect.svg"
+									/>
+								</div>
+								<div
+									fxFlex="90%"
+									fxLayout="column"
+									fxLayoutAlign="center start"
+								>
+									<h2 i18n="@@shared_popupStartFundraiser_teamOrConnectedInfo">
+										Team or connected event fundraiser
+									</h2>
+								</div>
+							</div>
+							<br />
+							<h4
+								i18n="@@shared_popupStartFundraiser_howItWorks"
+								class="primary-text"
+							>
+								How it works:
+							</h4>
+							<p class = "mat-body-1" i18n="@@shared_popupStartFundraiser_createFundraiserInfo">
+								If you create a connected fundraiser, it will be linked to an
+								already existing fundraiser. The donations are paid to this
+								parent fundraiser.
+							</p>
+							<p class = "mat-body-1" i18n="@@shared_popupStartFundraiser_searchExistingInfo">
+								Search for an existing fundraiser and click the 'Connect
+								fundraiser' button on that page.
+							</p>
+							<div fxLayout="row" fxFill fxLayoutAlign="end center">
+								<button
+									i18n="@@connect_fundraisers_button"
+									mat-flat-button
+									color="accent"
+									(click)="connectFundraiser()"
+								>
+									Connect Fundraiser
+								</button>
+							</div>
+						</mat-card>
+					</div>
+				</div>
+				<!--END FIRST ROW-->
+
+				<!--SECOND ROW-->
+
+				<mat-card>
+					<div fxFill fxLayout="row" fxLayoutAlign="center center">
+						<!-- <div fxFill fxLayout="column" fxLayoutAlign="start center"> -->
+						<!-- <div fxLayout="row" fxLayoutAlign="center center"> -->
+
+						<div fxFlex="50%" fxLayout="column" fxLayoutAlign="start start">
+							<h2 i18n="@@shared_popupStartFundraiser_needHelp">
+								Need help? Contact us!
+							</h2>
+							<p class = "mat-body-1" i18n="@@shared_popupStartFundraiser_helpYouDecide">
+								We will help you decide what option is best for you.
+							</p>
+						</div>
+						<div fxFlex="50%" fxLayout="column" fxLayoutAlign="end end">
+							<button
+								i18n="@@shared_popupStartFundraiser_contactUs_button"
+								mat-flat-button
+								color="accent"
+								(click)="contactUs()"
+							>
+								Contact us
+							</button>
+						</div>
+					</div>
+				</mat-card>
+				<!--END SECOND ROW-->
+			</div>
+		</div>
+	</div>
+</mat-dialog-content>

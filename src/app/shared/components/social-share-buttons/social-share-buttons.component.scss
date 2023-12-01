@@ -1,0 +1,50 @@
+// Variables for social share button
+$facebookColor: #4267b2;
+$twitterColor: #00acee;
+$linkedinColor: #006fa6;
+$whatsappColor: #25d366;
+$emailColor: #ff961c;
+$copyColor: #607d8b;
+$embededColor: #4267b2;
+
+.social-share {
+	.facebook {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+	.twitter {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+	.email {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+	.linkedin {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+	.whatsapp {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+}
+
+// Variables for social share button
+
+.social-share {
+	.embeded {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+}
+
+.qr-embeded {
+	transform: scale(1.2);
+}

@@ -1,0 +1,43 @@
+<form [formGroup]="quillForm">
+	<quill-editor
+		#editor
+		(dragover)="(false)"
+		[modules]="quillModuleConfig"
+		(onContentChanged)="logChange($event)"
+		(onSelectionChanged)="logSelection($event)"
+		(onEditorCreated)="created($event)"
+		formControlName="editorCtrl"
+		[readOnly]="readOnly"
+		[minLength]="minLength"
+		[maxLength]="maxLength"
+		placeholder="{{ quillPlaceholder }}"
+		id="quillEditor"
+	>
+	</quill-editor>
+	<div fxLayoutAlign="end end">
+		<!-- <mat-error class="m-l-s" *ngIf="quillForm.controls?.editorCtrl?.invalid"
+			>
+			<img style="position:relative; top:3px" width="16px" height="16px" src="https://res.cloudinary.com/whydonate/image/upload/v1667511794/whydonate-production/platform/svg-icons/infoWarn.svg"/>
+			Maximum characters limit exceeded by {{ characterLength - maxLength }} characters</mat-error
+		> -->
+		<mat-error class="m-l-s" *ngIf="quillForm.controls?.editorCtrl?.invalid">
+			<img
+				style="position: relative; top: 3px"
+				width="16px"
+				height="16px"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667511794/whydonate-production/platform/svg-icons/infoWarn.svg"
+			/>&nbsp;
+			<span i18n="@@character_limit_exceeded"
+				>Please check the character limits and remove emoji.</span
+			></mat-error
+		>
+		<div fxFlex fxLayoutAlign="end end">
+			<mat-hint class="mat-caption m-r-xs"
+				><span class="mat-body-2">{{ characterLength }}</span> / {{ maxLength }}
+				<span i18n="@@characters_translation">character</span>
+			</mat-hint>
+		</div>
+	</div>
+</form>
+<!-- DEBUG: uncomment below line to see data crated by quill -->
+<!-- <pre>{{ quillForm.get('editorCtrl')?.value }}</pre> -->

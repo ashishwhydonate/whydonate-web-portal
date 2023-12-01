@@ -1,0 +1,8 @@
+@use 'sass:map';
+@import '../_variables/color';
+
+.mat-toolbar {
+	background-color: map.get($COLOR_CONFIG, 'white') !important;
+	position: relative;
+	z-index: 2;
+}

@@ -1,0 +1,32 @@
+<div fxLayout="column" fxFlex="100" fxLayoutAlign="center center">
+	<div fxLayout="column" fxFlex="50" fxLayoutAlign="start center">
+		<br /><img
+			width="310px"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1680514413/whydonate-production/platform/svg-icons/404NotFound.svg"
+			id="pageFundraiserNotFoundImg"
+		/><br /><br /><br /><br />
+		<div
+			class="primary-text"
+			i18n="@@pageFundraiserNotFound_requestedPageSorry_label"
+		>
+			<h1>Sorry!</h1>
+		</div>
+		<h1 i18n="@@pageFundraiserNotFound_requestedPage_label">
+			Requested fundraiser does not exist
+		</h1>
+		<h5 i18n="@@pageFundraiserNotFound_ifYouWant_label">
+			Double-check the URL for typos. Only one mistyped character can result in
+			a 404 error.
+		</h5>
+
+		<button
+			mat-flat-button
+			color="accent"
+			[routerLink]="['/']"
+			i18n="@@pageFundraiserNotFound_backToSearchPage"
+			id="pageFundraiserNotFoundBackToSearch"
+		>
+			Back to homepage
+		</button>
+	</div>
+</div>

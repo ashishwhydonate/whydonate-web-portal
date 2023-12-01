@@ -1,0 +1,215 @@
+<div *ngIf="fundraiserError; else displayFundraiserSummaryCard">
+	<mat-card class="mat-elevation-z0">
+		<div fxLayout="column" fxLayoutGap="6%">
+			<div fxLayout="row" fxLayoutAlign="space-between baseline">
+				<div>
+					<span i18n="@@balance_fundraiserName_header_label" class="mat-body-2"
+						>Fundraiser</span
+					>
+				</div>
+				<div class="grey-texts">
+					<span
+						(click)="redirectToFundraiser()"
+						class="mat-body-2 cursor-pointer"
+						i18n="@@dashboard_summary_view_button"
+					>
+						View
+					</span>
+				</div>
+			</div>
+			<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3%">
+				<div>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1688670346/whydonate-production/platform/svg-icons/startFirstFund.svg"
+					/>
+				</div>
+				<div>
+					<h2
+						style="text-align: start"
+						i18n="@@dashboard_fundraiser_summary_start_fundraiser"
+					>
+						Start Your First <br />Fundraiser
+					</h2>
+				</div>
+			</div>
+			<div fxLayout="row" fxLayoutAlign="center center">
+				<app-start-fundraiser-button buttonType="flat" themeColor="accent">
+				</app-start-fundraiser-button>
+			</div>
+			<br />
+		</div>
+	</mat-card>
+</div>
+<ng-template #displayFundraiserSummaryCard>
+	<mat-card class="mat-elevation-z0">
+		<div fxLayout="column" fxLayoutGap="3%">
+			<div
+				fxLayout="row"
+				fxLayoutAlign="space-between baseline"
+				ngClass="p-b-s"
+			>
+				<div>
+					<span i18n="@@balance_fundraiserName_header_label" class="mat-body-2"
+						>Fundraiser</span
+					>
+				</div>
+				<div class="mat-tab-label-active">
+					<span
+						(click)="redirectToFundraiser()"
+						class="mat-body-2 cursor-pointer"
+						i18n="@@dashboard_summary_view_button"
+					>
+						View
+					</span>
+				</div>
+			</div>
+			<div fxLayout="row">
+				<div fxLayout="row" fxFlex="100%" fxLayoutGap="5%">
+					<div fxFlex="49%">
+						<mat-card
+							class="mat-elevation-z0 draft-bg cursor-pointer"
+							(click)="redirectToTarget('draft')"
+						>
+							<div fxLayout="column" fxLayoutGap="3%">
+								<div
+									fxLayout="row"
+									fxLayoutAlign="space-between center"
+									fxLayoutGap="12%"
+								>
+									<img
+										src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/drafts.svg"
+									/>
+									<span class="mat-body-2" i18n="@@myFundraisers_drafts_mat_tab"
+										>Drafts</span
+									>
+								</div>
+								<div fxLayout="row" fxLayoutAlign="space-between baseline">
+									<div>
+										<mat-label class="mat-title">
+											{{ draftFundraiser }}</mat-label
+										>
+									</div>
+									<div>
+										<img
+											src="https://res.cloudinary.com/whydonate/image/upload/v1688672534/whydonate-production/platform/svg-icons/goTo.svg"
+										/>
+									</div>
+								</div>
+							</div>
+						</mat-card>
+					</div>
+
+					<div fxFlex="49%">
+						<mat-card
+							class="mat-elevation-z0 publish-bg cursor-pointer"
+							(click)="redirectToTarget('published')"
+						>
+							<div fxLayout="column" fxLayoutGap="3%">
+								<div
+									fxLayout="row"
+									fxLayoutAlign="space-between center"
+									fxLayoutGap="12%"
+								>
+									<img
+										src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/published.svg"
+									/>
+									<span
+										class="mat-body-2"
+										i18n="@@myFundraisers_published_mat_tab"
+										>Published</span
+									>
+								</div>
+								<div fxLayout="row" fxLayoutAlign="space-between baseline">
+									<div>
+										<mat-label class="mat-title">
+											{{ publishedFundraiser }}</mat-label
+										>
+									</div>
+									<div>
+										<img
+											src="https://res.cloudinary.com/whydonate/image/upload/v1688672534/whydonate-production/platform/svg-icons/goTo.svg"
+										/>
+									</div>
+								</div>
+							</div>
+						</mat-card>
+					</div>
+				</div>
+			</div>
+			<div fxLayout="row" fxLayoutGap="5%" ngClass="p-t-xs">
+				<div fxFlex="100%" fxLayoutGap="5%">
+					<div fxFlex="49%">
+						<mat-card
+							class="mat-elevation-z0 main-bg cursor-pointer"
+							(click)="redirectToTarget('main')"
+						>
+							<div fxLayout="column" fxLayoutGap="3%">
+								<div
+									fxLayout="row"
+									fxLayoutAlign="space-between center"
+									fxLayoutGap="12%"
+								>
+									<img
+										src="https://res.cloudinary.com/whydonate/image/upload/v1689879625/whydonate-production/platform/svg-icons/main.svg"
+									/>
+									<span
+										class="mat-body-2"
+										i18n="@@dashboard_fundraiser_summary_main"
+										>Main</span
+									>
+								</div>
+								<div fxLayout="row" fxLayoutAlign="space-between baseline">
+									<div>
+										<mat-label class="mat-title">
+											{{ ownedFundraiser }}</mat-label
+										>
+									</div>
+									<div>
+										<img
+											src="https://res.cloudinary.com/whydonate/image/upload/v1688672534/whydonate-production/platform/svg-icons/goTo.svg"
+										/>
+									</div>
+								</div>
+							</div>
+						</mat-card>
+					</div>
+					<div fxFlex="49%">
+						<mat-card
+							class="mat-elevation-z0 connected-bg cursor-pointer"
+							(click)="redirectToTarget('connected')"
+						>
+							<div fxLayout="column" fxLayoutGap="3%">
+								<div
+									fxLayout="row"
+									fxLayoutAlign="space-between center"
+									fxLayoutGap="12%"
+								>
+									<img
+										src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/connected.svg"
+									/>
+									<span
+										class="mat-body-2"
+										i18n="@@dashboard_fundraiser_summary_connected"
+										>Connected</span
+									>
+								</div>
+								<div fxLayout="row" fxLayoutAlign="space-between baseline">
+									<div>
+										<mat-label class="mat-title">
+											{{ connectedFundraiser }}</mat-label
+										>
+									</div>
+									<div>
+										<img
+											src="https://res.cloudinary.com/whydonate/image/upload/v1688672534/whydonate-production/platform/svg-icons/goTo.svg"
+										/>
+									</div>
+								</div>
+							</div>
+						</mat-card>
+					</div>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+</ng-template>

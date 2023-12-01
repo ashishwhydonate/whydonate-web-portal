@@ -1,0 +1,58 @@
+<div
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-m"
+	class="branding"
+>
+	<div
+		fxLayout="column"
+		fxFlex.xs="80%"
+		fxFlex.sm="60%"
+		fxFlex.md="50%"
+		fxFlex.lg="40%"
+		fxLayoutAlign="center center"
+		class="mat-typography"
+	>
+		<div
+			fxLayout="row"
+			fxFill
+			fxLayoutAlign="center center"
+			class="donateGreyBackground"
+			ngClass="p-xxl"
+			ngClass.sm="p-m"
+			ngClass.xs="p-m"
+		>
+			<div
+				fxLayout="column"
+				fxFill
+				fxLayoutAlign="center center"
+				fxLayoutGap="5%"
+			>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<img
+						class="donateIcons"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1670925665/whydonate-production/platform/svg-icons/payment-primary.svg"
+					/>
+					<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+					<img
+						class="donateIcons"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173329/whydonate-production/platform/svg-icons/laptop.svg"
+					/>
+				</div>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<div fxLayout="column" fxLayoutAlign="center center">
+						<h2 i18n="@@donation_checkPaymentStatus_label_checking">
+							Checking payment status...
+						</h2>
+						<label i18n="@@donation_checkPaymentStatus_label_doNotRefresh">
+							Please do not click refresh or click the back button.
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

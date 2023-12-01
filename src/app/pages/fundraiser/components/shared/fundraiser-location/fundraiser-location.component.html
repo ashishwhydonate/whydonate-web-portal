@@ -1,0 +1,42 @@
+<mat-chip-list aria-label="Fundraiser location">
+	<mat-chip>
+		<div
+			fxLayout="row"
+			fxLayoutAlign="start center"
+			fxLayoutGap="2px"
+			matTooltip="{{ this.currentFundraiser?.location?.location_name }}"
+		>
+			<div fxLayout="row"  ngClass="p-r-xs">
+				<img
+					height="16"
+					width="12"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1678288363/whydonate-production/platform/svg-icons/locationDark.svg"
+				/>
+			</div>
+			<div fxLayout="row" fxHide.xs="true" class="nowrap-text">
+				<caption>
+					{{
+						this.currentFundraiser?.location?.location_name?.length > 15
+							? this.currentFundraiser?.location?.location_name.substring(
+									0,
+									15
+							  ) + '...&nbsp;'
+							: this.currentFundraiser?.location?.location_name
+					}}
+				</caption>
+			</div>
+			<div fxLayout="row" fxHide.gt-xs="true" class="nowrap-text">
+				<caption>
+					{{
+						this.currentFundraiser?.location?.location_name?.length > 35
+							? this.currentFundraiser?.location?.location_name.substring(
+									0,
+									35
+							  ) + '...&nbsp;'
+							: this.currentFundraiser?.location?.location_name
+					}}
+				</caption>
+			</div>
+		</div>
+	</mat-chip>
+</mat-chip-list>

@@ -1,0 +1,58 @@
+<mat-card class="mat-elevation-z0 no-padding">
+<div fxFlex="100%">
+	<mat-tab-group mat-stretch-tabs color="accent">
+		<mat-tab class="mat-tab-label-active">
+			<ng-template mat-tab-label>
+				<mat-label i18n="@@dashboard_donationSummary_received_label">
+					Received
+				</mat-label>
+			</ng-template>
+			&nbsp;
+			<app-received-donation
+				[donationReceived]="donationReceived"
+			></app-received-donation>
+		</mat-tab>
+		<mat-tab>
+			<ng-template mat-tab-label>
+				<mat-label i18n="@@dashboard_donationSummary_given_label" id="given">
+					Given
+				</mat-label>
+			</ng-template>
+			&nbsp;
+			<app-given-donation [donationGiven]="donationGiven"></app-given-donation>
+		</mat-tab>
+		<mat-tab>
+			<ng-template mat-tab-label>
+				<mat-label
+					i18n="@@dashboard_donationSummary_recurringReceived_label"
+					id="recurringReceived"
+				>
+					Recurring Received
+				</mat-label>
+			</ng-template>
+			&nbsp;
+			<app-recurring-received-donation
+				[donationRecurringReceived]="donationRecurringReceived"
+			></app-recurring-received-donation>
+		</mat-tab>
+		<mat-tab>
+			<ng-template mat-tab-label>
+				<mat-label
+					i18n="@@dashboard_donationSummary_recurringGiven_label"
+					id="recurringGiven"
+				>
+					Recurring Given
+				</mat-label>
+			</ng-template>
+			&nbsp;
+			<app-recurring-given-donation
+				[donationRecurringGiven]="donationRecurringGiven"
+			></app-recurring-given-donation>
+		</mat-tab>
+	</mat-tab-group>
+</div>
+</mat-card>
+
+<ng-template #pageLoader>
+	<app-page-loader></app-page-loader>
+</ng-template>

@@ -1,0 +1,74 @@
+<!-- ************************************************************* -->
+<!--  ROUTE: '/' is Personal Fundraising  -->
+<!--  ROUTE: '/organisation' is Organisation Fundraising  -->
+<!-- ************************************************************* -->
+
+<!--PRE LOAD FIRST BANNER IMAGE (FOR SEO)-->
+<link
+	rel="preload"
+	href="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/home-personal-banner"
+	fetchpriority="high"
+	as="image"
+/>
+
+<!--------------------------------------------------START PAGE LOADER---------------------------------------------------------------->
+
+<app-page-loader *ngIf="isContentLoading"></app-page-loader>
+
+<!--------------------------------------------------END PAGE LOADER------------------------------------------------------------------>
+
+<!--HOME SUB MENU------------------------------------------------->
+<div *ngIf="!isContentLoading" class="home-typography">
+	<div class="primary-bg">
+		<button
+			i18n="@@home_label_personalFundraising"
+			mat-button
+			class="white-text"
+			id="homePersonalFundraising"
+			(click)="this.routeToPersonalFundraising()"
+		>
+			Personal Fundraising
+		</button>
+		<button
+			i18n="@@home_organisation_button"
+			mat-button
+			class="white-text"
+			id="homeOrganisation"
+			(click)="this.routeToOrganisation()"
+		>
+			Organisation
+		</button>
+	</div>
+	<!--END HOME SUB MENU------------------------------------------------->
+
+	<!--PERSONAL FUNDRAISING SECTION------------------------------------------->
+	<!--By default this section is selected-->
+	<div *ngIf="this.isPersonalFundraising">
+		<app-personal-fundraising-divided-banner></app-personal-fundraising-divided-banner>
+		<!-- TODO: FIX POPULAR FUNDRAISER IN BELOW COMPONENT -->
+		<!--
+		<app-personal-funsraising-featured-fundraisers></app-personal-funsraising-featured-fundraisers>
+    -->
+		<app-starting-a-fundraiser></app-starting-a-fundraiser>
+		<app-making-a-difference></app-making-a-difference>
+		<app-fundraising-site></app-fundraising-site>
+	</div>
+	<!--END PERSONAL FUNDRAISING SECTION------------------------------------------->
+
+	<!--ORGANISATION SECTION----------------------------------------------------->
+	<!--If Organisation button is clicked-->
+	<div *ngIf="this.isOrganisation">
+		<app-organisation-banner></app-organisation-banner>
+		<app-fundraising-site></app-fundraising-site>
+		<app-donation-plugin></app-donation-plugin>
+		<!-- <app-digital-collection-box></app-digital-collection-box> -->
+		<app-online-fundraising-features></app-online-fundraising-features>
+	</div>
+	<!--END ORGANISATION SECTION----------------------------------------------------->
+
+	<!--COMMON SECTION-------------------------------------------------------->
+	<app-platform-fee></app-platform-fee>
+	<app-features-and-why-whydonate></app-features-and-why-whydonate>
+	<app-sub-footer-start-afundraiser></app-sub-footer-start-afundraiser>
+	<!--END COMMON SECTION-------------------------------------------------------->
+</div>

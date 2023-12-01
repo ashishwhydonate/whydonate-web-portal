@@ -1,0 +1,33 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<br />
+<h2 mat-dialog-title i18n="@@editCreatedBy_editSocialMediaAccounts_title">
+	Edit Social Media Accounts
+</h2>
+<mat-dialog-content>
+	<app-fundraiser-contact
+		[fundraiserData]="this.data"
+		(shareForm)="receiveForm($event)"
+		(shareFormValidity)="receiveFormValidity($event)"
+	></app-fundraiser-contact>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button
+		[disabled]="isFormValid"
+		mat-flat-button
+		color="accent"
+		id="fundraiserContactSaveButton"
+		(click)="dialogClose()"
+	>
+		<span i18n="@@button_save">Save</span>
+		<mat-icon *ngIf="isLoading" class="m-l-xs">
+			<mat-spinner color="accent" diameter="20" i18n="@@editCreatedBy_spinner">
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</mat-dialog-actions>

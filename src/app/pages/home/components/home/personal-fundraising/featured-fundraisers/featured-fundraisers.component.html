@@ -1,0 +1,218 @@
+<!-- <img src="{{ this.fundraiserdata}}" /> -->
+
+<div
+	fxFlex="100%"
+	fxLayout="row"
+	fxLayoutAlign="center center"
+	class="pale-grey-bg"
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxLayoutGap="5%"
+>
+	<div fxFlex="100%" fxLayout="column">
+		<!--Title-->
+		<div
+			fxFlex="100%"
+			fxLayout="row"
+			fxLayoutAlign="center center"
+			fxLayoutAlign.sm="space-evenly stretch"
+			ngClass="center"
+		>
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<h2
+					i18n="@@featured_fundraisers_trendingPersonalCrowdfundingHomePersonal"
+				>
+					Now Trending Fundraising Campaigns
+				</h2>
+				<p
+					i18n="@@featured_fundraisers_featuringIndividualHomePersonal"
+					class="mat-title"
+				>
+					Featured fundraisers
+				</p>
+			</div>
+		</div>
+
+		<!--Fundraiser Cards-->
+		<div
+			class="popular-fundraisers"
+			fxFlex="50%"
+			fxLayout="row"
+			fxLayout.sm="row"
+			fxLayout.xs="column"
+			fxLayoutAlign="center center"
+			fxLayoutGap="5%"
+		>
+			<div
+				fxFlex="33%"
+				fxFlex.sm="33%"
+				fxLayout="column"
+				fxLayoutAlign="center center"
+				*ngFor="let item of fundraiserdata"
+				(click)="fundraiserSlug(item._source.slug)"
+			>
+				<!-- <app-fundraiser-card
+					[fundraiserCardData]="_fundraiserCardData"
+				></app-fundraiser-card> -->
+
+				<div #defaultCardStyle>
+					<!-- FUNDRAISER CARD TAKES [fundraiserCardData] AS AN INPUT -->
+					<mat-card class="mat-elevation-z1">
+						<!-- FUNDRAISER'S BACKGROUND IMAGE -->
+
+						<img
+							i18n="@@featured_fundraisers_fundraiserBackgroundImage"
+							mat-card-image
+							src="{{ item._source.background.image }}"
+							onerror="this.src='https:\/\/res.cloudinary.com/whydonate/image/upload/w_45,dpr_auto,f_auto,q_auto/whydonate-staging/platform/visuals/whydonate_user';this.onerror='';"
+							alt="{{ item._source.background.image }}"
+							width="100%"
+						/>
+
+						<!-- MAT CARD HEADER -->
+						<mat-card-header>
+							<img
+								i18n="@@featured_fundraisers_fundraiserProfileImage"
+								mat-card-avatar
+								src="{{ item._source?.profile?.image }}"
+								onerror="this.src='https:\/\/res.cloudinary.com/whydonate/image/upload/w_45,dpr_auto,f_auto,q_auto/whydonate-staging/platform/visuals/whydonate_user';this.onerror='';"
+							/>
+							<mat-card-title>{{ item._source.title }}</mat-card-title>
+							<mat-card-subtitle>{{
+								item._source.profile.name
+							}}</mat-card-subtitle>
+						</mat-card-header>
+
+						<!-- MAT CONTENT -->
+						<mat-card-content>
+							<p>
+								{{
+									item._source.description.length > 130
+										? (item._source.description | slice : 0 : 130) + '..'
+										: item._source.description
+								}}
+							</p>
+						</mat-card-content>
+
+						<!-- SHOW DONATION RECEIVED AND TARGET AMOUNT -->
+						<p
+							class="mat-subheading-2"
+							*ngIf="item._source.show_donation_details"
+						>
+							<b> &euro; {{ item._source.donation.amount }} </b>
+							<small>of &euro; {{ item._source.amount_target }}</small>
+						</p>
+						<!-- SHOW ONLY DONATION RECEIVED -->
+						<!-- <p
+							*ngIf="item._source.show_donation_details"
+							class="mat-subheading-2"
+						>
+							<b>{{ item._source.donation.amount }}</b
+							>&nbsp;
+							<span i18n>Donation received</span>
+						</p> -->
+						<!-- SHOW ONLY TARGET AMOUNT -->
+						<!-- <p
+							*ngIf="item._source.show_donation_details"
+							class="mat-subheading-2"
+						>
+							<b>{{ item._source.donation.amount }}</b
+							>&nbsp;
+							<span i18n>Targeted amount</span>
+						</p> -->
+						<p
+							class="mat-subheading-2"
+							*ngIf="!item._source.show_donation_details"
+						>
+							&nbsp;
+						</p>
+
+						<!-- MAT PROGRESS BAR -->
+						<mat-progress-bar
+							value="{{
+								(item._source.donation.amount / item._source.amount_target) *
+									100
+							}}"
+						>
+						</mat-progress-bar>
+
+						<!-- DONATION PROGRESS PERCENTAGE AND DONATION DAYS LEFT -->
+						<!-- TODO: uncomment below p tag to add margin -->
+						<!-- <p></p> -->
+
+						<div fxLayout="row" fxLayoutAlign="space-between start">
+							<p>
+								<!--* INFO: to calculate percentage both, Donation received amount and target amount are required-->
+								<span *ngIf="item._source.show_donation_details">
+									{{
+										(100 * item._source.donation.amount) /
+											item._source.amount_target | number : '1.0-1'
+									}}%
+								</span>
+							</p>
+							<!-- <p>
+								<span *ngIf="donation_days_left > 0">
+									{{ donation_days_left }}&nbsp;
+									<span i18n>day(s) left</span>
+								</span>
+								<span *ngIf="donation_days_left === 0">
+									<span i18n>Last day</span>
+								</span>
+							</p> -->
+							<!--* INFO if donation_target_amount or donation_days_left is empty then add p tag to show consistent spacing in bottom -->
+							<!-- <p *ngIf="!(isShowBothDonationAndTargetAmount || isDaysLeftShow)">
+								&nbsp;
+							</p> -->
+						</div>
+
+						<!-- NOTE: uncomment below code to debug flags -->
+						<!-- <mat-card-footer>
+					<code><b>VIEW FLAGS</b></code><br>
+					isShowOnlyDonationAmountView : {{isShowOnlyDonationAmountView}} <br>
+					isShowBothDonationAndTargetAmount : {{isShowBothDonationAndTargetAmount}} <br>
+					isShowOnlyTargetAmountView : {{isShowOnlyTargetAmountView}} <br>
+					isDaysLeftShow : {{isDaysLeftShow}} <br>
+					<code><b>FUNCTION</b></code><br>
+					isShowDonationAmount() : {{isShowDonationAmount()}} <br>
+					isDonationAmountExist() : {{isDonationAmountExist()}} <br>
+					isTargetAmountExist() : {{isTargetAmountExist()}} <br>
+					<code><b>VALUE</b></code><br>
+					Currency Locale : {{locale}} <br>
+					FLAG: showDonationAmount : {{isShowDonationAmount()}} <br>
+					donation_received_amount : {{donation_received_amount}} <br>
+					donation_target_amount : {{donation_target_amount}} <br>
+					donation_days_left : {{donation_days_left}}
+				</mat-card-footer> -->
+					</mat-card>
+				</div>
+
+				<!-- Template for small card type -->
+
+				<!-- end chait -->
+			</div>
+
+			<!-- <div fxFlex="30%" fxLayout="column" fxLayoutAlign="center center">
+				<app-fundraiser-card
+					[fundraiserCardData]="_fundraiserCardData"
+				></app-fundraiser-card>
+			</div> -->
+			<!-- <div fxFlex="30%" fxLayout="column" fxLayoutAlign="center center">
+				<app-fundraiser-card
+					[fundraiserCardData]="_fundraiserCardData"
+				></app-fundraiser-card>
+			</div> -->
+		</div>
+
+		<!--MORE FUNDRAISERS BUTTON-->
+		<div fxFlex="100%" fxLayout="row" fxLayoutAlign="center start">
+			<button mat-button color="accent" (click)="toSearchFromHome()">
+				<span i18n="@@featured_fundraisers_viewMoreFeaturesHomePersonal"
+					>View More Fundraiser</span
+				>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+				/>
+			</button>
+		</div>
+	</div>
+</div>

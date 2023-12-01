@@ -1,0 +1,79 @@
+<ng-template [ngIf]="!updatesList">
+	<app-page-loader></app-page-loader>
+</ng-template>
+<ng-template [ngIf]="updatesList?.length">
+	<!-- row -->
+	<div fxLayout="row" fxLayoutAlign="space-between end">
+		<strong>Updates ({{ count }})</strong>
+	</div>
+	<br />
+	<mat-divider></mat-divider>
+	<br />
+	<!-- updates -->
+	<ng-container *ngFor="let updates of updatesList; let i = index">
+		<!-- Updates title row -->
+		<div fxLayout="row wrap" fxLayoutAlign="center center">
+			<mat-hint fxFlex fxLayoutAlign="start center" class="mat-caption">
+				<img
+					height="11px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667485860/whydonate-production/platform/svg-icons/circle.svg"
+				/>
+				<div fxLayout="row wrap" class="m-l-xs">
+					<span>Updated on&nbsp;</span><span>{{ updates.date }} </span>
+				</div>
+			</mat-hint>
+		</div>
+		<!-- content/media list row -->
+		<div fxLayout="row">
+			<div class="m-l-xxs">
+				<ng-container *ngIf="i + 1 === updatesList?.length; else timeline">
+				</ng-container>
+			</div>
+			<div
+				[ngClass]="
+					i === 0 ? 'mat-elevation-z' + cardShadow : 'mat-elevation-z0'
+				"
+				class="w-100 m-m"
+			>
+				<!-- content row -->
+				<div fxLayout="row">
+					<app-quill-view [quillContent]="updates.content"></app-quill-view>
+				</div>
+				<!-- media list -->
+				<ng-container *ngIf="updates?.sliderMediaList?.length">
+					<div [ngClass]="i === 0 ? 'm-l-s m-b-s' : ''">
+						<ng-image-slider
+							[videoAutoPlay]="true"
+							[images]="updates?.sliderMediaList"
+							[imageSize]="{ height: 150 }"
+							[manageImageRatio]="true"
+							[showArrow]="updates?.sliderMediaList?.length > 2 ? true : false"
+							#nav
+						></ng-image-slider>
+					</div>
+				</ng-container>
+			</div>
+		</div>
+	</ng-container>
+	<button
+		id="view-more-button"
+		name="view-more-button"
+		mat-flat-button
+		color="accent"
+		[disabled]="this.loading || this.page == this.totalPages"
+		(click)="viewMore()"
+	>
+		<span i18n="@@search_fundraiser_button_title_read_more_button"
+			>View More</span
+		>
+		<mat-icon *ngIf="this.loading">
+			<mat-spinner color="primary" diameter="20" i18n="@@search_spinner">
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</ng-template>
+
+<!-- vertical mat-divider for creating a timeline -->
+<ng-template #timeline>
+	<mat-divider vertical fxFill="100"></mat-divider>
+</ng-template>

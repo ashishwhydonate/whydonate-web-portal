@@ -1,0 +1,420 @@
+<div fxLayout="column">
+	<div
+		fxLayout="row"
+		fxLayout.lt-md="row wrap"
+		fxLayoutAlign="start center"
+		ngClass="p-l-l p-r-l"
+		ngClass.lt-sm="p-xxs"
+		fxLayoutGap="2%"
+	>
+		<div fxLayout="row" fxFlex.lt-md="100">
+			<mat-form-field
+				fxFlex.lt-md="100"
+				[formGroup]="searchInputForm"
+				appearance="outline"
+				color="primary"
+			>
+				<mat-label
+					i18n="@@recurring_given_donation_whydonateControlLabel_search"
+					>search</mat-label
+				>
+				<input
+					formControlName="searchCtrl"
+					matInput
+					type="search"
+					placeholder="{{ searchPlace }}"
+					#input
+				/>
+				<img
+					matSuffix
+					height="22px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667505139/whydonate-production/platform/svg-icons/searchGrey.svg"
+				/>
+			</mat-form-field>
+		</div>
+		<div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between baseline">
+			<mat-form-field appearance="outline" color="primary" fxFlex.xs="60%">
+				<mat-label i18n="@@recurring_given_whydonateControlLabel_dateRange"
+					>Enter a date range</mat-label
+				>
+				<mat-date-range-input
+					[formGroup]="range"
+					[rangePicker]="picker"
+					[max]="this.maxDate"
+				>
+					<input
+						matStartDate
+						formControlName="start"
+						placeholder="{{ startDatePlace }}"
+					/>
+					<input
+						matEndDate
+						formControlName="end"
+						placeholder="{{ endDatePlace }}"
+					/>
+				</mat-date-range-input>
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-date-range-picker #picker>
+					<mat-date-range-picker-actions>
+						<button
+							mat-button
+							matDateRangePickerCancel
+							(click)="clearDateRange()"
+						>
+							Clear
+						</button>
+						<button mat-raised-button color="primary" matDateRangePickerApply>
+							Apply
+						</button>
+					</mat-date-range-picker-actions>
+				</mat-date-range-picker>
+
+				<mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')"
+					>Invalid start date</mat-error
+				>
+				<mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')"
+					>Invalid end date</mat-error
+				>
+			</mat-form-field>
+			<div matTooltip="{{ csvCheck ? '' : dateRangeTooltip }}">
+				<button
+					i18n="@@button_downloadCSV"
+					mat-stroked-button
+					color="accent"
+					[disabled]="!count || !csvCheck"
+					[ngClass]="{ 'background-grey': !csvCheck || !count }"
+					(click)="saveCsv()"
+				>
+					Download CSV
+					<!-- <img
+							height="16px"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667503294/whydonate-production/platform/svg-icons/save.svg"
+						/> -->
+					<mat-icon *ngIf="csvLoading" class="m-l-xs">
+						<mat-spinner color="accent" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- when isLoading is true -->
+	<ng-container
+		[ngTemplateOutlet]="progressBar"
+		*ngIf="isLoading"
+	></ng-container>
+
+	<div *ngIf="this.check; else recurringGivenTable">
+		<mat-card class="mat-elevation-z0" fxFlex="100%">
+			<div fxLayout="column">
+				<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2%">
+					<div ngClass="p-t-xxl p-b-xxl">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/balanceNoData.svg"
+						/>
+					</div>
+					<div>
+						<mat-label
+							class="mat-title m-0"
+							i18n="@@donationSummary_donation_noRecordsTitle"
+							>No data <br />to show</mat-label
+						>
+					</div>
+				</div>
+			</div>
+		</mat-card>
+	</div>
+	<ng-template #recurringGivenTable>
+		<div class="table-container">
+			<!-- <table
+			fxFlex
+			mat-table
+			[dataSource]="dataSource"
+			class="mat-elevation-z1"
+			class="mat-elevation-z1"
+			matTableExporter
+			#exporter="matTableExporter"
+		> -->
+			<table
+				fxFlex
+				mat-table
+				[dataSource]="dataSource"
+				class="mat-elevation-z1"
+			>
+				<!-- Donor Id Column -->
+				<ng-container matColumnDef="donorId">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_donorId"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						Donor Id
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						{{ element.donorId }}
+					</td>
+				</ng-container>
+				<!-- Date Column -->
+				<ng-container matColumnDef="date">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_date"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						Date
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						{{ element.date | date : 'dd-MM-YYYY' }}
+					</td>
+				</ng-container>
+
+				<!-- Period/Recurring Column -->
+				<ng-container matColumnDef="period">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_period"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						Periods
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						{{ element.period | titlecase }}
+					</td>
+				</ng-container>
+
+				<!-- Fundraiser Name Column -->
+				<ng-container matColumnDef="fundraiser_name">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_fundraiserName"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						Fundraiser Name
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						{{ element.fundraiserName }}
+					</td>
+				</ng-container>
+				<!-- Details Column -->
+				<!-- <ng-container matColumnDef="details">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							i18n="@@donationSummary_received_donation_header_details"
+							>Details</span
+						>
+					</th>
+					<td mat-cell *matCellDef="let element">
+						<ng-container>
+							<mat-accordion>
+								<mat-expansion-panel
+									class="mat-elevation-z0"
+									[hideToggle]="element.isAnonymous"
+									[disabled]="element.isAnonymous"
+								>
+									<mat-expansion-panel-header
+										class="donor_details_cell--padding"
+									>
+										<mat-panel-title>
+											<span
+												*ngIf="element.isAnonymous"
+												i18n="@@donationSummary_recieved_donation_AnonymousText"
+												>Anonymous</span
+											>
+											<span *ngIf="!element.isAnonymous">
+												{{ element.donorEmail }}
+											</span>
+										</mat-panel-title>
+									</mat-expansion-panel-header>
+									<div>
+										<div *ngIf="element.receiptName">
+											{{ element.receiptName }}
+										</div>
+										<div *ngIf="!element.receiptName">
+											{{ element.donorName }}
+										</div>
+										<div *ngIf="element.address">{{ element.address }}</div>
+										<div>
+											<span *ngIf="element.city">{{ element.city }}, </span>
+											<span *ngIf="element.zipcode">{{ element.zipcode }}</span>
+										</div>
+										<div *ngIf="element.country">{{ element.country }}</div>
+									</div>
+								</mat-expansion-panel>
+							</mat-accordion>
+						</ng-container>
+					</td>
+				</ng-container> -->
+				<!-- Amount Column -->
+				<ng-container matColumnDef="amount">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_amount"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						Amount
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						{{ element.symbol }} {{ element.amount | number }}
+					</td>
+				</ng-container>
+
+				<!-- Mandate uid-->
+				<ng-container matColumnDef="mandate_uid">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_mandate_uid"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						Mandate ID
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						{{ element.mandate_uid.slice(4) }}
+					</td>
+				</ng-container>
+				<!-- Status Column -->
+				<ng-container matColumnDef="status">
+					<th
+						mat-header-cell
+						*matHeaderCellDef
+						i18n="@@donationSummary_recurring_given_header_status"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						Status
+					</th>
+					<td
+						mat-cell
+						*matCellDef="let element"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : 'min-w-100px'"
+					>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong
+							*ngIf="element.status === 'completed'"
+						>
+							<mat-slide-toggle
+								[checked]="true"
+								color="primary"
+								(click)="opendialog(element)"
+								labelPosition="after"
+							>
+							</mat-slide-toggle>
+						</strong>
+
+						<strong *ngIf="element.status === 'revoked'">
+							<mat-slide-toggle
+								[disabled]="true"
+								[checked]="false"
+								labelPosition="after"
+								(mouseover)="showMessage = true"
+								(mouseleave)="showMessage = false"
+							>
+							</mat-slide-toggle>
+							<mat-icon matTooltip="{{ this.tooltip }}"></mat-icon>
+						</strong>
+					</td>
+				</ng-container>
+
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+				<!-- Row shown when there is no matching data. -->
+				<!-- <tr class="mat-row" *matNoDataRow>
+				<td class="mat-cell" colspan="7">
+					<div
+						*ngIf="!this.check"
+						class="p-t-xl p-b-xl"
+						fxLayout="row"
+						fxLayoutAlign="center center"
+					>
+						<div>
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/balanceNoData.svg"
+							/>
+						</div>
+						<div ngClass="p-l-m">
+							<mat-label
+								class="mat-title m-0"
+								i18n="@@donationSummary_donation_noRecordsTitle"
+								>No data <br />to show</mat-label
+							>
+						</div>
+					</div>
+					<div
+						*ngIf="this.check"
+						class="p-t-xl p-b-xl"
+						fxLayout="row"
+						fxLayoutAlign="center center"
+					>
+						<div>
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/balanceNoData.svg"
+							/>
+						</div>
+						<div ngClass="p-l-m">
+							<mat-label
+								class="mat-title m-0"
+								i18n="@@donationSummary_donation_noRecordsTitle"
+								>No data <br />to show</mat-label
+							>
+						</div>
+					</div>
+				</td>
+			</tr> -->
+			</table>
+		</div>
+	</ng-template>
+	<!-- when isLoading is true -->
+	<ng-container
+		[ngTemplateOutlet]="progressBar"
+		*ngIf="isPaginatorLoading"
+	></ng-container>
+	<!-- Paginator -->
+	<mat-paginator
+		[disabled]="isPaginatorLoading"
+		[pageSizeOptions]="[20]"
+		[pageSize]="20"
+		[length]="count"
+		(page)="changePage($event)"
+	>
+	</mat-paginator>
+</div>
+<!-- Progress bar template -->
+<ng-template #progressBar>
+	<mat-progress-bar
+		[mode]="progressBarMode"
+		[value]="progressbarValue"
+		(animationEnd)="progressAnimationEnd($event)"
+	>
+	</mat-progress-bar>
+</ng-template>

@@ -1,0 +1,15 @@
+@use 'sass:map';
+@import '../_variables/spacing';
+
+.m-icon {
+	width: map.get($SPACE_CONFIG, m);
+	height: map.get($SPACE_CONFIG, m);
+}
+.l-icon {
+	width: map.get($SPACE_CONFIG, l);
+	height: map.get($SPACE_CONFIG, l);
+}
+.xxl-icon {
+	width: map.get($SPACE_CONFIG, xxl);
+	height: map.get($SPACE_CONFIG, xxl);
+}

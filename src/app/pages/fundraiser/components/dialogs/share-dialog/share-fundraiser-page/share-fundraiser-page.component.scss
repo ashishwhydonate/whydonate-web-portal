@@ -1,0 +1,17 @@
+// Variables for social share button
+$embededColor: #4267b2;
+
+.social-share {
+	.embeded {
+		button:not(.mat-button-disabled) {
+			color: var(--button-color);
+		}
+	}
+}
+
+.qr-embeded {
+	transform: scale(1.8);
+}
+.hover-class:hover {
+	background-color: lightgray;
+}

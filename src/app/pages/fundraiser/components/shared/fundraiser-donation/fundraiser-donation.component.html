@@ -1,0 +1,159 @@
+<div fxLayout="column" fxLayoutAlign="start">
+	<div fxLayout="row" fxLayoutAlign="start start" *ngIf="showEdits">
+		<div fxFlex>
+			<h2>Donation Status</h2>
+		</div>
+		<div class="cursor-pointer">
+			<button mat-icon-button (click)="goToEditAmount()" id="editAmount">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667486129/whydonate-production/platform/svg-icons/edit.svg"
+				/>
+			</button>
+		</div>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="start start" *ngIf="showEdits">
+		<mat-chip-list
+			aria-label="category selection"
+			id="chip-list"
+			name="chip-list"
+			class="whydonate-light"
+		>
+			<div *ngIf="this.isFindable">
+				<mat-chip
+					id="chip"
+					name="chip"
+					class="mat-chip-list-stacked my-chip"
+					color="accent"
+					selected
+					removable="true"
+				>
+					<caption i18n="@@target_amount_findable_on_search_page_toggle">
+						Findable on search
+					</caption>
+				</mat-chip>
+			</div>
+			<div *ngIf="!this.isFindable">
+				<mat-chip
+					id="chip"
+					name="chip"
+					class="mat-chip-list-stacked my-chip"
+					color="accent"
+					selected
+					removable="true"
+				>
+					<caption i18n="@@target_amount_not_findable_on_search_page_toggle">
+						Not Findable on search page
+					</caption>
+				</mat-chip>
+			</div>
+
+			<div *ngIf="this.isOpen">
+				<mat-chip
+					id="chip"
+					name="chip"
+					class="mat-chip-list-stacked my-chip"
+					color="accent"
+					selected
+					removable="true"
+				>
+					<caption i18n="@@create_fundraiser_fundraiser_status_radioGroup_open">
+						open
+					</caption>
+				</mat-chip>
+			</div>
+			<div *ngIf="!this.isOpen">
+				<mat-chip
+					id="chip"
+					name="chip"
+					class="mat-chip-list-stacked my-chip"
+					color="accent"
+					selected
+					removable="true"
+				>
+					<caption
+						i18n="@@create_fundraiser_fundraiser_status_radioGroup_close"
+					>
+						close
+					</caption>
+				</mat-chip>
+			</div>
+		</mat-chip-list>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="start baseline" ngClass="m-t-m">
+		<div fxFlex>
+			<div id="donationAmount" class="mat-h1">
+				<app-amount-view
+					[fundraiserCardData]="fundraiserCardData"
+				></app-amount-view>
+			</div>
+		</div>
+	</div>
+
+	<app-donation-progress-bar
+		class="m-b-m"
+		[fundraiserCardData]="fundraiserCardData"
+	></app-donation-progress-bar>
+
+	<div fxLayout="row" fxFill fxLayoutAlign="start center">
+		<div fxLayout="column" fxFlex="50%" fxLayoutAlign="center start">
+			<h3 id="fundedPercentage">
+				<app-donation-progress-percentage
+					[fundraiserCardData]="fundraiserCardData"
+					[showLabel]="true"
+				></app-donation-progress-percentage>
+			</h3>
+		</div>
+		<div fxLayout="column" fxFlex="50%" fxLayoutAlign="center end">
+			<h3 id="fundedPercentage">
+				<app-days-left-view
+					[fundraiserCardData]="fundraiserCardData"
+				></app-days-left-view>
+			</h3>
+		</div>
+	</div>
+
+	<div fxLayout="column" fxLayoutGap="5%">
+		<div
+			[matTooltip]="donationToolTipMessage"
+			[matTooltipDisabled]="!isDraftOrClosed"
+		>
+			<button
+				id="donateButton"
+				mat-flat-button
+				color="accent"
+				[disabled]="
+					disableDonation ||
+					isDraftOrClosed ||
+					isOpen == false ||
+					stripeNotificationCheck ||
+					!stripeChargeStatus
+				"
+				(click)="donate()"
+				[style.color]="'#fff'"
+				class="w-100"
+				i18n="@@button_donate"
+			>
+				Donate
+			</button>
+		</div>
+		<div
+			matTooltip="Publish your fundraiser before sharing it"
+			[matTooltipDisabled]="!isDraftOrClosed"
+		>
+			<button
+				id="shareFundraiser"
+				mat-stroked-button
+				color="accent"
+				[disabled]="isDraftOrClosed"
+				[style.color]="'accent'"
+				class="w-100"
+				(click)="openShareDialog()"
+				i18n="@@button_shareFundraiser"
+			>
+				Share Fundsraiser
+			</button>
+		</div>
+	</div>
+</div>
+<!-- <div fxLayout="row" fxLayoutAlign="center center">
+</div> -->

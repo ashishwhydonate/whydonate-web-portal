@@ -1,0 +1,137 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+/**
+	DESCRIPTION: WHYDONATE_GREEN and WHYDONATE_BLUE color palettes 
+	are generated with tiny-color library with the logic that always 
+	gives predictable color. This is specially important when working
+	with custom theming/branding were we want to apply multiple themes 
+	on runtime which are not predefined.
+**/
+
+// STATIC VALUES => Used for creating material palette
+// PRIMARY COLORS
+$WHYDONATE_GREEN: (
+	50: #e7f7ea,
+	100: #c6eccc,
+	200: #a1dfac,
+	300: #79d48a,
+	400: #57c970,
+	500: #32bf55,
+	600: #28af4c,
+	700: #1a9d40,
+	800: #078b34,
+	900: #006c1f,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: rgba(black, 0.87),
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	),
+);
+// SECONDARY COLORS
+$WHYDONATE_BLUE: (
+	50: #dfdef4,
+	100: #a7a5e0,
+	200: #7e7bd2,
+	300: #4a46c0,
+	400: #3e3bad,
+	500: #363396,
+	600: #2e2b7f,
+	700: #262368,
+	800: #1d1c51,
+	900: #15143b,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: white,
+		400: white,
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	),
+);
+$WHYDONATE_WARN: (
+	50: #ffffff,
+	100: #ffffff,
+	200: #ffdbdb,
+	300: #ff9393,
+	400: #ff7575,
+	500: #ff5656,
+	600: #ff3737,
+	700: #ff1919,
+	800: #f90000,
+	900: #db0000,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: rgba(black, 0.87),
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	),
+);
+
+// Material palette => Used by theming.
+$primary-palette: mat.define-palette($WHYDONATE_GREEN);
+$secondary-palette: mat.define-palette($WHYDONATE_BLUE);
+$warn-palette: mat.define-palette($WHYDONATE_WARN);
+
+// Whydonate Theme
+$whydonate-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: mat.define-palette($WHYDONATE_GREEN, 500),
+			accent: mat.define-palette($WHYDONATE_BLUE, 500),
+		),
+	)
+);
+$config: mat.get-color-config($whydonate-theme);
+$foreground: map.get($config, foreground);
+
+// STATIC VALUES => Used by color helper.
+$COLOR_CONFIG: (
+	// Whydonate's green color
+	'primary': mat.get-color-from-palette($primary-palette, 500),
+	// Whydonate's blue color
+	'accent': mat.get-color-from-palette($secondary-palette, 500),
+	// Lighter shade from Whydonate's green color
+	'primary-100': mat.get-color-from-palette($primary-palette, 100),
+	// Lighter shade from Whydonate's blue color
+	'accent-100': mat.get-color-from-palette($secondary-palette, 100),
+	// Whydonate's warning color
+	'warning': mat.get-color-from-palette($warn-palette, 500),
+	// whydonate's black color
+	'black': #353535,
+	'white': #ffffff,
+	'grey': #f1f1f1,
+	'pale-grey': #f8f9fa,
+	// material grey color used as in material component's background
+	'mat-grey-50': mat.get-color-from-palette(mat.$grey-palette, 50),
+	'disabled': mat.get-color-from-palette($foreground, disabled-button),
+	// Social-media
+	'facebook': #4267b2,
+	'email': #ff961c,
+	'twitter': #00acee,
+	'whatsapp': #25d366,
+	'linkedin': #006fa6,
+
+	//Dashboard cards
+	'draft': #e0e0e0,
+	'publish': #e9eaf7,
+	'main': #e8f5e9,
+	'connected': #fb8c0033
+);

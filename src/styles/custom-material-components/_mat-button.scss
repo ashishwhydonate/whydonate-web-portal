@@ -1,0 +1,23 @@
+/**
+	DESCRIPTION: Custom style on mat-button. Used for whydonate links. 
+	HOW TO USE: To use this style, use anchor tag with mat-button attribute.
+	EXAMPLE: <a mat-button color="accent">Whydonate links</a>
+**/
+
+a.mat-button {
+	padding: 0;
+	&:hover {
+		background: transparent;
+	}
+	.mat-ripple {
+		display: none;
+	}
+	.mat-button-focus-overlay {
+		display: none;
+	}
+}
+
+// clickable for fundraisers
+.clickable {
+	cursor: pointer;
+}

@@ -1,0 +1,24 @@
+@use '../_variables/layout' as layout;
+
+/** TODO for future:
+        Refactor width and height mixin in layout helper to accomodate
+        below class such that when !important is required it can be passed through parameter.
+        should be able to use the mixin like below:
+            .max-w-100--panelClass {
+                max-width: @include max-width(full, percentage, important);
+            }
+**/
+.max-w-100--panelClass {
+	max-width: 100vw !important;
+	max-height: 100vh;
+	height: 100vh !important;
+	overflow: auto;
+}
+
+// .cdk-global-overlay-wrapper {
+// 	display: flex;
+// 	position: absolute;
+// 	z-index: 1000;
+// 	overflow: auto;
+// 	pointer-events: auto !important;
+// }

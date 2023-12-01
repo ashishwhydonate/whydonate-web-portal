@@ -1,0 +1,91 @@
+<!--Stripe Prompt Pop Up-->
+<div
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	class="branding registration-complete"
+>
+	<div
+		ngClass="m-t-xxl-2"
+		fxLayout="column"
+		fxFlex="100%"
+		fxFlex.xs="80%"
+		fxFlex.sm="60%"
+		fxFlex.md="50%"
+		fxFlex.lg="40%"
+		fxLayoutAlign="center center"
+		class="donateGreyBackground" fxFlexFill
+	>
+		<div fxLayout="row" fxLayoutAlign="center center" ngClass="p-s m-t-m">
+			<h2>
+				<img
+					style="position: relative; top: 4px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667421094/whydonate-production/platform/svg-icons/checkCircleFillPrimary.svg"
+				/>&nbsp;
+				<span i18n="@@stripe_prompt_fundraiser_saved"
+					>Fundraiser is saved as draft</span
+				>
+			</h2>
+		</div>
+
+		<div fxLayout="row" fxLayoutAlign="center center">
+			<div fxLayout="column" fxFill fxLayoutAlign="center center">
+				<mat-card>
+					<div fxLayout="row" fxLayoutAlign="center center">
+						<div
+							fxLayout="column"
+							fxFill
+							fxLayoutAlign="center center"
+							fxLayoutGap="1%"
+						>
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<h2 i18n="@@stipe_prompt_connect_with_stripe">
+									Connect payment provider stripe
+								</h2>
+							</div>
+
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<p align="center" i18n="@@stipe_prompt_publish_mandate">
+									To publish your fundraiser, Account verification is mandatory
+									to receive donation and payouts.
+								</p>
+							</div>
+
+							<!--Connect To Stripe Button-->
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<button
+									mat-flat-button
+									color="accent"
+									(click)="connectWithStripe()"
+								>
+									<span i18n="@@stipe_prompt_stripe_connect"
+										>Connect To Stripe</span
+									>
+									<mat-icon *ngIf="stripeVerificationCheck" class="m-l-xs">
+										<mat-spinner color="primary" diameter="20"> </mat-spinner>
+									</mat-icon>
+								</button>
+							</div>
+
+							<!--Do It Later Link-->
+							<div
+								fxLayout="row"
+								fxLayoutAlign="center center"
+								ngClass="m-t-xs"
+							>
+								<a mat-button color="accent" (click)="doItLater()">
+									<span i18n="@@stipe_prompt_later"
+										>Okay,I will do it later</span
+									>
+									<mat-icon *ngIf="isLoading" class="m-l-xs">
+										<mat-spinner color="primary" diameter="20"> </mat-spinner>
+									</mat-icon>
+								</a>
+							</div>
+						</div>
+					</div>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</div>

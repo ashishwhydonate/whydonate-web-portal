@@ -1,0 +1,92 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxFlex="100%"
+	fxLayout="column"
+	fxLayoutAlign="center center"
+>
+	<div ngClass="center" id="organisationBanner">
+		<h1>
+			<span
+				class="primary-text"
+				i18n="@@organisation_banner_charityFundraisingMadeEasyHomeOrganization"
+				>Charity Fundraising and
+			</span>
+			<br />
+			<span i18n="@@organisation_banner_crowdfundingMadeEasyHomeOrganization">
+				Crowdfunding Made Easy
+			</span>
+		</h1>
+		<h4 i18n="@@organisation_banner_noPlatformFeeHomeOrganization">
+			0% platform fee, so let's start.
+		</h4>
+
+		<p i18n="@@organisation_banner_whydonateBestCrowdFundingHomeOrganization">
+			WhyDonate is the best crowdfunding site for charity. Raise money and
+			achieve your charity goals.
+		</p>
+	</div>
+	<br />
+	<!-- <app-free-sign-up-button></app-free-sign-up-button> -->
+	<app-start-fundraiser-button
+		id="startFundraiserButton"
+	></app-start-fundraiser-button>
+	<br /><br />
+	<div
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayout.xs="column"
+		fxLayout.gt-xs="column"
+		fxLayout.sm="row"
+		fxLayout.gt-sm="row"
+		fxLayoutAlign="space-around center"
+		fxLayoutGap="15%"
+		fxLayoutGap.xs="25%"
+		ngClass="p-m"
+	>
+		<div fxLayoutAlign="center center" fxLayoutGap="25%">
+			<div>
+				<img src="{{ organisationBannerImage }}" />
+			</div>
+			<div ngClass="p-m">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/extinction_rebellion"
+				/>
+			</div>
+		</div>
+		<div fxLayoutAlign="center center" fxLayoutGap="33%">
+			<div ngClass="p-m">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/brac"
+				/>
+			</div>
+			<div ngClass="p-xs">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/wwf"
+				/>
+			</div>
+		</div>
+		<div fxLayoutAlign="center center" fxLayoutGap="20%">
+			<!-- <div fxLayoutAlign="center center">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/red_cross_en"
+				/>
+			</div> -->
+			<div fxLayoutAlign="center center" ngClass="p-m">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/unhcr"
+				/>
+			</div>
+			<div fxLayoutAlign="center center" ngClass="p-m">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/oxfam"
+				/>
+			</div>
+		</div>
+		<!-- <div fxLayoutAlign="center center">
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/h_70,dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/org_logos/oxfam"
+			/>
+		</div> -->
+	</div>
+</div>

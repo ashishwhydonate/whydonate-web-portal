@@ -1,0 +1,36 @@
+<!--Payout Stripe Component-->
+<div fxlayout="row" fxFlex="100%" ngClass="p-l" ngClass.xs="p-l">
+	<div fxlayout="column" fxFlex="100%">
+		<div fxlayout="row" fxFlex="100%" *ngIf="this.chargesEnabled">
+			<h2 i18n="@@balance_check_summary_stripe">Check Payout Summary</h2>
+			<p i18n="@@balance_check_summary_message_stripe">
+				Please go to stripe dashboard to easily mange your payouts, recieved,
+				refunds and analytics of donation with stripe dasboard.
+			</p>
+			<!--Stripe Dashboard Button-->
+			<button
+				i18n="@@balance_stripe_dashboard"
+				class="download"
+				mat-stroked-button
+				color="accent"
+				ngClass.lt-lg="m-r-l"
+				(click)="stripeDashboard()"
+			>
+				Stripe Dashboard
+			</button>
+		</div>
+		<div
+			*ngIf="!this.chargesEnabled"
+			class="p-t-xl p-b-xl"
+			fxLayout="column"
+			fxLayoutAlign.lt-xs="start start"
+			fxLayoutAlign="center center"
+		>
+			<mat-label
+				class="mat-title m-0"
+				i18n="@@balance_payout_table_noRecord_label"
+				>No Payout Record</mat-label
+			>
+		</div>
+	</div>
+</div>

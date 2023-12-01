@@ -1,0 +1,26 @@
+<div fxLayout="row" fxFlex="100%" fxLayout="space-between end">
+	<div fxLayout="column" fxFlex="40%" fxLayout="end center" class="p-t-m">
+		<h2>
+			<span i18n="@@currencySelectorLabel">Currency</span>&nbsp;
+			<img
+				height="13px"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1683319026/whydonate-production/platform/svg-icons/infoWarnBlack.svg"
+				matTooltip="{{ this.currencyTooltip }}"
+			/>
+		</h2>
+	</div>
+	<div fxLayout="column" fxFlex="60%" fxLayout="center center">
+		<mat-form-field appearance="outline">
+			<mat-select
+				[(ngModel)]="selectedCurrency"
+				(selectionChange)="switchCurrency($event.value)"
+			>
+				<mat-option *ngFor="let currency of this.currencies" [value]="currency">
+					{{ currency.symbol }}
+					&nbsp;
+					{{ currency.currency | uppercase }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+</div>

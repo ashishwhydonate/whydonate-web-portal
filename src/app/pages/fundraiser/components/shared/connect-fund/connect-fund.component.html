@@ -1,0 +1,62 @@
+<div *ngIf="isLoggedInUserAdmin && !hideToggleSwitch" ngClass="m-b-m">
+	<mat-slide-toggle
+		[(ngModel)]="allowConnectedFundraiser"
+		(change)="onToggleChange($event)"
+		id="allow-connected-toggle"
+		color="primary"
+	>
+		<span i18n="@@connect_fund_allow_connected_fundraisers"
+			>Allow Connected Fundraisers</span
+		>
+	</mat-slide-toggle>
+	<img
+		style="position: relative; left: 10px"
+		height="14px"
+		src="https://res.cloudinary.com/whydonate/image/upload/v1671475989/whydonate-production/platform/svg-icons/infoDark.svg"
+		matTooltip="{{ this.allowTooltip }}"
+	/>
+</div>
+<div fxLayout="column" fxLayoutAlign="center center">
+	<div fxLayout="row" fxLayoutAlign="space-between start" class="m-b-m">
+		<div fxLayout="column" class="m-r-m">
+			<span class="whydonate-light xxl-icon">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1688670344/whydonate-production/platform/svg-icons/create.svg"
+				/>
+			</span>
+		</div>
+		<div fxLayout="column">
+			<div fxLayout="row">
+				<div class="m-b-xs">
+					<mat-label class="mat-title" i18n="@@connectFund_supportACause_label"
+						>Support a Cause</mat-label
+					>
+					<img
+						style="position: relative; left: 10px"
+						height="14px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1671475989/whydonate-production/platform/svg-icons/infoDark.svg"
+						matTooltip="{{ this.tooltip }}"
+					/>
+				</div>
+			</div>
+			<div i18n="@@connectFund_teamUpwithThisExistingFundraisers_label">
+				Team up /connect with this existing fundraisers.
+			</div>
+		</div>
+		<div>
+			<!-- <mat-icon matTooltip="{{ this.tooltip }}">error_outline</mat-icon> -->
+		</div>
+	</div>
+
+	<button
+		id="connectFundraiserButton"
+		mat-stroked-button
+		color="accent"
+		(click)="routeToConnectFundraiser()"
+		class="w-100"
+		i18n="@@button_connectFundraiser"
+		[disabled]="!isAllowChild"
+	>
+		Connect Fundraiser
+	</button>
+</div>

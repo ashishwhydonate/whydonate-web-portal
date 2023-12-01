@@ -1,0 +1,98 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<h2 mat-dialog-title i18n="@@edit_about_describeAbout_title">
+	Describe About fundraiser
+</h2>
+<mat-dialog-content class="mat-typography">
+	<!-- <h3>Describe About fundraiser</h3> -->
+	<div class="m-l-xs" fxLayout="row" fxLayoutAlign="start center">
+		<mat-label class="mat-body-2" i18n="@@edit_update_originalLanguage_title"
+			>Original Language</mat-label
+		>
+		<div fxLayout="row" class="p-xs">
+			<img
+				width="20"
+				src="{{ languageIconPath + originalLocale + '.png' }}"
+			/>&nbsp;
+			<span>{{ allLanguages[originalLocale] }}</span>
+		</div>
+	</div>
+	<br />
+	<!-- <div class="m-l-xs m-r-xs">
+		<mat-label i18n="@@editAbout_fundraiser_title">Fundraiser Title</mat-label>
+		<form [formGroup]="titleFormGroup">
+			<mat-form-field class="w-100" appearance="outline">
+				<input
+					id="fundraiserTitle"
+					matInput
+					formControlName="translationTitle"
+					(ngModelChange)="onTitleChange($event)"
+				/>
+			</mat-form-field>
+		</form>
+	</div> -->
+	<mat-label class="m-l-xs" i18n="@@edit_about_aboutFundraiser_label"
+		>About Fundraiser</mat-label
+	>
+	<app-quill-editor
+		[quillContent]="data.currentFundraiser?.content"
+		(onContentChange)="changeAboutContent($event)"
+		[control]="quillContentCtrl"
+		(allTextCheck)="allCheck($event)"
+	></app-quill-editor>
+	<br />
+	<div
+		class="m-l-xs"
+		fxLayout="row wrap"
+		fxLayoutAlign="start center"
+		fxLayoutGap="16px"
+	>
+		<!-- (onMediaChange)="changeAboutMedia($event)" -->
+		<app-fundraiser-media-edit
+			[fundraiserMediaList]="mediaList"
+			[resetControl]="mediaResetControl"
+			(onMediaChange)="changeAboutMedia($event)"
+		>
+		</app-fundraiser-media-edit>
+	</div>
+</mat-dialog-content>
+<div ngClass="m-t-m">
+	<mat-dialog-actions align="end">
+		<button
+			id="editAboutDiscard"
+			mat-button
+			color="accent"
+			(click)="discardChanges()"
+			[disabled]="
+				!(newAbout?.content || newAbout?.imageList || titleFormGroup.dirty) ||
+				isSave
+			"
+			i18n="@@button_discard"
+		>
+			Discard
+		</button>
+		<button
+			id="editAboutSaveButton"
+			[disabled]="isSave"
+			mat-flat-button
+			color="accent"
+			[disabled]="
+				!(newAbout?.content || newAbout?.imageList) ||
+				isSave ||
+				!this.allTextCheck
+			"
+			(click)="saveAboutContentAndMedia()"
+		>
+			<span i18n="@@button_save">Save</span>
+			<mat-icon *ngIf="isSave" class="m-l-xs">
+				<mat-spinner color="accent" diameter="20" i18n="@@editAbout_spinner">
+				</mat-spinner>
+			</mat-icon>
+		</button>
+	</mat-dialog-actions>
+</div>

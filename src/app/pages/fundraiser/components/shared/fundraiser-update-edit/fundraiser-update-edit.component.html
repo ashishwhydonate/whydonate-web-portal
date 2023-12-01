@@ -1,0 +1,139 @@
+<ng-template [ngIf]="updatesList" [ngIfElse]="whydonateLoader">
+	<!-- row -->
+	<div fxLayout="row" fxLayoutAlign="space-between end">
+		<!-- <h3>Updates</h3> -->
+		<strong>Updates ({{ count }})</strong>
+		<div>
+			<button
+				mat-stroked-button
+				color="accent"
+				id="addUpdatesFundraiserPageButton"
+				(click)="createUpdate()"
+				i18n="@@button_addUpdates"
+			>
+				Add Updates
+			</button>
+		</div>
+	</div>
+	<br />
+	<mat-divider></mat-divider>
+	<br />
+	<!-- updates -->
+	<ng-template [ngIf]="updatesList?.length" [ngIfElse]="noUpdates">
+		<ng-container *ngFor="let updates of updatesList; let i = index">
+			<!-- action row -->
+			<div fxLayout="row wrap" fxLayoutAlign="center center">
+				<mat-hint fxFlex fxLayoutAlign="start center" class="mat-caption">
+					<img
+						height="11px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667485860/whydonate-production/platform/svg-icons/circle.svg"
+					/>
+					<div fxLayout="row wrap" class="m-l-xs">
+						<span
+							i18n="
+								@@create_fundraiser_fundraiser_update_edit_updatesData_description"
+							>Updated on&nbsp;</span
+						><span>{{ updates.date }} </span>
+					</div>
+				</mat-hint>
+				<mat-hint fxFlex fxLayoutAlign="end end">
+					<!--Create, Deete and Translate Buttons-->
+					<button class="editUpdatesFundraiserPageEditButton" id="{{ i + 'editUpdatesFundraiserPageEditButton' }}"  mat-icon-button (click)="editUpdate(i)">
+						<img
+							height="18px"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667485025/whydonate-production/platform/svg-icons/editSmall.svg"
+						/>
+					</button>
+					<button class="editUpdatesFundraiserPageTranslateButton" id="{{ i + 'editUpdatesFundraiserPageTranslateButton' }}" mat-icon-button (click)="translateUpdate(i)">
+						<img
+							height="18px"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667485030/whydonate-production/platform/svg-icons/translateSmall.svg"
+						/>
+					</button>
+					<button class="editUpdatesFundraiserPageDeleteButton" id="{{ i + 'editUpdatesFundraiserPageDeleteButton' }}" mat-icon-button (click)="deleteUpdate(i)">
+						<img
+							height="18px"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667485022/whydonate-production/platform/svg-icons/deleteSmall.svg"
+						/>
+					</button>
+				</mat-hint>
+			</div>
+			<!-- content/media list row -->
+			<div fxLayout="row">
+				<div class="m-l-xxs">
+					<ng-container *ngIf="i + 1 === updatesList?.length; else timeline">
+					</ng-container>
+				</div>
+				<div
+					[ngClass]="i === 0 ? 'mat-elevation-z2' : 'mat-elevation-z0'"
+					class="m-m w-100"
+				>
+					<!-- content row -->
+					<div fxLayout="row">
+						<app-quill-view [quillContent]="updates.content"></app-quill-view>
+					</div>
+					<!-- media list -->
+					<ng-container *ngIf="updates?.sliderMediaList?.length">
+						<div [ngClass]="i === 0 ? 'm-l-s m-b-s' : ''">
+							<ng-image-slider
+								[videoAutoPlay]="true"
+								[images]="updates?.sliderMediaList"
+								[imageSize]="{ height: 150 }"
+								[manageImageRatio]="true"
+								[showArrow]="
+									updates?.sliderMediaList?.length > 2 ? true : false
+								"
+								#nav
+							></ng-image-slider>
+						</div>
+					</ng-container>
+				</div>
+			</div>
+		</ng-container>
+	</ng-template>
+	<button
+	id="view-more-button"
+	name="view-more-button"
+	mat-flat-button
+	color="accent"
+	[disabled]="this.loading || this.page == this.totalPages"
+	(click)="viewMore()"
+>
+	<span i18n="@@search_fundraiser_button_title_read_more_button"
+		>View More</span
+	>
+	<mat-icon *ngIf="this.loading">
+		<mat-spinner color="primary" diameter="20" i18n="@@search_spinner">
+		</mat-spinner>
+	</mat-icon>
+</button>
+</ng-template>
+
+<!-- vertical mat-divider for creating a timeline -->
+<ng-template #timeline>
+	<!-- &nbsp;&nbsp;&nbsp;
+	<div>
+	</div> -->
+	<mat-divider vertical fxFill="100"></mat-divider>
+</ng-template>
+
+<ng-template #noUpdates>
+	<div
+		class="mat-body-2"
+		i18n="@@create_fundraiser_fundraiser_update_edit_noUpdatesAvailableHere"
+	>
+		No Updates Avaliable here
+	</div>
+	<br />
+</ng-template>
+
+<!-- TODO: break html for updates into below parts-->
+<!-- action row -->
+<ng-template #updatesEditActions> </ng-template>
+<!-- content/media list row -->
+<ng-template #updatesRow> </ng-template>
+
+<!-- Page loader / whydonate loader -->
+<ng-template #whydonateLoader>
+	<app-page-loader></app-page-loader>
+</ng-template>

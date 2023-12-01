@@ -1,0 +1,36 @@
+<button
+	mat-icon-button
+	class="close-button"
+	(click)="onCloseClick()"
+	(click)="close()"
+>
+	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/>
+</button>
+<div ngClass="p-xl">
+	<div fxLayoutAlign="center center">
+		<h1 mat-dialog-title>Verify Your Email</h1>
+	</div>
+	<div mat-dialog-content fxLayoutAlign="center center">
+		<strong>We have sent an email to {{ this.emailValue }}</strong>
+	</div>
+	<div ngClass="m-t-m">
+		<p>
+			You need to verify your email to recive payoutscontinue. If you have not
+			received the verification email, please check your "Spam" or "Bulk Email"
+			folder. You can also click the resend button below to have another email
+			sent to you.
+		</p>
+	</div>
+	<div fxLayoutAlign="center center">
+		<p><strong>Check again and continue</strong></p>
+	</div>
+
+	<div
+		ngClass="m-t-m"
+		mat-dialog-actions
+		fxLayout="row"
+		fxLayoutAlign="center center"
+	>
+		<button mat-flat-button color="accent">Resend verification Email</button>
+	</div>
+</div>

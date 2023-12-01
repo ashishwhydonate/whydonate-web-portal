@@ -1,0 +1,165 @@
+<mat-card class="mat-elevation-z0">
+	<div
+		fxLayout="row"
+		fxLayoutAlign="space-between baseline"
+		ngClass="p-b-s m-b-s"
+	>
+		<div>
+			<span class="mat-body-2" i18n="@@balance_clearedAmount">Payout</span>
+		</div>
+		<div *ngIf="accentText" class="mat-tab-label-active">
+			<span
+				(click)="redirectToPayout()"
+				class="mat-body-2 cursor-pointer"
+				i18n="@@dashboard_summary_view_button"
+			>
+				View
+			</span>
+		</div>
+		<div *ngIf="!accentText" class="grey-texts">
+			<span
+				(click)="redirectToPayout()"
+				class="mat-body-2 cursor-pointer"
+				i18n="@@dashboard_summary_view_button"
+			>
+				View
+			</span>
+		</div>
+	</div>
+
+	<mat-card class="mat-elevation-z0 pale-grey-bg">
+		<div fxLayout="column" fxLayoutGap="7%" ngClass="p-b-xl">
+			<div
+				fxLayout="column"
+				fxLayoutAlign="space-between baseline"
+				fxLayoutGap="1%"
+			>
+				<div fxLayout="row" fxLayoutAlign="space-between baseline">
+					<span class="mat-body-2" i18n="@@payout_setting_charges_title"
+						>Payments</span
+					>
+					&nbsp;<img
+						height="14px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1683319026/whydonate-production/platform/svg-icons/infoWarnBlack.svg"
+						matTooltip="{{ this.paymentTooltip }}"
+					/>
+				</div>
+				<div *ngIf="this.chargesEnabled == true">
+					<mat-chip-list aria-label="category selection">
+						<mat-chip selected color="primary">
+							<img
+								height="16px"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1689109215/whydonate-production/platform/svg-icons/checkCircleWhite.svg"
+							/>
+							&nbsp;&nbsp;<span
+								class="white-text mat-body-1"
+								i18n="@@verified_status"
+								>Verified</span
+							>
+						</mat-chip>
+					</mat-chip-list>
+				</div>
+				<div
+					*ngIf="this.detailsSubmitted == true && this.chargesEnabled == false"
+				>
+					<mat-chip-list aria-label="category selection">
+						<mat-chip selected color="warn">
+							<img
+								height="16px"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1689109215/whydonate-production/platform/svg-icons/closeWhite.svg"
+							/>
+							&nbsp;&nbsp;<span
+								class="white-text mat-body-1"
+								i18n="@@payout_settings_verfication_failed_title"
+								>Verification failed</span
+							>
+						</mat-chip>
+					</mat-chip-list>
+				</div>
+				<div
+					*ngIf="this.detailsSubmitted == false && this.chargesEnabled == false"
+				>
+					<mat-chip-list aria-label="category selection">
+						<mat-chip selected class="grey-chip">
+							<img
+								height="16px"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1689109215/whydonate-production/platform/svg-icons/errorOutlineWhite.svg"
+							/>
+							&nbsp;&nbsp;<span
+								class="white-text mat-body-1"
+								i18n="@@initial_status"
+								>Not yet initiated</span
+							>
+						</mat-chip>
+					</mat-chip-list>
+				</div>
+			</div>
+
+			<div
+				fxLayout="column"
+				fxLayoutAlign="space-between baseline"
+				fxLayoutGap="1%"
+			>
+				<div fxLayout="row" fxLayoutAlign="space-between baseline">
+					<span class="mat-body-2" i18n="@@payout_settings_payout_title"
+						>Payouts</span
+					>
+					&nbsp;<img
+						height="14px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1683319026/whydonate-production/platform/svg-icons/infoWarnBlack.svg"
+						matTooltip="{{ this.payoutTooltip }}"
+					/>
+				</div>
+				<div *ngIf="this.payoutEnabled == true">
+					<mat-chip-list aria-label="category selection">
+						<mat-chip selected color="primary">
+							<img
+								height="16px"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1689109215/whydonate-production/platform/svg-icons/checkCircleWhite.svg"
+							/>
+							&nbsp;&nbsp;<span
+								class="white-text mat-body-1"
+								i18n="@@verified_status"
+								>Verified</span
+							>
+						</mat-chip>
+					</mat-chip-list>
+				</div>
+				<div
+					*ngIf="this.detailsSubmitted == true && this.payoutEnabled == false"
+				>
+					<mat-chip-list aria-label="category selection">
+						<mat-chip selected color="warn">
+							<img
+								height="16px"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1689109215/whydonate-production/platform/svg-icons/closeWhite.svg"
+							/>
+							&nbsp;&nbsp;<span
+								class="white-text mat-body-1"
+								i18n="@@payout_settings_verfication_failed_title"
+								>Verification failed</span
+							>
+						</mat-chip>
+					</mat-chip-list>
+				</div>
+				<div
+					*ngIf="this.detailsSubmitted == false && this.payoutEnabled == false"
+				>
+					<mat-chip-list aria-label="category selection">
+						<mat-chip selected class="grey-chip">
+							<img
+								height="16px"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1689109215/whydonate-production/platform/svg-icons/errorOutlineWhite.svg"
+							/>
+							&nbsp;&nbsp;<span
+								class="white-text mat-body-1"
+								i18n="@@initial_status"
+								>Not yet initiated</span
+							>
+						</mat-chip>
+					</mat-chip-list>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+</mat-card>

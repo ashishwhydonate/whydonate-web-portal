@@ -1,0 +1,435 @@
+<app-page-loader *ngIf="!this.isLoading"></app-page-loader>
+<form [formGroup]="this.connectFundraiserForm">
+	<div
+		*ngIf="this.isLoading"
+		ngClass="p-xxl"
+		ngClass.sm="p-m"
+		ngClass.xs="p-s"
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayoutAlign="center start"
+		fxLayoutGap="5%"
+	>
+		<div
+			fxFlex="50%"
+			fxFlex.sm="65%"
+			fxFlex.xs="90%"
+			fxLayout="column"
+			fxLayoutAlign="start center"
+			fxLayoutGap="5%"
+		>
+			<!--Title-->
+			<div fxFill fxLayout="row" fxLayoutAlign="center center">
+				<div fxFill fxLayout="column" fxLayoutAlign="center center">
+					<h3 class="mat-h3" i18n="@@connectFundraiser_heading_label">
+						Connect Fundraiser
+					</h3>
+					<label class="mat-body-2">
+						<span i18n="@@connectFundraiser_subheading_label">to</span>
+						{{ this.slug }}</label
+					>
+				</div>
+			</div>
+
+			<!--ABOUT FUNDRAISER-->
+			<div fxFill fxLayout="row" fxLayoutAlign="center center">
+				<div fxFill fxLayout="column" fxLayoutAlign="center start">
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label i18n="@@connect_fundraiser_fundraiser_title">
+							Fundraiser Title
+						</mat-label>
+						<!--text area to input Fundraiser Title, validators:required,min(15),max(70),pattern-->
+						<input
+							required
+							matInput
+							id="ConnectedFundraiserTitle"
+							formControlName="title"
+							(focusin)="setSlug(title.value)"
+							(focusout)="setSlug(title.value)"
+							(keyup)="setSlug(title.value)"
+							#title
+						/>
+						<mat-hint align="end"
+							>{{ title.value.length }} / 15-70
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+						<mat-error
+							*ngIf="
+								this.connectFundraiserForm.controls['title'].errors &&
+								this.connectFundraiserForm.controls['title'].errors?.pattern
+							"
+						>
+							Wrong title. You can only use letters and numbers.
+						</mat-error>
+						<mat-error
+							i18n="@@connectFundraiser_error"
+							*ngIf="
+								connectFundraiserForm.controls['title'].errors &&
+								(connectFundraiserForm.controls['title'].errors.minlength ||
+									connectFundraiserForm.controls['title'].errors.maxlength)
+							"
+						>
+							Must be between 15 - 70 characters
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="@@fundraiser_connectFundraiser_fundraiserMotivation_label"
+						>
+							Motivation
+						</mat-label>
+						<!--text area to enter motivation, Validators:required,min(150),max(15000)-->
+						<textarea
+							required
+							matInput
+							id="ConnectedFundraiserDescription"
+							cdkTextareaAutosize
+							cdkAutosizeMinRows="5"
+							cdkAutosizeMaxRows="8"
+							formControlName="description"
+							#description
+						></textarea>
+						<mat-hint align="end"
+							>{{ description.value.length }} / 150-15000
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!--ADD IMAGES/VIDEOS-->
+			<div fxFill fxLayout="row" fxLayoutAlign="center center">
+				<div
+					fxFill
+					fxLayout="column"
+					fxLayoutAlign="center start"
+					fxLayoutGap="2%"
+				>
+					<label class="mat-body-2"
+						><span i18n="@@fundraiser_connectFundraiser_addImageVideo_label"
+							>Add images/ videos</span
+						>
+						({{ this.mediaFiles.length }}/3)</label
+					>
+					<div
+						class="whydonate-light"
+						fxFlex="100%"
+						fxLayout="row"
+						fxLayoutAlign="start center"
+						fxLayoutGap="5%"
+					>
+						<input
+							fxHide="true"
+							type="file"
+							id="ConnectedFundraiserImage"
+							class="file-upload"
+							(change)="this.onFileChange($any($event))"
+							accept="image/png, image/jpeg, image/jpg, image/webp, .heic"
+							#imageFileInput
+						/>
+						<button
+							mat-fab
+							class="mat-elevation-z0"
+							color="primary"
+							(click)="imageFileInput.click()"
+						>
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+							/>
+						</button>
+
+						<button
+							mat-fab
+							class="mat-elevation-z0"
+							id="ConnectedFundraiserYouTubeButton"
+							color="primary"
+							(click)="this.switchIsVideo()"
+						>
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+							/>
+						</button>
+					</div>
+					<!--Image Preview-->
+					<div
+						fxFlex="100%"
+						fxLayout="row"
+						fxLayout.sm="row wrap"
+						fxLayout.xs="row wrap"
+						fxLayoutAlign="start center"
+						fxLayoutGap="5%"
+						*ngIf="this.imgUrl.length > 0 || this.embedVideoUrl.length > 0"
+					>
+						<!--Button to remove image by invoking removeImage()-->
+						<div fxLayout="column" *ngFor="let i of this.imgUrl">
+							<div>
+								<button
+									fxFlexOffset="80px"
+									mat-icon-button
+									(click)="removeImage(i)"
+								>
+									<img
+										height="13px"
+										src="https://res.cloudinary.com/whydonate/image/upload/v1667422103/whydonate-production/platform/svg-icons/close.svg"
+									/>
+								</button>
+							</div>
+							<img
+								class="image-thumbnail"
+								fxFlexOffset="-15px"
+								mat-card-sm-image
+								[src]="i"
+							/>
+						</div>
+
+						<!--Button to remove video by invoking removeVideo()-->
+						<div fxLayout="column" *ngFor="let i of this.embedVideoUrl">
+							<div>
+								<button
+									fxFlexOffset="80px"
+									mat-icon-button
+									(click)="removeVideo(i)"
+								>
+									<img
+										height="13px"
+										src="https://res.cloudinary.com/whydonate/image/upload/v1667422103/whydonate-production/platform/svg-icons/close.svg"
+									/>
+								</button>
+							</div>
+							<iframe
+								frameborder="0"
+								fxFlexOffset="-15px"
+								[ngStyle]="{ width: '95px', height: '64px' }"
+								[src]="i['sanitizedVideoUrl']"
+							></iframe>
+						</div>
+					</div>
+					<!--Video Input (via YouTube Link) Preview-->
+					<div
+						*ngIf="this.isVideo"
+						fxFill
+						fxLayout="row"
+						fxLayoutAlign="start center"
+						fxLayoutGap="5%"
+					>
+						<mat-form-field class="w-100" appearance="outline">
+							<mat-label i18n="@@fundraiser_connectFundraiser_youtubeLink_label"
+								>YouTube Link</mat-label
+							>
+							<input
+								matInput
+								id="ConnectedFundraiserYouTubeLink"
+								placeholder="YouTube Link"
+								formControlName="youtube_link"
+								#youtube_link
+							/>
+							<mat-error
+								*ngIf="connectFundraiserForm.controls['youtube_link'].errors"
+							>
+								Invalid YouTube Link
+							</mat-error>
+						</mat-form-field>
+						<!--Button to Save video which upon clicking invokes saveVideo()-->
+						<button
+							mat-flat-button
+							i18n="@@button_allCaps_save"
+							color="primary"
+							id="ConnectedFundraiserYouTubeSaveButton"
+							[disabled]="this.disableVideoSaveButton"
+							(click)="this.saveVideo()"
+						>
+							SAVE
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!--CUSTOM URL-->
+			<div fxFill fxLayout="row" fxLayoutAlign="center center">
+				<div fxFill fxLayout="column" fxLayoutAlign="center start">
+					<label
+						i18n="@@fundraiser_connectFundraiser_customUrl_label"
+						class="mat-body-2"
+						>Custom URL (you can not change your URL later on)</label
+					>
+					<div
+						fxFill
+						fxLayout="row"
+						fxLayout.xs="column"
+						fxLayoutAlign="start center"
+						fxLayoutAlign.xs="start stretch"
+						fxLayoutGap="2%"
+					>
+						<div
+							fxLayout="column"
+							fxLayout.xs="row"
+							fxFlex.xs="100%"
+							fxLayoutAlign="start center"
+							fxLayoutGap="2%"
+						>
+							<label class="mat-body-2">whydonate.com/fundraising/</label>
+						</div>
+						<div
+							fxLayout="column"
+							fxLayout.xs="row"
+							fxFlex="100%"
+							fxLayoutAlign="center start"
+							fxLayoutGap="2%"
+						>
+							<mat-form-field class="w-100" appearance="outline">
+								<mat-label i18n="@@fundraiser_connectFundraiser_linkName_label"
+									>Link Name</mat-label
+								>
+								<!--Input area to enter custom URL, Validators: required,min(1),max(75),pattern-->
+								<input
+									required
+									matInput
+									placeholder="Link Name"
+									formControlName="custom_url"
+									(focusin)="setSlug(customUrl.value)"
+									(focusout)="setSlug(customUrl.value)"
+									(keyup)="setSlug(customUrl.value)"
+									#customUrl
+								/>
+								<mat-hint align="end"
+									>{{ customUrl.value.length }} / 1-75
+									<span i18n="@@characters_translation"
+										>Characters</span
+									></mat-hint
+								>
+								<mat-error
+									i18n="@@connect_Fundraiser_matError_wrongUrl"
+									*ngIf="
+										connectFundraiserForm.controls['custom_url'].errors &&
+										connectFundraiserForm.controls['custom_url'].errors.pattern
+									"
+								>
+									Wrong url. You can only use letters and numbers.
+								</mat-error>
+								<mat-error
+									i18n="@@connect_Fundraiser_error"
+									*ngIf="
+										connectFundraiserForm.controls['custom_url'].errors &&
+										connectFundraiserForm.controls['custom_url'].errors[
+											'custom_url'
+										]
+									"
+								>
+									Url already in use
+								</mat-error>
+								<mat-hint
+									*ngIf="!connectFundraiserForm.controls['custom_url'].errors"
+									[ngStyle]="{ color: '#66bb6a' }"
+								>
+									Url is good</mat-hint
+								>
+							</mat-form-field>
+						</div>
+					</div>
+					<div fxFill fxLayout="row" fxLayoutAlign="start center">
+						<label
+							i18n="@@connectFundraiser_urlMessage_label"
+							class="mat-caption"
+							>Choose a short and easy to remember url with maximum 90
+							characters. You cannot change your url later.</label
+						>
+					</div>
+				</div>
+			</div>
+
+			<!--SET DETAILS i.e. Target Amount and End Date-->
+			<div fxFill fxLayout="row" fxLayoutAlign="center center">
+				<div fxFill fxLayout="column" fxLayoutAlign="center start">
+					<label
+						i18n="@@fundraiser_connectFundraiser_setDetails_label"
+						class="mat-body-2"
+					>
+						Set Details (Euro)
+					</label>
+
+					<mat-form-field
+						class="w-100"
+						appearance="outline"
+						floatLabel="always"
+					>
+						<mat-label i18n="@@fundraiser_connectFundraiser_targetAmount_label"
+							>Target Amount (optional)</mat-label
+						>
+						<!--Input area to set max target amount, Validator:max(9999999)-->
+						<input
+							matInput
+							type="number"
+							formControlName="target_amount"
+							class="right-align"
+							placeholder="00"
+							(input)="
+								connectFundraiserForm.controls['target_amount'].markAsTouched()
+							"
+						/>
+						<div matPrefix class="currency-input-field">
+							{{ currencySymbol }}
+						</div>
+						<mat-error
+							i18n="@@connectFundraiser_decimal_error"
+							*ngIf="
+								connectFundraiserForm.controls['target_amount'].errors &&
+								connectFundraiserForm.controls['target_amount'].errors.pattern
+							"
+						>
+							Amount should not contain decimals
+						</mat-error>
+
+						<mat-error
+							*ngIf="
+								connectFundraiserForm.controls['target_amount'].errors &&
+								connectFundraiserForm.controls['target_amount'].errors.max
+							"
+						>
+						<span i18n="@@custom_donation_form_amountTargetMax_error">
+							Maximum required amount is</span
+						>&nbsp;{{ currencySymbol }}{{ maxTargetAmount | number }}
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label i18n="@@fundraiser_connectFundraiser_endDate_label"
+							>End Date (optional)</mat-label
+						>
+						<!--Input area to set end date-->
+						<input
+							matInput
+							[matDatepicker]="picker"
+							formControlName="end_date"
+							[min]="minEndDate"
+							onkeydown="return false"
+							(focus)="picker.open()"
+							(click)="picker.open()"
+						/>
+						<!--or Set date from angular material date picker toggle-->
+						<mat-datepicker-toggle
+							matSuffix
+							[for]="picker"
+						></mat-datepicker-toggle>
+						<mat-datepicker #picker></mat-datepicker>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!--SUBMIT-->
+			<div fxFill fxLayout="row" fxLayoutAlign="end center">
+				<!--Save and Continue button which invokes saveAndContinue() upon clicking-->
+				<button
+					mat-flat-button
+					color="accent"
+					id="SaveButtonConnectFundraiserForm"
+					[disabled]="this.connectFundraiserForm.invalid"
+					(click)="saveAndContinue()"
+				>
+					<span i18n="@@button_saveAndContinue">Save and Continue</span>
+					<mat-spinner *ngIf="!isLoading" color="primary" diameter="20">
+					</mat-spinner>
+				</button>
+			</div>
+		</div>
+	</div>
+</form>

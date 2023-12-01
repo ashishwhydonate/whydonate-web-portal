@@ -1,0 +1,35 @@
+<button mat-icon-button class="close-button" (click)="onCloseClick()">
+	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/>
+</button>
+<h1 mat-dialog-title>{{ data.actionTitle | uppercase }}</h1>
+
+<div mat-dialog-content>
+	<p>{{ data.actionBody }}</p>
+
+	<mat-form-field color="accent" appearance="outline" class="w-100">
+		<mat-label i18n="@@dialogAuthorisation_password_label">Password</mat-label>
+		<input matInput cdkFocusInitial required placeholder="Password" />
+		<mat-error i18n="@@dialogAuthorisation_passwordRequired_error">
+			Password Required
+		</mat-error>
+	</mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+	<button
+		mat-stroked-button
+		color="accent"
+		*ngIf="data.actionSecondary"
+		(click)="onSecondaryAction()"
+	>
+		{{ data.actionSecondary | uppercase }}
+	</button>
+	<button
+		mat-flat-button
+		color="accent"
+		*ngIf="data.actionPrimary"
+		(click)="onPrimaryAction()"
+		cdkFocusInitial
+	>
+		{{ data.actionPrimary | uppercase }}
+	</button>
+</div>

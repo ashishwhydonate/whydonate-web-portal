@@ -1,0 +1,21 @@
+<div
+	class="primary-bg white-text p-m"
+	fxLayout="row"
+	fxLayoutAlign="space-between center"
+>
+	<div i18n="@@shared_notificationBanner_fundraiserPageLooksNice">
+		Great! your fundraiser page looks nice
+	</div>
+	<button
+		mat-flat-button
+		color="accent"
+		id="publish-button"
+		(click)="emitPublishClick()"
+		i18n="@@shared_notificationBanner_publish_button"
+	>
+		<span>Publish</span>
+		<mat-icon *ngIf="isSave" class="m-l-xs">
+			<mat-spinner color="primary" diameter="20"> </mat-spinner>
+		</mat-icon>
+	</button>
+</div>

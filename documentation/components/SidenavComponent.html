@@ -1,0 +1,1290 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  SidenavComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/global/components/sidenav/sidenav.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-sidenav</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./sidenav.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sidenav.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeItem" >activeItem</a>
+                            </li>
+                            <li>
+                                <a href="#isReceiver" >isReceiver</a>
+                            </li>
+                            <li>
+                                <a href="#isShowIcon" >isShowIcon</a>
+                            </li>
+                            <li>
+                                <a href="#isShowText" >isShowText</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#sidenavService" >sidenavService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#closeSidenav" >closeSidenav</a>
+                            </li>
+                            <li>
+                                <a href="#getActiveItem" >getActiveItem</a>
+                            </li>
+                            <li>
+                                <a href="#isMobileViewPort" >isMobileViewPort</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#routeToBranding" >routeToBranding</a>
+                            </li>
+                            <li>
+                                <a href="#routeToEmail" >routeToEmail</a>
+                            </li>
+                            <li>
+                                <a href="#routeToReceipt" >routeToReceipt</a>
+                            </li>
+                            <li>
+                                <a href="#userMenuClick" >userMenuClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, sidenavService: <a href="../injectables/SidenavService.html" target="_self">SidenavService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sidenavService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SidenavService.html" target="_self" >SidenavService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeSidenav"></a>
+                    <span class="name">
+                        <span ><b>closeSidenav</b></span>
+                        <a href="#closeSidenav"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeSidenav()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getActiveItem"></a>
+                    <span class="name">
+                        <span ><b>getActiveItem</b></span>
+                        <a href="#getActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getActiveItem()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobileViewPort"></a>
+                    <span class="name">
+                        <span ><b>isMobileViewPort</b></span>
+                        <a href="#isMobileViewPort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isMobileViewPort()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToBranding"></a>
+                    <span class="name">
+                        <span ><b>routeToBranding</b></span>
+                        <a href="#routeToBranding"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToBranding()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToEmail"></a>
+                    <span class="name">
+                        <span ><b>routeToEmail</b></span>
+                        <a href="#routeToEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToEmail()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToReceipt"></a>
+                    <span class="name">
+                        <span ><b>routeToReceipt</b></span>
+                        <a href="#routeToReceipt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToReceipt()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userMenuClick"></a>
+                    <span class="name">
+                        <span ><b>userMenuClick</b></span>
+                        <a href="#userMenuClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>userMenuClick(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activeItem"></a>
+                    <span class="name">
+                        <span ><b>activeItem</b></span>
+                        <a href="#activeItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isReceiver"></a>
+                    <span class="name">
+                        <span ><b>isReceiver</b></span>
+                        <a href="#isReceiver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowIcon"></a>
+                    <span class="name">
+                        <span ><b>isShowIcon</b></span>
+                        <a href="#isShowIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowText"></a>
+                    <span class="name">
+                        <span ><b>isShowText</b></span>
+                        <a href="#isShowText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sidenavService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>sidenavService</b></span>
+                        <a href="#sidenavService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/SidenavService.html" target="_self" >SidenavService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/global/components/sidenav/sidenav.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { NavigationEnd, NavigationExtras, Router } from &#x27;@angular/router&#x27;;
+import { SidenavService } from &#x27;../../services/sidenav.service&#x27;;
+
+@Component({
+	selector: &#x27;app-sidenav&#x27;,
+	templateUrl: &#x27;./sidenav.component.html&#x27;,
+	styleUrls: [&#x27;./sidenav.component.scss&#x27;],
+})
+export class SidenavComponent implements OnInit {
+	isShowText: Boolean &#x3D; false;
+	isShowIcon: Boolean &#x3D; false;
+	isReceiver: Boolean &#x3D; true;
+	activeItem: string &#x3D; &#x27;&#x27;;
+
+	constructor(public router: Router, public sidenavService: SidenavService) {}
+
+	ngOnInit(): void {
+		this.getActiveItem();
+		this.sidenavService.isShowText.subscribe((res: any) &#x3D;&gt; {
+			this.isShowText &#x3D; res;
+		});
+		this.sidenavService.isShowIcon.subscribe((res: any) &#x3D;&gt; {
+			this.isShowIcon &#x3D; res;
+		});
+	}
+
+	/*
+	 * Function for selected item
+	 * @param value
+	 */
+	getActiveItem() {
+		this.router.events.subscribe((e) &#x3D;&gt; {
+			if (e instanceof NavigationEnd) {
+				if (e.url.includes(&#x27;/dashboard&#x27;)) {
+					this.activeItem &#x3D; &#x27;dashboard&#x27;;
+				} else if (e.url.includes(&#x27;/my-fundraisers&#x27;)) {
+					this.activeItem &#x3D; &#x27;myFundraisers&#x27;;
+				} else if (e.url.includes(&#x27;/balance&#x27;)) {
+					this.activeItem &#x3D; &#x27;balance&#x27;;
+				} else if (e.url.includes(&#x27;/profile/payout-settings&#x27;)) {
+					this.activeItem &#x3D; &#x27;payoutSettings&#x27;;
+				} else if (e.url.includes(&#x27;/profile/email&#x27;)) {
+					this.activeItem &#x3D; &#x27;emailSettings&#x27;;
+				} else if (e.url.includes(&#x27;/custom-branding#branding&#x27;)) {
+					this.activeItem &#x3D; &#x27;customiseFundraisers&#x27;;
+				} else if (e.url.includes(&#x27;/custom-branding#email&#x27;)) {
+					this.activeItem &#x3D; &#x27;customiseEmails&#x27;;
+				} else if (e.url.includes(&#x27;/profile/api&#x27;)) {
+					this.activeItem &#x3D; &#x27;apiKey&#x27;;
+				} else {
+					this.activeItem &#x3D; &#x27;&#x27;;
+				}
+			}
+		});
+	}
+
+	/*
+	 * Function for user menu clicks
+	 * @param value
+	 */
+	userMenuClick(value: string) {
+		this.activeItem &#x3D; value;
+		switch (value.toLowerCase()) {
+			case &#x27;dashboard&#x27;:
+				this.router.navigate([&#x27;/dashboard&#x27;]);
+
+				break;
+
+			case &#x27;myfundraisers&#x27;:
+				this.router.navigate([&#x27;/my-fundraisers&#x27;]);
+				break;
+
+			case &#x27;balance&#x27;:
+				this.router.navigate([&#x27;/balance&#x27;]);
+				break;
+
+			case &#x27;payoutsettings&#x27;:
+				this.router.navigate([&#x27;/profile/payout-settings&#x27;]);
+				break;
+
+			case &#x27;emailsettings&#x27;:
+				this.router.navigate([&#x27;/profile/email&#x27;]);
+				break;
+
+			case &#x27;customisefundraisers&#x27;:
+				this.routeToBranding();
+				break;
+
+			case &#x27;customiseemails&#x27;:
+				this.routeToEmail();
+				break;
+
+			case &#x27;custom branding&#x27;:
+				this.router.navigate([&#x27;/custom-branding&#x27;]);
+				break;
+
+			case &#x27;customisereceipts&#x27;:
+				this.routeToReceipt();
+				break;
+
+			case &#x27;embedplugin&#x27;:
+				this.routeToReceipt();
+				break;
+
+			case &#x27;apikey&#x27;:
+				this.router.navigate([&#x27;/profile/api&#x27;]);
+				break;
+		}
+		if (this.isMobileViewPort()) {
+			this.closeSidenav();
+		}
+	}
+
+	/*
+	 * Route to custom branding
+	 */
+	routeToBranding() {
+		const navigationExtras: NavigationExtras &#x3D; { fragment: &#x27;branding&#x27; };
+		this.router.navigate([&#x27;custom-branding&#x27;], navigationExtras);
+	}
+	/*
+	 * Route to custom email
+	 */
+	routeToEmail() {
+		const navigationExtras: NavigationExtras &#x3D; { fragment: &#x27;email&#x27; };
+		this.router.navigate([&#x27;custom-branding&#x27;], navigationExtras);
+	}
+
+	routeToReceipt() {
+		const navigationExtras: NavigationExtras &#x3D; { fragment: &#x27;receipt&#x27; };
+		this.router.navigate([&#x27;custom-branding&#x27;], navigationExtras);
+	}
+
+	isMobileViewPort(): Boolean {
+		var innerWidth &#x3D; window.innerWidth;
+
+		if (innerWidth &lt; 420) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	closeSidenav() {
+		// Conditions For Mobile View
+		this.isShowText &#x3D; !this.isShowText;
+		this.isShowIcon &#x3D; !this.isShowIcon;
+		this.sidenavService.toggleSidenav(this.isShowText, this.isShowIcon);
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-list&gt;
+	&lt;button
+		*ngIf&#x3D;&quot;this.isShowIcon&quot;
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;dashboard&#x27;)&quot;
+		id&#x3D;&quot;headerDashboard&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;dashboard&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1690383543/whydonate-production/platform/svg-icons/dashboardNav.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;dashboard&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;
+		&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span i18n&#x3D;&quot;@@button_dashboard&quot; *ngIf&#x3D;&quot;this.isShowText&quot;&gt;Dashboard&lt;/span&gt;
+	&lt;/button&gt;
+
+	&lt;button
+		*ngIf&#x3D;&quot;this.isShowIcon&quot;
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;myFundraisers&#x27;)&quot;
+		id&#x3D;&quot;headerMyFundraisers&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;myFundraisers&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/whydonate-production/platform/svg-icons/fundraiserPageNav.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;myFundraisers&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span i18n&#x3D;&quot;@@header_userMenu_button_myFundraisers&quot; *ngIf&#x3D;&quot;this.isShowText&quot;
+			&gt;My Fundraisers&lt;/span
+		&gt;
+	&lt;/button&gt;
+	&lt;button
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;balance&#x27;)&quot;
+		*ngIf&#x3D;&quot;this.isReceiver &amp;&amp; this.isShowIcon&quot;
+		id&#x3D;&quot;headerBalance&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;balance&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666203390/whydonate-production/platform/svg-icons/wallet.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;balance&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span i18n&#x3D;&quot;@@header_userMenu_button_balance&quot; *ngIf&#x3D;&quot;this.isShowText&quot;
+			&gt;Balance&lt;/span
+		&gt;
+	&lt;/button&gt;
+	&lt;button
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;payoutSettings&#x27;)&quot;
+		*ngIf&#x3D;&quot;this.isReceiver &amp;&amp; this.isShowIcon&quot;
+		id&#x3D;&quot;headerPayoutSettings&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;payoutSettings&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/payoutNav.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;payoutSettings&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span i18n&#x3D;&quot;@@profile_payoutSettings&quot; *ngIf&#x3D;&quot;this.isShowText&quot;
+			&gt;Payout Settings&lt;/span
+		&gt;
+	&lt;/button&gt;
+	&lt;button
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;emailSettings&#x27;)&quot;
+		*ngIf&#x3D;&quot;this.isReceiver &amp;&amp; this.isShowIcon&quot;
+		id&#x3D;&quot;headerBalance&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;emailSettings&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/emailNav.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;emailSettings&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span i18n&#x3D;&quot;@@profile_emailSettings_label&quot; *ngIf&#x3D;&quot;this.isShowText&quot;
+			&gt;Email Settings&lt;/span
+		&gt;
+	&lt;/button&gt;
+	&lt;button
+		*ngIf&#x3D;&quot;this.isShowIcon&quot;
+		mat-menu-item
+		class&#x3D;&quot;customBranding&quot;
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;customiseFundraisers&#x27;)&quot;
+		id&#x3D;&quot;headerCustomBranding&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;customiseFundraisers&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666203390/whydonate-production/platform/svg-icons/color_lens.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;customiseFundraisers&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span
+			i18n&#x3D;&quot;@@header_userMenu_button_customiseFundraisers&quot;
+			*ngIf&#x3D;&quot;this.isShowText&quot;
+			&gt;Customise Fundraisers&lt;/span
+		&gt;
+	&lt;/button&gt;
+
+	&lt;button
+		*ngIf&#x3D;&quot;this.isShowIcon&quot;
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;customiseEmails&#x27;)&quot;
+		id&#x3D;&quot;headerCustomiseEmails&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;customiseEmails&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/customizeEmailNav.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;customiseEmails&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span
+			i18n&#x3D;&quot;@@header_userMenu_button_customiseEmails&quot;
+			*ngIf&#x3D;&quot;this.isShowText&quot;
+		&gt;
+			Customise Emails
+		&lt;/span&gt;
+	&lt;/button&gt;
+
+	&lt;button
+		*ngIf&#x3D;&quot;this.isShowIcon&quot;
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;customiseReceipts&#x27;)&quot;
+		id&#x3D;&quot;headerReceipt&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;customiseReceipts&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1669281587/whydonate-production/platform/svg-icons/receipt.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;customiseReceipts&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span
+			i18n&#x3D;&quot;@@header_userMenu_button_customiseReceipts&quot;
+			*ngIf&#x3D;&quot;this.isShowText&quot;
+		&gt;
+			Customise Receipts
+		&lt;/span&gt;
+	&lt;/button&gt;
+
+	&lt;button
+		*ngIf&#x3D;&quot;this.isShowIcon&quot;
+		mat-menu-item
+		(click)&#x3D;&quot;this.userMenuClick(&#x27;apiKey&#x27;)&quot;
+		id&#x3D;&quot;headerApiKey&quot;
+		[ngStyle]&#x3D;&quot;{
+			color: activeItem &#x3D;&#x3D;&#x3D; &#x27;apiKey&#x27; ? &#x27;#32BF55&#x27; : &#x27;#000000&#x27;
+		}&quot;
+	&gt;
+		&lt;img
+			class&#x3D;&quot;icon-position&quot;
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/apiNav.svg&quot;
+			[ngStyle]&#x3D;&quot;{
+				filter:
+					activeItem &#x3D;&#x3D;&#x3D; &#x27;apiKey&#x27;
+						? &#x27;invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)&#x27;
+						: &#x27;invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)&#x27;
+			}&quot;
+		/&gt;&lt;span *ngIf&#x3D;&quot;this.isShowText&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+		&lt;span i18n&#x3D;&quot;@@header_userMenu_button_apiKey&quot; *ngIf&#x3D;&quot;this.isShowText&quot;
+			&gt;API-Key
+		&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/mat-list&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./sidenav.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.sidenav-icon
+{
+padding-right: 4px;
+}
+
+mat-list-item:hover,
+mat-list-item:active,
+mat-list-item:visited {
+  background-color: lightgray;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-list>	<button		*ngIf="this.isShowIcon"		mat-menu-item		(click)="this.userMenuClick(\'dashboard\')"		id="headerDashboard"		[ngStyle]="{			color: activeItem === \'dashboard\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1690383543/whydonate-production/platform/svg-icons/dashboardNav.svg"			[ngStyle]="{				filter:					activeItem === \'dashboard\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/>		<span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span i18n="@@button_dashboard" *ngIf="this.isShowText">Dashboard</span>	</button>	<button		*ngIf="this.isShowIcon"		mat-menu-item		(click)="this.userMenuClick(\'myFundraisers\')"		id="headerMyFundraisers"		[ngStyle]="{			color: activeItem === \'myFundraisers\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/whydonate-production/platform/svg-icons/fundraiserPageNav.svg"			[ngStyle]="{				filter:					activeItem === \'myFundraisers\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span i18n="@@header_userMenu_button_myFundraisers" *ngIf="this.isShowText"			>My Fundraisers</span		>	</button>	<button		mat-menu-item		(click)="this.userMenuClick(\'balance\')"		*ngIf="this.isReceiver && this.isShowIcon"		id="headerBalance"		[ngStyle]="{			color: activeItem === \'balance\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1666203390/whydonate-production/platform/svg-icons/wallet.svg"			[ngStyle]="{				filter:					activeItem === \'balance\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span i18n="@@header_userMenu_button_balance" *ngIf="this.isShowText"			>Balance</span		>	</button>	<button		mat-menu-item		(click)="this.userMenuClick(\'payoutSettings\')"		*ngIf="this.isReceiver && this.isShowIcon"		id="headerPayoutSettings"		[ngStyle]="{			color: activeItem === \'payoutSettings\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/payoutNav.svg"			[ngStyle]="{				filter:					activeItem === \'payoutSettings\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span i18n="@@profile_payoutSettings" *ngIf="this.isShowText"			>Payout Settings</span		>	</button>	<button		mat-menu-item		(click)="this.userMenuClick(\'emailSettings\')"		*ngIf="this.isReceiver && this.isShowIcon"		id="headerBalance"		[ngStyle]="{			color: activeItem === \'emailSettings\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/emailNav.svg"			[ngStyle]="{				filter:					activeItem === \'emailSettings\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span i18n="@@profile_emailSettings_label" *ngIf="this.isShowText"			>Email Settings</span		>	</button>	<button		*ngIf="this.isShowIcon"		mat-menu-item		class="customBranding"		(click)="this.userMenuClick(\'customiseFundraisers\')"		id="headerCustomBranding"		[ngStyle]="{			color: activeItem === \'customiseFundraisers\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1666203390/whydonate-production/platform/svg-icons/color_lens.svg"			[ngStyle]="{				filter:					activeItem === \'customiseFundraisers\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span			i18n="@@header_userMenu_button_customiseFundraisers"			*ngIf="this.isShowText"			>Customise Fundraisers</span		>	</button>	<button		*ngIf="this.isShowIcon"		mat-menu-item		(click)="this.userMenuClick(\'customiseEmails\')"		id="headerCustomiseEmails"		[ngStyle]="{			color: activeItem === \'customiseEmails\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/customizeEmailNav.svg"			[ngStyle]="{				filter:					activeItem === \'customiseEmails\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span			i18n="@@header_userMenu_button_customiseEmails"			*ngIf="this.isShowText"		>			Customise Emails		</span>	</button>	<button		*ngIf="this.isShowIcon"		mat-menu-item		(click)="this.userMenuClick(\'customiseReceipts\')"		id="headerReceipt"		[ngStyle]="{			color: activeItem === \'customiseReceipts\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1669281587/whydonate-production/platform/svg-icons/receipt.svg"			[ngStyle]="{				filter:					activeItem === \'customiseReceipts\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span			i18n="@@header_userMenu_button_customiseReceipts"			*ngIf="this.isShowText"		>			Customise Receipts		</span>	</button>	<button		*ngIf="this.isShowIcon"		mat-menu-item		(click)="this.userMenuClick(\'apiKey\')"		id="headerApiKey"		[ngStyle]="{			color: activeItem === \'apiKey\' ? \'#32BF55\' : \'#000000\'		}"	>		<img			class="icon-position"			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/apiNav.svg"			[ngStyle]="{				filter:					activeItem === \'apiKey\'						? \'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)\'						: \'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)\'			}"		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>		<span i18n="@@header_userMenu_button_apiKey" *ngIf="this.isShowText"			>API-Key		</span>	</button></mat-list></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'SidenavComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SidenavComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

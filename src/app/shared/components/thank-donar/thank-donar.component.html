@@ -1,0 +1,78 @@
+<div ngClass="p-r-s p-l-s">
+	<div
+		fxLayout="column"
+		fxLayoutAlign="flex-end flex-end"
+		ngClass="p-t-m p-r-s"
+	>
+		<button mat-icon-button class="close-button" (click)="onCloseClick()">
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+			/>
+		</button>
+	</div>
+	<div fxLayout="column" fxLayoutAlign="start ">
+		<!-- First Column -->
+
+		<!-- Row for heading -->
+		<div fxLayout="column wrap" fxLayoutAlign="space-between " fxFill>
+			<h2 i18n="@@shared_thankDonar_sendMessage_heading">Send Message</h2>
+			<h4 i18n="@@shared_thankDonar_message_note">
+				Note: this message is visible to everyone.
+			</h4>
+		</div>
+
+		<!-- Row For Text-Area -->
+		<mat-form-field appearance="outline" fxFill ngClass="p-b-xs">
+			<div fxLayout="row" fxLayoutAlign="start start">
+				<textarea
+					i18n="@@shared_thankDonar_replyText_form"
+					rows="15"
+					maxlength="200"
+					matInput
+					#input
+					required
+					placeholder="{{ this.replyMessage }}"
+					[formControl]="replyForm"
+				></textarea>
+			</div>
+			<mat-hint align="end">{{ input.value.length || 0 }}/200</mat-hint>
+		</mat-form-field>
+	</div>
+
+	<!-- Row For Button -->
+	<div
+		fxLayout="column-reverse"
+		fxLayoutAlign="flex-end flex-end"
+		*ngIf="this.updateButtonCheck"
+		ngClass="p-b-s"
+	>
+		<button
+			i18n="@@button_sendMessage_label"
+			mat-flat-button
+			color="accent"
+			fxFlex="60%"
+			[disabled]="replyForm.invalid"
+			(click)="postReply(input.value)"
+		>
+			Send Message
+		</button>
+	</div>
+
+	<div
+		fxLayout="row"
+		fxLayoutAlign="end center"
+		*ngIf="!this.updateButtonCheck"
+		ngClass="p-b-s"
+	>
+		<button
+			i18n="@@button_update"
+			mat-flat-button
+			color="accent"
+			fxFlex="60%"
+			[disabled]="replyForm.invalid"
+			(click)="postReply(input.value)"
+		>
+			Update Message
+		</button>
+	</div>
+</div>

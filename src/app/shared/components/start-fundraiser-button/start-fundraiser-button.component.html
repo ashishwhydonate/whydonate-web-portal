@@ -1,0 +1,21 @@
+<ng-container *ngIf="buttonType === 'flat'">
+	<button
+		mat-flat-button
+		[color]="themeColor"
+		(click)="openPopup()"
+		i18n="@@button_startFundraiser"
+	>
+		Start Fundraiser
+	</button>
+</ng-container>
+<ng-container *ngIf="buttonType === 'stroked'">
+	<button
+		mat-stroked-button
+		[color]="themeColor"
+		(click)="openPopup()"
+		i18n="@@button_startFundraiser"
+		fxFill
+	>
+		Start Fundraiser
+	</button>
+</ng-container>

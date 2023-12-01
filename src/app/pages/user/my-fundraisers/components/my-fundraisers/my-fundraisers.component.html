@@ -1,0 +1,292 @@
+<div fxLayout="column" fxFlex="100%" fxFill class="pale-grey-bg">
+	<div *ngIf="isLoading">
+		<mat-progress-bar [mode]="progressBarMode" [value]="progressbarValue">
+		</mat-progress-bar>
+	</div>
+	<div
+		fxLayout="row"
+		fxLayoutAlign="flex-start baseline"
+		fxFlex="100%"
+		fxLayoutGap="3%"
+		fxLayout.lt-md="row wrap"
+		ngClass.gt-md="p-l-m"
+		ngClass.md="p-l-l m-l-xs"
+	>
+		<div
+			fxLayout="row"
+			fxLayout.lt-md="column"
+			fxLayoutAlign="space-between baseline"
+			fxFlex="38%"
+			fxFlex.md="43%"
+			fxFlex.sm="79%"
+			fxFlex.lt-md="100%"
+			ngClass.lt-md="p-t-m p-l-s"
+		>
+			<div ngClass.gt-md="p-l-s" fxLayout="column" fxFlex="40%" fxFlex.md="60%">
+				<mat-label class="mat-title">
+					<span i18n="@@header_userMenu_button_myFundraisers">Fundraisers </span
+					>&nbsp;
+					<span *ngIf="tempLoader === true">({{ totalCount }})</span>
+					<mat-icon *ngIf="tempLoader === false">
+						<mat-spinner color="accent" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</mat-label>
+			</div>
+			<div
+				fxLayout="column"
+				fxFlex="45%"
+				fxFill
+				ngClass.lg="p-r-xs"
+				ngClass.sm="p-r-xxl"
+				ngClass.xs="p-r-m"
+			>
+				<mat-form-field appearance="outline">
+					<mat-label i18n="@@fundraisers_filter_filterBy">Filter By</mat-label>
+					<mat-select [formControl]="filters" [disabled]="!fundraiserCreated">
+						<mat-option
+							*ngFor="let filterTypes of types"
+							[value]="filterTypes.filterName"
+						>
+							{{ filterTypes.displayedName }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+		</div>
+		<div
+			fxLayout="row"
+			fxLayout.lt-md="column"
+			fxLayoutAlign="space-between baseline"
+			fxLayoutAlign.lt-md="baseline stretch"
+			fxFlex="39%"
+			fxFlex.sm="70%"
+			fxFlex.lt-sm="95%"
+			ngClass.lt-md="p-l-s"
+		>
+			<div
+				fxLayout="row"
+				fxFlex.gt-md="35%"
+				fxFlex.md="70%"
+				fxFlex.lt-sm="100%"
+				fxLayout.lt-md="column"
+				fxLayoutAlign="center center"
+				ngClass.md="p-r-xl"
+			>
+				<mat-form-field appearance="outline" [style.width.%]="100">
+					<mat-label
+						><span i18n="@@currencySelectorLabel">Currency</span
+						>&nbsp;</mat-label
+					>
+					<mat-select
+						[(ngModel)]="defaultCurrency"
+						(selectionChange)="switchCurrency($event.value)"
+					>
+						<mat-option value="*" i18n="@@fundraisers_filter_list_all"
+							>All</mat-option
+						>
+						<mat-option
+							*ngFor="let currency of this.currencies"
+							[value]="currency"
+						>
+							{{ currency.symbol }}
+							&nbsp;
+							{{ currency.currency | uppercase }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+
+			<div
+				fxLayout="row"
+				fxFlex="55%"
+				fxFlex.lt-md="100%"
+				fxLayout.lt-md="column"
+				fxLayoutAlign="center center"
+			>
+				<form
+					[formGroup]="searchInputForm"
+					ngClass="p-r-s"
+					ngClass.gt-sm="m-t-m"
+					ngClass="w-100"
+					fxFill
+				>
+					<mat-form-field appearance="outline" color="primary" ngClass="w-100">
+						<img
+							matSuffix
+							height="18px"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/search.svg"
+						/>
+						<mat-label i18n="@@myFundraisers_searchFundraiser_label">
+							Search fundraiser
+						</mat-label>
+						<input
+							id="searchFundraiser"
+							matInput
+							placeholder="Search fundraiser"
+							type="text"
+							formControlName="searchCtrl"
+							(ngModelChange)="startIndeterminateProgress()"
+							[attr.disabled]="!fundraiserCreated ? true : null"
+						/>
+					</mat-form-field>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="fundraiserCreated; else displayStartFundraiser">
+		<div
+			fxLayout="row"
+			ngClass.sm="p-b-xl"
+			ngClass.xs="p-b-xxl m-b-l"
+			class="p-0"
+		>
+			<div
+				fxFlex="100%"
+				fxLayout="row wrap"
+				fxLayoutAlign="flex-start center"
+				class="fundraiser-card-small"
+				ngClass.gt-sm="p-l-m"
+				ngClass.lt-sm="p-l-s p-r-s"
+			>
+				<div
+					*ngFor="let _fundraiserData of myFundraiserDataList"
+					id="myFundraiserCard"
+				>
+					<app-fundraiser-card
+						[slug]="_fundraiserData.slug"
+						[fundraiserCardData]="_fundraiserData.fundraiserCardData"
+						type="small"
+					>
+					</app-fundraiser-card>
+				</div>
+				<div
+					fxFlex="100%"
+					fxLayout="row wrap"
+					fxLayoutAlign="center center"
+					class="fundraiser-card-small p-l"
+				>
+					<button
+						id="view-more-button"
+						name="view-more-button"
+						mat-flat-button
+						color="accent"
+						[disabled]="isLoading || myFundraiserDataList.length >= totalCount"
+						(click)="viewMore()"
+					>
+						<span i18n="@@search_fundraiser_button_title_read_more_button"
+							>View More</span
+						>
+						<mat-icon *ngIf="isLoading">
+							<mat-spinner
+								color="primary"
+								diameter="20"
+								i18n="@@search_spinner"
+							>
+							</mat-spinner>
+						</mat-icon>
+					</button>
+				</div>
+				<div *ngIf="myFundraiserDataList.length <= 2">
+					<br /><br /><br /><br /><br /><br /><br /><br />
+				</div>
+			</div>
+		</div>
+	</div>
+	<br /><br />
+	<!-- <div
+		fxLayout="row"
+		fxLayout.lt-md="column"
+		fxLayoutAlign.lt-md="flex-start stretch"
+		fxLayoutGap.lt-md="2%"
+		fxLayoutAlign="flex-start center"
+		fxFlex="100%"
+		class="bottom"
+	>
+		<div
+			fxLayout="row"
+			fxLayout.lt-md="column"
+			fxFlex="20%"
+			fxLayoutAlign="flex-start center"
+			fxLayoutAlign.lt-md="flex-start flex-start"
+			ngClass.lt-md="p-l-l"
+			ngClass.lg="p-l-xl"
+		>
+			<span
+				class="mat-body-2 dark-grey-texts"
+				i18n="@@fundraisers_symbol_glossary"
+				>Fundraiser Symbol Glossary</span
+			>
+		</div>
+		<div
+			fxLayout="row"
+			fxLayout.sm="row"
+			fxLayout.lt-sm="column"
+			fxLayoutGap.lg="5%"
+			fxLayoutGap.lt-sm="2%"
+			fxLayoutGap.lt-lg="2%"
+			fxFlex="65%"
+			fxLayoutAlign="flex-start center"
+			fxLayoutAlign.lt-md="flex-start flex-start"
+			ngClass.lt-md="p-l-l"
+		>
+			<div fxLayout="row" fxLayoutAlign="space-around center">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1692802910/whydonate-production/platform/svg-icons/mainFundraiser.svg"
+				/>
+				&nbsp;&nbsp;
+				<span class="mat-body-2" i18n="@@fundraisers_main_fundraiser"
+					>Main Fundraiser</span
+				>
+				&nbsp;
+				<img
+					height="14px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1683319026/whydonate-production/platform/svg-icons/infoWarnBlack.svg"
+					matTooltip="{{ this.mainFundraiserTooltip }}"
+				/>
+			</div>
+			<div fxLayout="row" fxLayoutAlign="space-around center">
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1692802910/whydonate-production/platform/svg-icons/connectedFundraiser.svg"
+				/>
+				&nbsp;&nbsp;
+				<span class="mat-body-2" i18n="@@fundraisers_connected_fundraiser"
+					>Connected Fundraiser</span
+				>
+				&nbsp;<img
+					height="14px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1683319026/whydonate-production/platform/svg-icons/infoWarnBlack.svg"
+					matTooltip="{{ this.connectedTooltip }}"
+				/>
+			</div>
+		</div>
+	</div> -->
+</div>
+
+<!-- Page loader / whydonate loader -->
+<ng-template #whydonateLoader>
+	<app-page-loader></app-page-loader>
+</ng-template>
+
+<ng-template #displayStartFundraiser>
+	<br /><br /><br /><br /><br /><br />
+	<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="3%">
+		<div>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1688670346/whydonate-production/platform/svg-icons/startFirstFund.svg"
+			/>
+		</div>
+		<div>
+			<h2
+				style="text-align: start"
+				i18n="@@dashboard_fundraiser_summary_start_fundraiser"
+			>
+				Start Your First <br />Fundraiser
+			</h2>
+		</div>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="center center">
+		<app-start-fundraiser-button buttonType="flat" themeColor="accent">
+		</app-start-fundraiser-button>
+	</div>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</ng-template>

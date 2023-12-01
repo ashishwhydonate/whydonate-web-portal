@@ -1,0 +1,180 @@
+
+
+<div ngClass.lt-lg="m-t-xl">
+	<mat-card-title i18n="@@personal_verification_compliance_title"
+		>OPP Account Status</mat-card-title
+	>
+	<p i18n="@@bank_verification_notification_paragraph">
+		Verification should be completed to receive payouts. To verify account, OPP
+		will take 1- 2 business days for consumer account and 4-5 business days for
+		company account.
+	</p>
+	<app-page-loader *ngIf="pageLoading"></app-page-loader>
+	<div *ngIf="this.verificationStatus">
+		<div
+			fxLayout="row"
+			fxLayoutGap="2%"
+			ngClass="m-t-m"
+			fxLayoutAlign="start center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+			/>
+			<span i18n="@@verified_status">Verified</span>
+		</div>
+		<div fxLayout="row" ngClass="m-t-s">
+			<p i18n="@@personal_verification_complianceVerification_verified_info">
+				Compliance Verification is successfull!
+			</p>
+		</div>
+	</div>
+	<div *ngIf="this.disapprovedStatus">
+		<div
+			fxLayout="row"
+			fxLayoutGap="2%"
+			ngClass="m-t-m"
+			fxLayoutAlign="start center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+			/>
+			<span i18n="@@disapproved_status">Unverified</span>
+		</div>
+		<div fxLayout="row" ngClass="m-t-s">
+			<p i18n="@@disapproved_info" style="color: orange">
+				Please complete all the required verification steps to start receiving
+				payouts. You can already start collecting donations. The donation
+				buttons are active.
+			</p>
+		</div>
+	</div>
+	<div *ngIf="this.overallCheck">
+		<div
+			fxLayout="row"
+			fxLayoutGap="2%"
+			ngClass="m-t-m"
+			fxLayoutAlign="start center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+			/>
+			<span i18n="@@disapproved_status">Unverified</span>
+		</div>
+		<div fxLayout="row" ngClass="m-t-s">
+			<p i18n="@@unverified_info" style="color: red">
+				Thanks for providing all the details. Your account is not verified yet,
+				because Online Payment Platform requires some extra information. You
+				will be contacted via email no-reply&#64;onlinepaymentplatform.com . Please
+				reply to them in order to get your account verified. You can already
+				start collecting donations. The donation buttons are active.
+			</p>
+		</div>
+	</div>
+	<div *ngIf="this.pendingStatus">
+		<div
+			fxLayout="row"
+			fxLayoutGap="2%"
+			ngClass="m-t-m"
+			fxLayoutAlign="start center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+			/>
+			<span i18n="@@pending_status">Verification Pending</span>
+		</div>
+		<div fxLayout="row" ngClass="m-t-s">
+			<p i18n="@@personal_verification_pending_info">
+				Verification is important to receive payouts
+			</p>
+		</div>
+	</div>
+	<div *ngIf="this.initialStatus">
+		<div
+			fxLayout="row"
+			fxLayoutGap="2%"
+			ngClass="m-t-m"
+			fxLayoutAlign="start center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+			/>
+			<span i18n="@@initial_status">Not Yet Initiated</span>
+		</div>
+		<div fxLayout="row" ngClass="m-t-s">
+			<p i18n="@@personal_verification_complianceVerification_initial_info">
+				Compliance Verification is important to receive payouts
+			</p>
+		</div>
+	</div>
+	<!-- <mat-divider inset></mat-divider> -->
+
+	<mat-card-content ngClass="m-t-m">
+		<div
+			*ngIf="
+				this.verificationStatus || this.disapprovedStatus || this.pendingStatus
+			"
+		>
+			<div fxLayout="column" *ngIf="!this.typeCheck">
+				<b i18n="@@bank_bankDetails_heading">Bank Details</b>
+				<div fxLayout="row" fxLayoutGap="2%" ngClass="m-t-m">
+					<b i18n="@@bank_accountType_heading">Account Type:</b>
+					<p>{{ this.bankObject?.type }}</p>
+				</div>
+				<div *ngIf="!this.hideBankDetails">
+					<div fxLayout="row" fxLayoutGap="2%" ngClass="m-t-m">
+						<b i18n="@@bank_accountHolderName_heading">Account Holder Name:</b>
+						<p>{{ this.bankObject?.account?.account_name }}</p>
+					</div>
+					<div fxLayout="row" fxLayoutGap="2%" ngClass="m-t-m">
+						<b i18n="@@bank_ibanNumber_heading">IBAN Number: </b>
+						<p>{{ this.bankObject?.account?.account_iban }}</p>
+					</div>
+				</div>
+			</div>
+			<div
+				fxLayout="column"
+				fxLayoutAlign="start start"
+				ngClass="m-t-m"
+				*ngIf="!this.firstAccountCheck && this.complianceStatus != 'verified'"
+			>
+				<button
+					color="accent"
+					mat-flat-button
+					(click)="addPersonalVerification()"
+				>
+					<span i18n="@@bank_modifyBankAccount_button">Modify Document</span>
+					<mat-icon *ngIf="documentCheck" class="m-l-xs">
+						<mat-spinner color="primary" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+		</div>
+		<div
+			fxLayout="column"
+			fxLayoutAlign="start start"
+			ngClass="m-t-m"
+			*ngIf="this.firstAccountCheck"
+		>
+			<button color="accent" mat-flat-button (click)="openBankTypeDialog()">
+				<span i18n="@@bank_addBankAccount_button">Add Bank Account</span>
+				<mat-icon *ngIf="documentCheck" class="m-l-xs">
+					<mat-spinner color="primary" diameter="20"> </mat-spinner>
+				</mat-icon>
+			</button>
+		</div>
+		<div
+			fxLayout="column"
+			fxLayoutAlign="start start"
+			ngClass="m-t-m"
+			*ngIf="this.complianceStatus == 'verified'"
+		>
+			<button color="accent" mat-flat-button (click)="editBankAccountDetails()">
+				<span>Edit Bank Details</span>
+				<mat-icon *ngIf="documentCheck" class="m-l-xs">
+					<mat-spinner color="primary" diameter="20"> </mat-spinner>
+				</mat-icon>
+			</button>
+		</div>
+	</mat-card-content>
+</div>
+<!-- </mat-card> -->

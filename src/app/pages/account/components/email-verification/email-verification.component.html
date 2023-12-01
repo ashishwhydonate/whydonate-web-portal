@@ -1,0 +1,113 @@
+<div
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-m"
+	class="branding"
+>
+	<div
+		fxLayout="column"
+		fxFlex.xs="100%"
+		fxFlex.sm="75%"
+		fxFlex.md="75%"
+		fxFlex.lg="60%"
+		fxLayoutAlign="center center"
+		class="mat-typography"
+	>
+		<!--TEMPLATE FOR VERIFYING-->
+		<div
+			*ngIf="this.verificationStatus == 'verifying'"
+			fxLayout="row"
+			fxFill
+			fxLayoutAlign="center center"
+			class="donateGreyBackground"
+			ngClass="p-xxl"
+			ngClass.sm="p-m"
+			ngClass.xs="p-m"
+		>
+			<div
+				fxLayout="column"
+				fxFill
+				fxLayoutAlign="center center"
+				fxLayoutGap="5%"
+			>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<app-page-loader></app-page-loader>
+				</div>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<div fxLayout="column" fxLayoutAlign="center center">
+						<h2 i18n="@@account_email_verification_label">
+							Verifying your account...
+						</h2>
+						<label i18n="@@account_email_verification_label_doNotRefresh">
+							Please do not click refresh or click the back button.
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--TEMPLATE FOR SUCCESSFUL VERIFICATION-->
+		<div
+			*ngIf="this.verificationStatus == 'successful'"
+			fxLayout="row"
+			fxFill
+			fxLayoutAlign="center center"
+			ngClass="p-xxl"
+			ngClass.sm="p-m"
+			ngClass.xs="p-m"
+			class="donateGreyBackground"
+		>
+			<div
+				fxLayout="column"
+				fxLayoutAlign="center center"
+				class="mat-typography"
+			>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<app-page-loader></app-page-loader>
+				</div>
+				<h2>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667421094/whydonate-production/platform/svg-icons/checkCircleFillPrimary.svg"
+					/>&nbsp;
+					<span i18n="@@account_email_verification_succesful_message"
+						>Verification Successful</span
+					>
+				</h2>
+				<label i18n="@@account_email_verification_label_redirect">
+					Redirecting you to dashboard...
+				</label>
+			</div>
+		</div>
+
+		<!--TEMPLATE FOR UNSUCCESSFUL VERIFICATION-->
+		<div *ngIf="this.verificationStatus == 'unsuccessful'">
+			<div
+				fxLayout="row"
+				fxFlex="100%"
+				fxLayoutAlign="center center"
+				ngClass="p-xxl"
+				ngClass.sm="p-m"
+				ngClass.xs="p-m"
+				class="donateGreyBackground"
+			>
+				<div fxLayout="column" fxLayoutAlign="center center">
+					<h2>
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+						/>&nbsp;
+						<span i18n="@@account_email_verification_failed_message"
+							>Verification failed</span
+						>
+					</h2>
+					<label i18n="@@account_email_verification_label_incorrectEmail">
+						Either the email you have entered is not correct or link has
+						expired. Please contact customer support.
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

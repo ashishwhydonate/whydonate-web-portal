@@ -1,0 +1,2962 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >MyFundraisersService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_accountService" >_accountService</a>
+                            </li>
+                            <li>
+                                <a href="#ACCOUNT_API_V2" >ACCOUNT_API_V2</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#allFundraisersObservable" >allFundraisersObservable</a>
+                            </li>
+                            <li>
+                                <a href="#API_URL" >API_URL</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bothFundraisersObservable" >bothFundraisersObservable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#closedFundraisers" >closedFundraisers</a>
+                            </li>
+                            <li>
+                                <a href="#closedParams" >closedParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#connectedFundraisersObservable" >connectedFundraisersObservable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#count" >count</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#defaultParams" >defaultParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#draftFundraisers" >draftFundraisers</a>
+                            </li>
+                            <li>
+                                <a href="#draftParams" >draftParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filterFundraisersObservable" >filterFundraisersObservable</a>
+                            </li>
+                            <li>
+                                <a href="#FUNDRAISER_URL" >FUNDRAISER_URL</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#header" >header</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#mainFundraisersObservable" >mainFundraisersObservable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#myFundraisers" >myFundraisers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#params" >params</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#publishedFundraisers" >publishedFundraisers</a>
+                            </li>
+                            <li>
+                                <a href="#publishedParams" >publishedParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#tempParams" >tempParams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#userFundraiserAPI" >userFundraiserAPI</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#userFundraiserLocalAPI" >userFundraiserLocalAPI</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#userFundraiserOwnerAPI" >userFundraiserOwnerAPI</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#geClosed" >geClosed</a>
+                            </li>
+                            <li>
+                                <a href="#getAll" >getAll</a>
+                            </li>
+                            <li>
+                                <a href="#getAllFundraisersAtOnce" >getAllFundraisersAtOnce</a>
+                            </li>
+                            <li>
+                                <a href="#getBoth" >getBoth</a>
+                            </li>
+                            <li>
+                                <a href="#getConnected" >getConnected</a>
+                            </li>
+                            <li>
+                                <a href="#getCount" >getCount</a>
+                            </li>
+                            <li>
+                                <a href="#getDraft" >getDraft</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserStatus" >getFundraiserStatus</a>
+                            </li>
+                            <li>
+                                <a href="#getMain" >getMain</a>
+                            </li>
+                            <li>
+                                <a href="#getPublished" >getPublished</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setTypeBoth" >setTypeBoth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setTypeConnected" >setTypeConnected</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setTypeMain" >setTypeMain</a>
+                            </li>
+                            <li>
+                                <a href="#updateFundraiser" >updateFundraiser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#getDefaultParams" >getDefaultParams</a>
+                                </li>
+                                <li>
+                                    <a href="#getParams" >getParams</a>
+                                </li>
+                                <li>
+                                    <a href="#getDraftParams" >getDraftParams</a>
+                                </li>
+                                <li>
+                                    <a href="#getPublishedParams" >getPublishedParams</a>
+                                </li>
+                                <li>
+                                    <a href="#getCompletedParams" >getCompletedParams</a>
+                                </li>
+                                <li>
+                                    <a href="#setFilterString" >setFilterString</a>
+                                </li>
+                                <li>
+                                    <a href="#newParams" >newParams</a>
+                                </li>
+                                <li>
+                                    <a href="#getCountParams" >getCountParams</a>
+                                </li>
+                                <li>
+                                    <a href="#getFundraiserParams" >getFundraiserParams</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_apiService: <a href="../injectables/APIService.html" target="_self">APIService</a>, _accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>, _fundraiserCardService: <a href="../injectables/FundraiserCardService.html" target="_self">FundraiserCardService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_apiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/APIService.html" target="_self" >APIService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_accountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_fundraiserCardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FundraiserCardService.html" target="_self" >FundraiserCardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="geClosed"></a>
+                    <span class="name">
+                        <span ><b>geClosed</b></span>
+                        <a href="#geClosed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>geClosed(params: <a href="https://angular.io/api/common/http/HttpParams" target="_blank">HttpParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:114</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>this.getCompletedParams</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAll"></a>
+                    <span class="name">
+                        <span ><b>getAll</b></span>
+                        <a href="#getAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAll()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="491"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:491</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: get all fundraisers in this order:
+ Draft -&gt; Published -&gt; Closed/Completed
+RETURNS: Observer of type: MyFundraisersTab</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllFundraisersAtOnce"></a>
+                    <span class="name">
+                        <span ><b>getAllFundraisersAtOnce</b></span>
+                        <a href="#getAllFundraisersAtOnce"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllFundraisersAtOnce()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:150</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBoth"></a>
+                    <span class="name">
+                        <span ><b>getBoth</b></span>
+                        <a href="#getBoth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBoth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="503"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:503</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getConnected"></a>
+                    <span class="name">
+                        <span ><b>getConnected</b></span>
+                        <a href="#getConnected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getConnected()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="499"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:499</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCount"></a>
+                    <span class="name">
+                        <span ><b>getCount</b></span>
+                        <a href="#getCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCount(params: <a href="https://angular.io/api/common/http/HttpParams" target="_blank">HttpParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>this.getPublishedParams</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDraft"></a>
+                    <span class="name">
+                        <span ><b>getDraft</b></span>
+                        <a href="#getDraft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDraft(params: <a href="https://angular.io/api/common/http/HttpParams" target="_blank">HttpParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>this.getDraftParams</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserStatus"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserStatus</b></span>
+                        <a href="#getFundraiserStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserStatus()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="522"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:522</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>GET: get fundraisers status:</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMain"></a>
+                    <span class="name">
+                        <span ><b>getMain</b></span>
+                        <a href="#getMain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMain()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="495"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:495</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPublished"></a>
+                    <span class="name">
+                        <span ><b>getPublished</b></span>
+                        <a href="#getPublished"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPublished(params: <a href="https://angular.io/api/common/http/HttpParams" target="_blank">HttpParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>this.getPublishedParams</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTypeBoth"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setTypeBoth</b></span>
+                        <a href="#setTypeBoth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setTypeBoth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="547"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:547</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: set fundraiser type: Both</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTypeConnected"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setTypeConnected</b></span>
+                        <a href="#setTypeConnected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setTypeConnected()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="541"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:541</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: set fundraiser type: connected</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTypeMain"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setTypeMain</b></span>
+                        <a href="#setTypeMain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setTypeMain()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="535"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:535</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: set fundraiser type: main</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFundraiser"></a>
+                    <span class="name">
+                        <span ><b>updateFundraiser</b></span>
+                        <a href="#updateFundraiser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateFundraiser(body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank">object</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="509"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:509</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>UPDATE: update all fundraisers amount:</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_accountService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_accountService</b></span>
+                        <a href="#_accountService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ACCOUNT_API_V2"></a>
+                    <span class="name">
+                        <span ><b>ACCOUNT_API_V2</b></span>
+                        <a href="#ACCOUNT_API_V2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.ACCOUNT_API_V2</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allFundraisersObservable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>allFundraisersObservable</b></span>
+                        <a href="#allFundraisersObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			this.getDraft().subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished().subscribe((publishedRsponse: any) &#x3D;&gt; {
+					observer.next({
+						label: &#x27;Published&#x27;,
+						count: publishedRsponse?.data?.count,
+						content:
+							this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+								publishedRsponse?.data?.results
+							),
+					});
+
+					this.geClosed().subscribe((closedResponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Closed&#x27;,
+							count: closedResponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									closedResponse?.data?.results
+								),
+						});
+					});
+				});
+			});
+		}
+	)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:196</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: Observable which gets API data and returns Observer of type MyFundraisersTab</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="API_URL"></a>
+                    <span class="name">
+                        <span ><b>API_URL</b></span>
+                        <a href="#API_URL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.apiUrl</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>TODO: remove when using api.service</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bothFundraisersObservable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>bothFundraisersObservable</b></span>
+                        <a href="#bothFundraisersObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			this.draftParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;draft&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;&#x27;,
+				},
+			});
+			this.publishedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;published&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;&#x27;,
+				},
+			});
+			this.closedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;closed&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;&#x27;,
+				},
+			});
+			this.getDraft(this.draftParams).subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished(this.publishedParams).subscribe(
+					(publishedRsponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Published&#x27;,
+							count: publishedRsponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									publishedRsponse?.data?.results
+								),
+						});
+
+						this.geClosed(this.closedParams).subscribe(
+							(closedResponse: any) &#x3D;&gt; {
+								observer.next({
+									label: &#x27;Closed&#x27;,
+									count: closedResponse?.data?.count,
+									content:
+										this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+											closedResponse?.data?.results
+										),
+								});
+							}
+						);
+					}
+				);
+			});
+		}
+	)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="418" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:418</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closedFundraisers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>closedFundraisers</b></span>
+                        <a href="#closedFundraisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closedParams"></a>
+                    <span class="name">
+                        <span ><b>closedParams</b></span>
+                        <a href="#closedParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="connectedFundraisersObservable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>connectedFundraisersObservable</b></span>
+                        <a href="#connectedFundraisersObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			let locale &#x3D; this._accountService.getLocaleId();
+			this.draftParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;draft&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.publishedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;published&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;connected&#x27;,
+				},
+			});
+			this.closedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;closed&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 1,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;connected&#x27;,
+				},
+			});
+			this.getDraft(this.draftParams).subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished(this.publishedParams).subscribe(
+					(publishedRsponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Published&#x27;,
+							count: publishedRsponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									publishedRsponse?.data?.results
+								),
+						});
+
+						this.geClosed(this.closedParams).subscribe(
+							(closedResponse: any) &#x3D;&gt; {
+								observer.next({
+									label: &#x27;Closed&#x27;,
+									count: closedResponse?.data?.count,
+									content:
+										this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+											closedResponse?.data?.results
+										),
+								});
+							}
+						);
+					}
+				);
+			});
+		}
+	)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="348" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:348</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="count"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>count</b></span>
+                        <a href="#count"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultParams"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>defaultParams</b></span>
+                        <a href="#defaultParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new HttpParams({
+		fromObject: {
+			[&#x27;status&#x27;]: &#x27;published&#x27;,
+			[&#x27;filter&#x27;]: &#x27;&#x27;,
+			[&#x27;page&#x27;]: 0,
+			[&#x27;page_size&#x27;]: 5,
+		},
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftFundraisers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>draftFundraisers</b></span>
+                        <a href="#draftFundraisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftParams"></a>
+                    <span class="name">
+                        <span ><b>draftParams</b></span>
+                        <a href="#draftParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>allFundraisersObservable: Observable<MyFundraisersTab>;</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFundraisersObservable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filterFundraisersObservable</b></span>
+                        <a href="#filterFundraisersObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			this.getDraft().subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished().subscribe((publishedRsponse: any) &#x3D;&gt; {
+					observer.next({
+						label: &#x27;Published&#x27;,
+						count: publishedRsponse?.data?.count,
+						content:
+							this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+								publishedRsponse?.data?.results
+							),
+					});
+
+					this.geClosed().subscribe((closedResponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Closed&#x27;,
+							count: closedResponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									closedResponse?.data?.results
+								),
+						});
+					});
+				});
+			});
+		}
+	)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="236" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:236</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: Observable which gets API type data and returns Observer of type MyFundraisersTab</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FUNDRAISER_URL"></a>
+                    <span class="name">
+                        <span ><b>FUNDRAISER_URL</b></span>
+                        <a href="#FUNDRAISER_URL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.fundraiser_url</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="header"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>header</b></span>
+                        <a href="#header"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/common/http/HttpHeaders" target="_blank" >HttpHeaders</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mainFundraisersObservable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>mainFundraisersObservable</b></span>
+                        <a href="#mainFundraisersObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			let locale &#x3D; this._accountService.getLocaleId();
+			this.draftParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;draft&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;not_connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.publishedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;published&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;not_connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.closedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;closed&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;not_connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.getDraft(this.draftParams).subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished(this.publishedParams).subscribe(
+					(publishedRsponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Published&#x27;,
+							count: publishedRsponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									publishedRsponse?.data?.results
+								),
+						});
+
+						this.geClosed(this.closedParams).subscribe(
+							(closedResponse: any) &#x3D;&gt; {
+								observer.next({
+									label: &#x27;Closed&#x27;,
+									count: closedResponse?.data?.count,
+									content:
+										this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+											closedResponse?.data?.results
+										),
+								});
+							}
+						);
+					}
+				);
+			});
+		}
+	)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="276" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:276</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: Observable which gets API data and returns Observer of owner in MyFundraisersTab</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myFundraisers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>myFundraisers</b></span>
+                        <a href="#myFundraisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Fundraiser.html" target="_self" >MyFundraisersTab[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="params"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>params</b></span>
+                        <a href="#params"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/common/http/HttpParams" target="_blank" >HttpParams</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publishedFundraisers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>publishedFundraisers</b></span>
+                        <a href="#publishedFundraisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publishedParams"></a>
+                    <span class="name">
+                        <span ><b>publishedParams</b></span>
+                        <a href="#publishedParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tempParams"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>tempParams</b></span>
+                        <a href="#tempParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new HttpParams({
+		fromObject: {
+			[&#x27;status&#x27;]: &#x27;draft&#x27;,
+			[&#x27;filter&#x27;]: &#x27;&#x27;,
+			[&#x27;page&#x27;]: 0,
+			[&#x27;page_size&#x27;]: 5,
+			[&#x27;type&#x27;]: &#x27;connected&#x27;,
+		},
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userFundraiserAPI"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>userFundraiserAPI</b></span>
+                        <a href="#userFundraiserAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;fundraiser/get_user_fundraisers_status/&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userFundraiserLocalAPI"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>userFundraiserLocalAPI</b></span>
+                        <a href="#userFundraiserLocalAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;project/fundraising/local/&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userFundraiserOwnerAPI"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>userFundraiserOwnerAPI</b></span>
+                        <a href="#userFundraiserOwnerAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;fundraiser/get_user_fundraisers_status/&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDefaultParams"></a>
+                        <span class="name"><b>getDefaultParams</b><a href="#getDefaultParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getDefaultParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:74</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getParams"></a>
+                        <span class="name"><b>getParams</b><a href="#getParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:77</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDraftParams"></a>
+                        <span class="name"><b>getDraftParams</b><a href="#getDraftParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getDraftParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:80</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getPublishedParams"></a>
+                        <span class="name"><b>getPublishedParams</b><a href="#getPublishedParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getPublishedParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:83</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getCompletedParams"></a>
+                        <span class="name"><b>getCompletedParams</b><a href="#getCompletedParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getCompletedParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:86</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setFilterString"></a>
+                        <span class="name"><b>setFilterString</b><a href="#setFilterString"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>setFilterString(filter_string: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:89</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>filter_string</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newParams"></a>
+                        <span class="name"><b>newParams</b><a href="#newParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>newParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:93</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>INFO: Set new time and return the prams object</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getCountParams"></a>
+                        <span class="name"><b>getCountParams</b><a href="#getCountParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getCountParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:130</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getFundraiserParams"></a>
+                        <span class="name"><b>getFundraiserParams</b><a href="#getFundraiserParams"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getFundraiserParams()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="528" class="link-to-prism">src/app/pages/user/my-fundraisers/services/my-fundraisers.service.ts:528</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders, HttpParams } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { APIService } from &#x27;src/app/global/services/api.service&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { Observable, Observer } from &#x27;rxjs&#x27;;
+import { publishReplay, refCount, tap } from &#x27;rxjs/operators&#x27;;
+import { FundraiserCardService } from &#x27;src/app/shared/services/fundraiser-card.service&#x27;;
+export interface MyFundraisersTab {
+	label: string;
+	count: number;
+	content: any[];
+}
+/** *Constant string lateral */
+export const TYPE_NOT_CONNECTED &#x3D; &#x27;not_connected&#x27;;
+export const TYPE_CONNECTED &#x3D; &#x27;connected&#x27;;
+export const TYPE_BOTH &#x3D; &#x27;connected&#x27;;
+
+@Injectable({
+	providedIn: &#x27;root&#x27;,
+})
+/** *My Fundraisers Service */
+export class MyFundraisersService {
+	FUNDRAISER_URL: string &#x3D; environment.fundraiser_url;
+	private readonly userFundraiserAPI &#x3D;
+		&#x27;fundraiser/get_user_fundraisers_status/&#x27;;
+	private readonly userFundraiserLocalAPI &#x3D; &#x27;project/fundraising/local/&#x27;;
+	private readonly userFundraiserOwnerAPI &#x3D;
+		&#x27;fundraiser/get_user_fundraisers_status/&#x27;;
+	private readonly defaultParams &#x3D; new HttpParams({
+		fromObject: {
+			[&#x27;status&#x27;]: &#x27;published&#x27;,
+			[&#x27;filter&#x27;]: &#x27;&#x27;,
+			[&#x27;page&#x27;]: 0,
+			[&#x27;page_size&#x27;]: 5,
+		},
+	});
+	private readonly tempParams &#x3D; new HttpParams({
+		fromObject: {
+			[&#x27;status&#x27;]: &#x27;draft&#x27;,
+			[&#x27;filter&#x27;]: &#x27;&#x27;,
+			[&#x27;page&#x27;]: 0,
+			[&#x27;page_size&#x27;]: 5,
+			[&#x27;type&#x27;]: &#x27;connected&#x27;,
+		},
+	});
+	private params: HttpParams;
+	private header!: HttpHeaders;
+
+	private count: number &#x3D; 0;
+	private draftFundraisers: any;
+	private publishedFundraisers: any;
+	private closedFundraisers: any;
+	private myFundraisers!: MyFundraisersTab[];
+
+	/** *TODO: remove when using api.service */
+	API_URL: string &#x3D; environment.apiUrl;
+	ACCOUNT_API_V2: string &#x3D; environment.ACCOUNT_API_V2;
+
+	/** *allFundraisersObservable: Observable&lt;MyFundraisersTab&gt;; */
+	draftParams: any;
+	publishedParams: any;
+	closedParams: any;
+	constructor(
+		private _apiService: APIService,
+		public _accountService: AccountService,
+		private _fundraiserCardService: FundraiserCardService,
+		private http: HttpClient
+	) {
+		/** *INFO: setting params based on default params */
+		this.params &#x3D; this.defaultParams;
+	}
+
+	public get getDefaultParams(): HttpParams {
+		return this.defaultParams;
+	}
+	public get getParams(): HttpParams {
+		return this.params;
+	}
+	public get getDraftParams(): HttpParams {
+		return this.params.set(&#x27;status&#x27;, &#x27;draft&#x27;);
+	}
+	public get getPublishedParams(): HttpParams {
+		return this.params.set(&#x27;status&#x27;, &#x27;published&#x27;);
+	}
+	public get getCompletedParams(): HttpParams {
+		return this.params.set(&#x27;status&#x27;, &#x27;closed&#x27;);
+	}
+	public set setFilterString(filter_string: string) {
+		this.params &#x3D; this.newParams.set(&#x27;filter&#x27;, filter_string);
+	}
+	/** *INFO: Set new time and return the prams object */
+	public get newParams() {
+		return this.params.set(&#x27;filter&#x27;, &#x27;&#x27;);
+		// return this.params;
+	}
+
+	getDraft(params: HttpParams &#x3D; this.getDraftParams) {
+		this.header &#x3D; this._accountService.getHeaders() as HttpHeaders;
+		return this.http.get(this.FUNDRAISER_URL + this.userFundraiserAPI, {
+			headers: this.header,
+			params,
+		});
+		// return this._apiService.get(this.userFundraiserAPI,draftParams,this.header);
+	}
+	getPublished(params: HttpParams &#x3D; this.getPublishedParams) {
+		this.header &#x3D; this._accountService.getHeaders() as HttpHeaders;
+		return this.http.get(this.FUNDRAISER_URL + this.userFundraiserAPI, {
+			headers: this.header,
+			params,
+		});
+		// return this._apiService.get(this.userFundraiserAPI,publishedParams,this.header);
+	}
+	geClosed(params: HttpParams &#x3D; this.getCompletedParams) {
+		this.header &#x3D; this._accountService.getHeaders() as HttpHeaders;
+		return this.http.get(this.FUNDRAISER_URL + this.userFundraiserAPI, {
+			headers: this.header,
+			params,
+		});
+		// return this._apiService.get(this.userFundraiserAPI,ClosedParams,this.header);
+	}
+	// getOwner(params: HttpParams &#x3D; this.tempParams) {
+	// 	let API_URL &#x3D; environment.fundraiser_url;
+	// 	this.header &#x3D; this._accountService.getHeaders() as HttpHeaders;
+	// 	return this.http.get(API_URL + this.userFundraiserOwnerAPI, {
+	// 		headers: this.header,
+	// 		params,
+	// 	});
+	// }
+	get getCountParams() {
+		return this.getParams.set(&#x27;page_size&#x27;, 5);
+	}
+	// TODO: optimise api from backend
+	getCount(params: HttpParams &#x3D; this.getPublishedParams) {
+		this.header &#x3D; this._accountService.getHeaders() as HttpHeaders;
+		return this.http
+			.get(this.FUNDRAISER_URL + this.userFundraiserAPI, {
+				headers: this.header,
+				params,
+			})
+			.pipe(
+				tap((res: any) &#x3D;&gt;
+					console.log(&#x27;Shared service observable emitted&#x27;, res)
+				),
+				publishReplay(),
+				refCount()
+			);
+		// return this._apiService.get(this.userFundraiserAPI,ClosedParams,this.header);
+	}
+	getAllFundraisersAtOnce(): any {
+		// count -&gt; draft -&gt; published -&gt; closed/completed
+		this.getCount().subscribe((countResponse: any) &#x3D;&gt; {
+			this.count &#x3D; countResponse.data.count;
+			// console.log(this.count);
+
+			this.getDraft().subscribe((response: any) &#x3D;&gt; {
+				this.draftFundraisers &#x3D; response.data;
+				// console.log(this.draftFundraisers);
+
+				this.getPublished().subscribe((response: any) &#x3D;&gt; {
+					this.publishedFundraisers &#x3D; response.data;
+					// console.log(this.publishedFundraisers);
+
+					this.geClosed().subscribe((response: any) &#x3D;&gt; {
+						this.closedFundraisers &#x3D; response.data;
+						// console.log(this.closedFundraisers);
+
+						return new Observable((observer: Observer&lt;MyFundraisersTab[]&gt;) &#x3D;&gt; {
+							observer.next([
+								{
+									label: &#x27;Drafts&#x27;,
+									count: this.draftFundraisers.count,
+									content: this.draftFundraisers.results,
+								},
+								{
+									label: &#x27;Published&#x27;,
+									count: this.publishedFundraisers.count,
+									content: this.publishedFundraisers.results,
+								},
+								{
+									label: &#x27;Closed&#x27;,
+									count: this.closedFundraisers.count,
+									content: this.closedFundraisers.results,
+								},
+							]);
+						});
+					});
+				});
+			});
+		});
+	}
+
+	/**
+	 * DESCRIPTION: Observable which gets API data and returns Observer of type MyFundraisersTab
+	 */
+	public allFundraisersObservable &#x3D; new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			this.getDraft().subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished().subscribe((publishedRsponse: any) &#x3D;&gt; {
+					observer.next({
+						label: &#x27;Published&#x27;,
+						count: publishedRsponse?.data?.count,
+						content:
+							this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+								publishedRsponse?.data?.results
+							),
+					});
+
+					this.geClosed().subscribe((closedResponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Closed&#x27;,
+							count: closedResponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									closedResponse?.data?.results
+								),
+						});
+					});
+				});
+			});
+		}
+	);
+
+	/**
+	 * DESCRIPTION: Observable which gets API type data and returns Observer of type MyFundraisersTab
+	 */
+	public filterFundraisersObservable &#x3D; new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			this.getDraft().subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished().subscribe((publishedRsponse: any) &#x3D;&gt; {
+					observer.next({
+						label: &#x27;Published&#x27;,
+						count: publishedRsponse?.data?.count,
+						content:
+							this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+								publishedRsponse?.data?.results
+							),
+					});
+
+					this.geClosed().subscribe((closedResponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Closed&#x27;,
+							count: closedResponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									closedResponse?.data?.results
+								),
+						});
+					});
+				});
+			});
+		}
+	);
+
+	/**
+	 * DESCRIPTION: Observable which gets API data and returns Observer of owner in MyFundraisersTab
+	 */
+	public mainFundraisersObservable &#x3D; new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			let locale &#x3D; this._accountService.getLocaleId();
+			this.draftParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;draft&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;not_connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.publishedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;published&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;not_connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.closedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;closed&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;not_connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.getDraft(this.draftParams).subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished(this.publishedParams).subscribe(
+					(publishedRsponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Published&#x27;,
+							count: publishedRsponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									publishedRsponse?.data?.results
+								),
+						});
+
+						this.geClosed(this.closedParams).subscribe(
+							(closedResponse: any) &#x3D;&gt; {
+								observer.next({
+									label: &#x27;Closed&#x27;,
+									count: closedResponse?.data?.count,
+									content:
+										this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+											closedResponse?.data?.results
+										),
+								});
+							}
+						);
+					}
+				);
+			});
+		}
+	);
+
+	public connectedFundraisersObservable &#x3D; new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			let locale &#x3D; this._accountService.getLocaleId();
+			this.draftParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;draft&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;connected&#x27;,
+					[&#x27;language_code&#x27;]: locale
+				},
+			});
+			this.publishedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;published&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;connected&#x27;,
+				},
+			});
+			this.closedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;closed&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 1,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;connected&#x27;,
+				},
+			});
+			this.getDraft(this.draftParams).subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished(this.publishedParams).subscribe(
+					(publishedRsponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Published&#x27;,
+							count: publishedRsponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									publishedRsponse?.data?.results
+								),
+						});
+
+						this.geClosed(this.closedParams).subscribe(
+							(closedResponse: any) &#x3D;&gt; {
+								observer.next({
+									label: &#x27;Closed&#x27;,
+									count: closedResponse?.data?.count,
+									content:
+										this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+											closedResponse?.data?.results
+										),
+								});
+							}
+						);
+					}
+				);
+			});
+		}
+	);
+
+	public bothFundraisersObservable &#x3D; new Observable(
+		(observer: Observer&lt;MyFundraisersTab&gt;) &#x3D;&gt; {
+			this.draftParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;draft&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;&#x27;,
+				},
+			});
+			this.publishedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;published&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;&#x27;,
+				},
+			});
+			this.closedParams &#x3D; new HttpParams({
+				fromObject: {
+					[&#x27;status&#x27;]: &#x27;closed&#x27;,
+					[&#x27;filter&#x27;]: &#x27;&#x27;,
+					[&#x27;page&#x27;]: 0,
+					[&#x27;page_size&#x27;]: 5,
+					[&#x27;type&#x27;]: &#x27;&#x27;,
+				},
+			});
+			this.getDraft(this.draftParams).subscribe((draftResponse: any) &#x3D;&gt; {
+				observer.next({
+					label: &#x27;Drafts&#x27;,
+					count: draftResponse?.data?.count,
+					content:
+						this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+							draftResponse?.data?.results
+						),
+				});
+
+				this.getPublished(this.publishedParams).subscribe(
+					(publishedRsponse: any) &#x3D;&gt; {
+						observer.next({
+							label: &#x27;Published&#x27;,
+							count: publishedRsponse?.data?.count,
+							content:
+								this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									publishedRsponse?.data?.results
+								),
+						});
+
+						this.geClosed(this.closedParams).subscribe(
+							(closedResponse: any) &#x3D;&gt; {
+								observer.next({
+									label: &#x27;Closed&#x27;,
+									count: closedResponse?.data?.count,
+									content:
+										this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+											closedResponse?.data?.results
+										),
+								});
+							}
+						);
+					}
+				);
+			});
+		}
+	);
+
+	/**
+	 * DESCRIPTION: get all fundraisers in this order:
+	 *  Draft -&gt; Published -&gt; Closed/Completed
+	 * RETURNS: Observer of type: MyFundraisersTab
+	 */
+	getAll() {
+		return this.allFundraisersObservable;
+	}
+
+	getMain() {
+		return this.mainFundraisersObservable;
+	}
+
+	getConnected() {
+		return this.connectedFundraisersObservable;
+	}
+
+	getBoth() {
+		return this.bothFundraisersObservable;
+	}
+	/**
+	 * UPDATE: update all fundraisers amount:
+	 */
+	updateFundraiser(body: object) {
+		return this.http.put(
+			&#x60;${this.API_URL}${this.userFundraiserLocalAPI}&#x60;,
+			body,
+			{
+				headers: this.header,
+			}
+		);
+	}
+
+	/**
+	 * GET: get fundraisers status:
+	 */
+	getFundraiserStatus() {
+		return this.http.get(&#x60;${this.API_URL}${this.userFundraiserLocalAPI}&#x60;, {
+			headers: this.header,
+		});
+	}
+
+	public get getFundraiserParams(): HttpParams {
+		return this.params;
+	}
+
+	/**
+	 * DESCRIPTION: set fundraiser type: main
+	 */
+	public setTypeMain() {
+		this.params &#x3D; this.params.set(&#x27;type&#x27;, TYPE_NOT_CONNECTED);
+	}
+	/**
+	 * DESCRIPTION: set fundraiser type: connected
+	 */
+	public setTypeConnected() {
+		this.params &#x3D; this.params.set(&#x27;type&#x27;, TYPE_CONNECTED);
+	}
+	/**
+	 * DESCRIPTION: set fundraiser type: Both
+	 */
+	public setTypeBoth() {
+		this.params &#x3D; this.params.set(
+			&#x27;type&#x27;,
+			&#x60;${TYPE_BOTH}&#x60;
+		);
+	}
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MyFundraisersService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,362 @@
+<mat-card
+	fxFlex="0 1 calc(40vw)"
+	fxFlex.sm="100%"
+	fxFlex.xs="1 1 calc(40vw)"
+	class="mat-elevation-z0"
+>
+	<!--Identity Verification Status-->
+	<div ngClass.lt-lg="m-t-xl">
+		<mat-card-title i18n="@@personal_verification_identityVerification_heading"
+			>Identity Verification Status</mat-card-title
+		>
+		<app-page-loader *ngIf="pageLoading"></app-page-loader>
+		<div *ngIf="this.verificationStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+				/>
+				<span i18n="@@verified_status">Verified</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_verification_info">
+					You are all set to recieve payouts
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.disapprovedStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+				/>
+				<span i18n="@@disapproved_status">Disapproved</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@disapproved_info">
+					The provided details are not sufficient. You will be contacted by
+					Online Payment Platform through the following email
+					no-reply&#64;onlinepaymentplatform.com. Please follow the instruction in
+					the email.
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.pendingStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+				/>
+				<span i18n="@@pending_status">Verification Pending</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_pending_info">
+					Verification is important to receive payouts
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.initialStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+				/>
+				<span i18n="@@initial_status">Not Yet Initiated</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_initial_Status">
+					Verification is important to receive payouts
+				</p>
+			</div>
+		</div>
+
+		<!-- Phone Status -->
+
+		<div ngClass.lg="m-t-l">
+			<mat-card-title i18n="@@personal_verification_phoneVerification_heading"
+				>Phone Verification Status</mat-card-title
+			>
+			<app-page-loader *ngIf="pageLoading"></app-page-loader>
+		</div>
+		<div *ngIf="this.verifiedContactStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+				/>
+				<span i18n="@@verified_status">Verified</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_phoneVerification_verified_info">
+					Phone verification is successfull!
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.unverifiedContactStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+				/>
+				<span i18n="@@disapproved_status">Disapproved</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_phoneVerification_disapproved_info">
+					The provided details are not sufficient. You will be contacted by
+					Online Payment Platform through the following email
+					no-reply&#64;onlinepaymentplatform.com. Please follow the instruction in
+					the email.
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.pendingContactStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+				/>
+				<span i18n="@@pending_status">Verification Pending</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_phoneVerification_pending_info">
+					Phone Verification is important to receive payouts
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.initialContactStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+				/>
+				<span i18n="@@initial_status">Not Yet Initiated</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_phoneVerification_initial_info">
+					Phone Verification is important to receive payouts
+				</p>
+			</div>
+		</div>
+		<!--Compliance Status -->
+		<div ngClass.lg="m-t-l">
+			<mat-card-title i18n="@@personal_verification_compliance_title"
+				>Compliance Verification Status</mat-card-title
+			>
+			<app-page-loader *ngIf="pageLoading"></app-page-loader>
+		</div>
+		<div *ngIf="this.verifiedComplianceStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+				/>
+				<span i18n="@@verified_status">Verified</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_complianceVerification_verified_info">
+					Compliance Verification is successfull!
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.unverifiedComplianceStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+				/>
+				<span i18n="@@disapproved_status">Disapproved</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p
+					i18n="@@personal_verification_complianceVerification_disapproved_info"
+				>
+					The provided details are not sufficient. You will be contacted by
+					Online Payment Platform through the following email
+					no-reply&#64;onlinepaymentplatform.com. Please follow the instruction in
+					the email.
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.pendingComplianceStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+				/>
+				<span i18n="@@pending_status">Verification Pending</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_complianceVerification_pending_info">
+					Compliance Verification is important to receive payouts
+				</p>
+			</div>
+		</div>
+		<div *ngIf="this.initialComplianceStatus">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+				/>
+				<span i18n="@@initial_status">Not Yet Initiated</span>
+			</div>
+			<div fxLayout="row" ngClass="m-t-s">
+				<p i18n="@@personal_verification_complianceVerification_initial_info">
+					Compliance Verification is important to receive payouts
+				</p>
+			</div>
+		</div>
+
+		<!--UBO Status-->
+		<div *ngIf="this.businessTypeCheck">
+			<div ngClass.lg="m-t-l">
+				<mat-card-title i18n="@@personal_verification_ubo_heading"
+					>Ultimate Beneficial Owner</mat-card-title
+				>
+				<app-page-loader *ngIf="pageLoading"></app-page-loader>
+			</div>
+			<div *ngIf="this.verifiedUboStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<span i18n="@@verified_status">Verified</span>
+				</div>
+				<div fxLayout="row" ngClass="m-t-s">
+					<p i18n="@@personal_verification_ubo_verified_info">
+						Ultimate Beneficial Owner verification is successfull!
+					</p>
+				</div>
+			</div>
+			<div *ngIf="this.unverifiedUboStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<span i18n="@@disapproved_status">Disapproved</span>
+				</div>
+				<div fxLayout="row" ngClass="m-t-s">
+					<p i18n="@@personal_verification_ubo_disapporved_info">
+						The provided details are not sufficient. You will be contacted by
+						Online Payment Platform through the following email
+						no-reply&#64;onlinepaymentplatform.com. Please follow the instruction in
+						the email.
+					</p>
+				</div>
+			</div>
+			<div *ngIf="this.pendingUboStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+					/>
+					<span i18n="@@pending_status">Verification Pending</span>
+				</div>
+				<div fxLayout="row" ngClass="m-t-s">
+					<p i18n="@@personal_verification_ubo_pending_info">
+						Ultimate Beneficial Owner is important to receive payouts
+					</p>
+				</div>
+			</div>
+			<div *ngIf="this.initialUboStatus">
+				<div
+					fxLayout="row"
+					fxLayoutGap="2%"
+					ngClass="m-t-m"
+					fxLayoutAlign="start center"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512499/whydonate-production/platform/svg-icons/circleOutline.svg"
+					/>
+					<span i18n="@@initial_status">Not Yet Initiated</span>
+				</div>
+				<div fxLayout="row" ngClass="m-t-s">
+					<p i18n="@@personal_verification_ubo_initial_info">
+						Ultimate Beneficial Owner is important to receive payouts
+					</p>
+				</div>
+			</div>
+		</div>
+		<mat-divider inset></mat-divider>
+
+		<mat-card-content ngClass="m-t-m">
+			<div>
+				<div fxLayout="column" fxLayoutAlign="start start" ngClass="m-t-m">
+					<button
+						color="accent"
+						mat-flat-button
+						(click)="addPersonalVerification()"
+					>
+						<span i18n="@@personal_verification_addPersonalVerification_button"
+							>Add Personal Verification</span
+						>
+						<mat-icon *ngIf="isLoading" class="m-l-xs">
+							<mat-spinner color="primary" diameter="20"> </mat-spinner>
+						</mat-icon>
+					</button>
+				</div>
+			</div>
+		</mat-card-content>
+	</div>
+</mat-card>

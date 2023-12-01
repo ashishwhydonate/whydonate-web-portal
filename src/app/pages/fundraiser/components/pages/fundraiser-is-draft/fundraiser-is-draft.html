@@ -1,0 +1,53 @@
+<div fxLayout="column">
+	<div
+		fxFlex="100%"
+		fxFlexOffset="6"
+		fxLayout="row"
+		fxLayoutAlign="space-evenly center"
+		fxLayout.xs="column"
+	>
+		<div
+			fxFlex="100%"
+			fxFlexOffset="6"
+			fxLayout="column"
+			fxLayoutAlign="center stretch"
+		>
+			<div
+				i18n="@@pageFundraiserDraft_requestedPageGreeting_label"
+				class="primary-text"
+			>
+				<h1>Hey!</h1>
+			</div>
+			<h1 i18n="@@pageFundraiserDraft_requestedPage_label">
+				Requested fundraiser is not yet published
+			</h1>
+			<h5 i18n="@@pageFundraiserDraft_ifYouWant_label">
+				Fundriaser owner has not yet published this fundraiser so it is not
+				active. If you want you can look for another fundraisers supporting
+				similiar cause.
+			</h5>
+			<div fxLayoutAlign="stretch">
+				<button
+					mat-flat-button
+					color="accent"
+					[routerLink]="['/search']"
+					i18n="@@pageFundraiserDraft_backToSearchPage"
+					id="pageFundraiserDraft_backToSearchPage"
+				>
+					Search another fundraiser
+				</button>
+			</div>
+		</div>
+		<div
+			fxFlex="66"
+			fxLayout="row"
+			fxFlexOffset="15"
+			fxLayoutAlign="center center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1680690668/whydonate-production/platform/svg-icons/unpublished.svg"
+				id="fundraiserIsDraft"
+			/>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+// STATIC VALUES => Used by spacing helper.
+$SPACE_CONFIG: (
+	'0': 0,
+	'xxs': 4px,
+	'xs': 8px,
+	's': 12px,
+	'm': 16px,
+	'l': 24px,
+	'xl': 32px,
+	'xxl': 64px,
+	'xxl-2': 128px,
+);
+$SIDES: (
+	'': 'all',
+	't': 'top',
+	'b': 'bottom',
+	'l': 'left',
+	'r': 'right',
+);

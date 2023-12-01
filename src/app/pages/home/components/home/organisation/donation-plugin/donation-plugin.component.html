@@ -1,0 +1,41 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxFlex="100%"
+	fxLayout="row"
+	fxLayout.xs="column-reverse"
+	fxLayoutAlign="center center"
+>
+	<div fxFlex="100%" fxLayout="column" fxLayoutAlign="center start">
+		<h3 i18n="@@donation_plugin_donationBtnPluginHomeOrganization">
+			Donation button plugin
+		</h3>
+		<p i18n="@@donation_plugin_raiseMoneyForCharityHomeOrganization">
+			Raise money for charity by adding the donation plugin to your
+			website.Create the best crowdfunding site for charity. Free installation
+			within a couple of minutes.
+		</p>
+		<div fxLayoutAlign.xs="center end">
+			<a
+				mat-button
+				color="accent"
+				(click)="routeToLearnMore()"
+				id="donationLearnMore"
+			>
+				<span i18n="@@donation_plugin_learnMore_button">Learn More</span>
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+				/>
+			</a>
+		</div>
+	</div>
+
+	<div
+		fxFlex="100%"
+		fxLayout="column"
+		fxLayoutAlign="center center"
+		fxLayoutAlign.xs="center end"
+	>
+		<img src="{{ donationPluginImage }}" width="100%" />
+	</div>
+</div>

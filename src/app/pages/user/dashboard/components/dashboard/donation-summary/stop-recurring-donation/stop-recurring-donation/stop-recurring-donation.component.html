@@ -1,0 +1,79 @@
+<button mat-icon-button class="close-button" (click)="onCloseClick()">
+	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/>
+</button>
+<!-- <div fxLayout="column" fxLayoutAlign="start center">
+	First Column -->
+
+	<!-- Row for heading -->
+
+    <!-- <div fxLayout="row wrap" fxLayoutAlign=" " fxFill>
+		<h2 i18n="@@shared_stop-recurring-donation_message_heading">Are you sure you want to stop recurring donation?</h2>
+		<h4 i18n="@@shared_stop-recurring-donation_message_note">
+			This recurring donation will be closed. You will stop receiving donations from the donor.
+		</h4>
+	</div>
+    
+</div> --> 
+<h1 mat-dialog-title i18n="@@donationSummary_recurring_received_donation_stop-recurring-donation_message_heading"> Are you sure you want to stop recurring donation?</h1>
+<mat-dialog-content   i18n="@@donationSummary_recurring_received_donation_stop-recurring-donation_message_note">
+  <p>This recurring donation will be closed.You will stop receiving donations from the donor </p>
+</mat-dialog-content>
+
+
+<!-- Row For Button -->
+<!-- <div  fxLayout="row" fxLayoutAlign="space-between"  >
+    
+    <div fxLayout="row" fxLayoutAlign="  "  class="btn">
+      
+        <button (click)="onYesClick()"
+            i18n="@@button_yes"
+            mat-dialog-close
+            mat-flat-button
+            color="accent"
+            fxFlex="60%"
+            width="100%"
+    
+        >
+            Yes
+        </button> 
+      <div *ngIf="this.showLoader">
+<mat-spinner> </mat-spinner>
+      </div>
+    
+    <div fxLayout="row" fxLayoutAlign=" "  class="btn">
+        <button (click)="onCancelClick()"
+            i18n="@@button_Cancel"
+            mat-dialog-close
+            mat-flat-button
+            color="accent"
+            fxFlex="60%"
+           
+    
+        >
+        Cancel
+        </button>
+        <div>
+            
+        </div> -->
+    <!-- </div>
+</div> -->
+<div >
+
+    <mat-dialog-actions  >
+        <button 
+         (click)="onYesClick()" 
+         mat-flat-button [mat-dialog-close]="true"
+                color="accent"
+                i18n="@@button_yes"
+        >Yes</button>
+
+        <button 
+         (click)="onCancelClick()" 
+         mat-flat-button [mat-dialog-close]="true"
+                color="accent"
+                i18n="@@button_Cancel"
+        >Cancel</button>
+      </mat-dialog-actions>
+    
+</div>
+

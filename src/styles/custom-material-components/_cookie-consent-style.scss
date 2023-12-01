@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import '../_variables/color';
+
+// Use the default configuration.
+$default-typography: mat.define-legacy-typography-config();
+
+// custom css for 3rd party cookie consent library (cc = cookie consent)-----------------------------------------------------------
+.cc-btn {
+	color: map.get($COLOR_CONFIG, 'white') !important;
+	// include typography from button
+	@include mat.typography-level($default-typography, 'button');
+
+	// below css copied form angular material's mat-flat-button class
+	box-sizing: border-box;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	-webkit-tap-highlight-color: transparent;
+	display: inline-block;
+	white-space: nowrap;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-align: center;
+	margin: 0;
+	min-width: 64px;
+	line-height: 36px;
+	padding: 0 16px;
+	border-radius: 4px;
+	overflow: visible;
+}
+.cc-message {
+	color: map.get($COLOR_CONFIG, 'white') !important;
+	font-family: Roboto, sans-serif;
+	font-size: 16px;
+	letter-spacing: 0px;
+	.cc-link {
+		color: map.get($COLOR_CONFIG, 'whydonate-primary') !important;
+		font-family: Roboto, sans-serif;
+		font-size: 16px;
+		letter-spacing: 0px;
+	}
+}
+.cc-banner {
+	padding: 12px 10% 12px 5% !important;
+}

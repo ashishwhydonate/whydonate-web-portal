@@ -1,0 +1,45 @@
+@use "sass:map";
+@use '../_variables/color' as col;
+
+/**
+	DESCRIPTION: Generates classes for colors based on COLOR_CONFIG and provides the SCSS @mixin for setting background-color and color property
+	Naming convention used for class: [COLOR_CONFIG]-[text/bg]
+	[COLOR_CONFIG] => 
+		primary = "Whydonate's green color",
+		accent = "Whydonate's blue color",
+		primary-100 = "Lighter shade from Whydonate's green color",
+		accent-100 = "Lighter shade from Whydonate's blue color",
+		variant = "Whydonate's variant color",
+		warning = "Whydonate's warning color",
+		black = "whydonate's black color",
+		white, grey, pale-grey,
+		mat-grey-50
+	[text/bg] => text= "color property", bg= "backrgound color property"
+	
+	Example: 
+	.primary-text { color: #32bf55; }, .warning-bg { background-color: #ff5656; }, .pale-grey-bg { background-color: #f8f9fa;}
+**/
+
+// https://app.zeplin.io/project/5d26ec1089d8fb6af4d5f284/styleguide/colors
+
+@each $color-prefix, $color-value in col.$COLOR_CONFIG {
+	.#{$color-prefix}-text {
+		color: $color-value;
+	}
+	.#{$color-prefix}-bg {
+		background-color: $color-value;
+	}
+}
+
+@mixin set-text($color) {
+	@if map.get($COLOR_CONFIG, $color) == null {
+		@error "Parameter #{$color} does not exist in $COLOR_CONFIG";
+	}
+	color: map.get($COLOR_CONFIG, $color);
+}
+@mixin set-bg($color) {
+	@if map.get($COLOR_CONFIG, $color) == null {
+		@error "Parameter #{$color} does not exist in $COLOR_CONFIG";
+	}
+	background-color: map.get($COLOR_CONFIG, $color);
+}

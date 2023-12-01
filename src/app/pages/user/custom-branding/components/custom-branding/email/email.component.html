@@ -1,0 +1,570 @@
+<app-page-loader *ngIf="this.isLoading"></app-page-loader>
+
+<div
+	*ngIf="!this.isLoading"
+	fxLayout="row"
+	fxLayout.xs="column"
+	fxLayout.sm="column"
+	fxFlex="100"
+>
+	<div
+		fxLayout="column"
+		fxLayout.xs="column"
+		fxLayout.sm="column"
+		fxFlex="70"
+		fxFlex.xs="100"
+		fxFlex.sm="100"
+	>
+		<mat-card class="mat-elevation-z0">
+			<mat-card-title-group fxLayout="row" fxLayout.xs="column">
+				<mat-card-title i18n="@@custom-email-customise-email-template">
+					Customise Email Templates
+				</mat-card-title>
+				<mat-card-subtitle
+					i18n="@@custom-email-add-pesonalized-message-and-branding"
+				>
+					Add personalised message and branding to emails
+				</mat-card-subtitle>
+				<mat-icon *ngIf="isSave">
+					<mat-spinner
+						color="accent"
+						diameter="20"
+						i18n="@@custom_email_spinner"
+					>
+					</mat-spinner>
+				</mat-icon>
+			</mat-card-title-group>
+			<mat-card-content>
+				<div fxLayout="row" fxLayoutAlign="space-between center">
+					<!-- <mat-slide-toggle
+						color="primary"
+						[(ngModel)]="isCustomBrandingChecked"
+						(change)="toggleCustomBranding($event)"
+						[disabled]="this.defaultState"
+						i18n="@@email-custom-email-apply-custom-branding"
+						>Apply custom branding
+					</mat-slide-toggle> -->
+					<!-- <mat-checkbox
+						color="primary"
+						[(ngModel)]="isCustomBrandingChecked"
+						[disabled]="this.defaultState"
+						(change)="toggleCustomBranding($event)"
+						i18n="@@email-custom-email-apply-custom-branding"
+					>
+						Apply custom branding
+					</mat-checkbox>
+					<a
+						mat-button
+						color="accent"
+						fxLayoutAlign="center center"
+						i18n="@@email-custom-email-set-to-default"
+						*ngIf="this.defaultState"
+						(click)="routeToBranding()"
+					>
+						Set to Custom Branding</a
+					> -->
+				</div>
+				<br />
+
+				<p
+					class="mat-body-2"
+					i18n="@@email-custom-email-add-personalized-message"
+				>
+					Add Personalised message
+				</p>
+
+				<mat-accordion>
+					<mat-expansion-panel
+						(opened)="panelOpenState0 = true"
+						(closed)="panelOpenState0 = false"
+					>
+						<mat-expansion-panel-header id="thankYou">
+							<mat-panel-title
+								i18n="@@email-custom-email-panel-title-thank-you-email"
+								id="thankYou"
+							>
+								Thank you email to donors
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+
+						<mat-divider></mat-divider>
+						<br />
+						<ng-container [formGroup]="quillForm0">
+							<mat-form-field
+								color="primary"
+								appearance="outline"
+								class="w-100"
+							>
+								<mat-label i18n="@@email-custom-email-write-message"
+									>Write message</mat-label
+								>
+								<textarea
+									id="thankYouInput"
+									#thankYou
+									matInput
+									formControlName="quillCtrl0"
+								></textarea>
+								<mat-hint align="end"
+									><span class="mat-body-2">{{ thankYou.value.length }}</span>
+									/120
+									<span i18n="@@email_character_mat_hint">character</span>
+								</mat-hint>
+							</mat-form-field>
+						</ng-container>
+
+						<mat-action-row fxLayout="row wrap">
+							<button
+								mat-button
+								color="accent"
+								i18n="@@button_discard"
+								[disabled]="!quillForm0.dirty"
+								(click)="discardChanges(0)"
+							>
+								Discard
+							</button>
+							<button
+								mat-flat-button
+								color="accent"
+								i18n="@@button_save"
+								[disabled]="!(quillForm0.dirty && quillForm0.valid)"
+								(click)="saveForm(0)"
+								id="thankSave"
+							>
+								Save
+							</button>
+						</mat-action-row>
+					</mat-expansion-panel>
+
+					<mat-expansion-panel
+						(opened)="panelOpenState1 = true"
+						(closed)="panelOpenState1 = false"
+					>
+						<mat-expansion-panel-header>
+							<mat-panel-title
+								i18n="
+									@@email-custom-email-registertion-for-connected-fundraiser"
+								id="registration"
+							>
+								Registration for connected fundraiser
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<mat-divider></mat-divider>
+						<br />
+						<ng-container [formGroup]="quillForm1">
+							<mat-form-field
+								color="primary"
+								appearance="outline"
+								class="w-100"
+							>
+								<mat-label i18n="@@email-custom-email-write-message"
+									>Write message</mat-label
+								>
+								<textarea
+									id="registerForConnected"
+									#registered
+									matInput
+									formControlName="quillCtrl1"
+								></textarea>
+								<mat-hint align="end"
+									><span class="mat-body-2">{{ registered.value.length }}</span>
+									/120
+									<span i18n="@@email_character_mat_hint">character</span>
+								</mat-hint>
+							</mat-form-field>
+						</ng-container>
+						<mat-action-row fxLayout="row wrap">
+							<button
+								mat-button
+								color="accent"
+								i18n="@@button_discard"
+								[disabled]="!quillForm1.dirty"
+								(click)="discardChanges(1)"
+							>
+								Discard
+							</button>
+							<button
+								mat-flat-button
+								color="accent"
+								i18n="@@button_save"
+								[disabled]="!(quillForm1.dirty && quillForm1.valid)"
+								(click)="saveForm(1)"
+								id="registerSave"
+							>
+								Save
+							</button>
+						</mat-action-row>
+					</mat-expansion-panel>
+
+					<mat-expansion-panel
+						(opened)="panelOpenState2 = true"
+						(closed)="panelOpenState2 = false"
+					>
+						<mat-expansion-panel-header>
+							<mat-panel-title
+								i18n="
+									@@email-custom-email-donation-received-connected-fundraiser"
+								id="donationReceived"
+							>
+								Donation received connected fundraiser
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<mat-divider></mat-divider>
+						<br />
+						<ng-container [formGroup]="quillForm2">
+							<mat-form-field
+								color="primary"
+								appearance="outline"
+								class="w-100"
+							>
+								<mat-label i18n="@@email-custom-email-write-message"
+									>Write message</mat-label
+								>
+								<textarea
+									id="donationReceivedConnected"
+									#donationReceived
+									matInput
+									formControlName="quillCtrl2"
+								></textarea>
+								<mat-hint align="end"
+									><span class="mat-body-2">{{
+										donationReceived.value.length
+									}}</span>
+									/120
+									<span i18n="@@email_character_mat_hint">character</span>
+								</mat-hint>
+							</mat-form-field>
+						</ng-container>
+						<mat-action-row fxLayout="row wrap">
+							<button
+								mat-button
+								i18n="@@button_discard"
+								color="accent"
+								[disabled]="!quillForm2.dirty"
+								(click)="discardChanges(2)"
+							>
+								Discard
+							</button>
+							<button
+								mat-flat-button
+								color="accent"
+								i18n="@@button_save"
+								[disabled]="!(quillForm2.dirty && quillForm2.valid)"
+								(click)="saveForm(2)"
+								id="donationReceivedSave"
+							>
+								Save
+							</button>
+						</mat-action-row>
+					</mat-expansion-panel>
+
+					<mat-expansion-panel
+						(opened)="panelOpenState3 = true"
+						(closed)="panelOpenState3 = false"
+					>
+						<mat-expansion-panel-header>
+							<mat-panel-title
+								i18n="@@email-custom-email-connected-fundraiser-created"
+								id="connectedFundraiserCreated"
+							>
+								Connected fundraiser created
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<mat-divider></mat-divider>
+						<br />
+						<ng-container [formGroup]="quillForm3">
+							<mat-form-field
+								color="primary"
+								appearance="outline"
+								class="w-100"
+							>
+								<mat-label i18n="@@email-custom-email-write-message"
+									>Write message</mat-label
+								>
+								<textarea
+									id="connectedFundraiser"
+									#connected
+									matInput
+									formControlName="quillCtrl3"
+								></textarea>
+								<mat-hint align="end"
+									><span class="mat-body-2">{{ connected.value.length }}</span>
+									/120
+									<span i18n="@@email_character_mat_hint">character</span>
+								</mat-hint>
+							</mat-form-field>
+						</ng-container>
+						<mat-action-row fxLayout="row wrap">
+							<button
+								mat-button
+								i18n="@@button_discard"
+								color="accent"
+								[disabled]="!quillForm3.dirty"
+								(click)="discardChanges(3)"
+							>
+								Discard
+							</button>
+							<button
+								mat-flat-button
+								color="accent"
+								i18n="@@button_save"
+								[disabled]="!(quillForm3.dirty && quillForm3.valid)"
+								(click)="saveForm(3)"
+								id="connectedFundraiserSave"
+							>
+								Save
+							</button>
+						</mat-action-row>
+					</mat-expansion-panel>
+
+					<mat-expansion-panel
+						(opened)="panelOpenState4 = true"
+						(closed)="panelOpenState4 = false"
+					>
+						<mat-expansion-panel-header>
+							<mat-panel-title
+								i18n="@@email-custom-email-connected-fundraiser-publication"
+								id="connectedFundraiserPublished"
+							>
+								Connected fundraiser published
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<mat-divider></mat-divider>
+						<br />
+						<ng-container [formGroup]="quillForm4">
+							<mat-form-field
+								color="primary"
+								appearance="outline"
+								class="w-100"
+							>
+								<mat-label i18n="@@email-custom-email-write-message"
+									>Write message</mat-label
+								>
+								<textarea
+									id="connectedFundraiserPublishedInput"
+									#connectedPublisher
+									matInput
+									formControlName="quillCtrl4"
+								></textarea>
+								<mat-hint align="end"
+									><span class="mat-body-2">{{
+										connectedPublisher.value.length
+									}}</span>
+									/120
+									<span i18n="@@email_character_mat_hint">character</span>
+								</mat-hint>
+							</mat-form-field>
+						</ng-container>
+						<mat-action-row fxLayout="row wrap">
+							<button
+								mat-button
+								i18n="@@button_discard"
+								color="accent"
+								[disabled]="!quillForm4.dirty"
+								(click)="discardChanges(4)"
+							>
+								Discard
+							</button>
+							<button
+								mat-flat-button
+								color="accent"
+								i18n="@@button_save"
+								[disabled]="!(quillForm4.dirty && quillForm4.valid)"
+								(click)="saveForm(4)"
+								id="connectedPublishedSave"
+							>
+								Save
+							</button>
+						</mat-action-row>
+					</mat-expansion-panel>
+
+					<mat-expansion-panel
+						(opened)="panelOpenState5 = true"
+						(closed)="panelOpenState5 = false"
+					>
+						<mat-expansion-panel-header>
+							<mat-panel-title
+								i18n="@@email-custom-email-connected-fundraiser-closed"
+								id="connectedFundraiserClosed"
+							>
+								Connected fundraiser closed
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<mat-divider></mat-divider>
+						<br />
+						<ng-container [formGroup]="quillForm5">
+							<mat-form-field
+								color="primary"
+								appearance="outline"
+								class="w-100"
+							>
+								<mat-label i18n="@@email-custom-email-write-message"
+									>Write message</mat-label
+								>
+								<textarea
+									id="connectedFundraiserClosedInput"
+									#connectedfundraiserClosed
+									matInput
+									formControlName="quillCtrl5"
+								></textarea>
+								<mat-hint align="end"
+									><span class="mat-body-2">{{
+										connectedfundraiserClosed.value.length
+									}}</span>
+									/120
+									<span i18n="@@email_character_mat_hint">character</span>
+								</mat-hint>
+							</mat-form-field>
+						</ng-container>
+						<mat-action-row fxLayout="row wrap">
+							<button
+								mat-button
+								i18n="@@button_discard"
+								color="accent"
+								[disabled]="!quillForm5.dirty"
+								(click)="discardChanges(5)"
+							>
+								Discard
+							</button>
+							<button
+								mat-flat-button
+								color="accent"
+								i18n="@@button_save"
+								[disabled]="!(quillForm5.dirty && quillForm5.valid)"
+								(click)="saveForm(5)"
+								id="saveFundraiserClosed"
+							>
+								Save
+							</button>
+						</mat-action-row>
+					</mat-expansion-panel>
+				</mat-accordion>
+			</mat-card-content>
+		</mat-card>
+	</div>
+
+	<mat-divider [vertical]="true"></mat-divider>
+
+	<!-- Show preview -->
+	<div
+		fxLayout="column"
+		fxLayout.xs="column"
+		fxLayout.sm="column"
+		fxFlex="35"
+		fxFlex.xs="100"
+		fxFlex.sm="100"
+	>
+		<mat-card class="mat-elevation-z0">
+			<div
+				fxLayout="row"
+				fxLayoutAlign="space-between center"
+				fxLayout.xs="column"
+				fxLayout.sm="column"
+			>
+				<p fxLayout="row" class="mat-body-1">
+					<img
+						style="position: relative; bottom: 3px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+					/>
+					<span
+						fxFlexOffset="8px"
+						i18n="@@email-email-custom-email-email-preview"
+					>
+						Email Preview
+					</span>
+				</p>
+				<p>
+					<button
+						mat-stroked-button
+						color="accent"
+						i18n="@@email-email-custom-email-send-test-email"
+						[disabled]="!showPreview()"
+						(click)="sendTestMail()"
+						id="sendTestMail"
+					>
+						Send Test Mail
+					</button>
+				</p>
+			</div>
+			<br />
+			<!-- Preview Card-->
+			<mat-card>
+				<mat-card-header *ngIf="!showPreview()" fxLayoutAlign="center center">
+					<mat-card-title>
+						<p fxLayoutAlign="center center">
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/no-selected.svg"
+							/>
+						</p>
+						<div
+							fxLayoutAlign="center center"
+							i18n="@@email-email-custom-email-no-preview"
+						>
+							No Preview
+						</div>
+					</mat-card-title>
+					<mat-card-subtitle
+						i18n="
+							@@email-email-custom-email-select-email-to-customize-and-preview"
+					>
+						Select email to customise and preview
+					</mat-card-subtitle>
+				</mat-card-header>
+				<mat-card-content *ngIf="showPreview()">
+					<app-thank-you
+						*ngIf="panelOpenState0"
+						[applyCustomBranding]="isCustomBrandingChecked"
+						[customLogo]="customSetting && customSetting.customLogo"
+						[primaryColor]="customSetting.primaryColor"
+						[secondaryColor]="customSetting.secondaryColor"
+						[customText]="quillForm0.controls.quillCtrl0.value"
+					>
+					</app-thank-you>
+					<app-registration
+						*ngIf="panelOpenState1"
+						[applyCustomBranding]="isCustomBrandingChecked"
+						[customLogo]="customSetting && customSetting.customLogo"
+						[primaryColor]="customSetting.primaryColor"
+						[secondaryColor]="customSetting.secondaryColor"
+						[customText]="quillForm1.controls.quillCtrl1.value"
+					>
+					</app-registration>
+					<app-donation-received
+						*ngIf="panelOpenState2"
+						[applyCustomBranding]="isCustomBrandingChecked"
+						[customLogo]="customSetting && customSetting.customLogo"
+						[primaryColor]="customSetting.primaryColor"
+						[secondaryColor]="customSetting.secondaryColor"
+						[customText]="quillForm2.controls.quillCtrl2.value"
+					>
+					</app-donation-received>
+					<app-fundraiser-created
+						*ngIf="panelOpenState3"
+						[applyCustomBranding]="isCustomBrandingChecked"
+						[customLogo]="customSetting && customSetting.customLogo"
+						[primaryColor]="customSetting.primaryColor"
+						[secondaryColor]="customSetting.secondaryColor"
+						[customText]="quillForm3.controls.quillCtrl3.value"
+					>
+					</app-fundraiser-created>
+					<app-fundraiser-published>
+						*ngIf="panelOpenState4"
+						[applyCustomBranding]="isCustomBrandingChecked"
+						[customLogo]="customSetting && customSetting.customLogo"
+						[primaryColor]="customSetting.primaryColor"
+						[secondaryColor]="customSetting.secondaryColor"
+						[customText]="quillForm4.controls.quillCtrl4.value"
+					</app-fundraiser-published>
+					<app-fundraiser-closed
+						*ngIf="panelOpenState5"
+						[applyCustomBranding]="isCustomBrandingChecked"
+						[customLogo]="customSetting && customSetting.customLogo"
+						[primaryColor]="customSetting.primaryColor"
+						[secondaryColor]="customSetting.secondaryColor"
+						[customText]="quillForm5.controls.quillCtrl5.value"
+					>
+					</app-fundraiser-closed>
+				</mat-card-content>
+			</mat-card>
+		</mat-card>
+	</div>
+</div>

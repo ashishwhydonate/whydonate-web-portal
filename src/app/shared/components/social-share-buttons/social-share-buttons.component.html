@@ -1,0 +1,262 @@
+<div
+	fxFlex="100%"
+	fxLayout="row wrap"
+	fxLayoutAlign="start center"
+	fxLayoutAlign.lt-sm="start"
+	class="social-share"
+	*ngIf="!this.isDonationModule; else donationTemplate"
+	fxLayoutGap.lg="40px"
+	fxLayoutGap.md="30px"
+	fxLayoutGap.sm="50px"
+	fxLayoutGap.lt-sm="28px"
+>
+	<!-- fxLayoutAlign.lt-sm="center center" -->
+	<!-- fxLayoutGap.lt-sm="35px" -->
+	<div class="facebook p-b-xs" ngClass="m-t-xs">
+		<button
+			id="facebookShareButton"
+			mat-icon-button
+			shareButton="facebook"
+			[disabled]="disableSocialShare"
+			[url]="this.sharedLink"
+		>
+			<img
+				height="51"
+				width="51"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1669214897/whydonate-production/platform/svg-icons/fb-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1666173340/whydonate-production/platform/svg-icons/fb-color.svg'
+				"
+			/>
+		</button>
+	</div>
+	<div class="email p-b-xs" ngClass="m-t-s">
+		<button
+			id="emailShareButton"
+			mat-icon-button
+			shareButton="email"
+			[disabled]="disableSocialShare"
+			[url]="this.sharedLink"
+		>
+			<img
+				height="50"
+				width="57"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1669215474/whydonate-production/platform/svg-icons/mail-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1666173329/whydonate-production/platform/svg-icons/mail-color.svg'
+				"
+			/>
+		</button>
+	</div>
+	<div class="twitter p-b-s p-t-xs">
+		<button
+			id="twitterShareButton"
+			mat-icon-button
+			shareButton="twitter"
+			[disabled]="disableSocialShare"
+			[url]="this.sharedLink"
+		>
+			<img
+				height="55"
+				width="57"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1698663567/whydonate-production/platform/svg-icons/x-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1698663566/whydonate-production/platform/svg-icons/x.svg'
+				"
+			/>
+		</button>
+	</div>
+	<div class="linkedin p-b-xxs" ngClass.lt-sm="m-t-xs">
+		<button
+			id="linkedShareButton"
+			mat-icon-button
+			shareButton="linkedin"
+			[disabled]="disableSocialShare"
+			[url]="this.sharedLink"
+		>
+			<img
+				height="54"
+				width="57"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1669215474/whydonate-production/platform/svg-icons/linkedin-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1666173329/whydonate-production/platform/svg-icons/linkedin-color.svg'
+				"
+			/>
+		</button>
+	</div>
+	<div class="whatsapp p-b-xxs" ngClass.lt-sm="m-t-xs">
+		<button
+			id="whatsAppShareButton"
+			mat-icon-button
+			shareButton="whatsapp"
+			[disabled]="disableSocialShare"
+			[url]="this.sharedLink"
+		>
+			<img
+				height="54"
+				width="54"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1669215474/whydonate-production/platform/svg-icons/whatsapp-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1666173323/whydonate-production/platform/svg-icons/whatsapp-color.svg'
+				"
+			/>
+		</button>
+	</div>
+
+	<div
+		class="social-share"
+		ngClass.lt-sm="m-b-xxs m-t-xs"
+		ngClass.lg="m-b-xxs"
+		ngClass.md="m-b-xxs"
+		ngClass.sm="m-b-xxs"
+	>
+		<button
+			id="QRCodeButton"
+			mat-icon-button
+			[disabled]="disableSocialShare"
+			(click)="openDialog()"
+		>
+			<img
+				height="58"
+				width="58"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1669235425/whydonate-production/platform/svg-icons/qr2-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1667484403/whydonate-production/platform/svg-icons/qr2.svg'
+				"
+			/>
+		</button>
+	</div>
+	<div
+		class="embeded"
+		ngClass.sm="m-b-xxs"
+		ngClass.lg="m-b-xxs"
+		ngClass.md="m-b-xxs"
+		ngClass.lt-sm="m-b-xs m-t-xs"
+		(click)="(tabRoute)"
+		#tabRoute
+	>
+		<button
+			id="onOwnWebsiteButton"
+			mat-icon-button
+			[disabled]="disableSocialShare"
+			(click)="onTabChange()"
+		>
+			<img
+				height="55"
+				width="55"
+				[src]="
+					disableSocialShare
+						? 'https://res.cloudinary.com/whydonate/image/upload/v1669235425/whydonate-production/platform/svg-icons/code-disabled.svg'
+						: 'https://res.cloudinary.com/whydonate/image/upload/v1667484246/whydonate-production/platform/svg-icons/code.svg'
+				"
+			/>
+		</button>
+	</div>
+	<!-- <div fxLayout="row" fxFlex="100%" fxLayoutAlign="start start">
+	</div> -->
+</div>
+
+<!--TEMPLATE FOR SHARE CONTRIBUTION COMPONENT FOR DONATION MODULE------------------------------------------------------>
+<ng-template #donationTemplate>
+	<div
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayoutAlign="start center"
+		class="social-share"
+		fxLayoutGap.lg="18px"
+		fxLayoutGap.lt-sm="0px"
+	>
+		<button
+			[ngStyle]="{ color: '#4267B2' }"
+			mat-icon-button
+			class="facebook"
+			shareButton="facebook"
+			[disabled]="disableSocialShare"
+			[url]="this.customURL"
+			[title]="this.currentFundraiserData?.title"
+			[description]="this.currentFundraiserData?.description"
+			[image]="this.currentFundraiserData?.image"
+		>
+			<img
+				height="28"
+				width="28"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173340/whydonate-production/platform/svg-icons/fb-color.svg"
+			/>
+		</button>
+
+		<button
+			[ngStyle]="{ color: '#25D366' }"
+			mat-icon-button
+			shareButton="email"
+			[disabled]="disableSocialShare"
+			[url]="this.customURL"
+			[title]="this.currentFundraiserData?.title"
+			[description]="this.currentFundraiserData?.description"
+			[image]="this.currentFundraiserData?.image"
+		>
+			<img
+				height="28"
+				width="28"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173329/whydonate-production/platform/svg-icons/mail-color.svg"
+			/>
+		</button>
+
+		<button
+			[ngStyle]="{ color: '#00acee' }"
+			mat-icon-button
+			shareButton="twitter"
+			[disabled]="disableSocialShare"
+			[url]="this.customURL"
+			[title]="this.currentFundraiserData?.title"
+			[description]="this.currentFundraiserData?.description"
+			[image]="this.currentFundraiserData?.image"
+		>
+			<img
+				height="28"
+				width="28"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1698663566/whydonate-production/platform/svg-icons/x.svg"
+			/>
+		</button>
+
+		<button
+			[ngStyle]="{ color: '#0077b5' }"
+			mat-icon-button
+			shareButton="linkedin"
+			[disabled]="disableSocialShare"
+			[url]="this.customURL"
+			[title]="this.currentFundraiserData?.title"
+			[description]="this.currentFundraiserData?.description"
+			[image]="this.currentFundraiserData?.image"
+		>
+			<img
+				height="28"
+				width="28"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173329/whydonate-production/platform/svg-icons/linkedin-color.svg"
+			/>
+		</button>
+
+		<button
+			class="whatsapp"
+			mat-icon-button
+			[ngStyle]="{ color: '#25D366' }"
+			shareButton="whatsapp"
+			[disabled]="disableSocialShare"
+			[url]="this.customURL"
+			[title]="this.currentFundraiserData?.title"
+			[description]="this.currentFundraiserData?.description"
+			[image]="this.currentFundraiserData?.image"
+		>
+			<img
+				height="28"
+				width="28"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666173323/whydonate-production/platform/svg-icons/whatsapp-color.svg"
+			/>
+		</button>
+	</div>
+</ng-template>

@@ -1,0 +1,75 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" class="m-r-m m-l-m">
+	<mat-label class="mat-body-2"
+		><span i18n="@@my_funraisers_view_label">My fundraisers</span
+		><span *ngIf="count"> ({{ count }})</span></mat-label
+	>
+	<a
+		i18n="@@my_funraisers_view_link"
+		mat-button
+		color="accent"
+		(click)="routeToMyFundraisers()"
+		i18n="@@my_funraisers_view_label"
+		id="myFundraisersView"
+		>View My fundraisers</a
+	>
+</div>
+<ng-container *ngIf="myFundraisersDataList">
+	<div
+		fxLayout="row wrap"
+		fxLayoutAlign="start start"
+		class="fundraiser-card-small"
+		ngClass.xs="m-m"
+	>
+		<div *ngFor="let _fundraiserData of myFundraisersDataList">
+			<app-fundraiser-card
+				[slug]="_fundraiserData.slug"
+				[fundraiserCardData]="_fundraiserData.fundraiserCardData"
+				type="small"
+				id="myFundraiserCard"
+			>
+			</app-fundraiser-card>
+		</div>
+	</div>
+</ng-container>
+
+<ng-container *ngIf="count == 0">
+	<mat-card
+		class="p-s"
+		fxLayout="row"
+		fxLayout.xs="column"
+		fxLayoutAlign="center center"
+		fxLayoutAlign.xs="center start"
+	>
+		<div
+			class="p-t-l p-b-l"
+			fxLayout="row"
+			fxLayout.sm="row wrap"
+			fxLayout.xs="column"
+			fxFlex="80"
+		>
+			<div fxFlex="10" ngClass="m-t-xs">
+					<img src="https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/create.svg"/>
+			</div>
+			<div fxLayout="column" fxFlexOffset.xs="0" ngClass.xs ="p-b-s">
+
+				<div ngClass="m-t-s">
+				<mat-label
+					class="mat-title m-0"
+					i18n="@@my_funraisers_view_noRecordsTitle"
+					>No fundraiser create yet.</mat-label
+				>
+			</div>
+				<div ngClass="m-t-0 p-t-0">
+				<mat-label  i18n="@@my_funraisers_view_noRecordsBody">
+					Start a new fundraiser to raise money for your loved ones or cause you
+					care for.
+				</mat-label>
+			</div>
+			</div>
+		</div>
+		<div>
+			<app-start-fundraiser-button buttonType="flat" themeColor="accent">
+			</app-start-fundraiser-button>
+		</div>
+	</mat-card>
+</ng-container>

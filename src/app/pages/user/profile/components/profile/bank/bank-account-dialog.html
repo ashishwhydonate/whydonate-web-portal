@@ -1,0 +1,207 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="false">
+	<img
+		src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+	/>
+</button>
+<div
+	ngClass="p-m"
+	*ngIf="personalQuestionCheck!=true && businessQuestionCheck != true"
+>
+	<div fxLayoutAlign="start start">
+		<h1 mat-dialog-title i18n="@@bank_selectBankAccountType_heading">
+			Select Bank account Type
+		</h1>
+	</div>
+	<div mat-dialog-content fxLayoutAlign="start start">
+		<p i18n="@@bank_accountType_info">
+			Make sure you select right type of account. You can't change it later.
+		</p>
+	</div>
+	<form [formGroup]="bankTypeForm">
+		<mat-radio-group
+			(change)="onTypeChange($event)"
+			class="inline-radio-group"
+			color="primary"
+			aria-label="Select an option"
+		>
+			<mat-radio-button value="personal" i18n="@@bank_personal_radio">
+				Personal
+			</mat-radio-button>
+			<mat-radio-button value="business" i18n="@@bank_business_radio">
+				Business
+			</mat-radio-button>
+		</mat-radio-group>
+		<div fxLayout="column" *ngIf="this.businessTypeCheck">
+			<mat-form-field color="primary" appearance="outline" class="w-100">
+				<mat-label i18n="@@bank_addChamberNumber_heading"
+					>Add chamber of commerce number</mat-label
+				>
+				<input matInput formControlName="chamberOfCommerce" />
+				<mat-error
+					*ngIf="
+                  bankTypeForm.controls['chamberOfCommerce']?.errors
+                "
+					i18n="@@bank_chamberOfCommerce_error"
+				>
+					Chamber Of Commerce is required
+				</mat-error>
+			</mat-form-field>
+		</div>
+	</form>
+	<div
+		ngClass="m-t-m"
+		mat-dialog-actions
+		fxLayout="row"
+		fxLayoutAlign="start start"
+	>
+		<button
+			mat-flat-button
+			color="accent"
+			(click)="onConfirm()"
+			[disabled]="this.businessTypeCheck == false && this.personalTypeCheck == false"
+		>
+			<span i18n="@@bank_confirm_button">Confirm</span>
+			<mat-icon *ngIf="documentCheck" class="m-l-xs">
+				<mat-spinner color="primary" diameter="20"> </mat-spinner>
+			</mat-icon>
+		</button>
+	</div>
+</div>
+
+<ng-template
+	[ngIf]="this.personalQuestionCheck == true || this.businessQuestionCheck == true"
+>
+	<div ngClass="p-xs">
+		<div fxLayoutAlign="start start">
+			<h1 mat-dialog-title i18n="@@weNeedThisInformation_title">
+				We need this information in order to get the profile verify.
+			</h1>
+		</div>
+		<div mat-dialog-content fxLayoutAlign="start start">
+			<p i18n="@@weAssureYouInformation_info">
+				We assure you information shared will be kept confidential.
+			</p>
+		</div>
+		<form
+			[formGroup]="newPersonalBankForm"
+			*ngIf="this.personalQuestionCheck == true"
+		>
+			<div fxLayout="column">
+				<mat-form-field color="primary" appearance="outline" class="w-100">
+					<mat-label i18n="@@fundsUsedFor_title"
+						>What will the funds be used for?</mat-label
+					>
+					<textarea
+						matInput
+						id="consumerFundsUsage"
+						formControlName="consumerFundsUsage"
+						required
+						placeholder="Enter answer here...."
+						type="text"
+						[minLength]="30"
+						[maxLength]="250"
+						rows="4"
+						#consumerFundsUsage
+					></textarea>
+					<mat-hint align="end"
+						>{{ consumerFundsUsage.value.length }} / 30-250
+						<span i18n="@@characters_translation">Characters</span></mat-hint
+					>
+					<mat-error
+						i18n="@@fundsUsage_error"
+						*ngIf="
+        newPersonalBankForm.controls['consumerFundsUsage']?.errors?.required || newPersonalBankForm.controls['consumerFundsUsage']?.errors?.minlength && newPersonalBankForm.controls['consumerFundsUsage']?.errors?.maxlength
+          "
+					>
+						Funds Usage is required
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</form>
+		<form
+			[formGroup]="personalBankForm"
+			*ngIf="this.businessQuestionCheck == true"
+		>
+			<div fxLayout="column">
+				<mat-form-field color="primary" appearance="outline" class="w-100">
+					<mat-label i18n="@@fundsUsedFor_title"
+						>What will the funds be used for?</mat-label
+					>
+					<textarea
+						matInput
+						id="businessFundsUsage"
+						formControlName="businessFundsUsage"
+						required
+						placeholder="Enter answer here...."
+						type="text"
+						[minLength]="30"
+						[maxLength]="250"
+						rows="4"
+						#businessFundsUsage
+					></textarea>
+					<mat-hint align="end"
+						>{{ businessFundsUsage.value.length }} / 30-250
+						<span i18n="@@characters_translation">Characters</span></mat-hint
+					>
+					<mat-error
+						i18n="@@fundsUsage_error"
+						*ngIf="
+            personalBankForm.controls['businessFundsUsage']?.errors?.required || personalBankForm.controls['businessFundsUsage']?.errors?.minlength && personalBankForm.controls['businessFundsUsage']?.errors?.maxlength
+              "
+					>
+						Funds Usage is required
+					</mat-error>
+				</mat-form-field>
+			</div>
+			<div fxLayout="column">
+				<mat-form-field color="primary" appearance="outline" class="w-100">
+					<mat-label i18n="@@purposeOrganisation_title"
+						>Purpose Organisation</mat-label
+					>
+					<textarea
+						matInput
+						id="purposeOrganisation"
+						formControlName="purposeOrganisation"
+						required
+						placeholder="Enter answer here...."
+						type="text"
+						[minLength]="30"
+						[maxLength]="250"
+						rows="4"
+						#purposeOrganisation
+					></textarea>
+					<mat-hint align="end"
+						>{{ purposeOrganisation.value.length }} / 30-250
+						<span i18n="@@characters_translation">Characters</span></mat-hint
+					>
+					<mat-error
+						i18n="@@purposeOrganisation_error"
+						*ngIf="
+          personalBankForm.controls['purposeOrganisation']?.errors?.required || personalBankForm.controls['purposeOrganisation']?.errors?.minlength && personalBankForm.controls['purposeOrganisation']?.errors?.maxlength
+              "
+					>
+						Purpose Organisation is required
+					</mat-error>
+				</mat-form-field>
+			</div>
+		</form>
+		<div
+			ngClass="m-t-m"
+			mat-dialog-actions
+			fxLayout="row"
+			fxLayoutAlign="start start"
+		>
+			<button
+				mat-flat-button
+				color="accent"
+				(click)="saveIdentityDocument()"
+				[disabled]="this.newPersonalBankForm.invalid && personalBankForm.invalid"
+			>
+				<span i18n="@@bank_confirm_button">Confirm</span>
+				<mat-icon *ngIf="documentCheck" class="m-l-xs">
+					<mat-spinner color="primary" diameter="20"> </mat-spinner>
+				</mat-icon>
+			</button>
+		</div>
+	</div>
+</ng-template>

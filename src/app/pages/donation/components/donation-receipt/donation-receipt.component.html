@@ -1,0 +1,437 @@
+<div
+	*ngIf="this.isLoading"
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-m"
+>
+	<app-page-loader></app-page-loader>
+</div>
+
+<div
+	*ngIf="!this.isLoading"
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-m"
+	fxLayoutAlign="center center"
+>
+	<div fxLayout="column">
+		<!--RECEIPT DIV-->
+		<div
+			*ngIf="!this.isLoading"
+			style="border-style: solid"
+			fxLayout="row"
+			fxLayoutAlign="center center"
+			ngClass="p-m"
+		>
+			<style>
+				.background {
+					background: white;
+				}
+
+				.page {
+					width: 21cm;
+					height: 100%;
+					background: white;
+					display: block;
+					margin: 0 auto;
+					margin-bottom: 0.5cm;
+					padding: 4px;
+				}
+
+				.profile-image {
+					width: 64px;
+					height: 64px;
+					border-radius: 50%;
+				}
+
+				@media print {
+					body,
+					page {
+						margin: 0;
+						box-shadow: 0;
+					}
+				}
+
+				@media only screen and (max-width: 600px) {
+					.page {
+						width: 320px;
+						height: 100%;
+						background: white;
+						display: block;
+					}
+
+					tr {
+						width: 100%;
+						max-width: 100%;
+						padding: 2px;
+					}
+
+					.flex-container {
+						padding: 2px;
+					}
+
+					.table-div {
+						padding: 2px;
+					}
+
+					.table-div-footer {
+						padding: 2px;
+						flex-wrap: nowrap;
+						justify-content: space-between;
+						align-items: space-between;
+						margin-top: 8px;
+					}
+
+					.fundraiser-div {
+						padding: 2px;
+					}
+
+					.fundraiser-thanks {
+						padding: 4px;
+					}
+
+					img {
+						padding: 2px;
+					}
+				}
+
+				@media (min-width: 600px) and (max-width: 1024px) {
+					.page {
+						width: 18cm;
+						height: 100%;
+						background: white;
+						display: block;
+						margin: 0 auto;
+						margin-bottom: 0.5cm;
+						padding: 4px;
+					}
+				}
+
+				hr {
+					width: 100%;
+					border-top: 1px solid #d3d3d3;
+				}
+				table {
+					width: 100%;
+				}
+				tr {
+					width: 100%;
+					max-width: 100%;
+					padding: 8px;
+				}
+
+				td {
+					width: 25%;
+					max-width: 25%;
+					vertical-align: top;
+					padding: 2px;
+				}
+
+				.flex-container {
+					padding: 4px;
+					display: flex;
+					flex-direction: column;
+					flex-wrap: nowrap;
+					justify-content: space-between;
+					align-items: space-between;
+				}
+
+				.table-div {
+					display: table;
+					flex-direction: row;
+					padding: 4px;
+					justify-content: space-between;
+					align-items: space-between;
+				}
+
+				.table-div-footer {
+					display: table;
+					flex-direction: row;
+					padding: 4px;
+					flex-wrap: nowrap;
+					justify-content: space-between;
+					align-items: space-between;
+					margin-top: 32px;
+				}
+
+				.fundraiser-div {
+					display: flex;
+					flex-direction: row;
+					padding: 4px;
+					flex-wrap: nowrap;
+					justify-content: start;
+					align-items: space-between;
+				}
+				.fundraiser-div2 {
+					display: flex;
+					flex-direction: row;
+					gap: 4px;
+					flex-wrap: nowrap;
+					justify-content: start;
+					align-items: space-between;
+				}
+
+				.fundraiser-thanks {
+					padding: 8px;
+				}
+
+				img {
+					padding: 4px;
+				}
+				a {
+					color: blue;
+					text-decoration: underline;
+				}
+			</style>
+			<div *ngIf="this.paymentDetails" #receipt id="receipt" class="page">
+				<div class="flex-container">
+					<!--HEADER-->
+					<div class="table-div">
+						<table>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_date_field"
+											>Date</strong
+										></label
+									>
+								</td>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_transaction_id_field"
+											>Transaction ID:</strong
+										></label
+									>
+								</td>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_payment_receipt_field"
+											>Payment Receipt</strong
+										></label
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									{{ this.paymentDetails.created_at | date : 'dd-MM-YYYY' }}
+								</td>
+								<td>{{ this.paymentDetails.payment_transaction_id }}</td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<hr />
+					<!--FUNDRAISER-->
+					<div class="fundraiser-div">
+						<div>
+							<img
+								class="profile-image"
+								src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/{{
+									this.accountDetails.receiver_image
+								}}
+						"
+							/>
+						</div>
+						<div class="fundraiser-thanks">
+							<label
+								><strong
+									i18n="@@donation_receipt_thank_you_for_your_donation_field"
+									>Thank you for your donation !</strong
+								></label
+							>
+							<div class="fundraiser-div2">
+								<h3 i18n="@@donation_receipt_supported_fundraiser_field">
+									Supported Fundraiser:
+								</h3>
+								<h3>
+									<a (click)="redirectToFundraiser()"
+										><strong>{{ this.paymentDetails.description }}</strong></a
+									>
+								</h3>
+							</div>
+						</div>
+					</div>
+
+					<!--DONATION-->
+					<div class="table-div">
+						<table>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_donation_field"
+											>Donation:</strong
+										></label
+									>
+								</td>
+								<td>
+									<p>{{ this.paymentDetails.symbol }} {{ this.paymentDetails.amount }}</p>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_tip_field"
+											>Tip:</strong
+										></label
+									>
+								</td>
+								<td>
+									<p>{{ this.paymentDetails.symbol }} {{ this.paymentDetails.tip_amount }}</p>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_total_donated_field"
+											>Total Donated:</strong
+										></label
+									>
+								</td>
+								<td>
+									<p>{{ this.paymentDetails.symbol }} {{ this.total_donated_amount }}</p>
+								</td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<hr />
+					<!--DONOR DETAILS-->
+					<div class="table-div">
+						<table>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_donated_by_field"
+											>Donated by</strong
+										></label
+									>
+								</td>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_donor_email_address_field"
+											>Donor email address</strong
+										></label
+									>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									{{ this.paymentDetails.first_name }}
+									{{ this.paymentDetails.last_name }}
+									<br *ngIf="this.paymentDetails.address" />
+									{{
+										this.paymentDetails.address
+											? this.paymentDetails.address
+											: ''
+									}}
+									<br *ngIf="this.paymentDetails.city" />
+									{{ this.paymentDetails.city ? this.paymentDetails.city : '' }}
+									<br *ngIf="this.paymentDetails.country" />
+									{{
+										this.paymentDetails.country
+											? this.paymentDetails.country
+											: ''
+									}}
+								</td>
+								<td>{{ this.paymentDetails.email }}</td>
+							</tr>
+						</table>
+					</div>
+					<hr />
+					<!--RECEIVER DETAILS-->
+					<div class="table-div" *ngIf="this.accountDetails.receiver_name">
+						<table>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_received_by_field"
+											>Received by</strong
+										></label
+									>
+								</td>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_bank_account_holder_field"
+											>Bank account holder</strong
+										></label
+									>
+								</td>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_bank_account_number_field"
+											>Bank account number</strong
+										></label
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>{{ this.accountDetails.receiver_name }}</td>
+								<td>{{ this.accountDetails.account_holder }}</td>
+								<td>{{ this.accountDetails.account_number }}</td>
+							</tr>
+						</table>
+					</div>
+
+					<!--CUSTOM MESSAGE-->
+					<div *ngIf="this.paymentDetails.receipt_message" class="table-div">
+						<table>
+							<tr>
+								<td>
+									<label
+										><strong i18n="@@donation_receipt_custom_message_label"
+											>Additional Information</strong
+										></label
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>{{ this.paymentDetails.receipt_message }}</td>
+							</tr>
+						</table>
+					</div>
+
+					<!--FOOTER-->
+					<div class="table-div-footer">
+						<table>
+							<tr>
+								<td>
+									<img
+										src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODYiIGhlaWdodD0iNDAiPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgPHBhdGggZD0iTTAgMGgxODZ2NDBIMHoiLz4KICAgICAgPHBhdGggZmlsbD0iIzMyQkY1NSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNTUuMDUgMTMuMDMzaDIuNjQ4YS42MS42MSAwIDAgMSAuNTc3LjgxN2wtNC44OSAxMy41NDFhLjYxLjYxIDAgMCAxLS41NzcuNDA2aC0yLjIzNWEuNjE1LjYxNSAwIDAgMS0uNTgzLS40MTJsLTMuMzE3LTkuNjY3LTMuMTU4IDkuNjZhLjYxMi42MTIgMCAwIDEtLjU4NC40MjVoLTIuMjA0YS42MTYuNjE2IDAgMCAxLS41NzctLjRsLTUuMDM2LTEzLjU0MWEuNjEyLjYxMiAwIDAgMSAuNTc3LS44MjNoMi42NDJjLjI2OCAwIC40OTguMTcuNTg0LjQxN2wzIDkuMDkyIDMuMTQtOS41MTVoMy4yNjhsMy4xNCA5LjUxNSAzLjAwMS05LjA5MmEuNjE1LjYxNSAwIDAgMSAuNTgzLS40MTd2LS4wMDZabTE5LjMyIDYuNDgzdjcuNjdhLjYxLjYxIDAgMCAxLS42MTMuNjFoLTIuNDU0YS42MS42MSAwIDAgMS0uNjEzLS42MVYxOS43N2MwLTIuMzczLTEuNDI3LTMuNjM4LTMuMDc0LTMuNjM4LTEuNjQ2IDAtMy43NzIuOTgtMy43NzIgMy44NTZ2Ny4xOTdhLjYxLjYxIDAgMCAxLS42MTMuNjEyaC0yLjQ1NGEuNjEuNjEgMCAwIDEtLjYxMy0uNjEyVjUuNjE3YS42MS42MSAwIDAgMSAuNjEzLS42MWgyLjQ1NGEuNjEuNjEgMCAwIDEgLjYxMy42MXY5LjY2MWMuNzMtMS44MDMgMy4xMS0yLjYyIDQuNTk5LTIuNjIgMy44MDggMCA1LjkyOCAyLjU2IDUuOTI4IDYuODU4Wm0xMi41NjgtNi40ODNoMi42M2EuNjEuNjEgMCAwIDEgLjU2NS44NDdsLTguNjg2IDIwLjc0NWEuNjA4LjYwOCAwIDAgMS0uNTY1LjM3NWgtMi41NWEuNjE0LjYxNCAwIDAgMS0uNTcyLS44NDFsMi45OTUtNy40MUw3NS4yMiAxMy44OGEuNjEuNjEgMCAwIDEgLjU2NS0uODUzaDIuNjg1Yy4yNDkgMCAuNDc0LjE1MS41Ny4zODFsMy42ODIgOC45NzcgMy42NS04Ljk3N2EuNjEuNjEgMCAwIDEgLjU3MS0uMzgxbC0uMDA2LjAwNlptMTYuNzQ2LTcuNzczaDIuNDU0YS42MS42MSAwIDAgMSAuNjE0LjYxMnYyMS41NjdhLjYxLjYxIDAgMCAxLS42MTQuNjEyaC0yLjQ1NGEuNjEuNjEgMCAwIDEtLjYxMy0uNjEydi0xLjM1Yy0xLjAxNSAxLjU1LTMuMTEgMi4zMzctNC45MTQgMi4zMzctMy45IDAtNy4yOTUtMy4wNjktNy4yOTUtNy43NzggMC00Ljc0IDMuMzU5LTcuNzQyIDcuMjY1LTcuNzQyIDEuODcgMCAzLjkzLjc1NiA0Ljk1IDIuMzA2VjUuODY2YS42MS42MSAwIDAgMSAuNjEzLS42MTJsLS4wMDYuMDA2Wm0tLjY3NCAxNS4zNjNjMC0yLjU5LTIuMTU2LTQuMjk3LTQuMjgyLTQuMjk3LTIuMjg0IDAtNC4xNTUgMS44MzQtNC4xNTUgNC4yOTcgMCAyLjQ2NCAxLjg3MSA0LjM5NSA0LjE1NSA0LjM5NSAyLjI4NCAwIDQuMjgyLTEuODA0IDQuMjgyLTQuMzk1Wm01LjY0OS0uMjIzYzAtNC42OCAzLjY1LTcuNzQzIDcuODY2LTcuNzQzIDQuMjE1IDAgNy44OTYgMy4wNjMgNy44OTYgNy43NDMgMCA0LjY3OS0zLjY4IDcuNzc4LTcuODk2IDcuNzc4LTQuMjIyIDAtNy44NjYtMy4xLTcuODY2LTcuNzc4Wm0xMi4wNSAwYzAtMi41My0xLjktNC4zMjktNC4xODQtNC4zMjktMi4yODQgMC00LjE1NSAxLjgwNC00LjE1NSA0LjMyOSAwIDIuNTkgMS44NzEgNC4zNjQgNC4xNTUgNC4zNjQgMi4yODQgMCA0LjE4NS0xLjc2OCA0LjE4NS00LjM2NFptMTkuNzcyLS44ODR2Ny42N2EuNjEuNjEgMCAwIDEtLjYxNC42MWgtMi40NTNhLjYxLjYxIDAgMCAxLS42MTQtLjYxVjE5Ljc3YzAtMi4zNzMtMS40MjctMy42MzgtMy4wNzMtMy42MzhzLTMuNzcyLjk4LTMuNzcyIDMuODI2djcuMjI3YS42MS42MSAwIDAgMS0uNjE0LjYxMmgtMi40NTRhLjYxLjYxIDAgMCAxLS42MTMtLjYxMnYtMTMuNTRhLjYxLjYxIDAgMCAxIC42MTMtLjYxMmgyLjQ1NGEuNjEuNjEgMCAwIDEgLjYxNC42MTF2MS43MjVjLjc1OS0xLjg2NCAzLjA4LTIuNzE4IDQuNTk4LTIuNzE4IDMuODA4IDAgNS45MjggMi41NiA1LjkyOCA2Ljg1OXYuMDA2Wm0xNS4wODgtNi40ODNoMi40NTRhLjYxLjYxIDAgMCAxIC42MTMuNjExdjEzLjU0MWEuNjEuNjEgMCAwIDEtLjYxMy42MTJoLTIuNDU0YS42MS42MSAwIDAgMS0uNjE0LS42MTJWMjUuNDljLS45ODQgMS42MS0yLjk1MiAyLjY4OC01LjA3NyAyLjY4OC0zLjk2NyAwLTcuMTM3LTMuMTktNy4xMzctNy43NzggMC00LjQ1NiAzLjA0My03Ljc0MyA3LjIzNC03Ljc0MyAyLjAyOCAwIDMuOTk2Ljg4NCA0Ljk4IDIuNDM0di0xLjQ0YS42MS42MSAwIDAgMSAuNjE0LS42MTJ2LS4wMDZabS0uNjc0IDcuMzY3YzAtMi41My0yLjA5Ni00LjMyOS00LjI4Mi00LjMyOS0yLjM4MiAwLTQuMTg2IDEuOTYyLTQuMTg2IDQuMzI5IDAgMi4zNzIgMS44MSA0LjM2NCA0LjIyMiA0LjM2NCAyLjI4NCAwIDQuMjUyLTEuODk1IDQuMjUyLTQuMzY0aC0uMDA2Wm0xNS4yNjQtOS44NzN2MS42ODJhLjYxLjYxIDAgMCAxLS42MTQuNjEyaC0yLjUyNlYyNy43M2EuNjEuNjEgMCAwIDEtLjYxNC42MTFoLTIuNDU0YS42MS42MSAwIDAgMS0uNjEzLS42MTFWMTIuODJoLTIuMDUzYS42MS42MSAwIDAgMS0uNjE0LS42MXYtMS42ODNhLjYxLjYxIDAgMCAxIC42MTQtLjYxMmgyLjA1M1Y1LjYxMUEuNjEuNjEgMCAwIDEgMTYzLjk1IDVoMi40NTRhLjYxLjYxIDAgMCAxIC42MTQuNjExdjQuMzA0aDIuNTI2YS42MS42MSAwIDAgMSAuNjE0LjYxMlptMTUuMjAzIDEwLjg5NkgxNzQuNDZjLjQxMyAyLjA1MiAxLjk5OSAzLjE2IDQuMjE2IDMuMTYgMS4zOSAwIDIuNzU3LS41MzMgMy42NS0xLjQ3OGEuNjA5LjYwOSAwIDAgMSAuODE0LS4wNjZsMS41MyAxLjE1NmMuMjc0LjIwNi4zMjMuNi4xMS44NzItMS40MzMgMS44MjgtMy44NTcgMi44MzMtNi4zMyAyLjgzMy00LjQwOSAwLTcuNzY4LTMuMTYtNy43NjgtNy43NzkgMC00LjcxIDMuNTIzLTcuNzQyIDcuNzY5LTcuNzQyUzE4NiAxNS4zOCAxODYgMTkuOTk0YzAgLjI1NC0uMDEyLjUzOS0uMDMuODQxYS42MTMuNjEzIDAgMCAxLS42MTQuNTgxbC4wMDYuMDA3Wm0tMy4wMDYtMi41NjFjLS4yMi0yLjAyMi0xLjgxLTMuMjI2LTMuODctMy4yMjYtMS45NjggMC0zLjU4My45OC00LjAyNyAzLjIyNmg3Ljg5N1pNMjQuOTA0IDUuMDA2SDUuNTM0QzIuNDc3IDUuMDA2IDAgNy4zOTcgMCAxMC4zNDV2MTguNjhjMCAyLjY1MiAyLjAwNCA0Ljg1NSA0LjY0IDUuMjY3bDkuMTI0LjA2NmgxMS4xNTJjMy4wNTUgMCA1LjUzMy0yLjM5IDUuNTMzLTUuMzM5VjEwLjM0QzMwLjQ1IDcuMzkxIDI3Ljk3MSA1IDI0LjkxNiA1bC0uMDEyLjAwNlptLTkuNjg4IDI0LjY5N2MtNS43MDQgMC0xMC4zMi00LjM5NC0xMC4zMjYtOS44MThoMjAuNjQ1YzAgNS40MjQtNC42MjIgOS44MTgtMTAuMzIgOS44MThaIi8+CiAgICA8L2c+CiAgPC9zdmc+"
+									/>
+								</td>
+							</tr>
+							<tr>
+								<td>Johan Huizingalaan, 763A Amsterdam, 1066VH</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END RECEIPT DIV-->
+		<div
+			*ngIf="!this.isLoading"
+			fxLayout="row"
+			fxLayoutAlign="center center"
+			ngClass="p-m"
+		>
+			<button
+				i18n="@@shareContribution_backToFundraiserPage_button"
+				mat-flat-button
+				color="accent"
+				(click)="redirectToFundraiser()"
+			>
+				Back to Fundraiser Page
+			</button>
+		</div>
+	</div>
+</div>

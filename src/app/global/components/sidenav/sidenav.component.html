@@ -1,0 +1,239 @@
+<mat-list>
+	<button
+		*ngIf="this.isShowIcon"
+		mat-menu-item
+		(click)="this.userMenuClick('dashboard')"
+		id="headerDashboard"
+		[ngStyle]="{
+			color: activeItem === 'dashboard' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : dashboardTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1690383543/whydonate-production/platform/svg-icons/dashboardNav.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'dashboard'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/>
+		<span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span i18n="@@button_dashboard" *ngIf="this.isShowText">Dashboard</span>
+	</button>
+
+	<button
+		*ngIf="this.isShowIcon"
+		mat-menu-item
+		(click)="this.userMenuClick('myFundraisers')"
+		id="headerMyFundraisers"
+		[ngStyle]="{
+			color: activeItem === 'myFundraisers' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : fundraisersTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/whydonate-production/platform/svg-icons/fundraiserPageNav.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'myFundraisers'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span i18n="@@header_userMenu_button_myFundraisers" *ngIf="this.isShowText"
+			>My Fundraisers</span
+		>
+	</button>
+	<button
+		mat-menu-item
+		(click)="this.userMenuClick('balance')"
+		*ngIf="this.isReceiver && this.isShowIcon"
+		id="headerBalance"
+		[ngStyle]="{
+			color: activeItem === 'balance' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : balanceTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1666203390/whydonate-production/platform/svg-icons/wallet.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'balance'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span i18n="@@header_userMenu_button_balance" *ngIf="this.isShowText"
+			>Balance</span
+		>
+	</button>
+	<button
+		mat-menu-item
+		(click)="this.userMenuClick('payoutSettings')"
+		*ngIf="this.isReceiver && this.isShowIcon"
+		id="headerPayoutSettings"
+		[ngStyle]="{
+			color: activeItem === 'payoutSettings' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : payoutsettingsTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/payoutNav.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'payoutSettings'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span i18n="@@profile_payoutSettings" *ngIf="this.isShowText"
+			>Payout Settings</span
+		>
+	</button>
+	<button
+		mat-menu-item
+		(click)="this.userMenuClick('emailSettings')"
+		*ngIf="this.isReceiver && this.isShowIcon"
+		id="headerBalance"
+		[ngStyle]="{
+			color: activeItem === 'emailSettings' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : emailsettingsTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/emailNav.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'emailSettings'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span i18n="@@profile_emailSettings_label" *ngIf="this.isShowText"
+			>Email Settings</span
+		>
+	</button>
+	<button
+		*ngIf="this.isShowIcon"
+		mat-menu-item
+		class="customBranding"
+		(click)="this.userMenuClick('customiseFundraisers')"
+		id="headerCustomBranding"
+		[ngStyle]="{
+			color: activeItem === 'customiseFundraisers' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : customisefundraisersTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1666203390/whydonate-production/platform/svg-icons/color_lens.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'customiseFundraisers'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span
+			i18n="@@header_userMenu_button_customiseFundraisers"
+			*ngIf="this.isShowText"
+			>Customise Fundraisers</span
+		>
+	</button>
+
+	<button
+		*ngIf="this.isShowIcon"
+		mat-menu-item
+		(click)="this.userMenuClick('customiseEmails')"
+		id="headerCustomiseEmails"
+		[ngStyle]="{
+			color: activeItem === 'customiseEmails' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : customiseemailsTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/customizeEmailNav.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'customiseEmails'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span
+			i18n="@@header_userMenu_button_customiseEmails"
+			*ngIf="this.isShowText"
+		>
+			Customise Emails
+		</span>
+	</button>
+
+	<button
+		*ngIf="this.isShowIcon"
+		mat-menu-item
+		(click)="this.userMenuClick('customiseReceipts')"
+		id="headerReceipt"
+		[ngStyle]="{
+			color: activeItem === 'customiseReceipts' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : customisereceiptsTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1669281587/whydonate-production/platform/svg-icons/receipt.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'customiseReceipts'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span
+			i18n="@@header_userMenu_button_customiseReceipts"
+			*ngIf="this.isShowText"
+		>
+			Customise Receipts
+		</span>
+	</button>
+
+	<button
+		*ngIf="this.isShowIcon"
+		mat-menu-item
+		(click)="this.userMenuClick('apiKey')"
+		id="headerApiKey"
+		[ngStyle]="{
+			color: activeItem === 'apiKey' ? '#32BF55' : '#000000'
+		}"
+		matTooltip="{{ this.isShowText? '' : apikeyTooltip }}"
+		matTooltipPosition="right"
+	>
+		<img
+			class="icon-position"
+			src="https://res.cloudinary.com/whydonate/image/upload/v1690383542/whydonate-production/platform/svg-icons/apiNav.svg"
+			[ngStyle]="{
+				filter:
+					activeItem === 'apiKey'
+						? 'invert(41%) sepia(86%) saturate(442%) hue-rotate(85deg) brightness(98%) contrast(92%)'
+						: 'invert(0%) sepia(90%) saturate(7500%) hue-rotate(60deg) brightness(88%) contrast(112%)'
+			}"
+		/><span *ngIf="this.isShowText">&nbsp;&nbsp;&nbsp;</span>
+		<span i18n="@@header_userMenu_button_apiKey" *ngIf="this.isShowText"
+			>API-Key
+		</span>
+	</button>
+</mat-list>

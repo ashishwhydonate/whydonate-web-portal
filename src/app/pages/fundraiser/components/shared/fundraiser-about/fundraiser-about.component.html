@@ -1,0 +1,31 @@
+<div *ngIf="this.isLoading === true">
+	<div>
+		<ng-container *ngIf="!isChildFundraiser; else parentFundraiserAbout">
+			<app-quill-view
+				[quillContent]="fundraiserDescriptionData?.translations?.['content'+localeSuffix] || fundraiserDescriptionData?.content "
+			>
+			</app-quill-view>
+		</ng-container>
+	</div>
+	<div *ngIf="this.currentFundraiser?.image_list[0]">
+		<ng-image-slider
+			[videoAutoPlay]="true"
+			[images]="fundraiserMediaList"
+			[imageSize]="{ height: 150 }"
+			[manageImageRatio]="true"
+			[showArrow]="mediaLength > 2 ? true : false"
+			#nav
+		></ng-image-slider>
+	</div>
+
+	<ng-template #parentFundraiserAbout>
+		<div fxLayout="row" *ngIf="parentFundraiserAboutcontent">
+			<app-quill-view [quillContent]="parentFundraiserAboutcontent">
+			</app-quill-view>
+		</div>
+	</ng-template>
+</div>
+
+<div *ngIf="this.isLoading === false">
+	<app-page-loader></app-page-loader>
+</div>

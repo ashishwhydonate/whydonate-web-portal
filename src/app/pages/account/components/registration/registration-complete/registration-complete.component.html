@@ -1,0 +1,87 @@
+<div
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	class="branding registration-complete"
+>
+	<div
+		fxLayout="column"
+		fxFlex.xs="80%"
+		fxFlex.sm="60%"
+		fxFlex.md="50%"
+		fxFlex.lg="50%"
+		fxLayoutAlign="center center"
+	>
+		<div
+			fxLayout="row"
+			fxFill
+			fxLayoutAlign="center center"
+			ngClass="p-s"
+			class="donateGreyBackground"
+		>
+			<h2>
+				<img
+					style="position: relative; top: 4px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667421094/whydonate-production/platform/svg-icons/checkCircleFillPrimary.svg"
+				/>&nbsp;
+				<span i18n="@@account_register_complete_succesful_message"
+					>Registration Successful</span
+				>
+			</h2>
+		</div>
+
+		<div fxLayout="row" fxLayoutAlign="center center">
+			<div fxLayout="column" fxFill fxLayoutAlign="center center">
+				<mat-card>
+					<div fxLayout="row" fxLayoutAlign="center center">
+						<div
+							fxLayout="column"
+							fxFill
+							fxLayoutAlign="center center"
+							fxLayoutGap="1%"
+						>
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<h2 i18n="@@account_register_complete_verify_email">
+									Verify Your Email
+								</h2>
+							</div>
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<h3 i18n="@@account_register_complete_sent_email">
+									We have sent an email to
+								</h3>
+								&nbsp;
+								<h3>{{ this.userEmail }}</h3>
+							</div>
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<p
+									i18n="@@account_register_complete_sent_email_message"
+									class="center-align"
+								>
+									You need to verify your email to receive payouts. If you have
+									not received the verification email, please check your "Spam"
+									or "Bulk Email" folder. You can also click the resend button
+									below to have another email sent to you.
+								</p>
+							</div>
+
+							<div fxLayout="row" fxLayoutAlign="center center">
+								<button
+									mat-flat-button
+									color="accent"
+									(click)="resendVerificationEmail()"
+								>
+									<span i18n="@@account_register_complete_resend_email_button"
+										>Resend verification email</span
+									>
+									<mat-icon *ngIf="isLoading" class="m-l-xs">
+										<mat-spinner color="primary" diameter="20"> </mat-spinner>
+									</mat-icon>
+								</button>
+							</div>
+						</div>
+					</div>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</div>

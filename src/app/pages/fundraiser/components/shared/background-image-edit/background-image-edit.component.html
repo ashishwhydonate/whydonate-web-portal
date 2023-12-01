@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutAlign="end end" class="w-100">
+	<button
+		i18n="@@button_editImage_Video"
+		mat-button
+		id="editFundraiserImageButton"
+		color="accent"
+		(click)="openImageCropperDialog()"
+	>
+		Edit Image/Video
+	</button>
+
+	<!-- <div *ngIf="this.videoPath" [innerHTML]="youtubeIframe" fxLayout="column" fxLayoutAlign="end end"
+		class="w-100 aspect-ratio" fxFlex="100"></div> -->
+	<div
+		class="w-100 aspect-ratio"
+		*ngIf="this.videoPath"
+		[innerHTML]="youtubeIframe"
+	></div>
+
+	<img
+		width="100%"
+		*ngIf="!this.videoPath"
+		id="fundraiser_page_image"
+		[src]="this.imagePath"
+		(error)="fallbackToDefaultImage()"
+	/>
+</div>

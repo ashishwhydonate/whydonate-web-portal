@@ -1,0 +1,107 @@
+<div
+	fxLayout="column"
+	class="primary-bg"
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxLayoutGap="5%"
+	ngClass.lt-sm="m-t-l"
+>
+	<div
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayout.xs="column"
+		fxLayoutAlign="center center"
+		class="content"
+		fxLayoutGap.xs="10%"
+		ngClass.lt-sm="p-xs"
+	>
+		<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center start">
+			<!-- <h4 i18n="@@home_personal_makingDifference_subtitle">
+				Let's bring change together
+			</h4> -->
+			<h2 i18n="@@home_personal_makingDifference_title" class="white-text">
+				Every 10 seconds someone is making a difference
+			</h2>
+			<p
+				i18n="@@home_personal_JoinWhydonateGlobalCrowdfunding_title"
+				class="white-text"
+				id="totalDonations"
+			>
+				Join the Whydonate global crowdfunding family of
+				{{ this.totalDonations }} donors and {{ this.totalPersonalFundraisers }}
+				fundraisers.
+			</p>
+		</div>
+		<div
+			fxFlex="50%"
+			fxLayout="column"
+			fxLayoutAlign="center end"
+			fxLayoutAlign.xs="center center"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/runningplatform"
+				alt=""
+				width="80%"
+			/>
+		</div>
+	</div>
+</div>
+<div
+	fxLayout="row"
+	fxLayout.sm="row"
+	fxLayout.md="row"
+	fxLayout.xs="column"
+	fxLayoutAlign="start center"
+	fxLayoutGap="5%"
+	class="section-background-grey"
+>
+	<div fxLayout="column">
+		<mat-card>
+			<div fxFlex="100%" fxLayout="row" fxLayoutAlign="center center">
+				<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173327/whydonate-production/platform/svg-icons/start_fund.svg"
+						width="60%"
+					/>
+				</div>
+				<div fxFlex="50%" fxLayout="column">
+					<p
+						i18n="@@making_a_difference_startToachieveGoalsHomePersonal"
+						class="mat-body-2"
+					>
+						Start a fundraiser for charity or individual and raise money to
+						achieve your goals.
+					</p>
+					<app-start-fundraiser-button
+						id="makingDifferenceStartButton"
+					></app-start-fundraiser-button>
+				</div>
+			</div>
+		</mat-card>
+	</div>
+
+	<div fxLayout="column">
+		<mat-card>
+			<div fxFlex="100%" fxLayout="row" fxLayoutAlign="center center">
+				<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173335/whydonate-production/platform/svg-icons/promote.svg"
+						width="60%"
+					/>
+				</div>
+				<div fxFlex="50%" fxLayout="column">
+					<p
+						i18n="@@making_a_difference_findTheBestPersonalHomePersonal"
+						class="mat-body-2"
+					>
+						Find the best personal or charity crowdfunding site and make a
+						donation.
+					</p>
+					<app-promote-cause-button
+						id="promoteCause"
+					></app-promote-cause-button>
+				</div>
+			</div>
+		</mat-card>
+	</div>
+</div>

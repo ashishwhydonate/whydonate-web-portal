@@ -1,0 +1,89 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+@import '../_variables/spacing';
+@import '../_variables/typography';
+
+// Home component > fundraiser card
+.popular-fundraisers mat-card {
+	// @include mat.elevation(8);
+	margin: map.get($SPACE_CONFIG, xl);
+}
+
+// search component > fundraiser card
+.fundraiser-card mat-card {
+	margin: map.get($SPACE_CONFIG, xs);
+	width: calc(76px + 26ch);
+	height: 32em;
+
+	img.mat-card-image {
+		height: 145px;
+		object-fit: cover;
+	}
+	//* INFO: Fix height and overflow hidden set to give fix space for content so overall height remains constant
+	mat-card-header .mat-card-header-text {
+		// overflow-wrap: break-word; //* INFO: breaks the word at any letter if text overflow (FALLBACK for Safari)
+		// overflow-wrap: anywhere; //* INFO: breaks the word at any letter if text overflow
+
+		overflow: hidden; //* hide excess content
+		text-overflow: ellipsis; //* show 3 dots at the end of line of text overflows
+		height: calc(20px * 4); //* allow 4 lines of text in header
+		margin-bottom: map.get(
+			$SPACE_CONFIG,
+			m
+		); //* margin to separatre header and content
+		.mat-card-title {
+			overflow: hidden; //* hide excess content
+			max-height: calc(20px * 2); //* allow 2 lines of title
+		}
+	}
+	mat-card-content p {
+		min-height: 100px; //* INFO: given fix height to subtitle to accomodate only 2 lines
+		overflow-wrap: break-word; //* INFO: breaks the word at any letter if text overflow (FALLBACK for Safari)
+		overflow-wrap: anywhere; //* INFO: breaks the word at any letter if text overflow
+		height: calc(20px * 5); //* Allow content upto 5 lines
+		overflow: hidden; //* hide excess content
+	}
+}
+
+.fundraiser-card-small mat-card {
+	.header {
+		height: calc(24px * 3); //* allow 3 lines of text in header
+		overflow: hidden; //* hide excess content
+		.title {
+			max-height: calc(24px * 2); //* allow 2 lines of title
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden; //* hide excess content
+		}
+		.subtitle {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden; //* hide excess content
+		}
+	}
+}
+
+// small fundraiser card list
+// .small-card-list {
+// 	mat-card.small-card {
+// 		padding: 0;
+// 		padding-top: 16px;
+// 		margin: map.get($SPACE_CONFIG, xs);
+// 		// min-width: 420px;
+// 		min-width: calc(324px + 4vw);
+// 		.mat-card-image {
+// 			margin-top: 0;
+// 		}
+// 	}
+// }
+
+// clickable card for fundraisers
+.card-clickable {
+	cursor: pointer;
+	&:hover {
+		@include mat.elevation(4);
+	}
+}

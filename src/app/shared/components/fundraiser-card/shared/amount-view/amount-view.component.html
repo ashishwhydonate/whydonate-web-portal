@@ -1,0 +1,26 @@
+<!-- SHOW DONATION RECEIVED AND TARGET AMOUNT -->
+<mat-label *ngIf="isShowBothDonationAndTargetAmount">
+	<b
+		>{{ this.fundraiserCardData.currency_symbol || symbol }}&nbsp;{{
+			donation_received_amount | number
+		}}</b
+	>&nbsp;<span i18n="@@fundraiserCard_donationTargetedAmount">of</span>&nbsp;{{
+		this.fundraiserCardData.currency_symbol || symbol
+	}}{{ donation_target_amount | number }}
+</mat-label>
+<!-- SHOW ONLY DONATION RECEIVED -->
+<mat-label *ngIf="isShowOnlyDonationAmountView">
+	<b
+		>{{ this.fundraiserCardData.currency_symbol || symbol
+		}}{{ donation_received_amount | number }}</b
+	>&nbsp;
+	<span i18n="@@fundraiserCard_donationReceived_label">Donation received</span>
+</mat-label>
+<!-- SHOW ONLY TARGET AMOUNT -->
+<mat-label *ngIf="isShowOnlyTargetAmountView">
+	<b
+		>{{ this.fundraiserCardData.currency_symbol || symbol
+		}}{{ donation_target_amount | number }}</b
+	>&nbsp;
+	<span i18n="@@fundraiserCard_targetAmount_label">Targeted amount</span>
+</mat-label>

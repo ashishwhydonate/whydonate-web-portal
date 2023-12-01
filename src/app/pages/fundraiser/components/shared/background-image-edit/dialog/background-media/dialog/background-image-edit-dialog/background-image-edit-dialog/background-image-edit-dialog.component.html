@@ -1,0 +1,81 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onNoClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<h2
+	i18n="@@backgroundImageEditDialog_editFundraiserImage_title"
+	mat-dialog-title
+>
+	Edit fundraiser image
+</h2>
+<div ngClass="p-l-l p-b-s">
+	<button
+		[fxHide]="!isCropperReady"
+		mat-stroked-button
+		color="accent"
+		id="editFundraiserChangeImageButton"
+		(click)="openFile(imageFileInput)"
+		i18n="@@button_changeImage"
+	>
+		Change Image
+	</button>
+</div>
+&nbsp;&nbsp;&nbsp;
+<span *ngIf="fileName">File:&nbsp;{{ fileName }}</span>
+<br />
+<br />
+<input
+	hidden
+	#imageFileInput
+	type="file"
+	(change)="fileChangeEvent($event)"
+	accept="image/png, image/jpeg, image/jpg, image/webp"
+/>
+<mat-dialog-content fxLayout="column">
+	<div fxLayout="column" fxFill>
+		<image-cropper
+			fxFlex="100%"
+			class="image-cropper"
+			[imageChangedEvent]="imageChangedEvent"
+			[maintainAspectRatio]="true"
+			[aspectRatio]="2 / 1"
+			[resizeToWidth]="800"
+			[resizeToHeight]="400"
+			format="png"
+			(imageCropped)="imageCropped($event)"
+			(cropperReady)="cropperReady()"
+			[imageURL]="data.imagePath"
+			output="base64"
+		></image-cropper>
+	</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button
+		mat-button
+		color="accent"
+		(click)="onNoClick()"
+		i18n="@@button_discard"
+	>
+		Discard
+	</button>
+	<button
+		[disabled]="!isEdit || isLoading"
+		mat-flat-button
+		color="accent"
+		id="editFundraiserSaveImageButton"
+		(click)="dialogClose()"
+	>
+		<span i18n="@@button_save">Save</span>
+		<mat-icon *ngIf="isLoading" class="m-l-xs">
+			<mat-spinner
+				color="accent"
+				diameter="20"
+				i18n="@@backgroundImage_spinner"
+			>
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</mat-dialog-actions>

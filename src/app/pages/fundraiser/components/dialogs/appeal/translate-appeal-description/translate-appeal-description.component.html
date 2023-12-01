@@ -1,0 +1,156 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<h2 mat-dialog-title i18n="@@share_dialog_translate_appeal_title">
+	Translate update
+</h2>
+<mat-dialog-content class="mat-typography">
+	<div fxLayout="row" fxLayout.xs="column">
+		<div fxFlex="50%" fxFlex.xs="100%">
+			<div class="m-l-xs">
+				<mat-label
+					class="mat-body-2"
+					i18n="@@share_dialog_translate_appeal_originalLanguage_title"
+					>Original Language
+				</mat-label>
+				{{ originalLocale }}
+				<div fxLayout="row" class="p-xs">
+					<img
+						width="20"
+						src="{{ languageIconPath + originalLocale + '.png' }}"
+					/>&nbsp;
+					<span>{{ allLanguages[originalLocale] }}</span>
+				</div>
+			</div>
+			<br />
+			<!-- <div class="m-l-xs m-r-xs">
+				<mat-label i18n="@@translate_about_fundraiser_title"
+					>Fundraiser Title</mat-label
+				>
+				<fieldset class="disable" disabled>
+					<form>
+						<mat-form-field class="w-100" appearance="outline">
+							<input [value]="this.originalTitle" matInput />
+						</mat-form-field>
+					</form>
+				</fieldset>
+			</div> -->
+			<mat-label class="m-l-xs" i18n="@@editFundraiser_appealForCause_label"
+				>Appeal for cause</mat-label
+			>
+			<app-quill-editor
+				[quillContent]="originalQuillContent"
+				[readOnly]="true"
+			></app-quill-editor>
+		</div>
+		<div fxFlex="50%" fxFlex.xs="100%">
+			<div class="m-l-xs">
+				<mat-label
+					class="mat-body-2"
+					i18n="@@share_dialog_translate_appeal_translationLanguage_label"
+					>Translation Language</mat-label
+				>
+				<div fxLayout="row" fxLayoutAlign="space-between center">
+					<ng-container [ngTemplateOutlet]="langSwitcher"></ng-container>
+					<div>
+						<button
+							mat-stroked-button
+							color="accent"
+							id="autoTranslateButton"
+							[disabled]="isAutoTranslating"
+							(click)="autoTranslate()"
+						>
+							<span i18n="@@autoTranslate_label">Auto Translate</span>
+							<mat-icon *ngIf="isAutoTranslating" class="m-l-xs">
+								<mat-spinner color="primary" diameter="20"> </mat-spinner>
+							</mat-icon>
+						</button>
+					</div>
+				</div>
+			</div>
+			<br />
+			<!-- <div class="m-l-xs m-r-xs">
+				<mat-label i18n="@@translate_about_fundraiser_title"
+					>Fundraiser Title</mat-label
+				>
+				<form [formGroup]="titleFormGroup">
+					<mat-form-field class="w-100" appearance="outline">
+						<input matInput formControlName="translationTitle" />
+					</mat-form-field>
+				</form>
+			</div> -->
+			<mat-label class="m-l-xs" i18n="@@editFundraiser_appealForCause_label"
+				>Appeal for cause</mat-label
+			>
+			<app-quill-editor
+				[quillContent]="quillContent"
+				[control]="quillContentCtrl"
+				(onContentChange)="changeAppealContent($event)"
+				(allTextCheck)="allCheck($event)"
+			></app-quill-editor>
+		</div>
+	</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button
+		mat-button
+		color="accent"
+		[disabled]="isLoading || isDisable"
+		(click)="discardAllAppealChanges()"
+		i18n="@@button_discardAll"
+	>
+		Discard All
+	</button>
+	<button
+		mat-flat-button
+		color="accent"
+		id="translate_button_save_all"
+		[disabled]="isLoading || isDisable || !this.allTextCheck"
+		(click)="saveTranslations()"
+	>
+		<span i18n="@@button_saveAll">Save All</span>
+		<mat-icon *ngIf="isLoading" class="m-l-xs">
+			<mat-spinner
+				color="accent"
+				diameter="20"
+				i18n="@@share_dialog_translate_appeal_spinner"
+			>
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</mat-dialog-actions>
+
+<ng-template #langSwitcher>
+	<div>
+		<button
+			id="langSwitcher"
+			mat-button
+			[matMenuTriggerFor]="menu"
+			class="m-l-xs"
+		>
+			<img
+				width="20"
+				src="{{ languageIconPath + selectedLocale + '.png' }}"
+			/>&nbsp;
+			<span>{{ allLanguages[selectedLocale] }}</span>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/keyboard_arrow_down.svg"
+			/>
+		</button>
+	</div>
+	<mat-menu #menu="matMenu">
+		<ng-container *ngFor="let locale of translationLocaleArr">
+			<button mat-menu-item (click)="changeLanguage(locale)">
+				<img width="20" src="{{ languageIconPath + locale + '.png' }}" />&nbsp;
+				<span id="{{ 'languageChooser_' + locale + '_button' }}"
+					>{{ locale | uppercase }} -
+					{{ allLanguages[locale] | titlecase }}</span
+				>
+			</button>
+		</ng-container>
+	</mat-menu>
+</ng-template>

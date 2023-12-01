@@ -1,0 +1,31 @@
+<!-- <div fxLayout="row">
+  <div fxLayout="row">
+    <img class="img-rounded" [style.width.px]="44" [style.height.px]="44" src="{{ this.userIcon }}"
+      (error)="updateErrorImage()" />
+    <div class="m-l-xs">
+      <div>Created by:</div>
+      <div>{{ this.userName }}</div>
+      <app-owner-social-share ngClass="p-0" [socialMedia]="this.social"></app-owner-social-share>
+    </div>
+  </div>
+  <div *ngIf="showEdits">
+    <button mat-icon-button>
+      <mat-icon class="material-icons-outlined">edit</mat-icon>
+    </button>
+  </div>
+</div> -->
+<div fxLayout="row"  fxFlex.xs>
+	<img
+		class="profile-image"
+		src="{{ this.profileImage }}"
+		(error)="fallbackToDefaultImage()"
+	/>
+	<div class="m-l-s" fxLayout="column">
+		<mat-label i18n="@@createdBy_createdByLabel">Created by:</mat-label>
+		<div>{{ this.profileName }}</div>
+		<!-- <app-owner-social-share
+			ngClass="p-0"
+      [socialMedia]="this.currentFundraiser?.social_media"
+		></app-owner-social-share> -->
+	</div>
+</div>

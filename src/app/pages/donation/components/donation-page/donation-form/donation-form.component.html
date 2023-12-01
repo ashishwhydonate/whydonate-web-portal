@@ -1,0 +1,2400 @@
+<ng-container
+	*ngIf="!this.queryCheck"
+	[ngTemplateOutlet]="donationForm"
+></ng-container>
+<ng-container
+	*ngIf="this.queryCheck"
+	[ngTemplateOutlet]="donationFormByPreset"
+></ng-container>
+
+<ng-template #donationForm>
+	<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center" class="p-m">
+		<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+			<div
+				fxLayout="row"
+				fxLayout.xs="column"
+				fxFlex="100%"
+				fxLayoutAlign="space-between start"
+				fxFill
+			>
+				<h2 i18n="@@donation_donationForm_heading" class="nowrap">
+					<span>Secured online donation</span>
+				</h2>
+			</div>
+
+			<div
+				fxLayout="row"
+				fxLayout.xs="column"
+				fxFlex="100%"
+				fxLayoutAlign="space-between start"
+				fxFill
+			>
+				<app-currency-list
+					[defaultCurrency]="this.defaultCurrency"
+				></app-currency-list>
+			</div>
+
+			<div
+				*ngIf="!this.isPageDataLoaded"
+				fxLayout="row"
+				fxFlex="100%"
+				fxLayoutAlign="center start"
+				fxLayoutGap="10%"
+			>
+				<app-page-loader></app-page-loader>
+			</div>
+
+			<div
+				*ngIf="this.isPageDataLoaded"
+				fxLayout="row"
+				fxFlex="100%"
+				fxLayoutAlign="center start"
+				fxLayoutGap="10%"
+			>
+				<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center center">
+					<mat-tab-group
+						dynamicHeight
+						#donationTabGroup
+						(selectedTabChange)="donationTabChanged($event)"
+					>
+						<!--For One Time Payment tab-->
+						<!--START FIRST TAB-------------------------------------------------------------------------------------------------->
+						<mat-tab
+							class="tab-label"
+							label="{{ oneTimeLabel }}"
+							*ngIf="
+								this.currentFundraiserConfig.customdonationconfiguration.onetime
+									.onetime_select
+							"
+						>
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<div
+									fxLayout="column"
+									fxFlex="100%"
+									fxLayoutAlign="space-evenly start"
+									fxLayoutGap="2%"
+								>
+									<!--AMOUNT BUTTONS-->
+									<div
+										*ngIf="
+											this.currentFundraiserConfig?.customdonationconfiguration
+												?.onetime_is_open_donation == false
+										"
+										fxLayout="row wrap"
+										fxFill
+										fxLayoutAlign="start center"
+										fxLayoutGap="2%"
+									>
+										<!--Clicking this button invokes setDonationAmount2() for 25{{ this.currentFundraiserConfig.symbol }} of one time payment
+										which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="onetimeFirst"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_1
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.onetime.default_1,
+														'onetimeFirst',
+														'onetime'
+													)
+												"
+											>
+												<!--Angular pipe to transform value to currency with {{ this.currentFundraiserConfig.symbol }} symbol-->
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_1
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 50{{ this.currentFundraiserConfig.symbol }} of one time payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="onetimeSecond"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_2
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.onetime.default_2,
+														'onetimeSecond',
+														'onetime'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_2
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 100{{ this.currentFundraiserConfig.symbol }} of one time payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="onetimeThird"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_3
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.onetime.default_3,
+														'onetimeThird',
+														'onetime'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_3
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 250{{ this.currentFundraiserConfig.symbol }} of one time payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="onetimeForth"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_4
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.onetime.default_4,
+														'onetimeForth',
+														'onetime'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.onetime.default_4
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes checkAmountOtherButton2() -->
+										<div class="p-t-s">
+											<button
+												selected
+												*ngIf="
+													this.currentFundraiserConfig
+														.customdonationconfiguration.other_amount
+												"
+												i18n="
+													@@donation_donationForm_onetime_otherAmount_button"
+												class="mat-stroked-button"
+												color="primary"
+												id="onetimeOther"
+												[disabled]="this.isAmountOtherSelected"
+												(click)="
+													checkAmountOtherButton2('onetimeOther', 'onetime')
+												"
+											>
+												Other
+											</button>
+										</div>
+									</div>
+									<!--Other Amount BOX-->
+									<!--To enter other amount for one time payment-->
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<mat-form-field
+											class="w-100"
+											appearance="outline"
+											*ngIf="
+												isAmountOtherSelected ||
+												this.currentFundraiserConfig
+													?.customdonationconfiguration
+													?.onetime_is_open_donation
+											"
+										>
+											<mat-label
+												i18n="@@donation_donationForm_onetime_otherAmount_label"
+												>Enter Amount (EURO)</mat-label
+											>
+											<!--Input and display the tip percentage and on change recalculates the final donation amount-->
+											<input
+												#customDonationAmount
+												required
+												matInput
+												type="number"
+												[(ngModel)]="this.selectedDonationAmount"
+												(focusout)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'onetimeOther',
+														'onetime'
+													)
+												"
+												(focusin)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'onetimeOther',
+														'onetime'
+													)
+												"
+												(keyup)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'onetimeOther',
+														'onetime'
+													)
+												"
+												(keydown)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'onetimeOther',
+														'onetime'
+													)
+												"
+												(keypress)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'onetimeOther',
+														'onetime'
+													)
+												"
+												placeholder="00"
+												class="right-align"
+												appNumbersOnly
+											/>
+
+											<mat-hint
+												i18n="@@donation_donation_form_minimum5_matError"
+												class="mat-error"
+												align="end"
+												*ngIf="
+													this.totalAmount <
+														this.currentFundraiserConfig
+															.customdonationconfiguration
+															.min_donation_amount ||
+													this.totalAmount >
+														this.currentFundraiserConfig
+															.customdonationconfiguration.max_donation_amount
+												"
+												>Minimum is
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.min_donation_amount
+												}}. You can donate upto
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.max_donation_amount
+												}}</mat-hint
+											>
+											<p matPrefix class="currency-input-field">
+												{{ this.currentFundraiserConfig.symbol }}&nbsp;
+											</p>
+										</mat-form-field>
+									</div>
+
+									<!--START TIP BOX-->
+									<div
+										*ngIf="
+											this.currentFundraiserConfig?.fundraiser_data?.tip_enabled
+										"
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										class="background-grey p-xs"
+									>
+										<div
+											fxLayout="column"
+											fxFill
+											fxLayoutAlign="center center"
+											fxLayoutGap="2%"
+											class="background-white p-xs"
+										>
+											<div fxLayout="row" fxFill fxLayoutAlign="start center">
+												<p
+													i18n="@@donation_donationForm_onetime_tipbox_message"
+												>
+													Whydonate has a 0% platform fee for organizers and
+													relies on the generosity of donors like you to operate
+													our service.
+												</p>
+											</div>
+											<div
+												fxLayout="row"
+												fxFill
+												fxLayoutAlign="start center"
+												fxLayoutGap="10%"
+											>
+												<p i18n="@@donation_donationForm_onetime_tipbox_label">
+													Thank you for including a tip of:
+												</p>
+												<mat-form-field class="w-100" appearance="outline">
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_tipamount_label"
+														>Tip</mat-label
+													>
+													<!--Select a value from the given tip percentage and on change recalculates the final donation amount-->
+													<mat-select
+														[(ngModel)]="this.tipValue"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														id="donationFormSelect"
+													>
+														<!--Clicking this option invokes setTipOtherFalse() for desired tip value
+                                                          which inputs tip percentage and invokes calculateFinalDonationAmount()-->
+
+														<!--IF TIP IS IN PERCENTAGE-->
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.first_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.first_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.first_option
+															}}%
+														</mat-option>
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.second_option
+															"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.second_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.second_option
+															}}%
+														</mat-option>
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.third_option
+															"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.third_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.third_option
+															}}%
+														</mat-option>
+														<!--IF TIP IS NOT IN PERCENTAGE-->
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_fixed?.first_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.first_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed?.first_option
+															}}
+														</mat-option>
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															default
+															[value]="
+																this.tip_details?.tip_amount_fixed
+																	?.second_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.second_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed
+																	?.second_option
+															}}
+														</mat-option>
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_fixed?.third_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.third_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed?.third_option
+															}}
+														</mat-option>
+														<mat-option
+															i18n="
+																@@donation_donationForm_onetime_otherTip_label"
+															value=""
+															(click)="checkTipOtherButton()"
+															>Other
+														</mat-option>
+													</mat-select>
+												</mat-form-field>
+											</div>
+
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<mat-form-field
+													class="w-100"
+													appearance="outline"
+													[fxShow]="isTipOtherSelected"
+												>
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_otherTip_input_label"
+														>Enter Tip Amount (EURO)</mat-label
+													>
+													<input
+														required
+														matInput
+														type="number"
+														class="right-align"
+														value="this.tipAmount"
+														appTwoDigitDecimaNumber
+														[(ngModel)]="this.tipAmount"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														(change)="this.calculateFinalDonationAmount()"
+														(focusout)="this.calculateFinalDonationAmount()"
+														(focusin)="this.calculateFinalDonationAmount()"
+														(keyup)="this.calculateFinalDonationAmount()"
+														(keydown)="this.calculateFinalDonationAmount()"
+														(keypress)="this.calculateFinalDonationAmount()"
+														min="0"
+														(input)="restrictToNumeric($event)"
+													/>
+													<p matPrefix>
+														{{ this.currentFundraiserConfig.symbol }}&nbsp;
+													</p>
+												</mat-form-field>
+											</div>
+
+											<!--Angular pipe to display total amount value in Eur Currency format-->
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<p class="total-charge">
+													<span
+														i18n="
+															@@donation_donationForm_onetime_totalCharge_label"
+														>Total Charge:</span
+													>&nbsp;{{ this.currentFundraiserConfig.symbol
+													}}{{ this.totalAmount | number }}
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!--END TIP BOX-->
+
+									<div
+										fxLayout="row"
+										fxLayoutAlign="start center"
+										fxFill
+										fxLayoutGap="1%"
+									>
+										<p i18n="@@donation_donationForm_byDonatingYouAgree_label">
+											By donating, you agree to our
+										</p>
+										<p>
+											<a
+												mat-button
+												color="accent"
+												(click)="routeToTerms()"
+												i18n="
+													@@donation-page_component_donation-form-TermsAndConditions"
+												>Terms and Conditions</a
+											>
+										</p>
+									</div>
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										matTooltip="The fundraiser has been closed"
+										[matTooltipDisabled]="!isDraftOrClosed"
+									>
+										<button
+											mat-flat-button
+											class="w-100"
+											color="accent"
+											id="donateButtonBeforePayment"
+											(click)="makeDonation()"
+											[disabled]="
+												!this.isValidAmount ||
+												isLoading ||
+												isDraftOrClosed ||
+												maxMinCheck ||
+												tipAmount < 0 ||
+												!stripeChargeStatus
+											"
+										>
+											<span i18n="@@button_donate"> Donate</span>
+
+											<mat-icon *ngIf="isLoading" class="m-l-xs">
+												<mat-spinner color="accent" diameter="20">
+												</mat-spinner>
+											</mat-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
+						<!--END FIRST TAB---------------------------------------------------------------------------------------------->
+
+						<!--For Monthly Payment tab-->
+
+						<!--START SECOND TAB---------------------------------------------------------------------------------------------->
+						<mat-tab
+							*ngIf="
+								this.currentFundraiserConfig.customdonationconfiguration.monthly
+									.monthly_select
+							"
+							label="{{ monthlyLabel }}"
+						>
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<div
+									fxLayout="column"
+									fxFlex="100%"
+									fxLayoutAlign="space-evenly start"
+									fxLayoutGap="2%"
+								>
+									<!--AMOUNT BUTTONS-->
+									<div
+										*ngIf="
+											this.currentFundraiserConfig?.customdonationconfiguration
+												?.monthly_is_open_donation == false
+										"
+										fxLayout="row wrap"
+										fxFill
+										fxLayoutAlign="start center"
+										fxLayoutGap="2%"
+									>
+										<!--Clicking this button invokes setDonationAmount2() for 5{{ this.currentFundraiserConfig.symbol }} of monthly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="monthlyFirst"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_1
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.monthly.default_1,
+														'monthlyFirst',
+														'monthly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												<!--Angular pipe to transform value to currency with {{ this.currentFundraiserConfig.symbol }} symbol-->
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_1
+														| number
+												}}
+											</button>
+										</div>
+										<!--Clicking this button invokes setDonationAmount2() for 10{{ this.currentFundraiserConfig.symbol }} of monthly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="monthlySecond"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_2
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.monthly.default_2,
+														'monthlySecond',
+														'monthly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_2
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 25{{ this.currentFundraiserConfig.symbol }} and monthly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="monthlyThird"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_3
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.monthly.default_3,
+														'monthlyThird',
+														'monthly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_3
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 100{{ this.currentFundraiserConfig.symbol }} and monthly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="monthlyForth"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_4
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.monthly.default_4,
+														'monthlyForth',
+														'monthly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.monthly.default_4
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes checkAmountOtherButton2() -->
+										<div class="p-t-s">
+											<button
+												*ngIf="
+													this.currentFundraiserConfig
+														.customdonationconfiguration.other_amount
+												"
+												i18n="
+													@@donation_donationForm_monthly_otherAmount_button"
+												class="mat-stroked-button"
+												color="primary"
+												id="monthlyOther"
+												value=""
+												(click)="
+													checkAmountOtherButton2('monthlyOther', 'monthly')
+												"
+											>
+												Other
+											</button>
+										</div>
+									</div>
+									<!--Other Amount BOX-->
+									<!--To enter other amount for monthly payment-->
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<mat-form-field
+											class="w-100"
+											appearance="outline"
+											*ngIf="
+												isAmountOtherSelected ||
+												this.currentFundraiserConfig
+													?.customdonationconfiguration
+													?.monthly_is_open_donation
+											"
+										>
+											<mat-label
+												i18n="@@donation_donationForm_onetime_otherAmount_label"
+												>Enter Amount (EURO)</mat-label
+											>
+											<!--Input and display the tip percentage and on change recalculates the final donation amount-->
+											<input
+												#customDonationAmount
+												required
+												matInput
+												type="number"
+												[(ngModel)]="this.selectedDonationAmount"
+												(focusout)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'monthlyOther',
+														'monthly'
+													)
+												"
+												(focusin)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'monthlyOther',
+														'monthly'
+													)
+												"
+												(keyup)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'monthlyOther',
+														'monthly'
+													)
+												"
+												(keydown)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'monthlyOther',
+														'onetime'
+													)
+												"
+												(keypress)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'monthlyOther',
+														'monthly'
+													)
+												"
+												placeholder="00"
+												class="right-align"
+												appNumbersOnly
+											/><mat-hint
+												i18n="@@donation_donation_form_minimum5_matError"
+												class="mat-error"
+												align="end"
+												*ngIf="
+													this.totalAmount <
+														this.currentFundraiserConfig
+															.customdonationconfiguration
+															.min_donation_amount ||
+													this.totalAmount >
+														this.currentFundraiserConfig
+															.customdonationconfiguration.max_donation_amount
+												"
+												>Minimum is
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.min_donation_amount
+												}}. You can donate upto
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.max_donation_amount
+												}}</mat-hint
+											>
+											<p matPrefix class="currency-input-field">
+												{{ this.currentFundraiserConfig.symbol }}&nbsp;
+											</p>
+										</mat-form-field>
+									</div>
+
+									<!--START TIP BOX-->
+									<div
+										*ngIf="
+											this.currentFundraiserConfig?.fundraiser_data?.tip_enabled
+										"
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										class="background-grey p-xs"
+									>
+										<div
+											fxLayout="column"
+											fxFill
+											fxLayoutAlign="center center"
+											fxLayoutGap="2%" 
+											class="background-white p-xs"
+										>
+											<div fxLayout="row" fxFill fxLayoutAlign="start center">
+												<p i18="@@donation_donationForm_monthly_tipbox_message">
+													Whydonate has a 0% platform fee for organizers and
+													relies on the generosity of donors like you to operate
+													our service.
+												</p>
+											</div>
+											<div
+												fxLayout="row"
+												fxFill
+												fxLayoutAlign="start center"
+												fxLayoutGap="10%"
+											>
+												<p i18n="@@donation_donationForm_onetime_tipbox_label">
+													Thank you for including a tip of:
+												</p>
+												<mat-form-field class="w-100" appearance="outline">
+													<mat-label
+														i18="@@donation_donationForm_monthly_tipAmount_label"
+														>Tip Amount</mat-label
+													>
+													<!--Select a value from the given tip percentage and on change recalculates the final donation amount-->
+													<mat-select
+														[(ngModel)]="this.tipValue"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+													>
+														<!--Clicking this option invokes setTipOtherFalse() for desired tip value
+                                                          which inputs tip percentage and invokes calculateFinalDonationAmount()-->
+														<!--IF TIP IS IN PERCENTAGE-->
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.first_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.first_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.first_option
+															}}%
+														</mat-option>
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.second_option
+															"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.second_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.second_option
+															}}%
+														</mat-option>
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.third_option
+															"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.third_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.third_option
+															}}%
+														</mat-option>
+														<!--IF TIP IS NOT IN PERCENTAGE-->
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_fixed?.first_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.first_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed?.first_option
+															}}
+														</mat-option>
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															default
+															[value]="
+																this.tip_details?.tip_amount_fixed
+																	?.second_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.second_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed
+																	?.second_option
+															}}
+														</mat-option>
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_fixed?.third_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.third_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed?.third_option
+															}}
+														</mat-option>
+														<mat-option
+															i18n="
+																@@donation_donationForm_onetime_otherTip_label"
+															value=""
+															(click)="checkTipOtherButton()"
+															>Other
+														</mat-option>
+													</mat-select>
+												</mat-form-field>
+											</div>
+
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<mat-form-field
+													class="w-100"
+													appearance="outline"
+													*ngIf="isTipOtherSelected"
+												>
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_otherTip_input_label"
+														>Enter Tip Amount (EURO)</mat-label
+													>
+													<input
+														required
+														matInput
+														type="number"
+														class="right-align"
+														value="this.tipAmount"
+														appTwoDigitDecimaNumber
+														[(ngModel)]="this.tipAmount"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														(change)="this.calculateFinalDonationAmount()"
+														(focusout)="this.calculateFinalDonationAmount()"
+														(focusin)="this.calculateFinalDonationAmount()"
+														(keyup)="this.calculateFinalDonationAmount()"
+														(keydown)="this.calculateFinalDonationAmount()"
+														(keypress)="this.calculateFinalDonationAmount()"
+														min="0"
+														(input)="restrictToNumeric($event)"
+													/>
+													<p matPrefix>
+														{{ this.currentFundraiserConfig.symbol }}&nbsp;
+													</p>
+												</mat-form-field>
+											</div>
+
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<p class="total-charge">
+													<span
+														i18n="
+															@@donation_donationForm_onetime_totalCharge_label"
+														>Total Charge:</span
+													>&nbsp;{{ this.currentFundraiserConfig.symbol
+													}}{{ this.totalAmount | number }}
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!--END TIP BOX-->
+
+									<div
+										fxLayout="row"
+										fxLayoutAlign="start center"
+										fxFill
+										fxLayoutGap="1%"
+									>
+										<p i18n="@@donation_donationForm_byDonatingYouAgree_label">
+											By donating, you agree to our
+										</p>
+										<p>
+											<a
+												mat-button
+												color="accent"
+												(click)="routeToTerms()"
+												i18n="
+													@@donation-page_component_donation-form-TermsAndConditions"
+												>Terms and Conditions</a
+											>
+										</p>
+									</div>
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										matTooltip="The fundraiser has been closed"
+										[matTooltipDisabled]="!isDraftOrClosed"
+									>
+										<button
+											mat-flat-button
+											class="w-100"
+											color="accent"
+											(click)="makeDonation()"
+											[disabled]="
+												!this.isValidAmount ||
+												isLoading ||
+												isDraftOrClosed ||
+												maxMinCheck ||
+												!stripeChargeStatus
+											"
+										>
+											<span i18n="@@button_donate">Donate</span>
+											<mat-icon *ngIf="isLoading" class="m-l-xs">
+												<mat-spinner color="accent" diameter="20">
+												</mat-spinner>
+											</mat-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
+						<!--END SECOND TAB---------------------------------------------------------------------------------------------->
+
+						<!--For Yearly Payment tab-->
+						<!--START THIRD TAB---------------------------------------------------------------------------------------------->
+						<mat-tab
+							*ngIf="
+								this.currentFundraiserConfig.customdonationconfiguration.yearly
+									.yearly_select
+							"
+							label="{{ yearlyLabel }}"
+						>
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<div
+									fxLayout="column"
+									fxFlex="100%"
+									fxLayoutAlign="space-evenly start"
+									fxLayoutGap="2%"
+								>
+									<!--AMOUNT BUTTONS-->
+									<div
+										*ngIf="
+											this.currentFundraiserConfig?.customdonationconfiguration
+												?.yearly_is_open_donation == false
+										"
+										fxLayout="row wrap"
+										fxFill
+										fxLayoutAlign="start center"
+										fxLayoutGap="2%"
+									>
+										<!--Clicking this button invokes setDonationAmount2() for 50{{ this.currentFundraiserConfig.symbol }} of yearly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="yearlyFirst"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_1
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.yearly.default_1,
+														'yearlyFirst',
+														'yearly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												<!--Angular pipe to transform value to currency with {{ this.currentFundraiserConfig.symbol }} symbol-->
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_1
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 100{{ this.currentFundraiserConfig.symbol }} of yearly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="yearlySecond"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_2
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.yearly.default_2,
+														'yearlySecond',
+														'yearly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_2
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 200{{ this.currentFundraiserConfig.symbol }} and yearly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="yearlyThird"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_3
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.yearly.default_3,
+														'yearlyThird',
+														'yearly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_3
+														| number
+												}}
+											</button>
+										</div>
+
+										<!--Clicking this button invokes setDonationAmount2() for 500{{ this.currentFundraiserConfig.symbol }} and yearly payment
+                                          which inturn invokes calculateFinalDonationAmount() that calculates taxes and tip -->
+										<div class="p-t-s">
+											<button
+												class="mat-stroked-button"
+												color="primary"
+												id="yearlyForth"
+												value="{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_4
+												}}"
+												(click)="
+													setDonationAmount2(
+														this.currentFundraiserConfig
+															.customdonationconfiguration.yearly.default_4,
+														'yearlyForth',
+														'yearly'
+													)
+												"
+											>
+												{{ this.currentFundraiserConfig.symbol }}
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.yearly.default_4
+														| number
+												}}
+											</button>
+										</div>
+
+										<div class="p-t-s">
+											<button
+												*ngIf="
+													this.currentFundraiserConfig
+														.customdonationconfiguration.other_amount
+												"
+												i18n="
+													@@donation_donationForm_onetime_otherAmount_button"
+												class="mat-stroked-button"
+												color="primary"
+												id="yearlyOther"
+												value=""
+												(click)="
+													checkAmountOtherButton2('yearlyOther', 'yearly')
+												"
+											>
+												Other
+											</button>
+										</div>
+									</div>
+									<!--Other Amount BOX-->
+									<!--To enter other amount for yearly payment-->
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<mat-form-field
+											class="w-100"
+											appearance="outline"
+											*ngIf="
+												isAmountOtherSelected ||
+												this.currentFundraiserConfig
+													?.customdonationconfiguration?.yearly_is_open_donation
+											"
+										>
+											<mat-label
+												i18n="@@donation_donationForm_onetime_otherAmount_label"
+												>Enter Amount (EURO)</mat-label
+											>
+											<input
+												#customDonationAmount
+												required
+												matInput
+												type="number"
+												[(ngModel)]="this.selectedDonationAmount"
+												(focusout)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'yearlyOther',
+														'yearly'
+													)
+												"
+												(focusin)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'yearlyOther',
+														'yearly'
+													)
+												"
+												(keyup)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'yearlyOther',
+														'yearly'
+													)
+												"
+												(keydown)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'yearlyOther',
+														'yearly'
+													)
+												"
+												(keypress)="
+													this.setDonationAmount2(
+														customDonationAmount.value,
+														'yearlyOther',
+														'yearly'
+													)
+												"
+												placeholder="00"
+												class="right-align"
+												appNumbersOnly
+											/>
+											<mat-hint
+												i18n="@@donation_donation_form_minimum5_matError"
+												class="mat-error"
+												align="end"
+												*ngIf="
+													this.totalAmount <
+														this.currentFundraiserConfig
+															.customdonationconfiguration
+															.min_donation_amount ||
+													this.totalAmount >
+														this.currentFundraiserConfig
+															.customdonationconfiguration.max_donation_amount
+												"
+												>Minimum is
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.min_donation_amount
+												}}. You can donate upto
+												{{
+													this.currentFundraiserConfig
+														.customdonationconfiguration.max_donation_amount
+												}}</mat-hint
+											>
+											<p matPrefix class="currency-input-field">
+												{{ this.currentFundraiserConfig.symbol }}&nbsp;
+											</p>
+										</mat-form-field>
+									</div>
+
+									<!--START TIP BOX-->
+									<div
+										*ngIf="
+											this.currentFundraiserConfig?.fundraiser_data?.tip_enabled
+										"
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										class="background-grey p-xs"
+									>
+										<div
+											fxLayout="column"
+											fxFill
+											fxLayoutAlign="center center"
+											fxLayoutGap="2%"
+											class="background-white p-xs"
+										>
+											<div fxLayout="row" fxFill fxLayoutAlign="start center">
+												<p i18n="@@donation_donationForm_yearly_tipbox_message">
+													Whydonate has a 0% platform fee for organizers and
+													relies on the generosity of donors like you to operate
+													our service.
+												</p>
+											</div>
+											<div
+												fxLayout="row"
+												fxFill
+												fxLayoutAlign="start center"
+												fxLayoutGap="10%"
+											>
+												<p i18n="@@donation_donationForm_onetime_tipbox_label">
+													Thank you for including a tip of:
+												</p>
+												<mat-form-field class="w-100" appearance="outline">
+													<mat-label
+														i18n="
+															@@donation_donationForm_yearly_tipAmount_label"
+														>Tip Amount</mat-label
+													>
+													<!--Select a value from the given tip percentage and on change recalculates the final donation amount-->
+													<mat-select
+														[(ngModel)]="this.tipValue"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+													>
+														<!--Clicking this option invokes setTipOtherFalse() for desired tip value
+                                                          which inputs tip percentage and invokes calculateFinalDonationAmount()-->
+														<!--IF TIP IS IN PERCENTAGE-->
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.first_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.first_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.first_option
+															}}%
+														</mat-option>
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.second_option
+															"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.second_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.second_option
+															}}%
+														</mat-option>
+														<mat-option
+															*ngIf="this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_percentage
+																	?.third_option
+															"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_percentage
+																		?.third_option
+																)
+															"
+															>{{
+																this.tip_details?.tip_amount_percentage
+																	?.third_option
+															}}%
+														</mat-option>
+														<!--IF TIP IS NOT IN PERCENTAGE-->
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_fixed?.first_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.first_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed?.first_option
+															}}
+														</mat-option>
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															default
+															[value]="
+																this.tip_details?.tip_amount_fixed
+																	?.second_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.second_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed
+																	?.second_option
+															}}
+														</mat-option>
+														<mat-option
+															*ngIf="!this.isTipInPercentage"
+															[value]="
+																this.tip_details?.tip_amount_fixed?.third_option
+															"
+															id="donationFormTipAmount"
+															(click)="
+																setTipOtherFalse(
+																	this.tip_details?.tip_amount_fixed
+																		?.third_option
+																)
+															"
+															>{{ this.currentFundraiserConfig.symbol
+															}}{{
+																this.tip_details?.tip_amount_fixed?.third_option
+															}}
+														</mat-option>
+														<mat-option
+															i18n="
+																@@donation_donationForm_onetime_otherTip_label"
+															value=""
+															(click)="checkTipOtherButton()"
+															>Other
+														</mat-option>
+													</mat-select>
+												</mat-form-field>
+											</div>
+
+											<!--To enter other tip amount-->
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<mat-form-field
+													class="w-100"
+													appearance="outline"
+													*ngIf="isTipOtherSelected"
+												>
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_otherTip_input_label"
+														>Enter Tip Amount (EURO)</mat-label
+													>
+													<input
+														required
+														matInput
+														type="number"
+														class="right-align"
+														value="this.tipAmount"
+														appTwoDigitDecimaNumber
+														[(ngModel)]="this.tipAmount"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														(change)="this.calculateFinalDonationAmount()"
+														(focusout)="this.calculateFinalDonationAmount()"
+														(focusin)="this.calculateFinalDonationAmount()"
+														(keyup)="this.calculateFinalDonationAmount()"
+														(keydown)="this.calculateFinalDonationAmount()"
+														(keypress)="this.calculateFinalDonationAmount()"
+														min="0"
+														(input)="restrictToNumeric($event)"
+													/>
+													<p matPrefix>
+														{{ this.currentFundraiserConfig.symbol }}&nbsp;
+													</p>
+												</mat-form-field>
+											</div>
+
+											<!--Angular pipe to display total amount value in Eur Currency format-->
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<p class="total-charge">
+													<span
+														i18n="
+															@@donation_donationForm_onetime_totalCharge_label"
+														>Total Charge:</span
+													>&nbsp;{{ this.currentFundraiserConfig.symbol
+													}}{{ this.totalAmount | number }}
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!--END TIP BOX-->
+									<!-- <a i18n="
+                      @@donation-page_component_donation-form-TermsAndConditions"></a> -->
+
+									<div
+										fxLayout="row"
+										fxLayoutAlign="start center"
+										fxFill
+										fxLayoutGap="1%"
+									>
+										<p i18n="@@donation_donationForm_byDonatingYouAgree_label">
+											By donating, you agree to our
+										</p>
+										<p>
+											<a
+												mat-button
+												color="accent"
+												(click)="routeToTerms()"
+												i18n="
+													@@donation-page_component_donation-form-TermsAndConditions"
+												>Terms and Conditions</a
+											>
+										</p>
+									</div>
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										matTooltip="The fundraiser has been closed"
+										[matTooltipDisabled]="!isDraftOrClosed"
+									>
+										<!--Button which upon clicking checks for valid amount entered and invokes makeDonation()-->
+										<button
+											mat-flat-button
+											class="w-100"
+											color="accent"
+											(click)="makeDonation()"
+											[disabled]="
+												!this.isValidAmount ||
+												isLoading ||
+												isDraftOrClosed ||
+												!stripeChargeStatus
+											"
+										>
+											<span i18n="@@button_donate">Donate</span>
+											<mat-icon *ngIf="isLoading" class="m-l-xs">
+												<mat-spinner color="accent" diameter="20">
+												</mat-spinner>
+											</mat-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
+						<!--START THIRD TAB---------------------------------------------------------------------------------------------->
+					</mat-tab-group>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #donationFormByPreset>
+	<div
+		*ngIf="this.isPageDataLoaded"
+		fxLayout="row"
+		fxFlex="100%"
+		fxLayoutAlign="center center"
+	>
+		<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+			<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+				<h2 i18n="@@donation_donationForm_heading">Secured online donation</h2>
+			</div>
+
+			<div
+				fxLayout="row"
+				fxFlex="100%"
+				fxLayoutAlign="center start"
+				fxLayoutGap="10%"
+			>
+				<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center center">
+					<mat-tab-group
+						mat-stretch-tabs
+						dynamicHeight
+						#donationTabGroup
+						(selectedTabChange)="donationTabChanged($event)"
+					>
+						<!--For One Time Payment tab-->
+						<!--START FIRST TAB-------------------------------------------------------------------------------------------------->
+						<mat-tab class="tab-label" label="{{ oneTimeLabel }}">
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<div
+									fxLayout="column"
+									fxFlex="100%"
+									fxLayoutAlign="space-evenly start"
+									fxLayoutGap="2%"
+								>
+									&nbsp;
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<p
+											i18n="@@donation_donationForm_onetime_selectAmount_label"
+											class="body-2"
+										>
+											Select Amount
+										</p>
+									</div>
+									<!--To enter other amount for one time payment-->
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<mat-form-field class="w-100" appearance="outline">
+											<mat-label
+												i18n="@@donation_donationForm_onetime_otherAmount_label"
+												>Enter Amount (EURO)</mat-label
+											>
+											<!--Input and display the tip percentage and on change recalculates the final donation amount-->
+											<input
+												required
+												matInput
+												type="number"
+												[(ngModel)]="this.selectedDonationAmount"
+												(focusout)="this.calculateFinalDonationAmount()"
+												(focusin)="this.calculateFinalDonationAmount()"
+												(keyup)="this.calculateFinalDonationAmount()"
+												(keydown)="this.calculateFinalDonationAmount()"
+												(keypress)="this.calculateFinalDonationAmount()"
+												placeholder="00"
+												class="right-align"
+												appNumbersOnly
+											/>
+
+											<mat-hint
+												i18n="@@donation_donation_form_minimum5_matError"
+												class="mat-error"
+												align="end"
+												*ngIf="
+													this.selectedDonationAmount < 5 ||
+													this.selectedDonationAmount > 10000
+												"
+												>Minimum 5 is required. You can donate upto
+												10,000</mat-hint
+											>
+											<p matPrefix class="currency-input-field">
+												{{ this.currentFundraiserConfig.symbol }}&nbsp;
+											</p>
+										</mat-form-field>
+									</div>
+
+									<!--START TIP BOX-->
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										class="background-grey p-xs"
+									>
+										<div
+											fxLayout="column"
+											fxFill
+											fxLayoutAlign="center center"
+											fxLayoutGap="2%"
+											class="background-white p-xs"
+										>
+											<div fxLayout="row" fxFill fxLayoutAlign="start center">
+												<p
+													i18n="@@donation_donationForm_onetime_tipbox_message"
+												>
+													Whydonate has a 0% platform fee for organizers and
+													relies on the generosity of donors like you to operate
+													our service.
+												</p>
+											</div>
+											<div
+												fxLayout="row"
+												fxFill
+												fxLayoutAlign="start center"
+												fxLayoutGap="10%"
+											>
+												<p i18n="@@donation_donationForm_onetime_tipbox_label">
+													Thank you for including a tip of:
+												</p>
+												<mat-form-field class="w-100" appearance="outline">
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_tipamount_label"
+														>Tip Amount</mat-label
+													>
+													<!--Select a value from the given tip percentage and on change recalculates the final donation amount-->
+													<mat-select
+														[(ngModel)]="this.tipValue"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														id="donationFormSelect"
+													>
+														<!--Clicking this option invokes setTipOtherFalse() for desired tip value
+                                                          which inputs tip percentage and invokes calculateFinalDonationAmount()-->
+														<mat-option
+															value="0"
+															(click)="setTipOtherFalse('0')"
+															>0%
+														</mat-option>
+														<mat-option
+															value="10"
+															id="donationFormTipAmount"
+															(click)="setTipOtherFalse('10')"
+															>10%
+														</mat-option>
+														<mat-option
+															value="15"
+															(click)="setTipOtherFalse('15')"
+															>15%
+														</mat-option>
+														<mat-option
+															value="20"
+															(click)="setTipOtherFalse('20')"
+															>20%
+														</mat-option>
+														<mat-option
+															i18n="
+																@@donation_donationForm_onetime_otherTip_label"
+															value=""
+															(click)="checkTipOtherButton()"
+															>Other
+														</mat-option>
+													</mat-select>
+												</mat-form-field>
+											</div>
+
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<mat-form-field
+													class="w-100"
+													appearance="outline"
+													[fxShow]="isTipOtherSelected"
+												>
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_otherTip_input_label"
+														>Enter Tip Amount (EURO)</mat-label
+													>
+													<input
+														required
+														matInput
+														type="number"
+														class="right-align"
+														value="this.tipAmount"
+														appTwoDigitDecimaNumber
+														[(ngModel)]="this.tipAmount"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														(change)="this.calculateFinalDonationAmount()"
+														(focusout)="this.calculateFinalDonationAmount()"
+														(focusin)="this.calculateFinalDonationAmount()"
+														(keyup)="this.calculateFinalDonationAmount()"
+														(keydown)="this.calculateFinalDonationAmount()"
+														(keypress)="this.calculateFinalDonationAmount()"
+														min="0"
+														(input)="restrictToNumeric($event)"
+													/>
+												</mat-form-field>
+											</div>
+
+											<!--Angular pipe to display total amount value in Eur Currency format-->
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<p class="total-charge">
+													<span
+														i18n="
+															@@donation_donationForm_onetime_totalCharge_label"
+														>Total Charge:</span
+													>&nbsp;{{ this.currentFundraiserConfig.symbol
+													}}{{ this.totalAmount | number }}
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!--END TIP BOX-->
+
+									<div
+										fxLayout="row"
+										fxLayoutAlign="start center"
+										fxFill
+										fxLayoutGap="1%"
+									>
+										<p i18n="@@donation_donationForm_byDonatingYouAgree_label">
+											By donating, you agree to our
+										</p>
+										<p>
+											<a
+												mat-button
+												color="accent"
+												(click)="routeToTerms()"
+												i18n="
+													@@donation-page_component_donation-form-TermsAndConditions"
+												>Terms and Conditions</a
+											>
+										</p>
+									</div>
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										matTooltip="The fundraiser has been closed"
+										[matTooltipDisabled]="!isDraftOrClosed"
+									>
+										<button
+											mat-flat-button
+											class="w-100"
+											color="accent"
+											(click)="makeDonation()"
+											[disabled]="
+												!this.isValidAmount ||
+												isLoading ||
+												isDraftOrClosed ||
+												maxMinCheck ||
+												!stripeChargeStatus
+											"
+										>
+											<span i18n="@@button_donate"> Donate</span>
+
+											<mat-icon *ngIf="isLoading" class="m-l-xs">
+												<mat-spinner color="accent" diameter="20">
+												</mat-spinner>
+											</mat-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
+						<!--END FIRST TAB---------------------------------------------------------------------------------------------->
+
+						<!--For Monthly Payment tab-->
+						<!--START SECOND TAB---------------------------------------------------------------------------------------------->
+						<mat-tab label="{{ monthlyLabel }}">
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<div
+									fxLayout="column"
+									fxFlex="100%"
+									fxLayoutAlign="space-evenly start"
+									fxLayoutGap="2%"
+								>
+									&nbsp;
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<p
+											i18n="@@donation_donationForm_onetime_selectAmount_label"
+											class="body-2"
+										>
+											Select Amount
+										</p>
+									</div>
+									<!--To enter other amount for monthly payment-->
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<mat-form-field class="w-100" appearance="outline">
+											<mat-label
+												i18n="@@donation_donationForm_onetime_otherAmount_label"
+												>Enter Amount (EURO)</mat-label
+											>
+											<!--Input and display the tip percentage and on change recalculates the final donation amount-->
+											<input
+												required
+												matInput
+												type="number"
+												[(ngModel)]="this.selectedDonationAmount"
+												(focusout)="this.calculateFinalDonationAmount()"
+												(focusin)="this.calculateFinalDonationAmount()"
+												(keyup)="this.calculateFinalDonationAmount()"
+												(keydown)="this.calculateFinalDonationAmount()"
+												(keypress)="this.calculateFinalDonationAmount()"
+												placeholder="00"
+												class="right-align"
+												appNumbersOnly
+											/><mat-hint
+												i18n="@@donation_donation_form_minimum5_matError"
+												class="mat-error"
+												align="end"
+												*ngIf="
+													this.selectedDonationAmount < 5 ||
+													this.selectedDonationAmount > 10000
+												"
+												>Minimum 5 is required. You can donate upto
+												10000</mat-hint
+											>
+											<p matPrefix class="currency-input-field">
+												{{ this.currentFundraiserConfig.symbol }}&nbsp;
+											</p>
+										</mat-form-field>
+									</div>
+
+									<!--START TIP BOX-->
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										class="background-grey p-xs"
+									>
+										<div
+											fxLayout="column"
+											fxFill
+											fxLayoutAlign="center center"
+											fxLayoutGap="2%"
+											class="background-white p-xs"
+										>
+											<div fxLayout="row" fxFill fxLayoutAlign="start center">
+												<p i18="@@donation_donationForm_monthly_tipbox_message">
+													Whydonate has a 0% platform fee for organizers and
+													relies on the generosity of donors like you to operate
+													our service.
+												</p>
+											</div>
+											<div
+												fxLayout="row"
+												fxFill
+												fxLayoutAlign="start center"
+												fxLayoutGap="10%"
+											>
+												<p i18n="@@donation_donationForm_onetime_tipbox_label">
+													Thank you for including a tip of:
+												</p>
+												<mat-form-field class="w-100" appearance="outline">
+													<mat-label
+														i18="@@donation_donationForm_monthly_tipAmount_label"
+														>Tip Amount</mat-label
+													>
+													<!--Select a value from the given tip percentage and on change recalculates the final donation amount-->
+													<mat-select
+														[(ngModel)]="this.tipValue"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+													>
+														<!--Clicking this option invokes setTipOtherFalse() for desired tip value
+                                                          which inputs tip percentage and invokes calculateFinalDonationAmount()-->
+														<mat-option
+															value="0"
+															(click)="setTipOtherFalse('0')"
+															>0%
+														</mat-option>
+														<mat-option
+															value="10"
+															(click)="setTipOtherFalse('10')"
+															>10%
+														</mat-option>
+														<mat-option
+															value="15"
+															(click)="setTipOtherFalse('15')"
+															>15%
+														</mat-option>
+														<mat-option
+															value="20"
+															(click)="setTipOtherFalse('20')"
+															>20%
+														</mat-option>
+														<mat-option
+															i18="@@donation_donationForm_monthly_tipbox_otherTipAmount_label"
+															(click)="checkTipOtherButton()"
+															>Other
+														</mat-option>
+													</mat-select>
+												</mat-form-field>
+											</div>
+
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<mat-form-field
+													class="w-100"
+													appearance="outline"
+													*ngIf="isTipOtherSelected"
+												>
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_otherTip_input_label"
+														>Enter Tip Amount (EURO)</mat-label
+													>
+													<input
+														required
+														matInput
+														type="number"
+														class="right-align"
+														value="this.tipAmount"
+														appTwoDigitDecimaNumber
+														[(ngModel)]="this.tipAmount"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														(change)="this.calculateFinalDonationAmount()"
+														(focusout)="this.calculateFinalDonationAmount()"
+														(focusin)="this.calculateFinalDonationAmount()"
+														(keyup)="this.calculateFinalDonationAmount()"
+														(keydown)="this.calculateFinalDonationAmount()"
+														(keypress)="this.calculateFinalDonationAmount()"
+														min="0"
+														(input)="restrictToNumeric($event)"
+													/>
+												</mat-form-field>
+											</div>
+
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<p class="total-charge">
+													<span
+														i18n="
+															@@donation_donationForm_onetime_totalCharge_label"
+														>Total Charge:</span
+													>&nbsp;{{ this.currentFundraiserConfig.symbol
+													}}{{ this.totalAmount | number }}
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!--END TIP BOX-->
+
+									<div
+										fxLayout="row"
+										fxLayoutAlign="start center"
+										fxFill
+										fxLayoutGap="1%"
+									>
+										<p i18n="@@donation_donationForm_byDonatingYouAgree_label">
+											By donating, you agree to our
+										</p>
+										<p>
+											<a
+												mat-button
+												color="accent"
+												(click)="routeToTerms()"
+												i18n="
+													@@donation-page_component_donation-form-TermsAndConditions"
+												>Terms and Conditions</a
+											>
+										</p>
+									</div>
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										matTooltip="The fundraiser has been closed"
+										[matTooltipDisabled]="!isDraftOrClosed"
+									>
+										<button
+											mat-flat-button
+											class="w-100"
+											color="accent"
+											(click)="makeDonation()"
+											[disabled]="
+												!this.isValidAmount ||
+												isLoading ||
+												isDraftOrClosed ||
+												maxMinCheck ||
+												!stripeChargeStatus
+											"
+										>
+											<span i18n="@@button_donate">Donate</span>
+											<mat-icon *ngIf="isLoading" class="m-l-xs">
+												<mat-spinner color="accent" diameter="20">
+												</mat-spinner>
+											</mat-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
+						<!--END SECOND TAB---------------------------------------------------------------------------------------------->
+
+						<!--For Yearly Payment tab-->
+						<!--START THIRD TAB---------------------------------------------------------------------------------------------->
+						<mat-tab label="{{ yearlyLabel }}">
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<div
+									fxLayout="column"
+									fxFlex="100%"
+									fxLayoutAlign="space-evenly start"
+									fxLayoutGap="2%"
+								>
+									&nbsp;
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<p
+											i18n="@@donation_donationForm_onetime_selectAmount_label"
+											class="body-2"
+										>
+											Select Amount
+										</p>
+									</div>
+
+									<!--To enter other amount for yearly payment-->
+									<div fxLayout="row" fxFill fxLayoutAlign="start center">
+										<mat-form-field class="w-100" appearance="outline">
+											<mat-label
+												i18n="@@donation_donationForm_onetime_otherAmount_label"
+												>Enter Amount (EURO)</mat-label
+											>
+											<input
+												required
+												matInput
+												type="number"
+												[(ngModel)]="this.selectedDonationAmount"
+												(focusout)="this.calculateFinalDonationAmount()"
+												(focusin)="this.calculateFinalDonationAmount()"
+												(keyup)="this.calculateFinalDonationAmount()"
+												(keydown)="this.calculateFinalDonationAmount()"
+												(keypress)="this.calculateFinalDonationAmount()"
+												placeholder="00"
+												class="right-align"
+												appNumbersOnly
+											/>
+											<mat-hint
+												i18n="@@donation_donation_form_minimum5_matError"
+												class="mat-error"
+												align="end"
+												*ngIf="
+													this.selectedDonationAmount < 5 ||
+													this.selectedDonationAmount > 10000
+												"
+												>Minimum 5 is required. You can donate upto
+												10000</mat-hint
+											>
+											<p matPrefix class="currency-input-field">
+												{{ this.currentFundraiserConfig.symbol }}&nbsp;
+											</p>
+										</mat-form-field>
+									</div>
+
+									<!--START TIP BOX-->
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										class="background-grey p-xs"
+									>
+										<div
+											fxLayout="column"
+											fxFill
+											fxLayoutAlign="center center"
+											fxLayoutGap="2%"
+											class="background-white p-xs"
+										>
+											<div fxLayout="row" fxFill fxLayoutAlign="start center">
+												<p i18n="@@donation_donationForm_yearly_tipbox_message">
+													Whydonate has a 0% platform fee for organizers and
+													relies on the generosity of donors like you to operate
+													our service.
+												</p>
+											</div>
+											<div
+												fxLayout="row"
+												fxFill
+												fxLayoutAlign="start center"
+												fxLayoutGap="10%"
+											>
+												<p i18n="@@donation_donationForm_onetime_tipbox_label">
+													Thank you for including a tip of:
+												</p>
+												<mat-form-field class="w-100" appearance="outline">
+													<mat-label
+														i18n="
+															@@donation_donationForm_yearly_tipAmount_label"
+														>Tip Amount</mat-label
+													>
+													<!--Select a value from the given tip percentage and on change recalculates the final donation amount-->
+													<mat-select
+														[(ngModel)]="this.tipValue"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+													>
+														<!--Clicking this option invokes setTipOtherFalse() for desired tip value
+                                                          which inputs tip percentage and invokes calculateFinalDonationAmount()-->
+														<mat-option
+															value="0"
+															(click)="setTipOtherFalse('0')"
+															>0%
+														</mat-option>
+														<mat-option
+															value="10"
+															(click)="setTipOtherFalse('10')"
+															>10%
+														</mat-option>
+														<mat-option
+															value="15"
+															(click)="setTipOtherFalse('15')"
+															>15%
+														</mat-option>
+														<mat-option
+															value="20"
+															(click)="setTipOtherFalse('20')"
+															>20%
+														</mat-option>
+														<mat-option
+															i18n="
+																@@donation_donationForm_onetime_otherTip_label"
+															(click)="checkTipOtherButton()"
+															>Other
+														</mat-option>
+													</mat-select>
+												</mat-form-field>
+											</div>
+
+											<!--To enter other tip amount-->
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<mat-form-field
+													class="w-100"
+													appearance="outline"
+													*ngIf="isTipOtherSelected"
+												>
+													<mat-label
+														i18n="
+															@@donation_donationForm_onetime_otherTip_input_label"
+														>Enter Tip Amount (EURO)</mat-label
+													>
+													<input
+														required
+														matInput
+														type="number"
+														class="right-align"
+														value="this.tipAmount"
+														appTwoDigitDecimaNumber
+														[(ngModel)]="this.tipAmount"
+														(ngModelChange)="
+															this.calculateFinalDonationAmount()
+														"
+														(change)="this.calculateFinalDonationAmount()"
+														(focusout)="this.calculateFinalDonationAmount()"
+														(focusin)="this.calculateFinalDonationAmount()"
+														(keyup)="this.calculateFinalDonationAmount()"
+														(keydown)="this.calculateFinalDonationAmount()"
+														(keypress)="this.calculateFinalDonationAmount()"
+														min="0"
+														(input)="restrictToNumeric($event)"
+													/>
+												</mat-form-field>
+											</div>
+
+											<!--Angular pipe to display total amount value in Eur Currency format-->
+											<div fxLayout="row" fxFill fxLayoutAlign="end center">
+												<p class="total-charge">
+													<span
+														i18n="
+															@@donation_donationForm_onetime_totalCharge_label"
+														>Total Charge:</span
+													>&nbsp;{{ this.currentFundraiserConfig.symbol
+													}}{{ this.totalAmount | number }}
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<!--END TIP BOX-->
+									<!-- <a i18n="
+                      @@donation-page_component_donation-form-TermsAndConditions"></a> -->
+
+									<div
+										fxLayout="row"
+										fxLayoutAlign="start center"
+										fxFill
+										fxLayoutGap="1%"
+									>
+										<p i18n="@@donation_donationForm_byDonatingYouAgree_label">
+											By donating, you agree to our
+										</p>
+										<p>
+											<a
+												mat-button
+												color="accent"
+												(click)="routeToTerms()"
+												i18n="
+													@@donation-page_component_donation-form-TermsAndConditions"
+												>Terms and Conditions</a
+											>
+										</p>
+									</div>
+									<div
+										fxLayout="row"
+										fxFill
+										fxLayoutAlign="start center"
+										matTooltip="The fundraiser has been closed"
+										[matTooltipDisabled]="!isDraftOrClosed"
+									>
+										<!--Button which upon clicking checks for valid amount entered and invokes makeDonation()-->
+										<button
+											mat-flat-button
+											class="w-100"
+											color="accent"
+											(click)="makeDonation()"
+											[disabled]="
+												!this.isValidAmount ||
+												isLoading ||
+												isDraftOrClosed ||
+												!stripeChargeStatus
+											"
+										>
+											<span i18n="@@button_donate">Donate</span>
+											<mat-icon *ngIf="isLoading" class="m-l-xs">
+												<mat-spinner color="accent" diameter="20">
+												</mat-spinner>
+											</mat-icon>
+										</button>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
+						<!--START THIRD TAB---------------------------------------------------------------------------------------------->
+					</mat-tab-group>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>

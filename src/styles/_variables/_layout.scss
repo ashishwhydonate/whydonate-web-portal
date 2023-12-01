@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+// can be passed in place of $length parameter in the layout functions
+$LAYOUT_CONFIG: (
+	full: 100,
+	half: 50,
+	quarter: 25,
+);
+
+/**
+        %  = relative to parent element
+        vh = relative to height of screen
+        vw = relative to width of screen
+**/
+
+$UNITS: (
+	percentage: '%',
+	viewpoint-height: 'vh',
+	viewpoint-width: 'vw',
+	pixel: 'px',
+);
+
+@function get-length($length: full, $unit: percentage) {
+	@if map.get($LAYOUT_CONFIG, $length) == null {
+		@error "Parameter #{$length} does not exist in $LAYOUT_CONFIG";
+	}
+	@if map.get($UNITS, $unit) == null {
+		@error "Parameter #{$unit} does not exist in $UNITS";
+	}
+	@return #{map.get($LAYOUT_CONFIG, $length)}#{map.get($UNITS, $unit)};
+}

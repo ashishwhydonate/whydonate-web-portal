@@ -1,0 +1,18 @@
+export const environment = {
+	production: true,
+	cloudinaryBaseUrl: 'https://res.cloudinary.com/whydonate/image/upload/',
+	apiUrl: 'https://whydonate-production-api.appspot.com/api/v1/',
+	ACCOUNT_API_V2: 'https://account.whydonate.dev/',
+	ACCOUNTING_API: 'https://accounting.whydonate.dev/',
+	DONATION_API_V2: 'https://donation.whydonate.dev/',
+	FUNDRAISER_API_V2: 'https://fundraiser.whydonate.dev/',
+	homeUrl: 'https://whydonate.com',
+	helpDeskUrl: 'https://helpdesk.whydonate.com',
+	domain: 'whydonate.com',
+	donation_url: 'https://donation.whydonate.dev',
+	wallet_url: 'https://wallet.whydonate.dev/',
+	project_url: 'https://project.whydonate.dev/',
+	search_url: 'https://search.whydonate.dev/',
+	fundraiser_url: 'https://fundraiser.whydonate.dev/',
+	fundraiser_features_url: 'https://fundraiser.whydonate.dev/',
+};

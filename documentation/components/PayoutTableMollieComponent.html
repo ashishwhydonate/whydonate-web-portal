@@ -1,0 +1,1716 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  PayoutTableMollieComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-payout-table-mollie</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./payout-table-mollie.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./payout-table-mollie.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#count" >count</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource" >dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#downloadName" >downloadName</a>
+                            </li>
+                            <li>
+                                <a href="#ELEMENT_DATA" >ELEMENT_DATA</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isPaginatorLoading" >isPaginatorLoading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#media" >media</a>
+                            </li>
+                            <li>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                <a href="#pagesize" >pagesize</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#progressBarMode" >progressBarMode</a>
+                            </li>
+                            <li>
+                                <a href="#progressbarValue" >progressbarValue</a>
+                            </li>
+                            <li>
+                                <a href="#settlementRecivedCount" >settlementRecivedCount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changePage" >changePage</a>
+                            </li>
+                            <li>
+                                <a href="#endLoading" >endLoading</a>
+                            </li>
+                            <li>
+                                <a href="#filterData" >filterData</a>
+                            </li>
+                            <li>
+                                <a href="#finishDeterminateProgress" >finishDeterminateProgress</a>
+                            </li>
+                            <li>
+                                <a href="#getSettlements" >getSettlements</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openTransactions" >openTransactions</a>
+                            </li>
+                            <li>
+                                <a href="#startDeterminateProgress" >startDeterminateProgress</a>
+                            </li>
+                            <li>
+                                <a href="#startIndeterminateProgress" >startIndeterminateProgress</a>
+                            </li>
+                            <li>
+                                <a href="#startLoading" >startLoading</a>
+                            </li>
+                            <li>
+                                <a href="#startPaginatorLoading" >startPaginatorLoading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#openTransactionsForSettlememntId" >openTransactionsForSettlememntId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_notificationService: <a href="../injectables/NotificationService.html" target="_self">NotificationService</a>, media: MediaObserver, _balanceService: <a href="../injectables/BalanceService.html" target="_self">BalanceService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>media</td>
+                                                  
+                                                        <td>
+                                                                    <code>MediaObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_balanceService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BalanceService.html" target="_self" >BalanceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openTransactionsForSettlememntId"></a>
+                        <b>openTransactionsForSettlememntId</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePage"></a>
+                    <span class="name">
+                        <span ><b>changePage</b></span>
+                        <a href="#changePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changePage(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endLoading"></a>
+                    <span class="name">
+                        <span ><b>endLoading</b></span>
+                        <a href="#endLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>endLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set isLoading to false.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterData"></a>
+                    <span class="name">
+                        <span ><b>filterData</b></span>
+                        <a href="#filterData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterData(sourcelist: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filtering Data</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourcelist</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finishDeterminateProgress"></a>
+                    <span class="name">
+                        <span ><b>finishDeterminateProgress</b></span>
+                        <a href="#finishDeterminateProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>finishDeterminateProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSettlements"></a>
+                    <span class="name">
+                        <span ><b>getSettlements</b></span>
+                        <a href="#getSettlements"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSettlements()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openTransactions"></a>
+                    <span class="name">
+                        <span ><b>openTransactions</b></span>
+                        <a href="#openTransactions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openTransactions(period_start: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, period_end: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:90</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Pass start and end date to paremt component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>period_start</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>period_end</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startDeterminateProgress"></a>
+                    <span class="name">
+                        <span ><b>startDeterminateProgress</b></span>
+                        <a href="#startDeterminateProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startDeterminateProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startIndeterminateProgress"></a>
+                    <span class="name">
+                        <span ><b>startIndeterminateProgress</b></span>
+                        <a href="#startIndeterminateProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startIndeterminateProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>When user interacts with filter but no API is called yet.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startLoading"></a>
+                    <span class="name">
+                        <span ><b>startLoading</b></span>
+                        <a href="#startLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set isLoading to true.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startPaginatorLoading"></a>
+                    <span class="name">
+                        <span ><b>startPaginatorLoading</b></span>
+                        <a href="#startPaginatorLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startPaginatorLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="count"></a>
+                    <span class="name">
+                        <span ><b>count</b></span>
+                        <a href="#count"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSource"></a>
+                    <span class="name">
+                        <span ><b>dataSource</b></span>
+                        <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new MatTableDataSource(this.ELEMENT_DATA)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+		&#x27;date_time&#x27;,
+		&#x27;payment_Status&#x27;,
+		&#x27;paymentID&#x27;,
+		&#x27;paymentAmount&#x27;,
+		// &#x27;action&#x27;,
+	]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadName"></a>
+                    <span class="name">
+                        <span ><b>downloadName</b></span>
+                        <a href="#downloadName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;Settlements-${new Date().toISOString()}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ELEMENT_DATA"></a>
+                    <span class="name">
+                        <span ><b>ELEMENT_DATA</b></span>
+                        <a href="#ELEMENT_DATA"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isPaginatorLoading"></a>
+                    <span class="name">
+                        <span ><b>isPaginatorLoading</b></span>
+                        <a href="#isPaginatorLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="media"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>media</b></span>
+                        <a href="#media"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MediaObserver</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pagesize"></a>
+                    <span class="name">
+                        <span ><b>pagesize</b></span>
+                        <a href="#pagesize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator | any</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="progressBarMode"></a>
+                    <span class="name">
+                        <span ><b>progressBarMode</b></span>
+                        <a href="#progressBarMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ProgressBarMode</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;determinate&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="progressbarValue"></a>
+                    <span class="name">
+                        <span ><b>progressbarValue</b></span>
+                        <a href="#progressbarValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="settlementRecivedCount"></a>
+                    <span class="name">
+                        <span ><b>settlementRecivedCount</b></span>
+                        <a href="#settlementRecivedCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/pages/user/balance/payout-table-mollie/payout-table-mollie.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, OnInit, Output, ViewChild } from &#x27;@angular/core&#x27;;
+import { MediaObserver } from &#x27;@angular/flex-layout&#x27;;
+import { MatLegacyPaginator as MatPaginator } from &#x27;@angular/material/legacy-paginator&#x27;;
+import { LegacyProgressBarMode as ProgressBarMode } from &#x27;@angular/material/legacy-progress-bar&#x27;;
+import { MatLegacyTableDataSource as MatTableDataSource } from &#x27;@angular/material/legacy-table&#x27;;
+import { timer } from &#x27;rxjs&#x27;;
+import { NotificationService } from &#x27;src/app/shared/services/notification.service&#x27;;
+import { BalanceService } from &#x27;../balance.service&#x27;;
+
+@Component({
+  selector: &#x27;app-payout-table-mollie&#x27;,
+  templateUrl: &#x27;./payout-table-mollie.component.html&#x27;,
+  styleUrls: [&#x27;./payout-table-mollie.component.scss&#x27;]
+})
+export class PayoutTableMollieComponent implements OnInit {
+
+  displayedColumns: string[] &#x3D; [
+		&#x27;date_time&#x27;,
+		&#x27;payment_Status&#x27;,
+		&#x27;paymentID&#x27;,
+		&#x27;paymentAmount&#x27;,
+		// &#x27;action&#x27;,
+	];
+	ELEMENT_DATA: any[] &#x3D; [];
+	progressBarMode: ProgressBarMode &#x3D; &#x27;determinate&#x27;;
+	progressbarValue: number &#x3D; 0;
+	dataSource &#x3D; new MatTableDataSource(this.ELEMENT_DATA);
+	@ViewChild(MatPaginator) paginator: MatPaginator | any;
+	isLoading: boolean &#x3D; false;
+	isPaginatorLoading: boolean &#x3D; false;
+	page: number &#x3D; 1;
+	pagesize: number &#x3D; 20;
+	count: number &#x3D; 0;
+	settlementRecivedCount: number &#x3D; 0;
+	downloadName &#x3D; &#x60;Settlements-${new Date().toISOString()}&#x60;;
+	@Output() openTransactionsForSettlememntId &#x3D; new EventEmitter();
+
+  constructor(
+    private _notificationService: NotificationService,
+		public media: MediaObserver,
+		private _balanceService: BalanceService
+  ) { }
+
+  ngOnInit(): void {
+    /** *Get The Settlements */
+		this.getSettlements();
+  }
+
+  getSettlements() {
+		this.startLoading();
+		this._balanceService
+			.getSettlementsMollie(this.page, this.pagesize)
+			.subscribe((response: any) &#x3D;&gt; {
+				let settlementObj &#x3D; response?.data?.result?.result;
+				this.ELEMENT_DATA &#x3D; this.filterData(settlementObj);
+				this.dataSource &#x3D; new MatTableDataSource(this.ELEMENT_DATA);
+				this.dataSource.paginator &#x3D; this.paginator;
+				this.count &#x3D; response?.data?.result?.count;
+				this.settlementRecivedCount &#x3D; this.count
+			});
+		this.endLoading();
+	}
+
+  changePage(event: any) {
+		this.startLoading();
+		this.startPaginatorLoading();
+
+		let pageIndex &#x3D; this.paginator.pageIndex + 1;
+		let pageSize &#x3D; this.paginator.pageSize;
+
+		this._balanceService
+			.getSettlementsMollie(pageIndex, pageSize)
+			.subscribe((res: any) &#x3D;&gt; {
+				this.startDeterminateProgress();
+				let settlementObj &#x3D; res?.data?.result?.result;
+				this.ELEMENT_DATA &#x3D; this.filterData(settlementObj);
+				this.dataSource &#x3D; new MatTableDataSource(this.ELEMENT_DATA);
+				this.dataSource.paginator &#x3D; this.paginator;
+				this.count &#x3D; res?.data?.result?.count;
+				this.settlementRecivedCount &#x3D; this.count
+				this.startDeterminateProgress();
+				this.finishDeterminateProgress();
+				this.endLoading();
+
+			});
+	}
+
+	/** Pass start and end date to paremt component */
+
+	openTransactions(period_start: any, period_end: any){
+		this.openTransactionsForSettlememntId.emit({period_start, period_end})
+	}
+
+
+  /** *Filtering Data */
+	filterData(sourcelist: any) {
+		return sourcelist?.map((source: any) &#x3D;&gt; {
+
+			let updated_date &#x3D; new Date(source.updated_at)
+			updated_date.setMonth(updated_date.getMonth()-1)
+
+			return {
+				updated: new Date(source.updated_at),
+				time: new Date(source.updated_at),
+				status: source.type,
+				uid: source.id,
+				amount_payable: source.amount,
+				period_end: new Date(source.updated_at),
+				period_start: updated_date
+			};
+		});
+	}
+
+	/** *Set isLoading to true. */
+	startLoading() {
+		this.isLoading &#x3D; true;
+	}
+	/** *Set isLoading to false. */
+	endLoading() {
+		this.isLoading &#x3D; false;
+	}
+	startPaginatorLoading() {
+		this.isPaginatorLoading &#x3D; true;
+	}
+	startDeterminateProgress() {
+		this.progressBarMode &#x3D; &#x27;determinate&#x27;;
+		this.progressbarValue &#x3D; 0;
+	}
+	finishDeterminateProgress() {
+		let subscribe &#x3D; timer(100).subscribe((val) &#x3D;&gt; {
+			this.progressbarValue &#x3D; 100;
+			subscribe.unsubscribe();
+		});
+	}
+
+	/** *When user interacts with filter but no API is called yet. */
+	startIndeterminateProgress() {
+		/** *while user is giving input set the progress mode as indeterminate */
+		this.progressBarMode &#x3D; &#x27;indeterminate&#x27;;
+	}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-progress-bar
+	class&#x3D;&quot;m-t-xs&quot;
+	mode&#x3D;&quot;indeterminate&quot;
+	*ngIf&#x3D;&quot;isLoading&quot;
+&gt;&lt;/mat-progress-bar&gt;
+&lt;div class&#x3D;&quot;mat-elevation-z0&quot; ngClass.lg&#x3D;&quot;m-l-l&quot;&gt;
+	&lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; fxFlex.xs&#x3D;&quot;100%&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
+		&lt;!-- Position Column --&gt;
+		&lt;ng-container matColumnDef&#x3D;&quot;date_time&quot;&gt;
+			&lt;th
+				mat-header-cell
+				*matHeaderCellDef
+				i18n&#x3D;&quot;@@payout_table_date_header&quot;
+				[ngClass]&#x3D;&quot;dataSource.data.length ? &#x27;min-w-100px&#x27; : &#x27;&#x27;&quot;
+			&gt;
+				Date &amp; Time
+			&lt;/th&gt;
+			&lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+				&lt;ng-container&gt;
+					{{ element.updated | date : &#x27;dd-MM-yyyy&#x27; }}
+					- {{ element.time | date : &#x27;HH:mm:SS &#x27; }}
+				&lt;/ng-container&gt;
+			&lt;/td&gt;
+		&lt;/ng-container&gt;
+
+		&lt;!-- Name Column --&gt;
+		&lt;ng-container matColumnDef&#x3D;&quot;payment_Status&quot;&gt;
+			&lt;th
+				mat-header-cell
+				*matHeaderCellDef
+				i18n&#x3D;&quot;@@payout_table_payment_header&quot;
+				[ngClass]&#x3D;&quot;dataSource.data.length ? &#x27;min-w-100px&#x27; : &#x27;&#x27;&quot;
+			&gt;
+				Payment Status
+			&lt;/th&gt;
+			&lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+				&lt;ng-container&gt;
+					{{ element.status }}
+				&lt;/ng-container&gt;
+			&lt;/td&gt;
+		&lt;/ng-container&gt;
+
+		&lt;!-- Weight Column --&gt;
+		&lt;ng-container matColumnDef&#x3D;&quot;paymentID&quot;&gt;
+			&lt;div&gt;
+				&lt;th
+					mat-header-cell
+					*matHeaderCellDef
+					i18n&#x3D;&quot;@@payout_table_paymentID_header&quot;
+					[ngClass]&#x3D;&quot;dataSource.data.length ? &#x27;min-w-100px&#x27; : &#x27;&#x27;&quot;
+				&gt;
+					Payment ID
+				&lt;/th&gt;
+
+				&lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+					&lt;ng-container&gt;
+						&lt;a
+							mat-button
+							color&#x3D;&quot;accent&quot;
+							class&#x3D;&quot;mat-button-wrapper cursor-pointer&quot;
+							(click)&#x3D;&quot;
+								openTransactions(element.period_start, element.period_end)
+							&quot;
+						&gt;
+							{{ element.uid }}
+						&lt;/a&gt;
+					&lt;/ng-container&gt;
+				&lt;/td&gt;
+			&lt;/div&gt;
+		&lt;/ng-container&gt;
+
+		&lt;!-- Symbol Column --&gt;
+		&lt;ng-container matColumnDef&#x3D;&quot;paymentAmount&quot;&gt;
+			&lt;th
+				mat-header-cell
+				*matHeaderCellDef
+				i18n&#x3D;&quot;@@payout_table_paymentAmount_header&quot;
+				[ngClass]&#x3D;&quot;dataSource.data.length ? &#x27;min-w-100px&#x27; : &#x27;&#x27;&quot;
+			&gt;
+				Payment Amount
+			&lt;/th&gt;
+			&lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+				&lt;ng-container&gt;
+					&lt;mat-panel-title&gt;
+						&lt;ng-container&gt;
+							&lt;span&gt;
+								{{ element.amount_payable | currency : &#x27;EUR&#x27; }}
+							&lt;/span&gt;
+						&lt;/ng-container&gt;
+					&lt;/mat-panel-title&gt;
+				&lt;/ng-container&gt;
+			&lt;/td&gt;
+		&lt;/ng-container&gt;
+		&lt;!-- &lt;ng-container matColumnDef&#x3D;&quot;action&quot;&gt;
+			&lt;th mat-header-cell *matHeaderCellDef&gt;Action&lt;/th&gt;
+			&lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+				&lt;span class&#x3D;&quot;mat-button-wrapper&quot; (click)&#x3D;&quot;saveCsv(element.uid)&quot;
+					&gt;&lt;mat-icon
+						role&#x3D;&quot;img&quot;
+						class&#x3D;&quot;mat-icon notranslate material-icons-outlined material-icons mat-icon-no-color&quot;
+						aria-hidden&#x3D;&quot;true&quot;
+						data-mat-icon-type&#x3D;&quot;font&quot;
+						fxLayoutAlign.lt-sm&#x3D;&quot;end&quot;
+						&gt;save_alt&lt;/mat-icon
+					&gt;&lt;/span
+				&gt;
+			&lt;/td&gt;
+		&lt;/ng-container&gt; --&gt;
+
+		&lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+		&lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns&quot;&gt;&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;mat-row&quot; *matNoDataRow&gt;
+			&lt;td class&#x3D;&quot;mat-cell&quot; colspan&#x3D;&quot;7&quot;&gt;
+				&lt;div
+					*ngIf&#x3D;&quot;settlementRecivedCount &#x3D;&#x3D; 0&quot;
+					class&#x3D;&quot;p-t-xl p-b-xl&quot;
+					fxLayout&#x3D;&quot;column&quot;
+					fxLayoutAlign.lt-xs&#x3D;&quot;start start&quot;
+					fxLayoutAlign&#x3D;&quot;center center&quot;
+				&gt;
+					&lt;mat-label
+						class&#x3D;&quot;mat-title m-0&quot;
+						i18n&#x3D;&quot;@@balance_payout_table_noRecord_label&quot;
+						&gt;No Payout Record&lt;/mat-label
+					&gt;
+				&lt;/div&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+&lt;div ngCLass.lg&#x3D;&quot;m-r-l&quot;&gt;
+	&lt;mat-paginator
+		[pageSize]&#x3D;&quot;20&quot;
+		[length]&#x3D;&quot;this.count&quot;
+		(page)&#x3D;&quot;changePage($event)&quot;
+		fxLayoutAlign.lg&#x3D;&quot;end&quot;
+	&gt;
+	&lt;/mat-paginator&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./payout-table-mollie.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-progress-bar	class="m-t-xs"	mode="indeterminate"	*ngIf="isLoading"></mat-progress-bar><div class="mat-elevation-z0" ngClass.lg="m-l-l">	<table mat-table [dataSource]="dataSource" fxFlex.xs="100%" fxFlex="100%">		<!-- Position Column -->		<ng-container matColumnDef="date_time">			<th				mat-header-cell				*matHeaderCellDef				i18n="@@payout_table_date_header"				[ngClass]="dataSource.data.length ? \'min-w-100px\' : \'\'"			>				Date & Time			</th>			<td mat-cell *matCellDef="let element">				<ng-container>					{{ element.updated | date : \'dd-MM-yyyy\' }}					- {{ element.time | date : \'HH:mm:SS \' }}				</ng-container>			</td>		</ng-container>		<!-- Name Column -->		<ng-container matColumnDef="payment_Status">			<th				mat-header-cell				*matHeaderCellDef				i18n="@@payout_table_payment_header"				[ngClass]="dataSource.data.length ? \'min-w-100px\' : \'\'"			>				Payment Status			</th>			<td mat-cell *matCellDef="let element">				<ng-container>					{{ element.status }}				</ng-container>			</td>		</ng-container>		<!-- Weight Column -->		<ng-container matColumnDef="paymentID">			<div>				<th					mat-header-cell					*matHeaderCellDef					i18n="@@payout_table_paymentID_header"					[ngClass]="dataSource.data.length ? \'min-w-100px\' : \'\'"				>					Payment ID				</th>				<td mat-cell *matCellDef="let element">					<ng-container>						<a							mat-button							color="accent"							class="mat-button-wrapper cursor-pointer"							(click)="								openTransactions(element.period_start, element.period_end)							"						>							{{ element.uid }}						</a>					</ng-container>				</td>			</div>		</ng-container>		<!-- Symbol Column -->		<ng-container matColumnDef="paymentAmount">			<th				mat-header-cell				*matHeaderCellDef				i18n="@@payout_table_paymentAmount_header"				[ngClass]="dataSource.data.length ? \'min-w-100px\' : \'\'"			>				Payment Amount			</th>			<td mat-cell *matCellDef="let element">				<ng-container>					<mat-panel-title>						<ng-container>							<span>								{{ element.amount_payable | currency : \'EUR\' }}							</span>						</ng-container>					</mat-panel-title>				</ng-container>			</td>		</ng-container>		<!-- <ng-container matColumnDef="action">			<th mat-header-cell *matHeaderCellDef>Action</th>			<td mat-cell *matCellDef="let element">				<span class="mat-button-wrapper" (click)="saveCsv(element.uid)"					><mat-icon						role="img"						class="mat-icon notranslate material-icons-outlined material-icons mat-icon-no-color"						aria-hidden="true"						data-mat-icon-type="font"						fxLayoutAlign.lt-sm="end"						>save_alt</mat-icon					></span				>			</td>		</ng-container> -->		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>		<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>		<tr class="mat-row" *matNoDataRow>			<td class="mat-cell" colspan="7">				<div					*ngIf="settlementRecivedCount == 0"					class="p-t-xl p-b-xl"					fxLayout="column"					fxLayoutAlign.lt-xs="start start"					fxLayoutAlign="center center"				>					<mat-label						class="mat-title m-0"						i18n="@@balance_payout_table_noRecord_label"						>No Payout Record</mat-label					>				</div>			</td>		</tr>	</table></div><div ngCLass.lg="m-r-l">	<mat-paginator		[pageSize]="20"		[length]="this.count"		(page)="changePage($event)"		fxLayoutAlign.lg="end"	>	</mat-paginator></div></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'PayoutTableMollieComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PayoutTableMollieComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

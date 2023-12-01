@@ -1,0 +1,35 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxLayout="row"
+	fxLayout.xs="column"
+	fxLayoutGap="10%"
+	fxLayoutAlign="center center"
+>
+	<div fxFlex="50" fxLayout="column" fxLayoutAlign="center center">
+		<img
+			src="{{ platformImage }}"
+			alt="zero platform fundraising fees"
+			width="80%"
+			id="platformImage"
+		/>
+		<p i18n="@@platform_fee_costForPaymentHomeBoth" class="mat-subheading-2">
+			Cost for payment processing, apply.
+		</p>
+	</div>
+	<!-- <div fxFlex="10" fxFlex.xs="0"></div> -->
+	<div
+		fxFlex="50"
+		fxLayout="column"
+		fxLayoutAlign="center start"
+		fxLayoutAlign.xs="center center"
+		ngClass="center"
+	>
+		<h2 style="text-align: start" i18n="@@platform_fee_noPlatformCostsHomeBoth">
+			No Platform Costs <br />Full Feature Access
+		</h2>
+		<app-start-fundraiser-button
+			class="platformFeeStart"
+		></app-start-fundraiser-button>
+	</div>
+</div>

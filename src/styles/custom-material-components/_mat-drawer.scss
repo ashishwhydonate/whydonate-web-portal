@@ -1,0 +1,43 @@
+@use 'sass:map';
+@import '../helpers-classes/layout_helpers';
+@import '../_variables/color';
+
+// Dashboard
+mat-drawer-container.dashboard-drawer-container {
+	@extend .content-height; // Extend .content-height class from layout helper
+	mat-drawer {
+		width: 250px;
+		padding: 0 0 0 16px;
+	}
+}
+
+// small fundraiser card list
+mat-drawer-container.myfundraisers-drawer-container {
+	@extend .content-height; // Extend .content-height class from layout helper
+}
+
+mat-drawer-container.profile-container {
+	@extend .content-height; // Extend .content-height class from layout helper
+	mat-drawer {
+		width: 250px;
+	}
+}
+
+mat-drawer-container.search-drawer-container {
+	// TODO: setting min-height for drawer container to avoid showing category selection in small scrollable box
+	min-height: 1250px;
+
+	// TODO: set height of mat-list-option so it will take less space in between list options
+	// .mat-list-option {
+	// 	height: 33px;
+	// }
+
+	mat-drawer {
+		width: 260px;
+		padding: 0 0 0 32px;
+	}
+}
+
+mat-drawer-content {
+	background-color: map.get($COLOR_CONFIG, 'white');
+}

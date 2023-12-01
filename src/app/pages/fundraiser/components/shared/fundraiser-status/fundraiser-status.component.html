@@ -1,0 +1,113 @@
+<div class="m-b-s">
+	<mat-label
+		class="mat-title"
+		i18n="@@create_fundraiser_fundraiser_status_selectFundraiserMode_title"
+		>Select Fundraiser Mode</mat-label
+	>
+	<!-- <h2 i18n>Select Fundraiser Mode</h2> -->
+</div>
+<div>
+	<div class="m-b-xs">
+		<mat-label
+			class="mat-body-2"
+			i18n="@@create_fundraiser_fundraiser_status_abilityToDonate_title"
+			>Ability to donate</mat-label
+		><br />
+		<mat-radio-group
+			class="m-t-xxs"
+			fxLayout="row wrap"
+			fxLayoutGap="8px"
+			aria-label="Select an option"
+			color="primary"
+			[formControl]="isOpenRadioCtrl"
+		>
+			<mat-radio-button
+				class="m-b-xs"
+				value="open"
+				i18n="@@create_fundraiser_fundraiser_status_radioGroup_open"
+				>Open
+			</mat-radio-button>
+			<mat-radio-button
+				value="close"
+				i18n="@@create_fundraiser_fundraiser_status_radioGroup_close"
+				>Close
+			</mat-radio-button>
+		</mat-radio-group>
+	</div>
+	<div class="m-b-xs">
+		<mat-label
+			i18n="@@create_fundraiser_fundraiser_status_publicFundraiserPage_title"
+			class="mat-body-2"
+			>Public fundraiser page</mat-label
+		><br />
+		<mat-radio-group
+			class="m-t-xxs"
+			fxLayout="row wrap"
+			fxLayoutGap="8px"
+			aria-label="Select an option"
+			color="primary"
+			[formControl]="isDraftRadioCtrl"
+		>
+			<mat-radio-button
+				class="m-b-xs"
+				value="published"
+				i18n="@@create_fundraiser_fundraiser_status_radioGroup_published"
+				>Published
+			</mat-radio-button>
+			<mat-radio-button
+				i18n="@@create_fundraiser_fundraiser_status_radioGroup_draft"
+				value="draft"
+				>Draft
+			</mat-radio-button>
+		</mat-radio-group>
+	</div>
+	<div class="m-b-xs">
+		<mat-label
+			i18n="@@create_fundraiser_fundraiser_status_findableInSearchResults_title"
+			class="mat-body-2"
+			>Findable in search results</mat-label
+		><br />
+		<mat-radio-group
+			class="m-t-xxs"
+			fxLayout="row wrap"
+			fxLayoutGap="8px"
+			aria-label="Select an option"
+			color="primary"
+			[formControl]="isFindableRadioCtrl"
+		>
+			<mat-radio-button
+				class="m-b-xs"
+				value="findable"
+				i18n="@@create_fundraiser_fundraiser_status_findable"
+				>Findable
+			</mat-radio-button>
+			<mat-radio-button
+				value="nonfindable"
+				i18n="@@create_fundraiser_fundraiser_status_nonFindable"
+			>
+				Non-findable</mat-radio-button
+			>
+		</mat-radio-group>
+	</div>
+</div>
+<button
+	mat-flat-button
+	color="accent"
+	[style.color]="'#fff'"
+	class="w-100"
+	[disabled]="
+		isSave ||
+		!(
+			isOpenRadioCtrl.dirty ||
+			isDraftRadioCtrl.dirty ||
+			isFindableRadioCtrl.dirty
+		)
+	"
+	(click)="saveAndApplyFundraiserStatus()"
+>
+	<span i18n="@@button_saveAndApply">Save and Apply</span>
+	<mat-icon *ngIf="isSave" class="m-l-xs">
+		<mat-spinner color="accent" diameter="20" i18n="@@fundraiserStatus_spinner">
+		</mat-spinner>
+	</mat-icon>
+</button>

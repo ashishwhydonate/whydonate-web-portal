@@ -1,0 +1,1243 @@
+<app-stripe-notification-banner
+	*ngIf="this.isLoggedInUserAdmin && this.showStripePrompt"
+></app-stripe-notification-banner>
+<ng-template [ngIf]="currentFundraiser?.slug" [ngIfElse]="whydonateLoader">
+	<!-- Preview/Edit toggle -->
+	<ng-container
+		*ngIf="isWholePreview"
+		[ngTemplateOutlet]="fundraiserActionRibbon"
+	></ng-container>
+
+	<ng-container
+		*ngIf="_media.isActive('lt-lg') || _media.isActive('md')"
+		[ngTemplateOutlet]="fundraiserPublishNotification"
+	></ng-container>
+	<!-- label for connected fundraiser -->
+	<ng-container
+		*ngIf="isCurrentChildFundraiser"
+		[ngTemplateOutlet]="parentFundraiserInfo"
+	></ng-container>
+
+	<div class="branding p-m">
+		<ng-template
+			[ngIf]="_media.isActive('lt-sm') || _media.isActive('gt-sm')"
+			[ngIfElse]="tabletView"
+		>
+			<div
+				[fxHide]="isViewChanging"
+				fxLayout="row"
+				fxLayout.lt-md="column"
+				fxLayoutAlign="center"
+				fxLayoutGap="1.5%"
+				class="mat-typography"
+			>
+				<div fxFlex="70%">
+					<!-- Background image -->
+					<ng-container
+						[ngTemplateOutlet]="fundraiserBackground"
+					></ng-container>
+					<!-- Title row -->
+					<ng-container [ngTemplateOutlet]="fundraiserTitle"></ng-container>
+					<mat-divider></mat-divider>
+					<!-- Fundraiser owner info row -->
+					<ng-container [ngTemplateOutlet]="fundraiserOwnerInfo"></ng-container>
+					<mat-divider></mat-divider>
+					<ng-container
+						*ngIf="isCurrentChildFundraiser"
+						[ngTemplateOutlet]="appealByChildFundraiser"
+					></ng-container>
+					<br />
+					<ng-container [ngTemplateOutlet]="aboutAndConnectTab"></ng-container>
+					<br />
+				</div>
+				<div fxFlex="30%">
+					<ng-container [ngTemplateOutlet]="fundraiserNotification">
+					</ng-container>
+					<!-- <ng-container
+						*ngIf="showEdits"
+						[ngTemplateOutlet]="fundraiserStatus"
+					></ng-container> -->
+
+					<ng-container [ngTemplateOutlet]="fundraiserDonation"></ng-container>
+					<br />
+					<ng-container [ngTemplateOutlet]="supportFundraiser"></ng-container>
+					<br />
+					<ng-container [ngTemplateOutlet]="donationList"></ng-container>
+				</div>
+			</div>
+		</ng-template>
+	</div>
+</ng-template>
+
+<!-- show page loader if isViewChanging is true -->
+<ng-container
+	*ngIf="isViewChanging"
+	[ngTemplateOutlet]="whydonateLoader"
+></ng-container>
+
+<!-- Responsive: Tablet -->
+<ng-template #tabletView>
+	<div [fxHide]="isViewChanging" class="mat-typography">
+		<!-- Background image -->
+		<ng-container [ngTemplateOutlet]="fundraiserBackground"></ng-container>
+		<!-- Title row -->
+		<ng-container [ngTemplateOutlet]="fundraiserTitle"></ng-container>
+		<mat-divider></mat-divider>
+		<!-- Fundraiser owner info row -->
+		<ng-container [ngTemplateOutlet]="fundraiserOwnerInfo"></ng-container>
+		<mat-divider></mat-divider>
+		<br />
+		<div fxLayout="row">
+			<div fxFlex="50%">
+				<ng-container [ngTemplateOutlet]="fundraiserDonation"></ng-container>
+			</div>
+		</div>
+		<ng-container
+			*ngIf="isCurrentChildFundraiser"
+			[ngTemplateOutlet]="appealByChildFundraiser"
+		></ng-container>
+		<br />
+		<ng-container [ngTemplateOutlet]="aboutAndConnectTab"></ng-container>
+		<br />
+		<div fxLayout="row" fxLayoutGap="16px">
+			<div fxFlex="50%">
+				<ng-container
+					[ngTemplateOutlet]="fundraiserNotification"
+				></ng-container>
+				<ng-container [ngTemplateOutlet]="supportFundraiser"></ng-container>
+			</div>
+			<div fxFlex="50%">
+				<ng-container [ngTemplateOutlet]="donationList"></ng-container>
+			</div>
+		</div>
+	</div>
+</ng-template>
+<!-- START Subcomponents Templates -->
+
+<!-- Top Action Ribbon - Preview/Edit toggle -->
+<ng-template #fundraiserPublishNotification>
+	<ng-template [ngIf]="showPublishBanner">
+		<app-notification-banner
+			[slug]="currentFundraiser?.slug"
+			[isCurrentChildFundraiser]="isCurrentChildFundraiser"
+			(publish)="publishFundraiser()"
+		></app-notification-banner>
+	</ng-template>
+</ng-template>
+<ng-template #fundraiserActionRibbon>
+	<!-- <ng-template
+		[ngIf]="this.showEdits && this.isLoggedInUserAdmin"
+		[ngIfElse]="previewModeRibbon"
+	>
+		<div
+			fxLayout="row"
+			fxLayoutAlign="space-between center"
+			class="p-t-m p-r-m"
+		>
+			<button mat-button color="accent" [routerLink]="[previousRoute]">
+				<img
+					height="16px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667417025/whydonate-production/platform/svg-icons/arrowBackAccent.svg"
+				/>
+				{{ previoudRoutString | titlecase }}
+			</button>
+			<ng-template [ngIf]="!_media.isActive('lt-sm')">
+				<div fxLayoutGap="8px" fxLayout="row" fxLayoutAlign="end center">
+					<button
+						i18n="@@button_deleteFundraiser"
+						color="warn"
+						mat-button
+						id="delete_fundraiser_button"
+						(click)="this.openDeleteFundraiserDialog()"
+					>
+						Delete fundraiser
+					</button>
+					<button
+						i18n="@@button_preview"
+						mat-flat-button
+						color="accent"
+						id="preview_fundraiser_button"
+						(click)="this.showPublicView()"
+					>
+						Preview
+					</button>
+				</div>
+			</ng-template>
+			<ng-template [ngIf]="_media.isActive('lt-sm')">
+				<div
+					fxLayoutGap="8px"
+					fxLayoutGap.lt-sm="32px"
+					fxLayout="row"
+					fxLayoutAlign="end center"
+				>
+					<div ngClass.lt-sm="m-t-xs">
+						<div>
+							<span (click)="this.openDeleteFundraiserDialog()">
+								<img
+									src="https://res.cloudinary.com/whydonate/image/upload/v1679374163/whydonate-production/platform/svg-icons/delete.svg"
+									alt=""
+								/>
+							</span>
+						</div>
+					</div>
+					<button
+						i18n="@@button_preview"
+						mat-flat-button
+						color="accent"
+						(click)="this.showPublicView()"
+					>
+						Preview
+					</button>
+				</div>
+			</ng-template>
+		</div>
+	</ng-template> -->
+
+	<!-- PUBLIC VIEW BAR (to close public view) -->
+	<div
+		*ngIf="!this.showEdits && this.isLoggedInUserAdmin"
+		fxLayout="row"
+		fxLayoutAlign="space-between center"
+		class="pale-grey-bg p-m"
+	>
+		<div i18n="@@edit_fundraiser_thisIsPublicView_title">
+			This is the public view of your fundraiser page.
+		</div>
+		<button
+			i18n="@@button_close"
+			mat-flat-button
+			color="warn"
+			(click)="this.hidePublicView()"
+		>
+			Close
+		</button>
+	</div>
+</ng-template>
+
+<!-- Connected fundraiser label and parent fundraiser link -->
+<ng-template #parentFundraiserInfo>
+	<div fxLayoutAlign="center center" class="m-t-m">
+		<div
+			fxLayoutAlign="center center"
+			class="round-border grey-bg p-xxs p-l-xs p-r-xs"
+		>
+			<span class="whydonate-light l-icon p-xs">
+				<img
+					height="24px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1666210002/whydonate-production/platform/svg-icons/fundraiser-support.svg"
+				/>
+			</span>
+			<mat-hint
+				class="mat-caption"
+				i18n="@@editFundraiser_thisIsASupportingFundraiser_hint"
+				>This is a supporting fundraiser. Contributions made to this fundraiser
+				will go towards the main fundraiser, who has the complete authority to
+				delete or modify this page.</mat-hint
+			>
+		</div>
+	</div>
+</ng-template>
+
+<!-- Background Image -->
+<ng-template #fundraiserBackground>
+	<!-- Background Image - VIEW -->
+	<ng-template
+		[ngIf]="!(this.showEdits && this.isLoggedInUserAdmin)"
+		[ngIfElse]="fundraiserBackgroundEdit"
+	>
+		<div fxLayoutAlign="end end">
+			<!-- <iframe
+                frameborder="0"
+                [src]="getYouTubeEmbedUrl(backgroundVideo)"
+                width="100%"
+                *ngIf="backgroundVideo"
+                height="300px"
+            ></iframe> -->
+			<!-- <div *ngIf="backgroundVideo" [innerHTML]="youtubeIframe"></div> -->
+			<div
+				class="w-100 aspect-ratio"
+				*ngIf="backgroundVideo"
+				[innerHTML]="youtubeIframe"
+			></div>
+
+			<img
+				class="w-100 aspect-ratio"
+				*ngIf="!backgroundVideo"
+				[src]="backgroundImage"
+				(error)="fallbackToDefaultImage()"
+			/>
+		</div>
+	</ng-template>
+	<!-- Background Image - EDIT -->
+	<ng-template #fundraiserBackgroundEdit>
+		<app-background-image-edit
+			[imagePath]="backgroundImage"
+			[videoPath]="backgroundVideo"
+			[backgroundImageId]="currentFundraiser?.background?.id"
+			[fundraiserId]="currentFundraiser?.id"
+			[slug]="currentFundraiser?.slug"
+		></app-background-image-edit>
+	</ng-template>
+</ng-template>
+<!-- Title -->
+<ng-template #fundraiserTitle>
+	<!-- Title - VIEW -->
+	<ng-template
+		[ngIf]="!(this.showEdits && this.isLoggedInUserAdmin)"
+		[ngIfElse]="fundraiserTitleEdit"
+		><h1 class="p-t-s mat-title">
+			<strong
+				>{{ currentFundraiser?.translations['title' + localeSuffix] }}
+			</strong>
+		</h1>
+		<div
+			fxLayout="row"
+			fxLayoutGap="20px"
+			fxLayoutGap.xs="10px"
+			fxLayoutAlign="space-between"
+			ngClass="isWhydonateSecondatColor ? whydonate-light : branding-light"
+			fxLayoutAlign.xs="start"
+			fxLayout.xs="column"
+		>
+			<div
+				fxLayout="row"
+				fxLayout.xs="column"
+				fxLayoutGap.xs="10px"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.xs="start start"
+			>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<app-fundraiser-category [category]="currentFundraiser?.category">
+					</app-fundraiser-category>
+				</div>
+
+				<div
+					*ngIf="
+						!isCurrentChildFundraiser ||
+						(isCurrentChildFundraiser &&
+							this.currentFundraiser?.root_fundraiser?.location)
+					"
+					fxLayout="row"
+					fxFlexOffset="32px"
+					fxFlexOffset.xs="0px"
+					fxLayoutAlign="center center"
+				>
+					<app-fundraiser-location
+						[currentFundraiser]="this.currentFundraiser"
+					></app-fundraiser-location>
+				</div>
+			</div>
+
+			<div
+				*ngIf="
+					this.currentFundraiser?.social_media?.instagram == '' &&
+					this.currentFundraiser?.social_media?.facebook == '' &&
+					this.currentFundraiser?.social_media?.linkedin == '' &&
+					this.currentFundraiser?.social_media?.website == '' &&
+					this.currentFundraiser?.social_media?.email == '' &&
+					this.currentFundraiser?.social_media?.twitter == ''
+				"
+				fxLayout="row"
+				fxLayoutGap="0"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.xs="start center"
+			>
+				<span i18n="@@editFundraiser_thisIsASupportingFundraiser_contact">
+					Contact:
+				</span>
+				<span
+					*ngIf="
+						!(isCurrentChildFundraiser
+							? !(
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.instagram == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.facebook == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.linkedin == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.website == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.email == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.twitter == ''
+							  )
+							: !(
+									this.currentFundraiser?.social_media?.instagram == '' &&
+									this.currentFundraiser?.social_media?.facebook == '' &&
+									this.currentFundraiser?.social_media?.linkedin == '' &&
+									this.currentFundraiser?.social_media?.website == '' &&
+									this.currentFundraiser?.social_media?.email == '' &&
+									this.currentFundraiser?.social_media?.twitter == ''
+							  ))
+					"
+				>
+					<mat-chip fxFlexOffset="6px">
+						<span
+							i18n="@@editFundraiser_thisIsASupportingFundraiser_contact_label"
+						>
+							Not Available
+						</span>
+					</mat-chip>
+				</span>
+				<app-owner-social-share
+					*ngIf="
+						isCurrentChildFundraiser
+							? !(
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.instagram == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.facebook == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.linkedin == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.website == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.email == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.twitter == ''
+							  )
+							: !(
+									this.currentFundraiser?.social_media?.instagram == '' &&
+									this.currentFundraiser?.social_media?.facebook == '' &&
+									this.currentFundraiser?.social_media?.linkedin == '' &&
+									this.currentFundraiser?.social_media?.website == '' &&
+									this.currentFundraiser?.social_media?.email == '' &&
+									this.currentFundraiser?.social_media?.twitter == ''
+							  )
+					"
+					ngClass="p-0"
+					fxLayout="row"
+					fxLayoutAlign="center center"
+					[isLoggedIn]="showEdits"
+					[socialMedia]="this.currentFundraiser?.root_fundraiser?.social_media"
+				></app-owner-social-share>
+			</div>
+
+			<div
+				*ngIf="
+					this.currentFundraiser?.social_media?.instagram != '' ||
+					this.currentFundraiser?.social_media?.facebook != '' ||
+					this.currentFundraiser?.social_media?.linkedin != '' ||
+					this.currentFundraiser?.social_media?.website != '' ||
+					this.currentFundraiser?.social_media?.email != '' ||
+					this.currentFundraiser?.social_media?.twitter != ''
+				"
+				fxLayout="row"
+				fxLayoutGap="0"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.xs="start center"
+			>
+				<span i18n="@@editFundraiser_thisIsASupportingFundraiser_contact">
+					Contact:
+				</span>
+				<app-owner-social-share
+					*ngIf="
+						isCurrentChildFundraiser
+							? !(
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.instagram == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.facebook == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.linkedin == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.website == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.email == '' &&
+									this.currentFundraiser?.root_fundraiser?.social_media
+										?.twitter == ''
+							  )
+							: !(
+									this.currentFundraiser?.social_media?.instagram == '' &&
+									this.currentFundraiser?.social_media?.facebook == '' &&
+									this.currentFundraiser?.social_media?.linkedin == '' &&
+									this.currentFundraiser?.social_media?.website == '' &&
+									this.currentFundraiser?.social_media?.email == '' &&
+									this.currentFundraiser?.social_media?.twitter == ''
+							  )
+					"
+					ngClass="p-0"
+					fxLayout="row"
+					fxLayoutAlign="center center"
+					[isLoggedIn]="showEdits"
+					[socialMedia]="this.currentFundraiser?.social_media"
+				></app-owner-social-share>
+			</div>
+		</div>
+
+		<br />
+	</ng-template>
+	<!-- Title - EDIT -->
+	<ng-template #fundraiserTitleEdit>
+		<div
+			fxLayout="row"
+			fxLayoutAlign="start center"
+			fxLayoutAlign.xs="start start"
+		>
+			<h1 class="mat-title p-t-s">
+				<strong>{{
+					currentFundraiser?.translations['title' + localeSuffix]
+				}}</strong>
+			</h1>
+			<div fxLayout="row" fxLayoutAlign="center end" class="mat-title p-t-s">
+				<ng-template
+					[ngIf]="!isCurrentChildFundraiser"
+					[ngIfElse]="ChildFundraiserEditAction"
+				>
+					<span id="editFundraiserAboutButton">
+						<ng-container
+							[ngTemplateOutlet]="editActionIcon"
+							[ngTemplateOutletContext]="{
+								icon: 'edit',
+								routeTo: openEditFundraiserAboutDialog
+							}"
+						></ng-container>
+					</span>
+					<span id="editFundraiserTitleTranslate">
+						<ng-container
+							[ngTemplateOutlet]="editActionIcon"
+							[ngTemplateOutletContext]="{
+								icon: 'g_translate',
+								routeTo: openTranslateFundraiserAboutDialog
+							}"
+						>
+						</ng-container>
+					</span>
+				</ng-template>
+				<ng-template #ChildFundraiserEditAction>
+					<span id="editFundraiserAboutButton">
+						<ng-container
+							[ngTemplateOutlet]="editActionIcon"
+							[ngTemplateOutletContext]="{
+								icon: 'edit',
+								routeTo: openEditFundraiserAppealDialog
+							}"
+						></ng-container>
+					</span>
+					<span id="editFundraiserTitleTranslate">
+						<ng-container
+							[ngTemplateOutlet]="editActionIcon"
+							[ngTemplateOutletContext]="{
+								icon: 'g_translate',
+								routeTo: openTranslateFundraiserAppealDialog
+							}"
+						></ng-container>
+					</span>
+				</ng-template>
+			</div>
+		</div>
+
+		<div
+			fxLayout="row"
+			fxLayoutGap="15px"
+			fxLayoutGap.xs="10px"
+			fxLayoutAlign="space-between"
+			class="whydonate-light"
+			fxLayoutAlign.xs="start"
+			fxLayout.xs="column"
+		>
+			<div
+				fxLayout="row"
+				fxLayoutAlign="space-between"
+				fxLayout.xs="column"
+				fxLayoutGap="5px"
+				fxLayoutGap.xs="10px"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.xs="start start"
+			>
+				<div fxLayout="row" fxLayoutAlign="center center">
+					<app-fundraiser-category [category]="currentFundraiser?.category">
+					</app-fundraiser-category>
+					<div id="editFundraiserCategoryButton">
+						<ng-container
+							*ngIf="showEdits"
+							[ngTemplateOutlet]="editActionIcon"
+							[ngTemplateOutletContext]="{
+								icon: 'edit',
+								routeTo: openEditFundraiserCategoryDialog
+							}"
+						>
+						</ng-container>
+					</div>
+				</div>
+
+				<div
+					*ngIf="
+						!isCurrentChildFundraiser ||
+						(isCurrentChildFundraiser &&
+							this.currentFundraiser?.root_fundraiser?.location)
+					"
+					fxLayout="row"
+					fxLayoutAlign="center center"
+					fxFlexOffset="32px"
+					fxFlexOffset.xs="0px"
+				>
+					<app-fundraiser-location
+						[currentFundraiser]="this.currentFundraiser"
+					></app-fundraiser-location>
+					<div id="editFundraiserLocationButton">
+						<ng-container
+							*ngIf="showEdits"
+							[ngTemplateOutlet]="editActionIcon"
+							[ngTemplateOutletContext]="{
+								icon: 'edit',
+								routeTo: openEditFundraiserLocationDialog
+							}"
+						></ng-container>
+					</div>
+				</div>
+			</div>
+
+			<div
+				fxLayout="row"
+				fxLayoutGap="0"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.xs="start center"
+			>
+				<span i18n="@@editFundraiser_thisIsASupportingFundraiser_contact"
+					>Contact:</span
+				>
+				<app-owner-social-share
+					ngClass="p-0"
+					fxLayout="row"
+					fxLayoutAlign="center center"
+					[isLoggedIn]="showEdits"
+					[socialMedia]="this.currentFundraiser?.social_media"
+				></app-owner-social-share>
+				<div id="editFundraiserContactButton">
+					<ng-container
+						*ngIf="showEdits"
+						[ngTemplateOutlet]="editActionIcon"
+						[ngTemplateOutletContext]="{
+							icon: 'edit',
+							routeTo: openEditCreatedByDialog
+						}"
+					></ng-container>
+				</div>
+			</div>
+		</div>
+
+		<br />
+	</ng-template>
+</ng-template>
+
+<!-- Fundraiser Owner Info -->
+<ng-template #fundraiserOwnerInfo>
+	<!--Fundraiser Owner, social media, location and connect with-->
+	<ng-template
+		[ngIf]="!isCurrentChildFundraiser"
+		[ngIfElse]="threeColumnsLayout"
+	>
+		<div
+			fxLayout="row"
+			fxLayoutGap.xs="15px"
+			fxLayoutGap="150px"
+			fxLayout.xs="column"
+			class="m-t-m m-b-xl"
+		>
+			<div fxLayout="row" fxLayoutGap="0px" fxLayoutAlign="space-between">
+				<app-created-by [currentFundraiser]="this.currentFundraiser">
+				</app-created-by>
+				<!-- EDIT -->
+				<!-- <ng-container
+					*ngIf="showEdits && !isCurrentChildFundraiser"
+					[ngTemplateOutlet]="editActionIcon"
+					[ngTemplateOutletContext]="{
+						icon: 'edit',
+						routeTo: openEditCreatedByDialog
+					}"
+				></ng-container> -->
+			</div>
+			<div
+				fxLayout="row"
+				fxLayoutGap.xs="0px"
+				fxLayoutGap="30px"
+				fxLayoutAlign="start"
+			>
+				<app-opp-owner [bankAccount]="this.currentFundraiser"> </app-opp-owner>
+				<!-- EDIT -->
+				<!-- <ng-container
+					*ngIf="showEdits && !isCurrentChildFundraiser"
+					[ngTemplateOutlet]="editActionIcon"
+					[ngTemplateOutletContext]="{
+						icon: 'edit',
+						routeTo: openEditFundraiserLocationDialog
+					}"
+				></ng-container> -->
+			</div>
+		</div>
+	</ng-template>
+	<!-- if current is connected/child fundraiser then pick below layout -->
+	<ng-template #threeColumnsLayout>
+		<div
+			fxLayout="row"
+			class="p-t-m p-b-m"
+			fxLayoutAlign="space-between"
+			fxLayout.xs="column"
+			fxLayoutGap.xs="30px"
+		>
+			<div>
+				<app-created-by [currentFundraiser]="this.currentFundraiser">
+				</app-created-by>
+				<!-- EDIT -->
+				<ng-container
+					*ngIf="showEdits && !isCurrentChildFundraiser"
+					[ngTemplateOutlet]="editActionIcon"
+					[ngTemplateOutletContext]="{
+						icon: 'edit',
+						routeTo: openEditCreatedByDialog
+					}"
+				></ng-container>
+			</div>
+			<div>
+				<app-opp-owner [bankAccount]="this.currentFundraiser"></app-opp-owner>
+				<!-- EDIT -->
+				<!-- <ng-container
+				*ngIf="showEdits && !isCurrentChildFundraiser"
+				[ngTemplateOutlet]="editActionIcon"
+				[ngTemplateOutletContext]="{
+					icon: 'edit',
+					routeTo: openEditFundraiserLocationDialog
+				}"
+			></ng-container> -->
+			</div>
+			<div *ngIf="isCurrentChildFundraiser">
+				<div
+					fxLayout="row"
+					class="clickable"
+					fxFlex.xs
+					(click)="
+						routeToParentFundraiser(this.currentFundraiser?.parent?.slug)
+					"
+				>
+					<img
+						class="profile-image"
+						src="{{ this.currentFundraiser?.parent?.profile?.image }}"
+						(error)="handleImageError($event)"
+					/>
+					<div class="m-l-s" fxLayout="column">
+						<mat-label i18n="@@editFundraier_connectedWith_label"
+							>Connected with:</mat-label
+						>
+						<div>
+							{{
+								this.currentFundraiser?.parent?.parent_translations[
+									'title' + localeSuffix
+								] || this.currentFundraiser?.parent?.title
+							}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ng-template>
+</ng-template>
+
+<!-- Apeal by connected fundraiser -->
+<ng-template #appealByChildFundraiser>
+	<div class="grey-bg m-t-m">
+		<div fxLayout="row" fxLayoutAlign="space-between center">
+			<div fxFlex ngClass="p-m" i18n="@@editFundraiser_appealForCause_label">
+				Appeal for cause
+			</div>
+			<div *ngIf="showEdits && isCurrentChildFundraiser" fxLayout="row wrap">
+				<span id="editFundraiserDescriptionButton">
+					<ng-container
+						[ngTemplateOutlet]="editActionIcon"
+						[ngTemplateOutletContext]="{
+							icon: 'edit',
+							routeTo: openEditFundraiserAppealDescriptionDialog
+						}"
+					></ng-container>
+				</span>
+				<span id="editFundraiserDescriptionTranslateButton">
+					<ng-container
+						[ngTemplateOutlet]="editActionIcon"
+						[ngTemplateOutletContext]="{
+							icon: 'g_translate',
+							routeTo: openTranslateFundraiserAppealDescriptionDialog
+						}"
+					></ng-container>
+				</span>
+			</div>
+		</div>
+		<mat-divider></mat-divider>
+		<quill-view
+			[content]="
+				fundraiserDescriptionData?.translations['content' + localeSuffix] ||
+				fundraiserDescriptionData?.content
+			"
+			[preserveWhitespace]="true"
+			[sanitize]="true"
+			format="html"
+		></quill-view>
+		<div
+			*ngIf="this.currentFundraiser?.appeal_image_list[0]"
+			class="m-l-s p-b-s"
+		>
+			<ng-image-slider
+				[images]="appealMediaList"
+				[imageSize]="{ height: 150 }"
+				[manageImageRatio]="true"
+				[showArrow]="
+					this.currentFundraiser?.appeal_image_list > 2 ? true : false
+				"
+				#nav
+			></ng-image-slider>
+		</div>
+	</div>
+</ng-template>
+
+<!-- About & Connect Fundraiser Tab -->
+<ng-template #aboutAndConnectTab>
+	<mat-tab-group dynamicHeight>
+		<mat-tab id="editFundraiser_about_template">
+			<ng-template
+				matTabLabel
+				class="p-t-l"
+				i18n="@@editFundraiser_about_template"
+				>About
+			</ng-template>
+			<ng-template matTabContent>
+				<ng-container [ngTemplateOutlet]="aboutTabContent"></ng-container>
+			</ng-template>
+		</mat-tab>
+		<mat-tab class="p-s">
+			<ng-template matTabLabel class="p-t-l"
+				><span
+					id="editFundraiserConnectedFundraisersHeading"
+					i18n="@@editFundraiser_connectedFundraisers_heading"
+					>Connected Fundraisers</span
+				>
+				<ng-template
+					[ngIf]="!isConnectedFundraiserCountLoading"
+					[ngIfElse]="spinner"
+				>
+					&nbsp;({{ connectedFundraisersCount }})
+				</ng-template>
+			</ng-template>
+			<ng-template matTabContent>
+				<ng-container [ngTemplateOutlet]="connectedTabContent"></ng-container>
+			</ng-template>
+		</mat-tab>
+	</mat-tab-group>
+
+	<!-- About Tab Content -->
+	<ng-template #aboutTabContent>
+		<div
+			fxLayout="row"
+			fxLayoutAlign="end center"
+			*ngIf="this.showEdits && this.isLoggedInUserAdmin"
+		>
+			<ng-template [ngIf]="!isCurrentChildFundraiser">
+				<div
+					ngClass="m-r-xs m-t-xs"
+					i18n="@@fundraiser_edit_or_Translate_details_heading"
+				>
+					Edit or translate fundraiser details
+				</div>
+				<span id="editFundraiserDescriptionButton">
+					<ng-container
+						[ngTemplateOutlet]="editActionIcon"
+						[ngTemplateOutletContext]="{
+							icon: 'edit',
+							routeTo: openEditFundraiserAboutDescriptionDialog
+						}"
+					></ng-container>
+				</span>
+				<span id="editFundraiserDescriptionTranslateButton">
+					<ng-container
+						[ngTemplateOutlet]="editActionIcon"
+						[ngTemplateOutletContext]="{
+							icon: 'g_translate',
+							routeTo: openTranslateFundraiserAboutDescriptionDialog
+						}"
+					>
+					</ng-container>
+				</span>
+			</ng-template>
+		</div>
+		<ng-template [ngIf]="!isCurrentChildFundraiser">
+			<mat-divider></mat-divider>
+		</ng-template>
+
+		<app-fundraiser-about
+			*ngIf="!isNewFundraiser || isCurrentChildFundraiser"
+			[currentFundraiser]="this.currentFundraiser"
+			[isChildFundraiser]="this.isCurrentChildFundraiser"
+			[fundraiserDescriptionData]="this.fundraiserDescriptionData"
+			[isLoading]="this.isDescriptionLoaded"
+		></app-fundraiser-about>
+
+		<div
+			*ngIf="isNewFundraiser && !isCurrentChildFundraiser"
+			fxLayout="column"
+			fxLayoutAlign="start start"
+		>
+			<br />
+			<p i18n="@@edit_fundraiser_youAreAlmostDone_label">
+				You are almost done. To continue further,
+			</p>
+			<mat-form-field
+				class="full-width"
+				appearance="outline"
+				(click)="openCreateFundraiserAboutDialog.navigate()"
+			>
+				<input
+					required
+					matInput
+					i18n-placeholder="@@edit_fundraiser_writeAbout"
+					placeholder="Write About fundraiser page"
+					(keyup)="openCreateFundraiserAboutDialog.navigate()"
+				/>
+			</mat-form-field>
+		</div>
+		<br />
+		<!-- UPDATES -->
+		<ng-container
+			*ngIf="!isCurrentChildFundraiser"
+			[ngTemplateOutlet]="fundraiserUpdates"
+		></ng-container>
+	</ng-template>
+	<!-- About Tab Media -->
+	<ng-template #aboutTabMedia>
+		<br />
+		<app-fundraiser-media-view
+			[currentFundraiser]="this.currentFundraiser"
+		></app-fundraiser-media-view>
+	</ng-template>
+
+	<!-- Connected Tab -->
+	<ng-template #connectedTabContent>
+		<br />
+		<ng-template [ngIf]="connectedFundraisersData?.length" [ngIfElse]="zeroDay">
+			<div fxLayout="column">
+				<div
+					fxLayout="row"
+					fxLayout.xs="column"
+					fxLayoutAlign="space-between baseline"
+					fxFlex="100%"
+					fxLayoutGap="5%"
+					fxLayoutGap.sm="3%"
+					fxLayoutGap.lt-sm="0%"
+				>
+					<div fxFlex="70%" fxLayout="column">
+						<form [formGroup]="searchInputForm">
+							<mat-form-field appearance="outline" color="accent" class="w-100">
+								<mat-label i18n="@@editFundraiser_searchFundraiser_label">
+									Search fundraiser
+								</mat-label>
+								<input
+									matInput
+									placeholder="Search fundraiser"
+									type="text"
+									formControlName="searchCtrl"
+								/>
+
+								<img
+									matSuffix
+									src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/search.svg"
+								/>
+							</mat-form-field>
+						</form>
+					</div>
+					<div fxFlex="25%" fxFlex.sm="30%" fxLayout="column">
+						<button
+							mat-stroked-button
+							color="accent"
+							(click)="routeToConnectFundraiser()"
+							[disabled]="currentFundraiser?.allow_child === false"
+						>
+							<span i18n="@@button_connectFundraiser"
+								>Create Connect Fundraiser</span
+							>
+						</button>
+					</div>
+				</div>
+				<div
+					*ngIf="connectedFundraisersData?.length"
+					fxLayout="row wrap"
+					fxLayoutAlign="center start"
+					class="fundraiser-card"
+				>
+					<div *ngFor="let _fundraiserCardDataItem of connectedFundraisersData">
+						<app-fundraiser-card
+							[slug]="_fundraiserCardDataItem.slug"
+							[fundraiserCardData]="_fundraiserCardDataItem.fundraiserCardData"
+						>
+						</app-fundraiser-card>
+					</div>
+				</div>
+			</div>
+			<div fxLayoutAlign="center center">
+				<button
+					id="view-more-button-connected-fundraiser"
+					name="view-more-button"
+					mat-flat-button
+					color="accent"
+					(click)="viewMore()"
+					[disabled]="
+						this.isConnectedFundraiserCountLoading ||
+						this.connectedFundraisersData.length ==
+							this.connectedFundraisersCount
+					"
+				>
+					<span i18n="@@search_fundraiser_button_title_read_more_button"
+						>View More</span
+					>
+					<mat-icon *ngIf="this.isConnectedFundraiserCountLoading">
+						<mat-spinner color="primary" diameter="20" i18n="@@search_spinner">
+						</mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+		</ng-template>
+		<ng-template #zeroDay>
+			<div
+				class="pale-grey-bg p-xl"
+				fxLayout="column"
+				fxLayoutAlign="center center"
+			>
+				<div
+					class="mat-title"
+					i18n="@@edit_fundraiser_connectedTab_zeroDay_title"
+				>
+					Build Connected Fundraiser
+				</div>
+				<div fxLayout="row">
+					<div
+						fxFlex.gt-xs="300px"
+						class="center"
+						i18n="@@edit_fundraiser_connectedTab_zeroDay_body"
+					>
+						Start a new connect fundraiser to raise money for your loved ones or
+						cause you care for.
+					</div>
+				</div>
+				<br />
+				<button
+					i18n="@@button_connectFundraiser"
+					mat-stroked-button
+					id="editFundraiserConnectFundraiserButton"
+					color="accent"
+					(click)="routeToConnectFundraiser()"
+					[disabled]="currentFundraiser?.allow_child === false"
+				>
+					Connect Fundraiser
+				</button>
+			</div>
+		</ng-template>
+	</ng-template>
+</ng-template>
+
+<!-- Fundraiser Updates -->
+<ng-template #fundraiserUpdates>
+	<!-- Fundraiser updates - View -->
+	<ng-template
+		[ngIf]="!(this.showEdits && this.isLoggedInUserAdmin) || isNewFundraiser"
+		[ngIfElse]="fundraiserUpdatesEdit"
+	>
+		<app-fundraiser-update-view
+			[fundraiserUpdates]="this.fundraiserUpdatesData"
+			[cardShadow]="cardShadow"
+			[slug]="this.currentFundraiser?.slug"
+			[count]="this.fundraiserUpdatesCount"
+			[totalPages]="this.fundraiserUpdatesTotalPages"
+		></app-fundraiser-update-view>
+	</ng-template>
+	<!-- Fundraiser updates - Edit -->
+	<ng-template #fundraiserUpdatesEdit>
+		<app-fundraiser-update-edit
+			[slug]="this.currentFundraiser?.slug"
+			[fundraiserLocalId]="this.currentFundraiser?.id"
+			[currentFundraiser]="this.currentFundraiser"
+			[fundraiserUpdates]="this.fundraiserUpdatesData"
+			[count]="this.fundraiserUpdatesCount"
+			[totalPages]="this.fundraiserUpdatesTotalPages"
+		></app-fundraiser-update-edit>
+	</ng-template>
+</ng-template>
+<!-- END Subcomponents Templates -->
+
+<!-- ---START SIDE PANEL--- -->
+
+<!--Fundraiser Notification -->
+<!-- [slug]="currentFundraiser?.slug"
+[isCurrentChildFundraiser]="isCurrentChildFundraiser" -->
+<ng-template #fundraiserNotification>
+	<ng-template [ngIf]="this.showEdits && this.isLoggedInUserAdmin">
+		<!-- <div
+			ngClass="m-b-l"
+			*ngIf="showPublishBanner"
+			[fxHide]="
+				_media.isActive('lt-sm') ||
+				_media.isActive('sm') ||
+				_media.isActive('md')
+			"
+		>
+			<button mat-flat-button color="accent" class="w-100">
+				<span
+					(click)="emitPublishClick()"
+					i18n="@@fundraiser_publish_fundraiser_button"
+				>
+					Publish Fundraiser
+				</span>
+				<mat-icon *ngIf="isSave" class="m-l-xs">
+					<mat-spinner color="primary" diameter="20"> </mat-spinner>
+				</mat-icon>
+			</button>
+		</div> -->
+		<mat-card class="mat-elevation-z{{ cardShadow }}" ngClass="m-b-m">
+			<app-fundraiser-notification
+				[currentFundraiserID]="this.currentFundraiser.id"
+				(showPublicNotification)="logNotificationEvent($event)"
+				[showPublishBanner]="showPublishBanner"
+				(publishNotification)="publishFundraiserFunction($event)"
+				[isDraft]="this.currentFundraiser.is_draft"
+				[currentSlug]="this.currentFundraiser.slug"
+				[showStripePrompt]="this.showStripePrompt"
+			></app-fundraiser-notification>
+		</mat-card>
+	</ng-template>
+	<ng-template #previewModeRibbon>
+		<!--PUBLIC VIEW BAR (to close public view)-->
+		<div
+			*ngIf="!this.showEdits && this.isLoggedInUserAdmin"
+			fxLayout="row"
+			fxLayoutAlign="space-between center"
+			class="pale-grey-bg p-m"
+		>
+			<div i18n="@@edit_fundraiser_thisIsPublicView_title">
+				This is the public view of your fundraiser page.
+			</div>
+			<button
+				i18n="@@button_close"
+				mat-flat-button
+				color="warn"
+				(click)="this.hidePublicView()"
+			>
+				Close
+			</button>
+		</div>
+	</ng-template>
+</ng-template>
+
+<!-- Fundraiser Status -->
+<!-- <ng-template #fundraiserStatus>
+	<mat-card class="mat-elevation-z{{ cardShadow }}">
+		<app-fundraiser-status
+			[currentFundraiser]="currentFundraiser"
+			[isCurrentChildFundraiser]="isCurrentChildFundraiser"
+			[slug]="currentFundraiser?.slug"
+		></app-fundraiser-status>
+	</mat-card>
+	<br />
+</ng-template> -->
+
+<!-- Fundraiser Donation -->
+<ng-template #fundraiserDonation>
+	<mat-card class="mat-elevation-z{{ cardShadow }}" ngClass.xs="sticky">
+		<app-fundraiser-donation
+			[fundraiserCardData]="fundraiserCardData"
+			[targetAmount]="this.currentFundraiser.amount_target"
+			[raisedAmount]="this.currentFundraiser.donation.amount"
+			[selectedFundraiser]="this.currentFundraiser"
+			[showEdits]="showEdits"
+			[isDraftOrClosed]="isDraftOrClosed"
+			[isNewFundraiser]="isNewFundraiser"
+			[daysLeft]="this.daysLeft"
+			[isLoggedIn]="isLoggedInUserAdmin"
+			[isFindable]="this.currentFundraiser.is_findable"
+			[isOpen]="this.currentFundraiser.is_opened"
+			[isDraft]="this.currentFundraiser.is_draft"
+		>
+		</app-fundraiser-donation>
+	</mat-card>
+</ng-template>
+
+<!-- Donation List -->
+<ng-template #donationList>
+	<mat-card
+		class="m-b-xl"
+		*ngIf="this.donarDataParent <= 0"
+		class="mat-elevation-z{{ cardShadow }}"
+	>
+		<app-donations-zero
+			[isLoggedInUserAdmin]="isLoggedInUserAdmin"
+			[hideToggleSwitch]="hideToggleSwitch"
+			[donationReceivedBoolean]="this.currentFundraiser.show_received_donations"
+		></app-donations-zero>
+	</mat-card>
+	<mat-card
+		*ngIf="
+			this.donarDataParent > 0 &&
+			((this.isLoggedInUserAdmin && !hideToggleSwitch) ||
+				this.currentFundraiser.show_received_donations)
+		"
+		class="mat-elevation-z{{ cardShadow }}"
+	>
+		<app-donor-list-short
+			[currentFundraiserID]="this.currentFundraiser.id"
+			[isLoggedInUserAdmin]="isLoggedInUserAdmin"
+			[donationReceivedBoolean]="this.currentFundraiser.show_received_donations"
+			[hideToggleSwitch]="hideToggleSwitch"
+			[donorShortData]="this.donorShortData"
+		></app-donor-list-short>
+	</mat-card>
+</ng-template>
+
+<!-- Support fundraiser -->
+<ng-template #supportFundraiser>
+	<!-- if allow child is false then hide the card when on public view -->
+	<ng-container *ngIf="currentFundraiser?.allow_child || this.showEdits">
+		<mat-card class="mat-elevation-z{{ cardShadow }}">
+			<app-connect-fund
+				[slug]="this.slug"
+				[isAllowChild]="currentFundraiser?.allow_child"
+				[isLoggedInUserAdmin]="isLoggedInUserAdmin"
+				[hideToggleSwitch]="hideToggleSwitch"
+			></app-connect-fund>
+		</mat-card>
+	</ng-container>
+</ng-template>
+
+<!-- ---END SIDE PANEL--- -->
+
+<!-- START Reusable Templates -->
+<ng-template
+	#editActionIcon
+	let-icon="icon"
+	let-routeTo="routeTo"
+	let-isDisable="isDisable"
+>
+	<!-----EXAMPLE-----
+	<ng-container
+		[ngTemplateOutlet]="editActionIcon"
+		[ngTemplateOutletContext]="{ icon: 'edit', routeTo: goToEditAmount }"
+	></ng-container>
+    ---------------->
+	<ng-template [ngIf]="routeTo" [ngIfElse]="editIcon">
+		<button
+			mat-icon-button
+			(click)="routeTo.navigate()"
+			[disabled]="isDisable || (isNewFundraiser && !isCurrentChildFundraiser)"
+		>
+			<mat-icon class="material-icons-outlined">{{ icon }}</mat-icon>
+		</button>
+	</ng-template>
+	<ng-template #editIcon>
+		<mat-icon class="material-icons-outlined">{{ icon }}</mat-icon>
+	</ng-template>
+</ng-template>
+
+<!-- Page loader / whydonate loader -->
+<ng-template #whydonateLoader>
+	<app-page-loader></app-page-loader>
+</ng-template>
+<ng-template #spinner>
+	<mat-icon>
+		<mat-spinner color="primary" diameter="20"> </mat-spinner>
+	</mat-icon>
+</ng-template>
+<!-- END Reusable Templates -->

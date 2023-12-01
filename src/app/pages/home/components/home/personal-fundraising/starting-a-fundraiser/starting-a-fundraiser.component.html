@@ -1,0 +1,227 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxFlex="100%"
+	fxLayout="column"
+	fxLayout.lt-sm="row wrap"
+	fxLayoutAlign="center center"
+	fxLayoutGap
+	ngClass.lt-sm="m-t-xxl"
+>
+	<!--Title-->
+	<div
+		ngClass="m-b-xl"
+		ngClass.sm="m-b-m"
+		ngClass.xs="m-b-s"
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayoutAlign="center center"
+	>
+		<div
+			fxFill
+			fxLayout="column"
+			fxLayoutAlign="center center"
+			fxLayoutAlign.xs="center"
+			ngClass="center"
+		>
+			<h2 i18n="@@starting-a-fundraiser_nowTrendingFundraisingCampaign">
+				Now Trending Fundrising Campaigns
+			</h2>
+			<p i18n="@@starting-a-fundraiser_featuredFundraiser" class="mat-body-2">
+				Featured fundraisers
+			</p>
+		</div>
+	</div>
+	<div id="search-results">
+		<div
+			*ngIf="_fundraiserCardDataList?.length"
+			fxFlex="100%"
+			fxLayout="row wrap"
+			fxFlex.md="100"
+			fxFlex.sm="100"
+			fxFlex.xs="100"
+			fxLayoutGap.gt-lg="64px"
+			fxLayoutGap.lg="32px"
+			fxLayoutGap.md="16px"
+			fxLayoutAlign="center start"
+			class="fundraiser-card"
+		>
+			<ng-container
+				*ngFor="
+					let _fundraiserCardDataItem of _fundraiserCardDataList | slice : 0 : 3
+				"
+			>
+				<app-fundraiser-card
+					id="fundraiser-card"
+					name="fundraiser-card"
+					[slug]="_fundraiserCardDataItem.slug"
+					[fundraiserCardData]="_fundraiserCardDataItem.fundraiserCardData"
+				>
+				</app-fundraiser-card>
+			</ng-container>
+		</div>
+	</div>
+	<div fxLayout="row" ngClass.lt-sm="m-b-m" ngClass.lg="m-t-m">
+		<a mat-button color="accent" (click)="routeToSearch()"
+			><span i18n="@@starting-a-fundraiser-viewMoreFundraiser_button"
+				>View More Fundraiser</span
+			>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+			/>
+		</a>
+	</div>
+	<div
+		fxLayout="column"
+		ngClass="m-t-xl m-b-xl"
+		ngClass.lg="p-xl"
+		ngClass.lt-sm="p-xs"
+		fxLayout.lt-sm="row wrap"
+		fxLayoutAlign="center center"
+	>
+		<div fxLayoutAlign="center center" fxFlex.lt-sm="70%">
+			<h2 i18n="@@starting-a-fundraiser_howtoStartAFundraiser">
+				How to start a fundraiser
+			</h2>
+		</div>
+		<p
+			i18n="@@starting-a-fundraiser_startFudnraisingEasyHomePersonal"
+			class="mat-body-2"
+		>
+			Starting a Fundraiser is easy
+		</p>
+	</div>
+
+	<div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center">
+		<!--FIRST COLUMN-->
+		<div
+			fxLayoutGap="5%"
+			fxFlex="50%"
+			fxFlex.xs="100%"
+			fxLayout="column"
+			fxLayoutAlign="Start start"
+		>
+			<!-- FIRST CARD-->
+			<div
+				fxLayoutGap="3%"
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.lt-sm="start start"
+			>
+				<div fxLayout="column" fxFlex="20%" fxLayoutAlign="center start">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173325/whydonate-production/platform/svg-icons/register.svg"
+						width="90%"
+					/>
+				</div>
+				<div fxLayout="column" fxFlex="80%" fxLayoutAlign="center start">
+					<h3
+						i18n="@@starting-a-fundraiser_startAFundraiserHeadTagHomePersonal"
+						class=""
+					>
+						1. Start a fundraiser
+					</h3>
+					<p i18n="@@starting-a-fundraiser_signupAsPersonalOrOrgHomePersoanl">
+						Sign up on Whydonate and create your fundraiser in minutes. Sign up
+						as a person or an organization.
+					</p>
+				</div>
+			</div>
+			<!-- END FIRST CARD-->
+			<!-- SECOND CARD-->
+			<div
+				fxLayoutGap="3%"
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.lt-sm="start start"
+			>
+				<div fxLayout="column" fxFlex="20%" fxLayoutAlign="center start">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173326/whydonate-production/platform/svg-icons/share.svg"
+						width="90%"
+					/>
+				</div>
+				<div fxLayout="column" fxFlex="80%" fxLayoutAlign="center start">
+					<h3
+						i18n="@@starting-a-fundraiser_shareYourFundraiserHomePersonal"
+						class=""
+					>
+						2. Share your fundraiser
+					</h3>
+					<p i18n="@@starting-a-fundraiser_shareViaSocialMediaHomePersonal">
+						Share your fundraiser via Email, WhatsApp and other social media
+						channels to reach as many donors as possible.
+					</p>
+				</div>
+			</div>
+			<!-- END SECOND CARD-->
+			<!-- THIRD CARD-->
+			<div
+				fxLayoutGap="3%"
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.lt-sm="start start"
+			>
+				<div fxLayout="column" fxFlex="20%" fxLayoutAlign="center start">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173334/whydonate-production/platform/svg-icons/receive.svg"
+						width="90%"
+					/>
+				</div>
+				<div fxLayout="column" fxFlex="80%" fxLayoutAlign="center start">
+					<h3
+						i18n="@@starting-a-fundraiser_receiveDonationsHomePersonal"
+						class=""
+					>
+						3. Receive the donations
+					</h3>
+					<p
+						i18n="
+							@@starting-a-fundraiser_donationsPaidAutomatcallyToBankHomePersonal"
+					>
+						The donations are paid out automatically to your bank account on a
+						monthly basis without any platform cost.
+					</p>
+				</div>
+			</div>
+			<!-- END THIRD CARD-->
+			<!-- FOURTH CARD-->
+			<div
+				fxLayoutGap="3%"
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.lt-sm="start start"
+			>
+				<div fxLayout="column" fxFlex="20%" fxLayoutAlign="center start">
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1666173327/whydonate-production/platform/svg-icons/thankyou.svg"
+						width="90%"
+					/>
+				</div>
+				<div fxLayout="column" fxFlex="80%" fxLayoutAlign="center start">
+					<h3 i18n="@@starting-a-fundraiser_thankDonorHomePersonal" class="">
+						4. Thank your donors
+					</h3>
+					<p
+						i18n="
+							@@starting-a-fundraiser_customizeAutomatedThankYouHomePersonal"
+					>
+						Customize the automated “Thank You” email or send a personal message
+						to your donors via the Whydonate dashboard.
+					</p>
+				</div>
+			</div>
+			<!-- END FOURTH CARD-->
+		</div>
+		<!--SECOND COLUMN-->
+		<div
+			fxFlex="50%"
+			fxFlex.xs="0%"
+			fxLayout="column"
+			fxLayout.lt-sm="row"
+			fxLayoutAlign="center center"
+		>
+			<img src="{{ startAFundraiserIphoneImage }}" width="100%" />
+		</div>
+	</div>
+</div>

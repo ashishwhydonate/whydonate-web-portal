@@ -1,0 +1,12 @@
+<div fxFlex="100" fxLayout="column">
+	<mat-form-field class="w-100" appearance="outline">
+		<mat-label i18n="@@videoUpload_videoLink_label">Video Link</mat-label>
+		<input
+			matInput
+			placeholder="YouTube Link / Vimeo Link"
+			[(ngModel)]="this.videoUrl"
+			(ngModelChange)="this.updateVideoId()"
+			i18n="@@videoUpload_videoLink_input"
+		/>
+	</mat-form-field>
+</div>

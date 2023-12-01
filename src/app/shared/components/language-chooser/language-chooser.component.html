@@ -1,0 +1,39 @@
+<button
+	mat-button
+	color="primary"
+	[matMenuTriggerFor]="menu"
+	class="language-chooser"
+>
+	<img class="default_icon" src="{{ this.languageIcon }}" />
+	{{ this.locale | titlecase }}
+	<img
+		src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/keyboard_arrow_down.svg"
+	/>
+</button>
+<mat-menu #menu="matMenu">
+	<button mat-menu-item (click)="changeLanguage('en')" class="enChooser">
+		<span id="languageChooser_en_button" i18n="@@languageChooser_en_button"
+			>EN - English</span
+		>
+	</button>
+	<button mat-menu-item (click)="changeLanguage('nl')" class="nlChooser">
+		<span id="languageChooser_nl_button" i18n="@@languageChooser_nl_button"
+			>NL - Nederlands</span
+		>
+	</button>
+	<button mat-menu-item (click)="changeLanguage('es')" class="esChooser">
+		<span id="languageChooser_es_button" i18n="@@languageChooser_es_button"
+			>ES - Español</span
+		>
+	</button>
+	<button mat-menu-item (click)="changeLanguage('de')" class="deChooser">
+		<span id="languageChooser_de_button" i18n="@@languageChooser_de_button"
+			>DE - Deutsch</span
+		>
+	</button>
+	<button mat-menu-item (click)="changeLanguage('fr')" class="frChooser">
+		<span id="languageChooser_fr_button" i18n="@@languageChooser_fr_button"
+			>FR - Français</span
+		>
+	</button>
+</mat-menu>

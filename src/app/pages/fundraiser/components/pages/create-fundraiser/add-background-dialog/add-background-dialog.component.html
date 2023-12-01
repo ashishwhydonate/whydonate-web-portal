@@ -1,0 +1,74 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCancelClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+
+<h2
+	i18n="@@create_fundraiser_addBackgroundDialog_dialog_title"
+	mat-dialog-title
+>
+	Add Fundraiser Background Image
+</h2>
+
+<mat-dialog-content class="mat-typography" fxLayout="column">
+	<input
+		#fileUpload
+		type="file"
+		class="imageFile"
+		id="fileimageFile"
+		(change)="fileChangeEvent($event)"
+		fxHide
+	/>
+	<div ngClass="p-b-l ">
+		<a mat-stroked-button (click)="fileUpload.click()" color="accent">
+			<span i18n="@@fundraiser_createFundraiser_uploadImage">Choose Image</span>
+		</a>
+	</div>
+
+	<div fxLayout="column" fxFill>
+		<image-cropper
+			fxFlex="100%"
+			class="image-cropper"
+			[imageChangedEvent]="imageChangedEvent"
+			[maintainAspectRatio]="true"
+			[aspectRatio]="2 / 1"
+			format="png"
+			[onlyScaleDown]="true"
+			[imageURL]="data.imagePath"
+			(imageCropped)="imageCropped($event)"
+			(imageLoaded)="imageLoaded()"
+			(cropperReady)="cropperReady()"
+			(loadImageFailed)="loadImageFailed()"
+			output="base64"
+		></image-cropper>
+	</div>
+</mat-dialog-content>
+<div ngClass="p-r-s">
+	<mat-dialog-actions align="end">
+		<!--Discard Button-->
+		<button
+			mat-button
+			color="accent"
+			i18n="@@button_discard"
+			id="discard_image_create_fundraiser"
+			(click)="onCancelClick()"
+		>
+			Discard
+		</button>
+		<!--Save Button-->
+		<button
+			[disabled]="!croppedImage"
+			mat-flat-button
+			color="accent"
+			id="save_image_create_fundraiser"
+			class="saveImage"
+			i18n="@@button_save"
+			(click)="dialogClose()"
+		>
+			Save
+		</button>
+	</mat-dialog-actions>
+</div>

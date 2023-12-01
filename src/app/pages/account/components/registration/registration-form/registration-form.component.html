@@ -1,0 +1,498 @@
+<div
+	fxFlex="100%"
+	fxLayout="row"
+	fxLayoutAlign="center center"
+	fxLayoutAlign.xs="center center"
+	ngClass="p-xxl"
+	ngClass.xs="p-l"
+>
+	<div
+		fxFlex="100%"
+		fxLayout="column"
+		fxLayoutAlign="center center"
+		fxLayoutAlign.xs="center center"
+		fxLayoutGap="5%"
+	>
+		<form [formGroup]="registrationForm" class="full-width">
+			<div
+				fxFlex="100%"
+				fxLayout="row"
+				fxLayoutAlign="center center"
+				fxLayoutAlign.xs="center center"
+			>
+				<div
+					fxFlex="60"
+					fxFlex.xs="100"
+					fxFlex.md="80"
+					fxLayout="column"
+					fxLayoutAlign="center start"
+					fxLayoutAlign.xs="center start"
+					fxLayoutGap="2%"
+				>
+					<!--TITLE ROW-->
+					<div fxFlex="100%" fxLayout="row">
+						<div fxFlex="100%" fxLayout="column">
+							<h2 i18n="@@account_components_register_subHeading">
+								Let's setup your account
+							</h2>
+						</div>
+					</div>
+
+					<div fxFlex="100%" fxLayout="row">
+						<div fxFlex="100%" fxLayout="column">
+							<mat-label i18n="@@account_components_register_signInAsText">
+								Sign in as
+							</mat-label>
+						</div>
+					</div>
+
+					<div fxFlex="100%" fxLayout="row">
+						<div fxFlex="100%" fxLayout="column">
+							<!--Angular radio button to detect change if an individual or an organisation via change()-->
+							<mat-button-toggle-group
+								aria-label="Register as"
+								class="button-toggle-group"
+							>
+								<mat-button-toggle
+									value="personal"
+									checked="true"
+									color="primary"
+									i18n="
+										@@account_components_register_typeRadioButton_individual"
+									(change)="switchRegisterType($event.value)"
+									class="button-button-style"
+								>
+									An Individual
+								</mat-button-toggle>
+								<mat-button-toggle
+									id="registerOrganization"
+									value="organisation"
+									color="primary"
+									i18n="
+										@@account_components_register_typeRadioButton_organization"
+									(change)="switchRegisterType($event.value)"
+									class="button-button-style"
+									>An Organization
+								</mat-button-toggle>
+							</mat-button-toggle-group>
+						</div>
+					</div>
+
+					<!--Upload Image or Logo-->
+					<div
+						fxFlex="100%"
+						fxLayout="row"
+						fxLayoutAlign="start center"
+						fxLayoutGap="5%"
+					>
+						<div
+							fxLayout="column"
+							fxLayout.xs="row"
+							fxLayoutGap="10%"
+							fxLayoutGap.xs="5%"
+							fxLayoutAlign="center center"
+						>
+							<!--For default Image-->
+							<img
+								*ngIf="!croppedImage"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1666173343/whydonate-production/platform/svg-icons/bydefault_user.svg"
+							/>
+							<img *ngIf="croppedImage" [src]="croppedImage" />
+						</div>
+						<div
+							fxFlex="100%"
+							fxLayout="column"
+							fxLayoutAlign="baseline start"
+							fxLayoutGap.xs="5%"
+						>
+							<input
+								hidden
+								#fileUpload
+								id="uploadLogoStyle"
+								type="file"
+								formControlName="image"
+								(change)="fileChangeEvent($event)"
+								accept="image/png, image/jpeg, image/jpg, image/webp, .heic"
+							/>
+							<a
+								mat-stroked-button
+								(click)="fileUpload.click()"
+								color="accent"
+								id="profileImage"
+							>
+								<!--Logo for an organisation & Image for an individual-->
+								<span
+									*ngIf="show"
+									i18n="@@account_components_register_uploadLogo"
+									>Upload Logo</span
+								>
+								<span *ngIf="!show" i18n="@@button_uploadImage"
+									>Upload Image</span
+								>
+							</a>
+							<h6 i18n="@@account_components_register_uploadFormatRegister">
+								JPG, PNG or WEBP. Max size of 800K
+							</h6>
+						</div>
+					</div>
+
+					<div
+						fxFlex="100%"
+						class="image-preview"
+						fxLayout="row"
+						fxFlex="100%"
+						fxLayoutAlign="start start"
+						fxLayoutGap="3%"
+					>
+						<image-cropper
+							[imageChangedEvent]="imageChangedEvent"
+							[maintainAspectRatio]="true"
+							[roundCropper]="true"
+							[imageBase64]="this.imageBase64"
+							(imageCropped)="imageCropped($event)"
+							(imageLoaded)="imageLoaded()"
+							(cropperReady)="cropperReady()"
+							(loadImageFailed)="loadImageFailed()"
+							output="base64"
+						></image-cropper>
+					</div>
+
+					<div
+						fxFill
+						fxFlex="100%"
+						fxFlex.xs="100"
+						fxLayout="row"
+						fxLayout.xs="column"
+						fxLayoutAlign="center center"
+						fxLayoutGap="3%"
+					>
+						<!--Form for an individual-->
+						<!--To enter First Name-->
+						<div
+							fxFill
+							fxFlex="50%"
+							fxLayout="column"
+							fxLayout.xs="row"
+							fxLayoutAlign="center center"
+							fxLayoutGap="5%"
+							fxLayoutGap.md="2%"
+							fxLayoutGap.xs="0"
+						>
+							<mat-form-field class="full-width" appearance="outline">
+								<mat-label
+									i18n="@@account_components_register_firstNameLabel"
+									data-test="add-name"
+									>First Name</mat-label
+								>
+								<!--Validators:required,min(1),max(100)-->
+								<input
+									required
+									i18n="@@account_components_register_firstNameInput"
+									matInput
+									placeholder="First name"
+									formControlName="first_name"
+									class="first"
+									#firstName
+									id="registerFirstName"
+								/>
+								<mat-hint align="end"
+									>{{ firstName.value.length }} / 1-100
+									<span i18n="@@characters_translation"
+										>Characters</span
+									></mat-hint
+								>
+								<mat-error
+									i18n="@@registration_formField_matError_mustBeBetween1to100"
+									*ngIf="registrationForm.controls['first_name'].errors"
+								>
+									Must be between 1 to 100 characters
+								</mat-error>
+								<mat-error
+									i18n="@@registration_formField_matError_mustBealphabets"
+									*ngIf="
+										registrationForm.controls['first_name'].errors &&
+										registrationForm.controls['first_name'].errors.pattern
+									"
+								>
+									Must be alphabets only
+								</mat-error>
+							</mat-form-field>
+						</div>
+
+						<!--To enter Last Name-->
+						<div
+							fxFill
+							fxFlex="50%"
+							fxLayout="column"
+							fxLayout.xs="row"
+							fxLayoutAlign="center center"
+						>
+							<mat-form-field class="full-width" appearance="outline">
+								<mat-label i18n="@@account_components_register_lastNameLabel"
+									>Last Name</mat-label
+								>
+								<!--Validators:required,min(1),max(100)-->
+								<input
+									required
+									i18n="@@account_components_register_lastNameInput"
+									matInput
+									placeholder="Last name"
+									formControlName="last_name"
+									class="last"
+									#lastName
+									id="registerLastName"
+								/>
+								<mat-hint align="end"
+									>{{ lastName.value.length }} / 1-100
+									<span i18n="@@characters_translation"
+										>Characters</span
+									></mat-hint
+								>
+								<mat-error
+									*ngIf="registrationForm.controls['last_name'].errors"
+									i18n="@@registration_formField_matError_mustBeBetween1to100"
+								>
+									Must be between 1 to 100 characters
+								</mat-error>
+								<mat-error
+									i18n="@@registration_formField_matError_mustBealphabets"
+									*ngIf="
+										registrationForm.controls['last_name'].errors &&
+										registrationForm.controls['last_name'].errors.pattern
+									"
+								>
+									Must be alphabets only
+								</mat-error>
+							</mat-form-field>
+						</div>
+					</div>
+
+					<!--To enter email-->
+					<mat-form-field class="full-width" appearance="outline">
+						<mat-label i18n="@@account_components_register_form_email_label"
+							>Email-ID</mat-label
+						>
+						<!--Validators:required,email,pattern-->
+						<input
+							required
+							i18n="@@account_components_register_emailInput"
+							matInput
+							placeholder="Email Address"
+							type="email"
+							formControlName="email"
+							id="registerEmail"
+						/>
+
+						<mat-error *ngIf="registrationForm.controls['email'].invalid">
+							{{ getErrorMessage() }}
+						</mat-error>
+					</mat-form-field>
+
+					<!--To enter Password-->
+					<mat-form-field class="full-width" appearance="outline">
+						<mat-label i18n="@@account_components_register_passwordLabel"
+							>Password</mat-label
+						>
+						<!--Validators:required, min(8), max(100), pattern-->
+						<input
+							required
+							i18n="@@account_components_register_passwordInput"
+							matInput
+							placeholder="Password"
+							type="password"
+							formControlName="password"
+							#passwordField
+							id="registerPassword"
+						/>
+						<!--type:text(visibility is on), type:password(visibility is off) -->
+						<button
+							mat-icon-button
+							type="button"
+							(click)="
+								passwordField.type === 'password'
+									? (passwordField.type = 'text')
+									: (passwordField.type = 'password')
+							"
+							matSuffix
+						>
+							<mat-icon *ngIf="passwordField.type === 'password'"
+								>visibility_off</mat-icon
+							>
+							<mat-icon *ngIf="passwordField.type === 'text'"
+								>visibility</mat-icon
+							>
+						</button>
+						<mat-hint align="end"
+							>{{ passwordField.value.length }} / 8-100
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+
+						<mat-error
+							i18n="
+								@@account_components_register_passwordCharacterLimitValidation"
+							*ngIf="registrationForm.controls['password'].invalid"
+						>
+							{{ getPasswordErrorMessage() }}
+						</mat-error>
+					</mat-form-field>
+
+					<!--To retype password-->
+					<mat-form-field class="full-width" appearance="outline">
+						<mat-label i18n="@@account_components_register_reEnterPasswordLabel"
+							>Retype Password</mat-label
+						>
+						<!--Validators: required, passwordsMustMatch()-->
+						<input
+							required
+							i18n="@@account_components_register_reEnterPasswordInput"
+							matInput
+							placeholder="Re-Type Password"
+							type="password"
+							formControlName="password_confirm"
+							(paste)="(false)"
+							#retypePassword
+							id="registerRetypePassword"
+						/>
+						<mat-hint align="end"
+							>{{ retypePassword.value.length }} / 8-100
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+						<mat-error
+							i18n="@@account_components_register_passwordShouldMatchValidation"
+							*ngIf="
+								registrationForm.controls &&
+								registrationForm.controls['password_confirm'].errors
+							"
+						>
+							Passwords do not match
+						</mat-error>
+					</mat-form-field>
+
+					<!--If organisation radio button is selected -->
+					<!--Form for an organisation-->
+					<mat-form-field
+						appearance="outline"
+						class="full-width"
+						*ngIf="this.isOrganization"
+					>
+						<!--To enter Organisation Name-->
+						<mat-label i18n="@@account_form_organisation_name_label"
+							>Organization Name</mat-label
+						>
+						<!--Validators:required,min(1),max(100)-->
+						<input
+							required
+							i18n="@@account_components_register_organizationNameInput"
+							matInput
+							placeholder="Organization name"
+							formControlName="organisation_name"
+							#organizationName
+							id="registerOrganizationInput"
+						/>
+						<mat-hint align="end"
+							>{{ organizationName.value.length }} / 1-100
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+						<mat-error
+							i18n="@@registration_formField_matError_mustBeBetween1to100"
+							*ngIf="registrationForm.controls['organisation_name'].errors"
+						>
+							Must be between 1 to 100 characters
+						</mat-error>
+					</mat-form-field>
+
+					<!--To enter contact number-->
+					<mat-form-field appearance="outline" class="full-width">
+						<mat-label i18n="@@account_components_register_contactNumberLabel"
+							>Contact Number (Optional)</mat-label
+						>
+						<input
+							i18n="@@account_components_register_contactNumberInput"
+							matInput
+							placeholder="{{ contactNamePlaceholder }}"
+							formControlName="contactNumber"
+							#contactNumber
+							id="registerContactNumber"
+						/>
+						<mat-hint align="end"
+							>{{ contactNumber.value.length }} / 10-20
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+						<mat-error
+							i18n="@@formField_matError_mustBeBetween10to20"
+							*ngIf="
+								!registrationForm.controls['contactNumber'].errors?.pattern &&
+								(registrationForm.controls['contactNumber'].errors?.maxlength ||
+									registrationForm.controls['contactNumber'].errors?.minlength)
+							"
+						>
+							Must be between 10 - 20 Characters
+						</mat-error>
+						<mat-error
+							i18n="@@formField_matError_onlyNumbers"
+							*ngIf="
+								registrationForm.controls['contactNumber'].errors &&
+								registrationForm.controls['contactNumber'].errors.pattern
+							"
+						>
+							Only Numbers are allowed
+						</mat-error>
+					</mat-form-field>
+
+					<div
+						fxFlexFill
+						fxFlex="100%"
+						fxLayout="row"
+						fxLayoutAlign="space-between center"
+					>
+						<p>
+							<span i18n="@@account_components_register_byRegister_info"
+								>By signing up, you agree to the terms and conditions of</span
+							><br />
+							<a
+								(click)="routeToTerms()"
+								class="link-decorate-style pointer"
+								id="terms"
+								><span i18n="@@account_components_whydonate_span"
+									>Whydonate</span
+								></a
+							>
+						</p>
+						<div fxLayoutAlign.xs="center center">
+							<!--Button to Register which upon clicking invokes registerMethod()-->
+							<button
+								mat-flat-button
+								color="accent"
+								[disabled]="isLoading || registrationForm.invalid"
+								(click)="registerMethod()"
+							>
+								<span i18n="@@registration_button_sign_up" id="registerButton"
+									>Register</span
+								>
+								<mat-icon *ngIf="isLoading" class="m-l-xs">
+									<mat-spinner color="accent" diameter="20"> </mat-spinner>
+								</mat-icon>
+							</button>
+						</div>
+					</div>
+
+					<div fxFlex="100%" fxLayout="row" fxLayoutAlign="start center">
+						<span i18n="@@account_registration_alreadyHaveAccount_label"
+							>Already have an account?</span
+						>
+						&nbsp;
+						<!--Button which upon clicking routes the user to Login if the user is registered user-->
+						<a
+							(click)="routeToLogin()"
+							class="link-decorate-style pointer"
+							i18n="@@button_login"
+							id="loginButton"
+						>
+							Login
+						</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

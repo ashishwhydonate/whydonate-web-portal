@@ -1,0 +1,342 @@
+//! NOTE: @use rules must be written before any other rules. Otherwise it will throw SassError
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../_variables/color' as col;
+
+/**
+	DESCRIPTION: CSS variable is used to acheive dynamic theming.
+	These varibales can be changed from typescript.
+**/
+:root {
+	--custom-font-family: 'Roboto';
+	--theme-primary-50: #{mat.get-color-from-palette(col.$primary-palette, 50)};
+	--theme-primary-100: #{mat.get-color-from-palette(col.$primary-palette, 100)};
+	--theme-primary-200: #{mat.get-color-from-palette(col.$primary-palette, 200)};
+	--theme-primary-300: #{mat.get-color-from-palette(col.$primary-palette, 300)};
+	--theme-primary-400: #{mat.get-color-from-palette(col.$primary-palette, 400)};
+	--theme-primary-500: #{mat.get-color-from-palette(col.$primary-palette, 500)};
+	--theme-primary-600: #{mat.get-color-from-palette(col.$primary-palette, 600)};
+	--theme-primary-700: #{mat.get-color-from-palette(col.$primary-palette, 700)};
+	--theme-primary-800: #{mat.get-color-from-palette(col.$primary-palette, 800)};
+	--theme-primary-900: #{mat.get-color-from-palette(col.$primary-palette, 900)};
+	--theme-primary-contrast-50: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'50-contrast'
+		)};
+	--theme-primary-contrast-100: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'100-contrast'
+		)};
+	--theme-primary-contrast-200: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'200-contrast'
+		)};
+	--theme-primary-contrast-300: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'300-contrast'
+		)};
+	--theme-primary-contrast-400: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'400-contrast'
+		)};
+	--theme-primary-contrast-500: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'500-contrast'
+		)};
+	--theme-primary-contrast-600: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'600-contrast'
+		)};
+	--theme-primary-contrast-700: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'700-contrast'
+		)};
+	--theme-primary-contrast-800: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'800-contrast'
+		)};
+	--theme-primary-contrast-900: #{mat.get-color-from-palette(
+			col.$primary-palette,
+			'900-contrast'
+		)};
+
+	--theme-secondary-50: #{mat.get-color-from-palette(col.$secondary-palette, 50)};
+	--theme-secondary-100: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			100
+		)};
+	--theme-secondary-200: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			200
+		)};
+	--theme-secondary-300: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			300
+		)};
+	--theme-secondary-400: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			400
+		)};
+	--theme-secondary-500: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			500
+		)};
+	--theme-secondary-600: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			600
+		)};
+	--theme-secondary-700: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			700
+		)};
+	--theme-secondary-800: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			800
+		)};
+	--theme-secondary-900: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			900
+		)};
+	--theme-secondary-contrast-50: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'50-contrast'
+		)};
+	--theme-secondary-contrast-100: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'100-contrast'
+		)};
+	--theme-secondary-contrast-200: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'200-contrast'
+		)};
+	--theme-secondary-contrast-300: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'300-contrast'
+		)};
+	--theme-secondary-contrast-400: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'400-contrast'
+		)};
+	--theme-secondary-contrast-500: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'500-contrast'
+		)};
+	--theme-secondary-contrast-600: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'600-contrast'
+		)};
+	--theme-secondary-contrast-700: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'700-contrast'
+		)};
+	--theme-secondary-contrast-800: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'800-contrast'
+		)};
+	--theme-secondary-contrast-900: #{mat.get-color-from-palette(
+			col.$secondary-palette,
+			'900-contrast'
+		)};
+}
+
+$whydonate-primary-palette: (
+	50: var(--theme-primary-50),
+	100: var(--theme-primary-100),
+	200: var(--theme-primary-200),
+	300: var(--theme-primary-300),
+	400: var(--theme-primary-400),
+	500: var(--theme-primary-500),
+	600: var(--theme-primary-600),
+	700: var(--theme-primary-700),
+	800: var(--theme-primary-800),
+	900: var(--theme-primary-900),
+	contrast: (
+		50: var(--theme-primary-contrast-50),
+		100: var(--theme-primary-contrast-100),
+		200: var(--theme-primary-contrast-200),
+		300: var(--theme-primary-contrast-300),
+		400: var(--theme-primary-contrast-400),
+		500: var(--theme-primary-contrast-500),
+		600: var(--theme-primary-contrast-600),
+		700: var(--theme-primary-contrast-700),
+		800: var(--theme-primary-contrast-800),
+		900: var(--theme-primary-contrast-900),
+	),
+);
+
+$whydonate-secondary-palette: (
+	50: var(--theme-secondary-50),
+	100: var(--theme-secondary-100),
+	200: var(--theme-secondary-200),
+	300: var(--theme-secondary-300),
+	400: var(--theme-secondary-400),
+	500: var(--theme-secondary-500),
+	600: var(--theme-secondary-600),
+	700: var(--theme-secondary-700),
+	800: var(--theme-secondary-800),
+	900: var(--theme-secondary-900),
+	contrast: (
+		50: var(--theme-secondary-contrast-50),
+		100: var(--theme-secondary-contrast-100),
+		200: var(--theme-secondary-contrast-200),
+		300: var(--theme-secondary-contrast-300),
+		400: var(--theme-secondary-contrast-400),
+		500: var(--theme-secondary-contrast-500),
+		600: var(--theme-secondary-contrast-600),
+		700: var(--theme-secondary-contrast-700),
+		800: var(--theme-secondary-contrast-800),
+		900: var(--theme-secondary-contrast-900),
+	),
+);
+
+$whydonate-warn-palette: col.$WHYDONATE_WARN;
+
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
+
+// Color selection from palette
+$primary: mat.define-palette($whydonate-primary-palette, 500);
+$accent: mat.define-palette($whydonate-secondary-palette, 500);
+$warn: mat.define-palette($whydonate-warn-palette, 500);
+
+$light-primary: mat.define-palette($whydonate-primary-palette, 100);
+$light-accent: mat.define-palette($whydonate-secondary-palette, 100);
+
+// $typography-config: mat.define-typography-config(
+// 	$font-family: 'Pacifico',
+// );
+$custom-typography: mat.define-legacy-typography-config(
+	$font-family: var(--custom-font-family),
+);
+
+// Custom Theme - customisable via css var
+$custom-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $primary,
+			accent: $accent,
+			warn: $warn,
+		),
+		typography: $custom-typography,
+	)
+);
+// custom Light Theme
+$custom-light-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $light-primary,
+			accent: $light-accent,
+		),
+		typography: $custom-typography,
+	)
+);
+// Whydonate Light Theme
+$whydonate-light-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: mat.define-palette(col.$WHYDONATE_GREEN, 100),
+			accent: mat.define-palette(col.$WHYDONATE_BLUE, 50),
+		),
+	)
+);
+// Whydonate Theme
+$whydonate-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: mat.define-palette(col.$WHYDONATE_GREEN, 500),
+			accent: mat.define-palette(col.$WHYDONATE_BLUE, 500),
+			warn: $warn,
+		),
+	)
+);
+//* INFO: Emit theme-dependent styles for common features used across multiple components.
+@include mat.legacy-core-theme($whydonate-theme);
+//* INFO: Emit styles for the components used in web portal
+@include mat.legacy-autocomplete-theme($whydonate-theme);
+@include mat.badge-theme($whydonate-theme);
+@include mat.bottom-sheet-theme($whydonate-theme);
+@include mat.legacy-button-theme($whydonate-theme);
+@include mat.button-toggle-theme($whydonate-theme);
+@include mat.legacy-card-theme($whydonate-theme);
+@include mat.legacy-checkbox-theme($whydonate-theme);
+@include mat.legacy-chips-theme($whydonate-theme);
+@include mat.datepicker-theme($whydonate-theme);
+@include mat.legacy-dialog-theme($whydonate-theme);
+@include mat.divider-theme($whydonate-theme);
+@include mat.expansion-theme($whydonate-theme);
+@include mat.legacy-form-field-theme($whydonate-theme);
+@include mat.grid-list-theme($whydonate-theme);
+@include mat.icon-theme($whydonate-theme);
+@include mat.legacy-input-theme($whydonate-theme);
+@include mat.legacy-list-theme($whydonate-theme);
+@include mat.legacy-menu-theme($whydonate-theme);
+@include mat.legacy-paginator-theme($whydonate-theme);
+@include mat.legacy-progress-bar-theme($whydonate-theme);
+@include mat.legacy-progress-spinner-theme($whydonate-theme);
+@include mat.legacy-radio-theme($whydonate-theme);
+@include mat.legacy-select-theme($whydonate-theme);
+@include mat.sidenav-theme($whydonate-theme);
+@include mat.slide-toggle-theme($whydonate-theme);
+@include mat.legacy-slider-theme($whydonate-theme);
+@include mat.legacy-snack-bar-theme($whydonate-theme);
+@include mat.sort-theme($whydonate-theme);
+@include mat.stepper-theme($whydonate-theme);
+@include mat.legacy-table-theme($whydonate-theme);
+@include mat.legacy-tabs-theme($whydonate-theme);
+@include mat.toolbar-theme($whydonate-theme);
+@include mat.legacy-tooltip-theme($whydonate-theme);
+// TODO: Include the theme mixins here, for the other components you use.
+
+//* NOTE: below code apply theme to all the components
+// @include mat.all-component-themes($whydonate-theme);
+
+.branding {
+	// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+	//  The following line adds:
+	//    1. Default typography styles for all components
+	//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+	//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+	//  If you don't need the default component typographies but still want the hierarchy styles,
+	//  you can delete this line and instead use:
+	//    `@include mat.legacy-typography-hierarchy($custom-theme);`
+	@include mat.all-legacy-component-typographies($custom-theme);
+	@include mat.legacy-core();
+	@include mat.all-legacy-component-colors($custom-theme);
+}
+.branding-light {
+	// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+	//  The following line adds:
+	//    1. Default typography styles for all components
+	//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+	//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+	//  If you don't need the default component typographies but still want the hierarchy styles,
+	//  you can delete this line and instead use:
+	//    `@include mat.legacy-typography-hierarchy($custom-light-theme);`
+	@include mat.all-legacy-component-typographies($custom-light-theme);
+	@include mat.legacy-core();
+	@include mat.all-legacy-component-colors($custom-light-theme);
+	&.accent-bg,
+	& .accent-bg {
+		background-color: mat.get-color-from-palette($light-accent, 500);
+		// below css adds light color shadow on top of background-color to mimic the effect of alpha in background-color
+		-moz-box-shadow: inset 0px -200px 0px 200px rgb(255 255 255 / 95%);
+		-webkit-box-shadow: inset 0px -200px 0px 200px rgb(255 255 255 / 95%);
+		box-shadow: inset 0px -200px 0px 200px rgb(255 255 255 / 95%);
+	}
+}
+
+// use below to class to override custom css
+.whydonate {
+	@include mat.all-legacy-component-colors($whydonate-theme);
+}
+.whydonate-light {
+	@include mat.all-legacy-component-colors($whydonate-light-theme);
+}

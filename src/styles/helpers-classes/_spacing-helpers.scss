@@ -1,0 +1,51 @@
+@use '../_variables/spacing' as space;
+@use 'sass:map';
+
+/**
+	DESCRIPTION: Generates classes for margin and padding based on SPACE_CONFIG and SIDES and the SCSS @mixin for margin and padding 
+	Naming convention used for class: [marign/padding]-[SIDES]-[SPACE_CONFIG]
+	[margin/padding] => margin=m, padding=p
+	[SIDES] => t=top, b=bottom, l=left, r=right, Spacing is applied to all sides if no SIDES mentioned
+	[SPACE_CONFIG] => 0=0, xxs=4px, xs=8px, s=12px, m=16px, l=24px, xl=32px, xxl=64px, xxl-2=128px
+	
+	Example: 
+	.m-0 { margin:0px; }, .m-t-xs { margin-top:8px; }, .p-0 { padding:0px; }, .p-l-xl { padding-left:32px; }, ...
+**/
+
+// https://app.zeplin.io/project/5d26ec1089d8fb6af4d5f284/styleguide/spacing
+
+@each $space-prefix, $space-value in space.$SPACE_CONFIG {
+	@each $sides-prefix, $sides-value in space.$SIDES {
+		$property: if($sides-prefix == '', '', -#{$sides-value});
+		$sides-prefix: if($sides-prefix == '', '', -#{$sides-prefix});
+		.m#{$sides-prefix}-#{$space-prefix} {
+			margin#{$property}: #{$space-value};
+		}
+		.p#{$sides-prefix}-#{$space-prefix} {
+			padding#{$property}: #{$space-value};
+		}
+	}
+}
+
+@function set-property($side) {
+	@return if($side == '', '', -#{map.get(space.$SIDES, $side)});
+}
+
+@mixin set-margin($space, $side: '') {
+	@if map.get(space.$SPACE_CONFIG, $space) == null {
+		@error "Parameter #{$space} does not exist in $SPACE_CONFIG";
+	}
+	@if map.get(space.$SIDES, $side) == null {
+		@error "Parameter #{$side} does not exist in $SIDES";
+	}
+	margin#{set-property($side)}: #{map.get(space.$SPACE_CONFIG, $space)};
+}
+@mixin set-padding($space, $side: '') {
+	@if map.get(space.$SPACE_CONFIG, $space) == null {
+		@error "Parameter #{$space} does not exist in $SPACE_CONFIG";
+	}
+	@if map.get(space.$SIDES, $side) == null {
+		@error "Parameter #{$side} does not exist in $SIDES";
+	}
+	padding#{set-property($side)}: #{map.get(space.$SPACE_CONFIG, $space)};
+}

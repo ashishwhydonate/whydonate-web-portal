@@ -1,0 +1,15 @@
+<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+	<mat-form-field appearance="outline" [style.width.%]="100">
+		<mat-label i18n="@@currencySelectorLabel"> Currency </mat-label>
+		<mat-select
+			[(ngModel)]="defaultCurrency"
+			(selectionChange)="switchCurrency($event.value)"
+		>
+			<mat-option *ngFor="let currency of this.currencies" [value]="currency">
+				{{ currency.symbol }}
+				&nbsp;
+				{{ currency.currency | uppercase }}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+</div>

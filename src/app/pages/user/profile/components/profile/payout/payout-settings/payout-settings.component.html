@@ -1,0 +1,750 @@
+<mat-card
+	fxLayout="column"
+	fxFlex="0 1 calc(54vw)"
+	fxFlex.sm="100%"
+	fxFlex.xs="1 1 calc(40vw)"
+	class="mat-elevation-z0"
+>
+	<!--Account Details OPP/STRIPE/BOTH-->
+	<ng-template
+		[ngIf]="
+			this.showOppOnly == true ||
+			this.showStripeOnly == true ||
+			this.showStripeAndOpp == true
+		"
+		[ngIfElse]="loading"
+	>
+		<!--OPP Bank Component Only-->
+		<ng-template [ngIf]="this.showOppOnly == true">
+			<app-bank></app-bank>
+		</ng-template>
+
+		<!--Stripe Only Component-->
+		<ng-template [ngIf]="this.showStripeOnly == true">
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<mat-card-title
+					class="mat-heading-1"
+					i18n="@@payout_settings_account_status_title"
+					>Stripe Account Status</mat-card-title
+				>
+			</div>
+			<div>
+				<div
+					fxLayout="row"
+					ngClass="m-t-xs"
+					*ngIf="
+						(this.detailsSubmitted == false &&
+							this.chargesEnabled == false &&
+							this.payoutEnabled == false) ||
+						(this.detailsSubmitted == false &&
+							this.chargesEnabled == true &&
+							this.payoutEnabled == true)
+					"
+				>
+					<p i18n="@@payout_settings_verfication_not_yet_info">
+						Verification should be completed to receive donations and payouts.
+						To verify account, Stripe will take 1- 2 business days.
+					</p>
+				</div>
+			</div>
+			<div>
+				<div
+					fxLayout="row"
+					ngClass="m-t-xs"
+					*ngIf="
+						this.detailsSubmitted == true &&
+						(this.chargesEnabled == false || this.payoutEnabled == false)
+					"
+				>
+					<p i18n="@@payout_settings_verfication_inprogress_info">
+						To verify account, Stripe will take 1- 2 business days.
+					</p>
+				</div>
+			</div>
+			<div>
+				<div
+					fxLayout="row"
+					ngClass="m-t-xs"
+					*ngIf="
+						this.detailsSubmitted == true &&
+						this.chargesEnabled == true &&
+						this.payoutEnabled == true
+					"
+				>
+					<p i18n="@@payout_settings_verified_text">
+						Modify your personal details, have insights regarding the payments
+					</p>
+				</div>
+			</div>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_setting_charges_title">
+						Charges
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.chargesEnabled == true && this.detailsSubmitted == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.chargesEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="
+						(this.detailsSubmitted == false && this.chargesEnabled == false) ||
+						(this.detailsSubmitted == false && this.chargesEnabled == true)
+					"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_settings_payout_title">
+						Payout
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.payoutEnabled == true && this.detailsSubmitted == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.payoutEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="
+						(this.detailsSubmitted == false && this.payoutEnabled == false) ||
+						(this.detailsSubmitted == false && this.payoutEnabled == true)
+					"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<div
+				fxLayout="column"
+				fxLayoutAlign="start start"
+				ngClass="m-t-xs"
+				*ngIf="this.detailsSubmitted == true"
+			>
+				<button
+					color="accent"
+					mat-stroked-button
+					(click)="stripeDashboard()"
+					[disabled]="this.stripeDashboardCheck || this.stripeDashboardDisabled"
+				>
+					<span i18n="@@payout_settings_stripe_dashboard_button"
+						>Stripe Dashboard</span
+					>
+					<mat-icon *ngIf="stripeDashboardCheck" class="m-l-xs">
+						<mat-spinner color="primary" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+			<div
+				fxLayout="row"
+				fxLayoutAlign="start start"
+				ngClass="m-t-xs"
+				class="warning-text"
+				i18n="@@payout_settings_not_sufficient_details_warning"
+				*ngIf="
+					this.detailsSubmitted == true &&
+					(this.chargesEnabled == false || this.payoutEnabled == false)
+				"
+			>
+				The provided details are not sufficient. You can Know the details and
+				update the documents through the stripe dashboard.
+			</div>
+
+			<ng-template
+				[ngIf]="
+					this.detailsSubmitted == true &&
+					this.chargesEnabled == true &&
+					this.payoutEnabled == true
+				"
+			>
+				<div fxLayout="column" fxLayoutAlign="start start" ngClass="m-t-xl">
+					<mat-card-title
+						class="mat-heading-1"
+						i18n="@@payout_settings_payout_schedule_heading"
+						>Payout Schedule</mat-card-title
+					>
+					<p i18n="@@payout_settings_set_schedule_info">
+						Set a schedule to automatically receive payouts
+					</p>
+				</div>
+				<mat-radio-group>
+					<div fxLayout.lt-sm="column" fxLayout="column">
+						<div
+							fxLayout="row wrap"
+							fxFlex="100%"
+							ngClass.lt-sm="m-t-xs"
+							fxLayout.lt-sm="column"
+							fxLayoutAlign="start center"
+							fxLayoutAlign.lt-sm="start start"
+						>
+							<mat-radio-button
+								id="0"
+								value="schedule"
+								[checked]="selectedInterval == 'manual' ? false : true"
+								color="primary"
+								(change)="switchPayout($event.value)"
+							>
+								<div>
+									<span i18n="@@payout_settings_automatically_title">
+										Automatically every
+									</span>
+								</div>
+							</mat-radio-button>
+
+							<div ngClass="m-l-m m-t-m" ngClass.lt-sm="m-l-l m-t-m p-l-xs">
+								<mat-form-field appearance="outline">
+									<mat-select
+										[formControl]="interval"
+										placeholder="Select an option"
+										#intervalSelect
+									>
+										<mat-option
+											*ngFor="let interval of payoutScheduleData.List"
+											[value]="interval.intervalName"
+										>
+											{{ interval.displayName }}
+										</mat-option>
+									</mat-select>
+								</mat-form-field>
+							</div>
+
+							<div
+								ngClass="m-l-m"
+								fxLayout.lt-sm="column"
+								ngClass.lt-sm="m-l-l p-l-xs"
+								*ngIf="anchorsFiltered && anchorsFiltered.length"
+							>
+								<span i18n="@@payout_settings_on_the_title">on the</span>
+							</div>
+
+							<div ngClass="m-l-m m-t-m" ngClass.lt-sm="m-l-l p-l-xs">
+								<mat-form-field
+									*ngIf="anchorsFiltered && anchorsFiltered.length"
+									appearance="outline"
+								>
+									<mat-select
+										[formControl]="state"
+										placeholder="Select an Option"
+										#anchorSelect
+										(selectionChange)="flagValue()"
+									>
+										<mat-option
+											*ngFor="let state of anchorsFiltered"
+											[value]="state.anchorName"
+										>
+											{{ state.displayName }}
+										</mat-option>
+									</mat-select>
+								</mat-form-field>
+							</div>
+						</div>
+
+						<div fxLayout.lt-sm="column">
+							<mat-radio-button
+								id="1"
+								value="manual"
+								color="primary"
+								(change)="switchPayout($event.value)"
+								[checked]="selectedInterval == 'manual' ? true : false"
+							>
+								<div>
+									<span i18n="@@payout_settings_manually_title">
+										Manually
+									</span>
+								</div>
+							</mat-radio-button>
+							<div ngClass="m-l-m p-l-s" ngClass.lt-sm="m-t-s p-l-s m-l-m ">
+								<h5 i18n="@@payout_settings_manually_description">
+									Payouts will be stalled until you decide to have them
+									transferred to your bank account. You'll no longer be able to
+									see which transactions are bundled in a payout
+								</h5>
+							</div>
+						</div>
+					</div>
+				</mat-radio-group>
+				<div fxLayout="column" fxLayoutAlign="start start" ngClass="m-t-xs">
+					<button color="accent" mat-raised-button [disabled]="!tempBoolean">
+						<span
+							(click)="saveSchedule()"
+							i18n="@@payout_settings_save_schedule_button"
+							>Save Schedule</span
+						>
+						<mat-icon *ngIf="isLoading" class="m-l-xs">
+							<mat-spinner color="primary" diameter="20"> </mat-spinner>
+						</mat-icon>
+					</button>
+				</div>
+			</ng-template>
+
+			<div
+				fxLayout="column"
+				fxLayoutAlign="start start"
+				ngClass="m-t-xs"
+				*ngIf="this.detailsSubmitted == false"
+			>
+				<button color="accent" mat-flat-button>
+					<span
+						(click)="verifyWithStripe()"
+						i18n="@@payout_settings_verify_with_stripe_button"
+					>
+						Verify with Stripe</span
+					>
+					<mat-icon *ngIf="stripeVerificationCheck" class="m-l-xs">
+						<mat-spinner color="primary" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+			<div
+				*ngIf="
+					this.detailsSubmitted == false ||
+					this.chargesEnabled == false ||
+					this.payoutEnabled == false
+				"
+				ngClass="p-t-m"
+			>
+				<mat-card class="mat-elevation-z1">
+					<div
+						fxLayout="row"
+						fxLayoutAlign="flex-start center"
+						fxLayoutGap="1%"
+					>
+						<div>
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1697047838/whydonate-production/platform/svg-icons/infoOrange.svg"
+							/>
+						</div>
+						<div ngClass="p-b-xxs">
+							<span i18n="@@payout_settings_stripe_verification_infotip"
+								>Upon successful verification, if the verification status is
+								still not updated, please refresh the page.</span
+							>
+						</div>
+					</div>
+				</mat-card>
+			</div>
+		</ng-template>
+
+		<!--Stripe and OPP ONLY-->
+		<ng-template [ngIf]="this.showStripeAndOpp == true">
+			<app-bank></app-bank>
+			<mat-divider inset></mat-divider>
+			<div
+				fxLayout="row"
+				fxLayoutGap="2%"
+				ngClass="m-t-m"
+				fxLayoutAlign="start center"
+			>
+				<mat-card-title
+					class="mat-heading-1"
+					i18n="@@payout_settings_account_status_title"
+					>Stripe Account Status</mat-card-title
+				>
+			</div>
+			<div>
+				<div
+					fxLayout="row"
+					ngClass="m-t-xs"
+					*ngIf="
+						(this.detailsSubmitted == false &&
+							this.chargesEnabled == false &&
+							this.payoutEnabled == false) ||
+						(this.detailsSubmitted == false &&
+							this.chargesEnabled == true &&
+							this.payoutEnabled == true)
+					"
+				>
+					<p i18n="@@payout_settings_verfication_not_yet_info">
+						Verification should be completed to receive donations and payouts.
+						To verify account, Stripe will take 1- 2 business days.
+					</p>
+				</div>
+			</div>
+			<div>
+				<div
+					fxLayout="row"
+					ngClass="m-t-xs"
+					*ngIf="
+						this.detailsSubmitted == true &&
+						(this.chargesEnabled == false || this.payoutEnabled == false)
+					"
+				>
+					<p i18n="@@payout_settings_verfication_inprogress_info">
+						To verify account, Stripe will take 1- 2 business days.
+					</p>
+				</div>
+			</div>
+			<div>
+				<div
+					fxLayout="row"
+					ngClass="m-t-xs"
+					*ngIf="
+						this.detailsSubmitted == true &&
+						this.chargesEnabled == true &&
+						this.payoutEnabled == true
+					"
+				>
+					<p i18n="@@payout_settings_verified_text">
+						Modify your personal details, have insights regarding the payments
+					</p>
+				</div>
+			</div>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_setting_charges_title">
+						Charges
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.chargesEnabled == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.chargesEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="
+						(this.detailsSubmitted == false && this.chargesEnabled == false) ||
+						(this.detailsSubmitted == false && this.chargesEnabled == true)
+					"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<div>
+				<div fxLayout="row" ngClass="m-t-xs">
+					<h2 class="mat-body-strong" i18n="@@payout_settings_payout_title">
+						Payout
+					</h2>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.payoutEnabled == true"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					<h4 i18n="@@payout_setting_enabled_title">Enabled</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="this.detailsSubmitted == true && this.payoutEnabled == false"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667420962/whydonate-production/platform/svg-icons/closeWarn.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_failed_title">
+						Verification failed
+					</h4>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start start"
+					*ngIf="
+						(this.detailsSubmitted == false && this.payoutEnabled == false) ||
+						(this.detailsSubmitted == false && this.payoutEnabled == true)
+					"
+					fxLayoutGap="0.5%"
+				>
+					<img
+						matChipAvatar
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667512774/whydonate-production/platform/svg-icons/infoAccent.svg"
+					/>
+					<h4 i18n="@@payout_settings_verfication_pending_title">
+						Verification Pending
+					</h4>
+				</div>
+			</div>
+			<div
+				fxLayout="column"
+				fxLayoutAlign="start start"
+				ngClass="m-t-xs"
+				*ngIf="this.detailsSubmitted == true"
+			>
+				<button
+					color="accent"
+					mat-stroked-button
+					[disabled]="stripeDashboardCheck"
+				>
+					<span
+						(click)="stripeDashboard()"
+						i18n="@@payout_settings_stripe_dashboard_button"
+						>Stripe Dashboard</span
+					>
+					<mat-icon *ngIf="stripeDashboardCheck" class="m-l-xs">
+						<mat-spinner color="primary" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+			<div
+				fxLayout="row"
+				fxLayoutAlign="start start"
+				ngClass="m-t-xs"
+				class="warning-text"
+				i18n="@@payout_settings_not_sufficient_details_warning"
+				*ngIf="
+					this.detailsSubmitted == true &&
+					(this.chargesEnabled == false || this.payoutEnabled == false)
+				"
+			>
+				The provided details are not sufficient. You can Know the details and
+				update the documents through the stripe dashboard.
+			</div>
+
+			<ng-template
+				[ngIf]="
+					this.detailsSubmitted == true &&
+					this.chargesEnabled == true &&
+					this.payoutEnabled == true
+				"
+			>
+				<div fxLayout="column" fxLayoutAlign="start start" ngClass="m-t-xl">
+					<mat-card-title
+						class="mat-heading-1"
+						i18n="@@payout_settings_payout_schedule_heading"
+						>Payout Schedule</mat-card-title
+					>
+					<p i18n="@@payout_settings_set_schedule_info">
+						Set a schedule to automatically receive payouts
+					</p>
+				</div>
+				<mat-radio-group>
+					<div fxLayout.lt-sm="column" fxLayout="column">
+						<div
+							fxLayout="row wrap"
+							fxFlex="100%"
+							ngClass.lt-sm="m-t-xs"
+							fxLayout.lt-sm="column"
+							fxLayoutAlign="start center"
+							fxLayoutAlign.lt-sm="start start"
+						>
+							<mat-radio-button
+								id="0"
+								value="schedule"
+								[checked]="selectedInterval == 'manual' ? false : true"
+								color="primary"
+								(change)="switchPayout($event.value)"
+							>
+								<div>
+									<span i18n="@@payout_settings_automatically_title">
+										Automatically every
+									</span>
+								</div>
+							</mat-radio-button>
+
+							<div ngClass="m-l-m m-t-m" ngClass.lt-sm="m-l-l m-t-m p-l-xs">
+								<mat-form-field appearance="outline">
+									<mat-select
+										[formControl]="interval"
+										placeholder="Select an option"
+										#intervalSelect
+									>
+										<mat-option
+											*ngFor="let interval of payoutScheduleData.List"
+											[value]="interval.intervalName"
+										>
+											{{ interval.displayName }}
+										</mat-option>
+									</mat-select>
+								</mat-form-field>
+							</div>
+
+							<div
+								ngClass="m-l-m"
+								fxLayout.lt-sm="column"
+								ngClass.lt-sm="m-l-l p-l-xs"
+								*ngIf="anchorsFiltered && anchorsFiltered.length"
+							>
+								<span i18n="@@payout_settings_on_the_title">on the</span>
+							</div>
+
+							<div ngClass="m-l-m m-t-m" ngClass.lt-sm="m-l-l p-l-xs">
+								<mat-form-field
+									*ngIf="anchorsFiltered && anchorsFiltered.length"
+									appearance="outline"
+								>
+									<mat-select
+										[formControl]="state"
+										placeholder="Select an Option"
+										#anchorSelect
+										(selectionChange)="flagValue()"
+									>
+										<mat-option
+											*ngFor="let state of anchorsFiltered"
+											[value]="state.anchorName"
+										>
+											{{ state.displayName }}
+										</mat-option>
+									</mat-select>
+								</mat-form-field>
+							</div>
+						</div>
+
+						<div fxLayout.lt-sm="column">
+							<mat-radio-button
+								id="1"
+								value="manual"
+								color="primary"
+								(change)="switchPayout($event.value)"
+								[checked]="selectedInterval == 'manual' ? true : false"
+							>
+								<div>
+									<span i18n="@@payout_settings_manually_title">
+										Manually
+									</span>
+								</div>
+							</mat-radio-button>
+							<div ngClass="m-l-m p-l-s" ngClass.lt-sm="m-t-s p-l-s m-l-m ">
+								<h5 i18n="@@payout_settings_manually_description">
+									Payouts will be stalled until you decide to have them
+									transferred to your bank account. You'll no longer be able to
+									see which transactions are bundled in a payout
+								</h5>
+							</div>
+						</div>
+					</div>
+				</mat-radio-group>
+
+				<div fxLayout="column" fxLayoutAlign="start start" ngClass="m-t-xs">
+					<button color="accent" mat-raised-button [disabled]="!tempBoolean">
+						<span
+							(click)="saveSchedule()"
+							i18n="@@payout_settings_save_schedule_button"
+							>Save Schedule</span
+						>
+						<mat-icon *ngIf="isLoading" class="m-l-xs">
+							<mat-spinner color="primary" diameter="20"> </mat-spinner>
+						</mat-icon>
+					</button>
+				</div>
+			</ng-template>
+			<div
+				fxLayout="column"
+				fxLayoutAlign="start start"
+				*ngIf="this.detailsSubmitted == false"
+				ngClass="m-t-xs"
+			>
+				<button color="accent" mat-flat-button>
+					<span
+						(click)="verifyWithStripe()"
+						i18n="@@payout_settings_verify_with_stripe_button"
+						>Verify with Stripe</span
+					>
+					<mat-icon *ngIf="stripeVerificationCheck" class="m-l-xs">
+						<mat-spinner color="primary" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+		</ng-template>
+	</ng-template>
+</mat-card>
+
+<ng-template #loading>
+	<br /><br />
+	<div fxLayoutAlign="center center">
+		<mat-icon
+			><mat-spinner color="accent" diameter="20"></mat-spinner
+		></mat-icon>
+	</div>
+	<br /><br />
+</ng-template>

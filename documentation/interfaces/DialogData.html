@@ -1,0 +1,506 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  DialogData</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component.ts</code>
+        </p>
+
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#primaryColor" 
+>
+                                            primaryColor
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#secondaryColor" 
+>
+                                            secondaryColor
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="primaryColor"></a>
+                                        <span class="name "><b>primaryColor</b>
+                                            <a href="#primaryColor">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>primaryColor:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="secondaryColor"></a>
+                                        <span class="name "><b>secondaryColor</b>
+                                            <a href="#secondaryColor">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>secondaryColor:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from &#x27;@angular/material/legacy-dialog&#x27;;
+import { MatIconRegistry } from &#x27;@angular/material/icon&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+export interface DialogData {
+	primaryColor: string;
+	secondaryColor: string;
+}
+@Component({
+	selector: &#x27;app-fundraiser-preview&#x27;,
+	template: &#x60;
+		&lt;button mat-icon-button class&#x3D;&quot;close-button&quot; [mat-dialog-close]&#x3D;&quot;false&quot;&gt;
+			&lt;img src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg&quot;/&gt;
+		&lt;/button&gt;
+		&lt;h3 mat-dialog-title i18n&#x3D;&quot;@@custom-branding-fundraiser-preview&quot;&gt;
+			Fundraiser preview
+		&lt;/h3&gt;
+		&lt;div mat-dialog-content&gt;
+			&lt;svg
+				xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+				xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+				viewBox&#x3D;&quot;0 0 500 500&quot;
+			&gt;
+				&lt;style type&#x3D;&quot;text/css&quot;&gt;
+					.logo {
+						height: 22px;
+					}
+					rect.card-elevation-z1 {
+						filter: drop-shadow(0 1px 1px rgb(0 0 0 / 30%));
+					}
+					rect.card-elevation-z4 {
+						filter: drop-shadow(0 1px 3px rgb(0 0 0 / 30%));
+					}
+				&lt;/style&gt;
+				&lt;image [attr.href]&#x3D;&quot;data.customLogo&quot; x&#x3D;&quot;16&quot; y&#x3D;&quot;8&quot; class&#x3D;&quot;logo&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;72&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;364&quot;
+					y&#x3D;&quot;12&quot;
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.primaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.primaryColor&quot;
+					d&#x3D;&quot;M374 18h54v6h-54z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;465&quot; cy&#x3D;&quot;21&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;326&quot;
+					height&#x3D;&quot;256&quot;
+					y&#x3D;&quot;224&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 40h326v184H0z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;152&quot;
+					height&#x3D;&quot;94.5&quot;
+					x&#x3D;&quot;338&quot;
+					y&#x3D;&quot;50&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M346 56h62v8h-62zm42 14h78v12h-78z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;132&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;346&quot;
+					y&#x3D;&quot;92&quot;
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;132&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;346&quot;
+					y&#x3D;&quot;116&quot;
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					d&#x3D;&quot;M381 122h62v6h-62z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;152&quot;
+					height&#x3D;&quot;72.4&quot;
+					x&#x3D;&quot;338&quot;
+					y&#x3D;&quot;154&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;132&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;346&quot;
+					y&#x3D;&quot;199&quot;
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					d&#x3D;&quot;M380 205h62v6h-62z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;178&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 164h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 178h86v12h-86z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M16 236h86v12H16zm0 30h58v8H16z&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;#d8d8d8&quot;
+					d&#x3D;&quot;M90 266h58v8H90zm-74 34h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h232v8H16zm0 32h92v60H16zm96 0h92v60h-92zm96 0h92v60h-92z&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;152&quot;
+					height&#x3D;&quot;200&quot;
+					x&#x3D;&quot;338&quot;
+					y&#x3D;&quot;236&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M338 311h152m-152 63h152&quot; /&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;273.7&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 262h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 274h62v8h-62z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 266h16v16h-16z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;404&quot;
+					y&#x3D;&quot;290&quot;
+					fill&#x3D;&quot;#d8d8d8&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;296&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					d&#x3D;&quot;M436 244h42v6h-42z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 285h323&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					d&#x3D;&quot;M14 284h64&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;333&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 321h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 333h62v8h-62z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 325h16v16h-16z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;404&quot;
+					y&#x3D;&quot;350&quot;
+					fill&#x3D;&quot;#d8d8d8&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;356&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;397&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 385h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 397h62v8h-62z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 390h16v16h-16z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;404&quot;
+					y&#x3D;&quot;414&quot;
+					fill&#x3D;&quot;#d8d8d8&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;420&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M348 244h44v8h-44zm-3-174h34v12h-34z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#fff&quot; d&#x3D;&quot;M0 188h326&quot; /&gt;
+				&lt;circle cx&#x3D;&quot;21&quot; cy&#x3D;&quot;207&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#979797&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;#979797&quot;
+					d&#x3D;&quot;M46 208h62v6H46zm121 0h62v6h-62zm0-8h42v6h-42zm-121 0h42v6H46z&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;149&quot; cy&#x3D;&quot;207&quot; r&#x3D;&quot;7&quot; fill&#x3D;&quot;#979797&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;8&quot;
+					y&#x3D;&quot;169&quot;
+					fill&#x3D;&quot;#979797&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 0h500v40H0z&quot; /&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;div mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+			&lt;button
+				i18n&#x3D;&quot;@@button_close&quot;
+				mat-flat-button
+				class&#x3D;&quot;button-button-style&quot;
+				mat-dialog-close
+				color&#x3D;&quot;accent&quot;
+			&gt;
+				Close
+			&lt;/button&gt;
+		&lt;/div&gt;
+	&#x60;,
+	styles: [],
+})
+/** *Fundraiser Preview Component */
+export class FundraiserPreviewComponent implements OnInit {
+	whydonateLogo &#x3D;
+		&#x27;data:image/webp;base64,UklGRm4EAABXRUJQVlA4TGIEAAAvucAJEP+gqG0jyeEPbtDs66SBoG3bONgH6AxfBW0bObnxpJ/qM5lR1DaSc4tgtjcE9zz+jI5FwJm3ctvbT8B988vXoj6ngj86NGDdFGAGIyMDSJIsGECQycAEAwM+KbACkGXbdpVKx7di0HCBMiSQ0/9umr0PoCXfEf2HKMlKXWm4r12NIiCYfIJI3Y+6TPLgZePkmXWFdNtGveqt2mwaL13HuGmMK9HnSo63t3yONsb4/K/QtfiVnN1bPkdQVfkafd+3v0xSTd/LXqra/zKqGr5GV5LUD+O/mt2HN/X/ze7wlp2pw7y//NfIqpN8npnF72c02C34uDvnjsjVOXel630927P2j0XBUNs8vKFPjKqaY3yxIv6DFLuAC12RfaFyzh2I3eXuXFUsdXlTibCup7LyAPWosXr6AYpu+iOiapRmBO2IvwTK/s1VusIjjKj0p/6oaPUn4MgGEWRXOZCLbdvjm7t9pmmoZz0oSzAq2SuQKhgCwbAREPObGKMXabKh9Ie4oD3kAlzJdjcCtKHxbkVD/vuCZ5rcivicKaGWd+yaF+sBPks6hdfEmnTlWt8mIx0UjHmnRqRV1XY97LgbTnMtLsTxzoS7nk4VBcGR/7xjOAcu/w0sAtcaOMVlVICjoNgSvjPM8oBlkwKRwyI/KHIHtMsyITgmcaQTWuJWWgpkyz3/SZY64Sy1FYuKnhuN7JRoVa1hjzcDZQ7wMdNwELQQuKTBuCLnMtywBzNIBePC7iFO7NsbBzSOdKTKZTDNFJNXgSdg+tmF45EDtcfICX2RsO4Q3RiQAcp1Vel3A9demX3hZjq9QgPucDOR99CRvbH7pSei6mRsnhZ0/AvxLYkVirzRRjUlqS4+DQQLuP5S+l9gB0G/IyMGRlicyKIJAtCINNuEEgkr8mgvtllZBiNMUAGbiDeM9aI7HQMcs4IWUOFwKS5eCBjzQn+LIlYsRkgHRqKqycOGajRc8E/QsecYCEb28ywPStiLv9WL0QDXCzRUpWUZ2Lm6F70MOMBqdLC1exIZyBuVEDUMHNeeY6Bj4oJTR7OgnTEabsbeL+a5LkaorFzYOUBHkdbRvzFeW8vDRrjWdjWprTCZWUbfPQ3yc26UPMfBgZyNAu6Oyzkge864T6GSO1BJGNgeiTycZnqSZo1hnmjcEg7k2hZUXPh8oVtwRkUOXFSc2y1HqkJl6T+EBAmoZ8eNIYyGk8rmmek5lfFC0mLkfx2hKXKBGPqIM5l36Q0OX/+NuoAbYFtkBUeKCvqCVXbG/jcqQHywhzujp7k/Elg7YtrmSVoj2dXzGW7oh6iq85hVmg9Jq9lRZuyjpqG179p9iJrjixbUWD3NM2yOnUif4Kgl9WvSogEY+BVzjgE0jeufOXxWTOP9gvQrmeTz7OD7+BvP1qb/69maQ7nLb8gzraGVb3H6mSeaXVraLTzkS9yP8jvirfu6r8sBnzT8IEG2Vzy/N5tONptWthl4bzatbDatbDbb/BY&#x3D;&#x27;;
+
+	constructor(
+		@Inject(MAT_DIALOG_DATA)
+		public data: {
+			primaryColor: string;
+			secondaryColor: string;
+			customShadow: string;
+			customLogo: string;
+		}
+	) {}
+
+	ngOnInit(): void {}
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'DialogData.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

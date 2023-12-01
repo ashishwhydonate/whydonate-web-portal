@@ -1,0 +1,280 @@
+<mat-card
+	fxFlex="0 1 calc(40vw)"
+	fxFlex.sm="100%"
+	fxFlex.xs="1 1 calc(40vw)"
+	class="mat-elevation-z0"
+>
+
+	<div ngClass.lt-lg="m-t-xl">
+		<div fxLayout="row">
+			<mat-card-title i18n="@@profile_emain_setting_select_language_title"
+				>Select Language for email messages
+			</mat-card-title>
+			<br />
+		</div>
+		<div fxLayoutAlign="start start" ngClass="m-b-xl" *ngIf="this.hideLanguage">
+			<button
+				mat-button
+				color="primary"
+				[matMenuTriggerFor]="menu"
+				class="language-chooser"
+			>
+				<img class="default_icon" src="{{ this.languageIcon }}" />
+				{{ this.locale | titlecase }}
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/keyboard_arrow_down.svg"
+				/>
+			</button>
+			<mat-menu #menu="matMenu">
+				<button mat-menu-item (click)="changeLanguage('en')" class="enChooser">
+					<span id="languageChooser_en_button" i18n="@@languageChooser_en_button">EN - English</span>
+				</button>
+				<button mat-menu-item (click)="changeLanguage('nl')" class="nlChooser">
+					<span id="languageChooser_nl_button" i18n="@@languageChooser_nl_button">NL - Nederlands</span>
+				</button>
+				<button mat-menu-item (click)="changeLanguage('es')" class="esChooser">
+					<span id="languageChooser_es_button" i18n="@@languageChooser_es_button">ES - Español</span>
+				</button>
+				<button mat-menu-item (click)="changeLanguage('de')" class="deChooser">
+					<span id="languageChooser_de_button" i18n="@@languageChooser_de_button">DE - Deutsch</span>
+				</button>
+				<button mat-menu-item (click)="changeLanguage('fr')" class="frChooser">
+					<span id="languageChooser_fr_button" i18n="@@languageChooser_fr_button">FR - Français</span>
+				</button>
+			</mat-menu>
+		</div>
+
+		<mat-card-title-group>
+			<!-- Header description -->
+
+			<mat-card-subtitle
+				i18n="@@profile_email_setting_header_transactional_email_notifications"
+				>Transactional Emails
+			</mat-card-subtitle>
+
+			<!-- Progress bar  -->
+			<mat-icon *ngIf="isLoading">
+				<mat-spinner
+					color="primary"
+					diameter="20"
+					i18n="@@custom_email_spinner"
+				>
+				</mat-spinner>
+			</mat-icon>
+		</mat-card-title-group>
+		<mat-card-content>
+			<!-- Email setting form  -->
+			<form [formGroup]="emailForm">
+				<p>
+					<!-- New fundraiser emails checkbox -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_setting_new_fundraiser_label"
+						formControlName="new_fundraiser_emails"
+						>Fundraiser emails (Created, Published, Ended,
+						Deleted)</mat-checkbox
+					> -->
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_setting_new_fundraiser_label"
+						formControlName="new_fundraiser_emails"
+						>Fundraiser emails (Created, Published, Ended,
+						Deleted)</mat-slide-toggle
+					>
+				</p>
+				<p>
+					<!-- Transactional emails checkbox -->
+					<!-- <mat-checkbox color="primary" formControlName="transactional_emails">
+						<span
+							i18n="@@profile_email_setting_doantion_received_email_label"
+							[ngStyle]="{
+								'white-space':
+									_media.isActive('xs') === true ? 'normal' : 'none'
+							}"
+							>Donation Received</span
+						>
+					</mat-checkbox> -->
+
+					<mat-slide-toggle color="primary" formControlName="transactional_emails">
+						<span
+							i18n="@@profile_email_setting_doantion_received_email_label"
+							[ngStyle]="{
+								'white-space':
+									_media.isActive('xs') === true ? 'normal' : 'none'
+							}"
+							>Donation Received</span
+						>
+					</mat-slide-toggle>
+				</p>
+				<p>
+					<!-- Message Received -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_message_received_label"
+						formControlName="message_received"
+						>Message Received</mat-checkbox
+					> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_message_received_label"
+						formControlName="message_received"
+						>Message Received</mat-slide-toggle
+					>
+				</p>
+				<p>
+					<!-- Connect Fundraisers -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_setting_connect_fundraisers_label"
+						formControlName="connect_fundraiser_emails"
+						id="connectFundraiser"
+						>Connected Fundraisers
+					</mat-checkbox> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_setting_connect_fundraisers_label"
+						formControlName="connect_fundraiser_emails"
+						id="connectFundraiser"
+						>Connected Fundraisers
+					</mat-slide-toggle>
+				</p>
+				<p>
+					<!-- Payout Processed -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_setting_payout_processed_email_label"
+						formControlName="payout"
+						>Payout Pocessed
+					</mat-checkbox> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_setting_payout_processed_email_label"
+						formControlName="payout"
+						>Payout Pocessed
+					</mat-slide-toggle>
+				</p>
+				<p>
+					<!-- Recurring donation stopped  -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="
+							@@profile_email_setting_recurring_donation_stopped_email_label"
+						formControlName="recurring_donation_stopped"
+						>Recurring Donation Stopped
+					</mat-checkbox> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="
+							@@profile_email_setting_recurring_donation_stopped_email_label"
+						formControlName="recurring_donation_stopped"
+						>Recurring Donation Stopped
+					</mat-slide-toggle>
+				</p>
+			</form>
+
+			<br />
+
+			<mat-card-title-group>
+				<!-- Header description -->
+
+				<mat-card-subtitle i18n="@@profile_email_setting_newsletter_label"
+					>Newsletters
+				</mat-card-subtitle>
+
+				<!-- Progress bar  -->
+				<mat-icon *ngIf="isLoading">
+					<mat-spinner
+						color="primary"
+						diameter="20"
+						i18n="@@custom_email_spinner"
+					>
+					</mat-spinner>
+				</mat-icon>
+			</mat-card-title-group>
+
+			<form [formGroup]="emailForm">
+				<p>
+					<!-- Fundraiser Idea -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_setting_fundraiser_idea_email_label"
+						formControlName="fundraiser_idea"
+						>Fundraising Idea's</mat-checkbox
+					> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_setting_fundraiser_idea_email_label"
+						formControlName="fundraiser_idea"
+						>Fundraising Idea's</mat-slide-toggle
+					>
+				</p>
+				<p>
+					<!-- Product Updates -->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_setting_products_update_email_label"
+						formControlName="products_update"
+						>Product Updates</mat-checkbox
+					> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_setting_products_update_email_label"
+						formControlName="products_update"
+						>Product Updates</mat-slide-toggle
+					>
+				</p>
+
+				<p>
+					<!-- Unsubscribe all-->
+					<!-- <mat-checkbox
+						color="primary"
+						i18n="@@profile_email_setting_unsubscribe_all_label"
+						formControlName="unsubscribe_all"
+						>Unsubscribe all
+					</mat-checkbox> -->
+
+					<mat-slide-toggle
+						color="primary"
+						i18n="@@profile_email_setting_unsubscribe_all_label"
+						formControlName="unsubscribe_all"
+						>Unsubscribe all
+					</mat-slide-toggle>
+				</p>
+			</form>
+
+			<br />
+
+			<!-- Submit email settings button -->
+			<div>
+				<div fxLayout="row" fxLayoutAlign="end center">
+					<!-- (check if the form is valid then disable form else enable) -->
+					<button
+						mat-flat-button
+						class="button-button-style"
+						(click)="onSaveEmailSetting()"
+						color="accent"
+						[disabled]="emailForm.disabled"
+						id="emailSave"
+					>
+						<span i18n="@@button_save" *ngIf="!emailForm.disabled"> Save </span>
+
+						<!-- Show loader when saving -->
+						<mat-progress-spinner
+							style="padding-top: 4px"
+							*ngIf="emailForm.disabled"
+							[diameter]="24"
+							[mode]="'indeterminate'"
+						>
+						</mat-progress-spinner>
+					</button>
+				</div>
+			</div>
+		</mat-card-content>
+	</div>
+</mat-card>

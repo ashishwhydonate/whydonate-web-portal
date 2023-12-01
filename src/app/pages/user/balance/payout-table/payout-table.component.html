@@ -1,0 +1,275 @@
+<mat-progress-bar
+	class="m-t-xs"
+	mode="indeterminate"
+	*ngIf="isLoading"
+></mat-progress-bar>
+<div class="table-container">
+	<table
+		mat-table
+		class="mat-elevation-z1"
+		multiTemplateDataRows
+		[dataSource]="dataSource"
+		fxFlex.xs="100%"
+		fxFlex="100%"
+		[style.borderLeft]="'2px solid #eee'"
+	>
+		<ng-container
+			matColumnDef="{{ column }}"
+			*ngFor="let column of displayedColumns"
+		>
+			<ng-container *ngIf="column === 'date_time'">
+				<th
+					mat-header-cell
+					*matHeaderCellDef
+					i18n="@@payout_table_date_header"
+					[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+				>
+					Date and Time
+				</th>
+
+				<td mat-cell *matCellDef="let element">
+					<ng-container>
+						{{ element?.[column] | date : 'dd-MM-yyyy' }} -
+						{{ element?.[column] | date : 'HH:mm:SS ' }}
+					</ng-container>
+				</td>
+			</ng-container>
+			<ng-container *ngIf="column === 'payment_Status'">
+				<th
+					mat-header-cell
+					*matHeaderCellDef
+					i18n="@@payout_table_payment_header"
+					[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+				>
+					Payment Status
+				</th>
+
+				<td
+					mat-cell
+					*matCellDef="let element"
+					[style.padding.px]="this.media.isActive('lt-sm') ? '5' : '0'"
+				>
+					<ng-container>
+						{{ element?.[column] }}
+					</ng-container>
+				</td>
+			</ng-container>
+
+			<ng-container *ngIf="column === 'paymentID'">
+				<th
+					mat-header-cell
+					*matHeaderCellDef
+					i18n="@@payout_table_paymentID_header"
+					[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+				>
+					Payment ID
+				</th>
+
+				<td mat-cell *matCellDef="let element">
+					<ng-container>
+						<a
+							mat-button
+							color="accent"
+							class="mat-button-wrapper cursor-pointer"
+							(click)="
+								openTransactions(element.paymentID, element.specifications_id)
+							"
+						>
+							{{ element?.[column] }}
+						</a>
+					</ng-container>
+				</td>
+			</ng-container>
+
+			<ng-container *ngIf="column === 'paymentAmount'">
+				<th mat-header-cell *matHeaderCellDef>
+					<div
+						fxLayoutAlign="end end"
+						i18n="@@payout_table_paymentAmount_header"
+						[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+					>
+						Amount
+					</div>
+				</th>
+				<td mat-cell *matCellDef="let element">
+					<div fxLayoutAlign="end end">
+						<ng-container>
+							<mat-panel-title>
+								<ng-container>
+									<span [ngClass]="dataSource.data.length ? 'min-w-100px' : ''">
+										{{ element?.[column] | currency : 'EUR' }}
+									</span>
+								</ng-container>
+							</mat-panel-title>
+						</ng-container>
+					</div>
+				</td>
+
+				<!-- <td mat-cell *matCellDef="let element"">
+					<ng-container>
+						<mat-panel-title>
+							<ng-container>
+								<span>
+									{{ element?.[column] | currency : 'EUR' }}
+								</span>
+							</ng-container>
+						</mat-panel-title>
+					</ng-container>
+				</td> -->
+			</ng-container>
+		</ng-container>
+
+		<ng-container matColumnDef="expand">
+			<th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+			<td mat-cell *matCellDef="let element">
+				<button
+					mat-icon-button
+					aria-label="expand row"
+					(click)="
+						expandedElement = expandedElement === element ? null : element;
+						$event.stopPropagation()
+					"
+				>
+					<mat-icon *ngIf="expandedElement !== element"
+						>keyboard_arrow_down
+					</mat-icon>
+					<mat-icon *ngIf="expandedElement === element"
+						>keyboard_arrow_up</mat-icon
+					>
+				</button>
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="expandedDetail">
+			<td
+				mat-cell
+				*matCellDef="let element"
+				[attr.colspan]="columnsToDisplayWithExpand.length"
+				[ngStyle]="{ width: '100%' }"
+			>
+				<div
+					[ngStyle]="{ overflow: 'hidden', width: '100%' }"
+					[@detailExpand]="
+						element == expandedElement ? 'expanded' : 'collapsed'
+					"
+				>
+					<div
+						fxFill
+						class="p-t-xl p-b-xl"
+						fxLayout="column"
+						fxLayoutAlign.lt-xs="start start"
+						fxLayoutAlign="center center"
+						*ngIf="element.withdrawal.length === 0"
+					>
+						<mat-label i18n="@@balance_payout_table_noWithdrawal_label"
+							>No Withdrawal Record</mat-label
+						>
+					</div>
+					<table fxFlex.xs="100%" fxFill>
+						<tr *ngFor="let data of element.withdrawal" ngClass="m-t-m">
+							<td
+								fxFlex.gt-sm="28.5%"
+								fxFlex.sm="28%"
+								fxFlex.lt-sm="22%"
+								fxFlex.gt-lg="29%"
+								fxLayoutAlign.lt-sm="space-between"
+								fxLayoutAlign.lt-sm="start start"
+							>
+								<ng-container>
+									{{ data.update | date : 'dd-MM-yyyy' }}-
+									{{ data.update | date : 'HH:mm:SS ' }}
+								</ng-container>
+							</td>
+							<td
+								fxFlex.gt-sm="19.3%"
+								fxFlex.sm="19.8%"
+								fxFlex.lt-sm="21%"
+								fxFlex.gt-lg="19%"
+							>
+								<ng-container>
+									{{ data.type }}
+								</ng-container>
+							</td>
+							<td
+								fxFlex.gt-sm="37.9%"
+								fxFlex.sm="36.9%"
+								fxFlex.lt-sm="39%"
+								fxFlex.gt-lg="38.6%"
+							>
+								<ng-container>
+									{{ data.reference }}
+								</ng-container>
+							</td>
+							<td fxFlex.gt-sm="0" fxFlex.sm="0" fxLayoutAlign.lt-sm="end end">
+								<ng-container>
+									<mat-panel-title>
+										<ng-container>
+											<span>
+												{{ data.amount_payable | currency : 'EUR' }}
+											</span>
+										</ng-container>
+									</mat-panel-title>
+								</ng-container>
+							</td>
+						</tr>
+					</table>
+
+					<!-- <div [ngStyle]="{'display': 'table'}" fxFlex.xs="100%"
+					fxFlex="100%" >
+
+							<div [ngStyle]="{'display': 'table-row'}">
+								
+									<span [ngStyle]="{'display': 'table-cell'}" fxLayoutGap.lt-sm="5%" fxLayoutAlign.lt-sm="start start"> h1</span>
+									<span [ngStyle]="{'display': 'table-cell'}"  [style.padding.px]="this.media.isActive('lt-sm') ? '5' : '0'">h2</span>
+									<span [ngStyle]="{'display': 'table-cell'}" >h3 </span>
+									<span [ngStyle]="{'display': 'table-cell'}" >h4</span>
+								
+							</div>
+							<div [ngStyle]="{'display': 'table-row'}">
+									<span [ngStyle]="{'display': 'table-cell'}"  fxLayoutGap.lt-sm="5%" fxLayoutAlign.lt-sm="start start"> h1</span>
+									<span [ngStyle]="{'display': 'table-cell'}"  [style.padding.px]="this.media.isActive('lt-sm') ? '5' : '0'">h2</span>
+									<span [ngStyle]="{'display': 'table-cell'}" >h3 </span>
+									<span [ngStyle]="{'display': 'table-cell'}" >h4</span>
+							</div>	
+					</div> -->
+				</div>
+			</td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+		<tr mat-row *matRowDef="let row; columns: columnsToDisplayWithExpand"></tr>
+		<tr
+			mat-row
+			*matRowDef="let row; columns: ['expandedDetail']"
+			[ngStyle]="{ height: '0' }"
+		></tr>
+
+		<tr class="mat-row" *matNoDataRow>
+			<td class="mat-cell" colspan="8">
+				<div
+					*ngIf="settlementRecivedCount == 0"
+					class="p-t-xl p-b-xl"
+					fxLayout="column"
+					fxLayoutAlign.lt-xs="start start"
+					fxLayoutAlign="center center"
+				>
+					<mat-label
+						class="mat-title m-0"
+						i18n="@@balance_payout_table_noRecord_label"
+						>No Payout Record</mat-label
+					>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div ngCLass.lg="m-r-l">
+	<mat-paginator
+		[pageSize]="10"
+		[length]="this.count"
+		(page)="changePage($event)"
+		fxLayoutAlign.lg="end"
+	>
+	</mat-paginator>
+</div>

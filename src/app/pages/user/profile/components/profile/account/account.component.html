@@ -1,0 +1,391 @@
+<mat-card
+	fxFlex="0 1 calc(40vw)"
+	fxFlex.sm="100%"
+	fxFlex.xs="1 1 calc(40vw)"
+	class="mat-elevation-z0"
+>
+	<section
+		class="section-background-white"
+		fxLayout="column"
+		fxLayoutAlign="start start"
+	>
+		<!-- profile icon and name -->
+		<mat-icon *ngIf="isLoading">
+			<mat-spinner color="accent" diameter="20" i18n="@@account_spinner">
+			</mat-spinner>
+		</mat-icon>
+		&nbsp;
+		<div
+			fxLayout="row"
+			fxLayoutAlign="start start"
+			fxLayoutGap="5%"
+			ngClass.lt-lg="m-t-xl"
+		>
+			<div *ngIf="profileImage">
+				<!-- Profile image-->
+				<img
+					mat-card-avatar
+					mat-card-sm-image
+					[src]="profileImage"
+					alt="Profile image"
+				/>
+			</div>
+
+			<!-- Button to select photo to upload-->
+			<div>
+				<input
+					[hidden]="true"
+					type="file"
+					accept="image/png, image/jpeg, image/jpg, image/webp"
+					(change)="fileChangeEvent($event)"
+					#uploadProfile
+				/>
+
+				<div
+					[ngStyle]="{
+						width: _media.isActive('lt-sm') === true ? '117px' : '170px'
+					}"
+				>
+					<button
+						i18n="@@account_change_photo_button_text"
+						[style.width.px]="117"
+						class="button-button-style"
+						[ngStyle]="{
+							width: _media.isActive('lt-sm') === true ? '117px' : '170px'
+						}"
+						mat-stroked-button
+						(click)="uploadProfile.click()"
+						color="accent"
+					>
+						Change Photo
+					</button>
+					<small i18n="@@account_components_uploadFormatRegister"
+						>JPG, PNG or WEBP. Max size of 5MB</small
+					>
+				</div>
+			</div>
+		</div>
+
+		<div
+			fxFill
+			fxLayout="column"
+			[style.paddingBottom.px]="20"
+			[style.paddingTop.px]="20"
+			*ngIf="closeCropper"
+			fxLayoutAlign="start baseline"
+			fxLayoutGap="2%"
+		>
+			<image-cropper
+				[style.width.px]="400"
+				[imageChangedEvent]="imageChangedEvent"
+				[maintainAspectRatio]="true"
+				[aspectRatio]="5 / 5"
+				[roundCropper]="true"
+				[resizeToWidth]="150"
+				format="png"
+				(imageCropped)="imageCropped($event)"
+				(imageLoaded)="imageLoaded()"
+				(cropperReady)="cropperReady()"
+				(loadImageFailed)="loadImageFailed()"
+				output="base64"
+			>
+			</image-cropper>
+
+			<button
+				i18n="@@button_cropImage"
+				[style.width.px]="189"
+				class="button-button-style"
+				mat-stroked-button
+				(click)="cropImage()"
+				color="accent"
+			>
+				Crop Image
+			</button>
+		</div>
+
+		<!-- account form -->
+		<form
+			[formGroup]="accountForm"
+			#updateProfileForm="ngForm"
+			autocomplete="new-password"
+		>
+			<!-- Select fundraiser Type button toggle group -->
+			<mat-button-toggle-group
+				formControlName="profileType"
+				color="primary"
+				(change)="onprofileTypeChange($event)"
+				aria-label="Select an option"
+				class="button-toggle-group"
+				>
+				<mat-button-toggle
+					i18n="@@account_select_fundraiser_radio_button_personal"
+					value="personal"
+					id="personalRadio"
+					checked="true"
+				    class="button-button-style"
+				>
+				    Personal 
+				</mat-button-toggle>
+				<mat-button-toggle
+					i18n="@@account_select_fundraiser_radio_button_organisation"
+					value="organisation"
+					id="organisationRadio"
+				    class="button-button-style"
+				>
+					Organization
+				</mat-button-toggle>
+			</mat-button-toggle-group>
+
+			<!-- First name field -->
+			<mat-form-field color="primary" appearance="outline" class="w-100">
+				<mat-label i18n="@@account_components_firstNameLabel"
+					>First Name</mat-label
+				>
+				<input
+					matInput
+					formControlName="firstName"
+					placeholder="Placeholder"
+					#firstName
+					id="firstName"
+				/>
+				<mat-hint align="end"
+					>{{ firstName.value.length }} / 1-100
+					<span i18n="@@characters_translation">Characters</span></mat-hint
+				>
+				<mat-error
+					i18n="@@account_formField_matError_mustBeBetween1to100"
+					*ngIf="accountForm.controls['firstName']?.errors?.maxlength"
+				>
+					Must be between 1 to 100 characters
+				</mat-error>
+				<mat-error
+					i18n="@@account_formField_matError_mustBealphabets"
+					*ngIf="
+						accountForm.controls['firstName']?.errors &&
+						accountForm.controls['firstName']?.errors?.pattern
+					"
+				>
+					Must be alphabets only
+				</mat-error>
+			</mat-form-field>
+
+			<!-- Last name field -->
+			<mat-form-field color="primary" appearance="outline" class="w-100">
+				<mat-label i18n="@@account_components_lastNameLabel"
+					>Last Name</mat-label
+				>
+				<input
+					matInput
+					formControlName="lastName"
+					placeholder="Placeholder"
+					#lastName
+					id="lastName"
+				/>
+				<mat-hint align="end"
+					>{{ lastName.value.length }} / 1-100
+					<span i18n="@@characters_translation">Characters</span></mat-hint
+				>
+				<mat-error
+					*ngIf="accountForm.controls['lastName']?.errors?.maxlength"
+					i18n="@@account_formField_matError_mustBeBetween1to100"
+				>
+					Must be between 1 to 100 characters
+				</mat-error>
+				<mat-error
+					i18n="@@account_formField_matError_mustBealphabets"
+					*ngIf="
+						accountForm.controls['lastName']?.errors &&
+						accountForm.controls['lastName']?.errors?.pattern
+					"
+				>
+					Must be alphabets only
+				</mat-error>
+			</mat-form-field>
+
+			<!-- Email-id field -->
+			<div
+				fxLayout="row"
+				fxLayout.lt-sm="row wrap"
+				fxLayout.sm="row wrap"
+				fxLayoutAlign="start center"
+			>
+				<div fxLayout="row" fxFlex="100%">
+					<mat-form-field color="primary" appearance="outline" class="w-100">
+						<mat-label i18n="@@account_form_email_label">Email-ID</mat-label>
+						<input matInput formControlName="email" placeholder="Placeholder" />
+						<mat-error
+							*ngIf="
+								accountForm.controls['email']?.errors &&
+								accountForm.controls['email']?.errors?.pattern
+							"
+						>
+							Not a valid email
+						</mat-error>
+					</mat-form-field>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start center"
+					*ngIf="verificationCheck"
+					fxFlex="0.1%"
+				>
+					&nbsp;<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+					/>
+					&nbsp;&nbsp;<span i18n="@@verified_status">Verified</span>
+				</div>
+				<div
+					fxLayout="row"
+					fxLayoutAlign="start center"
+					*ngIf="!verificationCheck"
+					fxFlex="0.1%"
+				>
+					&nbsp;<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667511794/whydonate-production/platform/svg-icons/infoWarn.svg"
+					/>
+					&nbsp;&nbsp;<span i18n="@@pending_status">Pending</span>
+				</div>
+			</div>
+
+			<!-- Select fundraier field -->
+
+			<!-- organisation Name  -->
+			<mat-form-field
+				*ngIf="this.profileType == 'organisation'"
+				color="primary"
+				appearance="outline"
+				class="w-100"
+			>
+				<mat-label i18n="@@account_form_organisation_name_label"
+					>organisation Name</mat-label
+				>
+				<input
+					formControlName="organisationName"
+					id="organisationName"
+					matInput
+					i18n="@@account_form_organisation_placeholder_label"
+					placeholder="Organisation Name"
+					#organisationName
+				/>
+				<mat-hint align="end"
+					>{{ organisationName.value.length }} / 1-100
+					<span i18n="@@characters_translation">Characters</span></mat-hint
+				>
+				<mat-error
+					i18n="@@account_formField_matError_mustBeBetween1to100"
+					*ngIf="accountForm.controls['organisationName']?.errors?.maxlength"
+				>
+					Must be between 1 to 100 characters
+				</mat-error>
+				<mat-error
+					i18n="@@account_formField_matError_mustBeNumbers"
+					*ngIf="
+						accountForm.controls['organisationName']?.errors &&
+						accountForm.controls['organisationName']?.errors?.pattern
+					"
+				>
+					Cannot be numbers only
+				</mat-error>
+			</mat-form-field>
+
+			<!-- Phone Number field  -->
+			<mat-form-field color="primary" appearance="outline" class="w-100">
+				<mat-label i18n="@@account_form_phone_number_label"
+					>Phone Number</mat-label
+				>
+				<input
+					formControlName="phoneNumber"
+					matInput
+					i18n="@@account_form_phone_number_label"
+					placeholder="Phone Number"
+					id="phoneNumber"
+					#phoneNumber
+				/>
+				<mat-hint align="end"
+					>{{ phoneNumber.value.length }} / 10-20
+					<span i18n="@@characters_translation">Characters</span></mat-hint
+				>
+				<mat-error
+					i18n="@@formField_matError_mustBeBetween10to20"
+					*ngIf="
+						!accountForm.controls['phoneNumber']?.errors?.pattern &&
+						(accountForm.controls['phoneNumber']?.errors?.maxlength ||
+							accountForm.controls['phoneNumber']?.errors?.minlength)
+					"
+				>
+					Must be between 10 - 20 Characters
+				</mat-error>
+				<mat-error
+					i18n="@@formField_matError_onlyNumbers"
+					*ngIf="accountForm.controls['phoneNumber']?.errors"
+				>
+					Only Numbers are allowed
+				</mat-error>
+			</mat-form-field>
+		</form>
+		<!-- Reset password button -->
+		<div fxLayout="column" fxLayoutAlign="start start">
+			<div id="resetPassword">
+				<button
+					mat-button
+					(click)="openResetPasswordDialog()"
+					color="accent"
+					i18n="@@account_form_reset_password"
+				>
+					Reset password
+				</button>
+			</div>
+		</div>
+		<!-- Submit button -->
+		<div fxFill fxLayout="column" fxLayoutAlign="end end">
+			<button
+				color="accent"
+				class="button-button-style"
+				mat-flat-button
+				[disabled]="this.accountForm.invalid"
+				(click)="openVerifyPasswordDialog()"
+				id="saveButton"
+			>
+				<span *ngIf="!accountForm.disabled" i18n="@@button_save"> Save </span>
+				<span>
+					<mat-progress-spinner
+						*ngIf="accountForm.disabled"
+						[diameter]="24"
+						[mode]="'indeterminate'"
+					>
+					</mat-progress-spinner>
+				</span>
+			</button>
+		</div>
+
+		<div fxFill fxLayout="row" fxFlex="100">
+			<mat-divider></mat-divider>
+		</div>
+
+		<mat-card
+			class="mat-elevation-z0 section-background-grey w-100"
+			[style.marginTop.px]="64"
+		>
+			<div
+				fxLayout="row"
+				fxLayout.xs="column"
+				fxFlex="100"
+				fxLayoutAlign="center center"
+			>
+				<span i18n="@@profile_deactivate_label" ngClass="text-align-center"
+					>Temporarily deactivate your Whydonate account,</span
+				>
+				<button
+					id="deactivateAccount"
+					mat-button
+					color="accent"
+					i18n="@@profile_deactivate_button"
+					(click)="openVerifyPasswordDialogDeactivate()"
+				>
+					Deactivate Account
+				</button>
+			</div>
+		</mat-card>
+	</section>
+</mat-card>
+<mat-divider></mat-divider>

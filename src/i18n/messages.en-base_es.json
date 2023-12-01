@@ -1,0 +1,22 @@
+{
+  "translations": {
+    "header_userMenu_button_customBranding": "Personalice",
+    "header_userMenu_button_customBranding_branding": "Marca",
+    "account_email_verification_label": "Verificar su dirección de correo electrónico.. ",
+    "account_email_verification_label_doNotRefresh": "Por favor, no haga clic en el botón de actualización o de retroceso.",
+    "account_email_verification_succesful_message": "Verificación Exitosa",
+    "button_cancel": "Cancelar",
+    "account_Paypal_transaction_history_message": "Las transacciones de PayPal no se añaden al saldo anterior. WhyDonate las transfiere por separado.",
+    "donation_receipt_date_field": "Fecha",
+    "donation_receipt_transaction_id_field": "Identificación de la transacción",
+    "donation_receipt_donation_field": "Donación",
+    "donation_receipt_tip_field": "Consejo",
+    "donation_receipt_donated_by_field": "Donado por",
+    "donation_receipt_bank_account_number_field": "Número de cuenta bancaria",
+    "donation_receipt_bank_account_holder_field": "Titular de la cuenta bancaria",
+    "balance_payout_mollie": "Pagos",
+    "button_save_apply": "Guardar",
+    "balance_donation_header_label_stripe_fee": "Stripe Fee",
+    "balance_donation_header_label_reversal": "Reversal"
+  }
+}

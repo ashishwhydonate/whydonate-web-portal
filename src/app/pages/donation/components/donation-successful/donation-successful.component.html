@@ -1,0 +1,61 @@
+<div
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-s"
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	class="branding"
+>
+	<div
+		fxLayout="column"
+		fxFlex.lg="75%"
+		fxFlex.sm="100%"
+		fxFlex.xs="100%"
+		fxLayoutAlign="center center"
+		class="mat-typography"
+	>
+		<div
+			fxLayout="row"
+			fxFlex="100%"
+			fxLayoutAlign="center center"
+			fxLayoutGap="50%"
+		>
+			<div
+				fxLayout="row"
+				fxLayout.sm="column"
+				fxLayout.xs="column"
+				fxFlex="100%"
+				fxLayoutAlign="center start"
+				fxLayoutGap="5%"
+			>
+				<div fxLayout="column" fxFlex="60%" fxLayoutAlign="center center">
+					<app-donation-successful-form
+						[slug]="this.slug"
+						[donorId]="this.donorId"
+						[orderId]="this.orderId"
+						[currentFundraiser]="this.fundraiserGetFundraiser"
+					></app-donation-successful-form>
+				</div>
+
+				<div
+					fxLayout="column"
+					fxFlex="40%"
+					fxLayoutAlign="end center"
+					class="fundraiser-card"
+				>
+					<mat-spinner *ngIf="!this.isFundraiserLoaded"></mat-spinner>
+					<app-fundraiser-card
+						*ngIf="this.isFundraiserLoaded && this.fundraiserCardData?.[0]"
+						id="fundraiser-card"
+						name="fundraiser-card"
+						[isClickAllowed]="false"
+						[slug]="this.slug"
+						[fundraiserCardData]="this.fundraiserCardData[0].fundraiserCardData"
+					>
+					</app-fundraiser-card>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

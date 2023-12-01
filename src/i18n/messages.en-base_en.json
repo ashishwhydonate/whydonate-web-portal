@@ -1,0 +1,22 @@
+{
+  "translations": {
+    "header_userMenu_button_customBranding": "Personalize",
+    "header_userMenu_button_customBranding_branding": " Branding ",
+    "account_email_verification_label": "Verifying your email address... ",
+    "account_email_verification_label_doNotRefresh": "Please do not click the refresh or back button.",
+    "account_email_verification_succesful_message": "Verification Successful",
+    "button_cancel": "Cancel",
+    "account_Paypal_transaction_history_message": "The PayPal transactions are not added to the balance above. They are transferred separately by WhyDonate.",
+    "donation_receipt_date_field": "Date",
+    "donation_receipt_transaction_id_field": "Transaction ID",
+    "donation_receipt_donation_field": "Donation",
+    "donation_receipt_tip_field": "Tip",
+    "donation_receipt_donated_by_field": "Donated by",
+    "donation_receipt_bank_account_number_field": "Bank account number",
+    "donation_receipt_bank_account_holder_field": "Bank account holder",
+    "balance_payout_mollie": "Payouts",
+    "button_save_apply": "Save",
+    "balance_donation_header_label_stripe_fee": "Stripe Fee",
+    "balance_donation_header_label_reversal": "Reversal"
+  }
+}

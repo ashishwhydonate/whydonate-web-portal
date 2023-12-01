@@ -1,0 +1,76 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<h2 i18n="@@create_fundraiser_addVideoDialog_dialog_title" mat-dialog-title>
+	Add URL
+</h2>
+<mat-dialog-content class="mat-typography w-100">
+	<form
+		[formGroup]="accountForm"
+		#updateProfileForm="ngForm"
+		autocomplete="new-password"
+	>
+		<!-- Video URL field -->
+		<mat-form-field color="primary" appearance="outline" class="w-100">
+			<mat-label i18n="@@account_components_VideoNameLabel"
+				>Video URL</mat-label
+			>
+			<input
+				matInput
+				formControlName="VideoName"
+				placeholder="Paste video link"
+				#VideoName
+				value="VideoName.value"
+				(change)="onChange(VideoName.value)"
+				id="VideoName"
+			/>
+		</mat-form-field>
+
+		<mat-error *ngIf="accountForm.controls['VideoName']?.errors != null">
+			<ng-container
+				i18n="@@account_components_InvalidUrl"
+				*ngIf="accountForm.controls['VideoName'].hasError('invalid')"
+			>
+				Invalid URL
+			</ng-container>
+			<ng-container
+				i18n="@@account_components_VimeoUrlNoTVideo"
+				*ngIf="accountForm.controls['VideoName'].hasError('vimeoInvalidId')"
+			>
+				Please use the embed Vimeo link looking like this:
+				https://vimeo.com/123456789
+			</ng-container>
+		</mat-error>
+	</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<!--Discard Button-->
+	<button
+		id="save_video_iframe_discard_button"
+		mat-button
+		color="accent"
+		(click)="onCloseClick()"
+		i18n="@@button_discard"
+	>
+		Discard
+	</button>
+	<!--Save Button-->
+	<button
+		mat-flat-button
+		color="accent"
+		id="save_video_iframe_save_button"
+		[disabled]="
+			accountForm.invalid ||
+			accountForm.pending ||
+			!accountForm.controls['VideoName'].value.trim()
+		"
+		(click)="onSubmit()"
+		i18n="@@button_save"
+	>
+		Save
+	</button>
+</mat-dialog-actions>

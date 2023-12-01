@@ -1,0 +1,20 @@
+<div
+	class="p-m"
+	style="background-color: #efeef8"
+	fxLayout="row"
+	fxLayoutAlign="space-between center"
+>
+	<div i18n="@@notification_banner_stripe">
+		For receiving or giving donation, verify your account with Stripe
+	</div>
+	<div fxLayoutAlign="space-between center">
+		<button mat-flat-button color="accent" (click)="verifyWIthStripe()">
+			<span i18n="@@payout_settings_verify_with_stripe_button"
+				>Verify With Stripe</span
+			>
+			<mat-icon *ngIf="isLoading" class="m-l-xs">
+				<mat-spinner color="primary" diameter="20"> </mat-spinner>
+			</mat-icon>
+		</button>
+	</div>
+</div>

@@ -1,0 +1,921 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  PopupStartFundraiserComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-popup-start-fundraiser</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./popup-start-fundraiser.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./popup-start-fundraiser.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_accountService" >_accountService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialogRef" >dialogRef</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#close" >close</a>
+                            </li>
+                            <li>
+                                <a href="#connectFundraiser" >connectFundraiser</a>
+                            </li>
+                            <li>
+                                <a href="#contactUs" >contactUs</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#routeToCreateFundraiser" >routeToCreateFundraiser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialogRef: <a href="../classes/Fundraiser.html" target="_self">MatDialogRef&lt;PopupStartFundraiserComponent&gt;</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialogRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Fundraiser.html" target="_self" >MatDialogRef&lt;PopupStartFundraiserComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_accountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="connectFundraiser"></a>
+                    <span class="name">
+                        <span ><b>connectFundraiser</b></span>
+                        <a href="#connectFundraiser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>connectFundraiser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contactUs"></a>
+                    <span class="name">
+                        <span ><b>contactUs</b></span>
+                        <a href="#contactUs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>contactUs()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToCreateFundraiser"></a>
+                    <span class="name">
+                        <span ><b>routeToCreateFundraiser</b></span>
+                        <a href="#routeToCreateFundraiser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToCreateFundraiser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:21</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_accountService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_accountService</b></span>
+                        <a href="#_accountService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialogRef"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialogRef</b></span>
+                        <a href="#dialogRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Fundraiser.html" target="_self" >MatDialogRef&lt;PopupStartFundraiserComponent&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/popup-start-fundraiser/popup-start-fundraiser.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { MatLegacyDialogRef as MatDialogRef } from &#x27;@angular/material/legacy-dialog&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+import { Tools } from &#x27;src/utilities/tools&#x27;;
+
+@Component({
+	selector: &#x27;app-popup-start-fundraiser&#x27;,
+	templateUrl: &#x27;./popup-start-fundraiser.component.html&#x27;,
+	styleUrls: [&#x27;./popup-start-fundraiser.component.scss&#x27;],
+})
+//** *Popup Start*/
+export class PopupStartFundraiserComponent implements OnInit {
+	constructor(
+		public dialogRef: MatDialogRef&lt;PopupStartFundraiserComponent&gt;,
+		public router: Router,
+		public _accountService: AccountService
+	) {}
+	ngOnInit(): void {}
+
+	routeToCreateFundraiser() {
+		this.close();
+		let createUrl &#x3D; &#x27;fundraising/create&#x27;;
+		Tools.setPreviousPath(createUrl);
+		this.router.navigate([createUrl]);
+	}
+
+	connectFundraiser() {
+		this.close();
+		this.router.navigate([&#x27;search&#x27;]);
+	}
+
+	contactUs() {
+		this.close();
+		let userLang &#x3D; this._accountService.getLocaleId();
+
+		switch (userLang) {
+			case &#x27;nl&#x27;:
+				window.location.href &#x3D; &#x27;https://whydonate.com/contact/&#x27;;
+				break;
+			case &#x27;en&#x27;:
+				window.location.href &#x3D; &#x27;https://whydonate.com/en/contact-us/&#x27;;
+				break;
+			case &#x27;es&#x27;:
+				window.location.href &#x3D; &#x27;https://whydonate.com/es/contactenos/&#x27;;
+				break;
+			case &#x27;fr&#x27;:
+				window.location.href &#x3D; &#x27;https://whydonate.com/fr/contact-nous/&#x27;;
+				break;
+			case &#x27;de&#x27;:
+				window.location.href &#x3D; &#x27;https://whydonate.com/de/kontaktiere-uns/&#x27;;
+				break;
+			default:
+				window.location.href &#x3D; &#x27;https://whydonate.com/contact/&#x27;;
+				break;
+		}
+	}
+
+	close() {
+		this.dialogRef.close();
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-dialog-content
+	class&#x3D;&quot;min-h-100v-mobile mat-dialog-content-start-fundraiser-popup&quot;
+&gt;
+	&lt;button class&#x3D;&quot;close-button cursor-pointer&quot; [mat-dialog-close]&#x3D;&quot;false&quot;&gt;
+		&lt;img
+			src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/whydonate-production/platform/svg-icons/crossBlack.svg&quot;
+		/&gt;
+	&lt;/button&gt;
+	&lt;div
+		ngClass&#x3D;&quot;p-xl&quot;
+		ngClass.sm&#x3D;&quot;p-m&quot;
+		ngClass.xs&#x3D;&quot;p-s&quot;
+		fxLayout&#x3D;&quot;row&quot;
+		fxLayoutAlign&#x3D;&quot;center&quot;
+	&gt;
+		&lt;div fxFill fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+			&lt;!--TITLE ROW--&gt;
+			&lt;div
+				fxLayout&#x3D;&quot;row&quot;
+				fxLayoutAlign&#x3D;&quot;center center&quot;
+				fxLayoutAlign&#x3D;&quot;start start&quot;
+			&gt;
+				&lt;div
+					fxFill
+					fxLayout&#x3D;&quot;column&quot;
+					fxLayoutAlign&#x3D;&quot;center center&quot;
+					fxLayoutAlign.xs&#x3D;&quot;start start&quot;
+				&gt;
+					&lt;h2 i18n&#x3D;&quot;@@shared_popupStartFundraiser_startFundraiser_heading&quot;&gt;
+						Start A Fundraiser
+					&lt;/h2&gt;
+					&lt;h3 i18n&#x3D;&quot;@@shared_popupStartFundraiser_startNewCause_heading&quot;&gt;
+						Start a new cause or teamup to support the existing cause
+					&lt;/h3&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!--END TITLE ROW--&gt;
+			&lt;div fxLayout&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;5%&quot;&gt;
+				&lt;!--FIRST ROW--&gt;
+				&lt;div
+					fxFlex&#x3D;&quot;100%&quot;
+					fxLayout&#x3D;&quot;row&quot;
+					fxLayout.xs&#x3D;&quot;column&quot;
+					fxLayoutAlign&#x3D;&quot;space-around center&quot;
+					fxLayoutGap&#x3D;&quot;10%&quot;
+					fxLayoutGap.md&#x3D;&quot;5%&quot;
+					fxLayoutGap.xs&#x3D;&quot;2%&quot;
+					fxLayoutGap.sm&#x3D;&quot;5%&quot;
+				&gt;
+					&lt;div fxFlex&#x3D;&quot;50%&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+						&lt;mat-card&gt;
+							&lt;div
+								fxLayout&#x3D;&quot;row&quot;
+								fxLayoutAlign&#x3D;&quot;center center&quot;
+								fxLayoutGap&#x3D;&quot;3%&quot;
+								fxLayoutGap.xs&#x3D;&quot;10%&quot;
+							&gt;
+								&lt;div
+									fxFlex&#x3D;&quot;10%&quot;
+									fxLayout&#x3D;&quot;column&quot;
+									fxLayoutAlign&#x3D;&quot;center center&quot;
+									fxLayoutGap&#x3D;&quot;2%&quot;
+								&gt;
+									&lt;img
+										src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/create.svg&quot;
+									/&gt;
+								&lt;/div&gt;
+								&lt;div
+									fxFlex&#x3D;&quot;100%&quot;
+									fxLayout&#x3D;&quot;column&quot;
+									fxLayoutAlign&#x3D;&quot;center start&quot;
+								&gt;
+									&lt;h2 i18n&#x3D;&quot;@@shared_popupStartFundraiser_StandaloneFundraiser&quot;&gt;
+										Standalone Fundraiser
+									&lt;/h2&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;br /&gt;
+							&lt;h4
+								i18n&#x3D;&quot;@@shared_popupStartFundraiser_howItWorks&quot;
+								class&#x3D;&quot;primary-text&quot;
+							&gt;
+								How it works:
+							&lt;/h4&gt;
+							&lt;p i18n&#x3D;&quot;@@shared_popupStartFundraiser_standaloneFundraiserInfo&quot;&gt;
+								If you are creating a standalone fundraiser, we will ask you for
+								the bank details to which the donations may be transferred
+								&lt;br /&gt;
+							&lt;/p&gt;
+							&lt;p i18n&#x3D;&quot;@@shared_popupStartFundraiser_note&quot;&gt;
+								Note: donations are transferred monthly around the 15th of the
+								following month.
+							&lt;/p&gt;
+							&lt;div fxLayout&#x3D;&quot;row&quot; fxFill fxLayoutAlign&#x3D;&quot;end center&quot;&gt;
+								&lt;button
+									i18n&#x3D;&quot;@@shared_popupStartFundraiser_newFundraiser_button&quot;
+									mat-flat-button
+									color&#x3D;&quot;accent&quot;
+									(click)&#x3D;&quot;routeToCreateFundraiser()&quot;
+									class&#x3D;&quot;newFundraiser&quot;
+								&gt;
+									New Fundraiser
+								&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/mat-card&gt;
+					&lt;/div&gt;
+
+					&lt;div fxFlex&#x3D;&quot;50%&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+						&lt;mat-card&gt;
+							&lt;div
+								fxLayout&#x3D;&quot;row&quot;
+								fxLayoutAlign&#x3D;&quot;center center&quot;
+								fxLayoutGap&#x3D;&quot;3%&quot;
+								fxLayoutGap.xs&#x3D;&quot;10%&quot;
+							&gt;
+								&lt;div
+									fxFlex&#x3D;&quot;10%&quot;
+									fxLayout&#x3D;&quot;column&quot;
+									fxLayoutAlign&#x3D;&quot;center center&quot;
+								&gt;
+									&lt;img
+										src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666173344/whydonate-production/platform/svg-icons/connect.svg&quot;
+									/&gt;
+								&lt;/div&gt;
+								&lt;div
+									fxFlex&#x3D;&quot;90%&quot;
+									fxLayout&#x3D;&quot;column&quot;
+									fxLayoutAlign&#x3D;&quot;center start&quot;
+								&gt;
+									&lt;h2 i18n&#x3D;&quot;@@shared_popupStartFundraiser_teamOrConnectedInfo&quot;&gt;
+										Team or connected event fundraiser
+									&lt;/h2&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;br /&gt;
+							&lt;h4
+								i18n&#x3D;&quot;@@shared_popupStartFundraiser_howItWorks&quot;
+								class&#x3D;&quot;primary-text&quot;
+							&gt;
+								How it works:
+							&lt;/h4&gt;
+							&lt;p i18n&#x3D;&quot;@@shared_popupStartFundraiser_createFundraiserInfo&quot;&gt;
+								If you create a connected fundraiser, it will be linked to an
+								already existing fundraiser. The donations are paid to this
+								parent fundraiser.
+							&lt;/p&gt;
+							&lt;p i18n&#x3D;&quot;@@shared_popupStartFundraiser_searchExistingInfo&quot;&gt;
+								Search for an existing fundraiser and click the &#x27;Connect
+								fundraiser&#x27; button on that page.
+							&lt;/p&gt;
+							&lt;div fxLayout&#x3D;&quot;row&quot; fxFill fxLayoutAlign&#x3D;&quot;end center&quot;&gt;
+								&lt;button
+									i18n&#x3D;&quot;@@connect_fundraisers_button&quot;
+									mat-flat-button
+									color&#x3D;&quot;accent&quot;
+									(click)&#x3D;&quot;connectFundraiser()&quot;
+								&gt;
+									Connect Fundraiser
+								&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/mat-card&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;!--END FIRST ROW--&gt;
+
+				&lt;!--SECOND ROW--&gt;
+
+				&lt;mat-card&gt;
+					&lt;div fxFill fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+						&lt;!-- &lt;div fxFill fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;start center&quot;&gt; --&gt;
+						&lt;!-- &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt; --&gt;
+
+						&lt;div fxFlex&#x3D;&quot;50%&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;start start&quot;&gt;
+							&lt;h2 i18n&#x3D;&quot;@@shared_popupStartFundraiser_needHelp&quot;&gt;
+								Need help? Contact us!
+							&lt;/h2&gt;
+							&lt;p i18n&#x3D;&quot;@@shared_popupStartFundraiser_helpYouDecide&quot;&gt;
+								We will help you decide what option is best for you.
+							&lt;/p&gt;
+						&lt;/div&gt;
+						&lt;div fxFlex&#x3D;&quot;50%&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;end end&quot;&gt;
+							&lt;button
+								i18n&#x3D;&quot;@@shared_popupStartFundraiser_contactUs_button&quot;
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								(click)&#x3D;&quot;contactUs()&quot;
+							&gt;
+								Contact us
+							&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/mat-card&gt;
+				&lt;!--END SECOND ROW--&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/mat-dialog-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./popup-start-fundraiser.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-dialog-content	class="min-h-100v-mobile mat-dialog-content-start-fundraiser-popup">	<button class="close-button cursor-pointer" [mat-dialog-close]="false">		<img			src="https://res.cloudinary.com/whydonate/image/upload/whydonate-production/platform/svg-icons/crossBlack.svg"		/>	</button>	<div		ngClass="p-xl"		ngClass.sm="p-m"		ngClass.xs="p-s"		fxLayout="row"		fxLayoutAlign="center"	>		<div fxFill fxLayout="column" fxLayoutAlign="center center">			<!--TITLE ROW-->			<div				fxLayout="row"				fxLayoutAlign="center center"				fxLayoutAlign="start start"			>				<div					fxFill					fxLayout="column"					fxLayoutAlign="center center"					fxLayoutAlign.xs="start start"				>					<h2 i18n="@@shared_popupStartFundraiser_startFundraiser_heading">						Start A Fundraiser					</h2>					<h3 i18n="@@shared_popupStartFundraiser_startNewCause_heading">						Start a new cause or teamup to support the existing cause					</h3>				</div>			</div>			<!--END TITLE ROW-->			<div fxLayout="column" fxLayoutGap="5%">				<!--FIRST ROW-->				<div					fxFlex="100%"					fxLayout="row"					fxLayout.xs="column"					fxLayoutAlign="space-around center"					fxLayoutGap="10%"					fxLayoutGap.md="5%"					fxLayoutGap.xs="2%"					fxLayoutGap.sm="5%"				>					<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">						<mat-card>							<div								fxLayout="row"								fxLayoutAlign="center center"								fxLayoutGap="3%"								fxLayoutGap.xs="10%"							>								<div									fxFlex="10%"									fxLayout="column"									fxLayoutAlign="center center"									fxLayoutGap="2%"								>									<img										src="https://res.cloudinary.com/whydonate/image/upload/v1666173345/whydonate-production/platform/svg-icons/create.svg"									/>								</div>								<div									fxFlex="100%"									fxLayout="column"									fxLayoutAlign="center start"								>									<h2 i18n="@@shared_popupStartFundraiser_StandaloneFundraiser">										Standalone Fundraiser									</h2>								</div>							</div>							<br />							<h4								i18n="@@shared_popupStartFundraiser_howItWorks"								class="primary-text"							>								How it works:							</h4>							<p i18n="@@shared_popupStartFundraiser_standaloneFundraiserInfo">								If you are creating a standalone fundraiser, we will ask you for								the bank details to which the donations may be transferred								<br />							</p>							<p i18n="@@shared_popupStartFundraiser_note">								Note: donations are transferred monthly around the 15th of the								following month.							</p>							<div fxLayout="row" fxFill fxLayoutAlign="end center">								<button									i18n="@@shared_popupStartFundraiser_newFundraiser_button"									mat-flat-button									color="accent"									(click)="routeToCreateFundraiser()"									class="newFundraiser"								>									New Fundraiser								</button>							</div>						</mat-card>					</div>					<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">						<mat-card>							<div								fxLayout="row"								fxLayoutAlign="center center"								fxLayoutGap="3%"								fxLayoutGap.xs="10%"							>								<div									fxFlex="10%"									fxLayout="column"									fxLayoutAlign="center center"								>									<img										src="https://res.cloudinary.com/whydonate/image/upload/v1666173344/whydonate-production/platform/svg-icons/connect.svg"									/>								</div>								<div									fxFlex="90%"									fxLayout="column"									fxLayoutAlign="center start"								>									<h2 i18n="@@shared_popupStartFundraiser_teamOrConnectedInfo">										Team or connected event fundraiser									</h2>								</div>							</div>							<br />							<h4								i18n="@@shared_popupStartFundraiser_howItWorks"								class="primary-text"							>								How it works:							</h4>							<p i18n="@@shared_popupStartFundraiser_createFundraiserInfo">								If you create a connected fundraiser, it will be linked to an								already existing fundraiser. The donations are paid to this								parent fundraiser.							</p>							<p i18n="@@shared_popupStartFundraiser_searchExistingInfo">								Search for an existing fundraiser and click the \'Connect								fundraiser\' button on that page.							</p>							<div fxLayout="row" fxFill fxLayoutAlign="end center">								<button									i18n="@@connect_fundraisers_button"									mat-flat-button									color="accent"									(click)="connectFundraiser()"								>									Connect Fundraiser								</button>							</div>						</mat-card>					</div>				</div>				<!--END FIRST ROW-->				<!--SECOND ROW-->				<mat-card>					<div fxFill fxLayout="row" fxLayoutAlign="center center">						<!-- <div fxFill fxLayout="column" fxLayoutAlign="start center"> -->						<!-- <div fxLayout="row" fxLayoutAlign="center center"> -->						<div fxFlex="50%" fxLayout="column" fxLayoutAlign="start start">							<h2 i18n="@@shared_popupStartFundraiser_needHelp">								Need help? Contact us!							</h2>							<p i18n="@@shared_popupStartFundraiser_helpYouDecide">								We will help you decide what option is best for you.							</p>						</div>						<div fxFlex="50%" fxLayout="column" fxLayoutAlign="end end">							<button								i18n="@@shared_popupStartFundraiser_contactUs_button"								mat-flat-button								color="accent"								(click)="contactUs()"							>								Contact us							</button>						</div>					</div>				</mat-card>				<!--END SECOND ROW-->			</div>		</div>	</div></mat-dialog-content></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'PopupStartFundraiserComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PopupStartFundraiserComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

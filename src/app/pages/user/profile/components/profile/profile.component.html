@@ -1,0 +1,6 @@
+<div>
+	<app-stripe-notification-banner
+		*ngIf="stripeNotificationCheck == false && parentFundraiser > 0"
+	></app-stripe-notification-banner>
+	<router-outlet></router-outlet>
+</div>

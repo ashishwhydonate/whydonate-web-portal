@@ -1,0 +1,32 @@
+<mat-chip-list
+	*ngIf="category && category?.image"
+	aria-label="Fundraiser Category"
+	
+>
+	<mat-chip selected color="accent">
+		<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
+			<div fxLayout="row" fxFlex="50%">
+				<img [src]="this.category.image" height="24"
+				width="22"/>
+			</div>
+			<div fxLayout="row" class="nowrap-text" fxHide.xs="true">
+				<caption id="fundraisertitleCategory">
+					{{
+						titleCategory.length > 15
+							? titleCategory.substring(0, 15) + '...&nbsp;'
+							: titleCategory
+					}}
+				</caption>
+			</div>
+			<div fxLayout="row" class="nowrap-text" fxHide.gt-xs="true">
+				<caption id="fundraisertitleCategory">
+					{{
+						titleCategory.length > 35
+							? titleCategory.substring(0, 35) + '...&nbsp;'
+							: titleCategory
+					}}
+				</caption>
+			</div>
+		</div>
+	</mat-chip>
+</mat-chip-list>

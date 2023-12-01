@@ -1,0 +1,227 @@
+<mat-chip fxFlexOffset="6px" fxLayout="row">
+	<div
+		*ngIf="socialMedia?.instagram; else isLoggedIn && otherIconInsta"
+		fxFlexOffset="0px"
+	>
+		<a
+			mat-ripple
+			shareButton="instagram"
+			target="blank"
+			href="{{ attachHttps(socialMedia?.instagram) }}"
+			rel="nofollow"
+		>
+			<img
+				class="icon-mail"
+				height="18"
+				width="18"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1681827728/whydonate-production/platform/svg-icons/2_trails_icons_5.svg"
+			/>
+		</a>
+	</div>
+	<ng-template #otherIconInsta>
+		<div fxFlexOffset="0px">
+			<a
+				mat-ripple
+				shareButton="otherSocialMedia"
+				target="blank"
+				href=""
+				rel="nofollow"
+			>
+				<img
+					class="icon-mail"
+					height="18"
+					width="18"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1684147463/whydonate-production/platform/svg-icons/instaDisabled.svg"
+				/>
+			</a>
+		</div>
+	</ng-template>
+
+	<div
+		*ngIf="this.socialMedia?.website; else isLoggedIn && otherIconweb"
+		fxFlexOffset="10px"
+	>
+		<a
+			mat-ripple
+			shareButton="website"
+			target="blank"
+			href="{{ attachHttps(socialMedia?.website) }}"
+			rel="nofollow"
+		>
+			<img
+				class="icon-dashboard"
+				height="18"
+				width="18"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1681827728/whydonate-production/platform/svg-icons/2_trails_icons.svg"
+			/>
+		</a>
+	</div>
+	<ng-template #otherIconweb>
+		<div fxFlexOffset="10px">
+			<a
+				mat-ripple
+				shareButton="otherSocialMedia"
+				target="blank"
+				href=""
+				rel="nofollow"
+			>
+				<img
+					class="icon-dashboard"
+					height="18"
+					width="18"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1684147463/whydonate-production/platform/svg-icons/webDisabled.svg"
+				/>
+			</a>
+		</div>
+	</ng-template>
+
+	<div
+		*ngIf="this.socialMedia?.twitter; else isLoggedIn && otherIcontwt"
+		fxFlexOffset="10px"
+	>
+		<a
+			mat-ripple
+			shareButton="twitter"
+			target="blank"
+			href="{{ attachHttps(socialMedia?.twitter) }}"
+			rel="nofollow"
+		>
+			<img
+				class="icon-dashboard"
+				height="22"
+				width="20"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1698663566/whydonate-production/platform/svg-icons/x.svg"
+			/>
+		</a>
+	</div>
+	<ng-template #otherIcontwt>
+		<div fxFlexOffset="10px">
+			<a
+				mat-ripple
+				shareButton="otherSocialMedia"
+				target="blank"
+				href=""
+				rel="nofollow"
+			>
+				<img
+					class="icon-dashboard"
+					height="22"
+					width="20"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1698663567/whydonate-production/platform/svg-icons/x-disabled.svg"
+				/>
+			</a>
+		</div>
+	</ng-template>
+
+	<div
+		*ngIf="this.socialMedia?.facebook; else isLoggedIn && OtherIconfb"
+		fxFlexOffset="10px"
+	>
+		<a
+			mat-ripple
+			shareButton="facebook"
+			target="blank"
+			href="{{ attachHttps(socialMedia?.facebook) }}"
+			rel="nofollow"
+		>
+			<img
+				class="icon-dashboard"
+				height="18"
+				width="18"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1681827728/whydonate-production/platform/svg-icons/2_trails_icons_6.svg"
+			/>
+		</a>
+	</div>
+	<ng-template #OtherIconfb>
+		<div fxFlexOffset="10px">
+			<a
+				mat-ripple
+				shareButton="otherSocialMedia"
+				target="blank"
+				href=""
+				rel="nofollow"
+			>
+				<img
+					class="icon-dashboard"
+					height="18"
+					width="18"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1684147463/whydonate-production/platform/svg-icons/fbDisabled.svg"
+				/>
+			</a>
+		</div>
+	</ng-template>
+
+	<div
+		*ngIf="this.socialMedia?.email; else isLoggedIn && OtherIconemail"
+		fxFlexOffset="10px"
+	>
+		<a
+			mat-ripple
+			shareButton="email"
+			target="blank"
+			href="mailto:{{ socialMedia?.email }}"
+			rel="nofollow"
+		>
+			<img
+				class="icon-dashboard"
+				height="19"
+				width="18"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1681827728/whydonate-production/platform/svg-icons/2_trails_icons_2.svg"
+			/>
+		</a>
+	</div>
+	<ng-template #OtherIconemail>
+		<div fxFlexOffset="10px">
+			<a
+				mat-ripple
+				shareButton="otherSocialMedia"
+				target="blank"
+				href=""
+				rel="nofollow"
+			>
+				<img
+					class="icon-dashboard"
+					height="19"
+					width="18"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1684147463/whydonate-production/platform/svg-icons/mailDisabled.svg"
+				/>
+			</a>
+		</div>
+	</ng-template>
+
+	<div
+		*ngIf="this.socialMedia?.linkedin; else isLoggedIn && OtherIconlinkedin"
+		fxFlexOffset="10px"
+	>
+		<a
+			mat-ripple
+			shareButton="linkedin"
+			target="blank"
+			href="{{ attachHttps(socialMedia?.linkedin) }}"
+			rel="nofollow"
+		>
+			<img
+				height="18"
+				width="18"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1681905339/whydonate-production/platform/svg-icons/LinkedinUppdated.svg"
+			/>
+		</a>
+	</div>
+	<ng-template #OtherIconlinkedin>
+		<div fxFlexOffset="10px">
+			<a
+				mat-ripple
+				shareButton="otherSocialMedia"
+				target=""
+				href=""
+				rel="nofollow"
+			>
+				<img
+					height="18"
+					width="18"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1684147463/whydonate-production/platform/svg-icons/LinkedinDisabled.svg"
+				/>
+			</a>
+		</div>
+	</ng-template>
+</mat-chip>

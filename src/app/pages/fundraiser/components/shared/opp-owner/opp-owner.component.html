@@ -1,0 +1,12 @@
+<div fxLayout="row" fxFlex.xs>
+	<img class="postion-opp" height="45" width="45"
+		src="https://res.cloudinary.com/whydonate/image/upload/v1678288363/whydonate-production/platform/svg-icons/organizedFor.svg"
+	/>
+	<div   fxLayout="column" fxFlexOffset.xs="3px" class="m-l-s" >
+		<mat-label i18n="@@createdBy_createdByLabel_oraganised"
+			>Organised For:</mat-label
+		>
+		<div>{{ this.bankAccount?.account_name }}</div>
+		<div>{{ this.bankAccount?.account_iban }}</div>
+	</div>
+</div>

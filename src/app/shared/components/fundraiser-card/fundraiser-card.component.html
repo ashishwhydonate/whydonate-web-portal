@@ -1,0 +1,486 @@
+<!-- Template for Default card type -->
+<ng-template #defaultCardStyle>
+	<!-- FUNDRAISER CARD TAKES [fundraiserCardData] AS AN INPUT -->
+
+	<mat-card
+		id="fundraiserCardcomp"
+		#fundraiserCard
+		class="mat-elevation-z1"
+		[ngClass]="this.isClickAllowed ? 'card-clickable' : ''"
+		(click)="this.isClickAllowed ? this.routeToFundraiserEdit() : null"
+	>
+		<!-- FUNDRAISER'S BACKGROUND VIDEO -->
+
+		<img
+			i18n="@@fundraiserCard_createBackgroundImage"
+			mat-card-image
+			*ngIf="this.fundraiserCardData?.backgroundImage?.video as videoURL"
+			src="{{ this.youtubeThumbnail }}"
+			loading="lazy"
+			onerror="this.src='./assets/img/fundraiser_default_bg.png';this.onerror='';"
+			alt="{{ fundraiser_bg_img.alt }}"
+		/>
+		<!-- [innerHTML]="checkVideoUrl(videoURL)" -->
+
+		<!-- FUNDRAISER'S BACKGROUND IMAGE -->
+		<img
+			id="{{ slug }}"
+			i18n="@@fundraiserCard_createBackgroundImage"
+			mat-card-image
+			*ngIf="!this.fundraiserCardData?.backgroundImage?.video"
+			src="{{ fundraiser_bg_img.src }}"
+			loading="lazy"
+			(error)="handleImageError($event, defaultBackgroundImage)"
+			alt="{{ fundraiser_bg_img.alt }}"
+		/>
+
+		<!-- MAT CARD HEADER -->
+		<mat-card-header>
+			<img
+				i18n="@@fundraiserCard_createuserImage"
+				mat-card-avatar
+				src="{{ profile_avatar_img.src }}"
+				loading="lazy"
+				(error)="handleImageError($event, defaultProfileImage)"
+				alt="{{ profile_avatar_img.alt }}"
+			/>
+			<mat-card-title>{{ fundraiser_title }}</mat-card-title>
+			<mat-card-subtitle>{{ profile_name }}</mat-card-subtitle>
+		</mat-card-header>
+
+		<!-- MAT CONTENT -->
+		<mat-card-content>
+			<p>{{ fundraiser_description }}</p>
+		</mat-card-content>
+
+		<!-- SHOW DONATION RECEIVED AND TARGET AMOUNT -->
+		<mat-label
+			*ngIf="isShowBothDonationAndTargetAmount"
+			class="mat-subheading-2"
+		>
+			<b>{{ currency }}&nbsp; {{ donation_received_amount | number }}</b
+			>&nbsp;
+			<span i18n="@@fundraiserCard_donationTargetedAmount">of </span>&nbsp;
+			{{ currency }}&nbsp;{{ donation_target_amount | number }}
+		</mat-label>
+		<!-- SHOW ONLY DONATION RECEIVED -->
+		<mat-label *ngIf="isShowOnlyDonationAmountView" class="mat-subheading-2">
+			<b>{{ currency }} &nbsp;{{ donation_received_amount | number }}</b
+			>&nbsp;
+			<span i18n="@@fundraiserCard_donationReceived_label"
+				>Donation received</span
+			>
+		</mat-label>
+		<!-- SHOW ONLY TARGET AMOUNT -->
+		<mat-label *ngIf="isShowOnlyTargetAmountView" class="mat-subheading-2">
+			<b>{{ currency }}&nbsp;{{ donation_target_amount | number }} </b>&nbsp;
+			<span i18n="@@fundraiserCard_targetAmount_label">Targeted amount</span>
+		</mat-label>
+		<mat-label
+			class="mat-subheading-2"
+			*ngIf="
+				!(
+					isShowBothDonationAndTargetAmount ||
+					isShowOnlyDonationAmountView ||
+					isShowOnlyTargetAmountView
+				)
+			"
+		>
+			&nbsp;
+		</mat-label>
+
+		<!-- MAT PROGRESS BAR -->
+		<mat-progress-bar
+			class="m-t-xs m-b-xs"
+			value="{{ donation_progress_percentage }}"
+		></mat-progress-bar>
+
+		<!-- DONATION PROGRESS PERCENTAGE AND DONATION DAYS LEFT -->
+		<!-- TODO: uncomment below p tag to add margin -->
+		<!-- <p></p> -->
+		<div fxLayout="row" fxLayoutAlign="space-between start">
+			<p>
+				<!--* INFO: to calculate percentage both, Donation received amount and target amount are required-->
+				<span *ngIf="isShowBothDonationAndTargetAmount">
+					<!-- {{donation_progress_percentage | number: '1.0-1'}}% -->
+					{{
+						(100 * donation_received_amount) / donation_target_amount
+							| number : '1.0-1'
+					}}%
+				</span>
+			</p>
+			<p>
+				<span *ngIf="donation_days_left > 1">
+					{{ donation_days_left }}&nbsp;
+					<span i18n="@@fundraiserCard_donationDaysLeft_label"
+						>day(s) left</span
+					>
+				</span>
+				<span *ngIf="donation_days_left === 1">
+					<span i18n="@@fundraiserCard_lastDays_label">Last day</span>
+				</span>
+				<span *ngIf="donation_days_left === 0">
+					<span i18n="@@myFundraisers_closed_mat_tab">Closed</span>
+				</span>
+			</p>
+			<!--* INFO if donation_target_amount or donation_days_left is empty then add p tag to show consistent spacing in bottom -->
+			<p *ngIf="!(isShowBothDonationAndTargetAmount || isDaysLeftShow)">
+				&nbsp;
+			</p>
+		</div>
+
+		<!-- NOTE: uncomment below code to debug flags -->
+		<!-- <mat-card-footer>
+    <code><b>VIEW FLAGS</b></code><br>
+    isShowOnlyDonationAmountView : {{isShowOnlyDonationAmountView}} <br>
+    isShowBothDonationAndTargetAmount : {{isShowBothDonationAndTargetAmount}} <br>
+    isShowOnlyTargetAmountView : {{isShowOnlyTargetAmountView}} <br>
+    isDaysLeftShow : {{isDaysLeftShow}} <br>
+    <code><b>FUNCTION</b></code><br>
+    isShowDonationAmount() : {{isShowDonationAmount()}} <br>
+    isDonationAmountExist() : {{isDonationAmountExist()}} <br>
+    isTargetAmountExist() : {{isTargetAmountExist()}} <br>
+    <code><b>VALUE</b></code><br>
+    Currency Locale : {{locale}} <br>
+    FLAG: showDonationAmount : {{isShowDonationAmount()}} <br>
+    donation_received_amount : {{donation_received_amount}} <br>
+    donation_target_amount : {{donation_target_amount}} <br>
+    donation_days_left : {{donation_days_left}}
+</mat-card-footer> -->
+	</mat-card>
+</ng-template>
+
+<!-- Template for small card type -->
+<ng-template [ngIf]="type === 'small'" [ngIfElse]="defaultCardStyle">
+	<ng-container
+		*ngIf="_media.isActive('xs')"
+		[ngTemplateOutlet]="smallCard_vertical"
+	></ng-container>
+
+	<ng-container
+		*ngIf="_media.isActive('gt-xs')"
+		[ngTemplateOutlet]="smallCard_horizontal"
+	></ng-container>
+</ng-template>
+
+<!-- Template for small card type -->
+<ng-template #smallCard_horizontal>
+	<mat-card
+		class="mat-elevation-z2 card-clickable m-s"
+		(click)="routeToFundraiserEdit()"
+		fxLayout="row"
+	>
+		<div>
+			<ng-container>
+				<img
+					*ngIf="this.fundraiserCardData?.backgroundImage?.video as videoURL"
+					[ngStyle]="{ cover: 'fill' }"
+					class="h-100"
+					width="220"
+					src="{{ this.youtubeThumbnail }}"
+					loading="lazy"
+					onerror="this.src='./assets/img/fundraiser_default_bg.png';this.onerror='';"
+					alt="{{ fundraiser_bg_img.alt }}"
+				/>
+
+				<img
+					*ngIf="!this.fundraiserCardData?.backgroundImage?.video"
+					[ngStyle]="{ cover: 'fill' }"
+					class="h-100"
+					width="220"
+					src="{{ fundraiser_bg_img.src }}"
+					loading="lazy"
+					(error)="handleImageError($event, defaultBackgroundImage)"
+					alt="{{ fundraiser_bg_img.alt }}"
+				/>
+			</ng-container>
+		</div>
+		<div fxLayout="column" class="m-l-m" [ngStyle]="{ width: '200px' }">
+			<!-- CARD HEADER -->
+			<div class="header">
+				<div fxLfayout="row" fxLayoutAlign="space-between" fxLayoutGap="1%">
+					<div class="mat-body-2 title">
+						{{ truncateText(fundraiser_title, 55) }}
+					</div>
+					<span class="material-icons-outlined"> edit </span>
+				</div>
+				<ng-container *ngIf="fundraiserCardData?.isChild">
+					<div class="mat-caption">
+						<span i18n="@@fundraiser_card_connectedTo_label">Connected to</span
+						>&nbsp;
+						{{ truncateText(parent_fundraiser_title, 16) }}
+					</div>
+				</ng-container>
+			</div>
+			<div>
+				<!-- MAT CARD HEADER -->
+				<div fxLayout="row" fxLayoutGap="2%">
+					<img
+						style="width: 20px; height: 20px !important"
+						i18n="@@fundraiserCard_createuserImage"
+						mat-card-avatar
+						src="{{ profile_avatar_img.src }}"
+						loading="lazy"
+						(error)="handleImageError($event, defaultProfileImage)"
+						alt="{{ profile_avatar_img.alt }}"
+					/>
+					<p>{{ truncateText(profile_name, 26) }}</p>
+				</div>
+				<div fxLayout="row" fxLayoutAlign="space-between flex-end">
+					<!-- SHOW DONATION RECEIVED AND TARGET AMOUNT -->
+					<div>
+						<mat-label
+							*ngIf="!isShowOnlyDonationAmountView"
+							class="mat-subheading-2"
+						>
+							<div
+								*ngIf="donation_received_amount.toString().length > 2"
+								class="hover-class"
+								matTooltip="{{ hoverTooltip }}"
+							>
+								<b
+									>{{ currency }}&nbsp;{{
+										donation_received_amount | number
+									}}</b
+								>&nbsp;
+								<span i18n="@@fundraiserCard_donationTargetAmount">of </span
+								>&nbsp;{{ currency }}&nbsp;{{
+									trimDonationTarget(donation_target_amount)
+								}}
+							</div>
+							<div *ngIf="donation_received_amount.toString().length < 2">
+								<b
+									>{{ currency }}&nbsp;{{
+										donation_received_amount | number
+									}}</b
+								>&nbsp;
+								<span i18n="@@fundraiserCard_donationTargetAmount">of </span
+								>&nbsp;{{ currency }}&nbsp;{{ donation_target_amount | number }}
+							</div>
+						</mat-label>
+						<!-- SHOW ONLY DONATION RECEIVED -->
+						<mat-label
+							*ngIf="isShowOnlyDonationAmountView"
+							class="mat-subheading-2"
+						>
+							<b
+								>{{ currency }}&nbsp; {{ donation_received_amount | number }}</b
+							>
+						</mat-label>
+					</div>
+
+					<div>
+						<ng-container *ngIf="!fundraiserCardData?.isChild">
+							<div class="hover-class" matTooltip="{{mainFundraiserToolTip}}">
+							<img
+								width="20"
+								height="20"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1692802910/whydonate-production/platform/svg-icons/mainFundraiser.svg"
+							/>
+						</div>
+						</ng-container>
+						<ng-container *ngIf="fundraiserCardData?.isChild">
+							<div class="hover-class" matTooltip="{{connectedFundraiserToolTip}}">
+								<img
+								width="20"
+								height="20"
+								src="https://res.cloudinary.com/whydonate/image/upload/v1692802910/whydonate-production/platform/svg-icons/connectedFundraiser.svg"
+							/>
+							</div>
+						</ng-container>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div fxLayout="row">
+		</div> -->
+	</mat-card>
+</ng-template>
+<ng-template #smallCard_vertical>
+	<mat-card
+		class="card-clickable m-b-m"
+		(click)="routeToFundraiserEdit()"
+		[ngStyle]="{ width: '90%' }"
+	>
+		<div fxLayout="column">
+			<ng-container>
+				<img
+					*ngIf="this.fundraiserCardData?.backgroundImage?.video as videoURL"
+					class="w-100"
+					src="{{ this.youtubeThumbnail }}"
+					loading="lazy"
+					(error)="handleImageError($event, defaultBackgroundImage)"
+				/>
+				<img
+					*ngIf="!this.fundraiserCardData?.backgroundImage?.video"
+					class="w-100"
+					src="{{ fundraiser_bg_img.src }}"
+					loading="lazy"
+					(error)="handleImageError($event, defaultBackgroundImage)"
+				/>
+			</ng-container>
+			<div fxLayout="row">
+				<div fxFlex>
+					<!-- <span class="mat-body-2"> {{ fundraiser_title }} </span> -->
+					<div
+						fxLfayout="row"
+						fxLayoutAlign="space-between"
+						fxLayoutGap="1%"
+						ngClass="p-t-xs"
+					>
+						<div class="mat-body-2 title">
+							{{ truncateText(fundraiser_title, 63) }}
+						</div>
+						<span class="material-icons-outlined"> edit </span>
+					</div>
+					<br />
+					<ng-container *ngIf="fundraiserCardData?.isChild">
+						<span class="mat-caption">
+							<span>Connected to</span>&nbsp;
+							{{ profile_name }}
+						</span>
+						<br />
+					</ng-container>
+
+					<div fxLayout="row" fxLayoutAlign="space-between">
+						<!-- SHOW DONATION RECEIVED AND TARGET AMOUNT -->
+						<div>
+							<mat-label
+								*ngIf="!isShowOnlyDonationAmountView"
+								class="mat-subheading-2"
+							>
+								<b>
+									{{ currency }}&nbsp;{{ donation_received_amount | number }}</b
+								>&nbsp;
+								<span i18n="@@fundraiserCard_donationTargetedAmount">of </span
+								>&nbsp; {{ currency }}&nbsp;{{
+									donation_target_amount | number
+								}}
+							</mat-label>
+							<!-- SHOW ONLY DONATION RECEIVED -->
+							<mat-label
+								*ngIf="isShowOnlyDonationAmountView"
+								class="mat-subheading-2"
+							>
+								<b>
+									{{ currency }}&nbsp;{{ donation_received_amount | number }}</b
+								>&nbsp;
+								<span i18n="@@fundraiserCard_donationReceived_title"
+									>Donation received</span
+								>
+							</mat-label>
+						</div>
+						<div>
+							<ng-container *ngIf="!fundraiserCardData?.isChild">
+								<img
+									width="20"
+									height="20"
+									src="https://res.cloudinary.com/whydonate/image/upload/v1692802910/whydonate-production/platform/svg-icons/mainFundraiser.svg"
+								/>
+							</ng-container>
+							<ng-container *ngIf="fundraiserCardData?.isChild">
+								<img
+									width="20"
+									height="20"
+									src="https://res.cloudinary.com/whydonate/image/upload/v1692802910/whydonate-production/platform/svg-icons/connectedFundraiser.svg"
+								/>
+							</ng-container>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+</ng-template>
+
+<!-- Template for small card type -->
+<!-- <ng-template #gtXsSmallTemplate>
+	<mat-card class="small-card card-clickable" (click)="routeToFundraiserEdit()">
+		<mat-grid-list cols="8" rowHeight="4:1" class="m-l-m">
+			<mat-grid-tile colspan="4" rowspan="10">
+				<ng-container *ngIf="!fundraiserCardData?.isChild">
+					<img
+						mat-card-image
+						src="{{ fundraiser_bg_img.src }}"
+						loading="lazy"
+						(error)="handleImageError($event, defaultBackgroundImage)"
+						alt="{{ fundraiser_bg_img?.alt }}"
+					/>
+				</ng-container>
+				<ng-container *ngIf="fundraiserCardData?.isChild">
+					<img
+						mat-card-image
+						src="{{
+							bgImgBaseUrl + fundraiserCardData?.parent?.backgroundImage?.src
+						}}"
+						loading="lazy"
+						(error)="handleImageError($event, defaultBackgroundImage)"
+						alt="{{ fundraiser_bg_img?.alt }}"
+					/>
+				</ng-container>
+			</mat-grid-tile>
+
+			<mat-grid-tile colspan="4" rowspan="5">
+				<mat-card class="mat-elevation-z0" fxFlex="100%">
+					<span class="mat-body-2"> {{ fundraiser_title }} </span>
+					<br />
+					<ng-container *ngIf="fundraiserCardData?.isChild">
+						<span class="mat-caption">
+							<span>Connected to</span>&nbsp;
+							{{ fundraiserCardData?.parent?.name }}
+						</span>
+					</ng-container>
+				</mat-card>
+			</mat-grid-tile>
+
+			<mat-grid-tile colspan="4" rowspan="2">
+				<mat-card
+					class="mat-elevation-z0"
+					fxFlex="100%"
+					fxLayoutAlign="space-between start"
+				>
+					<mat-label
+						*ngIf="isShowBothDonationAndTargetAmount"
+						class="mat-subheading-2"
+					>
+						<b>{{
+							donation_received_amount
+								| currency: currency:'symbol-narrow':'0.0-0':locale
+						}}</b
+						>&nbsp; <span i18n="@@fundraiserCard_outOf_value">of </span>&nbsp;{{
+							donation_target_amount
+								| currency: currency:'symbol-narrow':'0.0-0':locale
+						}}
+					</mat-label>
+					<mat-label
+						*ngIf="isShowOnlyDonationAmountView"
+						class="mat-subheading-2"
+					>
+						<b>{{
+							donation_received_amount
+								| currency: currency:'symbol-narrow':'0.0-0':locale
+						}}</b>
+					</mat-label>
+				</mat-card>
+			</mat-grid-tile>
+
+			<mat-grid-tile colspan="4" rowspan="2">
+				<div fxFlex fxLayoutAlign="end end" class="m-r-xs">
+					<ng-container *ngIf="!fundraiserCardData?.isChild">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-staging/platform/visuals/ic_fundraiser_owner.svg"
+						/>
+					</ng-container>
+					<ng-container *ngIf="fundraiserCardData?.isChild">
+						<img
+							width="20"
+							height="20"
+							src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-staging/platform/visuals/cf-create-fundraiser"
+						/>
+					</ng-container>
+				</div>
+			</mat-grid-tile>
+		</mat-grid-list>
+	</mat-card>
+</ng-template> -->
+<!-- Template for small card type -->

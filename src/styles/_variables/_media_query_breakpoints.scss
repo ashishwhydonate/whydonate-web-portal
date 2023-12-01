@@ -1,0 +1,62 @@
+@use 'sass:map';
+
+/** DESCRIPTION:
+    'xs'     :   activates between width range / for only	=>  0 to 599px
+    'sm'     :   activates between width range / for only	=>  600px to 959px
+    'md'     :   activates between width range / for only	=>  960px to 1279px
+    'lg'     :   activates between width range / for only	=>  1280px to 1919px
+    'xl'     :   activates between width range / for only	=>  1920px to 5000px
+    'lt-sm'  :   activated till width / ends before			=>  599px
+    'lt-md'  :   activated till width / ends before			=>  959px
+    'lt-lg'  :   activated till width / ends before			=>  1279px
+    'lt-xl'  :   activated till width / ends before			=>  1919px
+    'gt-xs'  :   activates from width / starts from			=>  600px
+    'gt-sm'  :   activates from width / starts from			=>  960px
+    'gt-md'  :   activates from width / starts from			=>  1280px
+    'gt-lg'  :   activates from width / starts from			=>  1920px
+**/
+// https://github.com/angular/flex-layout/wiki/Responsive-API
+
+$BREAKPOINTS_CONIFG: (
+	'xs': 599px,
+	'sm': 959px,
+	'md': 1279px,
+	'lg': 1919px,
+	'xl': 5000px,
+);
+
+$MEDIA_QUERY_CONIFG: (
+	'xs': map.get($BREAKPOINTS_CONIFG, 'xs'),
+	'sm': map.get($BREAKPOINTS_CONIFG, 'sm'),
+	'md': map.get($BREAKPOINTS_CONIFG, 'md'),
+	'lg': map.get($BREAKPOINTS_CONIFG, 'lg'),
+	'xl': map.get($BREAKPOINTS_CONIFG, 'xl'),
+	'lt-sm': map.get($BREAKPOINTS_CONIFG, 'xs'),
+	'lt-md': map.get($BREAKPOINTS_CONIFG, 'sm'),
+	'lt-lg': map.get($BREAKPOINTS_CONIFG, 'md'),
+	'lt-xl': map.get($BREAKPOINTS_CONIFG, 'lg'),
+	'gt-xs': map.get($BREAKPOINTS_CONIFG, 'xs') + 1,
+	'gt-sm': map.get($BREAKPOINTS_CONIFG, 'sm') + 1,
+	'gt-md': map.get($BREAKPOINTS_CONIFG, 'md') + 1,
+	'gt-lg': map.get($BREAKPOINTS_CONIFG, 'lg') + 1,
+);
+
+$DEVICE_CONFIG: (
+	'phone': 'xs',
+	'tablet': 'sm',
+	'laptop': 'md',
+	'desktop': 'lg',
+	'large-dektop': 'xl',
+);
+
+@function get-breakpoint($breakpoint-label) {
+	@return map.get($MEDIA_QUERY_CONIFG, $breakpoint-label);
+}
+
+// Alternative function to get breakpoint value by passing device from $DEVICE_CONFIG instead of $breakpoint-label
+@function get-device-breakpoint($device, $operator: '') {
+	$operator_prefix: if($operator == '', '', #{$operator}-);
+	@return get-breakpoint(
+		#{$operator_prefix}#{map.get($DEVICE_CONFIG, $device)}
+	);
+}

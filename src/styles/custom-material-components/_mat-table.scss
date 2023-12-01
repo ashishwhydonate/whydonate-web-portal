@@ -1,0 +1,56 @@
+// use mat-table withing a div with below class to make table scrollable on mobile
+.table-container {
+	overflow-x: auto;
+}
+
+// Donation table from dashboard
+.mat-column-status {
+	text-align: center !important;
+}
+.mat-column-amount {
+	text-align: center !important;
+}
+
+.responsive-table {
+	.mat-table {
+		max-width: 100%;
+		overflow: auto;
+		margin-bottom: 10px;
+		display: table;
+		margin: 0px;
+	}
+
+	.row,
+	.header-row {
+		display: table-row;
+		min-height: 36px !important;
+	}
+
+	.cell,
+	.header-cell {
+		word-wrap: initial;
+		display: table-cell;
+		padding: 0px 5px;
+		line-break: unset;
+		width: fit-content;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.header-row,
+	.header-cell {
+		margin: 0 auto;
+		min-height: 100px !important;
+		text-align: center;
+		vertical-align: middle;
+		align-self: center;
+	}
+
+	.sort-header {
+		display: flex;
+		align-content: center;
+		text-align: center;
+		justify-content: center;
+		font-size: 12pt;
+	}
+}

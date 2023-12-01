@@ -1,0 +1,363 @@
+<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+	<div
+		fxLayout="column"
+		fxFlex="100%"
+		fxLayoutAlign="center start"
+		fxLayoutGap="2%"
+	>
+		<!--TITLE-->
+		<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+			<h2>
+				<img
+					style="position: relative; top: 5px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667421094/whydonate-production/platform/svg-icons/checkCircleFillPrimary.svg"
+				/>
+				&nbsp;<span
+					i18n="@@donation_donationSuccessfulForm_receivedDonation_title_label"
+					>Recieved Donation</span
+				>
+			</h2>
+		</div>
+		<!--  i18n="@@donation_donationSuccessfulForm_receivedDonation_title_label" -->
+		<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+			<h2
+				i18n="@@donation_donationSuccessfulForm_addingDetails_subtitle_label"
+				class="mat-body-2"
+			>
+				Adding details to fundraiser page and organizer
+			</h2>
+		</div>
+
+		<!--This will shown if anonymous is checked while entering details in donation successful form-->
+		<div
+			*ngIf="isAnonymous"
+			fxLayout="row"
+			fxFill
+			fxLayoutAlign="start center"
+			class="alert"
+		>
+			<h3 class="custom-h3">
+				<img
+					style="position: relative; top: 6px"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667506781/whydonate-production/platform/svg-icons/visibilityOffPrimary.svg"
+				/>&nbsp;
+				<span i18n="@@donation_donationSuccessfulForm_dateNotPublic_message"
+					>Your data will not be seen by public, you will be titled as anonymous
+					donor.</span
+				>
+			</h3>
+		</div>
+
+		<!--FORM-->
+		<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+			<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+				<form [formGroup]="donationSuccessfulForm">
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="
+								@@donation_page_components_donation_successful_form_firstNameLabel"
+							>First Name</mat-label
+						>
+						<!--Input area for First Name of donor and also provides data to generateRecieptName()-->
+						<input
+							id="donationFirstName"
+							matInput
+							placeholder="First name"
+							formControlName="first_name"
+							required
+							[type]="hideValue ? 'text' : 'text'"
+							(focusin)="generateReceiptName()"
+							(focusout)="generateReceiptName()"
+							(keyup)="generateReceiptName()"
+						/>
+						<!--Button to check visibility in form-->
+						<button
+							mat-icon-button
+							matSuffix
+							[attr.aria-label]="'hide text'"
+							[attr.aria-pressed]="hideValue"
+						>
+							<mat-icon class="material-icons-outlined">{{
+								hideValue ? 'visibility_off' : 'visibility'
+							}}</mat-icon>
+						</button>
+
+						<mat-error
+							i18n="
+								@@donation_successful_formField_matError_mustBeBetween1to100"
+							*ngIf="donationSuccessfulForm.controls['first_name'].errors"
+						>
+							Must be between 1 to 100 characters
+						</mat-error>
+					</mat-form-field>
+					<!--If not anonymous-->
+					<p
+						*ngIf="!this.isAnonymous"
+						i18n="@@donation_donationSuccessfulForm_onlFirstName_message"
+					>
+						Only your first name will be shown on the fundraiser page.
+					</p>
+					<!--If anonymous-->
+					<p
+						*ngIf="this.isAnonymous"
+						i18n="@@donation_donationSuccessfulForm_anonymous_message"
+					>
+						“It will show as 'Anonymous' on the fundraiser page.”
+					</p>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="
+								@@donation_page_components_donation_successful_form_lastNameLabel"
+							>Last Name</mat-label
+						>
+						<!--Input area for Last Name of donor and also provides data to generateRecieptName()-->
+						<input
+							id="donationLastName"
+							matInput
+							placeholder="Last name"
+							formControlName="last_name"
+							required
+							[type]="hideValue ? 'text' : 'text'"
+							(focusin)="generateReceiptName()"
+							(focusout)="generateReceiptName()"
+							(keyup)="generateReceiptName()"
+						/>
+
+						<button
+							mat-icon-button
+							matSuffix
+							[attr.aria-label]="'hide text'"
+							[attr.aria-pressed]="hideValue"
+						>
+							<mat-icon class="material-icons-outlined">{{
+								hideValue ? 'visibility_off' : 'visibility'
+							}}</mat-icon>
+						</button>
+
+						<mat-error
+							i18n="
+								@@donation_successful_formField_matError_mustBeBetween1to100"
+							*ngIf="donationSuccessfulForm.controls['last_name'].errors"
+						>
+							Must be between 1 to 100 characters
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="@@donation_donationSuccessfulForm_email_input_label"
+							>Email</mat-label
+						>
+						<input
+							id="donationEmail"
+							matInput
+							i18n="@@donation_donationSuccessfulForm_email_input"
+							placeholder="Email Address"
+							type="email"
+							formControlName="email"
+							required
+							[type]="hideValue ? 'text' : 'text'"
+						/>
+						<!--Button to check visibility in form-->
+						<button
+							mat-icon-button
+							matSuffix
+							[attr.aria-label]="'hide text'"
+							[attr.aria-pressed]="hideValue"
+						>
+							<mat-icon class="material-icons-outlined">{{
+								hideValue ? 'visibility_off' : 'visibility'
+							}}</mat-icon>
+						</button>
+
+						<mat-error
+							i18n="@@donation_donationSuccessfulForm_emailRequiredValidation"
+							*ngIf="
+								donationSuccessfulForm.controls.email.invalid &&
+								donationSuccessfulForm.controls.email.errors
+							"
+						>
+							Email required
+						</mat-error>
+					</mat-form-field>
+
+					<!--Message to be displayed on Fundraiser Page-->
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="@@donation_donationSuccessfulForm_message_input_label"
+							>Send thank you message (optional)
+						</mat-label>
+						<!--Input area for Thank You message-->
+						<textarea
+							id="donationSendThanksMessage"
+							matInput
+							placeholder="Message for the organiser"
+							type="text"
+							formControlName="message"
+							#message
+						></textarea>
+						<mat-hint align="end"
+							>{{ message.value.length }} / 0-140
+							<span i18n="@@characters_translation">Characters</span></mat-hint
+						>
+					</mat-form-field>
+
+					<!--Ticking this checkbox invokes switchAnonymous()-->
+					<!-- <mat-checkbox
+						id="donateAnonymous"
+						i18n="@@donation_donationSuccessfulForm_anonymous_label"
+						color=""
+						(click)="switchAnonymous()"
+						>Donate Anonymous</mat-checkbox
+					> -->
+
+					<mat-slide-toggle
+						id="donateAnonymous"
+						i18n="@@donation_donationSuccessfulForm_anonymous_label"
+						color="primary"
+						(click)="switchAnonymous()"
+						>Donate Anonymous</mat-slide-toggle
+					>
+
+					<!--Form field for proof of donation and tax benifits-->
+					<h3 i18n="@@donation_donationSuccessfulForm_taxDeduction_message">
+						Please share details to get tax-deduction benefits invoice
+						(optional)
+					</h3>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="
+								@@donation_donationSuccessfulForm_nameCompanyName_input_label"
+							>Name / Company Name</mat-label
+						>
+						<input
+							id="#donationCompanyName"
+							i18n="@@donation_donationSuccessfulForm_nameCompanyName_input"
+							matInput
+							placeholder="Organisation Name"
+							formControlName="organisation_name"
+							type="text"
+						/>
+					</mat-form-field>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="@@donation_donationSuccessfulForm_address_input_label"
+							>Address (optional)</mat-label
+						>
+						<input
+							id="donationAddress"
+							i18n="@@donation_donationSuccessfulForm_address_input"
+							matInput
+							placeholder="Address"
+							formControlName="address"
+							type="text"
+						/>
+						<mat-error
+							i18n="
+								@@donation_successful_formField_matError_mustBeBetween1to100"
+							*ngIf="
+								donationSuccessfulForm.controls['address'].errors?.maxlength ||
+								donationSuccessfulForm.controls['address'].errors?.minlength
+							"
+						>
+							Must be between 1 to 100 characters
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label i18n="@@donation_donationSuccessfulForm_city_input_label"
+							>City (optional)</mat-label
+						>
+						<input
+							id="donationCity"
+							i18n="@@donation_donationSuccessfulForm_city_input"
+							matInput
+							placeholder="City"
+							formControlName="city"
+							type="text"
+						/>
+						<mat-error
+							i18n="
+								@@donation_successful_formField_matError_mustBeBetween1to100"
+							*ngIf="
+								donationSuccessfulForm.controls['city'].errors?.maxlength ||
+								donationSuccessfulForm.controls['city'].errors?.minlength
+							"
+						>
+							Must be between 1 to 100 characters
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="@@donation_donationSuccessfulForm_zipCode_input_label"
+							>Zip code (optional)</mat-label
+						>
+						<input
+							id="donationZipCode"
+							matInput
+							i18n="@@donation_donationSuccessfulForm_zipCode_input"
+							placeholder="Zip code"
+							formControlName="zipcode"
+							type="text"
+						/>
+						<mat-error
+							i18n="@@donation_successful_formField_matError_mustBeBetween1to12"
+							*ngIf="
+								donationSuccessfulForm.controls['zipcode'].errors?.maxlength ||
+								donationSuccessfulForm.controls['zipcode'].errors?.minlength
+							"
+						>
+							Must be between 1 to 12 characters
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="w-100" appearance="outline">
+						<mat-label
+							i18n="@@donation_donationSuccessfulForm_country_input_label"
+							>Country (optional)</mat-label
+						>
+						<input
+							id="donationCountry"
+							matInput
+							i18n="@@donation_donationSuccessfulForm_country_input"
+							placeholder="Country"
+							formControlName="country"
+							type="text"
+						/>
+						<mat-error
+							i18n="
+								@@donation_successful_formField_matError_mustBeBetween1to100"
+							*ngIf="
+								donationSuccessfulForm.controls['country'].errors?.maxlength ||
+								donationSuccessfulForm.controls['country'].errors?.minlength
+							"
+						>
+							Must be between 1 to 100 characters
+						</mat-error>
+					</mat-form-field>
+
+					<!--Save Details button which upon clicking invokes onSubmit()-->
+					<button
+						id="donationSave"
+						mat-flat-button
+						class="w-100"
+						color="accent"
+						(click)="onSubmit()"
+						[disabled]="!donationSuccessfulForm.valid || isLoading"
+					>
+						<span i18n="@@donation_donationSuccessfulForm_save_button"
+							>Save Details</span
+						>
+						<mat-icon *ngIf="isLoading" class="m-l-xs">
+							<mat-spinner color="accent" diameter="20"> </mat-spinner>
+						</mat-icon>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

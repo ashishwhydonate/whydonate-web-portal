@@ -1,0 +1,362 @@
+<div
+	fxLayout="row"
+	fxLayout.md="row"
+	fxLayout.sm="row wrap"
+	fxLayoutAlign.lt-md="space-between"
+	fxLayout.lt-sm="column"
+	fxFlex="100%"
+>
+	<mat-card
+		class="mat-elevation-z0"
+		fxFlex="60%"
+		fxFlex.sm="100%"
+		fxFlex.lt-sm="77%"
+		fxLayout.xs="column"
+	>
+		<div
+			fxLayout="row wrap"
+			fxLayout.xs="column"
+			fxLayoutAlign="space-between baseline"
+		>
+			<h2 i18n="@@embed_embedDonation_title">
+				Embed donation Widget to your website
+			</h2>
+		</div>
+			<form [formGroup]="pluginForm">
+				<p>
+					<strong i18n="@@embed_widget_label"> Widget: </strong>
+					<mat-slide-toggle
+						labelPosition="before"
+						class="mat-body-1"
+						color="primary"
+						formControlName="hideWidgetCard"
+						(change)="setWidgetCheckbox($event)"
+						i18n="@@embed_hideCard_label"
+					>
+						Hide card
+					</mat-slide-toggle>
+				</p>
+				<p>
+					<!-- <mat-checkbox formControlName="showImageCheckbox" fxFlexOffset="16px"
+						><span
+							i18n="@@embed_showFundraiserImage_checkbox"
+							class="mat-body-1"
+							>Show fundraiser image</span
+						></mat-checkbox
+					> -->
+
+					<mat-slide-toggle formControlName="showImageCheckbox" fxFlexOffset="16px" color="primary"
+					    ><span
+						    i18n="@@embed_showFundraiserImage_checkbox"
+					    	class="mat-body-1"
+						>Show fundraiser image</span
+					></mat-slide-toggle
+				>
+				</p>
+				 <p>
+					<!-- <mat-checkbox formControlName="addFormCheckbox" fxFlexOffset="16px"
+						><span i18n="@@embed_addDonationForm_checkbox" class="mat-body-1"
+							>Add Donation form</span
+						></mat-checkbox
+					> -->
+
+					<mat-slide-toggle formControlName="addFormCheckbox" fxFlexOffset="16px" color="primary"
+			         	><span i18n="@@embed_addDonationForm_checkbox" class="mat-body-1"
+					    >Add Donation form</span
+				    ></mat-slide-toggle
+			    >
+				</p>
+				<p>
+					<mat-divider></mat-divider>
+				</p>
+				<p class="mat-body-2" i18n="@@embed_addUrlToRedirectUser_heading">
+					Add Url to redirect user after donation (Optional)
+				</p>
+				<p fxLayout="column">
+					<mat-form-field appearance="outline" color="accent" fxFlex>
+						<mat-label i18n="@@embed_successUrl_label">Success Url</mat-label>
+						<input
+							matInput
+							formControlName="successRedirectURL"
+							placeholder="{{ sucessUrlPlaceholder }}"
+						/>
+						<mat-error i18n="@@embed_invalidUrl_label"> Invalid URL </mat-error>
+					</mat-form-field>
+					<mat-form-field appearance="outline" color="accent" fxFlex>
+						<mat-label i18n="@@embed_failUrl_label">Fail Url</mat-label>
+						<input
+							matInput
+							formControlName="failRedirectURL"
+							placeholder="{{ failUrlPlaceholder }}"
+						/>
+						<mat-error i18n="@@embed_invalidUrl_label"> Invalid URL </mat-error>
+					</mat-form-field>
+				</p>
+				<p>
+					<mat-divider></mat-divider>
+				</p>
+				<p class="mat-body-2" i18n="@@embed_copyAndPaste_label">
+					Copy and paste the following embed code:
+				</p>
+				<p>
+					<mat-form-field appearance="outline" color="accent" fxFlex>
+						<textarea
+							matInput
+							readonly="true"
+							#embedView
+							cdkTextareaAutosize
+						></textarea>
+					</mat-form-field>
+				</p>
+				<div fxLayout="row" fxLayoutAlign="end center">
+					<button
+						mat-flat-button
+						color="accent"
+						[cdkCopyToClipboard]="copyEmbedHTML()"
+						i18n="@@button_copyCode"
+					>
+						Copy code
+					</button>
+				</div>
+			</form>
+	</mat-card>
+	<!-- <mat-divider vertical="true"></mat-divider> -->
+	<!-- Preview -->
+	<mat-card
+		class="mat-elevation-z0 section-background-grey"
+		fxFlex="45%"
+		fxFlex.sm="100%"
+		fxFlex.lt-sm="20%"
+		fxLayout.xs="column"
+		fxLayoutAlign="center space-between"
+		fxLayoutAlign.lt-sm="center space-between"
+	>
+		<div fxFlex="100%" fxFlex.sm="55%" ngClass.lg="m-l-m">
+			<div fxLayout="row" fxLayoutAlign="flex-start center">
+				<div
+					fxLayout="row"
+					fxLayoutAlign="center center"
+					class="mat-body-1"
+					ngClass.lt-sm="m-t-m"
+				>
+					<img
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+					/>
+					<span i18n="@@embed_donationFormPreview_icon" fxFlexOffset="8px">
+						Donation Form Preview
+					</span>
+				</div>
+			</div>
+			<br />
+			<!-- Preview Container-->
+			<div
+				ngClass.gt-md="p-l-xxl p-r-xxl"
+				ngClass.md="p-l-0 p-r-0"
+				ngClass.lt-sm="p-l-m p-r-m"
+			>
+				<ng-container [ngSwitch]="previewSwitchCase">
+					<ng-container
+						*ngSwitchCase="'donation-widget'"
+						[ngTemplateOutlet]="widget"
+					></ng-container>
+					<ng-container
+						*ngSwitchCase="'show-with-image'"
+						[ngTemplateOutlet]="widgetImage"
+					></ng-container>
+					<ng-container
+						*ngSwitchCase="'donation-form+widget'"
+						[ngTemplateOutlet]="form"
+					></ng-container>
+					<ng-container
+						*ngSwitchCase="'donation-form+image'"
+						[ngTemplateOutlet]="formImage"
+					></ng-container>
+					<ng-container
+						*ngSwitchCase="'donation-button'"
+						[ngTemplateOutlet]="donationButton"
+					></ng-container>
+					<ng-container
+						*ngSwitchDefault
+						[ngTemplateOutlet]="widget"
+					></ng-container>
+				</ng-container>
+			</div>
+		</div>
+	</mat-card>
+</div>
+
+<!-- Preview Templates: Templates for showing Preview -->
+<ng-template #widget>
+	<mat-card>
+		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>
+		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>
+	</mat-card>
+</ng-template>
+
+<ng-template #imageVideo>
+	<!-- Display image if available -->
+	<img
+		mat-card-image
+		*ngIf="fundraiserBackgroundImage != '' && fundraiserBackgroundVideo == ''"
+		[src]="fundraiserBackgroundImage"
+		loading="lazy"
+	/>
+	<!-- Display video if available or both image and video are available -->
+	<img
+		mat-card-image
+		i18n="@@fundraiserCard_createBackgroundImage"
+		*ngIf="
+			fundraiserBackgroundVideo ||
+			(fundraiserBackgroundImage != '' && fundraiserBackgroundVideo)
+		"
+		src="{{ this.youtubeThumbnail }}"
+		loading="lazy"
+	/>
+	<!-- Display a default image if none of the above conditions are met -->
+	<img
+		mat-card-image
+		*ngIf="!fundraiserBackgroundImage && !fundraiserBackgroundVideo"
+		src="https://res.cloudinary.com/whydonate/image/upload/v1689704507/whydonate-production/platform/svg-icons/fundraiser_default_bg.png"
+		loading="lazy"
+	/>
+</ng-template>
+
+<ng-template #widgetImage>
+	<mat-card>
+		<ng-container [ngTemplateOutlet]="imageVideo"></ng-container>
+		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>
+		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>
+	</mat-card>
+</ng-template>
+<ng-template #form>
+	<mat-card>
+		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>
+		<ng-container [ngTemplateOutlet]="formBody"></ng-container>
+		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>
+	</mat-card>
+</ng-template>
+<ng-template #formImage>
+	<mat-card>
+		<ng-container [ngTemplateOutlet]="imageVideo"></ng-container>
+		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>
+		<ng-container [ngTemplateOutlet]="formBody"></ng-container>
+		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>
+	</mat-card>
+</ng-template>
+<ng-template #donationButton>
+	<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>
+</ng-template>
+
+<!-- Body Template: used with combinations inside the Preview Templates -->
+<ng-template #widgetBody>
+	<div>
+		<app-amount-view
+			[fundraiserCardData]="this.amountProgressData?.data"
+			[symbol]="this.currency_symbol"
+		></app-amount-view>
+		<br /><br />
+		<app-donation-progress-bar
+			[fundraiserCardData]="this.amountProgressData?.data"
+		></app-donation-progress-bar>
+		<br />
+	</div>
+</ng-template>
+<ng-template #formBody>
+	<div class="donation-form-preview">
+		<mat-tab-group mat-stretch-tabs color="accent">
+			<mat-tab label="{{ oneTimeLabel }}" i18n="@@embed_oneTime_label">
+				<div fxLayoutAlign="center" fxLayout="row wrap">
+					<div class="p-t-s">
+						<button mat-button class="mat-flat-button" color="primary">
+							{{ this.currency_symbol }}
+							{{ this.onetime_first | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.onetime_second | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.onetime_third | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.onetime_forth | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+				</div>
+			</mat-tab>
+			<mat-tab label="{{ monthlyLabel }}" i18n="@@embed_monthly_label">
+				<div fxLayoutAlign="center" fxLayout="row wrap">
+					<div class="p-t-s">
+						<button mat-button class="mat-flat-button" color="primary">
+							{{ this.currency_symbol }}
+							{{ this.monthly_first | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.monthly_second | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.monthly_third | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.monthly_forth | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+				</div>
+			</mat-tab>
+			<mat-tab label="{{ yearlyLabel }}" i18n="@@embed_yearly_label">
+				<div fxLayoutAlign="center" fxLayout="row wrap">
+					<div class="p-t-s">
+						<button mat-button class="mat-flat-button" color="primary">
+							{{ this.currency_symbol }}
+							{{ this.yearly_first | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.yearly_second | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.yearly_third | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="p-t-s">
+						<button mat-stroked-button>
+							{{ this.currency_symbol }}
+							{{ this.yearly_forth | number }}</button
+						>&nbsp;&nbsp;&nbsp;
+					</div>
+				</div>
+			</mat-tab>
+		</mat-tab-group>
+
+		<br />
+	</div>
+</ng-template>
+<ng-template #donationButtonBody>
+	<p>
+		<button fxFlex mat-flat-button color="accent" i18n="@@button_donate">
+			Donate
+		</button>
+	</p>
+</ng-template>

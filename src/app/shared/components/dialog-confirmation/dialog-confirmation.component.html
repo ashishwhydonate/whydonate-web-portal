@@ -1,0 +1,18 @@
+<button mat-icon-button class="close-button" (click)="onCloseClick()">
+	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/>
+</button>
+<h1 mat-dialog-title>
+	{{ data.title | uppercase }}
+</h1>
+
+<div mat-dialog-content>
+	<p>{{ data.body }}</p>
+</div>
+<div mat-dialog-actions>
+	<button mat-button (click)="onRejected()">
+		{{ data.rejectMessage | uppercase }}
+	</button>
+	<button mat-button (click)="onAccepted()" cdkFocusInitial>
+		{{ data.acceptMessage | uppercase }}
+	</button>
+</div>

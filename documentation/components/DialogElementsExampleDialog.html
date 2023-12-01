@@ -1,0 +1,558 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  DialogElementsExampleDialog</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/custom-branding/components/custom-branding/branding/branding.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>dialog-elements-example-dialog</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">fundraiser svg</code></pre></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+	Component,
+	ElementRef,
+	Input,
+	OnChanges,
+	OnInit,
+	SimpleChanges,
+	ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { ThemeService } from &#x27;src/app/global/services/theme.service&#x27;;
+import {
+	CustomBrandingService,
+	CustomBranding,
+} from &#x27;../../../services/custom-branding.service&#x27;;
+import {
+	AbstractControl,
+	UntypedFormControl,
+	ValidatorFn,
+	Validators,
+} from &#x27;@angular/forms&#x27;;
+import { MatLegacyDialog as MatDialog } from &#x27;@angular/material/legacy-dialog&#x27;;
+import { FundraiserPreviewComponent } from &#x27;src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component&#x27;;
+import { ImageCroppedEvent } from &#x27;ngx-image-cropper&#x27;;
+import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { MediaObserver } from &#x27;@angular/flex-layout&#x27;;
+import { NotificationService } from &#x27;src/app/shared/services/notification.service&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+
+type colorValidationError &#x3D; {
+	[key: string]: boolean;
+};
+
+@Component({
+	selector: &#x27;app-branding&#x27;,
+	templateUrl: &#x27;./branding.component.html&#x27;,
+})
+/** *Branding Component */
+export class BrandingComponent implements OnInit, OnChanges {
+	isLoading: boolean &#x3D; false;
+	ACCOUNT_API_V2: string &#x3D; environment.ACCOUNT_API_V2;
+	customBrandingAPI &#x3D; &#x27;account/custom_branding/update&#x27;;
+
+	@Input() customSetting!: any;
+
+	@ViewChild(&#x27;customLogoUploader&#x27;, { static: false })
+	customLogoUploader!: ElementRef;
+
+	whydonateLogo: string &#x3D;
+		&#x27;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODYiIGhlaWdodD0iNDAiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTAgMGgxODZ2NDBIMHoiLz48cGF0aCBmaWxsPSIjMzJCRjU1IiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik01NS4wNSAxMy4wMzNoMi42NDhhLjYxLjYxIDAgMCAxIC41NzcuODE3bC00Ljg5IDEzLjU0MWEuNjEuNjEgMCAwIDEtLjU3Ny40MDZoLTIuMjM1YS42MTUuNjE1IDAgMCAxLS41ODMtLjQxMmwtMy4zMTctOS42NjctMy4xNTggOS42NmEuNjEyLjYxMiAwIDAgMS0uNTg0LjQyNWgtMi4yMDRhLjYxNi42MTYgMCAwIDEtLjU3Ny0uNGwtNS4wMzYtMTMuNTQxYS42MTIuNjEyIDAgMCAxIC41NzctLjgyM2gyLjY0MmMuMjY4IDAgLjQ5OC4xNy41ODQuNDE3bDMgOS4wOTIgMy4xNC05LjUxNWgzLjI2OGwzLjE0IDkuNTE1IDMuMDAxLTkuMDkyYS42MTUuNjE1IDAgMCAxIC41ODMtLjQxN3YtLjAwNlptMTkuMzIgNi40ODN2Ny42N2EuNjEuNjEgMCAwIDEtLjYxMy42MWgtMi40NTRhLjYxLjYxIDAgMCAxLS42MTMtLjYxVjE5Ljc3YzAtMi4zNzMtMS40MjctMy42MzgtMy4wNzQtMy42MzgtMS42NDYgMC0zLjc3Mi45OC0zLjc3MiAzLjg1NnY3LjE5N2EuNjEuNjEgMCAwIDEtLjYxMy42MTJoLTIuNDU0YS42MS42MSAwIDAgMS0uNjEzLS42MTJWNS42MTdhLjYxLjYxIDAgMCAxIC42MTMtLjYxaDIuNDU0YS42MS42MSAwIDAgMSAuNjEzLjYxdjkuNjYxYy43My0xLjgwMyAzLjExLTIuNjIgNC41OTktMi42MiAzLjgwOCAwIDUuOTI4IDIuNTYgNS45MjggNi44NThabTEyLjU2OC02LjQ4M2gyLjYzYS42MS42MSAwIDAgMSAuNTY1Ljg0N2wtOC42ODYgMjAuNzQ1YS42MDguNjA4IDAgMCAxLS41NjUuMzc1aC0yLjU1YS42MTQuNjE0IDAgMCAxLS41NzItLjg0MWwyLjk5NS03LjQxTDc1LjIyIDEzLjg4YS42MS42MSAwIDAgMSAuNTY1LS44NTNoMi42ODVjLjI0OSAwIC40NzQuMTUxLjU3LjM4MWwzLjY4MiA4Ljk3NyAzLjY1LTguOTc3YS42MS42MSAwIDAgMSAuNTcxLS4zODFsLS4wMDYuMDA2Wm0xNi43NDYtNy43NzNoMi40NTRhLjYxLjYxIDAgMCAxIC42MTQuNjEydjIxLjU2N2EuNjEuNjEgMCAwIDEtLjYxNC42MTJoLTIuNDU0YS42MS42MSAwIDAgMS0uNjEzLS42MTJ2LTEuMzVjLTEuMDE1IDEuNTUtMy4xMSAyLjMzNy00LjkxNCAyLjMzNy0zLjkgMC03LjI5NS0zLjA2OS03LjI5NS03Ljc3OCAwLTQuNzQgMy4zNTktNy43NDIgNy4yNjUtNy43NDIgMS44NyAwIDMuOTMuNzU2IDQuOTUgMi4zMDZWNS44NjZhLjYxLjYxIDAgMCAxIC42MTMtLjYxMmwtLjAwNi4wMDZabS0uNjc0IDE1LjM2M2MwLTIuNTktMi4xNTYtNC4yOTctNC4yODItNC4yOTctMi4yODQgMC00LjE1NSAxLjgzNC00LjE1NSA0LjI5NyAwIDIuNDY0IDEuODcxIDQuMzk1IDQuMTU1IDQuMzk1IDIuMjg0IDAgNC4yODItMS44MDQgNC4yODItNC4zOTVabTUuNjQ5LS4yMjNjMC00LjY4IDMuNjUtNy43NDMgNy44NjYtNy43NDMgNC4yMTUgMCA3Ljg5NiAzLjA2MyA3Ljg5NiA3Ljc0MyAwIDQuNjc5LTMuNjggNy43NzgtNy44OTYgNy43NzgtNC4yMjIgMC03Ljg2Ni0zLjEtNy44NjYtNy43NzhabTEyLjA1IDBjMC0yLjUzLTEuOS00LjMyOS00LjE4NC00LjMyOS0yLjI4NCAwLTQuMTU1IDEuODA0LTQuMTU1IDQuMzI5IDAgMi41OSAxLjg3MSA0LjM2NCA0LjE1NSA0LjM2NCAyLjI4NCAwIDQuMTg1LTEuNzY4IDQuMTg1LTQuMzY0Wm0xOS43NzItLjg4NHY3LjY3YS42MS42MSAwIDAgMS0uNjE0LjYxaC0yLjQ1M2EuNjEuNjEgMCAwIDEtLjYxNC0uNjFWMTkuNzdjMC0yLjM3My0xLjQyNy0zLjYzOC0zLjA3My0zLjYzOHMtMy43NzIuOTgtMy43NzIgMy44MjZ2Ny4yMjdhLjYxLjYxIDAgMCAxLS42MTQuNjEyaC0yLjQ1NGEuNjEuNjEgMCAwIDEtLjYxMy0uNjEydi0xMy41NGEuNjEuNjEgMCAwIDEgLjYxMy0uNjEyaDIuNDU0YS42MS42MSAwIDAgMSAuNjE0LjYxMXYxLjcyNWMuNzU5LTEuODY0IDMuMDgtMi43MTggNC41OTgtMi43MTggMy44MDggMCA1LjkyOCAyLjU2IDUuOTI4IDYuODU5di4wMDZabTE1LjA4OC02LjQ4M2gyLjQ1NGEuNjEuNjEgMCAwIDEgLjYxMy42MTF2MTMuNTQxYS42MS42MSAwIDAgMS0uNjEzLjYxMmgtMi40NTRhLjYxLjYxIDAgMCAxLS42MTQtLjYxMlYyNS40OWMtLjk4NCAxLjYxLTIuOTUyIDIuNjg4LTUuMDc3IDIuNjg4LTMuOTY3IDAtNy4xMzctMy4xOS03LjEzNy03Ljc3OCAwLTQuNDU2IDMuMDQzLTcuNzQzIDcuMjM0LTcuNzQzIDIuMDI4IDAgMy45OTYuODg0IDQuOTggMi40MzR2LTEuNDRhLjYxLjYxIDAgMCAxIC42MTQtLjYxMnYtLjAwNlptLS42NzQgNy4zNjdjMC0yLjUzLTIuMDk2LTQuMzI5LTQuMjgyLTQuMzI5LTIuMzgyIDAtNC4xODYgMS45NjItNC4xODYgNC4zMjkgMCAyLjM3MiAxLjgxIDQuMzY0IDQuMjIyIDQuMzY0IDIuMjg0IDAgNC4yNTItMS44OTUgNC4yNTItNC4zNjRoLS4wMDZabTE1LjI2NC05Ljg3M3YxLjY4MmEuNjEuNjEgMCAwIDEtLjYxNC42MTJoLTIuNTI2VjI3LjczYS42MS42MSAwIDAgMS0uNjE0LjYxMWgtMi40NTRhLjYxLjYxIDAgMCAxLS42MTMtLjYxMVYxMi44MmgtMi4wNTNhLjYxLjYxIDAgMCAxLS42MTQtLjYxdi0xLjY4M2EuNjEuNjEgMCAwIDEgLjYxNC0uNjEyaDIuMDUzVjUuNjExQS42MS42MSAwIDAgMSAxNjMuOTUgNWgyLjQ1NGEuNjEuNjEgMCAwIDEgLjYxNC42MTF2NC4zMDRoMi41MjZhLjYxLjYxIDAgMCAxIC42MTQuNjEyWm0xNS4yMDMgMTAuODk2SDE3NC40NmMuNDEzIDIuMDUyIDEuOTk5IDMuMTYgNC4yMTYgMy4xNiAxLjM5IDAgMi43NTctLjUzMyAzLjY1LTEuNDc4YS42MDkuNjA5IDAgMCAxIC44MTQtLjA2NmwxLjUzIDEuMTU2Yy4yNzQuMjA2LjMyMy42LjExLjg3Mi0xLjQzMyAxLjgyOC0zLjg1NyAyLjgzMy02LjMzIDIuODMzLTQuNDA5IDAtNy43NjgtMy4xNi03Ljc2OC03Ljc3OSAwLTQuNzEgMy41MjMtNy43NDIgNy43NjktNy43NDJTMTg2IDE1LjM4IDE4NiAxOS45OTRjMCAuMjU0LS4wMTIuNTM5LS4wMy44NDFhLjYxMy42MTMgMCAwIDEtLjYxNC41ODFsLjAwNi4wMDdabS0zLjAwNi0yLjU2MWMtLjIyLTIuMDIyLTEuODEtMy4yMjYtMy44Ny0zLjIyNi0xLjk2OCAwLTMuNTgzLjk4LTQuMDI3IDMuMjI2aDcuODk3Wk0yNC45MDQgNS4wMDZINS41MzRDMi40NzcgNS4wMDYgMCA3LjM5NyAwIDEwLjM0NXYxOC42OGMwIDIuNjUyIDIuMDA0IDQuODU1IDQuNjQgNS4yNjdsOS4xMjQuMDY2aDExLjE1MmMzLjA1NSAwIDUuNTMzLTIuMzkgNS41MzMtNS4zMzlWMTAuMzRDMzAuNDUgNy4zOTEgMjcuOTcxIDUgMjQuOTE2IDVsLS4wMTIuMDA2Wm0tOS42ODggMjQuNjk3Yy01LjcwNCAwLTEwLjMyLTQuMzk0LTEwLjMyNi05LjgxOGgyMC42NDVjMCA1LjQyNC00LjYyMiA5LjgxOC0xMC4zMiA5LjgxOFoiLz48L2c+PC9zdmc+&#x27;;
+	brandingLogoPreviewUrl: string;
+	brandingLogo: string;
+
+	customShadow &#x3D; new UntypedFormControl(&#x27;1&#x27;);
+
+	primaryColor &#x3D; &#x27;#32bf55&#x27;;
+	primaryColorHex &#x3D; new UntypedFormControl(
+		this.primaryColor,
+		Validators.pattern(/^#[0-9a-zA-Z]{6}$/)
+	);
+
+	secondaryColor &#x3D; &#x27;#363396&#x27;;
+	secondaryColorHex &#x3D; new UntypedFormControl(
+		this.secondaryColor,
+		Validators.compose([
+			Validators.pattern(/^#[0-9a-zA-Z]{6}$/),
+			this.colorValidator(),
+		])
+	);
+
+	fontFamily &#x3D; new UntypedFormControl(&#x27;Roboto&#x27;);
+	customPrimaryColor: string;
+	customSecondaryColor: string;
+
+	/** *Read user profile data */
+	selectedBrandingLogo!: File;
+	closeCropper &#x3D; false;
+	imageChangedEvent: any &#x3D; &#x27;&#x27;;
+	isSaving!: boolean;
+	isSaveDisabled: boolean &#x3D; true;
+
+	constructor(
+		private accountService: AccountService,
+		private _themeService: ThemeService,
+		private _customBrandingService: CustomBrandingService,
+		private _http: HttpClient,
+		public media: MediaObserver,
+		public dialog: MatDialog,
+		public notificationService: NotificationService
+	) {
+		this.customPrimaryColor &#x3D; this.primaryColor;
+		this.customSecondaryColor &#x3D; this.secondaryColor;
+		this.brandingLogoPreviewUrl &#x3D; this.whydonateLogo;
+		this.brandingLogo &#x3D; this.whydonateLogo;
+	}
+
+	/** *----------------------------------------------------------------------------------------------------- */
+	/** *@ Lifecycle hooks */
+	/** *----------------------------------------------------------------------------------------------------- */
+
+	/**
+	 * On init
+	 */
+	ngOnInit(): void {
+		this.isLoading &#x3D; true;
+	}
+
+	/**
+	 * On Change
+	 */
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes.customSetting.currentValue) {
+			!changes.customSetting.currentValue?.isDefault
+				? this.setBrandingView(changes.customSetting.currentValue)
+				: null;
+			this.isLoading &#x3D; false;
+
+			this.fontFamily.valueChanges.subscribe((event) &#x3D;&gt; {
+				this.isSaveDisabled &#x3D; false;
+			});
+			this.customShadow.valueChanges.subscribe((event) &#x3D;&gt; {
+				this.isSaveDisabled &#x3D; false;
+			});
+		}
+	}
+
+	/** *----------------------------------------------------------------------------------------------------- */
+	/** *@ Public methods */
+	/** *----------------------------------------------------------------------------------------------------- */
+
+	fileChangeEvent(event: any): void {
+		this.imageChangedEvent &#x3D; event;
+		this.closeCropper &#x3D; true;
+	}
+
+	/** *Hide the image cropper */
+	cropImage() {
+		this.closeCropper &#x3D; false;
+	}
+
+	/** *Convert datauri to blob */
+	dataURItoBlob(dataURI: any) {
+		var byteString &#x3D; atob(dataURI.toString().split(&#x27;,&#x27;)[1]);
+		var ab &#x3D; new ArrayBuffer(byteString.length);
+		var ia &#x3D; new Uint8Array(ab);
+		for (var i &#x3D; 0; i &lt; byteString.length; i++) {
+			ia[i] &#x3D; byteString.charCodeAt(i);
+		}
+		var blob &#x3D; new Blob([ab], { type: &#x27;image/png&#x27; });
+		return new File([blob], &#x27;image.png&#x27;);
+	}
+
+	imageCropped(event: ImageCroppedEvent) {
+		this.brandingLogo &#x3D; event.base64 || &#x27;&#x27;;
+		this.selectedBrandingLogo &#x3D; this.dataURItoBlob(this.brandingLogo);
+		this.brandingLogoPreviewUrl &#x3D; event.base64 || &#x27;&#x27;;
+
+		this.isSaveDisabled &#x3D; false;
+	}
+
+	imageLoaded() {
+		/**
+		 * show cropper */
+	}
+	cropperReady() {
+		/** *cropper ready */
+	}
+	loadImageFailed() {
+		/** *show message */
+	}
+
+	setBrandingView(customBrandingSetting: CustomBranding) {
+		this.brandingLogoPreviewUrl &#x3D; customBrandingSetting.customLogo;
+		this.brandingLogo &#x3D; customBrandingSetting.customLogo;
+		this.customShadow.patchValue(
+			this._customBrandingService.calculateCardShadow(
+				customBrandingSetting.cardShadow
+			)
+		);
+		this.primaryColorHex.patchValue(customBrandingSetting.primaryColor);
+		this.secondaryColorHex.patchValue(customBrandingSetting.secondaryColor);
+		this.fontFamily.patchValue(customBrandingSetting.customFont);
+
+		this._themeService.setTheme(
+			this.primaryColorHex.value,
+			this.secondaryColorHex.value,
+			this.fontFamily.value
+		);
+	}
+
+	onPrimaryColorChange(hex: string): void {
+		this.primaryColorHex.patchValue(hex);
+		this.isSaveDisabled &#x3D; false;
+	}
+	onSecondaryColorChange(hex: string) {
+		this.secondaryColorHex.patchValue(hex);
+		this.isSaveDisabled &#x3D; false;
+	}
+
+	previewCustomisedBranding() {
+		this.dialog.open(FundraiserPreviewComponent, {
+			data: {
+				primaryColor: this.primaryColorHex.value,
+				secondaryColor: this.secondaryColorHex.value,
+				customShadow: this.customShadow.value,
+				customLogo: this.brandingLogoPreviewUrl,
+			},
+			panelClass: &#x27;branding-preview&#x27;,
+		});
+	}
+
+	discardChanges() {
+		this.cropImage();
+		this.customLogoUploader.nativeElement.value &#x3D; &#x27;&#x27;;
+		this.setBrandingView(this.customSetting);
+		this.isSaveDisabled &#x3D; true;
+	}
+	setDefaultBranding() {
+		/** *Reset logo uploader set whydonate logo */
+		this.cropImage();
+		this.customLogoUploader.nativeElement.value &#x3D; &#x27;&#x27;;
+		this.brandingLogo &#x3D; this.whydonateLogo;
+		this.brandingLogoPreviewUrl &#x3D; this.whydonateLogo;
+
+		if (this.customSetting?.isDefault &#x3D;&#x3D;&#x3D; false) {
+			this.selectedBrandingLogo &#x3D; this.dataURItoBlob(this.whydonateLogo);
+		}
+
+		this.customShadow.patchValue(&#x27;1&#x27;);
+		this.primaryColorHex.patchValue(this.primaryColor);
+		this.secondaryColorHex.patchValue(this.secondaryColor);
+		this.fontFamily.patchValue(&#x27;Roboto&#x27;);
+
+		this.notificationService.openNotification(
+			$localize&#x60;:@@branding_default_notification:Default Whydonate branding set successfull&#x60;,
+			&#x27;Close&#x27;,
+			&#x27;success&#x27;
+		);
+	}
+
+	applyCustomBranding() {
+		let profileData &#x3D; this._customBrandingService.getProfileObj;
+
+		/** *Saving data status */
+		this.isSaving &#x3D; true;
+
+		/** *Hide cropper */
+		this.cropImage();
+
+		let formData &#x3D; new FormData();
+
+		if (this.selectedBrandingLogo) {
+			formData.append(&#x27;custom_logo&#x27;, this.selectedBrandingLogo);
+		}
+
+		formData.append(&#x27;id&#x27;, profileData?.id);
+		formData.append(&#x27;card_shadow&#x27;, this.customShadow.value);
+		formData.append(&#x27;fonts&#x27;, this.fontFamily.value);
+		formData.append(&#x27;primary_color&#x27;, this.primaryColorHex.value);
+		formData.append(&#x27;secondary_color&#x27;, this.secondaryColorHex.value);
+		formData.append(&#x27;is_default&#x27;, &#x27;0&#x27;);
+
+		/** *Get user auth token  */
+		let headers &#x3D; this.accountService.getHeaders();
+		const httpOptions &#x3D; {
+			headers: new HttpHeaders({
+				Authorization: headers?.get(&#x27;Authorization&#x27;) as string,
+			}),
+		};
+
+		this._http
+			.put(
+				&#x60;${this.ACCOUNT_API_V2}${this.customBrandingAPI}&#x60;,
+				formData,
+				httpOptions
+			)
+			.subscribe(
+				(response: any) &#x3D;&gt; {
+					this.notificationService.openNotification(
+						$localize&#x60;:@@branding_customizeBranding_notification:Customise branding saved successfull&#x60;,
+						&#x27;Close&#x27;,
+						&#x27;success&#x27;
+					);
+
+					window.location.reload();
+				},
+				(error) &#x3D;&gt; {
+					this.isSaving &#x3D; false;
+					this.notificationService.openNotification(
+						$localize&#x60;:@@branding_failedToSave_notification:Failed to save Customise branding&#x60;,
+						&#x27;&#x27;,
+						&#x27;error&#x27;
+					);
+				}
+			);
+
+		this._themeService.setTheme(
+			this.primaryColorHex.value,
+			this.secondaryColorHex.value,
+			this.fontFamily.value
+		);
+	}
+
+	setCustomLogoBlob(file: File) {
+		return new Promise((resolve, reject) &#x3D;&gt; {
+			const reader &#x3D; new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload &#x3D; () &#x3D;&gt; resolve(reader.result);
+			reader.onerror &#x3D; (error) &#x3D;&gt; reject(error);
+		});
+	}
+
+	isColorInvalid(colorHex: string): boolean {
+		return !this._themeService.isColorAccessible(colorHex);
+	}
+
+	colorValidator(): ValidatorFn {
+		return (control: AbstractControl): colorValidationError | null &#x3D;&gt; {
+			if (this.isColorInvalid(control.value)) {
+				return { colorIsLight: true };
+			} else {
+				return null;
+			}
+		};
+	}
+}
+
+@Component({
+	selector: &#x27;dialog-elements-example-dialog&#x27;,
+	template: &#x60;fundraiser svg&#x60;,
+})
+export class DialogElementsExampleDialog {}
+</code></pre>
+    </div>
+
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>fundraiser svg</div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'DialogElementsExampleDialog'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DialogElementsExampleDialog.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,4088 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  MyFundraisersComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-my-fundraisers</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./my-fundraisers.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_APIService" >_APIService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_dashboardService" >_dashboardService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_media" >_media</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_profileService" >_profileService</a>
+                            </li>
+                            <li>
+                                <a href="#closedCount" >closedCount</a>
+                            </li>
+                            <li>
+                                <a href="#closedParams" >closedParams</a>
+                            </li>
+                            <li>
+                                <a href="#connected" >connected</a>
+                            </li>
+                            <li>
+                                <a href="#connectedChecked" >connectedChecked</a>
+                            </li>
+                            <li>
+                                <a href="#currentSearchPage" >currentSearchPage</a>
+                            </li>
+                            <li>
+                                <a href="#debounceDelay" >debounceDelay</a>
+                            </li>
+                            <li>
+                                <a href="#disableViewMore" >disableViewMore</a>
+                            </li>
+                            <li>
+                                <a href="#donationGivenResponse" >donationGivenResponse</a>
+                            </li>
+                            <li>
+                                <a href="#draftCount" >draftCount</a>
+                            </li>
+                            <li>
+                                <a href="#draftParams" >draftParams</a>
+                            </li>
+                            <li>
+                                <a href="#filter" >filter</a>
+                            </li>
+                            <li>
+                                <a href="#filterOwnership" >filterOwnership</a>
+                            </li>
+                            <li>
+                                <a href="#filterOwnershipForm" >filterOwnershipForm</a>
+                            </li>
+                            <li>
+                                <a href="#fundraiser_connectedType" >fundraiser_connectedType</a>
+                            </li>
+                            <li>
+                                <a href="#fundraiser_mainType" >fundraiser_mainType</a>
+                            </li>
+                            <li>
+                                <a href="#fundraiserDataList" >fundraiserDataList</a>
+                            </li>
+                            <li>
+                                <a href="#fundraisersTotalCount" >fundraisersTotalCount</a>
+                            </li>
+                            <li>
+                                <a href="#isCountLoading" >isCountLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isMoreFundraiserExist" >isMoreFundraiserExist</a>
+                            </li>
+                            <li>
+                                <a href="#isTabLoading" >isTabLoading</a>
+                            </li>
+                            <li>
+                                <a href="#listConnectedType" >listConnectedType</a>
+                            </li>
+                            <li>
+                                <a href="#listNotConnectedType" >listNotConnectedType</a>
+                            </li>
+                            <li>
+                                <a href="#locale" >locale</a>
+                            </li>
+                            <li>
+                                <a href="#main" >main</a>
+                            </li>
+                            <li>
+                                <a href="#myFundraisersAsyncTabs" >myFundraisersAsyncTabs</a>
+                            </li>
+                            <li>
+                                <a href="#myFundraisersResponse" >myFundraisersResponse</a>
+                            </li>
+                            <li>
+                                <a href="#ownedChecked" >ownedChecked</a>
+                            </li>
+                            <li>
+                                <a href="#pageLimit" >pageLimit</a>
+                            </li>
+                            <li>
+                                <a href="#paginator" >paginator</a>
+                            </li>
+                            <li>
+                                <a href="#profileResponse" >profileResponse</a>
+                            </li>
+                            <li>
+                                <a href="#progressBarMode" >progressBarMode</a>
+                            </li>
+                            <li>
+                                <a href="#progressbarValue" >progressbarValue</a>
+                            </li>
+                            <li>
+                                <a href="#publishedCount" >publishedCount</a>
+                            </li>
+                            <li>
+                                <a href="#publishedParams" >publishedParams</a>
+                            </li>
+                            <li>
+                                <a href="#searchInputForm" >searchInputForm</a>
+                            </li>
+                            <li>
+                                <a href="#selectedIndex" >selectedIndex</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTab" >selectedTab</a>
+                            </li>
+                            <li>
+                                <a href="#stepsToDoObj" >stepsToDoObj</a>
+                            </li>
+                            <li>
+                                <a href="#temp" >temp</a>
+                            </li>
+                            <li>
+                                <a href="#temp_connected" >temp_connected</a>
+                            </li>
+                            <li>
+                                <a href="#temp_not_connected" >temp_not_connected</a>
+                            </li>
+                            <li>
+                                <a href="#tempLoader" >tempLoader</a>
+                            </li>
+                            <li>
+                                <a href="#tempVar" >tempVar</a>
+                            </li>
+                            <li>
+                                <a href="#type" >type</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#both" >both</a>
+                            </li>
+                            <li>
+                                <a href="#cancelLoadingAndProgress" >cancelLoadingAndProgress</a>
+                            </li>
+                            <li>
+                                <a href="#connectedType" >connectedType</a>
+                            </li>
+                            <li>
+                                <a href="#finishCountLoading" >finishCountLoading</a>
+                            </li>
+                            <li>
+                                <a href="#finishDeterminateProgress" >finishDeterminateProgress</a>
+                            </li>
+                            <li>
+                                <a href="#logIndex" >logIndex</a>
+                            </li>
+                            <li>
+                                <a href="#mainType" >mainType</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#progressAnimationEnd" >progressAnimationEnd</a>
+                            </li>
+                            <li>
+                                <a href="#setFundraiserTypePayload" >setFundraiserTypePayload</a>
+                            </li>
+                            <li>
+                                <a href="#setProgressbar" >setProgressbar</a>
+                            </li>
+                            <li>
+                                <a href="#setStepsToDo" >setStepsToDo</a>
+                            </li>
+                            <li>
+                                <a href="#startCountLoading" >startCountLoading</a>
+                            </li>
+                            <li>
+                                <a href="#startDeterminateProgress" >startDeterminateProgress</a>
+                            </li>
+                            <li>
+                                <a href="#startIndeterminateProgress" >startIndeterminateProgress</a>
+                            </li>
+                            <li>
+                                <a href="#startQueryProgress" >startQueryProgress</a>
+                            </li>
+                            <li>
+                                <a href="#startTabsLoading" >startTabsLoading</a>
+                            </li>
+                            <li>
+                                <a href="#viewMore" >viewMore</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_myFundraisersService: <a href="../injectables/MyFundraisersService.html" target="_self">MyFundraisersService</a>, _fundraiserCardService: <a href="../injectables/FundraiserCardService.html" target="_self">FundraiserCardService</a>, _dashboardService: <a href="../injectables/DashboardService.html" target="_self">DashboardService</a>, _profileService: <a href="../injectables/ProfileService.html" target="_self">ProfileService</a>, _APIService: <a href="../injectables/APIService.html" target="_self">APIService</a>, _formBuilder: UntypedFormBuilder, _media: MediaObserver, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, _AccountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:112</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_myFundraisersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MyFundraisersService.html" target="_self" >MyFundraisersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_fundraiserCardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FundraiserCardService.html" target="_self" >FundraiserCardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_dashboardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DashboardService.html" target="_self" >DashboardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_profileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProfileService.html" target="_self" >ProfileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_APIService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/APIService.html" target="_self" >APIService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>UntypedFormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_media</td>
+                                                  
+                                                        <td>
+                                                                    <code>MediaObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_AccountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="both"></a>
+                    <span class="name">
+                        <span ><b>both</b></span>
+                        <a href="#both"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>both()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="758"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:758</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelLoadingAndProgress"></a>
+                    <span class="name">
+                        <span ><b>cancelLoadingAndProgress</b></span>
+                        <a href="#cancelLoadingAndProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelLoadingAndProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="639"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:639</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mat Progress Bar - mode: determinate &amp; value: 100</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="connectedType"></a>
+                    <span class="name">
+                        <span ><b>connectedType</b></span>
+                        <a href="#connectedType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>connectedType()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="705"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:705</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finishCountLoading"></a>
+                    <span class="name">
+                        <span ><b>finishCountLoading</b></span>
+                        <a href="#finishCountLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>finishCountLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="618"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:618</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finishDeterminateProgress"></a>
+                    <span class="name">
+                        <span ><b>finishDeterminateProgress</b></span>
+                        <a href="#finishDeterminateProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>finishDeterminateProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="645"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:645</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logIndex"></a>
+                    <span class="name">
+                        <span ><b>logIndex</b></span>
+                        <a href="#logIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logIndex(e: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="607"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:607</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mainType"></a>
+                    <span class="name">
+                        <span ><b>mainType</b></span>
+                        <a href="#mainType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mainType()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="655"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:655</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="334"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:334</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="progressAnimationEnd"></a>
+                    <span class="name">
+                        <span ><b>progressAnimationEnd</b></span>
+                        <a href="#progressAnimationEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>progressAnimationEnd(e: ProgressAnimationEnd)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="651"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:651</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>ProgressAnimationEnd</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setFundraiserTypePayload"></a>
+                    <span class="name">
+                        <span ><b>setFundraiserTypePayload</b></span>
+                        <a href="#setFundraiserTypePayload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setFundraiserTypePayload(formValue: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="574"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:574</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>formValue</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setProgressbar"></a>
+                    <span class="name">
+                        <span ><b>setProgressbar</b></span>
+                        <a href="#setProgressbar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setProgressbar(tab: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="592"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:592</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tab</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setStepsToDo"></a>
+                    <span class="name">
+                        <span ><b>setStepsToDo</b></span>
+                        <a href="#setStepsToDo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setStepsToDo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="265"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:265</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startCountLoading"></a>
+                    <span class="name">
+                        <span ><b>startCountLoading</b></span>
+                        <a href="#startCountLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startCountLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="615"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:615</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startDeterminateProgress"></a>
+                    <span class="name">
+                        <span ><b>startDeterminateProgress</b></span>
+                        <a href="#startDeterminateProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startDeterminateProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="634"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:634</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mat Progress Bar - mode: determinate &amp; value: 0</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startIndeterminateProgress"></a>
+                    <span class="name">
+                        <span ><b>startIndeterminateProgress</b></span>
+                        <a href="#startIndeterminateProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startIndeterminateProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="623"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:623</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>When user interacts with filter but no API is called yet.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startQueryProgress"></a>
+                    <span class="name">
+                        <span ><b>startQueryProgress</b></span>
+                        <a href="#startQueryProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startQueryProgress()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="630"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:630</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mat Progress Bar - mode: query</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startTabsLoading"></a>
+                    <span class="name">
+                        <span ><b>startTabsLoading</b></span>
+                        <a href="#startTabsLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startTabsLoading()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="612"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:612</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set isLoading to true.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="viewMore"></a>
+                    <span class="name">
+                        <span ><b>viewMore</b></span>
+                        <a href="#viewMore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>viewMore()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="457"
+                            class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:457</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_APIService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_APIService</b></span>
+                        <a href="#_APIService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/APIService.html" target="_self" >APIService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_dashboardService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_dashboardService</b></span>
+                        <a href="#_dashboardService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/DashboardService.html" target="_self" >DashboardService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_media"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_media</b></span>
+                        <a href="#_media"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MediaObserver</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_profileService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_profileService</b></span>
+                        <a href="#_profileService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/ProfileService.html" target="_self" >ProfileService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closedCount"></a>
+                    <span class="name">
+                        <span ><b>closedCount</b></span>
+                        <a href="#closedCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closedParams"></a>
+                    <span class="name">
+                        <span ><b>closedParams</b></span>
+                        <a href="#closedParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="connected"></a>
+                    <span class="name">
+                        <span ><b>connected</b></span>
+                        <a href="#connected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="connectedChecked"></a>
+                    <span class="name">
+                        <span ><b>connectedChecked</b></span>
+                        <a href="#connectedChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentSearchPage"></a>
+                    <span class="name">
+                        <span ><b>currentSearchPage</b></span>
+                        <a href="#currentSearchPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceDelay"></a>
+                    <span class="name">
+                        <span ><b>debounceDelay</b></span>
+                        <a href="#debounceDelay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1000</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableViewMore"></a>
+                    <span class="name">
+                        <span ><b>disableViewMore</b></span>
+                        <a href="#disableViewMore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+		drafts: false,
+		published: false,
+		closed: false,
+	}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donationGivenResponse"></a>
+                    <span class="name">
+                        <span ><b>donationGivenResponse</b></span>
+                        <a href="#donationGivenResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftCount"></a>
+                    <span class="name">
+                        <span ><b>draftCount</b></span>
+                        <a href="#draftCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftParams"></a>
+                    <span class="name">
+                        <span ><b>draftParams</b></span>
+                        <a href="#draftParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filter"></a>
+                    <span class="name">
+                        <span ><b>filter</b></span>
+                        <a href="#filter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterOwnership"></a>
+                    <span class="name">
+                        <span ><b>filterOwnership</b></span>
+                        <a href="#filterOwnership"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.formBuilder.group({
+		owned: false,
+		connected: false,
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterOwnershipForm"></a>
+                    <span class="name">
+                        <span ><b>filterOwnershipForm</b></span>
+                        <a href="#filterOwnershipForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>UntypedFormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraiser_connectedType"></a>
+                    <span class="name">
+                        <span ><b>fundraiser_connectedType</b></span>
+                        <a href="#fundraiser_connectedType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>TYPE_CONNECTED</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraiser_mainType"></a>
+                    <span class="name">
+                        <span ><b>fundraiser_mainType</b></span>
+                        <a href="#fundraiser_mainType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>TYPE_NOT_CONNECTED</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraiserDataList"></a>
+                    <span class="name">
+                        <span ><b>fundraiserDataList</b></span>
+                        <a href="#fundraiserDataList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraisersTotalCount"></a>
+                    <span class="name">
+                        <span ><b>fundraisersTotalCount</b></span>
+                        <a href="#fundraisersTotalCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCountLoading"></a>
+                    <span class="name">
+                        <span ><b>isCountLoading</b></span>
+                        <a href="#isCountLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>FLags</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMoreFundraiserExist"></a>
+                    <span class="name">
+                        <span ><b>isMoreFundraiserExist</b></span>
+                        <a href="#isMoreFundraiserExist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTabLoading"></a>
+                    <span class="name">
+                        <span ><b>isTabLoading</b></span>
+                        <a href="#isTabLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listConnectedType"></a>
+                    <span class="name">
+                        <span ><b>listConnectedType</b></span>
+                        <a href="#listConnectedType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listNotConnectedType"></a>
+                    <span class="name">
+                        <span ><b>listNotConnectedType</b></span>
+                        <a href="#listNotConnectedType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="locale"></a>
+                    <span class="name">
+                        <span ><b>locale</b></span>
+                        <a href="#locale"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="main"></a>
+                    <span class="name">
+                        <span ><b>main</b></span>
+                        <a href="#main"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myFundraisersAsyncTabs"></a>
+                    <span class="name">
+                        <span ><b>myFundraisersAsyncTabs</b></span>
+                        <a href="#myFundraisersAsyncTabs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;any&gt; | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myFundraisersResponse"></a>
+                    <span class="name">
+                        <span ><b>myFundraisersResponse</b></span>
+                        <a href="#myFundraisersResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ownedChecked"></a>
+                    <span class="name">
+                        <span ><b>ownedChecked</b></span>
+                        <a href="#ownedChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageLimit"></a>
+                    <span class="name">
+                        <span ><b>pageLimit</b></span>
+                        <a href="#pageLimit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+		drafts: 0,
+		published: 0,
+		closed: 0,
+	}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginator"></a>
+                    <span class="name">
+                        <span ><b>paginator</b></span>
+                        <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatPaginator, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="profileResponse"></a>
+                    <span class="name">
+                        <span ><b>profileResponse</b></span>
+                        <a href="#profileResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="progressBarMode"></a>
+                    <span class="name">
+                        <span ><b>progressBarMode</b></span>
+                        <a href="#progressBarMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ProgressBarMode</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;determinate&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="progressbarValue"></a>
+                    <span class="name">
+                        <span ><b>progressbarValue</b></span>
+                        <a href="#progressbarValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publishedCount"></a>
+                    <span class="name">
+                        <span ><b>publishedCount</b></span>
+                        <a href="#publishedCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publishedParams"></a>
+                    <span class="name">
+                        <span ><b>publishedParams</b></span>
+                        <a href="#publishedParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchInputForm"></a>
+                    <span class="name">
+                        <span ><b>searchInputForm</b></span>
+                        <a href="#searchInputForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>UntypedFormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedIndex"></a>
+                    <span class="name">
+                        <span ><b>selectedIndex</b></span>
+                        <a href="#selectedIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedTab"></a>
+                    <span class="name">
+                        <span ><b>selectedTab</b></span>
+                        <a href="#selectedTab"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stepsToDoObj"></a>
+                    <span class="name">
+                        <span ><b>stepsToDoObj</b></span>
+                        <a href="#stepsToDoObj"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temp"></a>
+                    <span class="name">
+                        <span ><b>temp</b></span>
+                        <a href="#temp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temp_connected"></a>
+                    <span class="name">
+                        <span ><b>temp_connected</b></span>
+                        <a href="#temp_connected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="temp_not_connected"></a>
+                    <span class="name">
+                        <span ><b>temp_not_connected</b></span>
+                        <a href="#temp_not_connected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tempLoader"></a>
+                    <span class="name">
+                        <span ><b>tempLoader</b></span>
+                        <a href="#tempLoader"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tempVar"></a>
+                    <span class="name">
+                        <span ><b>tempVar</b></span>
+                        <a href="#tempVar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="type"></a>
+                    <span class="name">
+                        <span ><b>type</b></span>
+                        <a href="#type"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/pages/user/my-fundraisers/components/my-fundraisers/my-fundraisers.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MediaObserver } from &#x27;@angular/flex-layout&#x27;;
+import {
+	UntypedFormBuilder,
+	UntypedFormControl,
+	UntypedFormGroup,
+} from &#x27;@angular/forms&#x27;;
+import {
+	LegacyProgressAnimationEnd as ProgressAnimationEnd,
+	LegacyProgressBarMode as ProgressBarMode,
+} from &#x27;@angular/material/legacy-progress-bar&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { interval, Observable, timer } from &#x27;rxjs&#x27;;
+import {
+	debounce,
+	distinctUntilChanged,
+	publishReplay,
+	refCount,
+} from &#x27;rxjs/operators&#x27;;
+import { APIService } from &#x27;src/app/global/services/api.service&#x27;;
+import { DashboardService } from &#x27;../../../dashboard/services/dashboard.service&#x27;;
+import {
+	MyFundraisersService,
+	TYPE_NOT_CONNECTED,
+	TYPE_CONNECTED,
+} from &#x27;../../services/my-fundraisers.service&#x27;;
+import { BankService } from &#x27;../../../profile/services/bank.service&#x27;;
+import { ProfileService } from &#x27;../../../profile/services/profile.service&#x27;;
+import { HttpParams } from &#x27;@angular/common/http&#x27;;
+import {
+	MatLegacyPaginator as MatPaginator,
+	LegacyPageEvent as PageEvent,
+} from &#x27;@angular/material/legacy-paginator&#x27;;
+import { FundraiserCardService } from &#x27;src/app/shared/services/fundraiser-card.service&#x27;;
+import { FormBuilder, FormGroup } from &#x27;@angular/forms&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+
+export interface MyFundraisersTab {
+	label: string;
+	count: number;
+	content: any[];
+}
+@Component({
+	selector: &#x27;app-my-fundraisers&#x27;,
+	templateUrl: &#x27;./my-fundraisers.component.html&#x27;,
+})
+/** *My Fundraisers Component */
+export class MyFundraisersComponent implements OnInit, AfterViewInit {
+	@ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+	profileResponse: any;
+	myFundraisersResponse: any;
+	donationGivenResponse: any;
+	stepsToDoObj: any;
+	myFundraisersAsyncTabs: Observable&lt;any&gt; | undefined;
+	searchInputForm: UntypedFormGroup;
+	debounceDelay: number &#x3D; 1000; //debounce delay for search input and category selectionChange
+	fundraiserDataList: any[] &#x3D; [];
+	//* param, loading and progress bar related flags
+	currentSearchPage: number &#x3D; 0;
+	isLoading: boolean &#x3D; false;
+	progressBarMode: ProgressBarMode &#x3D; &#x27;determinate&#x27;;
+	progressbarValue: number &#x3D; 0;
+	isMoreFundraiserExist: boolean &#x3D; true;
+	fundraisersTotalCount: number &#x3D; 0;
+	filter &#x3D; &#x27;&#x27;;
+	pageLimit &#x3D; {
+		drafts: 0,
+		published: 0,
+		closed: 0,
+	};
+	disableViewMore &#x3D; {
+		drafts: false,
+		published: false,
+		closed: false,
+	};
+	selectedTab &#x3D; 0;
+	/** *FLags */
+	isCountLoading: boolean &#x3D; false;
+	isTabLoading &#x3D; false;
+	draftCount: number &#x3D; 0;
+	publishedCount: number &#x3D; 0;
+	closedCount: number &#x3D; 0;
+	filterOwnershipForm: UntypedFormGroup;
+	fundraiser_mainType: string &#x3D; TYPE_NOT_CONNECTED;
+	fundraiser_connectedType: string &#x3D; TYPE_CONNECTED;
+
+	temp: boolean &#x3D; true;
+	selectedIndex: number | undefined;
+	ownedChecked &#x3D; false;
+	connectedChecked &#x3D; false;
+
+	filterOwnership &#x3D; this.formBuilder.group({
+		owned: false,
+		connected: false,
+	});
+
+	tempVar: any &#x3D; {};
+	draftParams: any;
+	publishedParams: any;
+	closedParams: any;
+	main: boolean &#x3D; false;
+	connected: boolean &#x3D; false;
+
+	temp_connected: boolean &#x3D; false;
+	temp_not_connected: boolean &#x3D; false;
+	type: string &#x3D; &#x27;&#x27;;
+	locale: string;
+	listNotConnectedType: boolean &#x3D; false;
+	listConnectedType: boolean &#x3D; false;
+	tempLoader: boolean &#x3D; false;
+
+	constructor(
+		private _myFundraisersService: MyFundraisersService,
+		private _fundraiserCardService: FundraiserCardService,
+		public _dashboardService: DashboardService,
+		public _profileService: ProfileService,
+		public _APIService: APIService,
+		_formBuilder: UntypedFormBuilder,
+		public _media: MediaObserver,
+		private _router: Router,
+		private formBuilder: FormBuilder,
+		private route: ActivatedRoute,
+		private _AccountService: AccountService
+	) {
+		this.locale &#x3D; this._AccountService.getLocaleId();
+		this.searchInputForm &#x3D; _formBuilder.group({});
+		this.filterOwnershipForm &#x3D; _formBuilder.group({});
+		this.filterOwnershipForm.setControl(
+			TYPE_NOT_CONNECTED,
+			new UntypedFormControl(false)
+		);
+		this.filterOwnershipForm.setControl(
+			TYPE_CONNECTED,
+			new UntypedFormControl(false)
+		);
+
+		/** *Set loading flags true */
+		this.isCountLoading &#x3D; true;
+
+		this.route.queryParams.subscribe((params) &#x3D;&gt; {
+			this.selectedIndex &#x3D; parseInt(params[&#x27;tab&#x27;]) || 0;
+			this.selectedTab &#x3D; parseInt(params[&#x27;tab&#x27;]) || 0;
+
+			this.listNotConnectedType &#x3D;
+				params.fundraiser_mainType &#x3D;&#x3D;&#x3D; &#x27;true&#x27; ? true : false;
+			this.listConnectedType &#x3D;
+				params.fundraiser_connectedType &#x3D;&#x3D;&#x3D; &#x27;true&#x27; ? true : false;
+			// console.log(&quot;YIPP&quot;,this.listConnectedType,this.listNotConnectedType)
+
+			this.filterOwnershipForm.setControl(
+				TYPE_NOT_CONNECTED,
+				new UntypedFormControl(this.listNotConnectedType || false)
+			);
+
+			this.filterOwnershipForm.setControl(
+				TYPE_CONNECTED,
+				new UntypedFormControl(this.listConnectedType || false)
+			);
+
+			this.temp_not_connected &#x3D;
+				this.filterOwnershipForm.getRawValue().not_connected;
+			this.temp_connected &#x3D; this.filterOwnershipForm.getRawValue().connected;
+
+			if (this.temp_not_connected &#x3D;&#x3D; true &amp;&amp; this.temp_connected &#x3D;&#x3D; false) {
+				this.pageLimit.drafts &#x3D; 0;
+				this.pageLimit.published &#x3D; 0;
+				this.pageLimit.closed &#x3D; 0;
+				this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService.getMain().pipe(
+					// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+					publishReplay(),
+					refCount()
+				);
+			} else if (
+				this.temp_not_connected &#x3D;&#x3D; false &amp;&amp;
+				this.temp_connected &#x3D;&#x3D; true
+			) {
+				this.pageLimit.drafts &#x3D; 0;
+				this.pageLimit.published &#x3D; 0;
+				this.pageLimit.closed &#x3D; 0;
+				this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService
+					.getConnected()
+					.pipe(
+						// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+						publishReplay(),
+						refCount()
+					);
+			} else {
+				this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService.getAll().pipe(
+					// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+					publishReplay(),
+					refCount()
+				);
+			}
+		});
+
+		// this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService.getAll().pipe(
+		// 	// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+		// 	publishReplay(),
+		// 	refCount()
+		// );
+	}
+
+	ngOnInit(): void {
+		this.searchInputForm.setControl(&#x27;searchCtrl&#x27;, new UntypedFormControl());
+
+		/** *Tab data */
+		if (this.myFundraisersAsyncTabs) {
+			this.fundraiserDataList &#x3D; [];
+			this.myFundraisersAsyncTabs.subscribe((response: MyFundraisersTab) &#x3D;&gt; {
+				this.fundraiserDataList.push(response);
+				this.draftCount &#x3D; this.fundraiserDataList[0]?.count || 0;
+				this.publishedCount &#x3D; this.fundraiserDataList[1]?.count || 0;
+				this.closedCount &#x3D; this.fundraiserDataList[2]?.count || 0;
+				this.fundraisersTotalCount &#x3D;
+					Number(this.draftCount) +
+					Number(this.publishedCount) +
+					Number(this.closedCount);
+				setTimeout(() &#x3D;&gt; {
+					this.tempLoader &#x3D; true;
+				}, 3000);
+				this.isCountLoading &#x3D; false;
+				if (
+					this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Drafts&#x27;)[0]?.content
+						?.length &lt; 5
+				) {
+					this.disableViewMore.drafts &#x3D; true;
+				}
+				if (
+					this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Published&#x27;)[0]
+						?.content?.length &lt; 5
+				) {
+					this.disableViewMore.published &#x3D; true;
+				}
+				if (
+					this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Closed&#x27;)[0]?.content
+						?.length &lt; 5
+				) {
+					this.disableViewMore.closed &#x3D; true;
+				}
+			});
+		}
+
+		/** *Count */
+		// this._myFundraisersService.getDraft().subscribe((response: any) &#x3D;&gt; {
+		// 	const draftsCount &#x3D; response.data.count;
+		// 	this.isCountLoading &#x3D; false;
+		// 	this._myFundraisersService.getPublished().subscribe((res: any) &#x3D;&gt; {
+		// 		this.fundraisersTotalCount &#x3D; res.data.count + draftsCount;
+		// 		this.publishedCount &#x3D; res.data.count;
+		// 		this.isCountLoading &#x3D; false;
+		// 		this._myFundraisersService.geClosed().subscribe((res: any) &#x3D;&gt; {
+		// 			this.fundraisersTotalCount &#x3D;
+		// 				res.data.count + this.fundraisersTotalCount;
+		// 			this.closedCount &#x3D; res.data.count;
+		// 			this.isCountLoading &#x3D; false;
+		// 		});
+		// 	});
+		// });
+
+		this.setStepsToDo();
+	}
+
+	setStepsToDo() {
+		/** *(1) Profile card */
+		this._dashboardService.getProfile().subscribe(
+			(res: any) &#x3D;&gt; {
+				/** *Success */
+				this.profileResponse &#x3D; res.data;
+
+				/** *(2) Get fundraisers */
+				this._dashboardService
+					.getMyfundraisers(
+						new HttpParams({
+							fromObject: {
+								[&#x27;status&#x27;]: &#x27;published&#x27;,
+								[&#x27;filter&#x27;]: &#x27;&#x27;,
+								[&#x27;page&#x27;]: 0,
+								[&#x27;page_size&#x27;]: 2,
+							},
+						})
+					)
+					.subscribe(
+						(res: any) &#x3D;&gt; {
+							/** *Success */
+							this.myFundraisersResponse &#x3D; res?.data?.results;
+							/** *(3) Donation Summary - Given */
+							this._dashboardService.getDonationGiven().subscribe(
+								(res) &#x3D;&gt; {
+									/** *Success */
+									this.donationGivenResponse &#x3D; res;
+
+									/** *(4) Steps To Do */
+
+									this.stepsToDoObj &#x3D;
+										this._dashboardService.filterStepsToDoData(
+											this.profileResponse,
+											this.myFundraisersResponse,
+											this.donationGivenResponse
+										);
+								},
+								(error) &#x3D;&gt; {
+									this._APIService.handleError(error).subscribe(
+										() &#x3D;&gt; {},
+										(errorMessage) &#x3D;&gt; {
+											this._router.navigate([&#x27;account&#x27;]);
+										}
+									);
+								}
+							);
+						},
+						(error) &#x3D;&gt; {
+							this._APIService.handleError(error).subscribe(
+								() &#x3D;&gt; {},
+								(errorMessage) &#x3D;&gt; {
+									this._router.navigate([&#x27;account&#x27;]);
+								}
+							);
+						}
+					);
+			},
+			(error) &#x3D;&gt; {
+				this._APIService.handleError(error).subscribe(
+					() &#x3D;&gt; {},
+					(errorMessage) &#x3D;&gt; {
+						this._router.navigate([&#x27;account&#x27;]);
+					}
+				);
+			}
+		);
+	}
+
+	ngAfterViewInit(): void {
+		this.filterOwnershipForm.valueChanges.subscribe((data: any) &#x3D;&gt; {
+			if (
+				(data.not_connected &#x3D;&#x3D; true &amp;&amp; data.connected &#x3D;&#x3D; true) ||
+				(data.connected &#x3D;&#x3D; false &amp;&amp; data.not_connected &#x3D;&#x3D; false)
+			) {
+				this.both();
+			}
+			if (data.connected &#x3D;&#x3D; true &amp;&amp; data.not_connected &#x3D;&#x3D; false) {
+				this.connectedType();
+			}
+			if (data.connected &#x3D;&#x3D; false &amp;&amp; data.not_connected &#x3D;&#x3D; true) {
+				this.mainType();
+			}
+
+			this.setFundraiserTypePayload(data);
+		});
+		/** *Subscribed to search input on valuechange event. Added pipe to optimsed the API call */
+		this.searchInputForm?.controls.searchCtrl.valueChanges
+			.pipe(
+				debounce(() &#x3D;&gt; {
+					return interval(this.debounceDelay);
+				}),
+				distinctUntilChanged((x, y) &#x3D;&gt; {
+					/** *INFO: If no actual change then cancel the loading and Search */
+					if (x &#x3D;&#x3D;&#x3D; y) {
+						// console.log(&#x60;query x: ${x}, y: ${y} are identical, api called interrupted&#x60;);
+						this.cancelLoadingAndProgress();
+						return true;
+					}
+					// if (this.isLoading &amp;&amp; this.progressBarMode &#x3D;&#x3D;&#x3D; &#x27;query&#x27;) {
+					// 	//TODO: If true then, new API request made while one is already running. (user switchMap from rxjs to resolve this scenario: https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap)
+					// }
+					return false;
+				})
+			)
+			.subscribe((data) &#x3D;&gt; {
+				/** *loading flag and progress bar setting */
+				this.startTabsLoading();
+				this.startCountLoading();
+				this.startQueryProgress();
+
+				// console.log(&#x27;native fromControl value changes with debounce: &#x27;, data);
+				/** *INFO: If data is null or undefined then assign emtry param */
+				this._myFundraisersService.setFilterString &#x3D; data || &#x27;&#x27;;
+				this.filter &#x3D; data;
+				// console.log(this._myFundraisersService.getCountParams);
+				let filteredCountParams &#x3D; this._myFundraisersService.getCountParams;
+				// Count
+				this._myFundraisersService
+					.getCount(filteredCountParams)
+					.subscribe((response: any) &#x3D;&gt; {
+						this.fundraisersTotalCount &#x3D; response.data.count;
+						this.isCountLoading &#x3D; false;
+						this.finishCountLoading();
+					});
+
+				// Tab data
+				// TODO: When user search, There can be scenarios when one request already running and another request is made, experience can be buggy. possible solution: load all tabs at once for the request coming from search.
+				//! Below code shows empty tabs so when requests race with each other, the order of tab is not changed and no duplicate tabs. can be fixed by approach mentioned in above comment.
+				this.fundraiserDataList &#x3D; [
+					{
+						label: $localize&#x60;:@@myFundraisers_drafts_mat_tab:Drafts&#x60;,
+						count: 0,
+						content: [],
+					},
+					{
+						label: $localize&#x60;:@@myFundraisers_published_mat_tab:Published&#x60;,
+						count: 0,
+						content: [],
+					},
+					{
+						label: $localize&#x60;:@@myFundraisers_closed_mat_tab:Closed&#x60;,
+						count: 0,
+						content: [],
+					},
+				];
+
+				this._myFundraisersService.getAll().subscribe(
+					(response: any) &#x3D;&gt; {
+						this.setProgressbar(response.label);
+
+						if (response &amp;&amp; response?.label) {
+							const existingTab &#x3D; this.fundraiserDataList?.find((tab) &#x3D;&gt; {
+								if (tab !&#x3D;&#x3D; undefined) {
+									return tab.label &#x3D;&#x3D;&#x3D; response?.label;
+								}
+							});
+							if (existingTab) {
+								existingTab.content &#x3D; response?.content;
+								existingTab.count &#x3D; response.content.length;
+								if (this.filter !&#x3D;&#x3D; &#x27;&#x27;) {
+									if (existingTab.label &#x3D;&#x3D; &#x27;Drafts&#x27;)
+										this.draftCount &#x3D; response.content.length;
+									if (existingTab.label &#x3D;&#x3D; &#x27;Published&#x27;)
+										this.publishedCount &#x3D; response.content.length;
+									if (existingTab.label &#x3D;&#x3D; &#x27;Closed&#x27;)
+										this.closedCount &#x3D; response.content.length;
+								} else {
+									if (existingTab.label &#x3D;&#x3D; &#x27;Drafts&#x27;)
+										this.draftCount &#x3D; response.count;
+									if (existingTab.label &#x3D;&#x3D; &#x27;Published&#x27;)
+										this.publishedCount &#x3D; response.count;
+									if (existingTab.label &#x3D;&#x3D; &#x27;Closed&#x27;)
+										this.closedCount &#x3D; response.count;
+								}
+							} else {
+								this.fundraiserDataList?.push(response?.results);
+							}
+						}
+					},
+					(error) &#x3D;&gt; {
+						this._APIService.handleError(error).subscribe(
+							() &#x3D;&gt; {},
+							(errorMessage) &#x3D;&gt; {
+								this._router.navigate([&#x27;account&#x27;]);
+							}
+						);
+					}
+				);
+			});
+	}
+
+	viewMore() {
+		this.temp_not_connected &#x3D;
+			this.filterOwnershipForm.getRawValue().not_connected;
+		this.temp_connected &#x3D; this.filterOwnershipForm.getRawValue().connected;
+		console.log(&#x27;TEMNOT&#x27;, this.temp_not_connected);
+		console.log(&#x27;TEM&#x27;, this.temp_connected);
+
+		if (
+			(this.temp_connected &#x3D;&#x3D;&#x3D; true &amp;&amp; this.temp_not_connected &#x3D;&#x3D;&#x3D; true) ||
+			(this.temp_connected &#x3D;&#x3D;&#x3D; false &amp;&amp; this.temp_not_connected &#x3D;&#x3D;&#x3D; false)
+		) {
+			this.type &#x3D; &#x27;both&#x27;;
+			console.log(&#x27;IF&#x27;);
+		} else if (
+			this.temp_not_connected &#x3D;&#x3D;&#x3D; true &amp;&amp;
+			this.temp_connected &#x3D;&#x3D;&#x3D; false
+		) {
+			this.type &#x3D; &#x27;not_connected&#x27;;
+			console.log(&#x27;ELSEIF&#x27;);
+		} else if (
+			this.temp_not_connected &#x3D;&#x3D;&#x3D; false &amp;&amp;
+			this.temp_connected &#x3D;&#x3D;&#x3D; true
+		) {
+			this.type &#x3D; &#x27;connected&#x27;;
+			console.log(&#x27;ELSE&#x27;);
+		}
+
+		let label: string &#x3D; &#x27;&#x27;;
+
+		switch (this.selectedTab) {
+			case 0:
+				label &#x3D; &#x27;Drafts&#x27;;
+				break;
+			case 1:
+				label &#x3D; &#x27;Published&#x27;;
+				break;
+			case 2:
+				label &#x3D; &#x27;Closed&#x27;;
+				break;
+			default:
+				break;
+		}
+		let limit &#x3D; 0;
+		if (this.selectedTab &#x3D;&#x3D; 0) {
+			this.pageLimit.drafts &#x3D; this.pageLimit.drafts + 5;
+			limit &#x3D; this.pageLimit.drafts;
+		} else if (this.selectedTab &#x3D;&#x3D; 1) {
+			this.pageLimit.published &#x3D; this.pageLimit.published + 5;
+			limit &#x3D; this.pageLimit.published;
+		} else {
+			this.pageLimit.closed &#x3D; this.pageLimit.closed + 5;
+			limit &#x3D; this.pageLimit.closed;
+		}
+		this.startTabsLoading();
+		this.startQueryProgress();
+		this._dashboardService
+			.getMyfundraisers(
+				new HttpParams({
+					fromObject: {
+						[&#x27;page&#x27;]: limit,
+						[&#x27;page_size&#x27;]: 5,
+						[&#x27;filter&#x27;]: this.filter,
+						[&#x27;status&#x27;]:
+							(this.selectedTab &#x3D;&#x3D; 0 &amp;&amp; &#x27;draft&#x27;) ||
+							(this.selectedTab &#x3D;&#x3D; 1 &amp;&amp; &#x27;published&#x27;) ||
+							(this.selectedTab &#x3D;&#x3D; 2 &amp;&amp; &#x27;closed&#x27;),
+						[&#x27;type&#x27;]: this.type,
+					},
+				})
+			)
+			.subscribe(
+				(res: any) &#x3D;&gt; {
+					this.myFundraisersResponse &#x3D; res;
+					if (
+						res?.data &amp;&amp;
+						res?.data?.results &amp;&amp;
+						res?.data?.results?.length &#x3D;&#x3D; 0
+					) {
+						if (this.selectedTab &#x3D;&#x3D; 0) {
+							this.disableViewMore.drafts &#x3D; true;
+						} else if (this.selectedTab &#x3D;&#x3D; 1) {
+							this.disableViewMore.published &#x3D; true;
+						} else {
+							this.disableViewMore.closed &#x3D; true;
+						}
+					}
+					if (
+						this.fundraiserDataList &amp;&amp;
+						this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; label)?.length &gt;
+							0 &amp;&amp;
+						this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; label)?.[0]?.content
+					) {
+						this.fundraiserDataList
+							.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; label)[0]
+							?.content?.push(
+								...this._fundraiserCardService.filterFundraiserCardDataListForMyfundraisers(
+									res?.data?.results
+								)
+							);
+					}
+
+					limit &#x3D; 0;
+					this.setProgressbar(res?.label);
+					this.finishCountLoading();
+					this.cancelLoadingAndProgress();
+				},
+				(error) &#x3D;&gt; {
+					this._APIService.handleError(error).subscribe(
+						() &#x3D;&gt; {},
+						(errorMessage) &#x3D;&gt; {
+							this._router.navigate([&#x27;account&#x27;]);
+						}
+					);
+				}
+			);
+	}
+
+	setFundraiserTypePayload(formValue: any) {
+		if (
+			formValue[TYPE_NOT_CONNECTED] &#x3D;&#x3D;&#x3D; true &amp;&amp;
+			formValue[TYPE_CONNECTED] &#x3D;&#x3D;&#x3D; false
+		) {
+			this._myFundraisersService.setTypeMain();
+			return;
+		}
+		if (
+			formValue[TYPE_NOT_CONNECTED] &#x3D;&#x3D;&#x3D; true &amp;&amp;
+			formValue[TYPE_CONNECTED] &#x3D;&#x3D;&#x3D; false
+		) {
+			this._myFundraisersService.setTypeConnected();
+			return;
+		} else this._myFundraisersService.setTypeBoth();
+	}
+
+	// Increase progress bar on getting each tab&#x27;s data
+	setProgressbar(tab: string) {
+		if (tab &#x3D;&#x3D;&#x3D; &#x27;Drafts&#x27;) {
+			this.startDeterminateProgress();
+			this.progressbarValue &#x3D; this.progressbarValue + 30;
+			return;
+		}
+		if (tab &#x3D;&#x3D;&#x3D; &#x27;Closed&#x27;) {
+			this.finishDeterminateProgress();
+			this.isLoading &#x3D; false;
+			return;
+		}
+		this.progressbarValue &#x3D; this.progressbarValue + 40;
+	}
+
+	// Tab index change event
+	logIndex(e: any) {
+		this.selectedTab &#x3D; e;
+	}
+
+	/** *Set isLoading to true. */
+	startTabsLoading() {
+		this.isLoading &#x3D; true;
+	}
+	startCountLoading() {
+		this.isCountLoading &#x3D; true;
+	}
+	finishCountLoading() {
+		this.isCountLoading &#x3D; false;
+	}
+
+	/** *When user interacts with filter but no API is called yet. */
+	startIndeterminateProgress() {
+		// while user is giving input set the progress mode as indeterminate
+		this.progressBarMode &#x3D; &#x27;indeterminate&#x27;;
+		this.startCountLoading();
+		this.startTabsLoading();
+	}
+	/** *Mat Progress Bar - mode: query */
+	startQueryProgress() {
+		this.progressBarMode &#x3D; &#x27;query&#x27;;
+	}
+	/** *Mat Progress Bar - mode: determinate &amp; value: 0 */
+	startDeterminateProgress() {
+		this.progressBarMode &#x3D; &#x27;determinate&#x27;;
+		this.progressbarValue &#x3D; 0;
+	}
+	/** *Mat Progress Bar - mode: determinate &amp; value: 100 */
+	cancelLoadingAndProgress() {
+		this.progressBarMode &#x3D; &#x27;determinate&#x27;;
+		this.progressbarValue &#x3D; 100;
+		this.isCountLoading &#x3D; false;
+		this.isLoading &#x3D; false;
+	}
+	finishDeterminateProgress() {
+		let subscribe &#x3D; timer(100).subscribe((val) &#x3D;&gt; {
+			this.progressbarValue &#x3D; 100;
+			subscribe.unsubscribe();
+		});
+	}
+	progressAnimationEnd(e: ProgressAnimationEnd) {
+		// 	console.log(&#x27;progressAnimationEnd&#x27;);
+		// 	// this.isLoading &#x3D; false;
+	}
+	mainType() {
+		this.tempLoader &#x3D; false;
+		this.pageLimit.drafts &#x3D; 0;
+		this.pageLimit.published &#x3D; 0;
+		this.pageLimit.closed &#x3D; 0;
+
+		this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService.getMain().pipe(
+			// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+			publishReplay(),
+			refCount()
+		);
+		this.fundraiserDataList &#x3D; [];
+		this.myFundraisersAsyncTabs.subscribe((response: MyFundraisersTab) &#x3D;&gt; {
+			this.fundraiserDataList.push(response);
+			this.draftCount &#x3D; this.fundraiserDataList[0]?.count;
+			this.publishedCount &#x3D; this.fundraiserDataList[1]?.count;
+			this.closedCount &#x3D; this.fundraiserDataList[2]?.count;
+			this.fundraisersTotalCount &#x3D;
+				Number(this.draftCount) +
+				Number(this.publishedCount) +
+				Number(this.closedCount);
+			setTimeout(() &#x3D;&gt; {
+				this.tempLoader &#x3D; true;
+			}, 3000);
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Drafts&#x27;)[0]?.content
+					?.length &lt; 5
+			) {
+				this.disableViewMore.drafts &#x3D; true;
+			} else {
+				this.disableViewMore.drafts &#x3D; false;
+			}
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Published&#x27;)[0]
+					?.content?.length &lt; 5
+			) {
+				this.disableViewMore.published &#x3D; true;
+			} else {
+				this.disableViewMore.published &#x3D; false;
+			}
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Closed&#x27;)[0]?.content
+					?.length &lt; 5
+			) {
+				this.disableViewMore.closed &#x3D; true;
+			} else {
+				this.disableViewMore.closed &#x3D;&#x3D; false;
+			}
+		});
+	}
+	connectedType() {
+		this.tempLoader &#x3D; false;
+		this.pageLimit.drafts &#x3D; 0;
+		this.pageLimit.published &#x3D; 0;
+		this.pageLimit.closed &#x3D; 0;
+
+		this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService
+			.getConnected()
+			.pipe(
+				// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+				publishReplay(),
+				refCount()
+			);
+		this.fundraiserDataList &#x3D; [];
+		this.myFundraisersAsyncTabs.subscribe((response: MyFundraisersTab) &#x3D;&gt; {
+			this.fundraiserDataList.push(response);
+			this.draftCount &#x3D; this.fundraiserDataList[0]?.count;
+			this.publishedCount &#x3D; this.fundraiserDataList[1]?.count;
+			this.closedCount &#x3D; this.fundraiserDataList[2]?.count;
+			this.fundraisersTotalCount &#x3D;
+				Number(this.draftCount) +
+				Number(this.publishedCount) +
+				Number(this.closedCount);
+			setTimeout(() &#x3D;&gt; {
+				this.tempLoader &#x3D; true;
+			}, 3000);
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Drafts&#x27;)[0]?.content
+					?.length &lt; 5
+			) {
+				this.disableViewMore.drafts &#x3D; true;
+			} else {
+				this.disableViewMore.drafts &#x3D; false;
+			}
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Published&#x27;)[0]
+					?.content?.length &lt; 5
+			) {
+				this.disableViewMore.published &#x3D; true;
+			} else {
+				this.disableViewMore.published &#x3D; false;
+			}
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Closed&#x27;)[0]?.content
+					?.length &lt; 5
+			) {
+				this.disableViewMore.closed &#x3D; true;
+			} else {
+				this.disableViewMore.closed &#x3D; false;
+			}
+		});
+	}
+
+	both() {
+		this.tempLoader &#x3D; false;
+		this.pageLimit.drafts &#x3D; 0;
+		this.pageLimit.published &#x3D; 0;
+		this.pageLimit.closed &#x3D; 0;
+
+		this.myFundraisersAsyncTabs &#x3D; this._myFundraisersService.getBoth().pipe(
+			// tap((response: MyFundraisersTab) &#x3D;&gt; console.log(&#x27;HTTP request made&#x27;, response)),
+			publishReplay(),
+			refCount()
+		);
+		this.fundraiserDataList &#x3D; [];
+		this.myFundraisersAsyncTabs.subscribe((response: MyFundraisersTab) &#x3D;&gt; {
+			this.fundraiserDataList.push(response);
+			this.draftCount &#x3D; this.fundraiserDataList[0]?.count;
+			this.publishedCount &#x3D; this.fundraiserDataList[1]?.count;
+			this.closedCount &#x3D; this.fundraiserDataList[2]?.count;
+			this.fundraisersTotalCount &#x3D;
+				Number(this.draftCount) +
+				Number(this.publishedCount) +
+				Number(this.closedCount);
+			setTimeout(() &#x3D;&gt; {
+				this.tempLoader &#x3D; true;
+			}, 3000);
+			if (this.fundraiserDataList[0]?.content?.length &lt; 5) {
+				this.disableViewMore.drafts &#x3D; true;
+			} else {
+				this.disableViewMore.drafts &#x3D; false;
+			}
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Published&#x27;)[0]
+					?.content?.length &lt; 5
+			) {
+				this.disableViewMore.published &#x3D; true;
+			} else {
+				this.disableViewMore.published &#x3D; false;
+			}
+			if (
+				this.fundraiserDataList.filter((i) &#x3D;&gt; i.label &#x3D;&#x3D; &#x27;Closed&#x27;)[0]?.content
+					?.length &lt; 5
+			) {
+				this.disableViewMore.closed &#x3D; true;
+			} else {
+				this.disableViewMore.closed &#x3D; false;
+			}
+		});
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;row&quot; fxFlex&#x3D;&quot;100%&quot; fxLayoutGap&#x3D;&quot;2%&quot; class&#x3D;&quot;p-xs&quot;&gt;
+	&lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
+		&lt;!--First Row--&gt;
+		&lt;div
+			fxLayout&#x3D;&quot;row&quot;
+			fxLayout.xs&#x3D;&quot;column&quot;
+			fxFlex&#x3D;&quot;100%&quot;
+			fxLayoutAlign&#x3D;&quot;space-between center&quot;
+			fxLayout.xs&#x3D;&quot;column&quot;
+			fxLayoutAlign.xs&#x3D;&quot;center start&quot;
+		&gt;
+			&lt;div
+				fxLayout&#x3D;&quot;column&quot;
+				fxFlex&#x3D;&quot;100%&quot;
+				fxLayoutAlign&#x3D;&quot;center start&quot;
+				fxLayout.xs&#x3D;&quot;row&quot;
+				fxFlex.xs&#x3D;&quot;100%&quot;
+				fxLayoutAlign.xs&#x3D;&quot;center center&quot;
+			&gt;
+				&lt;mat-label class&#x3D;&quot;mat-title&quot;&gt;
+					&lt;span i18n&#x3D;&quot;@@myFundraisersView_label&quot;&gt;My fundraisers&lt;/span&gt;&amp;nbsp;
+					&lt;span *ngIf&#x3D;&quot;tempLoader &#x3D;&#x3D;&#x3D; true&quot;
+						&gt;({{ fundraisersTotalCount ? fundraisersTotalCount : 0 }})&lt;/span
+					&gt;
+					&lt;mat-icon *ngIf&#x3D;&quot;tempLoader &#x3D;&#x3D;&#x3D; false&quot;&gt;
+						&lt;mat-spinner color&#x3D;&quot;accent&quot; diameter&#x3D;&quot;20&quot;&gt; &lt;/mat-spinner&gt;
+					&lt;/mat-icon&gt;
+				&lt;/mat-label&gt;
+			&lt;/div&gt;
+			&lt;div
+				fxLayout&#x3D;&quot;column&quot;
+				fxFlex&#x3D;&quot;100%&quot;
+				fxLayoutAlign&#x3D;&quot;center end&quot;
+				fxLayout.xs&#x3D;&quot;row&quot;
+				fxFlex.xs&#x3D;&quot;100%&quot;
+				fxLayoutAlign.xs&#x3D;&quot;start center&quot;
+				ngClass.xs&#x3D;&quot;w-100&quot;
+			&gt;
+				&lt;form [formGroup]&#x3D;&quot;searchInputForm&quot;&gt;
+					&lt;mat-form-field
+						appearance&#x3D;&quot;outline&quot;
+						color&#x3D;&quot;accent&quot;
+						ngClass.xs&#x3D;&quot;w-100&quot;
+					&gt;
+						&lt;img
+							matSuffix
+							height&#x3D;&quot;18px&quot;
+							src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/search.svg&quot;
+						/&gt;
+						&lt;mat-label i18n&#x3D;&quot;@@myFundraisers_searchFundraiser_label&quot;&gt;
+							Search fundraiser
+						&lt;/mat-label&gt;
+						&lt;input
+							id&#x3D;&quot;searchFundraiser&quot;
+							matInput
+							placeholder&#x3D;&quot;Search fundraiser&quot;
+							type&#x3D;&quot;text&quot;
+							formControlName&#x3D;&quot;searchCtrl&quot;
+							(ngModelChange)&#x3D;&quot;startIndeterminateProgress()&quot;
+							ngClass.xs&#x3D;&quot;w-100&quot;
+						/&gt;
+					&lt;/mat-form-field&gt;
+				&lt;/form&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;!--Second Row--&gt;
+		&lt;div fxLayout&#x3D;&quot;row&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
+			&lt;div *ngIf&#x3D;&quot;isLoading&quot;&gt;
+				&lt;mat-progress-bar [mode]&#x3D;&quot;progressBarMode&quot; [value]&#x3D;&quot;progressbarValue&quot;&gt;
+				&lt;/mat-progress-bar&gt;
+			&lt;/div&gt;
+
+			&lt;mat-tab-group
+				mat-stretch-tabs
+				[(selectedIndex)]&#x3D;&quot;selectedIndex&quot;
+				(selectedIndexChange)&#x3D;&quot;logIndex($event)&quot;
+				class&#x3D;&quot;w-100&quot;
+			&gt;
+				&lt;!-- DRAFTS --&gt;
+				&lt;mat-tab [disabled]&#x3D;&quot;draftCount &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+					&lt;ng-template mat-tab-label&gt;
+						&lt;span i18n&#x3D;&quot;@@myFundraisers_drafts_mat_tab&quot;&gt;Drafts&lt;/span
+						&gt;&lt;span
+							&gt;&amp;nbsp;
+							&lt;ng-container
+								*ngIf&#x3D;&quot;
+									draftCount !&#x3D;&#x3D; undefined &amp;&amp; fundraiserDataList[0];
+									else spinner
+								&quot;
+							&gt;
+								({{ draftCount }})
+							&lt;/ng-container&gt;
+							&lt;ng-template #spinner&gt;
+								&lt;mat-icon class&#x3D;&quot;material-icons-outlined&quot;&gt;
+									&lt;mat-spinner
+										color&#x3D;&quot;accent&quot;
+										diameter&#x3D;&quot;20&quot;
+										i18n&#x3D;&quot;@@myFundraisers_spinner&quot;
+									&gt;
+									&lt;/mat-spinner&gt;
+								&lt;/mat-icon&gt;
+							&lt;/ng-template&gt;
+						&lt;/span&gt;
+					&lt;/ng-template&gt;
+					&lt;ng-container
+						*ngIf&#x3D;&quot;
+							fundraiserDataList[0] &amp;&amp;
+								fundraiserDataList[0]?.content?.length &gt;&#x3D; 0;
+							else whydonateLoader
+						&quot;
+					&gt;
+						&lt;div
+							fxFlex&#x3D;&quot;100%&quot;
+							fxLayout&#x3D;&quot;row wrap&quot;
+							fxLayoutAlign&#x3D;&quot;start start&quot;
+							class&#x3D;&quot;fundraiser-card-small p-m&quot;
+							fxLayoutGap&#x3D;&quot;3%&quot;
+						&gt;
+							&lt;div
+								*ngFor&#x3D;&quot;let _fundraiserData of fundraiserDataList[0]?.content&quot;
+								id&#x3D;&quot;myFundraiserCard&quot;
+							&gt;
+								&lt;app-fundraiser-card
+									[slug]&#x3D;&quot;_fundraiserData.slug&quot;
+									[fundraiserCardData]&#x3D;&quot;_fundraiserData.fundraiserCardData&quot;
+									type&#x3D;&quot;small&quot;
+								&gt;
+								&lt;/app-fundraiser-card&gt;
+							&lt;/div&gt;
+							&lt;div
+								fxFlex&#x3D;&quot;100%&quot;
+								fxLayout&#x3D;&quot;row wrap&quot;
+								fxLayoutAlign&#x3D;&quot;center center&quot;
+								class&#x3D;&quot;fundraiser-card-small p-m&quot;
+							&gt;
+								&lt;button
+									id&#x3D;&quot;view-more-button&quot;
+									name&#x3D;&quot;view-more-button&quot;
+									mat-flat-button
+									color&#x3D;&quot;accent&quot;
+									[disabled]&#x3D;&quot;
+										isLoading ||
+										(this.disableViewMore.drafts &amp;&amp;
+											(this.selectedTab &#x3D;&#x3D; 1 || 2))
+									&quot;
+									(click)&#x3D;&quot;viewMore()&quot;
+								&gt;
+									&lt;span i18n&#x3D;&quot;@@search_fundraiser_button_title_read_more_button&quot;
+										&gt;View More&lt;/span
+									&gt;
+									&lt;mat-icon *ngIf&#x3D;&quot;isLoading&quot;&gt;
+										&lt;mat-spinner
+											color&#x3D;&quot;primary&quot;
+											diameter&#x3D;&quot;20&quot;
+											i18n&#x3D;&quot;@@search_spinner&quot;
+										&gt;
+										&lt;/mat-spinner&gt;
+									&lt;/mat-icon&gt;
+								&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/ng-container&gt;
+				&lt;/mat-tab&gt;
+
+				&lt;!-- PUBLISHED --&gt;
+				&lt;mat-tab [disabled]&#x3D;&quot;publishedCount &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+					&lt;ng-template mat-tab-label&gt;
+						&lt;span i18n&#x3D;&quot;@@myFundraisers_published_mat_tab&quot;&gt;Published&lt;/span
+						&gt;&lt;span
+							&gt;&amp;nbsp;
+							&lt;ng-container
+								*ngIf&#x3D;&quot;
+									publishedCount !&#x3D;&#x3D; undefined &amp;&amp; fundraiserDataList[1];
+									else spinner
+								&quot;
+							&gt;
+								({{ publishedCount }})
+							&lt;/ng-container&gt;
+							&lt;ng-template #spinner&gt;
+								&lt;mat-icon class&#x3D;&quot;material-icons-outlined&quot;&gt;
+									&lt;mat-spinner
+										color&#x3D;&quot;accent&quot;
+										diameter&#x3D;&quot;20&quot;
+										i18n&#x3D;&quot;@@myFundraisers_spinner&quot;
+									&gt;
+									&lt;/mat-spinner&gt;
+								&lt;/mat-icon&gt;
+							&lt;/ng-template&gt;
+						&lt;/span&gt;
+					&lt;/ng-template&gt;
+
+					&lt;ng-container
+						*ngIf&#x3D;&quot;
+							fundraiserDataList[1] &amp;&amp;
+								fundraiserDataList[1]?.content?.length &gt;&#x3D; 0;
+							else whydonateLoader
+						&quot;
+					&gt;
+						&lt;div
+							fxFlex&#x3D;&quot;100%&quot;
+							fxLayout&#x3D;&quot;row wrap&quot;
+							fxLayoutAlign&#x3D;&quot;start start&quot;
+							class&#x3D;&quot;fundraiser-card-small p-m&quot;
+						&gt;
+							&lt;div
+								*ngFor&#x3D;&quot;let _fundraiserData of fundraiserDataList[1]?.content&quot;
+								id&#x3D;&quot;myFundraiserCard&quot;
+							&gt;
+								&lt;app-fundraiser-card
+									[slug]&#x3D;&quot;_fundraiserData.slug&quot;
+									[fundraiserCardData]&#x3D;&quot;_fundraiserData.fundraiserCardData&quot;
+									type&#x3D;&quot;small&quot;
+								&gt;
+								&lt;/app-fundraiser-card&gt;
+							&lt;/div&gt;
+							&lt;div
+								fxFlex&#x3D;&quot;100%&quot;
+								fxLayout&#x3D;&quot;row wrap&quot;
+								fxLayoutAlign&#x3D;&quot;center center&quot;
+								class&#x3D;&quot;fundraiser-card-small p-m&quot;
+							&gt;
+								&lt;button
+									id&#x3D;&quot;view-more-button&quot;
+									name&#x3D;&quot;view-more-button&quot;
+									mat-flat-button
+									color&#x3D;&quot;accent&quot;
+									[disabled]&#x3D;&quot;
+										isLoading ||
+										(this.disableViewMore.published &amp;&amp;
+											(this.selectedTab &#x3D;&#x3D; 0 || 2))
+									&quot;
+									(click)&#x3D;&quot;viewMore()&quot;
+								&gt;
+									&lt;span i18n&#x3D;&quot;@@search_fundraiser_button_title_read_more_button&quot;
+										&gt;View More&lt;/span
+									&gt;
+									&lt;mat-icon *ngIf&#x3D;&quot;isLoading&quot;&gt;
+										&lt;mat-spinner
+											color&#x3D;&quot;primary&quot;
+											diameter&#x3D;&quot;20&quot;
+											i18n&#x3D;&quot;@@search_spinner&quot;
+										&gt;
+										&lt;/mat-spinner&gt;
+									&lt;/mat-icon&gt;
+								&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/ng-container&gt;
+				&lt;/mat-tab&gt;
+
+				&lt;!-- CLOSED --&gt;
+				&lt;mat-tab [disabled]&#x3D;&quot;closedCount &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+					&lt;ng-template mat-tab-label&gt;
+						&lt;span i18n&#x3D;&quot;@@myFundraisers_closed_mat_tab&quot;&gt;Closed&lt;/span
+						&gt;&lt;span
+							&gt;&amp;nbsp;
+							&lt;ng-container
+								*ngIf&#x3D;&quot;
+									closedCount !&#x3D;&#x3D; undefined &amp;&amp; fundraiserDataList[2];
+									else spinner
+								&quot;
+							&gt;
+								({{ closedCount }})
+							&lt;/ng-container&gt;
+							&lt;ng-template #spinner&gt;
+								&lt;mat-icon class&#x3D;&quot;material-icons-outlined&quot;&gt;
+									&lt;mat-spinner
+										color&#x3D;&quot;accent&quot;
+										diameter&#x3D;&quot;20&quot;
+										i18n&#x3D;&quot;@@myFundraisers_spinner&quot;
+									&gt;
+									&lt;/mat-spinner&gt;
+								&lt;/mat-icon&gt;
+							&lt;/ng-template&gt;
+						&lt;/span&gt;
+					&lt;/ng-template&gt;
+					&lt;ng-container
+						*ngIf&#x3D;&quot;
+							fundraiserDataList[2] &amp;&amp;
+							fundraiserDataList[2]?.content?.length &gt;&#x3D; 0
+						&quot;
+					&gt;
+						&lt;div
+							fxFlex&#x3D;&quot;100%&quot;
+							fxLayout&#x3D;&quot;row wrap&quot;
+							fxLayoutAlign&#x3D;&quot;start start&quot;
+							class&#x3D;&quot;fundraiser-card-small p-m&quot;
+						&gt;
+							&lt;div
+								*ngFor&#x3D;&quot;let _fundraiserData of fundraiserDataList[2]?.content&quot;
+								id&#x3D;&quot;myFundraiserCard&quot;
+							&gt;
+								&lt;app-fundraiser-card
+									[slug]&#x3D;&quot;_fundraiserData.slug&quot;
+									[fundraiserCardData]&#x3D;&quot;_fundraiserData.fundraiserCardData&quot;
+									type&#x3D;&quot;small&quot;
+								&gt;
+								&lt;/app-fundraiser-card&gt;
+							&lt;/div&gt;
+							&lt;div
+								fxFlex&#x3D;&quot;100%&quot;
+								fxLayout&#x3D;&quot;row wrap&quot;
+								fxLayoutAlign&#x3D;&quot;center center&quot;
+								class&#x3D;&quot;fundraiser-card-small p-m&quot;
+							&gt;
+								&lt;button
+									id&#x3D;&quot;view-more-button&quot;
+									name&#x3D;&quot;view-more-button&quot;
+									mat-flat-button
+									color&#x3D;&quot;accent&quot;
+									[disabled]&#x3D;&quot;
+										isLoading ||
+										(this.disableViewMore.closed &amp;&amp;
+											(this.selectedTab &#x3D;&#x3D; 0 || 1))
+									&quot;
+									(click)&#x3D;&quot;viewMore()&quot;
+								&gt;
+									&lt;span i18n&#x3D;&quot;@@search_fundraiser_button_title_read_more_button&quot;
+										&gt;View More&lt;/span
+									&gt;
+									&lt;mat-icon *ngIf&#x3D;&quot;isLoading&quot;&gt;
+										&lt;mat-spinner
+											color&#x3D;&quot;primary&quot;
+											diameter&#x3D;&quot;20&quot;
+											i18n&#x3D;&quot;@@search_spinner&quot;
+										&gt;
+										&lt;/mat-spinner&gt;
+									&lt;/mat-icon&gt;
+								&lt;/button&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/ng-container&gt;
+				&lt;/mat-tab&gt;
+			&lt;/mat-tab-group&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Page loader / whydonate loader --&gt;
+&lt;ng-template #whydonateLoader&gt;
+	&lt;app-page-loader&gt;&lt;/app-page-loader&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="row" fxFlex="100%" fxLayoutGap="2%" class="p-xs">	<div fxLayout="column" fxFlex="100%">		<!--First Row-->		<div			fxLayout="row"			fxLayout.xs="column"			fxFlex="100%"			fxLayoutAlign="space-between center"			fxLayout.xs="column"			fxLayoutAlign.xs="center start"		>			<div				fxLayout="column"				fxFlex="100%"				fxLayoutAlign="center start"				fxLayout.xs="row"				fxFlex.xs="100%"				fxLayoutAlign.xs="center center"			>				<mat-label class="mat-title">					<span i18n="@@myFundraisersView_label">My fundraisers</span>&nbsp;					<span *ngIf="tempLoader === true"						>({{ fundraisersTotalCount ? fundraisersTotalCount : 0 }})</span					>					<mat-icon *ngIf="tempLoader === false">						<mat-spinner color="accent" diameter="20"> </mat-spinner>					</mat-icon>				</mat-label>			</div>			<div				fxLayout="column"				fxFlex="100%"				fxLayoutAlign="center end"				fxLayout.xs="row"				fxFlex.xs="100%"				fxLayoutAlign.xs="start center"				ngClass.xs="w-100"			>				<form [formGroup]="searchInputForm">					<mat-form-field						appearance="outline"						color="accent"						ngClass.xs="w-100"					>						<img							matSuffix							height="18px"							src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/search.svg"						/>						<mat-label i18n="@@myFundraisers_searchFundraiser_label">							Search fundraiser						</mat-label>						<input							id="searchFundraiser"							matInput							placeholder="Search fundraiser"							type="text"							formControlName="searchCtrl"							(ngModelChange)="startIndeterminateProgress()"							ngClass.xs="w-100"						/>					</mat-form-field>				</form>			</div>		</div>		<!--Second Row-->		<div fxLayout="row" fxFlex="100%">			<div *ngIf="isLoading">				<mat-progress-bar [mode]="progressBarMode" [value]="progressbarValue">				</mat-progress-bar>			</div>			<mat-tab-group				mat-stretch-tabs				[(selectedIndex)]="selectedIndex"				(selectedIndexChange)="logIndex($event)"				class="w-100"			>				<!-- DRAFTS -->				<mat-tab [disabled]="draftCount === 0">					<ng-template mat-tab-label>						<span i18n="@@myFundraisers_drafts_mat_tab">Drafts</span						><span							>&nbsp;							<ng-container								*ngIf="									draftCount !== undefined && fundraiserDataList[0];									else spinner								"							>								({{ draftCount }})							</ng-container>							<ng-template #spinner>								<mat-icon class="material-icons-outlined">									<mat-spinner										color="accent"										diameter="20"										i18n="@@myFundraisers_spinner"									>									</mat-spinner>								</mat-icon>							</ng-template>						</span>					</ng-template>					<ng-container						*ngIf="							fundraiserDataList[0] &&								fundraiserDataList[0]?.content?.length >= 0;							else whydonateLoader						"					>						<div							fxFlex="100%"							fxLayout="row wrap"							fxLayoutAlign="start start"							class="fundraiser-card-small p-m"							fxLayoutGap="3%"						>							<div								*ngFor="let _fundraiserData of fundraiserDataList[0]?.content"								id="myFundraiserCard"							>								<app-fundraiser-card									[slug]="_fundraiserData.slug"									[fundraiserCardData]="_fundraiserData.fundraiserCardData"									type="small"								>								</app-fundraiser-card>							</div>							<div								fxFlex="100%"								fxLayout="row wrap"								fxLayoutAlign="center center"								class="fundraiser-card-small p-m"							>								<button									id="view-more-button"									name="view-more-button"									mat-flat-button									color="accent"									[disabled]="										isLoading ||										(this.disableViewMore.drafts &&											(this.selectedTab == 1 || 2))									"									(click)="viewMore()"								>									<span i18n="@@search_fundraiser_button_title_read_more_button"										>View More</span									>									<mat-icon *ngIf="isLoading">										<mat-spinner											color="primary"											diameter="20"											i18n="@@search_spinner"										>										</mat-spinner>									</mat-icon>								</button>							</div>						</div>					</ng-container>				</mat-tab>				<!-- PUBLISHED -->				<mat-tab [disabled]="publishedCount === 0">					<ng-template mat-tab-label>						<span i18n="@@myFundraisers_published_mat_tab">Published</span						><span							>&nbsp;							<ng-container								*ngIf="									publishedCount !== undefined && fundraiserDataList[1];									else spinner								"							>								({{ publishedCount }})							</ng-container>							<ng-template #spinner>								<mat-icon class="material-icons-outlined">									<mat-spinner										color="accent"										diameter="20"										i18n="@@myFundraisers_spinner"									>									</mat-spinner>								</mat-icon>							</ng-template>						</span>					</ng-template>					<ng-container						*ngIf="							fundraiserDataList[1] &&								fundraiserDataList[1]?.content?.length >= 0;							else whydonateLoader						"					>						<div							fxFlex="100%"							fxLayout="row wrap"							fxLayoutAlign="start start"							class="fundraiser-card-small p-m"						>							<div								*ngFor="let _fundraiserData of fundraiserDataList[1]?.content"								id="myFundraiserCard"							>								<app-fundraiser-card									[slug]="_fundraiserData.slug"									[fundraiserCardData]="_fundraiserData.fundraiserCardData"									type="small"								>								</app-fundraiser-card>							</div>							<div								fxFlex="100%"								fxLayout="row wrap"								fxLayoutAlign="center center"								class="fundraiser-card-small p-m"							>								<button									id="view-more-button"									name="view-more-button"									mat-flat-button									color="accent"									[disabled]="										isLoading ||										(this.disableViewMore.published &&											(this.selectedTab == 0 || 2))									"									(click)="viewMore()"								>									<span i18n="@@search_fundraiser_button_title_read_more_button"										>View More</span									>									<mat-icon *ngIf="isLoading">										<mat-spinner											color="primary"											diameter="20"											i18n="@@search_spinner"										>										</mat-spinner>									</mat-icon>								</button>							</div>						</div>					</ng-container>				</mat-tab>				<!-- CLOSED -->				<mat-tab [disabled]="closedCount === 0">					<ng-template mat-tab-label>						<span i18n="@@myFundraisers_closed_mat_tab">Closed</span						><span							>&nbsp;							<ng-container								*ngIf="									closedCount !== undefined && fundraiserDataList[2];									else spinner								"							>								({{ closedCount }})							</ng-container>							<ng-template #spinner>								<mat-icon class="material-icons-outlined">									<mat-spinner										color="accent"										diameter="20"										i18n="@@myFundraisers_spinner"									>									</mat-spinner>								</mat-icon>							</ng-template>						</span>					</ng-template>					<ng-container						*ngIf="							fundraiserDataList[2] &&							fundraiserDataList[2]?.content?.length >= 0						"					>						<div							fxFlex="100%"							fxLayout="row wrap"							fxLayoutAlign="start start"							class="fundraiser-card-small p-m"						>							<div								*ngFor="let _fundraiserData of fundraiserDataList[2]?.content"								id="myFundraiserCard"							>								<app-fundraiser-card									[slug]="_fundraiserData.slug"									[fundraiserCardData]="_fundraiserData.fundraiserCardData"									type="small"								>								</app-fundraiser-card>							</div>							<div								fxFlex="100%"								fxLayout="row wrap"								fxLayoutAlign="center center"								class="fundraiser-card-small p-m"							>								<button									id="view-more-button"									name="view-more-button"									mat-flat-button									color="accent"									[disabled]="										isLoading ||										(this.disableViewMore.closed &&											(this.selectedTab == 0 || 1))									"									(click)="viewMore()"								>									<span i18n="@@search_fundraiser_button_title_read_more_button"										>View More</span									>									<mat-icon *ngIf="isLoading">										<mat-spinner											color="primary"											diameter="20"											i18n="@@search_spinner"										>										</mat-spinner>									</mat-icon>								</button>							</div>						</div>					</ng-container>				</mat-tab>			</mat-tab-group>		</div>	</div></div><!-- Page loader / whydonate loader --><ng-template #whydonateLoader>	<app-page-loader></app-page-loader></ng-template></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'MyFundraisersComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MyFundraisersComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

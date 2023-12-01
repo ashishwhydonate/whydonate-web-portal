@@ -1,0 +1,40 @@
+<button mat-icon-button class="close-button" (click)="onCloseClick()">
+	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/>
+</button>
+<h2 mat-dialog-title i18n="@@createAbout_editAboutSection_title">
+	Add About Section
+</h2>
+<mat-dialog-content class="mat-typography">
+	<h3 i18n="@@createAbout_describeAbout_title">Describe About fundraiser</h3>
+	<app-quill-editor
+		[quillContent]="data.currentFundraiser?.content"
+		(onContentChange)="changeAboutContent($event)"
+		(allTextCheck)="allCheck($event)"
+	></app-quill-editor>
+	<br />
+	<div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="16px">
+		<!-- (onMediaChange)="changeAboutMedia($event)" -->
+		<app-fundraiser-media-edit
+			[fundraiserMediaList]="mediaList"
+			(onMediaAdd)="addAboutMedia($event)"
+		>
+		</app-fundraiser-media-edit>
+	</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button
+		[disabled]="isSave"
+		mat-flat-button
+		color="accent"
+		[disabled]="
+			!(newAbout?.content || newAbout?.imageListOperation?.length) || isSave || !this.allTextCheck
+		"
+		(click)="saveAboutContentAndMedia()"
+	>
+		<span i18n="@@button_save">Save</span>
+		<mat-icon *ngIf="isSave" class="m-l-xs">
+			<mat-spinner color="accent" diameter="20" i18n="@@createAbout_spinner">
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</mat-dialog-actions>

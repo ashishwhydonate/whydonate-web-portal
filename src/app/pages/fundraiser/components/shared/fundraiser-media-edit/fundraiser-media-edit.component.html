@@ -1,0 +1,122 @@
+<mat-label class="mat-body-2"
+	><span i18n="@@create_fundraiser_media_edit_addImagesAndVideos_label"
+		>Add images / videos</span
+	>
+	({{ mediaPreviewObject?.length || 0 }}/10)</mat-label
+>
+<div fxLayout="row wrap" fxLayoutAlign="start center" class="m-l-xs">
+	<ng-container *ngFor="let item of mediaPreviewObject; let i = index">
+		<div fxLayout="column" fxLayoutAlign="start start">
+			<div>
+				<button
+					fxFlexOffset="80px"
+					mat-icon-button
+					(click)="removeMedia(i)"
+					id="removeImage"
+				>
+					<img
+						height="13px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667422103/whydonate-production/platform/svg-icons/close.svg"
+					/>
+				</button>
+			</div>
+			<ng-container *ngIf="item?.image">
+				<div
+					fxFlexOffset="-15px"
+					class="image-thumbnail"
+					fxLayout="column"
+					fxLayoutAlign="center center"
+				>
+					<img [src]="item?.image_base64 || item?.image" />
+				</div>
+			</ng-container>
+			<ng-container *ngIf="item?.video_embed">
+				<div
+					fxFlexOffset="-15px"
+					[ngStyle]="{ width: '95px', height: '64px' }"
+					[innerHTML]="item?.video_embed"
+				></div>
+			</ng-container>
+		</div>
+	</ng-container>
+	<div fxLayoutGap="8px" class="whydonate-light m-t-l">
+		<button
+			#imageAddbtn
+			mat-mini-fab
+			color="primary"
+			class="mat-elevation-z0"
+			(click)="openFileUploader(Imagefile)"
+			[disabled]="mediaPreviewObject?.length >= 10"
+			id="addImageButton"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+			/>
+		</button>
+		<button
+			mat-mini-fab
+			color="primary"
+			id="addVideoButtonFundraiserDescriptionEdit"
+			class="mat-elevation-z0"
+			(click)="switchIsVideo(videoUrlInput)"
+			[disabled]="mediaPreviewObject?.length >= 10"
+		>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+			/>
+		</button>
+	</div>
+</div>
+<div
+	[fxHide]="!(isVideo && mediaPreviewObject?.length < 10)"
+	fxLayout="row wrap"
+	fxLayoutAlign="start baseline"
+	class="m-t-l"
+>
+	<form [formGroup]="videoUrlInputForm">
+		<mat-form-field appearance="outline">
+			<mat-label i18n="@@create_fundraiser_media_edit_youtubeLink_label"
+				>YouTube Link</mat-label
+			>
+			<input
+				matInput
+				#videoUrlInput
+				id="addVideoInputFundraiserDescriptionEdit"
+				placeholder="YouTube Link"
+				formControlName="youtube_link"
+			/>
+			<mat-error i18n="@@create_fundraiser_media_edit_inavlidYoutubeLink_link">
+				Invalid YouTube Link
+			</mat-error>
+		</mat-form-field>
+	</form>
+	<div class="m-l-xs">
+		<button
+			mat-flat-button
+			color="primary"
+			id="saveVideoInputFundraiserDescriptionEdit"
+			[disabled]="disableVideoSaveButton"
+			(click)="saveVideoUrl()"
+			i18n="@@button_save"
+		>
+			Save
+		</button>
+		<button
+			mat-stroked-button
+			fxFlexOffset="8px"
+			color="accent"
+			(click)="closeVideoUrlInput()"
+			i18n="@@button_close"
+		>
+			Close
+		</button>
+	</div>
+</div>
+<input
+	type="file"
+	multiple
+	accept="image/png, image/jpeg, image/jpg, image/webp"
+	(change)="uploadImageFile($event)"
+	#Imagefile
+	hidden
+/>

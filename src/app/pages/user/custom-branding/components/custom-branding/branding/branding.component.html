@@ -1,0 +1,455 @@
+<ng-container *ngIf="!this.isLoading; else whydonateLoader">
+	<mat-card class="mat-elevation-z0">
+		<mat-card class="mat-elevation-z0" [style.min-height]="'75vh'">
+			<mat-card-title-group fxLayout="row" fxLayout.xs="column">
+				<mat-card-title
+					name="custom-branding-header-title"
+					i18n="@@custom-branding-header-title"
+				>
+					Customise Branding
+				</mat-card-title>
+
+				<mat-card-subtitle
+					name="custom-branding-set-your-company-brand"
+					i18n="@@custom-branding-set-your-company-brand"
+				>
+					Set your company brand guidelines for fundraisers and emails
+				</mat-card-subtitle>
+
+				<a
+					mat-button
+					color="accent"
+					name="custom-branding-set-default-whydonate-setting"
+					i18n="@@custom-branding-set-default-whydonate-setting"
+					fxLayoutAlign="center center"
+					[disabled]="customSetting.isDefault"
+					(click)="setDefaultBranding()"
+					id="defaultSetting"
+				>
+					Set to default Whydonate settings</a
+				>
+			</mat-card-title-group>
+
+			<mat-card-content>
+				<div fxLayout="row" fxLayout.xs="column">
+					<mat-form-field appearance="outline" floatLabel="auto">
+						<!--* NOTE: mat-form-field doesnot work without matInput and matInput doesnot support input type of file. Below 2 inputs ensures that logo uploader looks and works properly -->
+						<input hidden matInput />
+						<!--hidden matInput so matFormField doesnot throw error-->
+						<input
+							hidden
+							#customLogoUploader
+							type="file"
+							accept="image/png, image/jpeg, image/jpg, image/webp"
+							name="customLogo"
+							(change)="fileChangeEvent($event)"
+						/>
+
+						<!-- File uploader -->
+						<!-- logo preview -->
+						<div fxLayoutAlign="center center">
+							<img [src]="brandingLogo" width="180" />
+						</div>
+
+						<mat-error i18n="@@custom-branding-image-allowed-size"
+							>Image exceeds maximum allowed size</mat-error
+						>
+					</mat-form-field>
+
+					<div
+						class="button"
+						fxLayout="column"
+						fxLayoutAlign="center stretch"
+						fxFlexOffset.gt-xs="16px"
+						fxFlexOffset.xs="0"
+					>
+						<button
+							i18n="@@custom-branding-upload-your-logo"
+							mat-stroked-button
+							class="button-button-style"
+							color="accent"
+							(click)="customLogoUploader.click()"
+							id="logo"
+						>
+							Upload your logo
+						</button>
+
+						<div class="mat-caption">
+							<mat-hint
+								i18n="
+									@@custom-branding-component-branding-jpg-or-png-image-size-800k"
+							>
+								JPG or PNG. Max size of 800K
+							</mat-hint>
+						</div>
+					</div>
+				</div>
+				<br />
+
+				<div
+					fxFill
+					fxLayout="column"
+					[style.paddingBottom.px]="20"
+					[style.paddingTop.px]="20"
+					[style.borderRadius]="'50%'"
+					*ngIf="closeCropper"
+					fxLayoutAlign="start start"
+					fxLayoutGap="2%"
+				>
+					<image-cropper
+						[style.width.px]="185"
+						[imageChangedEvent]="imageChangedEvent"
+						[maintainAspectRatio]="false"
+						[aspectRatio]="15 / 8"
+						[resizeToWidth]="150"
+						format="png"
+						(imageCropped)="imageCropped($event)"
+						(imageLoaded)="imageLoaded()"
+						(cropperReady)="cropperReady()"
+						(loadImageFailed)="loadImageFailed()"
+						output="base64"
+					>
+					</image-cropper>
+
+					<button
+						i18n="@@button_cropImage"
+						[style.width.px]="189"
+						class="button-button-style"
+						mat-stroked-button
+						(click)="cropImage()"
+						color="accent"
+						name="crop-image"
+						id="cropImage"
+					>
+						Crop Image
+					</button>
+				</div>
+
+				<div fxLayout.gt-md="row" fxLayoutGap = "4%">
+					<div>
+						<p class="mat-body-2" i18n="@@custom-branding-cardShadow">
+							Card Shadow
+						</p>
+
+						<div fxLayout="row" fxLayoutAlign="start center">
+							<mat-card class="mat-elevation-z{{ customShadow.value }}">
+								<mat-button-toggle-group [formControl]="customShadow">
+									<mat-button-toggle
+										value="1"
+										i18n="@@custom-branding-card-shadow-none"
+										>Default
+									</mat-button-toggle>
+									<mat-button-toggle
+										value="2"
+										i18n="@@custom-branding-card-shadow-medium"
+										id="mediumFont"
+									>
+										Medium
+									</mat-button-toggle>
+									<mat-button-toggle
+										value="4"
+										i18n="@@custom-branding-card-shadow-high"
+										>High
+									</mat-button-toggle>
+								</mat-button-toggle-group>
+							</mat-card>
+						</div>
+						<!-- {{customShadow.value}} -->
+						<br />
+						<br />
+					</div>
+
+					<div>
+						<p
+							class="mat-body-2"
+							i18n="@@custom-branding-set-color-and-typography"
+						>
+							Set Colour and Typography
+						</p>
+						<mat-form-field
+							appearance="outline"
+							floatLabel="always"
+							color="primary"
+						>
+							<mat-label i18n="@@custom-branding-set-primary-color-label"
+								>Primary Color</mat-label
+							>
+							<input
+								matInput
+								type="text"
+								placeholder="Ex. #ffff"
+								[formControl]="primaryColorHex"
+								id="primaryColor"
+							/>
+							<button matSuffix mat-icon-button>
+								<mat-icon class="material-icons-outlined">
+									<input
+										[style.cursor]="'pointer'"
+										matInput
+										type="color"
+										[ngModel]="primaryColorHex.value"
+										(ngModelChange)="onPrimaryColorChange($event)"
+									/>
+								</mat-icon>
+							</button>
+							<mat-error
+								*ngIf="primaryColorHex.errors?.pattern"
+								i18n="@@custom-branding-set-incorrect-color-value"
+							>
+								Incorrect Color value
+							</mat-error>
+							<!-- <mat-icon matSuffix color="primary">color_lens</mat-icon> -->
+						</mat-form-field>
+						&nbsp;&nbsp;
+						<mat-form-field
+							appearance="outline"
+							floatLabel="always"
+							color="accent"
+						>
+							<mat-label i18n="@@custom-branding-set-secondary-color-label"
+								>Secondary Color</mat-label
+							>
+							<input
+								matInput
+								type="text"
+								placeholder="Ex. #0000"
+								[formControl]="secondaryColorHex"
+								id="secondaryColor"
+							/>
+
+							<button matSuffix mat-icon-button>
+								<mat-icon class="material-icons-outlined">
+									<input
+										matInput
+										type="color"
+										[style.cursor]="'pointer'"
+										class="colorpicker"
+										[ngModel]="secondaryColorHex.value"
+										(ngModelChange)="onSecondaryColorChange($event)"
+									/>
+								</mat-icon>
+							</button>
+							<mat-error
+								*ngIf="secondaryColorHex.errors?.pattern"
+								i18n="@@custom-branding-set-secondary-color-label-incorrect"
+							>
+								Incorrect Color value
+							</mat-error>
+							<mat-error
+								*ngIf="secondaryColorHex.errors?.colorIsLight"
+								i18n="@@custom-branding-pick-a-darker-color"
+							>
+								Pick a darker color for better readability
+							</mat-error>
+						</mat-form-field>
+						&nbsp;&nbsp;
+						<mat-form-field appearance="outline">
+							<mat-label i18n="@@custom-branding-typography-label"
+								>Typography</mat-label
+							>
+							<mat-select [formControl]="fontFamily" id="selectTypo">
+								<mat-option
+									style="font-family: 'Roboto', sans-serif"
+									value="Roboto"
+									>Roboto</mat-option
+								>
+								<mat-option
+									style="font-family: 'Raleway', sans-serif"
+									id="raleway"
+									value="Raleway"
+									>Raleway</mat-option
+								>
+								<mat-option
+									style="font-family: 'Amatic SC', sans-serif"
+									value="Amatic SC"
+									>Amatic SC</mat-option
+								>
+								<mat-option
+									style="font-family: 'Caveat', sans-serif"
+									value="Caveat"
+									>Caveat</mat-option
+								>
+								<mat-option
+									style="font-family: 'Comfortaa', sans-serif"
+									value="Comfortaa"
+									>Comfortaa</mat-option
+								>
+								<mat-option
+									style="font-family: 'EB Garamond', sans-serif"
+									value="EB Garamond"
+									>EB Garamond</mat-option
+								>
+								<mat-option
+									style="font-family: 'Lobster', sans-serif"
+									value="Lobster"
+									>Lobster</mat-option
+								>
+								<mat-option style="font-family: 'Lora', sans-serif" value="Lora"
+									>Lora</mat-option
+								>
+								<mat-option
+									style="font-family: 'Merriweather', sans-serif"
+									value="Merriweather"
+									>Merriweather</mat-option
+								>
+								<mat-option
+									style="font-family: 'Montserrat', sans-serif"
+									value="Montserrat"
+									>Montserrat</mat-option
+								>
+								<mat-option
+									style="font-family: 'Nunito', sans-serif"
+									value="Nunito"
+									>Nunito</mat-option
+								>
+								<mat-option
+									style="font-family: 'Oswald', sans-serif"
+									value="Oswald"
+									>Oswald</mat-option
+								>
+								<mat-option
+									style="font-family: 'Pacifico', sans-serif"
+									value="Pacifico"
+									>Pacifico</mat-option
+								>
+								<mat-option
+									style="font-family: 'Playfair Display', sans-serif"
+									value="Playfair Display"
+									>Playfair Display
+								</mat-option>
+								<mat-option
+									style="font-family: 'Spectral', sans-serif"
+									value="Spectral"
+									>Spectral</mat-option
+								>
+								<mat-option
+									style="font-family: 'Open Sans', sans-serif"
+									value="Open Sans"
+									>Open Sans</mat-option
+								>
+								<mat-option style="font-family: 'Lato', sans-serif" value="Lato"
+									>Lato</mat-option
+								>
+								<mat-option
+									style="font-family: 'Yatra One', sans-serif"
+									value="Yatra One"
+									>Yatra One</mat-option
+								>
+								<mat-option style="font-family: 'Arvo', sans-serif" value="Arvo"
+									>Arvo</mat-option
+								>
+								<mat-option
+									style="font-family: 'Ubuntu', sans-serif"
+									value="Ubuntu"
+									>Ubuntu</mat-option
+								>
+								<mat-option
+									style="font-family: 'PT Serif', sans-serif"
+									value="PT Serif"
+									>PT Serif</mat-option
+								>
+								<mat-option
+									style="font-family: 'Slabo 13px', sans-serif"
+									value="Slabo 13px"
+									>Slabo</mat-option
+								>
+								<mat-option
+									style="font-family: 'Source Sans Pro', sans-serif"
+									value="Source Sans Pro"
+									>Source Sans
+								</mat-option>
+								<mat-option
+									style="font-family: 'PT Sans', sans-serif"
+									value="PT Sans"
+									>PT Sans</mat-option
+								>
+								<mat-option
+									style="font-family: 'Noto Serif', sans-serif"
+									value="Noto Serif"
+									>Noto Serif</mat-option
+								>
+								<mat-option
+									style="font-family: 'Nunito Sans', sans-serif"
+									value="Nunito Sans"
+									>Nunito Sans</mat-option
+								>
+								<mat-option
+									style="font-family: 'Concert One', sans-serif"
+									value="Concert One"
+									>Concert One</mat-option
+								>
+								<mat-option
+									style="font-family: 'Prompt', sans-serif"
+									value="Prompt"
+									>Prompt</mat-option
+								>
+								<mat-option
+									style="font-family: 'Work Sans', sans-serif"
+									value="Work Sans"
+									>Work Sans</mat-option
+								>
+							</mat-select>
+						</mat-form-field>
+						<br />
+						<br />
+					</div>
+
+					<!-- this.media.isActive('xs') -->
+				</div>
+				<div
+					class="m-b-l"
+					fxLayout="row"
+					fxLayoutGap="20px"
+					fxLayout.xs="column"
+					fxLayoutAlign="space-between start"
+				>
+					<button
+						[ngStyle]="{
+							width: this.media.isActive('xs') === true ? '100%' : ''
+						}"
+						mat-stroked-button
+						color="accent"
+						class="button-button-style"
+						(click)="previewCustomisedBranding()"
+						i18n="@@button_preview"
+					>
+						Preview
+					</button>
+
+					<div>
+						<button
+							mat-stroked-button
+							color="accent"
+							(click)="discardChanges()"
+							class="button-button-style"
+							i18n="@@button_discardChanges"
+							id="discardChanges"
+						>
+							Discard Changes
+						</button>
+						&nbsp;&nbsp;
+						<button
+							color="accent"
+							class="button-button-style"
+							mat-flat-button
+							[disabled]="isSaving || isSaveDisabled"
+							(click)="applyCustomBranding()"
+							id="saveChanges"
+						>
+							<span i18n="@@button_saveAndApply"> Save and Apply </span>
+
+							<mat-icon *ngIf="isSaving" class="m-l-xs">
+								<mat-spinner color="accent" diameter="20"> </mat-spinner>
+							</mat-icon>
+						</button>
+					</div>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</mat-card>
+</ng-container>
+
+<!-- Page loader / whydonate loader -->
+<ng-template #whydonateLoader>
+	<app-page-loader></app-page-loader>
+</ng-template>

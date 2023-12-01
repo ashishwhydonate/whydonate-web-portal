@@ -1,0 +1,933 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  FundraiserPreviewComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-fundraiser-preview</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;button mat-icon-button class&#x3D;&quot;close-button&quot; [mat-dialog-close]&#x3D;&quot;false&quot;&gt;
+	&lt;img src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg&quot;/&gt;
+&lt;/button&gt;
+&lt;h3 mat-dialog-title i18n&#x3D;&quot;@@custom-branding-fundraiser-preview&quot;&gt;
+	Fundraiser preview
+&lt;/h3&gt;
+&lt;div mat-dialog-content&gt;
+	&lt;svg
+		xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+		xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+		viewBox&#x3D;&quot;0 0 500 500&quot;
+	&gt;
+		&lt;style type&#x3D;&quot;text/css&quot;&gt;
+			.logo {
+				height: 22px;
+			}
+			rect.card-elevation-z1 {
+				filter: drop-shadow(0 1px 1px rgb(0 0 0 / 30%));
+			}
+			rect.card-elevation-z4 {
+				filter: drop-shadow(0 1px 3px rgb(0 0 0 / 30%));
+			}
+		&lt;/style&gt;
+		&lt;image [attr.href]&#x3D;&quot;data.customLogo&quot; x&#x3D;&quot;16&quot; y&#x3D;&quot;8&quot; class&#x3D;&quot;logo&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;72&quot;
+			height&#x3D;&quot;18&quot;
+			x&#x3D;&quot;364&quot;
+			y&#x3D;&quot;12&quot;
+			fill&#x3D;&quot;none&quot;
+			stroke&#x3D;&quot;#363396&quot;
+			[attr.stroke]&#x3D;&quot;data.primaryColor&quot;
+			stroke-width&#x3D;&quot;2&quot;
+			class&#x3D;&quot;accent&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;path
+			fill&#x3D;&quot;#363396&quot;
+			[attr.fill]&#x3D;&quot;data.primaryColor&quot;
+			d&#x3D;&quot;M374 18h54v6h-54z&quot;
+			class&#x3D;&quot;accent&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;465&quot; cy&#x3D;&quot;21&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;326&quot;
+			height&#x3D;&quot;256&quot;
+			y&#x3D;&quot;224&quot;
+			fill&#x3D;&quot;#fff&quot;
+			class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 40h326v184H0z&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;152&quot;
+			height&#x3D;&quot;94.5&quot;
+			x&#x3D;&quot;338&quot;
+			y&#x3D;&quot;50&quot;
+			fill&#x3D;&quot;#fff&quot;
+			class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M346 56h62v8h-62zm42 14h78v12h-78z&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;132&quot;
+			height&#x3D;&quot;18&quot;
+			x&#x3D;&quot;346&quot;
+			y&#x3D;&quot;92&quot;
+			fill&#x3D;&quot;#363396&quot;
+			[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+			class&#x3D;&quot;accent&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;rect
+			width&#x3D;&quot;132&quot;
+			height&#x3D;&quot;18&quot;
+			x&#x3D;&quot;346&quot;
+			y&#x3D;&quot;116&quot;
+			fill&#x3D;&quot;none&quot;
+			stroke&#x3D;&quot;#363396&quot;
+			[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+			stroke-width&#x3D;&quot;2&quot;
+			class&#x3D;&quot;accent&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;path
+			fill&#x3D;&quot;#363396&quot;
+			[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+			d&#x3D;&quot;M381 122h62v6h-62z&quot;
+			class&#x3D;&quot;accent&quot;
+		/&gt;
+		&lt;rect
+			width&#x3D;&quot;152&quot;
+			height&#x3D;&quot;72.4&quot;
+			x&#x3D;&quot;338&quot;
+			y&#x3D;&quot;154&quot;
+			fill&#x3D;&quot;#fff&quot;
+			class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;rect
+			width&#x3D;&quot;132&quot;
+			height&#x3D;&quot;18&quot;
+			x&#x3D;&quot;346&quot;
+			y&#x3D;&quot;199&quot;
+			fill&#x3D;&quot;none&quot;
+			stroke&#x3D;&quot;#363396&quot;
+			[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+			stroke-width&#x3D;&quot;2&quot;
+			class&#x3D;&quot;accent&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;path
+			fill&#x3D;&quot;#363396&quot;
+			[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+			d&#x3D;&quot;M380 205h62v6h-62z&quot;
+			class&#x3D;&quot;accent&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;178&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 164h44v8h-44z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 178h86v12h-86z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M16 236h86v12H16zm0 30h58v8H16z&quot; /&gt;
+		&lt;path
+			fill&#x3D;&quot;#d8d8d8&quot;
+			d&#x3D;&quot;M90 266h58v8H90zm-74 34h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h232v8H16zm0 32h92v60H16zm96 0h92v60h-92zm96 0h92v60h-92z&quot;
+		/&gt;
+		&lt;rect
+			width&#x3D;&quot;152&quot;
+			height&#x3D;&quot;200&quot;
+			x&#x3D;&quot;338&quot;
+			y&#x3D;&quot;236&quot;
+			fill&#x3D;&quot;#fff&quot;
+			class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+			rx&#x3D;&quot;1&quot;
+			ry&#x3D;&quot;1&quot;
+		/&gt;
+		&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M338 311h152m-152 63h152&quot; /&gt;
+		&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;273.7&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 262h44v8h-44z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 274h62v8h-62z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 266h16v16h-16z&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;44&quot;
+			height&#x3D;&quot;12&quot;
+			x&#x3D;&quot;404&quot;
+			y&#x3D;&quot;290&quot;
+			fill&#x3D;&quot;#d8d8d8&quot;
+			rx&#x3D;&quot;6&quot;
+			ry&#x3D;&quot;6&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;296&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;path
+			fill&#x3D;&quot;#363396&quot;
+			[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+			d&#x3D;&quot;M436 244h42v6h-42z&quot;
+			class&#x3D;&quot;accent&quot;
+		/&gt;
+		&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 285h323&quot; /&gt;
+		&lt;path
+			fill&#x3D;&quot;none&quot;
+			stroke&#x3D;&quot;#363396&quot;
+			[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+			stroke-width&#x3D;&quot;2&quot;
+			d&#x3D;&quot;M14 284h64&quot;
+			class&#x3D;&quot;accent&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;333&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 321h44v8h-44z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 333h62v8h-62z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 325h16v16h-16z&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;44&quot;
+			height&#x3D;&quot;12&quot;
+			x&#x3D;&quot;404&quot;
+			y&#x3D;&quot;350&quot;
+			fill&#x3D;&quot;#d8d8d8&quot;
+			rx&#x3D;&quot;6&quot;
+			ry&#x3D;&quot;6&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;356&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;397&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 385h44v8h-44z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 397h62v8h-62z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 390h16v16h-16z&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;44&quot;
+			height&#x3D;&quot;12&quot;
+			x&#x3D;&quot;404&quot;
+			y&#x3D;&quot;414&quot;
+			fill&#x3D;&quot;#d8d8d8&quot;
+			rx&#x3D;&quot;6&quot;
+			ry&#x3D;&quot;6&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;420&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+		&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M348 244h44v8h-44zm-3-174h34v12h-34z&quot; /&gt;
+		&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#fff&quot; d&#x3D;&quot;M0 188h326&quot; /&gt;
+		&lt;circle cx&#x3D;&quot;21&quot; cy&#x3D;&quot;207&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#979797&quot; /&gt;
+		&lt;path
+			fill&#x3D;&quot;#979797&quot;
+			d&#x3D;&quot;M46 208h62v6H46zm121 0h62v6h-62zm0-8h42v6h-42zm-121 0h42v6H46z&quot;
+		/&gt;
+		&lt;circle cx&#x3D;&quot;149&quot; cy&#x3D;&quot;207&quot; r&#x3D;&quot;7&quot; fill&#x3D;&quot;#979797&quot; /&gt;
+		&lt;rect
+			width&#x3D;&quot;44&quot;
+			height&#x3D;&quot;12&quot;
+			x&#x3D;&quot;8&quot;
+			y&#x3D;&quot;169&quot;
+			fill&#x3D;&quot;#979797&quot;
+			rx&#x3D;&quot;6&quot;
+			ry&#x3D;&quot;6&quot;
+		/&gt;
+		&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 0h500v40H0z&quot; /&gt;
+	&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+	&lt;button
+		i18n&#x3D;&quot;@@button_close&quot;
+		mat-flat-button
+		class&#x3D;&quot;button-button-style&quot;
+		mat-dialog-close
+		color&#x3D;&quot;accent&quot;
+	&gt;
+		Close
+	&lt;/button&gt;
+&lt;/div&gt;
+	</code></pre></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#whydonateLogo" >whydonateLogo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(data: literal type)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="251" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component.ts:251</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                    <code>literal type</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="263"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component.ts:263</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(MAT_DIALOG_DATA)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="255" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component.ts:255</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="whydonateLogo"></a>
+                    <span class="name">
+                        <span ><b>whydonateLogo</b></span>
+                        <a href="#whydonateLogo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;data:image/webp;base64,UklGRm4EAABXRUJQVlA4TGIEAAAvucAJEP+gqG0jyeEPbtDs66SBoG3bONgH6AxfBW0bObnxpJ/qM5lR1DaSc4tgtjcE9zz+jI5FwJm3ctvbT8B988vXoj6ngj86NGDdFGAGIyMDSJIsGECQycAEAwM+KbACkGXbdpVKx7di0HCBMiSQ0/9umr0PoCXfEf2HKMlKXWm4r12NIiCYfIJI3Y+6TPLgZePkmXWFdNtGveqt2mwaL13HuGmMK9HnSo63t3yONsb4/K/QtfiVnN1bPkdQVfkafd+3v0xSTd/LXqra/zKqGr5GV5LUD+O/mt2HN/X/ze7wlp2pw7y//NfIqpN8npnF72c02C34uDvnjsjVOXel630927P2j0XBUNs8vKFPjKqaY3yxIv6DFLuAC12RfaFyzh2I3eXuXFUsdXlTibCup7LyAPWosXr6AYpu+iOiapRmBO2IvwTK/s1VusIjjKj0p/6oaPUn4MgGEWRXOZCLbdvjm7t9pmmoZz0oSzAq2SuQKhgCwbAREPObGKMXabKh9Ie4oD3kAlzJdjcCtKHxbkVD/vuCZ5rcivicKaGWd+yaF+sBPks6hdfEmnTlWt8mIx0UjHmnRqRV1XY97LgbTnMtLsTxzoS7nk4VBcGR/7xjOAcu/w0sAtcaOMVlVICjoNgSvjPM8oBlkwKRwyI/KHIHtMsyITgmcaQTWuJWWgpkyz3/SZY64Sy1FYuKnhuN7JRoVa1hjzcDZQ7wMdNwELQQuKTBuCLnMtywBzNIBePC7iFO7NsbBzSOdKTKZTDNFJNXgSdg+tmF45EDtcfICX2RsO4Q3RiQAcp1Vel3A9demX3hZjq9QgPucDOR99CRvbH7pSei6mRsnhZ0/AvxLYkVirzRRjUlqS4+DQQLuP5S+l9gB0G/IyMGRlicyKIJAtCINNuEEgkr8mgvtllZBiNMUAGbiDeM9aI7HQMcs4IWUOFwKS5eCBjzQn+LIlYsRkgHRqKqycOGajRc8E/QsecYCEb28ywPStiLv9WL0QDXCzRUpWUZ2Lm6F70MOMBqdLC1exIZyBuVEDUMHNeeY6Bj4oJTR7OgnTEabsbeL+a5LkaorFzYOUBHkdbRvzFeW8vDRrjWdjWprTCZWUbfPQ3yc26UPMfBgZyNAu6Oyzkge864T6GSO1BJGNgeiTycZnqSZo1hnmjcEg7k2hZUXPh8oVtwRkUOXFSc2y1HqkJl6T+EBAmoZ8eNIYyGk8rmmek5lfFC0mLkfx2hKXKBGPqIM5l36Q0OX/+NuoAbYFtkBUeKCvqCVXbG/jcqQHywhzujp7k/Elg7YtrmSVoj2dXzGW7oh6iq85hVmg9Jq9lRZuyjpqG179p9iJrjixbUWD3NM2yOnUif4Kgl9WvSogEY+BVzjgE0jeufOXxWTOP9gvQrmeTz7OD7+BvP1qb/69maQ7nLb8gzraGVb3H6mSeaXVraLTzkS9yP8jvirfu6r8sBnzT8IEG2Vzy/N5tONptWthl4bzatbDatbDbb/BY&#x3D;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="250" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/branding/template/fundraiser-preview.component.ts:250</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from &#x27;@angular/material/legacy-dialog&#x27;;
+import { MatIconRegistry } from &#x27;@angular/material/icon&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+export interface DialogData {
+	primaryColor: string;
+	secondaryColor: string;
+}
+@Component({
+	selector: &#x27;app-fundraiser-preview&#x27;,
+	template: &#x60;
+		&lt;button mat-icon-button class&#x3D;&quot;close-button&quot; [mat-dialog-close]&#x3D;&quot;false&quot;&gt;
+			&lt;img src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg&quot;/&gt;
+		&lt;/button&gt;
+		&lt;h3 mat-dialog-title i18n&#x3D;&quot;@@custom-branding-fundraiser-preview&quot;&gt;
+			Fundraiser preview
+		&lt;/h3&gt;
+		&lt;div mat-dialog-content&gt;
+			&lt;svg
+				xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+				xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+				viewBox&#x3D;&quot;0 0 500 500&quot;
+			&gt;
+				&lt;style type&#x3D;&quot;text/css&quot;&gt;
+					.logo {
+						height: 22px;
+					}
+					rect.card-elevation-z1 {
+						filter: drop-shadow(0 1px 1px rgb(0 0 0 / 30%));
+					}
+					rect.card-elevation-z4 {
+						filter: drop-shadow(0 1px 3px rgb(0 0 0 / 30%));
+					}
+				&lt;/style&gt;
+				&lt;image [attr.href]&#x3D;&quot;data.customLogo&quot; x&#x3D;&quot;16&quot; y&#x3D;&quot;8&quot; class&#x3D;&quot;logo&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;72&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;364&quot;
+					y&#x3D;&quot;12&quot;
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.primaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.primaryColor&quot;
+					d&#x3D;&quot;M374 18h54v6h-54z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;465&quot; cy&#x3D;&quot;21&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;326&quot;
+					height&#x3D;&quot;256&quot;
+					y&#x3D;&quot;224&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 40h326v184H0z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;152&quot;
+					height&#x3D;&quot;94.5&quot;
+					x&#x3D;&quot;338&quot;
+					y&#x3D;&quot;50&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M346 56h62v8h-62zm42 14h78v12h-78z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;132&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;346&quot;
+					y&#x3D;&quot;92&quot;
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;132&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;346&quot;
+					y&#x3D;&quot;116&quot;
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					d&#x3D;&quot;M381 122h62v6h-62z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;152&quot;
+					height&#x3D;&quot;72.4&quot;
+					x&#x3D;&quot;338&quot;
+					y&#x3D;&quot;154&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;132&quot;
+					height&#x3D;&quot;18&quot;
+					x&#x3D;&quot;346&quot;
+					y&#x3D;&quot;199&quot;
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					class&#x3D;&quot;accent&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					d&#x3D;&quot;M380 205h62v6h-62z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;178&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 164h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 178h86v12h-86z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M16 236h86v12H16zm0 30h58v8H16z&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;#d8d8d8&quot;
+					d&#x3D;&quot;M90 266h58v8H90zm-74 34h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h232v8H16zm0 32h92v60H16zm96 0h92v60h-92zm96 0h92v60h-92z&quot;
+				/&gt;
+				&lt;rect
+					width&#x3D;&quot;152&quot;
+					height&#x3D;&quot;200&quot;
+					x&#x3D;&quot;338&quot;
+					y&#x3D;&quot;236&quot;
+					fill&#x3D;&quot;#fff&quot;
+					class&#x3D;&quot;card-elevation-z{{ data.customShadow }}&quot;
+					rx&#x3D;&quot;1&quot;
+					ry&#x3D;&quot;1&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M338 311h152m-152 63h152&quot; /&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;273.7&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 262h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 274h62v8h-62z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 266h16v16h-16z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;404&quot;
+					y&#x3D;&quot;290&quot;
+					fill&#x3D;&quot;#d8d8d8&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;296&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;#363396&quot;
+					[attr.fill]&#x3D;&quot;data.secondaryColor&quot;
+					d&#x3D;&quot;M436 244h42v6h-42z&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 285h323&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;none&quot;
+					stroke&#x3D;&quot;#363396&quot;
+					[attr.stroke]&#x3D;&quot;data.secondaryColor&quot;
+					stroke-width&#x3D;&quot;2&quot;
+					d&#x3D;&quot;M14 284h64&quot;
+					class&#x3D;&quot;accent&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;333&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 321h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 333h62v8h-62z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 325h16v16h-16z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;404&quot;
+					y&#x3D;&quot;350&quot;
+					fill&#x3D;&quot;#d8d8d8&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;356&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;circle cx&#x3D;&quot;361&quot; cy&#x3D;&quot;397&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M386 385h44v8h-44z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M386 397h62v8h-62z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M462 390h16v16h-16z&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;404&quot;
+					y&#x3D;&quot;414&quot;
+					fill&#x3D;&quot;#d8d8d8&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;392&quot; cy&#x3D;&quot;420&quot; r&#x3D;&quot;6&quot; fill&#x3D;&quot;#d8d8d8&quot; /&gt;
+				&lt;path fill&#x3D;&quot;#979797&quot; d&#x3D;&quot;M348 244h44v8h-44zm-3-174h34v12h-34z&quot; /&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#fff&quot; d&#x3D;&quot;M0 188h326&quot; /&gt;
+				&lt;circle cx&#x3D;&quot;21&quot; cy&#x3D;&quot;207&quot; r&#x3D;&quot;13&quot; fill&#x3D;&quot;#979797&quot; /&gt;
+				&lt;path
+					fill&#x3D;&quot;#979797&quot;
+					d&#x3D;&quot;M46 208h62v6H46zm121 0h62v6h-62zm0-8h42v6h-42zm-121 0h42v6H46z&quot;
+				/&gt;
+				&lt;circle cx&#x3D;&quot;149&quot; cy&#x3D;&quot;207&quot; r&#x3D;&quot;7&quot; fill&#x3D;&quot;#979797&quot; /&gt;
+				&lt;rect
+					width&#x3D;&quot;44&quot;
+					height&#x3D;&quot;12&quot;
+					x&#x3D;&quot;8&quot;
+					y&#x3D;&quot;169&quot;
+					fill&#x3D;&quot;#979797&quot;
+					rx&#x3D;&quot;6&quot;
+					ry&#x3D;&quot;6&quot;
+				/&gt;
+				&lt;path fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;#d8d8d8&quot; d&#x3D;&quot;M0 0h500v40H0z&quot; /&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;div mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
+			&lt;button
+				i18n&#x3D;&quot;@@button_close&quot;
+				mat-flat-button
+				class&#x3D;&quot;button-button-style&quot;
+				mat-dialog-close
+				color&#x3D;&quot;accent&quot;
+			&gt;
+				Close
+			&lt;/button&gt;
+		&lt;/div&gt;
+	&#x60;,
+	styles: [],
+})
+/** *Fundraiser Preview Component */
+export class FundraiserPreviewComponent implements OnInit {
+	whydonateLogo &#x3D;
+		&#x27;data:image/webp;base64,UklGRm4EAABXRUJQVlA4TGIEAAAvucAJEP+gqG0jyeEPbtDs66SBoG3bONgH6AxfBW0bObnxpJ/qM5lR1DaSc4tgtjcE9zz+jI5FwJm3ctvbT8B988vXoj6ngj86NGDdFGAGIyMDSJIsGECQycAEAwM+KbACkGXbdpVKx7di0HCBMiSQ0/9umr0PoCXfEf2HKMlKXWm4r12NIiCYfIJI3Y+6TPLgZePkmXWFdNtGveqt2mwaL13HuGmMK9HnSo63t3yONsb4/K/QtfiVnN1bPkdQVfkafd+3v0xSTd/LXqra/zKqGr5GV5LUD+O/mt2HN/X/ze7wlp2pw7y//NfIqpN8npnF72c02C34uDvnjsjVOXel630927P2j0XBUNs8vKFPjKqaY3yxIv6DFLuAC12RfaFyzh2I3eXuXFUsdXlTibCup7LyAPWosXr6AYpu+iOiapRmBO2IvwTK/s1VusIjjKj0p/6oaPUn4MgGEWRXOZCLbdvjm7t9pmmoZz0oSzAq2SuQKhgCwbAREPObGKMXabKh9Ie4oD3kAlzJdjcCtKHxbkVD/vuCZ5rcivicKaGWd+yaF+sBPks6hdfEmnTlWt8mIx0UjHmnRqRV1XY97LgbTnMtLsTxzoS7nk4VBcGR/7xjOAcu/w0sAtcaOMVlVICjoNgSvjPM8oBlkwKRwyI/KHIHtMsyITgmcaQTWuJWWgpkyz3/SZY64Sy1FYuKnhuN7JRoVa1hjzcDZQ7wMdNwELQQuKTBuCLnMtywBzNIBePC7iFO7NsbBzSOdKTKZTDNFJNXgSdg+tmF45EDtcfICX2RsO4Q3RiQAcp1Vel3A9demX3hZjq9QgPucDOR99CRvbH7pSei6mRsnhZ0/AvxLYkVirzRRjUlqS4+DQQLuP5S+l9gB0G/IyMGRlicyKIJAtCINNuEEgkr8mgvtllZBiNMUAGbiDeM9aI7HQMcs4IWUOFwKS5eCBjzQn+LIlYsRkgHRqKqycOGajRc8E/QsecYCEb28ywPStiLv9WL0QDXCzRUpWUZ2Lm6F70MOMBqdLC1exIZyBuVEDUMHNeeY6Bj4oJTR7OgnTEabsbeL+a5LkaorFzYOUBHkdbRvzFeW8vDRrjWdjWprTCZWUbfPQ3yc26UPMfBgZyNAu6Oyzkge864T6GSO1BJGNgeiTycZnqSZo1hnmjcEg7k2hZUXPh8oVtwRkUOXFSc2y1HqkJl6T+EBAmoZ8eNIYyGk8rmmek5lfFC0mLkfx2hKXKBGPqIM5l36Q0OX/+NuoAbYFtkBUeKCvqCVXbG/jcqQHywhzujp7k/Elg7YtrmSVoj2dXzGW7oh6iq85hVmg9Jq9lRZuyjpqG179p9iJrjixbUWD3NM2yOnUif4Kgl9WvSogEY+BVzjgE0jeufOXxWTOP9gvQrmeTz7OD7+BvP1qb/69maQ7nLb8gzraGVb3H6mSeaXVraLTzkS9yP8jvirfu6r8sBnzT8IEG2Vzy/N5tONptWthl4bzatbDatbDbb/BY&#x3D;&#x27;;
+
+	constructor(
+		@Inject(MAT_DIALOG_DATA)
+		public data: {
+			primaryColor: string;
+			secondaryColor: string;
+			customShadow: string;
+			customLogo: string;
+		}
+	) {}
+
+	ngOnInit(): void {}
+}
+</code></pre>
+    </div>
+
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><button mat-icon-button class="close-button" [mat-dialog-close]="false">	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/></button><h3 mat-dialog-title i18n="@@custom-branding-fundraiser-preview">	Fundraiser preview</h3><div mat-dialog-content>	<svg		xmlns="http://www.w3.org/2000/svg"		xmlns:xlink="http://www.w3.org/1999/xlink"		viewBox="0 0 500 500"	>		<style type="text/css">			.logo {				height: 22px;			}			rect.card-elevation-z1 {				filter: drop-shadow(0 1px 1px rgb(0 0 0 / 30%));			}			rect.card-elevation-z4 {				filter: drop-shadow(0 1px 3px rgb(0 0 0 / 30%));			}		</style>		<image [attr.href]="data.customLogo" x="16" y="8" class="logo" />		<rect			width="72"			height="18"			x="364"			y="12"			fill="none"			stroke="#363396"			[attr.stroke]="data.primaryColor"			stroke-width="2"			class="accent"			rx="1"			ry="1"		/>		<path			fill="#363396"			[attr.fill]="data.primaryColor"			d="M374 18h54v6h-54z"			class="accent"		/>		<circle cx="465" cy="21" r="13" fill="#d8d8d8" />		<rect			width="326"			height="256"			y="224"			fill="#fff"			class="card-elevation-z{{ data.customShadow }}"			rx="1"			ry="1"		/>		<path fill="#d8d8d8" d="M0 40h326v184H0z" />		<rect			width="152"			height="94.5"			x="338"			y="50"			fill="#fff"			class="card-elevation-z{{ data.customShadow }}"			rx="1"			ry="1"		/>		<path fill="#d8d8d8" d="M346 56h62v8h-62zm42 14h78v12h-78z" />		<rect			width="132"			height="18"			x="346"			y="92"			fill="#363396"			[attr.fill]="data.secondaryColor"			class="accent"			rx="1"			ry="1"		/>		<rect			width="132"			height="18"			x="346"			y="116"			fill="none"			stroke="#363396"			[attr.stroke]="data.secondaryColor"			stroke-width="2"			class="accent"			rx="1"			ry="1"		/>		<path			fill="#363396"			[attr.fill]="data.secondaryColor"			d="M381 122h62v6h-62z"			class="accent"		/>		<rect			width="152"			height="72.4"			x="338"			y="154"			fill="#fff"			class="card-elevation-z{{ data.customShadow }}"			rx="1"			ry="1"		/>		<rect			width="132"			height="18"			x="346"			y="199"			fill="none"			stroke="#363396"			[attr.stroke]="data.secondaryColor"			stroke-width="2"			class="accent"			rx="1"			ry="1"		/>		<path			fill="#363396"			[attr.fill]="data.secondaryColor"			d="M380 205h62v6h-62z"			class="accent"		/>		<circle cx="361" cy="178" r="13" fill="#d8d8d8" />		<path fill="#979797" d="M386 164h44v8h-44z" />		<path fill="#d8d8d8" d="M386 178h86v12h-86z" />		<path fill="#979797" d="M16 236h86v12H16zm0 30h58v8H16z" />		<path			fill="#d8d8d8"			d="M90 266h58v8H90zm-74 34h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h280v8H16zm0 14h232v8H16zm0 32h92v60H16zm96 0h92v60h-92zm96 0h92v60h-92z"		/>		<rect			width="152"			height="200"			x="338"			y="236"			fill="#fff"			class="card-elevation-z{{ data.customShadow }}"			rx="1"			ry="1"		/>		<path fill="none" stroke="#d8d8d8" d="M338 311h152m-152 63h152" />		<circle cx="361" cy="273.7" r="13" fill="#d8d8d8" />		<path fill="#979797" d="M386 262h44v8h-44z" />		<path fill="#d8d8d8" d="M386 274h62v8h-62z" />		<path fill="#979797" d="M462 266h16v16h-16z" />		<rect			width="44"			height="12"			x="404"			y="290"			fill="#d8d8d8"			rx="6"			ry="6"		/>		<circle cx="392" cy="296" r="6" fill="#d8d8d8" />		<path			fill="#363396"			[attr.fill]="data.secondaryColor"			d="M436 244h42v6h-42z"			class="accent"		/>		<path fill="none" stroke="#d8d8d8" d="M0 285h323" />		<path			fill="none"			stroke="#363396"			[attr.stroke]="data.secondaryColor"			stroke-width="2"			d="M14 284h64"			class="accent"		/>		<circle cx="361" cy="333" r="13" fill="#d8d8d8" />		<path fill="#979797" d="M386 321h44v8h-44z" />		<path fill="#d8d8d8" d="M386 333h62v8h-62z" />		<path fill="#979797" d="M462 325h16v16h-16z" />		<rect			width="44"			height="12"			x="404"			y="350"			fill="#d8d8d8"			rx="6"			ry="6"		/>		<circle cx="392" cy="356" r="6" fill="#d8d8d8" />		<circle cx="361" cy="397" r="13" fill="#d8d8d8" />		<path fill="#979797" d="M386 385h44v8h-44z" />		<path fill="#d8d8d8" d="M386 397h62v8h-62z" />		<path fill="#979797" d="M462 390h16v16h-16z" />		<rect			width="44"			height="12"			x="404"			y="414"			fill="#d8d8d8"			rx="6"			ry="6"		/>		<circle cx="392" cy="420" r="6" fill="#d8d8d8" />		<path fill="#979797" d="M348 244h44v8h-44zm-3-174h34v12h-34z" />		<path fill="none" stroke="#fff" d="M0 188h326" />		<circle cx="21" cy="207" r="13" fill="#979797" />		<path			fill="#979797"			d="M46 208h62v6H46zm121 0h62v6h-62zm0-8h42v6h-42zm-121 0h42v6H46z"		/>		<circle cx="149" cy="207" r="7" fill="#979797" />		<rect			width="44"			height="12"			x="8"			y="169"			fill="#979797"			rx="6"			ry="6"		/>		<path fill="none" stroke="#d8d8d8" d="M0 0h500v40H0z" />	</svg></div><div mat-dialog-actions align="end">	<button		i18n="@@button_close"		mat-flat-button		class="button-button-style"		mat-dialog-close		color="accent"	>		Close	</button></div>	</div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'FundraiserPreviewComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FundraiserPreviewComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

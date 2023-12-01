@@ -1,0 +1,83 @@
+<mat-card class="mat-elevation-z0">
+	<mat-card class="mat-elevation-z0 pale-grey-bg">
+		<ng-template [ngIf]="profileCard" [ngIfElse]="loading">
+			<div fxLayout="row">
+				<img
+					mat-card-avatar
+					[src]="this.profileCardData?.image"
+					alt="profile photo"
+				/>
+				<div fxLayout="column" fxFlexOffset="16px">
+					<div>
+						<mat-label class="mat-body-2">
+							{{ this.profileCardData?.name }}
+						</mat-label>
+					</div>
+					<a
+						fxFlexAlign="start"
+						mat-button
+						color="accent"
+						(click)="routeToProfile()"
+						i18n="@@profileView_label"
+						id="viewProfile"
+						>View Profile</a
+					>
+				</div>
+			</div>
+		</ng-template>
+	</mat-card>
+</mat-card>
+
+<!--BALANCE CARD-->
+<mat-card *ngIf="showStripe || showOpp" class="mat-elevation-z0">
+	<mat-card class="mat-elevation-z0 pale-grey-bg">
+		<ng-template [ngIf]="profileCard" [ngIfElse]="loading">
+			<mat-card-content *ngIf="isReceiver">
+				<div *ngIf="showOpp" class="p-xs">
+					<mat-label class="mat-body-2" i18n="@@profileView_balance_label">
+						OPP Balance
+					</mat-label>
+					<br />
+					<mat-label class="mat-title">
+						€ {{ this.profileCardData?.balance }}</mat-label
+					>
+					<br />
+				</div>
+				<mat-divider *ngIf="showOpp"></mat-divider>
+				<div *ngIf="showStripe" class="p-xs">
+					<mat-label
+						class="mat-body-2"
+						i18n="@@profileView_stripe_balance_label"
+					>
+						Stripe Balance
+					</mat-label>
+					<br />
+					<mat-label class="mat-title">
+						€ {{ this.stripeBalanceTotal }}</mat-label
+					>
+				</div>
+				<div *ngIf="showStripe || showOpp" class="p-xs">
+					<a
+						mat-button
+						color="accent"
+						(click)="routeToBalance()"
+						i18n="@@profileView_viewSummary_label"
+						id="viewSummary"
+						>View Transactions</a
+					>
+				</div>
+			</mat-card-content>
+		</ng-template>
+	</mat-card>
+</mat-card>
+
+<!----------------------LOADING SPINNER TEMPLATE---------------------->
+<ng-template #loading>
+	<br /><br />
+	<div fxLayoutAlign="center center">
+		<mat-icon
+			><mat-spinner color="accent" diameter="20"></mat-spinner
+		></mat-icon>
+	</div>
+	<br /><br />
+</ng-template>

@@ -1,0 +1,201 @@
+<form [formGroup]="this.shareFundraiserForm">
+	<div fxFill fxLayout="row" fxLayoutAlign="center center">
+		<div fxFill fxLayout="column" fxLayoutAlign="center center">
+			<!--EMAIL ADDRESS-->
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<div fxFill fxLayout="row" fxLayoutAlign="center center">
+					<mat-form-field class="w-100" appearance="outline">
+						<img
+							class="email-text m-r-s"
+							matPrefix
+							height="21"
+							width="24"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1676397470/whydonate-production/platform/svg-icons/mail.svg"
+						/>
+						<mat-label
+							i18n="@@fundraiser_createFundraiser_fundraiserEmail_label"
+						>
+							Email Address (optional)
+						</mat-label>
+						<input
+							id="create_fundraiser_email"
+							matInput
+							type="email"
+							formControlName="email"
+							#email
+						/>
+						<mat-error
+							i18n="@@createFundraiser_inavlidEmail_error"
+							*ngIf="
+								shareFundraiserForm.controls['email'].errors &&
+								shareFundraiserForm.controls['email'].errors.email
+							"
+						>
+							Invalid Email. Please enter a valid email address.
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!--FACEBOOK ADDRESS-->
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<div fxFill fxLayout="row" fxLayoutAlign="center center">
+					<mat-form-field class="w-100" appearance="outline">
+						<img
+							class="email-text m-r-s"
+							matPrefix
+							height="28"
+							width="28"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666173337/whydonate-production/platform/svg-icons/fb.svg"
+						/>
+						<mat-label
+							i18n="@@fundraiser_createFundraiser_fundraiserFacebook_label"
+						>
+							Facebook page URL (optional)
+						</mat-label>
+						<input
+							id="create_fundraiser_facebook"
+							matInput
+							formControlName="facebook"
+							#facebook
+						/>
+						<mat-error
+							i18n="@@createFundraiser_invalidFacebook_error"
+							*ngIf="shareFundraiserForm.controls['facebook'].errors"
+						>
+							Invalid Facebook URL. Please enter a valid url.
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!--TWITTER ADDRESS-->
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<div fxFill fxLayout="row" fxLayoutAlign="center center">
+					<mat-form-field class="w-100" appearance="outline">
+						<img
+							class="email-text m-r-s"
+							matPrefix
+							height="28"
+							width="28"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1698663566/whydonate-production/platform/svg-icons/x.svg"
+						/>
+						<mat-label
+							i18n="@@fundraiser_createFundraiser_fundraiserTwitter_label"
+						>
+							Twitter account URL (optional)
+						</mat-label>
+						<input
+							id="create_fundraiser_twitter"
+							matInput
+							formControlName="twitter"
+							#twitter
+						/>
+						<mat-error
+							i18n="@@createFundraiser_invalidtwitter_error"
+							*ngIf="shareFundraiserForm.controls['twitter'].errors"
+						>
+							Invalid Twitter URL. Please enter a valid url.
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!--LINKEDIN ADDRESS-->
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<div fxFill fxLayout="row" fxLayoutAlign="center center">
+					<mat-form-field class="w-100" appearance="outline">
+						<img
+							class="email-text m-r-s"
+							matPrefix
+							height="28"
+							width="28"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666173331/whydonate-production/platform/svg-icons/linkedin.svg"
+						/>
+						<mat-label
+							i18n="@@fundraiser_createFundraiser_fundraiserLinkedIn_label"
+						>
+							LinkedIn account URL (optional)
+						</mat-label>
+						<input
+							id="create_fundraiser_linked_in"
+							matInput
+							formControlName="linked_in"
+							#linked_in
+						/>
+						<mat-error
+							i18n="@@createFundraiser_invalidLinkedIn_error"
+							*ngIf="shareFundraiserForm.controls['linked_in'].errors"
+						>
+							Invalid LinkedIn URL. Please enter a valid url.
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!-- instagram Address  -->
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<div fxFill fxLayout="row" fxLayoutAlign="center center">
+					<mat-form-field class="w-100" appearance="outline">
+						<img
+							class="email-text m-r-s"
+							matPrefix
+							height="28"
+							width="28"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666173343/whydonate-production/platform/svg-icons/insta.svg"
+						/>
+						<mat-label
+							i18n="@@fundraiser_createFundraiser_fundraiserinstagram_label"
+						>
+							Instagram account URL (optional)
+						</mat-label>
+						<input
+							id="create_fundraiser_instagram"
+							matInput
+							formControlName="instagram"
+							#instagram
+						/>
+						<mat-error
+							i18n="@@createFundraiser_invalidinstagram_error"
+							*ngIf="shareFundraiserForm.controls['instagram'].errors"
+						>
+							Invalid Instagram URL. Please enter a valid url.
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<!-- website Address -->
+			<div fxFill fxLayout="column" fxLayoutAlign="center center">
+				<div fxFill fxLayout="row" fxLayoutAlign="center center">
+					<mat-form-field class="w-100" appearance="outline">
+						<img
+							class="email-text m-r-s"
+							matPrefix
+							height="24"
+							width="24"
+							src="https://res.cloudinary.com/whydonate/image/upload/v1676397486/whydonate-production/platform/svg-icons/web.svg"
+						/>
+						<mat-label
+							i18n="@@fundraiser_createFundraiser_fundraiserwebsite_label"
+						>
+							Website URL (optional)
+						</mat-label>
+						<input
+							id="create_fundraiser_website"
+							matInput
+							formControlName="website"
+							#website
+						/>
+						<mat-error
+							i18n="@@createFundraiser_invalidwebsite_error"
+							*ngIf="shareFundraiserForm.controls['website'].errors"
+						>
+							Invalid Website URL. Please enter a valid url.
+						</mat-error>
+					</mat-form-field>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,3681 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  EmailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-email</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./email.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_quillContent0" >_quillContent0</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContent1" >_quillContent1</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContent2" >_quillContent2</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContent3" >_quillContent3</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContent4" >_quillContent4</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContent5" >_quillContent5</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContentFlag0" >_quillContentFlag0</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContentFlag1" >_quillContentFlag1</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContentFlag2" >_quillContentFlag2</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContentFlag3" >_quillContentFlag3</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContentFlag4" >_quillContentFlag4</a>
+                            </li>
+                            <li>
+                                <a href="#_quillContentFlag5" >_quillContentFlag5</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_router" >_router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#accountService" >accountService</a>
+                            </li>
+                            <li>
+                                <a href="#customEmailSetting" >customEmailSetting</a>
+                            </li>
+                            <li>
+                                <a href="#defaultState" >defaultState</a>
+                            </li>
+                            <li>
+                                <a href="#Email" >Email</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#iconRegistry" >iconRegistry</a>
+                            </li>
+                            <li>
+                                <a href="#isCustomBrandingChecked" >isCustomBrandingChecked</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isSave" >isSave</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#media" >media</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState0" >panelOpenState0</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState1" >panelOpenState1</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState2" >panelOpenState2</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState3" >panelOpenState3</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState4" >panelOpenState4</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState5" >panelOpenState5</a>
+                            </li>
+                            <li>
+                                <a href="#passData" >passData</a>
+                            </li>
+                            <li>
+                                <a href="#profileId" >profileId</a>
+                            </li>
+                            <li>
+                                <a href="#quillForm0" >quillForm0</a>
+                            </li>
+                            <li>
+                                <a href="#quillForm1" >quillForm1</a>
+                            </li>
+                            <li>
+                                <a href="#quillForm2" >quillForm2</a>
+                            </li>
+                            <li>
+                                <a href="#quillForm3" >quillForm3</a>
+                            </li>
+                            <li>
+                                <a href="#quillForm4" >quillForm4</a>
+                            </li>
+                            <li>
+                                <a href="#quillForm5" >quillForm5</a>
+                            </li>
+                            <li>
+                                <a href="#quillModuleConfig" >quillModuleConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#sanitizer" >sanitizer</a>
+                            </li>
+                            <li>
+                                <a href="#state" >state</a>
+                            </li>
+                            <li>
+                                <a href="#userEmail" >userEmail</a>
+                            </li>
+                            <li>
+                                <a href="#userProfile" >userProfile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#created" >created</a>
+                            </li>
+                            <li>
+                                <a href="#discardChanges" >discardChanges</a>
+                            </li>
+                            <li>
+                                <a href="#getCustomEmailValue" >getCustomEmailValue</a>
+                            </li>
+                            <li>
+                                <a href="#isEditMode" >isEditMode</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#routeToBranding" >routeToBranding</a>
+                            </li>
+                            <li>
+                                <a href="#saveForm" >saveForm</a>
+                            </li>
+                            <li>
+                                <a href="#sendTestMail" >sendTestMail</a>
+                            </li>
+                            <li>
+                                <a href="#setCustomEmailView" >setCustomEmailView</a>
+                            </li>
+                            <li>
+                                <a href="#setQuillContent" >setQuillContent</a>
+                            </li>
+                            <li>
+                                <a href="#showPreview" >showPreview</a>
+                            </li>
+                            <li>
+                                <a href="#toggleCustomBranding" >toggleCustomBranding</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#customSetting" >customSetting</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#tabValue" >tabValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_customBrandingService: <a href="../injectables/CustomBrandingService.html" target="_self">CustomBrandingService</a>, media: MediaObserver, _notificationService: <a href="../injectables/NotificationService.html" target="_self">NotificationService</a>, _http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, iconRegistry: MatIconRegistry, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="148" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:148</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_customBrandingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomBrandingService.html" target="_self" >CustomBrandingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>media</td>
+                                                  
+                                                        <td>
+                                                                    <code>MediaObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>iconRegistry</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatIconRegistry</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sanitizer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>accountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="customSetting"></a>
+                        <b>customSetting</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/CustomEmail.html" target="_self" >CustomEmail</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:56</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tabValue"></a>
+                        <b>tabValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:64</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="created"></a>
+                    <span class="name">
+                        <span ><b>created</b></span>
+                        <a href="#created"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>created(event: Quill)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="270"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:270</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>Quill</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="discardChanges"></a>
+                    <span class="name">
+                        <span ><b>discardChanges</b></span>
+                        <a href="#discardChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>discardChanges(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="318"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:318</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Discard Changes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCustomEmailValue"></a>
+                    <span class="name">
+                        <span ><b>getCustomEmailValue</b></span>
+                        <a href="#getCustomEmailValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCustomEmailValue(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="351"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:351</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get Custom Email Value</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Fundraiser.html" target="_self" >ThankYou | Register | DonationReceived | FundraiserCreated | FundraiserPublished | FundraiserClosed | undefined</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEditMode"></a>
+                    <span class="name">
+                        <span ><b>isEditMode</b></span>
+                        <a href="#isEditMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEditMode(newVal: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orignalVal: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="264"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:264</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>newVal</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>orignalVal</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:213</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>changes</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToBranding"></a>
+                    <span class="name">
+                        <span ><b>routeToBranding</b></span>
+                        <a href="#routeToBranding"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToBranding()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="276"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:276</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveForm"></a>
+                    <span class="name">
+                        <span ><b>saveForm</b></span>
+                        <a href="#saveForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveForm(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="305"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:305</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendTestMail"></a>
+                    <span class="name">
+                        <span ><b>sendTestMail</b></span>
+                        <a href="#sendTestMail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendTestMail()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="438"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:438</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Send Test Mail</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setCustomEmailView"></a>
+                    <span class="name">
+                        <span ><b>setCustomEmailView</b></span>
+                        <a href="#setCustomEmailView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setCustomEmailView(customEmailSetting: <a href="../interfaces/CustomEmail.html" target="_self">CustomEmail</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>customEmailSetting</td>
+                                    <td>
+                                                <code><a href="../interfaces/CustomEmail.html" target="_self" >CustomEmail</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setQuillContent"></a>
+                    <span class="name">
+                        <span ><b>setQuillContent</b></span>
+                        <a href="#setQuillContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setQuillContent(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="405"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:405</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set Quill Content</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showPreview"></a>
+                    <span class="name">
+                        <span ><b>showPreview</b></span>
+                        <a href="#showPreview"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showPreview()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="253"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:253</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleCustomBranding"></a>
+                    <span class="name">
+                        <span ><b>toggleCustomBranding</b></span>
+                        <a href="#toggleCustomBranding"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleCustomBranding(event: MatSlideToggleChange)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:279</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MatSlideToggleChange</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContent0"></a>
+                    <span class="name">
+                        <span ><b>_quillContent0</b></span>
+                        <a href="#_quillContent0"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContent1"></a>
+                    <span class="name">
+                        <span ><b>_quillContent1</b></span>
+                        <a href="#_quillContent1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContent2"></a>
+                    <span class="name">
+                        <span ><b>_quillContent2</b></span>
+                        <a href="#_quillContent2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContent3"></a>
+                    <span class="name">
+                        <span ><b>_quillContent3</b></span>
+                        <a href="#_quillContent3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContent4"></a>
+                    <span class="name">
+                        <span ><b>_quillContent4</b></span>
+                        <a href="#_quillContent4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="138" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:138</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContent5"></a>
+                    <span class="name">
+                        <span ><b>_quillContent5</b></span>
+                        <a href="#_quillContent5"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContentFlag0"></a>
+                    <span class="name">
+                        <span ><b>_quillContentFlag0</b></span>
+                        <a href="#_quillContentFlag0"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:140</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContentFlag1"></a>
+                    <span class="name">
+                        <span ><b>_quillContentFlag1</b></span>
+                        <a href="#_quillContentFlag1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContentFlag2"></a>
+                    <span class="name">
+                        <span ><b>_quillContentFlag2</b></span>
+                        <a href="#_quillContentFlag2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContentFlag3"></a>
+                    <span class="name">
+                        <span ><b>_quillContentFlag3</b></span>
+                        <a href="#_quillContentFlag3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContentFlag4"></a>
+                    <span class="name">
+                        <span ><b>_quillContentFlag4</b></span>
+                        <a href="#_quillContentFlag4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_quillContentFlag5"></a>
+                    <span class="name">
+                        <span ><b>_quillContentFlag5</b></span>
+                        <a href="#_quillContentFlag5"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_router</b></span>
+                        <a href="#_router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accountService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>accountService</b></span>
+                        <a href="#accountService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:158</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customEmailSetting"></a>
+                    <span class="name">
+                        <span ><b>customEmailSetting</b></span>
+                        <a href="#customEmailSetting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/CustomEmail.html" target="_self" >CustomEmail</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultState"></a>
+                    <span class="name">
+                        <span ><b>defaultState</b></span>
+                        <a href="#defaultState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Email"></a>
+                    <span class="name">
+                        <span ><b>Email</b></span>
+                        <a href="#Email"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iconRegistry"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>iconRegistry</b></span>
+                        <a href="#iconRegistry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatIconRegistry</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:156</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCustomBrandingChecked"></a>
+                    <span class="name">
+                        <span ><b>isCustomBrandingChecked</b></span>
+                        <a href="#isCustomBrandingChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSave"></a>
+                    <span class="name">
+                        <span ><b>isSave</b></span>
+                        <a href="#isSave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="media"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>media</b></span>
+                        <a href="#media"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MediaObserver</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpenState0"></a>
+                    <span class="name">
+                        <span ><b>panelOpenState0</b></span>
+                        <a href="#panelOpenState0"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpenState1"></a>
+                    <span class="name">
+                        <span ><b>panelOpenState1</b></span>
+                        <a href="#panelOpenState1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpenState2"></a>
+                    <span class="name">
+                        <span ><b>panelOpenState2</b></span>
+                        <a href="#panelOpenState2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpenState3"></a>
+                    <span class="name">
+                        <span ><b>panelOpenState3</b></span>
+                        <a href="#panelOpenState3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpenState4"></a>
+                    <span class="name">
+                        <span ><b>panelOpenState4</b></span>
+                        <a href="#panelOpenState4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="panelOpenState5"></a>
+                    <span class="name">
+                        <span ><b>panelOpenState5</b></span>
+                        <a href="#panelOpenState5"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:132</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passData"></a>
+                    <span class="name">
+                        <span ><b>passData</b></span>
+                        <a href="#passData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="profileId"></a>
+                    <span class="name">
+                        <span ><b>profileId</b></span>
+                        <a href="#profileId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillForm0"></a>
+                    <span class="name">
+                        <span ><b>quillForm0</b></span>
+                        <a href="#quillForm0"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UntypedFormGroup({
+		quillCtrl0: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillForm1"></a>
+                    <span class="name">
+                        <span ><b>quillForm1</b></span>
+                        <a href="#quillForm1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UntypedFormGroup({
+		quillCtrl1: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillForm2"></a>
+                    <span class="name">
+                        <span ><b>quillForm2</b></span>
+                        <a href="#quillForm2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UntypedFormGroup({
+		quillCtrl2: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillForm3"></a>
+                    <span class="name">
+                        <span ><b>quillForm3</b></span>
+                        <a href="#quillForm3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UntypedFormGroup({
+		quillCtrl3: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillForm4"></a>
+                    <span class="name">
+                        <span ><b>quillForm4</b></span>
+                        <a href="#quillForm4"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UntypedFormGroup({
+		quillCtrl4: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillForm5"></a>
+                    <span class="name">
+                        <span ><b>quillForm5</b></span>
+                        <a href="#quillForm5"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new UntypedFormGroup({
+		quillCtrl5: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillModuleConfig"></a>
+                    <span class="name">
+                        <span ><b>quillModuleConfig</b></span>
+                        <a href="#quillModuleConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sanitizer"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>sanitizer</b></span>
+                        <a href="#sanitizer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state"></a>
+                    <span class="name">
+                        <span ><b>state</b></span>
+                        <a href="#state"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userEmail"></a>
+                    <span class="name">
+                        <span ><b>userEmail</b></span>
+                        <a href="#userEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userProfile"></a>
+                    <span class="name">
+                        <span ><b>userProfile</b></span>
+                        <a href="#userProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="148" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/email/email.component.ts:148</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+	AfterViewChecked,
+	AfterViewInit,
+	Component,
+	EventEmitter,
+	Host,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	Self,
+	SimpleChange,
+	SkipSelf,
+} from &#x27;@angular/core&#x27;;
+import {
+	ContentChange,
+	SelectionChange,
+	QuillEditorComponent as OriginalQuillEditorComponent,
+} from &#x27;ngx-quill&#x27;;
+import { Quill } from &#x27;quill&#x27;;
+import {
+	FormBuilder,
+	UntypedFormControl,
+	UntypedFormGroup,
+	Validators,
+} from &#x27;@angular/forms&#x27;;
+import {
+	CustomBrandingService,
+	CustomEmail,
+	ThankYou,
+	Register,
+	DonationReceived,
+	FundraiserCreated,
+	FundraiserPublished,
+	FundraiserClosed,
+} from &#x27;../../../services/custom-branding.service&#x27;;
+import { debounceTime, distinctUntilChanged } from &#x27;rxjs/operators&#x27;;
+import { MatLegacySlideToggleChange as MatSlideToggleChange } from &#x27;@angular/material/legacy-slide-toggle&#x27;;
+import { MediaObserver } from &#x27;@angular/flex-layout&#x27;;
+import { NotificationService } from &#x27;src/app/shared/services/notification.service&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { NavigationExtras, Router } from &#x27;@angular/router&#x27;;
+import { MatIconRegistry } from &#x27;@angular/material/icon&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+
+@Component({
+	selector: &#x27;app-email&#x27;,
+	templateUrl: &#x27;./email.component.html&#x27;,
+})
+/** *Email Component */
+export class EmailComponent implements OnInit, AfterViewInit, OnChanges {
+	@Input() customSetting!: CustomEmail; //customEmailSetting from @input
+	customEmailSetting!: CustomEmail; //customEmailSetting from service
+	isLoading: boolean &#x3D; false;
+	profileId: string &#x3D; &#x27;&#x27;;
+	state: boolean &#x3D; false;
+	userEmail: string &#x3D; &#x27;&#x27;;
+	passData: boolean &#x3D; false;
+	Email: string &#x3D; &#x27;&#x27;;
+	@Output() tabValue: any &#x3D; new EventEmitter&lt;any&gt;();
+
+	isCustomBrandingChecked: boolean;
+	defaultState: boolean &#x3D; true;
+
+	quillForm0 &#x3D; new UntypedFormGroup({
+		quillCtrl0: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	});
+
+	quillForm1 &#x3D; new UntypedFormGroup({
+		quillCtrl1: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	});
+	quillForm2 &#x3D; new UntypedFormGroup({
+		quillCtrl2: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	});
+	quillForm3 &#x3D; new UntypedFormGroup({
+		quillCtrl3: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	});
+	quillForm4 &#x3D; new UntypedFormGroup({
+		quillCtrl4: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	});
+	quillForm5 &#x3D; new UntypedFormGroup({
+		quillCtrl5: new UntypedFormControl(&#x27;&#x27;, [
+			Validators.required,
+			Validators.minLength(0),
+			Validators.maxLength(120),
+			Validators.pattern(/^(?:(?!\p{Emoji}).|\d)*$/u),
+		]),
+		flagCtrl: new UntypedFormControl(),
+	});
+
+	quillModuleConfig &#x3D; {};
+
+	panelOpenState0 &#x3D; false;
+	panelOpenState1 &#x3D; false;
+	panelOpenState2 &#x3D; false;
+	panelOpenState3 &#x3D; false;
+	panelOpenState4 &#x3D; false;
+	panelOpenState5 &#x3D; false;
+
+	_quillContent0: string;
+	_quillContent1: string;
+	_quillContent2: string;
+	_quillContent3: string;
+	_quillContent4: string;
+	_quillContent5: string;
+	_quillContentFlag0: boolean;
+	_quillContentFlag1: boolean;
+	_quillContentFlag2: boolean;
+	_quillContentFlag3: boolean;
+	_quillContentFlag4: boolean;
+	_quillContentFlag5: boolean;
+
+	isSave: boolean;
+	userProfile: any;
+
+	constructor(
+		private _customBrandingService: CustomBrandingService,
+		public media: MediaObserver,
+		private _notificationService: NotificationService,
+		private _http: HttpClient,
+		public _router: Router,
+		public iconRegistry: MatIconRegistry,
+		public sanitizer: DomSanitizer,
+		public accountService: AccountService
+	) {
+		iconRegistry.addSvgIconSet(
+			sanitizer.bypassSecurityTrustResourceUrl(
+				&#x27;assets/icons/fundraiser-defs.svg&#x27;
+			)
+		);
+		this.isCustomBrandingChecked &#x3D; false;
+
+		this._quillContentFlag0 &#x3D; false;
+		this._quillContent0 &#x3D; &#x60;&#x60;;
+
+		this._quillContentFlag1 &#x3D; false;
+		this._quillContent1 &#x3D; &#x60;&#x60;;
+
+		this._quillContentFlag2 &#x3D; false;
+		this._quillContent2 &#x3D; &#x60;&#x60;;
+
+		this._quillContentFlag3 &#x3D; false;
+		this._quillContent3 &#x3D; &#x60;&#x60;;
+
+		this._quillContentFlag4 &#x3D; false;
+		this._quillContent4 &#x3D; &#x60;&#x60;;
+
+		this._quillContentFlag5 &#x3D; false;
+		this._quillContent5 &#x3D; &#x60;&#x60;;
+
+		this.isSave &#x3D; false;
+	}
+	ngAfterViewInit(): void {}
+
+	ngOnInit(): void {
+		this.isLoading &#x3D; true;
+		if (this.accountService.checkHeaders()) {
+			this._customBrandingService.getProfile().subscribe((userProfile) &#x3D;&gt; {
+				this.userProfile &#x3D; userProfile;
+				this.profileId &#x3D; this.userProfile?.data?.profile?.id;
+				console.log(&#x27;the user profile is&#x27;, this.userProfile);
+				this.isLoading &#x3D; false;
+				if (
+					this.userProfile?.data?.profile?.custom_logo &#x3D;&#x3D;
+						&#x27;https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/v1/whydonate-staging/user/profile/custom/logo/image_rryz9c&#x27; ||
+					this.userProfile?.data?.profile?.primary_color &#x3D;&#x3D; &#x27;#32bf55&#x27; ||
+					this.userProfile?.data?.profile?.secondary_color &#x3D;&#x3D; &#x27;#363396&#x27;
+				) {
+					this.defaultState &#x3D; true;
+				} else {
+					this.defaultState &#x3D; false;
+				}
+			});
+		} else {
+			this.defaultState &#x3D; false;
+		}
+	}
+
+	ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
+		if (changes.customSetting.currentValue) {
+			this.setCustomEmailView(changes.customSetting.currentValue);
+			this.isLoading &#x3D; false;
+		}
+	}
+
+	setCustomEmailView(customEmailSetting: CustomEmail) {
+		this.isCustomBrandingChecked &#x3D; customEmailSetting.customBranding;
+
+		this._quillContentFlag0 &#x3D; customEmailSetting.thankYouFlag;
+		this.quillForm0?.controls.flagCtrl.patchValue(this._quillContentFlag0);
+		this._quillContent0 &#x3D; customEmailSetting.thankYouMessage;
+		this.quillForm0?.controls.quillCtrl0.patchValue(this._quillContent0);
+
+		this._quillContentFlag1 &#x3D; customEmailSetting.registerFlag;
+		this.quillForm1?.controls.flagCtrl.patchValue(this._quillContentFlag1);
+		this._quillContent1 &#x3D; customEmailSetting.registerMessage;
+		this.quillForm1?.controls.quillCtrl1.patchValue(this._quillContent1);
+
+		this._quillContentFlag2 &#x3D; customEmailSetting.donationReceivedFlag;
+		this.quillForm2?.controls.flagCtrl.patchValue(this._quillContentFlag2);
+		this._quillContent2 &#x3D; customEmailSetting.donationReceivedMessage;
+		this.quillForm2?.controls.quillCtrl2.patchValue(this._quillContent2);
+
+		this._quillContentFlag3 &#x3D; customEmailSetting.fundraiserCreatedFlag;
+		this.quillForm3?.controls.flagCtrl.patchValue(this._quillContentFlag3);
+		this._quillContent3 &#x3D; customEmailSetting.fundraiserCreatedMessage;
+		this.quillForm3?.controls.quillCtrl3.patchValue(this._quillContent3);
+
+		this._quillContentFlag4 &#x3D; customEmailSetting.fundraiserPublishedFlag;
+		this.quillForm4?.controls.flagCtrl.patchValue(this._quillContentFlag4);
+		this._quillContent4 &#x3D; customEmailSetting.fundraiserPublishedMessage;
+		this.quillForm4?.controls.quillCtrl4.patchValue(this._quillContent4);
+
+		this._quillContentFlag5 &#x3D; customEmailSetting.fundraiserClosedFlag;
+		this.quillForm5?.controls.flagCtrl.patchValue(this._quillContentFlag5);
+		this._quillContent5 &#x3D; customEmailSetting.fundraiserClosedMessage;
+		this.quillForm5?.controls.quillCtrl5.patchValue(this._quillContent5);
+	}
+	showPreview() {
+		return (
+			this.panelOpenState0 ||
+			this.panelOpenState1 ||
+			this.panelOpenState2 ||
+			this.panelOpenState3 ||
+			this.panelOpenState4 ||
+			this.panelOpenState5
+		);
+	}
+
+	isEditMode(newVal: string, orignalVal: any) {
+		newVal &#x3D; newVal || &#x27;&#x27;;
+		orignalVal &#x3D; orignalVal || &#x27;&#x27;;
+		return newVal !&#x3D; orignalVal;
+	}
+
+	created(event: Quill) {
+		/** *INFO: Reactive Form&#x27;s valueChanges event */
+		this.quillForm0?.controls.quillCtrl0.valueChanges
+			.pipe(debounceTime(400), distinctUntilChanged())
+			.subscribe((data) &#x3D;&gt; {});
+	}
+	routeToBranding() {
+		this.tabValue.emit(0);
+	}
+	toggleCustomBranding(event: MatSlideToggleChange) {
+		this.isSave &#x3D; true;
+		this._customBrandingService
+			.applyCustomBrandingToEmail(event.checked)
+			.subscribe((res: any) &#x3D;&gt; {
+				if (event.checked) {
+					this.passData &#x3D; true;
+					this._notificationService.openNotification(
+						$localize&#x60;:@@email_customise_branding_notification:Customise branding is applied&#x60;,
+						&#x27;Close&#x27;,
+						&#x27;success&#x27;
+					);
+
+					this.ngOnInit();
+				} else {
+					this.passData &#x3D; false;
+					this._notificationService.openNotification(
+						$localize&#x60;:@@email_customiseBranding_notification_error:Customise branding is set to default&#x60;,
+						&#x27;Close&#x27;,
+						&#x27;success&#x27;
+					);
+				}
+				this.isSave &#x3D; false;
+			});
+	}
+
+	saveForm(index: number) {
+		this.isSave &#x3D; true;
+		let customEmailValue &#x3D; this.getCustomEmailValue(index);
+		if (customEmailValue) {
+			this._customBrandingService
+				.saveCustomEmail(customEmailValue)
+				.subscribe((res) &#x3D;&gt; {
+					this.isSave &#x3D; false;
+					this.setQuillContent(index);
+				});
+		}
+	}
+	/** *Discard Changes */
+	discardChanges(index: number) {
+		if (index &#x3D;&#x3D;&#x3D; 0) {
+			this.quillForm0?.controls.quillCtrl0?.patchValue(this._quillContent0);
+			this.quillForm0?.controls.flagCtrl?.patchValue(this._quillContentFlag0);
+			this.quillForm0.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 1) {
+			this.quillForm1?.controls.quillCtrl1?.patchValue(this._quillContent1);
+			this.quillForm1?.controls.flagCtrl?.patchValue(this._quillContentFlag1);
+			this.quillForm1.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 2) {
+			this.quillForm2?.controls.quillCtrl2?.patchValue(this._quillContent2);
+			this.quillForm2?.controls.flagCtrl?.patchValue(this._quillContentFlag2);
+			this.quillForm2.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 3) {
+			this.quillForm3?.controls.quillCtrl3?.patchValue(this._quillContent3);
+			this.quillForm3?.controls.flagCtrl?.patchValue(this._quillContentFlag3);
+			this.quillForm3.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 4) {
+			this.quillForm4?.controls.quillCtrl4?.patchValue(this._quillContent4);
+			this.quillForm4?.controls.flagCtrl?.patchValue(this._quillContentFlag4);
+			this.quillForm4.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 5) {
+			this.quillForm5?.controls.quillCtrl5?.patchValue(this._quillContent5);
+			this.quillForm5?.controls.flagCtrl?.patchValue(this._quillContentFlag5);
+			this.quillForm5.markAsPristine();
+		}
+	}
+	/** *Get Custom Email Value */
+	getCustomEmailValue(
+		index: number
+	):
+		| ThankYou
+		| Register
+		| DonationReceived
+		| FundraiserCreated
+		| FundraiserPublished
+		| FundraiserClosed
+		| undefined {
+		if (index &#x3D;&#x3D;&#x3D; 0)
+			return {
+				thank_you_donor: this.quillForm0.get(&#x27;flagCtrl&#x27;)?.value || false,
+				thank_you_donor_message: this.quillForm0.get(&#x27;quillCtrl0&#x27;)?.value || &#x27;&#x27;,
+			};
+
+		if (index &#x3D;&#x3D;&#x3D; 1)
+			return {
+				thank_you_register: this.quillForm1.get(&#x27;flagCtrl&#x27;)?.value || false,
+				thank_you_register_message:
+					this.quillForm1.get(&#x27;quillCtrl1&#x27;)?.value || &#x27;&#x27;,
+			};
+
+		if (index &#x3D;&#x3D;&#x3D; 2)
+			return {
+				donation_received: this.quillForm2.get(&#x27;flagCtrl&#x27;)?.value || false,
+				donation_received_message:
+					this.quillForm2.get(&#x27;quillCtrl2&#x27;)?.value || &#x27;&#x27;,
+			};
+
+		if (index &#x3D;&#x3D;&#x3D; 3)
+			return {
+				connected_fundraisers: this.quillForm3.get(&#x27;flagCtrl&#x27;)?.value || false,
+				connected_fundraisers_message:
+					this.quillForm3.get(&#x27;quillCtrl3&#x27;)?.value || &#x27;&#x27;,
+			};
+
+		if (index &#x3D;&#x3D;&#x3D; 4)
+			return {
+				fundraiser_published: this.quillForm4.get(&#x27;flagCtrl&#x27;)?.value || false,
+				fundraiser_published_message:
+					this.quillForm4.get(&#x27;quillCtrl4&#x27;)?.value || &#x27;&#x27;,
+			};
+
+		if (index &#x3D;&#x3D;&#x3D; 5)
+			return {
+				fundraiser_closed: this.quillForm5.get(&#x27;flagCtrl&#x27;)?.value || false,
+				fundraiser_closed_message:
+					this.quillForm5.get(&#x27;quillCtrl5&#x27;)?.value || &#x27;&#x27;,
+			};
+
+		return undefined;
+	}
+	/** *Set Quill Content */
+	setQuillContent(index: number) {
+		if (index &#x3D;&#x3D;&#x3D; 0) {
+			this._quillContent0 &#x3D; this.quillForm0?.controls.quillCtrl0?.value;
+			this._quillContentFlag0 &#x3D; this.quillForm0?.controls.flagCtrl?.value;
+			this.quillForm0.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 1) {
+			this._quillContent1 &#x3D; this.quillForm1?.controls.quillCtrl1?.value;
+			this._quillContentFlag1 &#x3D; this.quillForm1?.controls.flagCtrl?.value;
+			this.quillForm1.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 2) {
+			this._quillContent2 &#x3D; this.quillForm2?.controls.quillCtrl2?.value;
+			this._quillContentFlag2 &#x3D; this.quillForm2?.controls.flagCtrl?.value;
+			this.quillForm2.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 3) {
+			this._quillContent3 &#x3D; this.quillForm3?.controls.quillCtrl3?.value;
+			this._quillContentFlag3 &#x3D; this.quillForm3?.controls.flagCtrl?.value;
+			this.quillForm3.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 4) {
+			this._quillContent4 &#x3D; this.quillForm4?.controls.quillCtrl4?.value;
+			this._quillContentFlag4 &#x3D; this.quillForm4?.controls.flagCtrl?.value;
+			this.quillForm4.markAsPristine();
+		}
+		if (index &#x3D;&#x3D;&#x3D; 5) {
+			this._quillContent5 &#x3D; this.quillForm5?.controls.quillCtrl5?.value;
+			this._quillContentFlag5 &#x3D; this.quillForm5?.controls.flagCtrl?.value;
+			this.quillForm5.markAsPristine();
+		}
+	}
+	/** *Send Test Mail */
+	sendTestMail() {
+		let index &#x3D; 0;
+		let message &#x3D; &#x27;&#x27;;
+		let customBrandingFlag &#x3D; this.isCustomBrandingChecked;
+		if (this.panelOpenState0) {
+			index &#x3D; 0;
+			message &#x3D; this.quillForm0.get(&#x27;quillCtrl0&#x27;)?.value || &#x27;&#x27;;
+		}
+		if (this.panelOpenState1) {
+			index &#x3D; 1;
+			message &#x3D; this.quillForm1.get(&#x27;quillCtrl1&#x27;)?.value || &#x27;&#x27;;
+		}
+		if (this.panelOpenState2) {
+			index &#x3D; 2;
+			message &#x3D; this.quillForm2.get(&#x27;quillCtrl2&#x27;)?.value || &#x27;&#x27;;
+		}
+		if (this.panelOpenState3) {
+			index &#x3D; 3;
+			message &#x3D; this.quillForm3.get(&#x27;quillCtrl3&#x27;)?.value || &#x27;&#x27;;
+		}
+		if (this.panelOpenState4) {
+			index &#x3D; 4;
+			message &#x3D; this.quillForm4.get(&#x27;quillCtrl4&#x27;)?.value || &#x27;&#x27;;
+		}
+		if (this.panelOpenState5) {
+			index &#x3D; 5;
+			message &#x3D; this.quillForm5.get(&#x27;quillCtrl5&#x27;)?.value || &#x27;&#x27;;
+		}
+		this._customBrandingService
+			.sendTestEmail(index, message, customBrandingFlag)
+			.subscribe((res) &#x3D;&gt; {
+				let sessionJWT &#x3D; JSON.parse(localStorage.getItem(&#x27;user&#x27;) || &#x27;{}&#x27;);
+				const Email &#x3D; sessionJWT[&#x27;email&#x27;];
+				this._notificationService.openNotification(
+					$localize&#x60;:@@email_testEmail_notification: Mail Sent on registered email id ${Email}&#x60;,
+					&#x27;&#x27;,
+					&#x27;success&#x27;
+				);
+			});
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-page-loader *ngIf&#x3D;&quot;this.isLoading&quot;&gt;&lt;/app-page-loader&gt;
+
+&lt;div
+	*ngIf&#x3D;&quot;!this.isLoading&quot;
+	fxLayout&#x3D;&quot;row&quot;
+	fxLayout.xs&#x3D;&quot;column&quot;
+	fxLayout.sm&#x3D;&quot;column&quot;
+	fxFlex&#x3D;&quot;100&quot;
+&gt;
+	&lt;div
+		fxLayout&#x3D;&quot;column&quot;
+		fxLayout.xs&#x3D;&quot;column&quot;
+		fxLayout.sm&#x3D;&quot;column&quot;
+		fxFlex&#x3D;&quot;70&quot;
+		fxFlex.xs&#x3D;&quot;100&quot;
+		fxFlex.sm&#x3D;&quot;100&quot;
+	&gt;
+		&lt;mat-card class&#x3D;&quot;mat-elevation-z0&quot;&gt;
+			&lt;mat-card-title-group fxLayout&#x3D;&quot;row&quot; fxLayout.xs&#x3D;&quot;column&quot;&gt;
+				&lt;mat-card-title i18n&#x3D;&quot;@@custom-email-customise-email-template&quot;&gt;
+					Customise Email Templates
+				&lt;/mat-card-title&gt;
+				&lt;mat-card-subtitle
+					i18n&#x3D;&quot;@@custom-email-add-pesonalized-message-and-branding&quot;
+				&gt;
+					Add personalised message and branding to emails
+				&lt;/mat-card-subtitle&gt;
+				&lt;mat-icon *ngIf&#x3D;&quot;isSave&quot;&gt;
+					&lt;mat-spinner
+						color&#x3D;&quot;accent&quot;
+						diameter&#x3D;&quot;20&quot;
+						i18n&#x3D;&quot;@@custom_email_spinner&quot;
+					&gt;
+					&lt;/mat-spinner&gt;
+				&lt;/mat-icon&gt;
+			&lt;/mat-card-title-group&gt;
+			&lt;mat-card-content&gt;
+				&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
+					&lt;!-- &lt;mat-slide-toggle
+						color&#x3D;&quot;primary&quot;
+						[(ngModel)]&#x3D;&quot;isCustomBrandingChecked&quot;
+						(change)&#x3D;&quot;toggleCustomBranding($event)&quot;
+						[disabled]&#x3D;&quot;this.defaultState&quot;
+						i18n&#x3D;&quot;@@email-custom-email-apply-custom-branding&quot;
+						&gt;Apply custom branding
+					&lt;/mat-slide-toggle&gt; --&gt;
+					&lt;mat-checkbox
+						color&#x3D;&quot;primary&quot;
+						[(ngModel)]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[disabled]&#x3D;&quot;this.defaultState&quot;
+						i18n&#x3D;&quot;@@email-custom-email-apply-custom-branding&quot;
+					&gt;
+						Apply custom branding
+					&lt;/mat-checkbox&gt;
+					&lt;a
+						mat-button
+						color&#x3D;&quot;accent&quot;
+						fxLayoutAlign&#x3D;&quot;center center&quot;
+						i18n&#x3D;&quot;@@email-custom-email-set-to-default&quot;
+						*ngIf&#x3D;&quot;this.defaultState&quot;
+						(click)&#x3D;&quot;routeToBranding()&quot;
+					&gt;
+						Set to Custom Branding&lt;/a
+					&gt;
+				&lt;/div&gt;
+				&lt;br /&gt;
+
+				&lt;p
+					class&#x3D;&quot;mat-body-2&quot;
+					i18n&#x3D;&quot;@@email-custom-email-add-personalized-message&quot;
+				&gt;
+					Add Personalised message
+				&lt;/p&gt;
+
+				&lt;mat-accordion&gt;
+					&lt;mat-expansion-panel
+						(opened)&#x3D;&quot;panelOpenState0 &#x3D; true&quot;
+						(closed)&#x3D;&quot;panelOpenState0 &#x3D; false&quot;
+					&gt;
+						&lt;mat-expansion-panel-header id&#x3D;&quot;thankYou&quot;&gt;
+							&lt;mat-panel-title
+								i18n&#x3D;&quot;@@email-custom-email-panel-title-thank-you-email&quot;
+								id&#x3D;&quot;thankYou&quot;
+							&gt;
+								Thank you email to donors
+							&lt;/mat-panel-title&gt;
+						&lt;/mat-expansion-panel-header&gt;
+
+						&lt;mat-divider&gt;&lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;ng-container [formGroup]&#x3D;&quot;quillForm0&quot;&gt;
+							&lt;mat-form-field
+								color&#x3D;&quot;primary&quot;
+								appearance&#x3D;&quot;outline&quot;
+								class&#x3D;&quot;w-100&quot;
+							&gt;
+								&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+									&gt;Write message&lt;/mat-label
+								&gt;
+								&lt;textarea
+									id&#x3D;&quot;thankYouInput&quot;
+									#thankYou
+									matInput
+									formControlName&#x3D;&quot;quillCtrl0&quot;
+								&gt;&lt;/textarea&gt;
+								&lt;mat-hint align&#x3D;&quot;end&quot;
+									&gt;&lt;span class&#x3D;&quot;mat-body-2&quot;&gt;{{ thankYou.value.length }}&lt;/span&gt;
+									/120
+									&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;character&lt;/span&gt;
+								&lt;/mat-hint&gt;
+							&lt;/mat-form-field&gt;
+						&lt;/ng-container&gt;
+
+						&lt;mat-action-row fxLayout&#x3D;&quot;row wrap&quot;&gt;
+							&lt;button
+								mat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_discard&quot;
+								[disabled]&#x3D;&quot;!quillForm0.dirty&quot;
+								(click)&#x3D;&quot;discardChanges(0)&quot;
+							&gt;
+								Discard
+							&lt;/button&gt;
+							&lt;button
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_save&quot;
+								[disabled]&#x3D;&quot;!(quillForm0.dirty &amp;&amp; quillForm0.valid)&quot;
+								(click)&#x3D;&quot;saveForm(0)&quot;
+								id&#x3D;&quot;thankSave&quot;
+							&gt;
+								Save
+							&lt;/button&gt;
+						&lt;/mat-action-row&gt;
+					&lt;/mat-expansion-panel&gt;
+
+					&lt;mat-expansion-panel
+						(opened)&#x3D;&quot;panelOpenState1 &#x3D; true&quot;
+						(closed)&#x3D;&quot;panelOpenState1 &#x3D; false&quot;
+					&gt;
+						&lt;mat-expansion-panel-header&gt;
+							&lt;mat-panel-title
+								i18n&#x3D;&quot;
+									@@email-custom-email-registertion-for-connected-fundraiser&quot;
+								id&#x3D;&quot;registration&quot;
+							&gt;
+								Registration for connected fundraiser
+							&lt;/mat-panel-title&gt;
+						&lt;/mat-expansion-panel-header&gt;
+						&lt;mat-divider&gt;&lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;ng-container [formGroup]&#x3D;&quot;quillForm1&quot;&gt;
+							&lt;mat-form-field
+								color&#x3D;&quot;primary&quot;
+								appearance&#x3D;&quot;outline&quot;
+								class&#x3D;&quot;w-100&quot;
+							&gt;
+								&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+									&gt;Write message&lt;/mat-label
+								&gt;
+								&lt;textarea
+									id&#x3D;&quot;registerForConnected&quot;
+									#registered
+									matInput
+									formControlName&#x3D;&quot;quillCtrl1&quot;
+								&gt;&lt;/textarea&gt;
+								&lt;mat-hint align&#x3D;&quot;end&quot;
+									&gt;&lt;span class&#x3D;&quot;mat-body-2&quot;&gt;{{ registered.value.length }}&lt;/span&gt;
+									/120
+									&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;character&lt;/span&gt;
+								&lt;/mat-hint&gt;
+							&lt;/mat-form-field&gt;
+						&lt;/ng-container&gt;
+						&lt;mat-action-row fxLayout&#x3D;&quot;row wrap&quot;&gt;
+							&lt;button
+								mat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_discard&quot;
+								[disabled]&#x3D;&quot;!quillForm1.dirty&quot;
+								(click)&#x3D;&quot;discardChanges(1)&quot;
+							&gt;
+								Discard
+							&lt;/button&gt;
+							&lt;button
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_save&quot;
+								[disabled]&#x3D;&quot;!(quillForm1.dirty &amp;&amp; quillForm1.valid)&quot;
+								(click)&#x3D;&quot;saveForm(1)&quot;
+								id&#x3D;&quot;registerSave&quot;
+							&gt;
+								Save
+							&lt;/button&gt;
+						&lt;/mat-action-row&gt;
+					&lt;/mat-expansion-panel&gt;
+
+					&lt;mat-expansion-panel
+						(opened)&#x3D;&quot;panelOpenState2 &#x3D; true&quot;
+						(closed)&#x3D;&quot;panelOpenState2 &#x3D; false&quot;
+					&gt;
+						&lt;mat-expansion-panel-header&gt;
+							&lt;mat-panel-title
+								i18n&#x3D;&quot;
+									@@email-custom-email-donation-received-connected-fundraiser&quot;
+								id&#x3D;&quot;donationReceived&quot;
+							&gt;
+								Donation received connected fundraiser
+							&lt;/mat-panel-title&gt;
+						&lt;/mat-expansion-panel-header&gt;
+						&lt;mat-divider&gt;&lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;ng-container [formGroup]&#x3D;&quot;quillForm2&quot;&gt;
+							&lt;mat-form-field
+								color&#x3D;&quot;primary&quot;
+								appearance&#x3D;&quot;outline&quot;
+								class&#x3D;&quot;w-100&quot;
+							&gt;
+								&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+									&gt;Write message&lt;/mat-label
+								&gt;
+								&lt;textarea
+									id&#x3D;&quot;donationReceivedConnected&quot;
+									#donationReceived
+									matInput
+									formControlName&#x3D;&quot;quillCtrl2&quot;
+								&gt;&lt;/textarea&gt;
+								&lt;mat-hint align&#x3D;&quot;end&quot;
+									&gt;&lt;span class&#x3D;&quot;mat-body-2&quot;&gt;{{
+										donationReceived.value.length
+									}}&lt;/span&gt;
+									/120
+									&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;character&lt;/span&gt;
+								&lt;/mat-hint&gt;
+							&lt;/mat-form-field&gt;
+						&lt;/ng-container&gt;
+						&lt;mat-action-row fxLayout&#x3D;&quot;row wrap&quot;&gt;
+							&lt;button
+								mat-button
+								i18n&#x3D;&quot;@@button_discard&quot;
+								color&#x3D;&quot;accent&quot;
+								[disabled]&#x3D;&quot;!quillForm2.dirty&quot;
+								(click)&#x3D;&quot;discardChanges(2)&quot;
+							&gt;
+								Discard
+							&lt;/button&gt;
+							&lt;button
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_save&quot;
+								[disabled]&#x3D;&quot;!(quillForm2.dirty &amp;&amp; quillForm2.valid)&quot;
+								(click)&#x3D;&quot;saveForm(2)&quot;
+								id&#x3D;&quot;donationReceivedSave&quot;
+							&gt;
+								Save
+							&lt;/button&gt;
+						&lt;/mat-action-row&gt;
+					&lt;/mat-expansion-panel&gt;
+
+					&lt;mat-expansion-panel
+						(opened)&#x3D;&quot;panelOpenState3 &#x3D; true&quot;
+						(closed)&#x3D;&quot;panelOpenState3 &#x3D; false&quot;
+					&gt;
+						&lt;mat-expansion-panel-header&gt;
+							&lt;mat-panel-title
+								i18n&#x3D;&quot;@@email-custom-email-connected-fundraiser-created&quot;
+								id&#x3D;&quot;connectedFundraiserCreated&quot;
+							&gt;
+								Connected fundraiser created
+							&lt;/mat-panel-title&gt;
+						&lt;/mat-expansion-panel-header&gt;
+						&lt;mat-divider&gt;&lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;ng-container [formGroup]&#x3D;&quot;quillForm3&quot;&gt;
+							&lt;mat-form-field
+								color&#x3D;&quot;primary&quot;
+								appearance&#x3D;&quot;outline&quot;
+								class&#x3D;&quot;w-100&quot;
+							&gt;
+								&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+									&gt;Write message&lt;/mat-label
+								&gt;
+								&lt;textarea
+									id&#x3D;&quot;connectedFundraiser&quot;
+									#connected
+									matInput
+									formControlName&#x3D;&quot;quillCtrl3&quot;
+								&gt;&lt;/textarea&gt;
+								&lt;mat-hint align&#x3D;&quot;end&quot;
+									&gt;&lt;span class&#x3D;&quot;mat-body-2&quot;&gt;{{ connected.value.length }}&lt;/span&gt;
+									/120
+									&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;character&lt;/span&gt;
+								&lt;/mat-hint&gt;
+							&lt;/mat-form-field&gt;
+						&lt;/ng-container&gt;
+						&lt;mat-action-row fxLayout&#x3D;&quot;row wrap&quot;&gt;
+							&lt;button
+								mat-button
+								i18n&#x3D;&quot;@@button_discard&quot;
+								color&#x3D;&quot;accent&quot;
+								[disabled]&#x3D;&quot;!quillForm3.dirty&quot;
+								(click)&#x3D;&quot;discardChanges(3)&quot;
+							&gt;
+								Discard
+							&lt;/button&gt;
+							&lt;button
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_save&quot;
+								[disabled]&#x3D;&quot;!(quillForm3.dirty &amp;&amp; quillForm3.valid)&quot;
+								(click)&#x3D;&quot;saveForm(3)&quot;
+								id&#x3D;&quot;connectedFundraiserSave&quot;
+							&gt;
+								Save
+							&lt;/button&gt;
+						&lt;/mat-action-row&gt;
+					&lt;/mat-expansion-panel&gt;
+
+					&lt;mat-expansion-panel
+						(opened)&#x3D;&quot;panelOpenState4 &#x3D; true&quot;
+						(closed)&#x3D;&quot;panelOpenState4 &#x3D; false&quot;
+					&gt;
+						&lt;mat-expansion-panel-header&gt;
+							&lt;mat-panel-title
+								i18n&#x3D;&quot;@@email-custom-email-connected-fundraiser-publication&quot;
+								id&#x3D;&quot;connectedFundraiserPublished&quot;
+							&gt;
+								Connected fundraiser published
+							&lt;/mat-panel-title&gt;
+						&lt;/mat-expansion-panel-header&gt;
+						&lt;mat-divider&gt;&lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;ng-container [formGroup]&#x3D;&quot;quillForm4&quot;&gt;
+							&lt;mat-form-field
+								color&#x3D;&quot;primary&quot;
+								appearance&#x3D;&quot;outline&quot;
+								class&#x3D;&quot;w-100&quot;
+							&gt;
+								&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+									&gt;Write message&lt;/mat-label
+								&gt;
+								&lt;textarea
+									id&#x3D;&quot;connectedFundraiserPublishedInput&quot;
+									#connectedPublisher
+									matInput
+									formControlName&#x3D;&quot;quillCtrl4&quot;
+								&gt;&lt;/textarea&gt;
+								&lt;mat-hint align&#x3D;&quot;end&quot;
+									&gt;&lt;span class&#x3D;&quot;mat-body-2&quot;&gt;{{
+										connectedPublisher.value.length
+									}}&lt;/span&gt;
+									/120
+									&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;character&lt;/span&gt;
+								&lt;/mat-hint&gt;
+							&lt;/mat-form-field&gt;
+						&lt;/ng-container&gt;
+						&lt;mat-action-row fxLayout&#x3D;&quot;row wrap&quot;&gt;
+							&lt;button
+								mat-button
+								i18n&#x3D;&quot;@@button_discard&quot;
+								color&#x3D;&quot;accent&quot;
+								[disabled]&#x3D;&quot;!quillForm4.dirty&quot;
+								(click)&#x3D;&quot;discardChanges(4)&quot;
+							&gt;
+								Discard
+							&lt;/button&gt;
+							&lt;button
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_save&quot;
+								[disabled]&#x3D;&quot;!(quillForm4.dirty &amp;&amp; quillForm4.valid)&quot;
+								(click)&#x3D;&quot;saveForm(4)&quot;
+								id&#x3D;&quot;connectedPublishedSave&quot;
+							&gt;
+								Save
+							&lt;/button&gt;
+						&lt;/mat-action-row&gt;
+					&lt;/mat-expansion-panel&gt;
+
+					&lt;mat-expansion-panel
+						(opened)&#x3D;&quot;panelOpenState5 &#x3D; true&quot;
+						(closed)&#x3D;&quot;panelOpenState5 &#x3D; false&quot;
+					&gt;
+						&lt;mat-expansion-panel-header&gt;
+							&lt;mat-panel-title
+								i18n&#x3D;&quot;@@email-custom-email-connected-fundraiser-closed&quot;
+								id&#x3D;&quot;connectedFundraiserClosed&quot;
+							&gt;
+								Connected fundraiser closed
+							&lt;/mat-panel-title&gt;
+						&lt;/mat-expansion-panel-header&gt;
+						&lt;mat-divider&gt;&lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;ng-container [formGroup]&#x3D;&quot;quillForm5&quot;&gt;
+							&lt;mat-form-field
+								color&#x3D;&quot;primary&quot;
+								appearance&#x3D;&quot;outline&quot;
+								class&#x3D;&quot;w-100&quot;
+							&gt;
+								&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+									&gt;Write message&lt;/mat-label
+								&gt;
+								&lt;textarea
+									id&#x3D;&quot;connectedFundraiserClosedInput&quot;
+									#connectedfundraiserClosed
+									matInput
+									formControlName&#x3D;&quot;quillCtrl5&quot;
+								&gt;&lt;/textarea&gt;
+								&lt;mat-hint align&#x3D;&quot;end&quot;
+									&gt;&lt;span class&#x3D;&quot;mat-body-2&quot;&gt;{{
+										connectedfundraiserClosed.value.length
+									}}&lt;/span&gt;
+									/120
+									&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;character&lt;/span&gt;
+								&lt;/mat-hint&gt;
+							&lt;/mat-form-field&gt;
+						&lt;/ng-container&gt;
+						&lt;mat-action-row fxLayout&#x3D;&quot;row wrap&quot;&gt;
+							&lt;button
+								mat-button
+								i18n&#x3D;&quot;@@button_discard&quot;
+								color&#x3D;&quot;accent&quot;
+								[disabled]&#x3D;&quot;!quillForm5.dirty&quot;
+								(click)&#x3D;&quot;discardChanges(5)&quot;
+							&gt;
+								Discard
+							&lt;/button&gt;
+							&lt;button
+								mat-flat-button
+								color&#x3D;&quot;accent&quot;
+								i18n&#x3D;&quot;@@button_save&quot;
+								[disabled]&#x3D;&quot;!(quillForm5.dirty &amp;&amp; quillForm5.valid)&quot;
+								(click)&#x3D;&quot;saveForm(5)&quot;
+								id&#x3D;&quot;saveFundraiserClosed&quot;
+							&gt;
+								Save
+							&lt;/button&gt;
+						&lt;/mat-action-row&gt;
+					&lt;/mat-expansion-panel&gt;
+				&lt;/mat-accordion&gt;
+			&lt;/mat-card-content&gt;
+		&lt;/mat-card&gt;
+	&lt;/div&gt;
+
+	&lt;mat-divider [vertical]&#x3D;&quot;true&quot;&gt;&lt;/mat-divider&gt;
+
+	&lt;!-- Show preview --&gt;
+	&lt;div
+		fxLayout&#x3D;&quot;column&quot;
+		fxLayout.xs&#x3D;&quot;column&quot;
+		fxLayout.sm&#x3D;&quot;column&quot;
+		fxFlex&#x3D;&quot;35&quot;
+		fxFlex.xs&#x3D;&quot;100&quot;
+		fxFlex.sm&#x3D;&quot;100&quot;
+	&gt;
+		&lt;mat-card class&#x3D;&quot;mat-elevation-z0&quot;&gt;
+			&lt;div
+				fxLayout&#x3D;&quot;row&quot;
+				fxLayoutAlign&#x3D;&quot;space-between center&quot;
+				fxLayout.xs&#x3D;&quot;column&quot;
+				fxLayout.sm&#x3D;&quot;column&quot;
+			&gt;
+				&lt;p fxLayout&#x3D;&quot;row&quot; class&#x3D;&quot;mat-body-1&quot;&gt;
+					&lt;img
+						style&#x3D;&quot;position: relative; bottom: 3px&quot;
+						src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg&quot;
+					/&gt;
+					&lt;span
+						fxFlexOffset&#x3D;&quot;8px&quot;
+						i18n&#x3D;&quot;@@email-email-custom-email-email-preview&quot;
+					&gt;
+						Email Preview
+					&lt;/span&gt;
+				&lt;/p&gt;
+				&lt;p&gt;
+					&lt;button
+						mat-stroked-button
+						color&#x3D;&quot;accent&quot;
+						i18n&#x3D;&quot;@@email-email-custom-email-send-test-email&quot;
+						[disabled]&#x3D;&quot;!showPreview()&quot;
+						(click)&#x3D;&quot;sendTestMail()&quot;
+						id&#x3D;&quot;sendTestMail&quot;
+					&gt;
+						Send Test Mail
+					&lt;/button&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;br /&gt;
+			&lt;!-- Preview Card--&gt;
+			&lt;mat-card&gt;
+				&lt;mat-card-header *ngIf&#x3D;&quot;!showPreview()&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+					&lt;mat-card-title&gt;
+						&lt;p fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+							&lt;img
+								src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/no-selected.svg&quot;
+							/&gt;
+						&lt;/p&gt;
+						&lt;div
+							fxLayoutAlign&#x3D;&quot;center center&quot;
+							i18n&#x3D;&quot;@@email-email-custom-email-no-preview&quot;
+						&gt;
+							No Preview
+						&lt;/div&gt;
+					&lt;/mat-card-title&gt;
+					&lt;mat-card-subtitle
+						i18n&#x3D;&quot;
+							@@email-email-custom-email-select-email-to-customize-and-preview&quot;
+					&gt;
+						Select email to customise and preview
+					&lt;/mat-card-subtitle&gt;
+				&lt;/mat-card-header&gt;
+				&lt;mat-card-content *ngIf&#x3D;&quot;showPreview()&quot;&gt;
+					&lt;app-thank-you
+						*ngIf&#x3D;&quot;panelOpenState0&quot;
+						[applyCustomBranding]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[customLogo]&#x3D;&quot;customSetting.customLogo&quot;
+						[primaryColor]&#x3D;&quot;customSetting.primaryColor&quot;
+						[secondaryColor]&#x3D;&quot;customSetting.secondaryColor&quot;
+						[customText]&#x3D;&quot;quillForm0.controls.quillCtrl0.value&quot;
+					&gt;
+					&lt;/app-thank-you&gt;
+					&lt;app-registration
+						*ngIf&#x3D;&quot;panelOpenState1&quot;
+						[applyCustomBranding]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[customLogo]&#x3D;&quot;customSetting.customLogo&quot;
+						[primaryColor]&#x3D;&quot;customSetting.primaryColor&quot;
+						[secondaryColor]&#x3D;&quot;customSetting.secondaryColor&quot;
+						[customText]&#x3D;&quot;quillForm1.controls.quillCtrl1.value&quot;
+					&gt;
+					&lt;/app-registration&gt;
+					&lt;app-donation-received
+						*ngIf&#x3D;&quot;panelOpenState2&quot;
+						[applyCustomBranding]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[customLogo]&#x3D;&quot;customSetting.customLogo&quot;
+						[primaryColor]&#x3D;&quot;customSetting.primaryColor&quot;
+						[secondaryColor]&#x3D;&quot;customSetting.secondaryColor&quot;
+						[customText]&#x3D;&quot;quillForm2.controls.quillCtrl2.value&quot;
+					&gt;
+					&lt;/app-donation-received&gt;
+					&lt;app-fundraiser-created
+						*ngIf&#x3D;&quot;panelOpenState3&quot;
+						[applyCustomBranding]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[customLogo]&#x3D;&quot;customSetting.customLogo&quot;
+						[primaryColor]&#x3D;&quot;customSetting.primaryColor&quot;
+						[secondaryColor]&#x3D;&quot;customSetting.secondaryColor&quot;
+						[customText]&#x3D;&quot;quillForm3.controls.quillCtrl3.value&quot;
+					&gt;
+					&lt;/app-fundraiser-created&gt;
+					&lt;app-fundraiser-published
+						*ngIf&#x3D;&quot;panelOpenState4&quot;
+						[applyCustomBranding]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[customLogo]&#x3D;&quot;customSetting.customLogo&quot;
+						[primaryColor]&#x3D;&quot;customSetting.primaryColor&quot;
+						[secondaryColor]&#x3D;&quot;customSetting.secondaryColor&quot;
+						[customText]&#x3D;&quot;quillForm4.controls.quillCtrl4.value&quot;
+					&gt;
+					&lt;/app-fundraiser-published&gt;
+					&lt;app-fundraiser-closed
+						*ngIf&#x3D;&quot;panelOpenState5&quot;
+						[applyCustomBranding]&#x3D;&quot;isCustomBrandingChecked&quot;
+						[customLogo]&#x3D;&quot;customSetting.customLogo&quot;
+						[primaryColor]&#x3D;&quot;customSetting.primaryColor&quot;
+						[secondaryColor]&#x3D;&quot;customSetting.secondaryColor&quot;
+						[customText]&#x3D;&quot;quillForm5.controls.quillCtrl5.value&quot;
+					&gt;
+					&lt;/app-fundraiser-closed&gt;
+				&lt;/mat-card-content&gt;
+			&lt;/mat-card&gt;
+		&lt;/mat-card&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-page-loader *ngIf="this.isLoading"></app-page-loader><div	*ngIf="!this.isLoading"	fxLayout="row"	fxLayout.xs="column"	fxLayout.sm="column"	fxFlex="100">	<div		fxLayout="column"		fxLayout.xs="column"		fxLayout.sm="column"		fxFlex="70"		fxFlex.xs="100"		fxFlex.sm="100"	>		<mat-card class="mat-elevation-z0">			<mat-card-title-group fxLayout="row" fxLayout.xs="column">				<mat-card-title i18n="@@custom-email-customise-email-template">					Customise Email Templates				</mat-card-title>				<mat-card-subtitle					i18n="@@custom-email-add-pesonalized-message-and-branding"				>					Add personalised message and branding to emails				</mat-card-subtitle>				<mat-icon *ngIf="isSave">					<mat-spinner						color="accent"						diameter="20"						i18n="@@custom_email_spinner"					>					</mat-spinner>				</mat-icon>			</mat-card-title-group>			<mat-card-content>				<div fxLayout="row" fxLayoutAlign="space-between center">					<!-- <mat-slide-toggle						color="primary"						[(ngModel)]="isCustomBrandingChecked"						(change)="toggleCustomBranding($event)"						[disabled]="this.defaultState"						i18n="@@email-custom-email-apply-custom-branding"						>Apply custom branding					</mat-slide-toggle> -->					<mat-checkbox						color="primary"						[(ngModel)]="isCustomBrandingChecked"						[disabled]="this.defaultState"						i18n="@@email-custom-email-apply-custom-branding"					>						Apply custom branding					</mat-checkbox>					<a						mat-button						color="accent"						fxLayoutAlign="center center"						i18n="@@email-custom-email-set-to-default"						*ngIf="this.defaultState"						(click)="routeToBranding()"					>						Set to Custom Branding</a					>				</div>				<br />				<p					class="mat-body-2"					i18n="@@email-custom-email-add-personalized-message"				>					Add Personalised message				</p>				<mat-accordion>					<mat-expansion-panel						(opened)="panelOpenState0 = true"						(closed)="panelOpenState0 = false"					>						<mat-expansion-panel-header id="thankYou">							<mat-panel-title								i18n="@@email-custom-email-panel-title-thank-you-email"								id="thankYou"							>								Thank you email to donors							</mat-panel-title>						</mat-expansion-panel-header>						<mat-divider></mat-divider>						<br />						<ng-container [formGroup]="quillForm0">							<mat-form-field								color="primary"								appearance="outline"								class="w-100"							>								<mat-label i18n="@@email-custom-email-write-message"									>Write message</mat-label								>								<textarea									id="thankYouInput"									#thankYou									matInput									formControlName="quillCtrl0"								></textarea>								<mat-hint align="end"									><span class="mat-body-2">{{ thankYou.value.length }}</span>									/120									<span i18n="@@email_character_mat_hint">character</span>								</mat-hint>							</mat-form-field>						</ng-container>						<mat-action-row fxLayout="row wrap">							<button								mat-button								color="accent"								i18n="@@button_discard"								[disabled]="!quillForm0.dirty"								(click)="discardChanges(0)"							>								Discard							</button>							<button								mat-flat-button								color="accent"								i18n="@@button_save"								[disabled]="!(quillForm0.dirty && quillForm0.valid)"								(click)="saveForm(0)"								id="thankSave"							>								Save							</button>						</mat-action-row>					</mat-expansion-panel>					<mat-expansion-panel						(opened)="panelOpenState1 = true"						(closed)="panelOpenState1 = false"					>						<mat-expansion-panel-header>							<mat-panel-title								i18n="									@@email-custom-email-registertion-for-connected-fundraiser"								id="registration"							>								Registration for connected fundraiser							</mat-panel-title>						</mat-expansion-panel-header>						<mat-divider></mat-divider>						<br />						<ng-container [formGroup]="quillForm1">							<mat-form-field								color="primary"								appearance="outline"								class="w-100"							>								<mat-label i18n="@@email-custom-email-write-message"									>Write message</mat-label								>								<textarea									id="registerForConnected"									#registered									matInput									formControlName="quillCtrl1"								></textarea>								<mat-hint align="end"									><span class="mat-body-2">{{ registered.value.length }}</span>									/120									<span i18n="@@email_character_mat_hint">character</span>								</mat-hint>							</mat-form-field>						</ng-container>						<mat-action-row fxLayout="row wrap">							<button								mat-button								color="accent"								i18n="@@button_discard"								[disabled]="!quillForm1.dirty"								(click)="discardChanges(1)"							>								Discard							</button>							<button								mat-flat-button								color="accent"								i18n="@@button_save"								[disabled]="!(quillForm1.dirty && quillForm1.valid)"								(click)="saveForm(1)"								id="registerSave"							>								Save							</button>						</mat-action-row>					</mat-expansion-panel>					<mat-expansion-panel						(opened)="panelOpenState2 = true"						(closed)="panelOpenState2 = false"					>						<mat-expansion-panel-header>							<mat-panel-title								i18n="									@@email-custom-email-donation-received-connected-fundraiser"								id="donationReceived"							>								Donation received connected fundraiser							</mat-panel-title>						</mat-expansion-panel-header>						<mat-divider></mat-divider>						<br />						<ng-container [formGroup]="quillForm2">							<mat-form-field								color="primary"								appearance="outline"								class="w-100"							>								<mat-label i18n="@@email-custom-email-write-message"									>Write message</mat-label								>								<textarea									id="donationReceivedConnected"									#donationReceived									matInput									formControlName="quillCtrl2"								></textarea>								<mat-hint align="end"									><span class="mat-body-2">{{										donationReceived.value.length									}}</span>									/120									<span i18n="@@email_character_mat_hint">character</span>								</mat-hint>							</mat-form-field>						</ng-container>						<mat-action-row fxLayout="row wrap">							<button								mat-button								i18n="@@button_discard"								color="accent"								[disabled]="!quillForm2.dirty"								(click)="discardChanges(2)"							>								Discard							</button>							<button								mat-flat-button								color="accent"								i18n="@@button_save"								[disabled]="!(quillForm2.dirty && quillForm2.valid)"								(click)="saveForm(2)"								id="donationReceivedSave"							>								Save							</button>						</mat-action-row>					</mat-expansion-panel>					<mat-expansion-panel						(opened)="panelOpenState3 = true"						(closed)="panelOpenState3 = false"					>						<mat-expansion-panel-header>							<mat-panel-title								i18n="@@email-custom-email-connected-fundraiser-created"								id="connectedFundraiserCreated"							>								Connected fundraiser created							</mat-panel-title>						</mat-expansion-panel-header>						<mat-divider></mat-divider>						<br />						<ng-container [formGroup]="quillForm3">							<mat-form-field								color="primary"								appearance="outline"								class="w-100"							>								<mat-label i18n="@@email-custom-email-write-message"									>Write message</mat-label								>								<textarea									id="connectedFundraiser"									#connected									matInput									formControlName="quillCtrl3"								></textarea>								<mat-hint align="end"									><span class="mat-body-2">{{ connected.value.length }}</span>									/120									<span i18n="@@email_character_mat_hint">character</span>								</mat-hint>							</mat-form-field>						</ng-container>						<mat-action-row fxLayout="row wrap">							<button								mat-button								i18n="@@button_discard"								color="accent"								[disabled]="!quillForm3.dirty"								(click)="discardChanges(3)"							>								Discard							</button>							<button								mat-flat-button								color="accent"								i18n="@@button_save"								[disabled]="!(quillForm3.dirty && quillForm3.valid)"								(click)="saveForm(3)"								id="connectedFundraiserSave"							>								Save							</button>						</mat-action-row>					</mat-expansion-panel>					<mat-expansion-panel						(opened)="panelOpenState4 = true"						(closed)="panelOpenState4 = false"					>						<mat-expansion-panel-header>							<mat-panel-title								i18n="@@email-custom-email-connected-fundraiser-publication"								id="connectedFundraiserPublished"							>								Connected fundraiser published							</mat-panel-title>						</mat-expansion-panel-header>						<mat-divider></mat-divider>						<br />						<ng-container [formGroup]="quillForm4">							<mat-form-field								color="primary"								appearance="outline"								class="w-100"							>								<mat-label i18n="@@email-custom-email-write-message"									>Write message</mat-label								>								<textarea									id="connectedFundraiserPublishedInput"									#connectedPublisher									matInput									formControlName="quillCtrl4"								></textarea>								<mat-hint align="end"									><span class="mat-body-2">{{										connectedPublisher.value.length									}}</span>									/120									<span i18n="@@email_character_mat_hint">character</span>								</mat-hint>							</mat-form-field>						</ng-container>						<mat-action-row fxLayout="row wrap">							<button								mat-button								i18n="@@button_discard"								color="accent"								[disabled]="!quillForm4.dirty"								(click)="discardChanges(4)"							>								Discard							</button>							<button								mat-flat-button								color="accent"								i18n="@@button_save"								[disabled]="!(quillForm4.dirty && quillForm4.valid)"								(click)="saveForm(4)"								id="connectedPublishedSave"							>								Save							</button>						</mat-action-row>					</mat-expansion-panel>					<mat-expansion-panel						(opened)="panelOpenState5 = true"						(closed)="panelOpenState5 = false"					>						<mat-expansion-panel-header>							<mat-panel-title								i18n="@@email-custom-email-connected-fundraiser-closed"								id="connectedFundraiserClosed"							>								Connected fundraiser closed							</mat-panel-title>						</mat-expansion-panel-header>						<mat-divider></mat-divider>						<br />						<ng-container [formGroup]="quillForm5">							<mat-form-field								color="primary"								appearance="outline"								class="w-100"							>								<mat-label i18n="@@email-custom-email-write-message"									>Write message</mat-label								>								<textarea									id="connectedFundraiserClosedInput"									#connectedfundraiserClosed									matInput									formControlName="quillCtrl5"								></textarea>								<mat-hint align="end"									><span class="mat-body-2">{{										connectedfundraiserClosed.value.length									}}</span>									/120									<span i18n="@@email_character_mat_hint">character</span>								</mat-hint>							</mat-form-field>						</ng-container>						<mat-action-row fxLayout="row wrap">							<button								mat-button								i18n="@@button_discard"								color="accent"								[disabled]="!quillForm5.dirty"								(click)="discardChanges(5)"							>								Discard							</button>							<button								mat-flat-button								color="accent"								i18n="@@button_save"								[disabled]="!(quillForm5.dirty && quillForm5.valid)"								(click)="saveForm(5)"								id="saveFundraiserClosed"							>								Save							</button>						</mat-action-row>					</mat-expansion-panel>				</mat-accordion>			</mat-card-content>		</mat-card>	</div>	<mat-divider [vertical]="true"></mat-divider>	<!-- Show preview -->	<div		fxLayout="column"		fxLayout.xs="column"		fxLayout.sm="column"		fxFlex="35"		fxFlex.xs="100"		fxFlex.sm="100"	>		<mat-card class="mat-elevation-z0">			<div				fxLayout="row"				fxLayoutAlign="space-between center"				fxLayout.xs="column"				fxLayout.sm="column"			>				<p fxLayout="row" class="mat-body-1">					<img						style="position: relative; bottom: 3px"						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"					/>					<span						fxFlexOffset="8px"						i18n="@@email-email-custom-email-email-preview"					>						Email Preview					</span>				</p>				<p>					<button						mat-stroked-button						color="accent"						i18n="@@email-email-custom-email-send-test-email"						[disabled]="!showPreview()"						(click)="sendTestMail()"						id="sendTestMail"					>						Send Test Mail					</button>				</p>			</div>			<br />			<!-- Preview Card-->			<mat-card>				<mat-card-header *ngIf="!showPreview()" fxLayoutAlign="center center">					<mat-card-title>						<p fxLayoutAlign="center center">							<img								src="https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/no-selected.svg"							/>						</p>						<div							fxLayoutAlign="center center"							i18n="@@email-email-custom-email-no-preview"						>							No Preview						</div>					</mat-card-title>					<mat-card-subtitle						i18n="							@@email-email-custom-email-select-email-to-customize-and-preview"					>						Select email to customise and preview					</mat-card-subtitle>				</mat-card-header>				<mat-card-content *ngIf="showPreview()">					<app-thank-you						*ngIf="panelOpenState0"						[applyCustomBranding]="isCustomBrandingChecked"						[customLogo]="customSetting.customLogo"						[primaryColor]="customSetting.primaryColor"						[secondaryColor]="customSetting.secondaryColor"						[customText]="quillForm0.controls.quillCtrl0.value"					>					</app-thank-you>					<app-registration						*ngIf="panelOpenState1"						[applyCustomBranding]="isCustomBrandingChecked"						[customLogo]="customSetting.customLogo"						[primaryColor]="customSetting.primaryColor"						[secondaryColor]="customSetting.secondaryColor"						[customText]="quillForm1.controls.quillCtrl1.value"					>					</app-registration>					<app-donation-received						*ngIf="panelOpenState2"						[applyCustomBranding]="isCustomBrandingChecked"						[customLogo]="customSetting.customLogo"						[primaryColor]="customSetting.primaryColor"						[secondaryColor]="customSetting.secondaryColor"						[customText]="quillForm2.controls.quillCtrl2.value"					>					</app-donation-received>					<app-fundraiser-created						*ngIf="panelOpenState3"						[applyCustomBranding]="isCustomBrandingChecked"						[customLogo]="customSetting.customLogo"						[primaryColor]="customSetting.primaryColor"						[secondaryColor]="customSetting.secondaryColor"						[customText]="quillForm3.controls.quillCtrl3.value"					>					</app-fundraiser-created>					<app-fundraiser-published						*ngIf="panelOpenState4"						[applyCustomBranding]="isCustomBrandingChecked"						[customLogo]="customSetting.customLogo"						[primaryColor]="customSetting.primaryColor"						[secondaryColor]="customSetting.secondaryColor"						[customText]="quillForm4.controls.quillCtrl4.value"					>					</app-fundraiser-published>					<app-fundraiser-closed						*ngIf="panelOpenState5"						[applyCustomBranding]="isCustomBrandingChecked"						[customLogo]="customSetting.customLogo"						[primaryColor]="customSetting.primaryColor"						[secondaryColor]="customSetting.secondaryColor"						[customText]="quillForm5.controls.quillCtrl5.value"					>					</app-fundraiser-closed>				</mat-card-content>			</mat-card>		</mat-card>	</div></div></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'EmailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmailComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

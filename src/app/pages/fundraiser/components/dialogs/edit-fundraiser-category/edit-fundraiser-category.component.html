@@ -1,0 +1,76 @@
+<div ngClass="p-t-l p-r-l">
+	<button mat-icon-button class="close-button" (click)="onCloseClick()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+		/>
+	</button>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between start">
+	<h2 mat-dialog-title i18n="@@editFundraisercategory_title">
+		Edit fundraiser category
+	</h2>
+	<mat-icon *ngIf="isLoading">
+		<mat-spinner color="accent" diameter="20"></mat-spinner>
+	</mat-icon>
+</div>
+<mat-dialog-content>
+	<form [formGroup]="categoryForm">
+		<!--category-->
+		<mat-form-field class="w-100" appearance="outline">
+			<mat-label i18n="@@editFundraisercategory_categoryName_title">
+				category name
+			</mat-label>
+			<input
+				i18n="@@editFundraisercategory_categoryName_input"
+				#categoryRef
+				matInput
+				id="fundraiserCategoryInput"
+				formControlName="categoryControl"
+				[matAutocomplete]="categoryAuto"
+			/>
+			<img
+				matSuffix
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667418121/whydonate-production/platform/svg-icons/arrowDropDown.svg"
+			/>
+			<mat-autocomplete
+				#categoryAuto="matAutocomplete"
+				(closed)="setCategory()"
+			>
+				<div class="fundraiserCategoryOption">
+					<mat-option
+						*ngFor="let category of categories"
+						[value]="category.name"
+					>
+						{{ category.name }}
+					</mat-option>
+				</div>
+			</mat-autocomplete>
+			<mat-error
+				*ngIf="
+					categoryForm.controls['categoryControl'].errors &&
+					categoryForm.controls['categoryControl'].errors['category']
+				"
+				>Invalid category</mat-error
+			>
+		</mat-form-field>
+	</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button
+		[disabled]="!categoryForm.dirty || categoryForm.invalid || isSave"
+		mat-flat-button
+		color="accent"
+		id="fundraiserCategorySaveButton"
+		(click)="dialogClose()"
+	>
+		<span i18n="@@button_save">Save</span>
+		<mat-icon *ngIf="isSave" class="m-l-xs">
+			<mat-spinner
+				color="accent"
+				diameter="20"
+				i18n="@@editFundraisercategory_spinner"
+			>
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</mat-dialog-actions>

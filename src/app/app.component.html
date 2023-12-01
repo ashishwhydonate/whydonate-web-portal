@@ -1,0 +1,19 @@
+<!-- Header -->
+<app-header id="header" name="header"></app-header>
+
+<!--CONTAINER-->
+<div class="content-height">
+	<mat-drawer-container autosize>
+		<!--SIDENAV-->
+		<mat-drawer *ngIf="this.isLoggedIn" #drawer mode="side" opened="true">
+			<app-sidenav></app-sidenav>
+		</mat-drawer>
+		<!--Content-->
+		<div class="main-content">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-drawer-container>
+</div>
+
+<!--FOOTER-->
+<app-footer id="footer" name="footer"></app-footer>

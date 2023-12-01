@@ -1,0 +1,81 @@
+<div fxLayout="column" fxLayoutAlign="start">
+	<div fxLayout="row" fxLayoutAlign="start start">
+		<div fxFlex>
+			<h2 i18n="@@fundraiser_notification_fundraiser_page_heading">
+				Fundraiser Page
+			</h2>
+		</div>
+
+		<!-- MULTI CURRENCY WORK, COMMENTED OUT FOR NOW -->
+
+		<!-- <h3>Currency</h3> -->
+		<!-- <mat-chip-list
+			aria-label="category selection"
+			id="chip-list"
+			name="chip-list"
+			class="whydonate-light"
+		>
+			<mat-chip
+				id="chip"
+				name="chip"
+				class="mat-chip-list-stacked my-chip"
+				color="accent"
+				selected
+				removable="true"
+			>
+				<caption>
+					$USD
+				</caption>
+			</mat-chip>
+		</mat-chip-list> -->
+	</div>
+
+	<div fxLayout="row" fxLayoutAlign="space-between">
+		<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="4%">
+			<div
+				*ngIf="showPublishBanner"
+				[matTooltip]="matTooltipCannotPublish"
+				[matTooltipDisabled]="!this.showStripePrompt"
+				[fxHide]="
+					_media.isActive('lt-sm') ||
+					_media.isActive('sm') ||
+					_media.isActive('md')
+				"
+			>
+				<button
+					id="donateButtonPublish"
+					mat-flat-button
+					color="accent"
+					[style.color]="'#fff'"
+					[disabled]="this.showStripePrompt"
+				>
+					<span
+						i18n="@@fundraiser_publish_fundraiser_button"
+						(click)="emitPublishClick(true)"
+						>Publish</span
+					>
+					<mat-icon *ngIf="isLoading && !this.showStripePrompt" class="m-l-xs">
+						<mat-spinner color="primary" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+			<div>
+				<button id="donateButtonPreview" mat-stroked-button color="primary">
+					<span (click)="this.showPublicView(true)" i18n="@@button_preview"
+						>Preview</span
+					>
+				</button>
+			</div>
+		</div>
+		<div fxLayout="column" fxLayoutAlign="start end">
+			<a mat-button color="warn">
+				<span
+					id="delete_fundraiser_button"
+					(click)="this.openDeleteFundraiserDialog()"
+					i18n="@@button_delete"
+					>Delete</span
+				>
+			</a>
+		</div>
+	</div>
+</div>

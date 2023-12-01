@@ -1,0 +1,30 @@
+<div fxFlex="100%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5%">
+	<input #input fxHide="true" type="file" (change)="fileChangeEvent($event)" />
+	<button mat-fab color="primary" (click)="input.click()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+		/>
+	</button>
+
+	<button mat-fab color="primary" (click)="input.click()">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+		/>
+	</button>
+
+	<image-cropper
+		class="image-cropper"
+		[imageChangedEvent]="imageChangedEvent"
+		[maintainAspectRatio]="true"
+		[aspectRatio]="this.aspectRatio"
+		format="png"
+		[onlyScaleDown]="true"
+		(imageCropped)="imageCropped($event)"
+		(imageLoaded)="imageLoaded()"
+		(cropperReady)="cropperReady()"
+		(loadImageFailed)="loadImageFailed()"
+		output="base64"
+	></image-cropper>
+
+	<img class="image-cropper" [src]="croppedImage" />
+</div>

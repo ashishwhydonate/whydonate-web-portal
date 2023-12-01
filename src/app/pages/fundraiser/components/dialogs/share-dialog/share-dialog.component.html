@@ -1,0 +1,48 @@
+<div>
+	<div fxLayout="column" fxFill fxLayoutAlign="flex-end flex-end">
+		<button mat-icon-button (click)="onCloseClick()">
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+			/>
+		</button>
+	</div>
+	<div fxLayout="column" fxFill>
+		<h2
+			mat-dialog-title
+			i18n="@@share-fundrasier_component_shareDialog_shareFundraiser_title"
+		>
+			Share Fundraiser
+		</h2>
+		<mat-dialog-content class="mat-typography" fxLayout="row" fxFlex="100%">
+			<mat-tab-group
+				fxFlex="100%"
+				[selectedIndex]="tabIndex"
+				(selectedTabChange)="tabChange($event)"
+			>
+				<mat-tab label="{{ fundraiserLabel }}">
+					<app-share-fundraiser-page
+						[type]="'fundraiser'"
+						[disablePayment]="false"
+					></app-share-fundraiser-page>
+				</mat-tab>
+				<mat-tab label="{{ donationLabel }}">
+					<app-share-fundraiser-page
+						[type]="'donate'"
+						[disablePayment]="false"
+					></app-share-fundraiser-page>
+				</mat-tab>
+				<mat-tab label="{{ paymentRequestLabel }}">
+					<app-payment-request [selectedFundraiser]="data.fundraiser">
+					</app-payment-request>
+				</mat-tab>
+				<mat-tab label="{{ ownWebsiteLabel }}">
+					<app-embed
+						[slug]="data.fundraiser?.slug"
+						[selectedFundraiser]="data.fundraiser"
+						[amountProgressData]="data"
+					></app-embed>
+				</mat-tab>
+			</mat-tab-group>
+		</mat-dialog-content>
+	</div>
+</div>

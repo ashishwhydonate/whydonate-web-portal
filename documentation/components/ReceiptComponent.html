@@ -1,0 +1,1590 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ReceiptComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-receipt</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./receipt.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./receipt.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_notificationService" >_notificationService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#accountService" >accountService</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#newInfo" >newInfo</a>
+                            </li>
+                            <li>
+                                <a href="#newInfoHex" >newInfoHex</a>
+                            </li>
+                            <li>
+                                <a href="#profile" >profile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#discardChanges" >discardChanges</a>
+                            </li>
+                            <li>
+                                <a href="#getdata" >getdata</a>
+                            </li>
+                            <li>
+                                <a href="#hasEmojiError" >hasEmojiError</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onNewInfoChange" >onNewInfoChange</a>
+                            </li>
+                            <li>
+                                <a href="#saveForm" >saveForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#isButtonDisabled" >isButtonDisabled</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(customBranding: <a href="../injectables/CustomBrandingService.html" target="_self">CustomBrandingService</a>, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>, _notificationService: <a href="../injectables/NotificationService.html" target="_self">NotificationService</a>, _profileService: <a href="../injectables/ProfileService.html" target="_self">ProfileService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>customBranding</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CustomBrandingService.html" target="_self" >CustomBrandingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>accountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_profileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProfileService.html" target="_self" >ProfileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="discardChanges"></a>
+                    <span class="name">
+                        <span ><b>discardChanges</b></span>
+                        <a href="#discardChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>discardChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getdata"></a>
+                    <span class="name">
+                        <span ><b>getdata</b></span>
+                        <a href="#getdata"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getdata()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasEmojiError"></a>
+                    <span class="name">
+                        <span ><b>hasEmojiError</b></span>
+                        <a href="#hasEmojiError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasEmojiError(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNewInfoChange"></a>
+                    <span class="name">
+                        <span ><b>onNewInfoChange</b></span>
+                        <a href="#onNewInfoChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNewInfoChange(hex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>hex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveForm"></a>
+                    <span class="name">
+                        <span ><b>saveForm</b></span>
+                        <a href="#saveForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveForm(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_notificationService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_notificationService</b></span>
+                        <a href="#_notificationService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accountService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>accountService</b></span>
+                        <a href="#accountService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newInfo"></a>
+                    <span class="name">
+                        <span ><b>newInfo</b></span>
+                        <a href="#newInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newInfoHex"></a>
+                    <span class="name">
+                        <span ><b>newInfoHex</b></span>
+                        <a href="#newInfoHex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="profile"></a>
+                    <span class="name">
+                        <span ><b>profile</b></span>
+                        <a href="#profile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isButtonDisabled"></a>
+                        <span class="name"><b>isButtonDisabled</b><a href="#isButtonDisabled"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isButtonDisabled()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/pages/user/custom-branding/components/custom-branding/receipt/receipt.component.ts:71</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {
+	FormControl,
+	FormGroup,
+	UntypedFormControl,
+	UntypedFormGroup,
+	Validators,
+} from &#x27;@angular/forms&#x27;;
+import { APIService } from &#x27;src/app/global/services/api.service&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { NotificationService } from &#x27;src/app/shared/services/notification.service&#x27;;
+import { CustomBrandingService } from &#x27;../../../services/custom-branding.service&#x27;;
+import { Subject, takeUntil } from &#x27;rxjs&#x27;;
+import { ProfileService } from &#x27;src/app/pages/user/profile/services/profile.service&#x27;;
+@Component({
+	selector: &#x27;app-receipt&#x27;,
+	templateUrl: &#x27;./receipt.component.html&#x27;,
+	styleUrls: [&#x27;./receipt.component.scss&#x27;],
+})
+export class ReceiptComponent implements OnInit {
+	isLoading: boolean &#x3D; false;
+	private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+	newInfo: string &#x3D; &#x27;&#x27;;
+	newInfoHex!: FormControl;
+
+	profile: string &#x3D; &#x27;&#x27;;
+	constructor(
+		private customBranding: CustomBrandingService,
+		public accountService: AccountService,
+		public _notificationService: NotificationService,
+		private _profileService: ProfileService
+	) {
+		this.newInfoHex &#x3D; new FormControl(&#x27;&#x27;);
+	}
+
+	ngOnInit(): void {
+		this.getdata();
+		this.isLoading &#x3D; true;
+	}
+	getdata() {
+		this._profileService
+			.getProfile()
+			.pipe(takeUntil(this._unsubscribeAll))
+			.subscribe((res: any) &#x3D;&gt; {
+				if (res?.data?.profile) {
+					this.newInfoHex?.patchValue(res.data.profile.receipt_message);
+					this.newInfo &#x3D; res.data.profile.receipt_message;
+					this.profile &#x3D; res.data.profile.receipt_message;
+				}
+			});
+	}
+	discardChanges() {
+		this.newInfoHex?.patchValue(this?.profile || &#x27;&#x27;);
+		this.newInfoHex.markAsPristine();
+	}
+
+	saveForm(message: string) {
+		let body &#x3D; { receipt_message: message };
+
+		return this.customBranding.receipt_message(body).subscribe((res) &#x3D;&gt; {
+			this._notificationService.openNotification(
+				$localize&#x60;:@@receipt_messageSuccessfull_notification:The receipt message is successfully saved&#x60;,
+				&#x27;&#x27;,
+				&#x27;success&#x27;
+			);
+			window.location.reload();
+		});
+	}
+
+	get isButtonDisabled(): boolean {
+		const valueLength &#x3D; this.newInfoHex.value?.length;
+		return !valueLength || valueLength &lt; 0 || valueLength &gt; 120;
+	}
+
+	hasEmojiError(value: string): boolean {
+		return /[\uD800-\uDBFF][\uDC00-\uDFFF]/.test(value);
+	}
+
+	onNewInfoChange(hex: string): void {
+		this.newInfoHex.patchValue(hex);
+	}
+	ngOnDestroy(): void {
+		/** *Unsubscribe from all subscriptions */
+		this._unsubscribeAll.complete();
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-page-loader *ngIf&#x3D;&quot;!this.isLoading&quot;&gt;&lt;/app-page-loader&gt;
+
+&lt;div fxLayout&#x3D;&quot;row&quot; fxLayout.xs&#x3D;&quot;column&quot; fxLayout.sm&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100&quot;&gt;
+	&lt;div
+		fxLayout&#x3D;&quot;column&quot;
+		fxLayout.xs&#x3D;&quot;row&quot;
+		fxLayout.sm&#x3D;&quot;column&quot;
+		fxFlex&#x3D;&quot;50&quot;
+		fxFlex.xs&#x3D;&quot;100&quot;
+		fxFlex.sm&#x3D;&quot;100&quot;
+	&gt;
+		&lt;mat-card class&#x3D;&quot;mat-elevation-z0&quot;&gt;
+			&lt;mat-card-title-group fxLayout&#x3D;&quot;row&quot; fxLayout.xs&#x3D;&quot;column&quot;&gt;
+				&lt;mat-card-title i18n&#x3D;&quot;@@custom-receipt-customise-receipt-template&quot;&gt;
+					Customise Receipt
+				&lt;/mat-card-title&gt;
+				&lt;mat-card-subtitle
+					i18n&#x3D;&quot;@@custom-receipt-add-pesonalized-message-and-branding&quot;
+				&gt;
+					Add more information in donation receipt below
+				&lt;/mat-card-subtitle&gt;
+			&lt;/mat-card-title-group&gt;
+			&lt;mat-card-content&gt;
+				&lt;mat-form-field
+					appearance&#x3D;&quot;outline&quot;
+					id&#x3D;&quot;newInfo&quot;
+					floatLabel&#x3D;&quot;always&quot;
+					style&#x3D;&quot;width: 100%&quot;
+					color&#x3D;&quot;primary&quot;
+				&gt;
+					&lt;mat-label i18n&#x3D;&quot;@@email-custom-email-write-message&quot;
+						&gt;Add more information&lt;/mat-label
+					&gt;
+					&lt;textarea
+						matInput
+						type&#x3D;&quot;text&quot;
+						#newInfo
+						placeholder&#x3D;&quot;Add more information for your donation receipt&quot;
+						[formControl]&#x3D;&quot;newInfoHex&quot;
+						id&#x3D;&quot;newInfo&quot;
+					&gt;
+					&lt;/textarea&gt;
+					&lt;mat-hint align&#x3D;&quot;end&quot;
+						&gt;&lt;span&gt;{{ newInfo.value.length }}&lt;/span&gt;
+						/120
+						&lt;span i18n&#x3D;&quot;@@email_character_mat_hint&quot;&gt;characters&lt;/span&gt;
+					&lt;/mat-hint&gt;
+				&lt;/mat-form-field&gt;
+
+				&lt;mat-action-row style&#x3D;&quot;border: 0&quot;&gt;
+					&lt;button
+						(click)&#x3D;&quot;discardChanges()&quot;
+						mat-button
+						i18n&#x3D;&quot;@@button_discard_changes&quot;
+						color&#x3D;&quot;accent&quot;
+					&gt;
+						Discard Changes
+					&lt;/button&gt;
+					&lt;button
+						mat-flat-button
+						color&#x3D;&quot;accent&quot;
+						i18n&#x3D;&quot;@@button_save_apply&quot;
+						id&#x3D;&quot;newInfoFundraiserSave&quot;
+						(click)&#x3D;&quot;saveForm(newInfo.value)&quot;
+						[disabled]&#x3D;&quot;isButtonDisabled || hasEmojiError(newInfoHex.value)&quot;
+					&gt;
+						Save and Apply
+					&lt;/button&gt;
+				&lt;/mat-action-row&gt;
+			&lt;/mat-card-content&gt;
+		&lt;/mat-card&gt;
+	&lt;/div&gt;
+
+	&lt;mat-divider [vertical]&#x3D;&quot;true&quot;&gt;&lt;/mat-divider&gt;
+
+	&lt;!-- Show preview --&gt;
+	&lt;div
+		fxLayout&#x3D;&quot;column&quot;
+		fxLayout.xs&#x3D;&quot;row&quot;
+		fxLayout.sm&#x3D;&quot;row&quot;
+		fxFlex&#x3D;&quot;50&quot;
+		fxFlex.xs&#x3D;&quot;100&quot;
+		fxFlex.sm&#x3D;&quot;100&quot;
+	&gt;
+		&lt;mat-card class&#x3D;&quot;mat-elevation-z0&quot;&gt;
+			&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
+				&lt;p fxLayout&#x3D;&quot;row&quot; class&#x3D;&quot;mat-body-1&quot;&gt;
+					&lt;img
+						style&#x3D;&quot;position: relative; bottom: 3px&quot;
+						src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg&quot;
+					/&gt;
+					&lt;span
+						fxFlexOffset&#x3D;&quot;8px&quot;
+						i18n&#x3D;&quot;@@receipt-receipt-custom-receipt-receipt-preview&quot;
+					&gt;
+						Receipt Preview
+					&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;br /&gt;
+			&lt;!-- Preview Card--&gt;
+			&lt;!-- &lt;mat-card *ngIf&#x3D;&quot;this.profile &#x3D;&#x3D; &#x27;&#x27;&quot;&gt;
+				&lt;mat-card-header fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+					&lt;mat-card-title&gt;
+						&lt;p fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+							&lt;img
+								src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/no-selected.svg&quot;
+							/&gt;
+						&lt;/p&gt;
+						&lt;div
+							fxLayoutAlign&#x3D;&quot;center center&quot;
+							i18n&#x3D;&quot;@@receipt-receipt-custom-receipt-no-preview&quot;
+						&gt;
+							No Preview
+						&lt;/div&gt;
+					&lt;/mat-card-title&gt;
+					&lt;mat-card-subtitle
+						i18n&#x3D;&quot;
+							@@receipt-receipt-custom-receipt-select-receipt-to-customize-and-preview&quot;
+					&gt;
+						Select receipt to customise and preview
+					&lt;/mat-card-subtitle&gt;
+				&lt;/mat-card-header&gt;
+			&lt;/mat-card&gt; --&gt;
+			&lt;mat-card&gt;
+				&lt;mat-card-content&gt;
+					&lt;div fxLayout&#x3D;&quot;column&quot;&gt;
+						&lt;div fxFlex&#x3D;&quot;50&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+							&lt;svg
+								xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+								xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+								width&#x3D;&quot;80px&quot;
+								height&#x3D;&quot;80px&quot;
+								viewBox&#x3D;&quot;0 0 55 55&quot;
+								version&#x3D;&quot;1.1&quot;
+							&gt;
+								&lt;title&gt;Oval&lt;/title&gt;
+								&lt;g
+									id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+									stroke&#x3D;&quot;none&quot;
+									stroke-width&#x3D;&quot;1&quot;
+									fill&#x3D;&quot;none&quot;
+									fill-rule&#x3D;&quot;evenodd&quot;
+								&gt;
+									&lt;g
+										id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+										transform&#x3D;&quot;translate(-807.000000, -237.000000)&quot;
+									&gt;
+										&lt;g id&#x3D;&quot;Page&quot; /&gt;
+										&lt;g
+											id&#x3D;&quot;Group-144&quot;
+											transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+											fill&#x3D;&quot;#D8D8D8&quot;
+											stroke&#x3D;&quot;#979797&quot;
+											stroke-width&#x3D;&quot;0.640515222&quot;
+										&gt;
+											&lt;ellipse
+												id&#x3D;&quot;Oval&quot;
+												cx&#x3D;&quot;45.0855397&quot;
+												cy&#x3D;&quot;47.7183841&quot;
+												rx&#x3D;&quot;23.6614124&quot;
+												ry&#x3D;&quot;23.6990632&quot;
+											/&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/g&gt;
+							&lt;/svg&gt;
+							&lt;div fxFlex&#x3D;&quot;50&quot; fxLayout&#x3D;&quot;column&quot;&gt;
+								&lt;svg
+									xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+									xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+									width&#x3D;&quot;206px&quot;
+									height&#x3D;&quot;15px&quot;
+									viewBox&#x3D;&quot;0 0 196 7&quot;
+									version&#x3D;&quot;1.1&quot;
+								&gt;
+									&lt;title&gt;Rectangle&lt;/title&gt;
+									&lt;g
+										id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+										stroke&#x3D;&quot;none&quot;
+										stroke-width&#x3D;&quot;1&quot;
+										fill&#x3D;&quot;none&quot;
+										fill-rule&#x3D;&quot;evenodd&quot;
+									&gt;
+										&lt;g
+											id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+											transform&#x3D;&quot;translate(-862.000000, -253.000000)&quot;
+										&gt;
+											&lt;g id&#x3D;&quot;Page&quot; /&gt;
+											&lt;g
+												id&#x3D;&quot;Group-144&quot;
+												transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+												fill&#x3D;&quot;#D8D8D8&quot;
+											&gt;
+												&lt;rect
+													id&#x3D;&quot;Rectangle&quot;
+													x&#x3D;&quot;76.101833&quot;
+													y&#x3D;&quot;39.0714286&quot;
+													width&#x3D;&quot;195.050916&quot;
+													height&#x3D;&quot;6.40515222&quot;
+													rx&#x3D;&quot;3.20257611&quot;
+												/&gt;
+											&lt;/g&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/svg&gt;
+								&lt;svg
+									xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+									xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+									width&#x3D;&quot;169px&quot;
+									height&#x3D;&quot;8px&quot;
+									viewBox&#x3D;&quot;0 0 104 5&quot;
+									version&#x3D;&quot;1.1&quot;
+								&gt;
+									&lt;title&gt;Rectangle 2&lt;/title&gt;
+									&lt;g
+										id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+										stroke&#x3D;&quot;none&quot;
+										stroke-width&#x3D;&quot;1&quot;
+										fill&#x3D;&quot;none&quot;
+										fill-rule&#x3D;&quot;evenodd&quot;
+									&gt;
+										&lt;g
+											id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+											transform&#x3D;&quot;translate(-862.000000, -263.000000)&quot;
+										&gt;
+											&lt;g id&#x3D;&quot;Page&quot; /&gt;
+											&lt;g
+												id&#x3D;&quot;Group-144&quot;
+												transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+												fill&#x3D;&quot;#D8D8D8&quot;
+											&gt;
+												&lt;rect
+													id&#x3D;&quot;Rectangle&quot;
+													x&#x3D;&quot;76.101833&quot;
+													y&#x3D;&quot;49.3196721&quot;
+													width&#x3D;&quot;103.600815&quot;
+													height&#x3D;&quot;3.84309133&quot;
+													rx&#x3D;&quot;1.92154567&quot;
+												/&gt;
+											&lt;/g&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/svg&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;br /&gt;&lt;br /&gt;
+
+						&lt;mat-card-title i18n&#x3D;&quot;@@custom-receipt-Donation-Amount&quot;&gt;
+							Donation Amount : €50.00
+						&lt;/mat-card-title&gt;
+						&lt;mat-divider i18n&#x3D;&quot;@@fundraiserCreated_divider&quot;&gt; &lt;/mat-divider&gt;
+						&lt;br /&gt;
+						&lt;div fxLayout&#x3D;&quot;column&quot;&gt;
+							&lt;p i18n&#x3D;&quot;@@custom-receipt-Donated-By&quot;&gt;Donated By:&lt;/p&gt;
+							&lt;svg
+								xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+								xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+								width&#x3D;&quot;196px&quot;
+								height&#x3D;&quot;7px&quot;
+								viewBox&#x3D;&quot;0 0 196 7&quot;
+								version&#x3D;&quot;1.1&quot;
+							&gt;
+								&lt;title&gt;Rectangle&lt;/title&gt;
+								&lt;g
+									id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+									stroke&#x3D;&quot;none&quot;
+									stroke-width&#x3D;&quot;1&quot;
+									fill&#x3D;&quot;none&quot;
+									fill-rule&#x3D;&quot;evenodd&quot;
+								&gt;
+									&lt;g
+										id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+										transform&#x3D;&quot;translate(-862.000000, -253.000000)&quot;
+									&gt;
+										&lt;g id&#x3D;&quot;Page&quot; /&gt;
+										&lt;g
+											id&#x3D;&quot;Group-144&quot;
+											transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+											fill&#x3D;&quot;#D8D8D8&quot;
+										&gt;
+											&lt;rect
+												id&#x3D;&quot;Rectangle&quot;
+												x&#x3D;&quot;76.101833&quot;
+												y&#x3D;&quot;39.0714286&quot;
+												width&#x3D;&quot;195.050916&quot;
+												height&#x3D;&quot;6.40515222&quot;
+												rx&#x3D;&quot;3.20257611&quot;
+											/&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/g&gt;
+							&lt;/svg&gt;
+							&lt;svg
+								xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+								xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+								width&#x3D;&quot;104px&quot;
+								height&#x3D;&quot;5px&quot;
+								viewBox&#x3D;&quot;0 0 104 5&quot;
+								version&#x3D;&quot;1.1&quot;
+							&gt;
+								&lt;title&gt;Rectangle 2&lt;/title&gt;
+								&lt;g
+									id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+									stroke&#x3D;&quot;none&quot;
+									stroke-width&#x3D;&quot;1&quot;
+									fill&#x3D;&quot;none&quot;
+									fill-rule&#x3D;&quot;evenodd&quot;
+								&gt;
+									&lt;g
+										id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+										transform&#x3D;&quot;translate(-862.000000, -263.000000)&quot;
+									&gt;
+										&lt;g id&#x3D;&quot;Page&quot; /&gt;
+										&lt;g
+											id&#x3D;&quot;Group-144&quot;
+											transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+											fill&#x3D;&quot;#D8D8D8&quot;
+										&gt;
+											&lt;rect
+												id&#x3D;&quot;Rectangle&quot;
+												x&#x3D;&quot;76.101833&quot;
+												y&#x3D;&quot;49.3196721&quot;
+												width&#x3D;&quot;103.600815&quot;
+												height&#x3D;&quot;3.84309133&quot;
+												rx&#x3D;&quot;1.92154567&quot;
+											/&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/g&gt;
+							&lt;/svg&gt;
+							&lt;br /&gt;
+							&lt;p i18n&#x3D;&quot;@@custom-receipt-Donor-Email-Id&quot;&gt;Donor Email Id :&lt;/p&gt;
+							&lt;svg
+								xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+								xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+								width&#x3D;&quot;196px&quot;
+								height&#x3D;&quot;7px&quot;
+								viewBox&#x3D;&quot;0 0 196 7&quot;
+								version&#x3D;&quot;1.1&quot;
+							&gt;
+								&lt;title&gt;Rectangle&lt;/title&gt;
+								&lt;g
+									id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+									stroke&#x3D;&quot;none&quot;
+									stroke-width&#x3D;&quot;1&quot;
+									fill&#x3D;&quot;none&quot;
+									fill-rule&#x3D;&quot;evenodd&quot;
+								&gt;
+									&lt;g
+										id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+										transform&#x3D;&quot;translate(-862.000000, -253.000000)&quot;
+									&gt;
+										&lt;g id&#x3D;&quot;Page&quot; /&gt;
+										&lt;g
+											id&#x3D;&quot;Group-144&quot;
+											transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+											fill&#x3D;&quot;#D8D8D8&quot;
+										&gt;
+											&lt;rect
+												id&#x3D;&quot;Rectangle&quot;
+												x&#x3D;&quot;76.101833&quot;
+												y&#x3D;&quot;39.0714286&quot;
+												width&#x3D;&quot;195.050916&quot;
+												height&#x3D;&quot;6.40515222&quot;
+												rx&#x3D;&quot;3.20257611&quot;
+											/&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/g&gt;
+							&lt;/svg&gt;
+							&lt;br /&gt;
+							&lt;p i18n&#x3D;&quot;@@custom-receipt-Received-by&quot;&gt;Received by :&lt;/p&gt;
+							&lt;svg
+								xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+								xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+								width&#x3D;&quot;196px&quot;
+								height&#x3D;&quot;7px&quot;
+								viewBox&#x3D;&quot;0 0 196 7&quot;
+								version&#x3D;&quot;1.1&quot;
+							&gt;
+								&lt;title&gt;Rectangle&lt;/title&gt;
+								&lt;g
+									id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+									stroke&#x3D;&quot;none&quot;
+									stroke-width&#x3D;&quot;1&quot;
+									fill&#x3D;&quot;none&quot;
+									fill-rule&#x3D;&quot;evenodd&quot;
+								&gt;
+									&lt;g
+										id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+										transform&#x3D;&quot;translate(-862.000000, -253.000000)&quot;
+									&gt;
+										&lt;g id&#x3D;&quot;Page&quot; /&gt;
+										&lt;g
+											id&#x3D;&quot;Group-144&quot;
+											transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+											fill&#x3D;&quot;#D8D8D8&quot;
+										&gt;
+											&lt;rect
+												id&#x3D;&quot;Rectangle&quot;
+												x&#x3D;&quot;76.101833&quot;
+												y&#x3D;&quot;39.0714286&quot;
+												width&#x3D;&quot;195.050916&quot;
+												height&#x3D;&quot;6.40515222&quot;
+												rx&#x3D;&quot;3.20257611&quot;
+											/&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/g&gt;
+							&lt;/svg&gt;
+							&lt;br /&gt;
+							&lt;p i18n&#x3D;&quot;@@custom-receipt-Paid-to-bank-account-number&quot;&gt;
+								Paid to bank account Number:
+							&lt;/p&gt;
+							&lt;p style&#x3D;&quot;width: 100%; font-weight: bold&quot;&gt;
+								*************************0282
+							&lt;/p&gt;
+							&lt;p i18n&#x3D;&quot;@@custom-receipt-Paid-to-bank-account-holder&quot;&gt;
+								Paid to bank account Holder:
+							&lt;/p&gt;
+							&lt;svg
+								xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+								xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot;
+								width&#x3D;&quot;196px&quot;
+								height&#x3D;&quot;7px&quot;
+								viewBox&#x3D;&quot;0 0 196 7&quot;
+								version&#x3D;&quot;1.1&quot;
+							&gt;
+								&lt;title&gt;Rectangle&lt;/title&gt;
+								&lt;g
+									id&#x3D;&quot;Version-1-(Desktop-1280px)&quot;
+									stroke&#x3D;&quot;none&quot;
+									stroke-width&#x3D;&quot;1&quot;
+									fill&#x3D;&quot;none&quot;
+									fill-rule&#x3D;&quot;evenodd&quot;
+								&gt;
+									&lt;g
+										id&#x3D;&quot;13.5---Custom-Reciept-&quot;
+										transform&#x3D;&quot;translate(-862.000000, -253.000000)&quot;
+									&gt;
+										&lt;g id&#x3D;&quot;Page&quot; /&gt;
+										&lt;g
+											id&#x3D;&quot;Group-144&quot;
+											transform&#x3D;&quot;translate(786.000000, 214.000000)&quot;
+											fill&#x3D;&quot;#D8D8D8&quot;
+										&gt;
+											&lt;rect
+												id&#x3D;&quot;Rectangle&quot;
+												x&#x3D;&quot;76.101833&quot;
+												y&#x3D;&quot;39.0714286&quot;
+												width&#x3D;&quot;195.050916&quot;
+												height&#x3D;&quot;6.40515222&quot;
+												rx&#x3D;&quot;3.20257611&quot;
+											/&gt;
+										&lt;/g&gt;
+									&lt;/g&gt;
+								&lt;/g&gt;
+							&lt;/svg&gt;
+							&lt;br /&gt;
+							&lt;p style&#x3D;&quot;width: 100%; font-weight: bold&quot;&gt;
+								{{ this.profile }}
+							&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/mat-card-content&gt;
+
+				&lt;img
+					src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/dpr_auto,q_auto/whydonate-staging/platform/visuals/new_design_logo.svg&quot;
+					alt&#x3D;&quot;Profile Image&quot;
+				/&gt;
+				&lt;p&gt;Johan, 763A Amsterdam,1066VH&lt;/p&gt;
+			&lt;/mat-card&gt;
+		&lt;/mat-card&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./receipt.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-page-loader *ngIf="!this.isLoading"></app-page-loader><div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex="100">	<div		fxLayout="column"		fxLayout.xs="row"		fxLayout.sm="column"		fxFlex="50"		fxFlex.xs="100"		fxFlex.sm="100"	>		<mat-card class="mat-elevation-z0">			<mat-card-title-group fxLayout="row" fxLayout.xs="column">				<mat-card-title i18n="@@custom-receipt-customise-receipt-template">					Customise Receipt				</mat-card-title>				<mat-card-subtitle					i18n="@@custom-receipt-add-pesonalized-message-and-branding"				>					Add more information in donation receipt below				</mat-card-subtitle>			</mat-card-title-group>			<mat-card-content>				<mat-form-field					appearance="outline"					id="newInfo"					floatLabel="always"					style="width: 100%"					color="primary"				>					<mat-label i18n="@@email-custom-email-write-message"						>Add more information</mat-label					>					<textarea						matInput						type="text"						#newInfo						placeholder="Add more information for your donation receipt"						[formControl]="newInfoHex"						id="newInfo"					>					</textarea>					<mat-hint align="end"						><span>{{ newInfo.value.length }}</span>						/120						<span i18n="@@email_character_mat_hint">characters</span>					</mat-hint>				</mat-form-field>				<mat-action-row style="border: 0">					<button						(click)="discardChanges()"						mat-button						i18n="@@button_discard_changes"						color="accent"					>						Discard Changes					</button>					<button						mat-flat-button						color="accent"						i18n="@@button_save_apply"						id="newInfoFundraiserSave"						(click)="saveForm(newInfo.value)"						[disabled]="isButtonDisabled || hasEmojiError(newInfoHex.value)"					>						Save and Apply					</button>				</mat-action-row>			</mat-card-content>		</mat-card>	</div>	<mat-divider [vertical]="true"></mat-divider>	<!-- Show preview -->	<div		fxLayout="column"		fxLayout.xs="row"		fxLayout.sm="row"		fxFlex="50"		fxFlex.xs="100"		fxFlex.sm="100"	>		<mat-card class="mat-elevation-z0">			<div fxLayout="row" fxLayoutAlign="space-between center">				<p fxLayout="row" class="mat-body-1">					<img						style="position: relative; bottom: 3px"						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"					/>					<span						fxFlexOffset="8px"						i18n="@@receipt-receipt-custom-receipt-receipt-preview"					>						Receipt Preview					</span>				</p>			</div>			<br />			<!-- Preview Card-->			<!-- <mat-card *ngIf="this.profile == \'\'">				<mat-card-header fxLayoutAlign="center center">					<mat-card-title>						<p fxLayoutAlign="center center">							<img								src="https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/no-selected.svg"							/>						</p>						<div							fxLayoutAlign="center center"							i18n="@@receipt-receipt-custom-receipt-no-preview"						>							No Preview						</div>					</mat-card-title>					<mat-card-subtitle						i18n="							@@receipt-receipt-custom-receipt-select-receipt-to-customize-and-preview"					>						Select receipt to customise and preview					</mat-card-subtitle>				</mat-card-header>			</mat-card> -->			<mat-card>				<mat-card-content>					<div fxLayout="column">						<div fxFlex="50" fxLayout="row">							<svg								xmlns="http://www.w3.org/2000/svg"								xmlns:xlink="http://www.w3.org/1999/xlink"								width="80px"								height="80px"								viewBox="0 0 55 55"								version="1.1"							>								<title>Oval</title>								<g									id="Version-1-(Desktop-1280px)"									stroke="none"									stroke-width="1"									fill="none"									fill-rule="evenodd"								>									<g										id="13.5---Custom-Reciept-"										transform="translate(-807.000000, -237.000000)"									>										<g id="Page" />										<g											id="Group-144"											transform="translate(786.000000, 214.000000)"											fill="#D8D8D8"											stroke="#979797"											stroke-width="0.640515222"										>											<ellipse												id="Oval"												cx="45.0855397"												cy="47.7183841"												rx="23.6614124"												ry="23.6990632"											/>										</g>									</g>								</g>							</svg>							<div fxFlex="50" fxLayout="column">								<svg									xmlns="http://www.w3.org/2000/svg"									xmlns:xlink="http://www.w3.org/1999/xlink"									width="206px"									height="15px"									viewBox="0 0 196 7"									version="1.1"								>									<title>Rectangle</title>									<g										id="Version-1-(Desktop-1280px)"										stroke="none"										stroke-width="1"										fill="none"										fill-rule="evenodd"									>										<g											id="13.5---Custom-Reciept-"											transform="translate(-862.000000, -253.000000)"										>											<g id="Page" />											<g												id="Group-144"												transform="translate(786.000000, 214.000000)"												fill="#D8D8D8"											>												<rect													id="Rectangle"													x="76.101833"													y="39.0714286"													width="195.050916"													height="6.40515222"													rx="3.20257611"												/>											</g>										</g>									</g>								</svg>								<svg									xmlns="http://www.w3.org/2000/svg"									xmlns:xlink="http://www.w3.org/1999/xlink"									width="169px"									height="8px"									viewBox="0 0 104 5"									version="1.1"								>									<title>Rectangle 2</title>									<g										id="Version-1-(Desktop-1280px)"										stroke="none"										stroke-width="1"										fill="none"										fill-rule="evenodd"									>										<g											id="13.5---Custom-Reciept-"											transform="translate(-862.000000, -263.000000)"										>											<g id="Page" />											<g												id="Group-144"												transform="translate(786.000000, 214.000000)"												fill="#D8D8D8"											>												<rect													id="Rectangle"													x="76.101833"													y="49.3196721"													width="103.600815"													height="3.84309133"													rx="1.92154567"												/>											</g>										</g>									</g>								</svg>							</div>						</div>						<br /><br />						<mat-card-title i18n="@@custom-receipt-Donation-Amount">							Donation Amount : €50.00						</mat-card-title>						<mat-divider i18n="@@fundraiserCreated_divider"> </mat-divider>						<br />						<div fxLayout="column">							<p i18n="@@custom-receipt-Donated-By">Donated By:</p>							<svg								xmlns="http://www.w3.org/2000/svg"								xmlns:xlink="http://www.w3.org/1999/xlink"								width="196px"								height="7px"								viewBox="0 0 196 7"								version="1.1"							>								<title>Rectangle</title>								<g									id="Version-1-(Desktop-1280px)"									stroke="none"									stroke-width="1"									fill="none"									fill-rule="evenodd"								>									<g										id="13.5---Custom-Reciept-"										transform="translate(-862.000000, -253.000000)"									>										<g id="Page" />										<g											id="Group-144"											transform="translate(786.000000, 214.000000)"											fill="#D8D8D8"										>											<rect												id="Rectangle"												x="76.101833"												y="39.0714286"												width="195.050916"												height="6.40515222"												rx="3.20257611"											/>										</g>									</g>								</g>							</svg>							<svg								xmlns="http://www.w3.org/2000/svg"								xmlns:xlink="http://www.w3.org/1999/xlink"								width="104px"								height="5px"								viewBox="0 0 104 5"								version="1.1"							>								<title>Rectangle 2</title>								<g									id="Version-1-(Desktop-1280px)"									stroke="none"									stroke-width="1"									fill="none"									fill-rule="evenodd"								>									<g										id="13.5---Custom-Reciept-"										transform="translate(-862.000000, -263.000000)"									>										<g id="Page" />										<g											id="Group-144"											transform="translate(786.000000, 214.000000)"											fill="#D8D8D8"										>											<rect												id="Rectangle"												x="76.101833"												y="49.3196721"												width="103.600815"												height="3.84309133"												rx="1.92154567"											/>										</g>									</g>								</g>							</svg>							<br />							<p i18n="@@custom-receipt-Donor-Email-Id">Donor Email Id :</p>							<svg								xmlns="http://www.w3.org/2000/svg"								xmlns:xlink="http://www.w3.org/1999/xlink"								width="196px"								height="7px"								viewBox="0 0 196 7"								version="1.1"							>								<title>Rectangle</title>								<g									id="Version-1-(Desktop-1280px)"									stroke="none"									stroke-width="1"									fill="none"									fill-rule="evenodd"								>									<g										id="13.5---Custom-Reciept-"										transform="translate(-862.000000, -253.000000)"									>										<g id="Page" />										<g											id="Group-144"											transform="translate(786.000000, 214.000000)"											fill="#D8D8D8"										>											<rect												id="Rectangle"												x="76.101833"												y="39.0714286"												width="195.050916"												height="6.40515222"												rx="3.20257611"											/>										</g>									</g>								</g>							</svg>							<br />							<p i18n="@@custom-receipt-Received-by">Received by :</p>							<svg								xmlns="http://www.w3.org/2000/svg"								xmlns:xlink="http://www.w3.org/1999/xlink"								width="196px"								height="7px"								viewBox="0 0 196 7"								version="1.1"							>								<title>Rectangle</title>								<g									id="Version-1-(Desktop-1280px)"									stroke="none"									stroke-width="1"									fill="none"									fill-rule="evenodd"								>									<g										id="13.5---Custom-Reciept-"										transform="translate(-862.000000, -253.000000)"									>										<g id="Page" />										<g											id="Group-144"											transform="translate(786.000000, 214.000000)"											fill="#D8D8D8"										>											<rect												id="Rectangle"												x="76.101833"												y="39.0714286"												width="195.050916"												height="6.40515222"												rx="3.20257611"											/>										</g>									</g>								</g>							</svg>							<br />							<p i18n="@@custom-receipt-Paid-to-bank-account-number">								Paid to bank account Number:							</p>							<p style="width: 100%; font-weight: bold">								*************************0282							</p>							<p i18n="@@custom-receipt-Paid-to-bank-account-holder">								Paid to bank account Holder:							</p>							<svg								xmlns="http://www.w3.org/2000/svg"								xmlns:xlink="http://www.w3.org/1999/xlink"								width="196px"								height="7px"								viewBox="0 0 196 7"								version="1.1"							>								<title>Rectangle</title>								<g									id="Version-1-(Desktop-1280px)"									stroke="none"									stroke-width="1"									fill="none"									fill-rule="evenodd"								>									<g										id="13.5---Custom-Reciept-"										transform="translate(-862.000000, -253.000000)"									>										<g id="Page" />										<g											id="Group-144"											transform="translate(786.000000, 214.000000)"											fill="#D8D8D8"										>											<rect												id="Rectangle"												x="76.101833"												y="39.0714286"												width="195.050916"												height="6.40515222"												rx="3.20257611"											/>										</g>									</g>								</g>							</svg>							<br />							<p style="width: 100%; font-weight: bold">								{{ this.profile }}							</p>						</div>					</div>				</mat-card-content>				<img					src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,q_auto/whydonate-staging/platform/visuals/new_design_logo.svg"					alt="Profile Image"				/>				<p>Johan, 763A Amsterdam,1066VH</p>			</mat-card>		</mat-card>	</div></div></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'ReceiptComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReceiptComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

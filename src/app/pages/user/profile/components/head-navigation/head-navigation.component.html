@@ -1,0 +1,60 @@
+<mat-card class="mat-elevation-z0" fxShow.lt-md fxHide>
+	<mat-card-header>
+		<!-- Profile image -->
+		<img
+			*ngIf="profileImage"
+			mat-card-avatar
+			[src]="profileImage"
+			i18n="@@profile_image_alt_description"
+			alt="This is the profile image"
+		/>
+
+		<!-- Profile name -->
+		<mat-card-title>{{ profileName }}</mat-card-title>
+		<mat-card-subtitle i18n="@@profile_edit_your_name_avater"
+			>Edit your name, avatar, etc.</mat-card-subtitle
+		>
+	</mat-card-header>
+</mat-card>
+
+<!-- Navigation -->
+<div *ngIf="!this.profileLoader" fxShow.lt-md fxHide>
+	<mat-accordion>
+		<mat-expansion-panel
+			(opened)="panelOpenState = true"
+			(closed)="panelOpenState = false"
+		>
+			<mat-expansion-panel-header>
+				<mat-panel-title>{{ selectedRouteName }}</mat-panel-title>
+			</mat-expansion-panel-header>
+
+			<mat-panel-description>
+				<mat-selection-list [multiple]="false" fxLayout="row wrap">
+					<mat-list-option
+						color="primary"
+						*ngFor="let item of profile_routes"
+						[selected]="routeSelected == item.route"
+						[routerLink]="['/profile/', item.route]"
+						[routerLinkActive]="['is-active']"
+						checkboxPosition="before"
+					>
+						<div mat-line>{{ item.name }}</div>
+						<mat-icon
+							mat-list-icon
+							color="accent"
+							[style.display]="routeSelected == item.route ? 'auto' : 'none'"
+							>keyboard_arrow_right</mat-icon
+						>
+						<mat-divider style="width: 100%"></mat-divider>
+					</mat-list-option>
+				</mat-selection-list>
+				<!-- Show spinner if fetching data -->
+			</mat-panel-description>
+		</mat-expansion-panel>
+	</mat-accordion>
+</div>
+<div *ngIf="this.profileLoader">
+	<div fxLayoutAlign="center center">
+		<app-page-loader></app-page-loader>
+	</div>
+</div>

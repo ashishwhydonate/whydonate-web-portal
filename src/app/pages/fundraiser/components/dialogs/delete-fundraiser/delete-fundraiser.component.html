@@ -1,0 +1,33 @@
+<h2 mat-dialog-title i18n="@@button_deleteFundraiser">Delete fundraiser</h2>
+<mat-dialog-content>
+	<p i18n="@@deleteFundraiser_areYouSureToDelete_title">
+		Are you sure you want to delete this fundraiser permanently?
+	</p>
+	<p i18n="@@deleteFundraiser_youWillNotBeAbleToRetrieve_title">
+		You will not be able to retrieve the data.
+	</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button
+		mat-button
+		color="accent"
+		(click)="onNoClick()"
+		i18n="@@button_cancel"
+		id="button_deleteFundraiser_cancel"
+	>
+		Cancel
+	</button>
+	<button
+		id="button_deleteFundraiser_confirm"
+		[disabled]="isLoading"
+		mat-flat-button
+		color="warn"
+		(click)="this.deleteFundraiser()"
+	>
+		<span i18n="@@button_delete">Delete</span>
+		<mat-icon *ngIf="isLoading" class="m-l-xs">
+			<mat-spinner color="warn" diameter="20" i18n="@@deleteFundraiser_spinner">
+			</mat-spinner>
+		</mat-icon>
+	</button>
+</mat-dialog-actions>

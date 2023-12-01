@@ -1,0 +1,156 @@
+<!--  Toggle switch visible only to the Admin  -->
+<div *ngIf="isLoggedInUserAdmin && !hideToggleSwitch">
+	<mat-slide-toggle
+		[(ngModel)]="showDonorList"
+		(change)="onToggleChange($event)"
+		id="hide_donor_list_toggle"
+		color="primary"
+	>
+		<span i18n="@@donor_list_show_donation_received"
+			>Show Donation Recieved</span
+		>
+	</mat-slide-toggle>
+	<img
+		style="position: relative; left: 10px; top: 3px"
+		src="https://res.cloudinary.com/whydonate/image/upload/v1671475989/whydonate-production/platform/svg-icons/infoDark.svg"
+		matTooltip="{{ this.tooltip }}"
+	/>
+</div>
+<br />
+<div *ngIf="showDonorList">
+	<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+		<div
+			fxLayout="column"
+			fxFlex="100%"
+			fxLayoutAlign="center center"
+			fxLayoutGap="5%"
+		>
+			<div fxLayout="row" fxFill fxLayoutAlign="center center" fxLayoutGap="5%">
+				<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+					<h2>
+						<span i18n="@@donor_list_short_donation_heading">Donations</span
+						>&nbsp;
+						<ng-template
+							id="donation_count"
+							[ngIf]="!isDonorListLoading"
+							[ngIfElse]="spinner"
+						>
+							({{ this.count }})
+						</ng-template>
+					</h2>
+				</div>
+				<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center end">
+					<a
+						id="short_donor_list_view_all"
+						i18n="@@donorListShort_viewAll_button"
+						mat-button
+						color="accent"
+						(click)="viewFullDonorList()"
+					>
+						View All
+					</a>
+				</div>
+			</div>
+
+			<!--SINGLE DONOR ROW-->
+			<div
+				fxLayout="column"
+				class="p-b-l donor-list-small"
+				[style.border-bottom]="'1px solid #ddd'"
+				[style.last-child]="'0px'"
+				fxFill
+				fxLayoutGap="5%"
+				*ngFor="let donor of this.donarData; let i = index"
+			>
+				<div fxLayout="row">
+					<!--Avatar-->
+					<div
+						fxLayout="column"
+						fxFlex="14%"
+						fxFlex.xs="20%"
+						fxLayoutAlign="start start"
+					>
+						<img
+							mat-card-avatar
+							src="https://res.cloudinary.com/whydonate/image/upload/v1666173321/whydonate-production/platform/svg-icons/donor.svg"
+						/>
+					</div>
+					<!--Name and Message-->
+					<div
+						fxLayout="column"
+						fxFlex="70%"
+						fxLayoutAlign="center start"
+						ngClass.sm="p-l-s"
+						ngClass.md="p-l-s"
+					>
+						<div id="donationName">
+							<strong> {{ donor?.name }} </strong>
+						</div>
+						<div>
+							{{ donor?.message }}
+						</div>
+					</div>
+					<!--Amount-->
+					<div fxLayout="column" fxFlex="15%" fxLayoutAlign="center end">
+						<span class="mat-option">
+							{{
+								donor?.amount | currency : donor?.symbol : 'symbol' : '1.0-0'
+							}}
+						</span>
+					</div>
+				</div>
+
+				<div fxFlex="100%" fxLayout="row">
+					<div fxFlex="14%"></div>
+					<div fxLayout="row" fxFlex="100%">
+						<div
+							fxLayout="row"
+							fxLayoutAlign="start center"
+							fxFlex="50%"
+							fxFlex.xs="80%"
+						>
+							<div
+								*ngIf="donor?.reply_message && donor?.reply_message?.length > 1"
+							>
+								<img
+									*ngIf="donor?.reply_message"
+									width="30"
+									height="30"
+									loading="lazy"
+									src="https://res.cloudinary.com/whydonate/image/upload/v1666173321/whydonate-production/platform/svg-icons/donor_small.svg"
+								/>
+							</div>
+							<div class="m-l-xs">
+								{{ donor?.reply_message }}
+							</div>
+						</div>
+						<div fxLayoutAlign="center end">
+							<a
+								[ngStyle]="{
+									marginLeft: _media.isActive('xs') === true ? '20%' : '110px'
+								}"
+								i18n="@@button_reply"
+								mat-button
+								color="accent"
+								*ngIf="
+									(isLoggedInUserAdmin && donor?.reply_message?.length <= 1) ||
+									(isLoggedInUserAdmin && !donor?.reply_message)
+								"
+								(click)="openDialog(i)"
+							>
+								Reply
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Spinner-->
+<ng-template #spinner>
+	<mat-icon>
+		<mat-spinner color="primary" diameter="20"> </mat-spinner>
+	</mat-icon>
+</ng-template>

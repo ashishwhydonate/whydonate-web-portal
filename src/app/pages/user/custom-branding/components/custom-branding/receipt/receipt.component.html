@@ -1,0 +1,476 @@
+<app-page-loader *ngIf="!this.isLoading"></app-page-loader>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex="100">
+	<div
+		fxLayout="column"
+		fxLayout.xs="row"
+		fxLayout.sm="column"
+		fxFlex="50"
+		fxFlex.xs="100"
+		fxFlex.sm="100"
+	>
+		<mat-card class="mat-elevation-z0">
+			<mat-card-title-group fxLayout="row" fxLayout.xs="column">
+				<mat-card-title i18n="@@custom-receipt-customise-receipt-template">
+					Customise Receipt
+				</mat-card-title>
+				<mat-card-subtitle
+					i18n="@@custom-receipt-add-pesonalized-message-and-branding"
+				>
+					Add more information in donation receipt below
+				</mat-card-subtitle>
+			</mat-card-title-group>
+			<mat-card-content>
+				<mat-form-field
+					appearance="outline"
+					id="newInfo"
+					floatLabel="always"
+					style="width: 100%"
+					color="primary"
+				>
+					<mat-label i18n="@@email-custom-email-write-message"
+						>Add more information</mat-label
+					>
+					<textarea
+						matInput
+						type="text"
+						#newInfo
+						placeholder="Add more information for your donation receipt"
+						[formControl]="newInfoHex"
+						id="newInfo"
+					>
+					</textarea>
+					<mat-hint align="end"
+						><span>{{ newInfo?.value?.length }}</span>
+						/120
+						<span i18n="@@email_character_mat_hint">characters</span>
+					</mat-hint>
+				</mat-form-field>
+
+				<mat-action-row style="border: 0">
+					<button
+						(click)="discardChanges()"
+						mat-button
+						i18n="@@button_discard_changes"
+						color="accent"
+					>
+						Discard Changes
+					</button>
+					<button
+						mat-flat-button
+						color="accent"
+						i18n="@@button_save_apply"
+						id="newInfoFundraiserSave"
+						(click)="saveForm(newInfo.value)"
+						[disabled]="isButtonDisabled"
+					>
+						Save and Apply
+					</button>
+				</mat-action-row>
+			</mat-card-content>
+		</mat-card>
+	</div>
+
+	<mat-divider [vertical]="true"></mat-divider>
+
+	<!-- Show preview -->
+	<div
+		fxLayout="column"
+		fxLayout.xs="row"
+		fxLayout.sm="row"
+		fxFlex="50"
+		fxFlex.xs="100"
+		fxFlex.sm="100"
+	>
+		<mat-card class="mat-elevation-z0">
+			<div fxLayout="row" fxLayoutAlign="space-between center">
+				<p fxLayout="row" class="mat-body-1">
+					<img
+						style="position: relative; bottom: 3px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+					/>
+					<span
+						fxFlexOffset="8px"
+						i18n="@@receipt-receipt-custom-receipt-receipt-preview"
+					>
+						Receipt Preview
+					</span>
+				</p>
+			</div>
+			<br />
+			<!-- Preview Card-->
+			<!-- <mat-card *ngIf="this.profile == ''">
+				<mat-card-header fxLayoutAlign="center center">
+					<mat-card-title>
+						<p fxLayoutAlign="center center">
+							<img
+								src="https://res.cloudinary.com/whydonate/image/upload/v1666173333/whydonate-production/platform/svg-icons/no-selected.svg"
+							/>
+						</p>
+						<div
+							fxLayoutAlign="center center"
+							i18n="@@receipt-receipt-custom-receipt-no-preview"
+						>
+							No Preview
+						</div>
+					</mat-card-title>
+					<mat-card-subtitle
+						i18n="
+							@@receipt-receipt-custom-receipt-select-receipt-to-customize-and-preview"
+					>
+						Select receipt to customise and preview
+					</mat-card-subtitle>
+				</mat-card-header>
+			</mat-card> -->
+			<mat-card>
+				<mat-card-content>
+					<div fxLayout="column">
+						<div fxFlex="50" fxLayout="row">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								width="80px"
+								height="80px"
+								viewBox="0 0 55 55"
+								version="1.1"
+							>
+								<title>Oval</title>
+								<g
+									id="Version-1-(Desktop-1280px)"
+									stroke="none"
+									stroke-width="1"
+									fill="none"
+									fill-rule="evenodd"
+								>
+									<g
+										id="13.5---Custom-Reciept-"
+										transform="translate(-807.000000, -237.000000)"
+									>
+										<g id="Page" />
+										<g
+											id="Group-144"
+											transform="translate(786.000000, 214.000000)"
+											fill="#D8D8D8"
+											stroke="#979797"
+											stroke-width="0.640515222"
+										>
+											<ellipse
+												id="Oval"
+												cx="45.0855397"
+												cy="47.7183841"
+												rx="23.6614124"
+												ry="23.6990632"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<div fxFlex="50" fxLayout="column">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+									width="206px"
+									height="15px"
+									viewBox="0 0 196 7"
+									version="1.1"
+								>
+									<title>Rectangle</title>
+									<g
+										id="Version-1-(Desktop-1280px)"
+										stroke="none"
+										stroke-width="1"
+										fill="none"
+										fill-rule="evenodd"
+									>
+										<g
+											id="13.5---Custom-Reciept-"
+											transform="translate(-862.000000, -253.000000)"
+										>
+											<g id="Page" />
+											<g
+												id="Group-144"
+												transform="translate(786.000000, 214.000000)"
+												fill="#D8D8D8"
+											>
+												<rect
+													id="Rectangle"
+													x="76.101833"
+													y="39.0714286"
+													width="195.050916"
+													height="6.40515222"
+													rx="3.20257611"
+												/>
+											</g>
+										</g>
+									</g>
+								</svg>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+									width="169px"
+									height="8px"
+									viewBox="0 0 104 5"
+									version="1.1"
+								>
+									<title>Rectangle 2</title>
+									<g
+										id="Version-1-(Desktop-1280px)"
+										stroke="none"
+										stroke-width="1"
+										fill="none"
+										fill-rule="evenodd"
+									>
+										<g
+											id="13.5---Custom-Reciept-"
+											transform="translate(-862.000000, -263.000000)"
+										>
+											<g id="Page" />
+											<g
+												id="Group-144"
+												transform="translate(786.000000, 214.000000)"
+												fill="#D8D8D8"
+											>
+												<rect
+													id="Rectangle"
+													x="76.101833"
+													y="49.3196721"
+													width="103.600815"
+													height="3.84309133"
+													rx="1.92154567"
+												/>
+											</g>
+										</g>
+									</g>
+								</svg>
+							</div>
+						</div>
+						<br /><br />
+
+						<mat-card-title i18n="@@custom-receipt-Donation-Amount">
+							Donation Amount : €50.00
+						</mat-card-title>
+						<mat-divider i18n="@@fundraiserCreated_divider"> </mat-divider>
+						<br />
+						<div fxLayout="column">
+							<p i18n="@@custom-receipt-Donated-By">Donated By:</p>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								width="196px"
+								height="7px"
+								viewBox="0 0 196 7"
+								version="1.1"
+							>
+								<title>Rectangle</title>
+								<g
+									id="Version-1-(Desktop-1280px)"
+									stroke="none"
+									stroke-width="1"
+									fill="none"
+									fill-rule="evenodd"
+								>
+									<g
+										id="13.5---Custom-Reciept-"
+										transform="translate(-862.000000, -253.000000)"
+									>
+										<g id="Page" />
+										<g
+											id="Group-144"
+											transform="translate(786.000000, 214.000000)"
+											fill="#D8D8D8"
+										>
+											<rect
+												id="Rectangle"
+												x="76.101833"
+												y="39.0714286"
+												width="195.050916"
+												height="6.40515222"
+												rx="3.20257611"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								width="104px"
+								height="5px"
+								viewBox="0 0 104 5"
+								version="1.1"
+							>
+								<title>Rectangle 2</title>
+								<g
+									id="Version-1-(Desktop-1280px)"
+									stroke="none"
+									stroke-width="1"
+									fill="none"
+									fill-rule="evenodd"
+								>
+									<g
+										id="13.5---Custom-Reciept-"
+										transform="translate(-862.000000, -263.000000)"
+									>
+										<g id="Page" />
+										<g
+											id="Group-144"
+											transform="translate(786.000000, 214.000000)"
+											fill="#D8D8D8"
+										>
+											<rect
+												id="Rectangle"
+												x="76.101833"
+												y="49.3196721"
+												width="103.600815"
+												height="3.84309133"
+												rx="1.92154567"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<br />
+							<p i18n="@@custom-receipt-Donor-Email-Id">Donor Email Id :</p>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								width="196px"
+								height="7px"
+								viewBox="0 0 196 7"
+								version="1.1"
+							>
+								<title>Rectangle</title>
+								<g
+									id="Version-1-(Desktop-1280px)"
+									stroke="none"
+									stroke-width="1"
+									fill="none"
+									fill-rule="evenodd"
+								>
+									<g
+										id="13.5---Custom-Reciept-"
+										transform="translate(-862.000000, -253.000000)"
+									>
+										<g id="Page" />
+										<g
+											id="Group-144"
+											transform="translate(786.000000, 214.000000)"
+											fill="#D8D8D8"
+										>
+											<rect
+												id="Rectangle"
+												x="76.101833"
+												y="39.0714286"
+												width="195.050916"
+												height="6.40515222"
+												rx="3.20257611"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<br />
+							<p i18n="@@custom-receipt-Received-by">Received by :</p>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								width="196px"
+								height="7px"
+								viewBox="0 0 196 7"
+								version="1.1"
+							>
+								<title>Rectangle</title>
+								<g
+									id="Version-1-(Desktop-1280px)"
+									stroke="none"
+									stroke-width="1"
+									fill="none"
+									fill-rule="evenodd"
+								>
+									<g
+										id="13.5---Custom-Reciept-"
+										transform="translate(-862.000000, -253.000000)"
+									>
+										<g id="Page" />
+										<g
+											id="Group-144"
+											transform="translate(786.000000, 214.000000)"
+											fill="#D8D8D8"
+										>
+											<rect
+												id="Rectangle"
+												x="76.101833"
+												y="39.0714286"
+												width="195.050916"
+												height="6.40515222"
+												rx="3.20257611"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<br />
+							<p i18n="@@custom-receipt-Paid-to-bank-account-number">
+								Paid to bank account Number:
+							</p>
+							<p style="width: 100%; font-weight: bold">
+								*************************0282
+							</p>
+							<p i18n="@@custom-receipt-Paid-to-bank-account-holder">
+								Paid to bank account Holder:
+							</p>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								width="196px"
+								height="7px"
+								viewBox="0 0 196 7"
+								version="1.1"
+							>
+								<title>Rectangle</title>
+								<g
+									id="Version-1-(Desktop-1280px)"
+									stroke="none"
+									stroke-width="1"
+									fill="none"
+									fill-rule="evenodd"
+								>
+									<g
+										id="13.5---Custom-Reciept-"
+										transform="translate(-862.000000, -253.000000)"
+									>
+										<g id="Page" />
+										<g
+											id="Group-144"
+											transform="translate(786.000000, 214.000000)"
+											fill="#D8D8D8"
+										>
+											<rect
+												id="Rectangle"
+												x="76.101833"
+												y="39.0714286"
+												width="195.050916"
+												height="6.40515222"
+												rx="3.20257611"
+											/>
+										</g>
+									</g>
+								</g>
+							</svg>
+							<br />
+							<p style="width: 100%; font-weight: bold">
+								{{ this.profile }}
+							</p>
+						</div>
+					</div>
+				</mat-card-content>
+
+				<img
+					src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,q_auto/whydonate-staging/platform/visuals/new_design_logo.svg"
+					alt="Profile Image"
+				/>
+				<p>Johan, 763A Amsterdam,1066VH</p>
+			</mat-card>
+		</mat-card>
+	</div>
+</div>

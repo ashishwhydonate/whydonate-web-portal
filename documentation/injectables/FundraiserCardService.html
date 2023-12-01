@@ -1,0 +1,3130 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >FundraiserCardService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/services/fundraiser-card.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_defaultBackgroundImage" >_defaultBackgroundImage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_defaultProfileImagae" >_defaultProfileImagae</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_fundraiserCardData" >_fundraiserCardData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#accountService" >accountService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#countDaysLeftToFundraiserEnd" >countDaysLeftToFundraiserEnd</a>
+                            </li>
+                            <li>
+                                <a href="#countDaysLeftToFundraiserEndElasticSearch" >countDaysLeftToFundraiserEndElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#filterFundraiserCardDataList" >filterFundraiserCardDataList</a>
+                            </li>
+                            <li>
+                                <a href="#filterFundraiserCardDataListCustomDonation" >filterFundraiserCardDataListCustomDonation</a>
+                            </li>
+                            <li>
+                                <a href="#filterFundraiserCardDataListElasticSearch" >filterFundraiserCardDataListElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#filterFundraiserCardDataListForMainfundraisers" >filterFundraiserCardDataListForMainfundraisers</a>
+                            </li>
+                            <li>
+                                <a href="#filterFundraiserCardDataListForMyfundraisers" >filterFundraiserCardDataListForMyfundraisers</a>
+                            </li>
+                            <li>
+                                <a href="#fundraiser" >fundraiser</a>
+                            </li>
+                            <li>
+                                <a href="#getBool" >getBool</a>
+                            </li>
+                            <li>
+                                <a href="#getCloudinaryImageFileName" >getCloudinaryImageFileName</a>
+                            </li>
+                            <li>
+                                <a href="#getDateDiff" >getDateDiff</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserBackgroundImage" >getFundraiserBackgroundImage</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserBackgroundImageElasticSearch" >getFundraiserBackgroundImageElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserCardData" >getFundraiserCardData</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserCardDataList" >getFundraiserCardDataList</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserCardDataListElasticSearch" >getFundraiserCardDataListElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserDescription" >getFundraiserDescription</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserDescriptionElasticSearch" >getFundraiserDescriptionElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserTitle" >getFundraiserTitle</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserTitleElasticSearch" >getFundraiserTitleElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#getMyFundraiserBackgroundImage" >getMyFundraiserBackgroundImage</a>
+                            </li>
+                            <li>
+                                <a href="#getObjWithData" >getObjWithData</a>
+                            </li>
+                            <li>
+                                <a href="#getSourceFromIndexList" >getSourceFromIndexList</a>
+                            </li>
+                            <li>
+                                <a href="#getTranslatedText" >getTranslatedText</a>
+                            </li>
+                            <li>
+                                <a href="#getTranslatedTextElasticSearch" >getTranslatedTextElasticSearch</a>
+                            </li>
+                            <li>
+                                <a href="#isChildFundraiser" >isChildFundraiser</a>
+                            </li>
+                            <li>
+                                <a href="#isFundraiserEndDateUnlimited" >isFundraiserEndDateUnlimited</a>
+                            </li>
+                            <li>
+                                <a href="#setFundraiserCardData" >setFundraiserCardData</a>
+                            </li>
+                            <li>
+                                <a href="#trimDescription" >trimDescription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>accountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countDaysLeftToFundraiserEnd"></a>
+                    <span class="name">
+                        <span ><b>countDaysLeftToFundraiserEnd</b></span>
+                        <a href="#countDaysLeftToFundraiserEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>countDaysLeftToFundraiserEnd(_endDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="468"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:468</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_endDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countDaysLeftToFundraiserEndElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>countDaysLeftToFundraiserEndElasticSearch</b></span>
+                        <a href="#countDaysLeftToFundraiserEndElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>countDaysLeftToFundraiserEndElasticSearch(_endDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="480"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:480</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_endDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFundraiserCardDataList"></a>
+                    <span class="name">
+                        <span ><b>filterFundraiserCardDataList</b></span>
+                        <a href="#filterFundraiserCardDataList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFundraiserCardDataList(sourceList: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: get list of object having fundraiser card data and id, from source list
+PARAM: sourceList
+RETURNS: FundraiserCardDataList
+EXAMPLE:
+source: [
+0:{..fundraiser info..},
+1:{..fundraiser info..}]
+FundraiserCardDataList: [
+0: {id:Number, fundraiserCardData:FundraiserCardData},
+1: {id:Number, fundraiserCardData:FundraiserCardData},
+2: {id:Number, fundraiserCardData:FundraiserCardData}]</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceList</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFundraiserCardDataListCustomDonation"></a>
+                    <span class="name">
+                        <span ><b>filterFundraiserCardDataListCustomDonation</b></span>
+                        <a href="#filterFundraiserCardDataListCustomDonation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFundraiserCardDataListCustomDonation(sourceList: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceList</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFundraiserCardDataListElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>filterFundraiserCardDataListElasticSearch</b></span>
+                        <a href="#filterFundraiserCardDataListElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFundraiserCardDataListElasticSearch(sourceList: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="221"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:221</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: get list of object having fundraiser card data and id, from source list
+PARAM: sourceList
+RETURNS: FundraiserCardDataList
+EXAMPLE:
+source: [
+0:{..fundraiser info..},
+1:{..fundraiser info..}]
+FundraiserCardDataList: [
+0: {id:Number, fundraiserCardData:FundraiserCardData},
+1: {id:Number, fundraiserCardData:FundraiserCardData},
+2: {id:Number, fundraiserCardData:FundraiserCardData}]</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceList</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFundraiserCardDataListForMainfundraisers"></a>
+                    <span class="name">
+                        <span ><b>filterFundraiserCardDataListForMainfundraisers</b></span>
+                        <a href="#filterFundraiserCardDataListForMainfundraisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFundraiserCardDataListForMainfundraisers(sourceList: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="300"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:300</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceList</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFundraiserCardDataListForMyfundraisers"></a>
+                    <span class="name">
+                        <span ><b>filterFundraiserCardDataListForMyfundraisers</b></span>
+                        <a href="#filterFundraiserCardDataListForMyfundraisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFundraiserCardDataListForMyfundraisers(sourceList: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="253"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:253</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceList</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraiser"></a>
+                    <span class="name">
+                        <span ><b>fundraiser</b></span>
+                        <a href="#fundraiser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fundraiser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="536"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:536</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBool"></a>
+                    <span class="name">
+                        <span ><b>getBool</b></span>
+                        <a href="#getBool"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBool(val: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: get list of object having fundraiser card data and id, from source list
+PARAM: sourceList
+RETURNS: FundraiserCardDataList
+EXAMPLE:
+source: [
+0:{..fundraiser info..},
+1:{..fundraiser info..}]
+FundraiserCardDataList: [
+0: {id:Number, fundraiserCardData:FundraiserCardData},
+1: {id:Number, fundraiserCardData:FundraiserCardData},
+2: {id:Number, fundraiserCardData:FundraiserCardData}]</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>val</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCloudinaryImageFileName"></a>
+                    <span class="name">
+                        <span ><b>getCloudinaryImageFileName</b></span>
+                        <a href="#getCloudinaryImageFileName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCloudinaryImageFileName(imageSrc: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="340"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:340</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>INFO: return filename which is at the end &#39;cloudinary_url/FileName&#39;</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>imageSrc</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDateDiff"></a>
+                    <span class="name">
+                        <span ><b>getDateDiff</b></span>
+                        <a href="#getDateDiff"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDateDiff(_startDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, _endDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="490"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:490</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_startDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>_endDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserBackgroundImage"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserBackgroundImage</b></span>
+                        <a href="#getFundraiserBackgroundImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserBackgroundImage(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="367"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:367</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserBackgroundImageElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserBackgroundImageElasticSearch</b></span>
+                        <a href="#getFundraiserBackgroundImageElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserBackgroundImageElasticSearch(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="349"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:349</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserCardData"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserCardData</b></span>
+                        <a href="#getFundraiserCardData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserCardData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/FundraiserCardData.html" target="_self" >FundraiserCardData</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserCardDataList"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserCardDataList</b></span>
+                        <a href="#getFundraiserCardDataList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserCardDataList(ResponseData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: This function performs steps to get list of object having fundraiser card data and id, from Response data.
+functions called are - getSourceFromIndexList and filterFundraiserCardDataList.
+Returned object list of filterFundraiserCardDataList function is the return type of this function
+PARAM: ResponseData Response from Backend having data related to fundraising local
+RETURNS: FundraiserCardDataList</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ResponseData</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserCardDataListElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserCardDataListElasticSearch</b></span>
+                        <a href="#getFundraiserCardDataListElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserCardDataListElasticSearch(ResponseData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: This function performs steps to get list of object having fundraiser card data and id, from Response data.
+functions called are - getSourceFromIndexList and filterFundraiserCardDataList.
+Returned object list of filterFundraiserCardDataList function is the return type of this function
+PARAM: ResponseData Response from Backend having data related to fundraising local
+RETURNS: FundraiserCardDataList</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ResponseData</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserDescription"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserDescription</b></span>
+                        <a href="#getFundraiserDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserDescription(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="399"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:399</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserDescriptionElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserDescriptionElasticSearch</b></span>
+                        <a href="#getFundraiserDescriptionElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserDescriptionElasticSearch(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="409"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:409</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserTitle"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserTitle</b></span>
+                        <a href="#getFundraiserTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserTitle(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="396"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:396</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserTitleElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserTitleElasticSearch</b></span>
+                        <a href="#getFundraiserTitleElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserTitleElasticSearch(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="406"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:406</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Function to fetch correct translation for Title, Descrription for fundraiser card for elastic searxh</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyFundraiserBackgroundImage"></a>
+                    <span class="name">
+                        <span ><b>getMyFundraiserBackgroundImage</b></span>
+                        <a href="#getMyFundraiserBackgroundImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMyFundraiserBackgroundImage(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="388"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:388</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getObjWithData"></a>
+                    <span class="name">
+                        <span ><b>getObjWithData</b></span>
+                        <a href="#getObjWithData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getObjWithData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="513"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:513</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Static data, remove in future</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/FundraiserCardData.html" target="_self" >FundraiserCardData</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSourceFromIndexList"></a>
+                    <span class="name">
+                        <span ><b>getSourceFromIndexList</b></span>
+                        <a href="#getSourceFromIndexList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSourceFromIndexList(results: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:117</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>DESCRIPTION: get list of source from results
+PARAM: results
+RETURNS: source[]
+EXAMPLE: results: [
+0:{ .., .., _source:{..fundraiser info..}, .., ..},
+1:{ .., .., _source:{..fundraiser info..}, .., ..},
+2:{ .., .., _source:{..fundraiser info..}, .., ..}
+]
+source: [0:{..fundraiser info..}, 1:{..fundraiser info..}]</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>results</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTranslatedText"></a>
+                    <span class="name">
+                        <span ><b>getTranslatedText</b></span>
+                        <a href="#getTranslatedText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTranslatedText(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, translationKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="432"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:432</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Function to fetch correct translation for Title, Descrription for fundraiser card</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>translationKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTranslatedTextElasticSearch"></a>
+                    <span class="name">
+                        <span ><b>getTranslatedTextElasticSearch</b></span>
+                        <a href="#getTranslatedTextElasticSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTranslatedTextElasticSearch(source: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, translationKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="412"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:412</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>source</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>translationKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isChildFundraiser"></a>
+                    <span class="name">
+                        <span ><b>isChildFundraiser</b></span>
+                        <a href="#isChildFundraiser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isChildFundraiser(currentFundraiser: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="502"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:502</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>currentFundraiser</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isFundraiserEndDateUnlimited"></a>
+                    <span class="name">
+                        <span ><b>isFundraiserEndDateUnlimited</b></span>
+                        <a href="#isFundraiserEndDateUnlimited"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isFundraiserEndDateUnlimited(_endDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="455"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:455</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_endDate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setFundraiserCardData"></a>
+                    <span class="name">
+                        <span ><b>setFundraiserCardData</b></span>
+                        <a href="#setFundraiserCardData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setFundraiserCardData(_backgroundImage: <a href="../interfaces/Image.html" target="_self">Image</a>, _profileImage: <a href="../interfaces/Image.html" target="_self">Image</a>, _title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _donationReceivedAmount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, _donationTargetAmount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, _donationDaysLeft: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, _showDonationAmount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_backgroundImage</td>
+                                    <td>
+                                                <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_profileImage</td>
+                                    <td>
+                                                <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>{ src: &#x27;&#x27; }</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_title</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_description</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;&#x27;</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_donationReceivedAmount</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_donationTargetAmount</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_donationDaysLeft</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>_showDonationAmount</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trimDescription"></a>
+                    <span class="name">
+                        <span ><b>trimDescription</b></span>
+                        <a href="#trimDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>trimDescription(description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="450"
+                            class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:450</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>INFO function to trim length and add &#39;...&#39; as a postfix to the description, (slice at len 200 if desc len is more then 200, to avoid empty trim)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>description</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_defaultBackgroundImage"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_defaultBackgroundImage</b></span>
+                        <a href="#_defaultBackgroundImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_defaultProfileImagae"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_defaultProfileImagae</b></span>
+                        <a href="#_defaultProfileImagae"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Image.html" target="_self" >Image</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_fundraiserCardData"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_fundraiserCardData</b></span>
+                        <a href="#_fundraiserCardData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/FundraiserCardData.html" target="_self" >FundraiserCardData</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accountService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>accountService</b></span>
+                        <a href="#accountService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/services/fundraiser-card.service.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+
+import { FundraiserCardData } from &#x27;../interfaces/fundraiser-card-interface&#x27;;
+import { FundraiserCardDataCustomDonation } from &#x27;../interfaces/fundraiser-card-interface-custom-donation&#x27;;
+import { Image } from &#x27;../interfaces/image-interface&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+
+@Injectable({
+	providedIn: &#x27;root&#x27;,
+})
+export class FundraiserCardService {
+	public _defaultBackgroundImage: Image;
+	public _defaultProfileImagae: Image;
+	public _fundraiserCardData: FundraiserCardData;
+
+	constructor(private http: HttpClient, public accountService: AccountService) {
+		this._defaultBackgroundImage &#x3D; {
+			src: &#x27;https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto,w_400/whydonate-staging/platform/visuals/fundraiser_default_bg&#x27;,
+			alt: &#x27;fundraiser background image&#x27;,
+		};
+		this._defaultProfileImagae &#x3D; {
+			src: &#x27;https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto,w_100/whydonate-production/platform/visuals/whydonate-logo-vierkant-licht&#x27;,
+			alt: &#x27;profile avatar&#x27;,
+		};
+		/** *Initialising Fundraiser Card Data */
+		this._fundraiserCardData &#x3D; {
+			backgroundImage: this._defaultBackgroundImage,
+			profileImage: this._defaultProfileImagae,
+			title: &#x27;&#x27;,
+			name: &#x27;&#x27;,
+			description: &#x27;&#x27;,
+			donationReceivedAmount: 0,
+			donationTargetAmount: 0,
+			donationDaysLeft: 0,
+			showDonationAmount: true,
+		};
+	}
+
+	getFundraiserCardData(): FundraiserCardData {
+		return this._fundraiserCardData;
+	}
+
+	setFundraiserCardData(
+		_backgroundImage: Image,
+		_profileImage: Image &#x3D; { src: &#x27;&#x27; },
+		_title: string,
+		_name: string,
+		_description: string &#x3D; &#x27;&#x27;,
+		_donationReceivedAmount: number,
+		_donationTargetAmount: number &#x3D; 0,
+		_donationDaysLeft: number,
+		_showDonationAmount: boolean
+	): void {
+		this._fundraiserCardData &#x3D; {
+			backgroundImage: _backgroundImage,
+			profileImage: _profileImage,
+			title: _title,
+			name: _name,
+			description: _description,
+			donationReceivedAmount: _donationReceivedAmount,
+			donationTargetAmount: _donationTargetAmount,
+			donationDaysLeft: _donationDaysLeft,
+			showDonationAmount: _showDonationAmount,
+		};
+	}
+
+	/**
+	 * DESCRIPTION: This function performs steps to get list of object having fundraiser card data and id, from Response data.
+	 * functions called are - getSourceFromIndexList and filterFundraiserCardDataList.
+	 * Returned object list of filterFundraiserCardDataList function is the return type of this function
+	 * PARAM: ResponseData Response from Backend having data related to fundraising local
+	 * RETURNS: FundraiserCardDataList
+	 */
+	getFundraiserCardDataList(ResponseData: any): {
+		slug: string;
+		fundraiserCardData: FundraiserCardData;
+	}[] {
+		let fundraiser_local_index_List &#x3D; ResponseData.results;
+		let sourceList &#x3D; this.getSourceFromIndexList(fundraiser_local_index_List);
+		let fundraiserCardDataList &#x3D; this.filterFundraiserCardDataList(sourceList);
+		return fundraiserCardDataList;
+	}
+	/**
+	 * DESCRIPTION: This function performs steps to get list of object having fundraiser card data and id, from Response data.
+	 * functions called are - getSourceFromIndexList and filterFundraiserCardDataList.
+	 * Returned object list of filterFundraiserCardDataList function is the return type of this function
+	 * PARAM: ResponseData Response from Backend having data related to fundraising local
+	 * RETURNS: FundraiserCardDataList
+	 */
+	getFundraiserCardDataListElasticSearch(ResponseData: any): {
+		slug: string;
+		fundraiserCardData: FundraiserCardData;
+	}[] {
+		let fundraiser_local_index_List &#x3D; ResponseData.results;
+		let sourceList &#x3D; this.getSourceFromIndexList(fundraiser_local_index_List);
+		let fundraiserCardDataList &#x3D;
+			this.filterFundraiserCardDataListElasticSearch(sourceList);
+		return fundraiserCardDataList;
+	}
+
+	/**
+	 * DESCRIPTION: get list of source from results
+	 * PARAM: results
+	 * RETURNS: source[]
+	 * EXAMPLE: results: [
+	 * 0:{ .., .., _source:{..fundraiser info..}, .., ..},
+	 * 1:{ .., .., _source:{..fundraiser info..}, .., ..},
+	 * 2:{ .., .., _source:{..fundraiser info..}, .., ..}
+	 * ]
+	 * source: [0:{..fundraiser info..}, 1:{..fundraiser info..}]
+	 */
+	// getSourceFromIndexList(results: any[]) {
+	// 	return results.map((result: any) &#x3D;&gt; result._source);
+	// }
+	getSourceFromIndexList(results: any[]) {
+		if (!results) {
+			return [];
+		}
+		return results.map((result: any) &#x3D;&gt; result._source);
+	}
+
+	/**
+	 * DESCRIPTION: get list of object having fundraiser card data and id, from source list
+	 * PARAM: sourceList
+	 * RETURNS: FundraiserCardDataList
+	 * EXAMPLE:
+	 * source: [
+	 * 0:{..fundraiser info..},
+	 * 1:{..fundraiser info..}]
+	 * FundraiserCardDataList: [
+	 * 0: {id:Number, fundraiserCardData:FundraiserCardData},
+	 * 1: {id:Number, fundraiserCardData:FundraiserCardData},
+	 * 2: {id:Number, fundraiserCardData:FundraiserCardData}]
+	 */
+	getBool(val: any) {
+		return !!JSON.parse(String(val)?.toLowerCase());
+	}
+
+	filterFundraiserCardDataListCustomDonation(
+		sourceList: any[]
+	): { slug: string; fundraiserCardData: FundraiserCardDataCustomDonation }[] {
+		return sourceList.map((source: any) &#x3D;&gt; {
+			return {
+				slug: source?.slug as string,
+				fundraiserCardData: {
+					backgroundImage: source?.backgroundImage,
+					title: source?.title,
+					name: &#x27;&#x27;,
+					donationReceivedAmount: (parseInt(source?.amount)
+						? parseInt(source?.amount)
+						: 0) as number,
+					donationTargetAmount: source?.amount_target as number,
+					donationDaysLeft: this.countDaysLeftToFundraiserEnd(
+						source?.end_date
+					) as number,
+					showDonationAmount: this.getBool(source?.show_donation_details),
+				},
+			};
+		});
+	}
+	/**
+	 * DESCRIPTION: get list of object having fundraiser card data and id, from source list
+	 * PARAM: sourceList
+	 * RETURNS: FundraiserCardDataList
+	 * EXAMPLE:
+	 * source: [
+	 * 0:{..fundraiser info..},
+	 * 1:{..fundraiser info..}]
+	 * FundraiserCardDataList: [
+	 * 0: {id:Number, fundraiserCardData:FundraiserCardData},
+	 * 1: {id:Number, fundraiserCardData:FundraiserCardData},
+	 * 2: {id:Number, fundraiserCardData:FundraiserCardData}]
+	 */
+	filterFundraiserCardDataList(
+		sourceList: any[]
+	): { slug: string; fundraiserCardData: FundraiserCardData }[] {
+		console.log(&#x27;sourceList&#x27;, sourceList);
+		return sourceList.map((source: any) &#x3D;&gt; {
+			return {
+				slug: source?.slug as string,
+				fundraiserCardData: {
+					backgroundImage: {
+						src: source ? this.getFundraiserBackgroundImage(source) : &#x27;&#x27;,
+						video: source?.background?.video || &#x27;&#x27;,
+					},
+					profileImage: {
+						src: this.getCloudinaryImageFileName(
+							source?.profile?.image as string
+						),
+					},
+					title: this.getFundraiserTitle(source),
+					name: source?.profile?.name as string,
+					description: this.trimDescription(
+						this.getFundraiserDescription(source)
+					),
+					donationReceivedAmount: source?.donation?.amount as number,
+					donationTargetAmount: source?.amount_target as number,
+					donationDaysLeft: this.countDaysLeftToFundraiserEnd(
+						source?.end_date
+					) as number,
+					showDonationAmount: source?.show_donation_details as boolean,
+				},
+			};
+		});
+	}
+	/**
+	 * DESCRIPTION: get list of object having fundraiser card data and id, from source list
+	 * PARAM: sourceList
+	 * RETURNS: FundraiserCardDataList
+	 * EXAMPLE:
+	 * source: [
+	 * 0:{..fundraiser info..},
+	 * 1:{..fundraiser info..}]
+	 * FundraiserCardDataList: [
+	 * 0: {id:Number, fundraiserCardData:FundraiserCardData},
+	 * 1: {id:Number, fundraiserCardData:FundraiserCardData},
+	 * 2: {id:Number, fundraiserCardData:FundraiserCardData}]
+	 */
+	filterFundraiserCardDataListElasticSearch(
+		sourceList: any[]
+	): { slug: string; fundraiserCardData: FundraiserCardData }[] {
+		return sourceList.map((source: any) &#x3D;&gt; {
+			return {
+				slug: source.slug as string,
+				fundraiserCardData: {
+					backgroundImage: {
+						src: this.getFundraiserBackgroundImageElasticSearch(source),
+						video: source.video,
+					},
+					profileImage: {
+						src: this.getCloudinaryImageFileName(
+							source.profile?.background as string
+						),
+					},
+					title: this.getFundraiserTitleElasticSearch(source),
+					name: source?.profile?.name as string,
+					description: this.trimDescription(
+						this.getFundraiserDescriptionElasticSearch(source)
+					),
+					donationReceivedAmount: source?.donation as number,
+					donationTargetAmount: source?.amount_target as number,
+					donationDaysLeft: this.countDaysLeftToFundraiserEndElasticSearch(
+						source?.end_date
+					) as number,
+					showDonationAmount: source?.show_donation_details as boolean,
+				},
+			};
+		});
+	}
+
+	filterFundraiserCardDataListForMyfundraisers(
+		sourceList: any[]
+	): { slug: string; fundraiserCardData: FundraiserCardData }[] {
+		console.log(&#x27;SOURCELIST&#x27;, sourceList);
+		return sourceList?.map((source: any) &#x3D;&gt; {
+			return {
+				slug: source?.slug as string,
+				fundraiserCardData: {
+					backgroundImage: {
+						src: this.getMyFundraiserBackgroundImage(source),
+					},
+					background_video: source?.background_video as string,
+					title:
+						source.title_translated &#x3D;&#x3D;&#x3D; null || &#x27;&#x27;
+							? (source?.title as string)
+							: (source.title_translated as string),
+					name: source?.profile?.name as string,
+					// description: this.trimDescription(source?.description as string),
+					donationReceivedAmount: source?.donations as number,
+					donationTargetAmount: source?.amount_target as number,
+					// donationDaysLeft: this.countDaysLeftToFundraiserEnd(
+					// 	source?.end_date
+					// ) as number,
+					showDonationAmount: true,
+					isChild: this.isChildFundraiser(source),
+					profileImage: {
+						src: this.getCloudinaryImageFileName(
+							source?.profile?.image as string
+						),
+					},
+					parent: {
+						backgroundImage: {
+							src: this.getCloudinaryImageFileName(
+								source?.background as string
+							),
+						},
+						title:
+							source?.parent_title_translated &#x3D;&#x3D;&#x3D; null || &#x27;&#x27;
+								? (source?.parent_title as string)
+								: (source.parent_title_translated as string),
+						name: source?.profile?.name as string,
+					},
+				},
+			};
+		});
+	}
+
+	filterFundraiserCardDataListForMainfundraisers(
+		sourceList: any[]
+	): { slug: string; fundraiserCardData: any }[] {
+		return sourceList?.map((source: any) &#x3D;&gt; {
+			return {
+				slug: source?.slug as string,
+				fundraiserCardData: {
+					backgroundImage: {
+						src: this.getMyFundraiserBackgroundImage(source),
+					},
+					title: source?.title as string,
+					name: source?.profile?.name as string,
+					// description: this.trimDescription(source?.description as string),
+					donationReceivedAmount: source?.donations as number,
+					donationTargetAmount: source?.amount_target as number,
+					// donationDaysLeft: this.countDaysLeftToFundraiserEnd(
+					// 	source?.end_date
+					// ) as number,
+					showDonationAmount: true,
+					isChild: this.isChildFundraiser(source),
+					parent: {
+						backgroundImage: {
+							src: this.getCloudinaryImageFileName(
+								source?.background as string
+							),
+						},
+						profileImage: {
+							src: this.getCloudinaryImageFileName(
+								source?.profile?.image as string
+							),
+						},
+						title: source?.parent_title as string,
+						// name: source?.parent?.profile?.name as string,
+					},
+				},
+			};
+		});
+	}
+
+	/** *INFO: return filename which is at the end &#x27;cloudinary_url/FileName&#x27; */
+	getCloudinaryImageFileName(imageSrc: string) {
+		if (imageSrc) {
+			let pathSplit &#x3D; imageSrc.split(&#x27;/&#x27;);
+			if (pathSplit.length &gt; 1)
+				return pathSplit[pathSplit.length - 1] as string;
+		}
+		return imageSrc;
+	}
+
+	getFundraiserBackgroundImageElasticSearch(source: any) {
+		let backgroundImage;
+		if (source?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(source?.background);
+		}
+		if (source?.parent?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(
+				source?.parent?.background
+			);
+		}
+		if (source?.root_fundraiser?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(
+				source?.root_fundraiser?.background?.image
+			);
+		}
+		return backgroundImage || &#x27;&#x27;;
+	}
+
+	getFundraiserBackgroundImage(source: any) {
+		let backgroundImage;
+
+		if (source?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(
+				source?.background?.image
+			);
+		}
+		if (source?.parent?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(
+				source?.parent?.background?.image
+			);
+		}
+		if (source?.root_fundraiser?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(
+				source?.root_fundraiser?.background?.image
+			);
+		}
+		return backgroundImage || &#x27;&#x27;;
+	}
+
+	getMyFundraiserBackgroundImage(source: any) {
+		let backgroundImage;
+
+		if (source?.background !&#x3D; null) {
+			backgroundImage &#x3D; this.getCloudinaryImageFileName(source?.background);
+		}
+		return backgroundImage || &#x27;&#x27;;
+	}
+	getFundraiserTitle(source: any) {
+		return this.getTranslatedText(source, &#x27;title&#x27;);
+	}
+	getFundraiserDescription(source: any) {
+		return this.getTranslatedText(source, &#x27;appeal&#x27;);
+	}
+	/**
+	 * Function to fetch correct translation for Title, Descrription for fundraiser card for elastic searxh
+	 */
+
+	getFundraiserTitleElasticSearch(source: any) {
+		return this.getTranslatedTextElasticSearch(source, &#x27;title&#x27;);
+	}
+	getFundraiserDescriptionElasticSearch(source: any) {
+		return this.getTranslatedTextElasticSearch(source, &#x27;description&#x27;);
+	}
+	getTranslatedTextElasticSearch(source: any, translationKey: string) {
+		let locale &#x3D; this.accountService.getLocaleId();
+		// if local is same as fundraiser locale then get text directly, else check translation
+		let translationText &#x3D;
+			source?.[&#x60;translation&#x60;]?.[&#x60;${translationKey}_${locale}&#x60;]?.trim() ||
+			source?.[&#x60;${translationKey}&#x60;]?.trim();
+		// If translation found, then return translation, else check parent and then return translation
+		if (translationText) return translationText;
+		else {
+			// if local is same as fundraiser locale then get text directly, else check translation
+			let parentTitleTranslation &#x3D;
+				source?.[&#x27;parent&#x27;]?.[&#x27;parent_translations&#x27;]?.[
+					&#x60;${translationKey}_${locale}&#x60;
+				]?.trim() || source?.[&#x27;parent&#x27;]?.[&#x60;${translationKey}&#x60;]?.trim();
+			return parentTitleTranslation || &#x27;&#x27;;
+		}
+	}
+	/**
+	 * Function to fetch correct translation for Title, Descrription for fundraiser card
+	 */
+	getTranslatedText(source: any, translationKey: string) {
+		let locale &#x3D; this.accountService.getLocaleId();
+		// if local is same as fundraiser locale then get text directly, else check translation
+		let translationText &#x3D;
+			source?.[&#x60;translations&#x60;]?.[&#x60;${translationKey}_${locale}&#x60;]?.trim() ||
+			source?.[&#x60;${translationKey}&#x60;]?.trim();
+		// If translation found, then return translation, else check parent and then return translation
+		if (translationText) return translationText;
+		else {
+			// if local is same as fundraiser locale then get text directly, else check translation
+			let parentTitleTranslation &#x3D;
+				source?.[&#x27;parent&#x27;]?.[&#x27;parent_translations&#x27;]?.[
+					&#x60;${translationKey}_${locale}&#x60;
+				]?.trim() || source?.[&#x27;parent&#x27;]?.[&#x60;${translationKey}&#x60;]?.trim();
+			return parentTitleTranslation || &#x27;&#x27;;
+		}
+	}
+	/** *INFO function to trim length and add &#x27;...&#x27; as a postfix to the description, (slice at len 200 if desc len is more then 200, to avoid empty trim) */
+	trimDescription(description: string): string {
+		if (description?.length &gt; 145)
+			return description.slice(0, 140).trim() + &#x27;...&#x27;;
+		else return description;
+	}
+	isFundraiserEndDateUnlimited(_endDate: string) {
+		if (_endDate !&#x3D; undefined || _endDate !&#x3D; null) {
+			let startDate: Date &#x3D; new Date(new Date().setHours(0, 0, 0, 0));
+			let endDate: Date &#x3D; new Date(new Date(_endDate).setHours(24, 0, 0, 0));
+			if (startDate.getTime() &lt; endDate.getTime()) {
+				let Difference_In_Time &#x3D; endDate.getTime() - startDate.getTime();
+				let Difference_In_Days &#x3D; Difference_In_Time / (1000 * 3600 * 24);
+				let endDateDiff &#x3D; Math.ceil(Difference_In_Days);
+				if (endDateDiff &gt; 15000) return true;
+			}
+		}
+		return false;
+	}
+	countDaysLeftToFundraiserEnd(_endDate: string): number {
+		if (_endDate &#x3D;&#x3D; null) {
+			return -1;
+		}
+		let daysLeft &#x3D; this.getDateDiff(new Date(), new Date(_endDate));
+		console.log(&#x27;DAYSSS&#x27;, daysLeft);
+		if (daysLeft &gt;&#x3D; 0 &amp;&amp; daysLeft &lt; 15000) {
+			return daysLeft;
+		} else {
+			return -1;
+		}
+	}
+	countDaysLeftToFundraiserEndElasticSearch(_endDate: string): number {
+		let daysLeft &#x3D; this.getDateDiff(new Date(), new Date(_endDate));
+
+		if (daysLeft &gt; 0 &amp;&amp; daysLeft &lt; 15000) {
+			return daysLeft;
+		} else {
+			return -1;
+		}
+	}
+
+	getDateDiff(_startDate: Date, _endDate: Date): number {
+		let startDate: Date &#x3D; new Date(_startDate.setHours(0, 0, 0, 0));
+		let endDate: Date &#x3D; new Date(_endDate.setHours(24, 0, 0, 0));
+		if (startDate.getTime() &lt; endDate.getTime()) {
+			let Difference_In_Time &#x3D; endDate.getTime() - startDate.getTime();
+			let Difference_In_Days &#x3D; Difference_In_Time / (1000 * 3600 * 24);
+			return Math.ceil(Difference_In_Days);
+		} else {
+			return 0;
+		}
+	}
+	// Check If the fundraiser is Child or Parent
+	isChildFundraiser(currentFundraiser: any) {
+		if (
+			currentFundraiser.parent_title !&#x3D; null &amp;&amp;
+			Object.keys(currentFundraiser.parent_title).length &gt; 0
+		) {
+			return true;
+		}
+		return false;
+	}
+
+	/** *Static data, remove in future */
+	getObjWithData(): FundraiserCardData {
+		/** *NOTE: temporary static data */
+		return {
+			backgroundImage: {
+				src: &#x27;https://res.cloudinary.com/whydonate/image/upload/whydonate-production/user/fundraiser-background/ea74346e-c609-11eb-9ceb-51019c7614b5_vzl3jh&#x27;,
+				alt: &#x27;fundraiser background image&#x27;,
+			},
+			profileImage: {
+				src: &#x27;https://res.cloudinary.com/whydonate/image/upload/whydonate-production/user/profile/827a690e-1c41-11eb-8d04-6bef809e0ab9_s1u9a2&#x27;,
+				alt: &#x27;profile avatar image&#x27;,
+			},
+			title: &#x27;Team Semmy goes Alpenbrevet voor Stichting Semmy&#x27;,
+			name: &#x27;John Emmerik&#x27;,
+			description: this.trimDescription(
+				&#x60;Onze hulp is nog steeds broodnodig om ervoor te zorgen dat onderzoek naar hersenstamkanker, de meest dodelijke vorm van kanker bij kinderen, door kan gaan. Stichting Semmy financiert onderzoek naar deze ziekte in Prinses Maxima Centrum Utrecht, Erasmus Medisch Centrun Rotterdam, en Universitair Ziekenhuis Antwerpen. In de Corona tijd is er nauwelijks geld binnengekomen maar zijn wel de verplichtingen jegens de ziekenhuizen voldaan. Snel extra geld is dus hard nodig. Een groep fietsvrienden, waar ik ook bij hoor, gaat nu de uitdaging aan om 4 september de fameuze Alpenbrevet tocht te fietsen. We hebben gekozen voor de Goldtour.&#x60;
+			),
+			donationReceivedAmount: 23505,
+			donationTargetAmount: 80000,
+			donationDaysLeft: 10,
+			showDonationAmount: true,
+		};
+	}
+
+	fundraiser() {
+		let API_URL &#x3D; environment.apiUrl;
+		return this.http.get(API_URL + &#x27;project/fundraising/local/popular/&#x27;);
+	}
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'FundraiserCardService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

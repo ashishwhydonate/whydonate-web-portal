@@ -1,0 +1,838 @@
+<app-page-loader *ngIf="this.isLoading"></app-page-loader>
+<form [formGroup]="this.createFundraiserForm">
+	<div
+		*ngIf="!this.isLoading"
+		ngClass="p-xxl"
+		ngClass.sm="p-m"
+		ngClass.xs="p-s"
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayoutAlign="center start"
+		fxLayoutGap="5%"
+	>
+		<div
+			fxFlex="100%"
+			fxFlex.sm="65%"
+			fxFlex.xs="90%"
+			fxLayout="column"
+			fxLayoutAlign="start center"
+			fxLayoutGap="3%"
+		>
+			<!--Title-->
+			<div fxFill fxLayout="row" fxLayoutAlign="center center">
+				<div fxFill fxLayout="column" fxLayoutAlign="center center">
+					<h3 class="mat-h3" i18n="@@createFundraiser_heading_label">
+						Create Fundraiser
+					</h3>
+				</div>
+			</div>
+			<mat-card class="mat-elevation-z1" ngClass.lt-sm="w-100" ngClass="w-0">
+				<mat-stepper>
+					<!--FIRST STEP FUNDRAISER DETAILS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<mat-step [stepControl]="this.createFundraiserForm">
+						<ng-template matStepLabel
+							><span i18n="@@create_fundraiser_about_fundraiser_title"
+								>About Fundraiser</span
+							>
+						</ng-template>
+
+						<!--ABOUT FUNDRAISER-->
+						<div fxFill fxLayout="row" fxLayoutAlign="center center">
+							<div fxFill fxLayout="column" fxLayoutAlign="center start">
+								<mat-card-title
+									class="mat-body-2"
+									i18n="@@create_fundriaser_fundraiser_information"
+								>
+									Fundraiser Information
+								</mat-card-title>
+								<mat-form-field class="w-100" appearance="outline">
+									<mat-label i18n="@@editAbout_fundraiser_title"
+										>Fundraiser Title</mat-label
+									>
+									<input
+										required
+										class="fundraiserTitle"
+										matInput
+										formControlName="title"
+										(input)="setSlug($event)"
+										#title
+									/>
+									<mat-hint align="end"
+										>{{ title.value.length }} / 15-70
+										<span i18n="@@characters_translation">Characters</span>
+									</mat-hint>
+									<mat-error
+										i18n="@@createFundraiser_error"
+										*ngIf="
+											createFundraiserForm.controls['title'].errors &&
+											createFundraiserForm.controls['title'].errors.pattern
+										"
+									>
+										Wrong title. You can only use letters and numbers.
+									</mat-error>
+									<mat-error
+										i18n="@@createFundraiser_mustBeBetween_error"
+										*ngIf="
+											createFundraiserForm.controls['title'].errors &&
+											(createFundraiserForm.controls['title'].errors
+												.minlength ||
+												createFundraiserForm.controls['title'].errors.maxlength)
+										"
+									>
+										Must be between 15 - 70 characters
+									</mat-error>
+								</mat-form-field>
+
+								<!--Category-->
+								<mat-form-field
+									class="w-100"
+									appearance="outline"
+									ngClass="m-t-s"
+								>
+									<mat-label
+										i18n="@@fundraiser_createFundraiser_selectCategory_label"
+										>Select Category</mat-label
+									>
+									<mat-select class="category" formControlName="category">
+										<mat-option
+											*ngFor="let category of this._categories"
+											[value]="category.id"
+										>
+											{{ category.name }}
+										</mat-option>
+									</mat-select>
+								</mat-form-field>
+
+								<!--Location-->
+								<mat-form-field
+									class="w-100"
+									appearance="outline"
+									ngClass="m-t-s"
+								>
+									<mat-label
+										i18n="@@fundraiser_createFundraiser_addLocation_label"
+										>Add Location</mat-label
+									>
+									<input
+										required
+										class="location"
+										#location
+										matInput
+										formControlName="location"
+										(keyup)="searchPlaces(location.value)"
+										(focusin)="searchPlaces(location.value)"
+										(focusout)="searchPlaces(location.value)"
+										[matAutocomplete]="locationAuto"
+									/>
+									<!-- <img
+                    matSuffix
+                    src="https://res.cloudinary.com/whydonate/image/upload/v1667418121/whydonate-production/platform/svg-icons/arrowDropDown.svg"
+                  /> -->
+									<mat-autocomplete #locationAuto="matAutocomplete">
+										<mat-option
+											*ngFor="let location of locations"
+											[value]="location.description"
+										>
+											{{ location.description }}
+										</mat-option>
+									</mat-autocomplete>
+									<mat-error
+										*ngIf="
+											createFundraiserForm.controls['location'].errors &&
+											createFundraiserForm.controls['location'].errors[
+												'location'
+											]
+										"
+										>Invalid Location</mat-error
+									>
+								</mat-form-field>
+							</div>
+						</div>
+
+						<!--CUSTOM URL-->
+						<div fxFill fxLayout="row" fxLayoutAlign="center center">
+							<div fxFill fxLayout="column" fxLayoutAlign="center start">
+								<label
+									i18n="@@create_fundraiser_custom_url_link"
+									class="mat-body-2"
+									>Custom URL
+								</label>
+								<div fxFill fxLayout="row" fxLayoutAlign="start center">
+									<label
+										i18n="@@create_fundraiser_custom_url_caption"
+										class="mat-caption"
+										>( Choose a short and easy to remember url with maximum 90
+										characters. You cannot change your url later. )</label
+									>
+								</div>
+								<div
+									fxFill
+									fxLayout="row"
+									fxLayout.xs="column"
+									fxLayoutAlign="start center"
+									fxLayoutAlign.xs="start stretch"
+									fxLayoutGap="2%"
+								>
+									<div
+										fxLayout="column"
+										fxLayout.xs="row"
+										fxFlex.xs="100%"
+										fxLayoutAlign="start center"
+										fxLayoutGap="2%"
+									>
+										<label class="mat-body-2">whydonate.com/fundraising/</label>
+									</div>
+									<div
+										fxLayout="column"
+										fxLayout.xs="row"
+										fxFlex="100%"
+										fxLayoutAlign="center start"
+										fxLayoutGap="2%"
+									>
+										<mat-form-field class="w-100" appearance="outline">
+											<mat-label
+												i18n="@@fundraiser_createFundraiser_linkName_label"
+												>Link Name</mat-label
+											>
+											<input
+												required
+												class="linkUrl"
+												matInput
+												placeholder="Link Name"
+												formControlName="custom_url"
+												(input)="setSlug($event)"
+												(focus)="onFocus()"
+												(blur)="onBlur()"
+												#customUrl
+											/>
+											<mat-hint align="end"
+												>{{ customUrl.value.length }} / 1-75
+												<span i18n="@@characters_translation">Characters</span>
+											</mat-hint>
+											<mat-error
+												i18n="@@createFundraiser_error"
+												*ngIf="
+													createFundraiserForm.controls['custom_url'].errors &&
+													createFundraiserForm.controls['custom_url'].errors
+														.pattern
+												"
+											>
+												Wrong url. You can only use letters and numbers.
+											</mat-error>
+											<mat-error
+												i18n="@@createFundraiser_urlAlreadyUsed_error"
+												*ngIf="
+													createFundraiserForm.controls['custom_url'].errors &&
+													createFundraiserForm.controls['custom_url'].errors[
+														'slugInUse'
+													]
+												"
+											>
+												Url already in use
+											</mat-error>
+											<mat-hint
+												*ngIf="
+													!createFundraiserForm.controls['custom_url'].errors
+												"
+												[ngStyle]="{ color: '#66bb6a' }"
+												>Url is good</mat-hint
+											>
+										</mat-form-field>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--SUBMIT-->
+						<div
+							fxFill
+							fxLayout="row"
+							fxLayoutAlign="end center"
+							ngClass="m-t-l"
+						>
+							<button
+								id="saveBtn"
+								i18n="@@button_saveAndContinue"
+								mat-flat-button
+								color="accent"
+								matStepperNext
+								[disabled]="!this.createFundraiserForm.valid"
+							>
+								Save and Continue
+							</button>
+						</div>
+					</mat-step>
+					<!--END FIRST STEP FUNDRAISER DETAILS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+					<!--SECOND STEP UPLOAD IMAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<mat-step [completed]="this.imagePath || this.videoPath">
+						<ng-template
+							matStepLabel
+							i18n="@@create_fundraiser_set_cover_page_title"
+							>Upload Cover</ng-template
+						>
+						<div
+							fxFill
+							fxLayout="row"
+							fxLayoutAlign="center center"
+							fxLayoutGap="3%"
+						>
+							<div
+								fxFill
+								fxLayout="column"
+								fxLayoutAlign="start flex-start"
+								fxLayoutGap="3%"
+							>
+								<div fxLayout="column" fxLayoutAlign="start start">
+									<div class="m-b-xs m-t-l">
+										<mat-label
+											class="mat-title"
+											i18n="@@create_fundraiser_add_fundraiser_cover_page_title"
+											>Add Fundraiser Cover Page Image/ Video
+										</mat-label>
+									</div>
+									<div class="start ql-snow max-w-100">
+										<span
+											i18n="@@create_fundraiser_upload_max_size_information"
+										>
+											Minimum 1600px width recommended.
+										</span>
+										<br />
+										<span
+											i18n="
+												@@create_fundraiser_upload_max_image_video_information"
+										>
+											Max 5MB and 20MB for Videos, High resolution Images (pnj,
+											jpg, gif).
+										</span>
+										<br />
+									</div>
+								</div>
+
+								<div
+									fxFill
+									fxLayout="row"
+									fxLayoutAlign="center"
+									fxLayoutGap="3%"
+									class="m-t-l"
+								>
+									<div
+										fxLayout="row"
+										[ngStyle]="{ flex: this.imagePath ? '1 1 auto' : 'none' }"
+										*ngIf="!this.videoPath"
+										fxLayoutAlign="center center"
+										class="openImage"
+										id="add_image_create_fundraiser"
+										(click)="this.openImageCropperDialog()"
+									>
+										<div fxFill fxLayout="column" fxLayoutAlign="center center">
+											<div *ngIf="this.imagePath">
+												<img
+													class="img-preview"
+													*ngIf="this.imagePath"
+													fxFill
+													[src]="this.imagePath"
+												/>
+											</div>
+											<div
+												*ngIf="!this.imagePath && this.isMobileView"
+												class="whydonate-light"
+												fxFlex="100%"
+												fxLayout="row"
+												fxLayoutAlign="start center"
+												fxLayoutGap="5%"
+											>
+												<input fxHide type="file" id="upload_image_input" />
+												<button
+													mat-fab
+													class="mat-elevation-z0 p-x2"
+													color="primary"
+													[ngStyle]="{ width: '66px', height: '66px' }"
+												>
+													<img
+														height="33"
+														width="33"
+														class="m-b-m"
+														src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+													/>
+												</button>
+											</div>
+											<mat-card
+												*ngIf="!this.imagePath && !this.isMobileView"
+												class="mat-elevation-z0 pale-grey-bg p-xl"
+											>
+												<div
+													class="img-preview"
+													*ngIf="this.imagePath"
+													id="imageDiv"
+													fxFill
+												></div>
+												<div
+													*ngIf="!this.imagePath"
+													fxFill
+													fxLayout="row"
+													fxLayoutAlign="center stretch"
+												>
+													<div
+														fxFill
+														fxLayout="column"
+														fxLayoutAlign="center stretch"
+														fxLayoutGap="10%"
+														class="p-xl"
+													>
+														<div
+															fxFill
+															fxLayout="row"
+															fxLayoutAlign="center center"
+														>
+															<div
+																fxFill
+																fxLayout="column"
+																fxLayoutAlign="center center"
+															>
+																<img
+																	height="50"
+																	width="50"
+																	class="m-b-m"
+																	src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+																/>
+																<input
+																	fxHide
+																	type="file"
+																	id="upload_image_input"
+																/>
+																<button
+																	mat-stroked-button
+																	color="accent"
+																	i18n="@@button_addImage"
+																>
+																	Add Image
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</mat-card>
+										</div>
+									</div>
+									<div
+										fxLayoutAlign="center center"
+										*ngIf="!this.imagePath && !this.videoPath"
+									>
+										<span i18n="@@span_or"> or </span>
+									</div>
+									<div
+										[ngStyle]="{ flex: this.videoPath ? '1 1 auto' : 'none' }"
+										fxLayout="row"
+										*ngIf="!this.imagePath"
+										fxLayoutAlign="center center"
+										class="openImage"
+										(click)="this.openVideoDialog()"
+									>
+										<div
+											fxFill
+											fxLayout="row"
+											fxLayoutAlign="center center"
+											class="video-iframe"
+										>
+											<div
+												*ngIf="this.videoPath && this.youtubeIframe"
+												class="video-iframe"
+											>
+												<div
+													*ngIf="this.videoPath"
+													[innerHTML]="this.youtubeIframe"
+													fxLayout="column"
+													fxLayoutAlign="end end"
+													class="w-100 aspect-ratio"
+													fxFlex="100"
+												></div>
+											</div>
+											<div
+												*ngIf="!this.videoPath && this.isMobileView"
+												class="whydonate-light"
+												fxFlex="100%"
+												fxLayout="row"
+												fxLayoutAlign="start center"
+												fxLayoutGap="5%"
+											>
+												<button
+													mat-fab
+													class="mat-elevation-z0"
+													color="primary"
+													[ngStyle]="{ width: '66px', height: '66px' }"
+												>
+													<img
+														height="33"
+														width="33"
+														class="m-b-m"
+														src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+													/>
+												</button>
+											</div>
+											<mat-card
+												*ngIf="!this.videoPath && !this.isMobileView"
+												class="mat-elevation-z0 pale-grey-bg p-xl"
+											>
+												<div
+													fxFill
+													fxLayout="row"
+													fxLayoutAlign="center stretch"
+												>
+													<div
+														fxFill
+														fxLayout="column"
+														fxLayoutAlign="center stretch"
+														fxLayoutGap="10%"
+														class="p-xl"
+													>
+														<div
+															fxFill
+															fxLayout="row"
+															fxLayoutAlign="center center"
+														>
+															<div
+																fxFill
+																fxLayout="column"
+																fxLayoutAlign="start center"
+																*ngIf="!this.videoPath"
+															>
+																<img
+																	height="50"
+																	width="50"
+																	class="m-b-m"
+																	src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+																/>
+																<button
+																	mat-stroked-button
+																	color="accent"
+																	id="button_add_video_create_fundraiser"
+																	i18n="@@button_add_video"
+																>
+																	Add Video
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</mat-card>
+										</div>
+									</div>
+								</div>
+
+								<!--UPLOAD IMAGE-->
+								<div
+									fxFill
+									fxFlex="100%"
+									fxLayout="row"
+									fxLayoutAlign="end end"
+									fxLayoutGap="2%"
+								>
+									<a
+										i18n="@@button_changeImage"
+										mat-button
+										color="accent"
+										id="imagechangeButton"
+										*ngIf="!this.videoPath && this.imagePath"
+										(click)="this.openimagepopup()"
+									>
+										Change
+									</a>
+									<a
+										i18n="@@button_changeVideo"
+										mat-button
+										color="accent"
+										id="videochangeButton"
+										*ngIf="this.videoPath && !this.imagePath"
+										(click)="this.openvideopopup()"
+									>
+										Change
+									</a>
+									<button
+										*ngIf="this.imagePath || this.videoPath"
+										i18n="@@button_next"
+										mat-flat-button
+										color="accent"
+										id="nextButtonUploadImage"
+										matStepperNext
+										class="nextButton"
+									>
+										Next
+									</button>
+								</div>
+							</div>
+						</div>
+					</mat-step>
+					<!--END SECOND STEP UPLOAD IMAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+					<!--Third-->
+					<mat-step>
+						<ng-template
+							matStepLabel
+							i18n="@@create_fundraiser_set_donation_form_heading"
+							>Set Donation Form</ng-template
+						>
+						<!--SET CUURENCY-->
+						<div
+							fxFill
+							fxLayout="column"
+							fxLayoutAlign="start start"
+							ngClass="m-b-l"
+						>
+							<label
+								class="mat-body-2"
+								i18n="@@create_fundraiser_set_currency_title"
+							>
+								Set Currency
+							</label>
+
+							<br />
+							<mat-form-field appearance="outline" class="w-100">
+								<mat-select [formControl]="currency">
+									<mat-option
+										*ngFor="let currencyData of this.allCurrenciesData"
+										[value]="currencyData.currency"
+									>
+										<span>{{ currencyData.symbol }}</span
+										>&nbsp;
+										<span>{{ currencyData.currency | uppercase }}</span>
+									</mat-option>
+								</mat-select>
+							</mat-form-field>
+
+							<label
+								class="mat-body-2"
+								i18n="@@create_fundraiser_important_information_title"
+								>Important Information</label
+							>
+							<div
+								fxFill
+								fxLayout="column"
+								fxLayoutAlign="start"
+								fxLayoutGap="1%"
+							>
+								<div fxLayout="row">
+									&#8226;&nbsp;<span
+										i18n="@@create_fundraiser_currency_cant_changed_info"
+										>Currency can not be changed after fundraiser is
+										published.</span
+									>
+								</div>
+								<div fxLayout="row">
+									&#8226;&nbsp;<span
+										i18n="@@create_fundraiser_add_bank_account_info"
+										>Add bank account on Stripe for the Currency selected or
+										charges will apply of currency exchange.</span
+									>
+								</div>
+
+								<div fxLayout="row">
+									&#8226;&nbsp;<span
+										i18n="@@create_fundraiser_connected_fundraisers_info"
+										>Connected fundraisers will always have the same currency as
+										the main.</span
+									>
+								</div>
+							</div>
+						</div>
+
+						<!--SET DETAILS-->
+						<div fxFill fxLayout="row" fxLayoutAlign="center center">
+							<div fxFill fxLayout="column" fxLayoutAlign="center start">
+								<label
+									i18n="@@fundraiser_createFundraiser_setDetails_label"
+									class="mat-body-2"
+								>
+									Set Donation
+								</label>
+								<br />
+
+								<mat-form-field
+									class="w-100"
+									appearance="outline"
+									floatLabel="always"
+								>
+									<mat-label
+										i18n="@@fundraiser_createFundraiser_targetAmount_label"
+										>Target Amount (optional)</mat-label
+									>
+									<input
+										matInput
+										type="number"
+										formControlName="target_amount"
+										class="right-align"
+										placeholder="00"
+										(input)="
+											createFundraiserForm.controls[
+												'target_amount'
+											].markAsTouched()
+										"
+									/>
+									<p matPrefix>{{ this.selectedSymbol }}&nbsp;</p>
+
+									<mat-error
+										i18n="@@createFundraiser_decimal_error"
+										*ngIf="
+											createFundraiserForm.controls['target_amount'].errors &&
+											createFundraiserForm.controls['target_amount'].errors
+												.pattern
+										"
+									>
+										Amount should not contain decimals
+									</mat-error>
+
+									<mat-error
+										*ngIf="
+											createFundraiserForm.controls['target_amount'].errors &&
+											createFundraiserForm.controls['target_amount'].errors.max
+										"
+									>
+										<span i18n="@@custom_donation_form_amountTargetMax_error">
+											Maximum required amount is</span
+										>&nbsp;{{ selectedSymbol }}{{ maxTargetAmount | number }}
+									</mat-error>
+								</mat-form-field>
+								<mat-form-field class="w-100" appearance="outline">
+									<mat-label i18n="@@fundraiser_createFundraiser_endDate_label"
+										>End Date (optional)</mat-label
+									>
+									<input
+										class="targetAmount"
+										matInput
+										[matDatepicker]="picker"
+										formControlName="end_date"
+										[min]="minEndDate"
+										onkeydown="return false"
+										(focus)="picker.open()"
+										(click)="picker.open()"
+									/>
+									<mat-datepicker-toggle
+										class="datePicker"
+										matSuffix
+										[for]="picker"
+									></mat-datepicker-toggle>
+									<mat-datepicker #picker></mat-datepicker>
+									<mat-error
+										*ngIf="
+											this.createFundraiserForm.controls['end_date'].errors
+										"
+										>Wrong Date format.</mat-error
+									>
+								</mat-form-field>
+							</div>
+						</div>
+
+						<div fxFill fxLayout="row" fxLayoutAlign="center center">
+							<div
+								fxFill
+								fxLayout="column"
+								fxLayoutAlign="center start"
+								fxLayoutGap="3%"
+							>
+								<!--RADIO BUTTONS-->
+								<mat-slide-toggle
+									color="primary"
+									[checked]="true"
+									(toggleChange)="changeShowTotalAmountDonated()"
+									><span i18n="@@create_fundraiser_showTotalAmount_toggle"
+										>Show total amount donated</span
+									></mat-slide-toggle
+								>
+								<mat-slide-toggle
+									color="primary"
+									[checked]="true"
+									(toggleChange)="changeAllowConnectedFundraiser()"
+									><span
+										i18n="@@create_fundraiser_allowConnectedFundraisers_toggle"
+										>Allow connected fundraisers</span
+									></mat-slide-toggle
+								>
+							</div>
+						</div>
+
+						<!--SUBMIT-->
+						<div fxFill fxLayout="row" fxLayoutAlign="start center">
+							<a
+								i18n="@@connectFundraiser_howItWorks_button"
+								mat-button
+								color="accent"
+								(click)="openHowItWorks()"
+								>How it works</a
+							>
+						</div>
+
+						<!--SUBMIT-->
+						<div
+							fxFill
+							fxLayout="row"
+							fxLayoutAlign="end center"
+							ngClass="m-t-l"
+						>
+							<button
+								id="saveBtn"
+								i18n="@@button_saveAndContinue"
+								mat-flat-button
+								color="accent"
+								matStepperNext
+								[disabled]="!this.createFundraiserForm.valid"
+							>
+								Save and Continue
+							</button>
+						</div>
+					</mat-step>
+					<!--FOURTH STEP SHARE LINKS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<mat-step>
+						<ng-template
+							i18n="@@create_fundraiser_set_social_title"
+							matStepLabel
+							>Share</ng-template
+						>
+						<app-fundraiser-contact
+							[fundraiserData]=""
+							(shareForm)="receiveForm($event)"
+							(shareFormValidity)="receiveFormValidity($event)"
+						></app-fundraiser-contact>
+						<div fxFill fxLayout="row" fxLayoutAlign="flex-end center">
+							<div
+								fxFlex.gt-xs="85%"
+								fxFlex.lt-xs="50%"
+								fxLayout="column"
+								fxLayoutAlign="center end"
+							>
+								<button
+									i18n="@@button_skip"
+									mat-button
+									id="create_fundraiser_skip_button"
+									color="accent"
+									(click)="this.saveFundraiser()"
+								>
+									Skip
+								</button>
+							</div>
+							<div
+								fxFlex.gt-xs="15%"
+								fxFlex.lt-xs="50%"
+								fxLayout="column"
+								fxLayoutAlign="center end"
+							>
+								<button
+									mat-flat-button
+									color="accent"
+									id="save"
+									id="create_fundraiser_save"
+									[disabled]="isFormValid"
+									(click)="this.saveFundraiser()"
+								>
+									<span i18n="@@button_saveFundraiser">Save</span>
+									<mat-spinner *ngIf="isLoading" color="primary" diameter="20">
+									</mat-spinner>
+								</button>
+							</div>
+						</div>
+					</mat-step>
+					<!--END THIRD STEP SHARE LINKS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				</mat-stepper>
+			</mat-card>
+		</div>
+	</div>
+</form>

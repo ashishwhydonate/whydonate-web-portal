@@ -1,0 +1,35 @@
+@use 'sass:map';
+@import '../_variables/spacing';
+
+mat-radio-group.inline-radio-group {
+	padding: map.get($SPACE_CONFIG, xs);
+	.mat-radio-button ~ .mat-radio-button {
+		margin: map.get($SPACE_CONFIG, m);
+	}
+}
+
+mat-button-toggle.mat-button-toggle-checked {
+	background-color: map.get($COLOR_CONFIG, accent);
+	color: #ffffff;
+}
+
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard{
+	color: #ffffff;
+}
+
+mat-button-toggle-group.button-toggle-group{
+	margin-top: map.get($SPACE_CONFIG, m);
+	margin-bottom: map.get($SPACE_CONFIG, m);
+}
+
+// Used for search page, not used anymore
+mat-radio-group.block-radio-group {
+	.mat-radio-button {
+		display: flex;
+		flex-direction: column;
+		margin: map.get($SPACE_CONFIG, m);
+	}
+}
+// .mat-radio-button ~ .mat-radio-button {
+// 	margin-left: map.get($SPACE_CONFIG, m);
+// }

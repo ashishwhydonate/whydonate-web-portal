@@ -1,0 +1,66 @@
+<button mat-icon-button class="close-button" (click)="onCloseClick()">
+	<img
+		src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+	/>
+</button>
+<ng-template [ngIf]="this.amountCheck" [ngIfElse]="loading">
+	<div ngClass="p-xs">
+		<h1 mat-dialog-title i18n="@@balance_payout_popup_confirmPayout">
+			Confirm Payout
+		</h1>
+		<div mat-dialog-content>
+			<strong>
+				<span i18n="@@balance_payout_popup_requestForPayout"
+					>Request for payout of </span
+				>{{ this.approvedAmount | currency: 'EUR' }}</strong
+			>
+		</div>
+		<div ngClass="m-t-m">
+			<p i18n="@@balance_payout_popup_additionalServiceFees">
+				We will like to know that it will cost additional service fee of € 0.63
+				for payout now as a service cost of Opp.
+			</p>
+		</div>
+		<div>
+			<p>
+				<span i18n="@@balance_payout_popup_approvedPayout"
+					>You will recieve approved payout amount:</span
+				>
+				{{ this.approvedAmount | currency: 'EUR'
+				}}<span
+					><br />
+					<a
+						><span i18n="@@balance_payout_popup_itTakeDaysForClearing"
+							>It will take 3-4 days for clearing the payout</span
+						></a
+					>
+				</span>
+			</p>
+		</div>
+
+		<div
+			ngClass="m-t-m"
+			mat-dialog-actions
+			fxLayout="row"
+			fxLayoutAlign="center center"
+		>
+			<button mat-stroked-button color="accent" mat-dialog-close>
+				<span i18n="@@button_close">Close</span>
+			</button>
+			<button mat-flat-button color="accent" (click)="createPayout()">
+				<span i18n="@@button_payout">Payout</span>
+			</button>
+		</div>
+	</div>
+</ng-template>
+
+<!----------------------LOADING SPINNER TEMPLATE---------------------->
+<ng-template #loading>
+	<br /><br />
+	<div fxLayoutAlign="center center">
+		<mat-icon
+			><mat-spinner color="accent" diameter="20"></mat-spinner
+		></mat-icon>
+	</div>
+	<br /><br />
+</ng-template>

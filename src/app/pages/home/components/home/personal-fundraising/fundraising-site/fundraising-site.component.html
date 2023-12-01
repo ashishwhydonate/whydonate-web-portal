@@ -1,0 +1,41 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxFlex="100%"
+	fxLayout="row"
+	fxLayout.xs="column"
+	fxLayoutAlign="center center"
+	fxLayoutGap="10%"
+>
+	<div
+		fxFlex="50%"
+		fxLayout="column"
+		fxLayoutAlign="center center"
+		fxLayoutGap="3%"
+		class="site_img"
+	>
+		<img class="w-100" src="{{ fundraisingSiteImage }}" />
+	</div>
+	<div fxFlex="50%" fxLayout="column" fxLayoutAlign="center start">
+		<h3 i18n="@@fundraising_site_fundraisingForBothHomeOrganization">
+			Fundraising Site for Individuals and Charities
+		</h3>
+		<p i18n="@@fundraising_site_moreServicesWithWhydonateHomeOrganization">
+			On Whydonate you can start a personal crowdfunding, a fundraiser for
+			charity, peer-to-peer fundraiser and more.
+		</p>
+		<a
+			mat-button
+			color="accent"
+			(click)="languageForWhydonatePlatform()"
+			id="fundraisingSiteLink"
+		>
+			<span i18n="@@fundraising_site_checkAllFeaturesHomeOrganization"
+				>Check All Fundraising Features</span
+			>
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+			/>
+		</a>
+	</div>
+</div>

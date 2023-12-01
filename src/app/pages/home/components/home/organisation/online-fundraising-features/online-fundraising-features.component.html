@@ -1,0 +1,226 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxFlex="100"
+	fxLayout="column"
+	fxLayoutAlign="start center"
+	fxLayout.lt-sm="row wrap"
+>
+	<!--HEADING ROW-->
+	<div
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayoutAlign="center start"
+		ngClass="center"
+	>
+		<div
+			fxFlex="100"
+			fxLayout="column"
+			fxLayoutAlign="center center"
+			fxLayoutAlign.xs="center"
+		>
+			<h4
+				i18n="@@online_fundraising_features_charityFundraisingHomeOrganization"
+			>
+				Charity fundraising
+			</h4>
+			<h2
+				i18n="@@online_fundraising_features_charityCrowdFundingHomeOrganization"
+			>
+				Charity Crowdfunding Features
+			</h2>
+		</div>
+	</div>
+	<!--END HEADING ROW-->
+	<br />
+	<!--FIRST ROW OF FEATURES-->
+	<div
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayoutGap="3%"
+		fxLayoutGap.xs="10%"
+		fxLayout.xs="column"
+		fxLayoutAlign="center start"
+		fxLayout.lt-sm="row"
+	>
+		<!--FIRST COLUMN-->
+		<div fxFlex="50%" fxLayout="column">
+			<mat-card
+				class="mat-elevation-z0 card-clickable"
+				(click)="routeToFundraisingEurope()"
+				id="routeToEurope"
+			>
+				<div fxFlex="100%" fxLayout="row" fxLayoutGap="5%" fxFlex.lt-sm="50%">
+					<div fxLayout="column">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/globalreach"
+						/>
+					</div>
+					<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5%">
+						<mat-card-title
+							i18n="@@online_fundraising_features_globalCharityHomeOrganization"
+							class="mat-subheading-2"
+						>
+							Global charity fundraising
+						</mat-card-title>
+						<div fxLayoutAlign="center end" fxLayoutGap="3%" fxLayout="column">
+							<p
+								i18n="
+									@@online_fundraising_features_multiLangSupportHomeOrganization"
+							>
+								Multi-language support, national and international payment
+								methods and payouts to all European (EEA) countries.
+							</p>
+							<button mat-button color="accent">
+								<span i18n="@@button_learnMore">Learn More</span>
+								<img
+									src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+								/>
+							</button>
+						</div>
+					</div>
+				</div>
+			</mat-card>
+		</div>
+		<!--END FIRST COLUMN-->
+		<!--SECOND COLUMN-->
+		<div fxFlex="50%" fxLayout="column">
+			<mat-card
+				class="mat-elevation-z0 card-clickable"
+				(click)="routeToCrowdfunding()"
+				id="routeToCrowdfunding"
+			>
+				<div fxFlex="100%" fxLayout="row" fxLayoutGap="5%">
+					<div fxLayout="column">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/peer_peer"
+						/>
+					</div>
+					<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5%">
+						<mat-card-title
+							i18n="
+								@@online_fundraising_features_peerToPeerFundraisingHomeOrganization"
+							class="mat-subheading-2"
+						>
+							Peer-to-peer fundraising
+						</mat-card-title>
+						<div fxLayoutAlign="center end" fxLayoutGap="3%" fxLayout="column">
+							<p
+								i18n="
+									@@online_fundraising_features_onlineFundraisingHomeOrganization"
+							>
+								Online fundraising through crowdfunding with peer to peer or
+								team fundraisers.
+								<br />
+							</p>
+							<button mat-button color="accent">
+								<span i18n="@@button_learnMore">Learn More</span>
+								<img
+									src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+								/>
+							</button>
+						</div>
+					</div>
+				</div>
+			</mat-card>
+		</div>
+		<!--END SECOND COLUMN-->
+	</div>
+	<!--END FIRST ROW OF FEATURES-->
+	<br />
+	<!--SECOND ROW OF FEATURES-->
+	<div
+		fxFlex="100%"
+		fxLayout="row"
+		fxLayout.xs="column"
+		fxLayoutAlign="space-around start"
+		fxLayoutAlign="center start"
+		fxLayoutGap="3%"
+		fxLayoutGap.xs="6%"
+	>
+		<!--FIRST COLUMN-->
+		<div fxFlex="50%" fxLayout="column">
+			<mat-card
+				class="mat-elevation-z0 card-clickable"
+				(click)="routeToRecurring()"
+				id="routeToRecurring"
+			>
+				<div fxFlex="100%" fxLayout="row" fxLayoutGap="5%">
+					<div fxLayout="column">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/recurring"
+						/>
+					</div>
+					<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5%">
+						<mat-card-title
+							i18n="
+								@@online_fundraising_features_recurringDonationsHomeOrganization"
+							class="mat-subheading-2"
+						>
+							Recurring donations
+						</mat-card-title>
+						<div fxLayoutAlign="center end" fxLayout="column">
+							<p
+								i18n="
+									@@online_fundraising_features_acceptRecurringDonationHomeOrganization"
+							>
+								Accept recurring (monthly and annual) donations. We handle the
+								recurring payment with the donor and the payout into your bank
+								account.
+							</p>
+							<button mat-button color="accent">
+								<span i18n="@@button_learnMore">Learn More</span>
+								<img
+									src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+								/>
+							</button>
+						</div>
+					</div>
+				</div>
+			</mat-card>
+		</div>
+		<!--END FIRST COLUMN-->
+		<!--SECOND COLUMN-->
+		<div fxFlex="50%" fxLayout="column">
+			<mat-card
+				class="mat-elevation-z0 card-clickable"
+				(click)="routeToCustomCrowdFunding()"
+				id="routeToCustomCrowdFunding"
+			>
+				<!-- <a href="https://whydonate.com/en/custom-crowdfunding-platform/"> -->
+				<div fxFlex="100%" fxLayout="row" fxLayoutGap="5%">
+					<div fxLayout="column">
+						<img
+							src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/start"
+						/>
+					</div>
+					<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5%">
+						<mat-card-title
+							i18n="@@online_fundraising_features_customBrandingHome"
+							class="mat-subheading-2"
+							>Custom branding</mat-card-title
+						>
+						<div fxLayoutAlign="center end" fxLayoutGap="5%" fxLayout="column">
+							<p
+								i18n="
+									@@online_fundraising_features_replaceWhydonateBrandingHomeOrganization"
+							>
+								Replace Whydonate's branding by simply adding the colors, font
+								and logo of your organization.
+							</p>
+							<button mat-button color="accent">
+								<span i18n="@@button_learnMore">Learn More</span>
+								<img
+									src="https://res.cloudinary.com/whydonate/image/upload/v1667501400/whydonate-production/platform/svg-icons/arrowRightAccent.svg"
+								/>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- </a> -->
+			</mat-card>
+		</div>
+		<!--END SECOND COLUMN-->
+	</div>
+	<!--END SECOND ROW OF FEATURES-->
+</div>

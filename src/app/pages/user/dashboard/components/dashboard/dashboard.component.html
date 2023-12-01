@@ -1,0 +1,106 @@
+<!-- START -->
+<!-- <ng-template [ngTemplateOutlet]="notificationBanner"></ng-template> -->
+<ng-template [ngIf]="stripeNotificationCheck == false && parentFundraiser > 0">
+	<app-stripe-notification-banner></app-stripe-notification-banner>
+</ng-template>
+
+<mat-drawer-container>
+	<mat-drawer-content>
+		<ng-container
+			*ngIf="_media.isActive('xs')"
+			[ngTemplateOutlet]="xsTemplate"
+		></ng-container>
+		<ng-container
+			*ngIf="_media.isActive('sm')"
+			[ngTemplateOutlet]="smTemplate"
+		></ng-container>
+		<ng-container
+			*ngIf="_media.isActive('gt-sm')"
+			[ngTemplateOutlet]="gtSmTemplate"
+		></ng-container>
+	</mat-drawer-content>
+</mat-drawer-container>
+<!-- END -->
+
+<!------------ RESPONSIVE TEMPLATES START ------------>
+
+<!-- Page loader / whydonate loader -->
+<ng-template #whydonateLoader>
+	<app-page-loader></app-page-loader>
+</ng-template>
+
+<!-- XS device / Phone dimension -->
+<ng-template #xsTemplate>
+	<ng-template [ngIf]="myFundraisersObj" [ngIfElse]="whydonateLoader">
+		<mat-card class="mat-elevation-z0 pale-grey-bg">
+			<div fxLayout="column" fxLayoutGap="5%">
+				<ng-container
+					[ngTemplateOutlet]="myFundraisersViewTemplate"
+				></ng-container>
+			</div>
+		</mat-card>
+		<br />
+		<ng-container [ngTemplateOutlet]="donationSummaryTemplate"></ng-container>
+	</ng-template>
+</ng-template>
+
+<!-- SM device / Tablet dimension -->
+<ng-template #smTemplate>
+	<div fxLayout="row">
+		<ng-container *ngIf="myFundraisersObj">
+			<mat-card class="mat-elevation-z0 pale-grey-bg" fxFlex="45%">
+				<div fxLayout="column" fxLayoutGap="5%">
+					<ng-container
+						[ngTemplateOutlet]="myFundraisersViewTemplate"
+					></ng-container>
+				</div>
+			</mat-card>
+		</ng-container>
+	</div>
+	<ng-template [ngIf]="myFundraisersObj" [ngIfElse]="whydonateLoader">
+		<br />
+		<ng-container [ngTemplateOutlet]="donationSummaryTemplate"></ng-container>
+	</ng-template>
+</ng-template>
+
+<!-- gt-sm device / laptop and above dimension -->
+<ng-template #gtSmTemplate>
+	<mat-card class="mat-elevation-z0 pale-grey-bg">
+		<ng-template [ngIf]="myFundraisersObj" [ngIfElse]="whydonateLoader">
+			<div fxLayout="row" fxLayoutGap="2%">
+				<ng-container
+					[ngTemplateOutlet]="myFundraisersViewTemplate"
+				></ng-container>
+			</div>
+			<br />
+			<ng-container [ngTemplateOutlet]="donationSummaryTemplate"></ng-container>
+		</ng-template>
+	</mat-card>
+</ng-template>
+
+<!-- RESPONSIVE TEMPLATES END -->
+
+<!------------ COMPONENT TEMPLATES START ------------>
+
+<!-- donation-summary COMPONENT -->
+<ng-template #donationSummaryTemplate>
+	<app-donation-summary
+		[donationReceived]="donationReceivedObj"
+		[donationGiven]="donationGivenObj"
+		[donationRecurringReceived]="donationRecurringReceivedObj"
+		[donationRecurringGiven]="donationRecurringGivenObj"
+	></app-donation-summary>
+</ng-template>
+
+<!-- DONATION SUMMARY CARD -->
+<ng-template #myFundraisersViewTemplate>
+	<div fxLayout="column" fxFlex="35%">
+		<app-balance-summary></app-balance-summary>
+	</div>
+	<div fxLayout="column" fxFlex="35%">
+		<app-summaries></app-summaries>
+	</div>
+	<div fxLayout="column" fxFlex="30%">
+		<app-payout-summary></app-payout-summary>
+	</div>
+</ng-template>

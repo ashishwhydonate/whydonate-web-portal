@@ -1,0 +1,10 @@
+<span *ngIf="daysLeft > 1">
+	{{ daysLeft }}&nbsp;
+	<span i18n="@@fundraiserCard_donationDaysLeft_label">day(s) left</span>
+</span>
+<span *ngIf="daysLeft === 1">
+	<span i18n="@@fundraiserCard_lastDays_label">Last day</span>
+</span>
+<span *ngIf="daysLeft === 0">
+	<span i18n="@@myFundraisers_closed_mat_tab">Closed</span>
+</span>

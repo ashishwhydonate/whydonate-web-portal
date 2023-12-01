@@ -1,0 +1,22 @@
+{
+  "translations": {
+    "header_userMenu_button_customBranding": "Personalisieren",
+    "header_userMenu_button_customBranding_branding": "Branding",
+    "account_email_verification_label": "Verifizierung Ihrer E-Mail-Adresse.. ",
+    "account_email_verification_label_doNotRefresh": " Bitte klicken Sie nicht auf die Schaltfläche \"Aktualisieren\" oder \"Zurück\".",
+    "account_email_verification_succesful_message": "Verifizierung erfolgreich",
+    "button_cancel": "Abbrechen",
+    "account_Paypal_transaction_history_message": "Die PayPal-Transaktionen werden nicht zum obigen Saldo hinzugerechnet. Sie werden von WhyDonate separat überwiesen.",
+    "donation_receipt_date_field": "Datum",
+    "donation_receipt_transaction_id_field": "Transaktions-ID",
+    "donation_receipt_donation_field": "Spende",
+    "donation_receipt_tip_field": "Tipp",
+    "donation_receipt_donated_by_field": "Gestiftet von",
+    "donation_receipt_bank_account_number_field": "Bankkontonummer",
+    "donation_receipt_bank_account_holder_field": "Inhaber eines Bankkontos",
+    "balance_payout_mollie": "Auszahlungen",
+    "button_save_apply": "Speichern Sie",
+    "balance_donation_header_label_stripe_fee": "Stripe Fee",
+    "balance_donation_header_label_reversal": "Reversal"
+  }
+}

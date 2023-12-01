@@ -1,0 +1,1761 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>whydonate-web-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">whydonate-web-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  EmbedComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-embed</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./embed.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./embed.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_accountService" >_accountService</a>
+                            </li>
+                            <li>
+                                <a href="#embedHTML" >embedHTML</a>
+                            </li>
+                            <li>
+                                <a href="#embedView" >embedView</a>
+                            </li>
+                            <li>
+                                <a href="#failUrlPlaceholder" >failUrlPlaceholder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#media" >media</a>
+                            </li>
+                            <li>
+                                <a href="#monthlyLabel" >monthlyLabel</a>
+                            </li>
+                            <li>
+                                <a href="#oneTimeLabel" >oneTimeLabel</a>
+                            </li>
+                            <li>
+                                <a href="#pluginData" >pluginData</a>
+                            </li>
+                            <li>
+                                <a href="#pluginForm" >pluginForm</a>
+                            </li>
+                            <li>
+                                <a href="#previewBackgroundImage" >previewBackgroundImage</a>
+                            </li>
+                            <li>
+                                <a href="#previewSwitchCase" >previewSwitchCase</a>
+                            </li>
+                            <li>
+                                <a href="#sucessUrlPlaceholder" >sucessUrlPlaceholder</a>
+                            </li>
+                            <li>
+                                <a href="#yearlyLabel" >yearlyLabel</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#copyEmbedHTML" >copyEmbedHTML</a>
+                            </li>
+                            <li>
+                                <a href="#createEmbedData" >createEmbedData</a>
+                            </li>
+                            <li>
+                                <a href="#getEmbedHTML" >getEmbedHTML</a>
+                            </li>
+                            <li>
+                                <a href="#getPreviewCase" >getPreviewCase</a>
+                            </li>
+                            <li>
+                                <a href="#getWidgetType" >getWidgetType</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#setPreviewBackgroundImage" >setPreviewBackgroundImage</a>
+                            </li>
+                            <li>
+                                <a href="#setWidgetCheckbox" >setWidgetCheckbox</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#selectedFundraiser" >selectedFundraiser</a>
+                            </li>
+                            <li>
+                                <a href="#slug" >slug</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, _formBuilder: UntypedFormBuilder, media: MediaObserver, _accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_renderer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>UntypedFormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>media</td>
+                                                  
+                                                        <td>
+                                                                    <code>MediaObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_accountService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedFundraiser"></a>
+                        <b>selectedFundraiser</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="slug"></a>
+                        <b>slug</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:40</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copyEmbedHTML"></a>
+                    <span class="name">
+                        <span ><b>copyEmbedHTML</b></span>
+                        <a href="#copyEmbedHTML"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copyEmbedHTML()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="195"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:195</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Copy Embed HTML</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createEmbedData"></a>
+                    <span class="name">
+                        <span ><b>createEmbedData</b></span>
+                        <a href="#createEmbedData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createEmbedData(formData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Create Embed Data</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>formData</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ScriptPluginData.html" target="_self" >ScriptPluginData</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEmbedHTML"></a>
+                    <span class="name">
+                        <span ><b>getEmbedHTML</b></span>
+                        <a href="#getEmbedHTML"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getEmbedHTML(data: <a href="../interfaces/ScriptPluginData.html" target="_self">ScriptPluginData</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:159</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/ScriptPluginData.html" target="_self" >ScriptPluginData</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPreviewCase"></a>
+                    <span class="name">
+                        <span ><b>getPreviewCase</b></span>
+                        <a href="#getPreviewCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPreviewCase()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:150</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get Preview Case</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#widgetType" target="_self" >&quot;donation-button&quot; | widgetType</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getWidgetType"></a>
+                    <span class="name">
+                        <span ><b>getWidgetType</b></span>
+                        <a href="#getWidgetType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getWidgetType(formData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get Widget Type</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>formData</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#widgetType" target="_self" >widgetType</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPreviewBackgroundImage"></a>
+                    <span class="name">
+                        <span ><b>setPreviewBackgroundImage</b></span>
+                        <a href="#setPreviewBackgroundImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setPreviewBackgroundImage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:199</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setWidgetCheckbox"></a>
+                    <span class="name">
+                        <span ><b>setWidgetCheckbox</b></span>
+                        <a href="#setWidgetCheckbox"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setWidgetCheckbox(event: MatSlideToggleChange)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Disable checkbox if hide card is true</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MatSlideToggleChange</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_accountService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_accountService</b></span>
+                        <a href="#_accountService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AccountService.html" target="_self" >AccountService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="embedHTML"></a>
+                    <span class="name">
+                        <span ><b>embedHTML</b></span>
+                        <a href="#embedHTML"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="embedView"></a>
+                    <span class="name">
+                        <span ><b>embedView</b></span>
+                        <a href="#embedView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;embedView&#x27;, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failUrlPlaceholder"></a>
+                    <span class="name">
+                        <span ><b>failUrlPlaceholder</b></span>
+                        <a href="#failUrlPlaceholder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>$localize&#x60;:@@embed_failUrl_placeholder:Fail Url&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="media"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>media</b></span>
+                        <a href="#media"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MediaObserver</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="monthlyLabel"></a>
+                    <span class="name">
+                        <span ><b>monthlyLabel</b></span>
+                        <a href="#monthlyLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>$localize&#x60;:@@embed_monthlyLabel:Monthly&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="oneTimeLabel"></a>
+                    <span class="name">
+                        <span ><b>oneTimeLabel</b></span>
+                        <a href="#oneTimeLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>$localize&#x60;:@@embed_oneTimeLabel:One Time&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pluginData"></a>
+                    <span class="name">
+                        <span ><b>pluginData</b></span>
+                        <a href="#pluginData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ScriptPluginData.html" target="_self" >ScriptPluginData</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pluginForm"></a>
+                    <span class="name">
+                        <span ><b>pluginForm</b></span>
+                        <a href="#pluginForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>UntypedFormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previewBackgroundImage"></a>
+                    <span class="name">
+                        <span ><b>previewBackgroundImage</b></span>
+                        <a href="#previewBackgroundImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://res.cloudinary.com/whydonate/image/upload/v1689704507/whydonate-production/platform/svg-icons/fundraiser_default_bg.png&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previewSwitchCase"></a>
+                    <span class="name">
+                        <span ><b>previewSwitchCase</b></span>
+                        <a href="#previewSwitchCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;donation-widget&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sucessUrlPlaceholder"></a>
+                    <span class="name">
+                        <span ><b>sucessUrlPlaceholder</b></span>
+                        <a href="#sucessUrlPlaceholder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>$localize&#x60;:@@embed_successUrl_placeholder:Success Url&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="yearlyLabel"></a>
+                    <span class="name">
+                        <span ><b>yearlyLabel</b></span>
+                        <a href="#yearlyLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>$localize&#x60;:@@embed_yearlyLabel:Yearly&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/pages/fundraiser/components/dialogs/share-dialog/embed/embed.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+	Component,
+	ElementRef,
+	Input,
+	OnInit,
+	Renderer2,
+	ViewChild,
+	ViewEncapsulation,
+} from &#x27;@angular/core&#x27;;
+import { MediaObserver } from &#x27;@angular/flex-layout&#x27;;
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { MatLegacySlideToggleChange as MatSlideToggleChange } from &#x27;@angular/material/legacy-slide-toggle&#x27;;
+import { AccountService } from &#x27;src/app/pages/account/services/account.service&#x27;;
+import { Tools } from &#x27;src/utilities/tools&#x27;;
+
+export type widgetType &#x3D;
+	| &#x27;donation-widget&#x27;
+	| &#x27;show-with-image&#x27;
+	| &#x27;donation-form+image&#x27;
+	| &#x27;donation-form+widget&#x27;;
+/** *Script Plugin Data Service */
+export interface ScriptPluginData {
+	div_id: string;
+	div_class: string;
+	div_value: widgetType;
+	data_slug: string;
+	data_lang: string;
+	data_success_url: string;
+	data_fail_url: string;
+	data_card: string;
+}
+
+@Component({
+	selector: &#x27;app-embed&#x27;,
+	templateUrl: &#x27;./embed.component.html&#x27;,
+	styleUrls: [&#x27;./embed.component.scss&#x27;],
+	encapsulation: ViewEncapsulation.None,
+})
+export class EmbedComponent implements OnInit {
+	@Input() slug!: string;
+	@Input() selectedFundraiser!: any;
+	@ViewChild(&#x27;embedView&#x27;, { static: true }) embedView!: ElementRef;
+
+	pluginData!: ScriptPluginData;
+	pluginForm!: UntypedFormGroup;
+
+	embedHTML: string &#x3D; &#x27;&#x27;;
+	previewSwitchCase: string &#x3D; &#x27;donation-widget&#x27;;
+	previewBackgroundImage: string &#x3D; &#x27;https://res.cloudinary.com/whydonate/image/upload/v1689704507/whydonate-production/platform/svg-icons/fundraiser_default_bg.png&#x27;;
+
+	sucessUrlPlaceholder &#x3D; $localize&#x60;:@@embed_successUrl_placeholder:Success Url&#x60;;
+	failUrlPlaceholder &#x3D; $localize&#x60;:@@embed_failUrl_placeholder:Fail Url&#x60;;
+	oneTimeLabel &#x3D; $localize&#x60;:@@embed_oneTimeLabel:One Time&#x60;;
+	monthlyLabel &#x3D; $localize&#x60;:@@embed_monthlyLabel:Monthly&#x60;;
+	yearlyLabel &#x3D; $localize&#x60;:@@embed_yearlyLabel:Yearly&#x60;;
+	constructor(
+		private _renderer: Renderer2,
+		private _formBuilder: UntypedFormBuilder,
+		public media: MediaObserver,
+		public _accountService: AccountService
+	) {
+		this.pluginForm &#x3D; this._formBuilder.group({
+			hideWidgetCard: [false],
+			showImageCheckbox: [false, { disabled: false }],
+			addFormCheckbox: [false, { disabled: false }],
+			successRedirectURL: [
+				&#x27;&#x27;,
+				Validators.pattern(
+					&#x27;^((ht|f)tp(s?))://([0-9a-zA-Z-]+.)+[a-zA-Z]{2,6}(:[0-9]+)?(/S*)?$&#x27;
+				),
+			],
+			failRedirectURL: [
+				&#x27;&#x27;,
+				Validators.pattern(
+					&#x27;^((ht|f)tp(s?))://([0-9a-zA-Z-]+.)+[a-zA-Z]{2,6}(:[0-9]+)?(/S*)?$&#x27;
+				),
+			],
+		});
+	}
+	
+	ngOnInit(): void {
+		let rawFormValue &#x3D; this.pluginForm.getRawValue();
+		let embedData &#x3D; this.createEmbedData(rawFormValue);
+		this.embedHTML &#x3D; this.getEmbedHTML(embedData);
+		/** *set embed Html in Textarea */
+		this.embedView.nativeElement.innerText &#x3D; this.embedHTML;
+		this.setPreviewBackgroundImage();
+		this.previewSwitchCase &#x3D; this.getPreviewCase();
+
+		this.pluginForm.valueChanges.subscribe(() &#x3D;&gt; {
+			if (this.pluginForm.valid) {
+				let rawFormValue &#x3D; this.pluginForm.getRawValue();
+				let embedData &#x3D; this.createEmbedData(rawFormValue);
+				this.embedHTML &#x3D; this.getEmbedHTML(embedData);
+				/** *set embed Html in Textarea */
+				this.embedView.nativeElement.innerText &#x3D; this.embedHTML;
+				this.setPreviewBackgroundImage();
+				this.previewSwitchCase &#x3D; this.getPreviewCase();
+			}
+		});
+	}
+
+	/** *Disable checkbox if hide card is true */
+	setWidgetCheckbox(event: MatSlideToggleChange) {
+		if (event.checked) {
+			this.pluginForm
+				.get(&#x27;showImageCheckbox&#x27;)
+				?.disable({ onlySelf: true, emitEvent: false });
+			this.pluginForm
+				.get(&#x27;addFormCheckbox&#x27;)
+				?.disable({ onlySelf: true, emitEvent: false });
+		} else {
+			this.pluginForm
+				.get(&#x27;showImageCheckbox&#x27;)
+				?.enable({ onlySelf: true, emitEvent: false });
+			this.pluginForm
+				.get(&#x27;addFormCheckbox&#x27;)
+				?.enable({ onlySelf: true, emitEvent: false });
+		}
+	}
+
+	/** *Create Embed Data */
+	createEmbedData(formData: any): ScriptPluginData {
+		return {
+			div_id: this.slug,
+			div_class: &#x27;widget&#x27;,
+			div_value: this.getWidgetType(formData),
+			data_slug: this.slug,
+			data_lang: this._accountService.getLocaleId() || &#x27;nl&#x27;,
+			data_success_url: formData.successRedirectURL,
+			data_fail_url: formData.failRedirectURL,
+			data_card: formData?.hideWidgetCard ? &#x27;hide&#x27; : &#x27;show&#x27;,
+		};
+	}
+
+	/** *Get Widget Type */
+	getWidgetType(formData: any): widgetType {
+		if (formData?.hideWidgetCard) return &#x27;donation-widget&#x27;;
+
+		if (formData?.addFormCheckbox) {
+			if (formData?.showImageCheckbox) return &#x27;donation-form+image&#x27;;
+			else return &#x27;donation-form+widget&#x27;;
+		}
+		if (formData?.showImageCheckbox) return &#x27;show-with-image&#x27;;
+
+		return &#x27;donation-widget&#x27;;
+	}
+
+	/** *Get Preview Case */
+	getPreviewCase() {
+		let rawFormValue &#x3D; this.pluginForm.getRawValue();
+		let widgetType &#x3D; this.getWidgetType(rawFormValue);
+		if (widgetType &#x3D;&#x3D;&#x3D; &#x27;donation-widget&#x27; &amp;&amp; rawFormValue?.hideWidgetCard)
+			return &#x27;donation-button&#x27;;
+
+		return widgetType;
+	}
+
+	getEmbedHTML(data: ScriptPluginData): string {
+		/** *static data */
+		let script_url &#x3D;
+			&#x27;https://res.cloudinary.com/dxhaja5tz/raw/upload/script_main.js&#x27;;
+
+		let div &#x3D; this._renderer.createElement(&#x27;div&#x27;);
+		let wrapperDiv &#x3D; this._renderer.createElement(&#x27;div&#x27;);
+		this._renderer.setStyle(wrapperDiv, &#x27;margin-top&#x27;, &#x27;100px&#x27;);
+
+		let script &#x3D; this._renderer.createElement(&#x27;script&#x27;);
+		this._renderer.setProperty(script, &#x27;src&#x27;, script_url);
+		this._renderer.setProperty(script, &#x27;type&#x27;, &#x27;text/javascript&#x27;);
+
+		let dataDiv &#x3D; this._renderer.createElement(&#x27;div&#x27;);
+		/** *set fundraiser related attribubtes */
+		this._renderer.setProperty(dataDiv, &#x27;id&#x27;, data.div_id);
+		this._renderer.addClass(dataDiv, data.div_class);
+		this._renderer.setAttribute(dataDiv, &#x27;data-slug&#x27;, data.data_slug);
+		this._renderer.setAttribute(dataDiv, &#x27;data-lang&#x27;, data.data_lang);
+		this._renderer.setAttribute(
+			dataDiv,
+			&#x27;data-success_url&#x27;,
+			data.data_success_url
+		);
+		this._renderer.setAttribute(dataDiv, &#x27;data-fail_url&#x27;, data.data_fail_url);
+		this._renderer.setAttribute(dataDiv, &#x27;data-card&#x27;, data.data_card);
+		this._renderer.setAttribute(dataDiv, &#x27;value&#x27;, data.div_value);
+
+		this._renderer.appendChild(wrapperDiv, dataDiv);
+		this._renderer.appendChild(wrapperDiv, script);
+		this._renderer.appendChild(div, wrapperDiv);
+
+		return div.innerHTML;
+	}
+
+	/** *Copy Embed HTML */
+	copyEmbedHTML() {
+		return this.embedHTML;
+	}
+
+	setPreviewBackgroundImage() {
+		// console.log(&#x27;isCurrentChildFundraiser&#x27;, this.isCurrentChildFundraiser);
+		if (this.selectedFundraiser) {
+			if (this.selectedFundraiser?.background !&#x3D; null) {
+				this.previewBackgroundImage &#x3D;
+					this.selectedFundraiser?.background?.image;
+				return;
+			}
+			if (this.selectedFundraiser?.parent?.background !&#x3D; null) {
+				this.previewBackgroundImage &#x3D;
+					this.selectedFundraiser?.parent?.background?.image;
+				return;
+			}
+			if (this.selectedFundraiser?.root_fundraiser?.background !&#x3D; null) {
+				this.previewBackgroundImage &#x3D;
+					this.selectedFundraiser?.root_fundraiser?.background?.image;
+				return;
+			}
+		} else if (this.selectedFundraiser?.background) {
+			this.previewBackgroundImage &#x3D; this.selectedFundraiser?.background?.image;
+		}
+	}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+	fxLayout&#x3D;&quot;row&quot;
+	fxLayout.lt-md&#x3D;&quot;column wrap&quot;
+	fxLayout.lt-sm&#x3D;&quot;column&quot;
+	fxFlex&#x3D;&quot;100%&quot;
+&gt;
+	&lt;mat-card
+		class&#x3D;&quot;mat-elevation-z0&quot;
+		fxFlex&#x3D;&quot;60%&quot;
+		fxFlex.lt-sm&#x3D;&quot;100%&quot;
+		fxLayout.xs&#x3D;&quot;column&quot;
+		ngClass.lt-sm&#x3D;&quot;m-b-xs&quot;
+	&gt;
+		&lt;div
+			fxLayout&#x3D;&quot;row wrap&quot;
+			fxLayout.xs&#x3D;&quot;column&quot;
+			fxLayoutAlign&#x3D;&quot;space-between baseline&quot;
+		&gt;
+			&lt;h2 i18n&#x3D;&quot;@@embed_embedDonation_title&quot;&gt;
+				Embed donation Widget to your website
+			&lt;/h2&gt;
+		&lt;/div&gt;
+		&lt;mat-card-content fxLayout.lt-sm&#x3D;&quot;row wrap&quot; ngClass.lt-sm&#x3D;&quot;m-t-xs&quot;&gt;
+			&lt;form [formGroup]&#x3D;&quot;pluginForm&quot;&gt;
+				&lt;p&gt;
+					&lt;strong i18n&#x3D;&quot;@@embed_widget_label&quot;&gt; Widget: &lt;/strong&gt;
+					&lt;mat-slide-toggle
+						labelPosition&#x3D;&quot;before&quot;
+						formControlName&#x3D;&quot;hideWidgetCard&quot;
+						(change)&#x3D;&quot;setWidgetCheckbox($event)&quot;
+						i18n&#x3D;&quot;@@embed_hideCard_label&quot;
+					&gt;
+						Hide card
+					&lt;/mat-slide-toggle&gt;
+				&lt;/p&gt;
+				&lt;p&gt;
+					&lt;mat-checkbox formControlName&#x3D;&quot;showImageCheckbox&quot; fxFlexOffset&#x3D;&quot;16px&quot;
+						&gt;&lt;span i18n&#x3D;&quot;@@embed_showFundraiserImage_checkbox&quot;
+							&gt;Show fundraiser image&lt;/span
+						&gt;&lt;/mat-checkbox
+					&gt;
+				&lt;/p&gt;
+				&lt;p&gt;
+					&lt;mat-checkbox formControlName&#x3D;&quot;addFormCheckbox&quot; fxFlexOffset&#x3D;&quot;16px&quot;
+						&gt;&lt;span i18n&#x3D;&quot;@@embed_addDonationForm_checkbox&quot;
+							&gt;Add Donation form&lt;/span
+						&gt;&lt;/mat-checkbox
+					&gt;
+				&lt;/p&gt;
+				&lt;p&gt;
+					&lt;mat-divider inset&gt;&lt;/mat-divider&gt;
+				&lt;/p&gt;
+				&lt;p class&#x3D;&quot;mat-body-2&quot; i18n&#x3D;&quot;@@embed_addUrlToRedirectUser_heading&quot;&gt;
+					Add Url to redirect user after donation (Optional)
+				&lt;/p&gt;
+				&lt;p fxLayout&#x3D;&quot;column&quot;&gt;
+					&lt;mat-form-field appearance&#x3D;&quot;outline&quot; color&#x3D;&quot;accent&quot; fxFlex&gt;
+						&lt;mat-label i18n&#x3D;&quot;@@embed_successUrl_label&quot;&gt;Success Url&lt;/mat-label&gt;
+						&lt;input
+							matInput
+							formControlName&#x3D;&quot;successRedirectURL&quot;
+							placeholder&#x3D;&quot;{{ sucessUrlPlaceholder }}&quot;
+						/&gt;
+						&lt;mat-error i18n&#x3D;&quot;@@embed_invalidUrl_label&quot;&gt; Invalid URL &lt;/mat-error&gt;
+					&lt;/mat-form-field&gt;
+					&lt;mat-form-field appearance&#x3D;&quot;outline&quot; color&#x3D;&quot;accent&quot; fxFlex&gt;
+						&lt;mat-label i18n&#x3D;&quot;@@embed_failUrl_label&quot;&gt;Fail Url&lt;/mat-label&gt;
+						&lt;input
+							matInput
+							formControlName&#x3D;&quot;failRedirectURL&quot;
+							placeholder&#x3D;&quot;{{ failUrlPlaceholder }}&quot;
+						/&gt;
+						&lt;mat-error i18n&#x3D;&quot;@@embed_invalidUrl_label&quot;&gt; Invalid URL &lt;/mat-error&gt;
+					&lt;/mat-form-field&gt;
+				&lt;/p&gt;
+				&lt;p&gt;
+					&lt;mat-divider inset&gt;&lt;/mat-divider&gt;
+				&lt;/p&gt;
+				&lt;p class&#x3D;&quot;mat-body-2&quot; i18n&#x3D;&quot;@@embed_copyAndPaste_label&quot;&gt;
+					Copy and paste the following embed code:
+				&lt;/p&gt;
+				&lt;p&gt;
+					&lt;mat-form-field appearance&#x3D;&quot;outline&quot; color&#x3D;&quot;accent&quot; fxFlex&gt;
+						&lt;textarea matInput #embedView cdkTextareaAutosize&gt;&lt;/textarea&gt;
+					&lt;/mat-form-field&gt;
+				&lt;/p&gt;
+				&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;end center&quot;&gt;
+					&lt;button
+						mat-flat-button
+						color&#x3D;&quot;accent&quot;
+						[cdkCopyToClipboard]&#x3D;&quot;copyEmbedHTML()&quot;
+						i18n&#x3D;&quot;@@button_copyCode&quot;
+					&gt;
+						Copy code
+					&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/mat-card-content&gt;
+	&lt;/mat-card&gt;
+	&lt;!-- &lt;mat-divider vertical&#x3D;&quot;true&quot;&gt;&lt;/mat-divider&gt; --&gt;
+	&lt;!-- Preview --&gt;
+	&lt;mat-card
+		ngClass.lt-sm&#x3D;&quot;m-t-xxl&quot;
+		class&#x3D;&quot;mat-elevation-z0 section-background-grey&quot;
+		fxFlex&#x3D;&quot;45%&quot;
+		fxFlex.lt-sm&#x3D;&quot;20%&quot;
+		fxLayout.xs&#x3D;&quot;column&quot;
+	&gt;
+		&lt;div fxFlex&#x3D;&quot;60%&quot; ngClass.lg&#x3D;&quot;m-l-m&quot;&gt;
+			&lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;start center&quot; ngClass.lg&#x3D;&quot;m-t-m&quot;&gt;
+				&lt;div fxLayout&#x3D;&quot;row&quot; class&#x3D;&quot;mat-body-1&quot; ngClass.lt-sm&#x3D;&quot;m-t-m&quot;&gt;
+					&lt;img src&#x3D;&quot;https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg&quot;/&gt;
+					&lt;span i18n&#x3D;&quot;@@embed_donationFormPreview_icon&quot; fxFlexOffset&#x3D;&quot;8px&quot;&gt;
+						Donation Form Preview
+					&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;br /&gt;
+			&lt;!-- Preview Container--&gt;
+			&lt;ng-container [ngSwitch]&#x3D;&quot;previewSwitchCase&quot;&gt;
+				&lt;ng-container
+					*ngSwitchCase&#x3D;&quot;&#x27;donation-widget&#x27;&quot;
+					[ngTemplateOutlet]&#x3D;&quot;widget&quot;
+				&gt;&lt;/ng-container&gt;
+				&lt;ng-container
+					*ngSwitchCase&#x3D;&quot;&#x27;show-with-image&#x27;&quot;
+					[ngTemplateOutlet]&#x3D;&quot;widgetImage&quot;
+				&gt;&lt;/ng-container&gt;
+				&lt;ng-container
+					*ngSwitchCase&#x3D;&quot;&#x27;donation-form+widget&#x27;&quot;
+					[ngTemplateOutlet]&#x3D;&quot;form&quot;
+				&gt;&lt;/ng-container&gt;
+				&lt;ng-container
+					*ngSwitchCase&#x3D;&quot;&#x27;donation-form+image&#x27;&quot;
+					[ngTemplateOutlet]&#x3D;&quot;formImage&quot;
+				&gt;&lt;/ng-container&gt;
+				&lt;ng-container
+					*ngSwitchCase&#x3D;&quot;&#x27;donation-button&#x27;&quot;
+					[ngTemplateOutlet]&#x3D;&quot;donationButton&quot;
+				&gt;&lt;/ng-container&gt;
+				&lt;ng-container
+					*ngSwitchDefault
+					[ngTemplateOutlet]&#x3D;&quot;widget&quot;
+				&gt;&lt;/ng-container&gt;
+			&lt;/ng-container&gt;
+		&lt;/div&gt;
+	&lt;/mat-card&gt;
+&lt;/div&gt;
+
+&lt;!-- Preview Templates: Templates for showing Preview --&gt;
+&lt;ng-template #widget&gt;
+	&lt;mat-card&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;widgetBody&quot;&gt;&lt;/ng-container&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;donationButtonBody&quot;&gt;&lt;/ng-container&gt;
+	&lt;/mat-card&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #widgetImage&gt;
+	&lt;mat-card&gt;
+		&lt;img
+			mat-card-image
+			class&#x3D;&quot;w-100&quot;
+			[src]&#x3D;&quot;previewBackgroundImage&quot;
+			loading&#x3D;&quot;lazy&quot;
+		/&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;widgetBody&quot;&gt;&lt;/ng-container&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;donationButtonBody&quot;&gt;&lt;/ng-container&gt;
+	&lt;/mat-card&gt;
+&lt;/ng-template&gt;
+&lt;ng-template #form&gt;
+	&lt;mat-card&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;widgetBody&quot;&gt;&lt;/ng-container&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;formBody&quot;&gt;&lt;/ng-container&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;donationButtonBody&quot;&gt;&lt;/ng-container&gt;
+	&lt;/mat-card&gt;
+&lt;/ng-template&gt;
+&lt;ng-template #formImage&gt;
+	&lt;mat-card&gt;
+		&lt;img mat-card-image [src]&#x3D;&quot;previewBackgroundImage&quot; loading&#x3D;&quot;lazy&quot; /&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;widgetBody&quot;&gt;&lt;/ng-container&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;formBody&quot;&gt;&lt;/ng-container&gt;
+		&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;donationButtonBody&quot;&gt;&lt;/ng-container&gt;
+	&lt;/mat-card&gt;
+&lt;/ng-template&gt;
+&lt;ng-template #donationButton&gt;
+	&lt;ng-container [ngTemplateOutlet]&#x3D;&quot;donationButtonBody&quot;&gt;&lt;/ng-container&gt;
+&lt;/ng-template&gt;
+
+&lt;!-- Body Template: used with combinations inside the Preview Templates --&gt;
+&lt;ng-template #widgetBody&gt;
+	&lt;p class&#x3D;&quot;mat-subheading-2&quot;&gt;
+		&lt;b&gt;&amp;#8364; 23.505&lt;/b&gt;&amp;nbsp;&lt;span i18n&#x3D;&quot;@@embed_outOf_value&quot;
+			&gt;Of &amp;#8364; 80.000&lt;/span
+		&gt;
+	&lt;/p&gt;
+	&lt;p&gt;
+		&lt;mat-progress-bar value&#x3D;&quot;40&quot;&gt;&lt;/mat-progress-bar&gt;
+	&lt;/p&gt;
+&lt;/ng-template&gt;
+&lt;ng-template #formBody&gt;
+	&lt;div class&#x3D;&quot;donation-form-preview&quot;&gt;
+		&lt;mat-tab-group mat-align-tabs&#x3D;&quot;center&quot; color&#x3D;&quot;accent&quot;&gt;
+			&lt;mat-tab label&#x3D;&quot;{{ oneTimeLabel }}&quot; i18n&#x3D;&quot;@@embed_oneTime_label&quot;&gt;
+			&lt;/mat-tab&gt;
+			&lt;mat-tab label&#x3D;&quot;{{ monthlyLabel }}&quot; i18n&#x3D;&quot;@@embed_monthly_label&quot;&gt;
+			&lt;/mat-tab&gt;
+			&lt;mat-tab label&#x3D;&quot;{{ yearlyLabel }}&quot; i18n&#x3D;&quot;@@embed_yearly_label&quot;&gt; &lt;/mat-tab&gt;
+		&lt;/mat-tab-group&gt;
+
+		&lt;br /&gt;
+		&lt;div fxLayoutAlign&#x3D;&quot;start start&quot; fxLayout&#x3D;&quot;row wrap&quot;&gt;
+			&lt;div class&#x3D;&quot;p-t-s&quot;&gt;
+				&lt;button mat-button class&#x3D;&quot;mat-flat-button&quot; color&#x3D;&quot;primary&quot;&gt;
+					&amp;#8364; 15&lt;/button
+				&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;p-t-s&quot;&gt;
+				&lt;button mat-stroked-button&gt;&amp;#8364; 50&lt;/button&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;p-t-s&quot;&gt;
+				&lt;button mat-stroked-button&gt;&amp;#8364; 100&lt;/button&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;p-t-s&quot;&gt;
+				&lt;button mat-stroked-button&gt;&amp;#8364; 250&lt;/button&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;br /&gt;
+	&lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;ng-template #donationButtonBody&gt;
+	&lt;p&gt;
+		&lt;button fxFlex mat-flat-button color&#x3D;&quot;accent&quot; i18n&#x3D;&quot;@@button_donate&quot;&gt;
+			Donate
+		&lt;/button&gt;
+	&lt;/p&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./embed.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div	fxLayout="row"	fxLayout.lt-md="column wrap"	fxLayout.lt-sm="column"	fxFlex="100%">	<mat-card		class="mat-elevation-z0"		fxFlex="60%"		fxFlex.lt-sm="100%"		fxLayout.xs="column"		ngClass.lt-sm="m-b-xs"	>		<div			fxLayout="row wrap"			fxLayout.xs="column"			fxLayoutAlign="space-between baseline"		>			<h2 i18n="@@embed_embedDonation_title">				Embed donation Widget to your website			</h2>		</div>		<mat-card-content fxLayout.lt-sm="row wrap" ngClass.lt-sm="m-t-xs">			<form [formGroup]="pluginForm">				<p>					<strong i18n="@@embed_widget_label"> Widget: </strong>					<mat-slide-toggle						labelPosition="before"						formControlName="hideWidgetCard"						(change)="setWidgetCheckbox($event)"						i18n="@@embed_hideCard_label"					>						Hide card					</mat-slide-toggle>				</p>				<p>					<mat-checkbox formControlName="showImageCheckbox" fxFlexOffset="16px"						><span i18n="@@embed_showFundraiserImage_checkbox"							>Show fundraiser image</span						></mat-checkbox					>				</p>				<p>					<mat-checkbox formControlName="addFormCheckbox" fxFlexOffset="16px"						><span i18n="@@embed_addDonationForm_checkbox"							>Add Donation form</span						></mat-checkbox					>				</p>				<p>					<mat-divider inset></mat-divider>				</p>				<p class="mat-body-2" i18n="@@embed_addUrlToRedirectUser_heading">					Add Url to redirect user after donation (Optional)				</p>				<p fxLayout="column">					<mat-form-field appearance="outline" color="accent" fxFlex>						<mat-label i18n="@@embed_successUrl_label">Success Url</mat-label>						<input							matInput							formControlName="successRedirectURL"							placeholder="{{ sucessUrlPlaceholder }}"						/>						<mat-error i18n="@@embed_invalidUrl_label"> Invalid URL </mat-error>					</mat-form-field>					<mat-form-field appearance="outline" color="accent" fxFlex>						<mat-label i18n="@@embed_failUrl_label">Fail Url</mat-label>						<input							matInput							formControlName="failRedirectURL"							placeholder="{{ failUrlPlaceholder }}"						/>						<mat-error i18n="@@embed_invalidUrl_label"> Invalid URL </mat-error>					</mat-form-field>				</p>				<p>					<mat-divider inset></mat-divider>				</p>				<p class="mat-body-2" i18n="@@embed_copyAndPaste_label">					Copy and paste the following embed code:				</p>				<p>					<mat-form-field appearance="outline" color="accent" fxFlex>						<textarea matInput #embedView cdkTextareaAutosize></textarea>					</mat-form-field>				</p>				<div fxLayout="row" fxLayoutAlign="end center">					<button						mat-flat-button						color="accent"						[cdkCopyToClipboard]="copyEmbedHTML()"						i18n="@@button_copyCode"					>						Copy code					</button>				</div>			</form>		</mat-card-content>	</mat-card>	<!-- <mat-divider vertical="true"></mat-divider> -->	<!-- Preview -->	<mat-card		ngClass.lt-sm="m-t-xxl"		class="mat-elevation-z0 section-background-grey"		fxFlex="45%"		fxFlex.lt-sm="20%"		fxLayout.xs="column"	>		<div fxFlex="60%" ngClass.lg="m-l-m">			<div fxLayout="row" fxLayoutAlign="start center" ngClass.lg="m-t-m">				<div fxLayout="row" class="mat-body-1" ngClass.lt-sm="m-t-m">					<img src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"/>					<span i18n="@@embed_donationFormPreview_icon" fxFlexOffset="8px">						Donation Form Preview					</span>				</div>			</div>			<br />			<!-- Preview Container-->			<ng-container [ngSwitch]="previewSwitchCase">				<ng-container					*ngSwitchCase="\'donation-widget\'"					[ngTemplateOutlet]="widget"				></ng-container>				<ng-container					*ngSwitchCase="\'show-with-image\'"					[ngTemplateOutlet]="widgetImage"				></ng-container>				<ng-container					*ngSwitchCase="\'donation-form+widget\'"					[ngTemplateOutlet]="form"				></ng-container>				<ng-container					*ngSwitchCase="\'donation-form+image\'"					[ngTemplateOutlet]="formImage"				></ng-container>				<ng-container					*ngSwitchCase="\'donation-button\'"					[ngTemplateOutlet]="donationButton"				></ng-container>				<ng-container					*ngSwitchDefault					[ngTemplateOutlet]="widget"				></ng-container>			</ng-container>		</div>	</mat-card></div><!-- Preview Templates: Templates for showing Preview --><ng-template #widget>	<mat-card>		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>	</mat-card></ng-template><ng-template #widgetImage>	<mat-card>		<img			mat-card-image			class="w-100"			[src]="previewBackgroundImage"			loading="lazy"		/>		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>	</mat-card></ng-template><ng-template #form>	<mat-card>		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>		<ng-container [ngTemplateOutlet]="formBody"></ng-container>		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>	</mat-card></ng-template><ng-template #formImage>	<mat-card>		<img mat-card-image [src]="previewBackgroundImage" loading="lazy" />		<ng-container [ngTemplateOutlet]="widgetBody"></ng-container>		<ng-container [ngTemplateOutlet]="formBody"></ng-container>		<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container>	</mat-card></ng-template><ng-template #donationButton>	<ng-container [ngTemplateOutlet]="donationButtonBody"></ng-container></ng-template><!-- Body Template: used with combinations inside the Preview Templates --><ng-template #widgetBody>	<p class="mat-subheading-2">		<b>&#8364; 23.505</b>&nbsp;<span i18n="@@embed_outOf_value"			>Of &#8364; 80.000</span		>	</p>	<p>		<mat-progress-bar value="40"></mat-progress-bar>	</p></ng-template><ng-template #formBody>	<div class="donation-form-preview">		<mat-tab-group mat-align-tabs="center" color="accent">			<mat-tab label="{{ oneTimeLabel }}" i18n="@@embed_oneTime_label">			</mat-tab>			<mat-tab label="{{ monthlyLabel }}" i18n="@@embed_monthly_label">			</mat-tab>			<mat-tab label="{{ yearlyLabel }}" i18n="@@embed_yearly_label"> </mat-tab>		</mat-tab-group>		<br />		<div fxLayoutAlign="start start" fxLayout="row wrap">			<div class="p-t-s">				<button mat-button class="mat-flat-button" color="primary">					&#8364; 15</button				>&nbsp;&nbsp;&nbsp;			</div>			<div class="p-t-s">				<button mat-stroked-button>&#8364; 50</button>&nbsp;&nbsp;&nbsp;			</div>			<div class="p-t-s">				<button mat-stroked-button>&#8364; 100</button>&nbsp;&nbsp;&nbsp;			</div>			<div class="p-t-s">				<button mat-stroked-button>&#8364; 250</button>&nbsp;&nbsp;&nbsp;			</div>		</div>		<br />	</div></ng-template><ng-template #donationButtonBody>	<p>		<button fxFlex mat-flat-button color="accent" i18n="@@button_donate">			Donate		</button>	</p></ng-template></div>'
+    var COMPONENTS = [{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AccountViewComponent', 'selector': 'app-account-view'},{'name': 'AddBackgroundDialogComponent', 'selector': 'app-add-background-dialog'},{'name': 'AddVideoBackgroundDialogComponent', 'selector': 'app-add-video-background-dialog'},{'name': 'AmountViewComponent', 'selector': 'app-amount-view'},{'name': 'ApiKeyComponent', 'selector': 'app-api-key'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BackgroundImageEditComponent', 'selector': 'app-background-image-edit'},{'name': 'BackgroundImageEditDialogComponent', 'selector': 'app-background-image-edit-dialog'},{'name': 'BackgroundMediaComponent', 'selector': 'app-background-media'},{'name': 'BalanceComponent', 'selector': 'app-balance'},{'name': 'BalanceSummaryComponent', 'selector': 'app-balance-summary'},{'name': 'BankAccountType', 'selector': 'bank-account-dialog'},{'name': 'BankComponent', 'selector': 'app-bank'},{'name': 'BrandingComponent', 'selector': 'app-branding'},{'name': 'ConnectFundComponent', 'selector': 'app-connect-fund'},{'name': 'ConnectFundraiserButtonComponent', 'selector': 'app-connect-fundraiser-button'},{'name': 'ConnectFundraiserComponent', 'selector': 'app-connect-fundraiser'},{'name': 'CopyrightComponent', 'selector': 'app-copyright'},{'name': 'CreateAboutComponent', 'selector': 'app-create-about'},{'name': 'CreatedByComponent', 'selector': 'app-created-by'},{'name': 'CreateFundraiserComponent', 'selector': 'app-create-fundraiser'},{'name': 'CreateUpdateComponent', 'selector': 'app-create-update'},{'name': 'CustomBrandingComponent', 'selector': 'app-custom-branding'},{'name': 'CustomDonationFormComponent', 'selector': 'app-custom-donation-form'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DaysLeftViewComponent', 'selector': 'app-days-left-view'},{'name': 'DeactivatedAccountComponent', 'selector': 'app-deactivated-account'},{'name': 'DeleteFundraiserComponent', 'selector': 'app-delete-fundraiser'},{'name': 'DialogAuthorisationComponent', 'selector': 'app-dialog-authorisation'},{'name': 'DialogConfirmationComponent', 'selector': 'app-dialog-confirmation'},{'name': 'DialogElementsExampleDialog', 'selector': 'dialog-elements-example-dialog'},{'name': 'DonationFormComponent', 'selector': 'app-donation-form'},{'name': 'DonationPageComponent', 'selector': 'app-donation-page'},{'name': 'DonationPluginComponent', 'selector': 'app-donation-plugin'},{'name': 'DonationProgressBarComponent', 'selector': 'app-donation-progress-bar'},{'name': 'DonationProgressPercentageComponent', 'selector': 'app-donation-progress-percentage'},{'name': 'DonationReceiptComponent', 'selector': 'app-donation-receipt'},{'name': 'DonationReceivedComponent', 'selector': 'app-donation-received'},{'name': 'DonationSuccessfulComponent', 'selector': 'app-donation-successful'},{'name': 'DonationSuccessfulFormComponent', 'selector': 'app-donation-successful-form'},{'name': 'DonationSummaryComponent', 'selector': 'app-donation-summary'},{'name': 'DonationsZeroComponent', 'selector': 'app-donations-zero'},{'name': 'DonorListFullComponent', 'selector': 'app-donor-list-full'},{'name': 'DonorListShortComponent', 'selector': 'app-donor-list-short'},{'name': 'EditAboutComponent', 'selector': 'app-edit-about'},{'name': 'EditAboutDescriptionComponent', 'selector': 'app-edit-about-description'},{'name': 'EditAppealComponent', 'selector': 'app-edit-appeal'},{'name': 'EditAppealDescriptionComponent', 'selector': 'app-edit-appeal-description'},{'name': 'EditCreatedByComponent', 'selector': 'app-edit-created-by'},{'name': 'EditFundraiserCategoryComponent', 'selector': 'app-edit-fundraiser-category'},{'name': 'EditFundraiserLocationComponent', 'selector': 'app-edit-fundraiser-location'},{'name': 'EditUpdateComponent', 'selector': 'app-edit-update'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailComponent', 'selector': 'app-email'},{'name': 'EmailVerificationComponent', 'selector': 'app-email-verification'},{'name': 'EmbedComponent', 'selector': 'app-embed'},{'name': 'FeaturedFundraisersComponent', 'selector': 'app-personal-funsraising-featured-fundraisers'},{'name': 'FeaturesAndWhyWhydonateComponent', 'selector': 'app-features-and-why-whydonate'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'FreeSignUpButtonComponent', 'selector': 'app-free-sign-up-button'},{'name': 'FundraiserAboutComponent', 'selector': 'app-fundraiser-about'},{'name': 'FundraiserCardComponent', 'selector': 'app-fundraiser-card'},{'name': 'FundraiserCategoryComponent', 'selector': 'app-fundraiser-category'},{'name': 'FundraiserClosedComponent', 'selector': 'app-fundraiser-closed'},{'name': 'FundraiserComponent', 'selector': 'app-fundraiser'},{'name': 'FundraiserContactComponent', 'selector': 'app-fundraiser-contact'},{'name': 'FundraiserCreatedComponent', 'selector': 'app-fundraiser-created'},{'name': 'FundraiserDonationComponent', 'selector': 'app-fundraiser-donation'},{'name': 'FundraiserForComponent', 'selector': 'app-fundraiser-for'},{'name': 'fundraiserIsDraftComponent', 'selector': 'fundraiser-is-draft.html'},{'name': 'FundraiserLocationComponent', 'selector': 'app-fundraiser-location'},{'name': 'FundraiserMediaEditComponent', 'selector': 'app-fundraiser-media-edit'},{'name': 'FundraiserMediaViewComponent', 'selector': 'app-fundraiser-media-view'},{'name': 'fundraiserNotfoundhandlerComponent', 'selector': 'fundraiser-not-found-handler'},{'name': 'FundraiserNotificationComponent', 'selector': 'app-fundraiser-notification'},{'name': 'FundraiserPreviewComponent', 'selector': 'app-fundraiser-preview'},{'name': 'FundraiserPublishedComponent', 'selector': 'app-fundraiser-published'},{'name': 'FundraiserStatusComponent', 'selector': 'app-fundraiser-status'},{'name': 'FundraiserUpdateEditComponent', 'selector': 'app-fundraiser-update-edit'},{'name': 'FundraiserUpdateViewComponent', 'selector': 'app-fundraiser-update-view'},{'name': 'FundraisingSiteComponent', 'selector': 'app-fundraising-site'},{'name': 'GivenDonationComponent', 'selector': 'app-given-donation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeadNavigationComponent', 'selector': 'app-head-navigation'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ImageDisplayComponent', 'selector': 'app-image-display'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'LanguageChooserComponent', 'selector': 'app-language-chooser'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoAppLinksComponent', 'selector': 'app-logo-app-links'},{'name': 'MakingADifferenceComponent', 'selector': 'app-making-a-difference'},{'name': 'MyFundraisersComponent', 'selector': 'app-my-fundraisers'},{'name': 'MyFundraisersViewComponent', 'selector': 'app-my-fundraisers-view'},{'name': 'NotificationBannerComponent', 'selector': 'app-notification-banner'},{'name': 'OnlineFundraisingFeaturesComponent', 'selector': 'app-online-fundraising-features'},{'name': 'OppComponent', 'selector': 'app-check-payment-status'},{'name': 'OppOwnerComponent', 'selector': 'app-opp-owner'},{'name': 'OrganisationBannerComponent', 'selector': 'app-organisation-banner'},{'name': 'OwnerSocialShareComponent', 'selector': 'app-owner-social-share'},{'name': 'PageLoaderComponent', 'selector': 'app-page-loader'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaymentRequestComponent', 'selector': 'app-payment-request'},{'name': 'PayoutPopupComponent', 'selector': 'app-payout-popup'},{'name': 'PayoutSettingsComponent', 'selector': 'app-payout-settings'},{'name': 'PayoutStripeComponent', 'selector': 'app-payout-stripe'},{'name': 'PayoutSummaryComponent', 'selector': 'app-payout-summary'},{'name': 'PayoutTableComponent', 'selector': 'app-payout-table'},{'name': 'PayoutTableMollieComponent', 'selector': 'app-payout-table-mollie'},{'name': 'PersonalFundraisingDividedBannerComponent', 'selector': 'app-personal-fundraising-divided-banner'},{'name': 'PersonalVerificationComponent', 'selector': 'app-personal-verification'},{'name': 'PlatformFeeComponent', 'selector': 'app-platform-fee'},{'name': 'PopupStartFundraiserComponent', 'selector': 'app-popup-start-fundraiser'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileViewComponent', 'selector': 'app-profile-view'},{'name': 'PromoteCauseButtonComponent', 'selector': 'app-promote-cause-button'},{'name': 'QrCodeComponent', 'selector': 'app-qr-code'},{'name': 'QuillEditorComponent', 'selector': 'app-quill-editor'},{'name': 'QuillViewComponent', 'selector': 'app-quill-view'},{'name': 'RatingsComponent', 'selector': 'app-ratings'},{'name': 'ReceiptComponent', 'selector': 'app-receipt'},{'name': 'ReceivedDonationComponent', 'selector': 'app-received-donation'},{'name': 'RecurringGivenDonationComponent', 'selector': 'app-recurring-given-donation'},{'name': 'RecurringReceivedDonationComponent', 'selector': 'app-recurring-received-donation'},{'name': 'RegistrationCompleteComponent', 'selector': 'app-registration-complete'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RegistrationFormComponent', 'selector': 'app-registration-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResetPasswordDialog', 'selector': 'reset-password-dialog'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'ShareContributionComponent', 'selector': 'app-share-contribution'},{'name': 'ShareDialogComponent', 'selector': 'app-share-dialog'},{'name': 'ShareFundraiserPageComponent', 'selector': 'app-share-fundraiser-page'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SocialShareButtonsComponent', 'selector': 'app-social-share-buttons'},{'name': 'StartFundraiserButtonComponent', 'selector': 'app-start-fundraiser-button'},{'name': 'StartingAFundraiserComponent', 'selector': 'app-starting-a-fundraiser'},{'name': 'StepsToDoComponent', 'selector': 'app-steps-to-do'},{'name': 'StopRecurringDonationComponent', 'selector': 'app-stop-recurring-donation'},{'name': 'StripeComponent', 'selector': 'app-stripe'},{'name': 'StripeNotificationBannerComponent', 'selector': 'app-stripe-notification-banner'},{'name': 'StripePromptComponent', 'selector': 'app-stripe-prompt'},{'name': 'SubFooterStartAFundraiserComponent', 'selector': 'app-sub-footer-start-afundraiser'},{'name': 'SummariesComponent', 'selector': 'app-summaries'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TargetAmountComponent', 'selector': 'app-target-amount'},{'name': 'TemplateBodyComponent', 'selector': 'app-template-body'},{'name': 'TemplateFooterComponent', 'selector': 'app-template-footer'},{'name': 'TemplateHeaderComponent', 'selector': 'app-template-header'},{'name': 'ThankDonarComponent', 'selector': 'app-thank-donar'},{'name': 'ThankYouComponent', 'selector': 'app-thank-you'},{'name': 'TranslateAboutComponent', 'selector': 'app-translate-about'},{'name': 'TranslateAboutDescriptionComponent', 'selector': 'app-translate-about-description'},{'name': 'TranslateAppealComponent', 'selector': 'app-translate-appeal'},{'name': 'TranslateAppealDescriptionComponent', 'selector': 'app-translate-appeal-description'},{'name': 'TranslateUpdatesComponent', 'selector': 'app-translate-updates'},{'name': 'UploadImageVideoPopUpComponent', 'selector': 'app-upload-image-video-pop-up'},{'name': 'UsermessageCancelComponent', 'selector': 'app-usermessage-cancel'},{'name': 'UsermessageStopComponent', 'selector': 'app-usermessage-stop'},{'name': 'VerificationBannerComponent', 'selector': 'app-verification-banner'},{'name': 'VerifiedPopupComponent', 'selector': 'app-verified-popup'},{'name': 'VerifyBankPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VerifyEmailComponent', 'selector': 'app-verify-email'},{'name': 'VerifyPasswordDialog', 'selector': 'verify-password-dialog'},{'name': 'VideoUploadComponent', 'selector': 'app-video-upload'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'NumbersOnlyDirective', 'selector': '[appNumbersOnly]'},{'name': 'TwoDigitDecimaNumberDirective', 'selector': '[appTwoDigitDecimaNumber]'}];
+    var ACTUAL_COMPONENT = {'name': 'EmbedComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmbedComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

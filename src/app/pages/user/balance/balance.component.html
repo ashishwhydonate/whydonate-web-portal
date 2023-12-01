@@ -1,0 +1,420 @@
+<div fxLayout="row" fxLayout.xs="column" fxFlex="100%">
+	<div
+		*ngIf="this.showStripe; else loading"
+		fxLayout="column"
+		fxFlex="30%"
+		class="background-grey"
+	>
+		<mat-card class="mat-elevation-z0 section-background-grey">
+			<app-balance-summary></app-balance-summary>
+		</mat-card>
+
+		<!-- PAYOUT DETAILS-->
+		<mat-card class="mat-elevation-z0 section-background-grey">
+			<div
+				fxLayout="row"
+				fxLayoutAlign="start start"
+				class="section-background-white"
+			>
+				<div fxLayout="column" fxLayoutGap="5%">
+					<div fxLayout="row">
+						<span
+							class="mat-body-2 nowrap"
+							i18n="@@payout_settings_payout_schedule_heading"
+							>Payout Schedule</span
+						>
+					</div>
+
+					<button
+						class="download"
+						mat-flat-button
+						color="accent"
+						[disabled]="
+							isStripePayoutLoading ||
+							this.stripeBalanceAvailable < 1 ||
+							this.stripePayoutInterval != 'manual'
+						"
+						(click)="payoutStripe()"
+					>
+						<span i18n="@@balance_payoutNow_button">Payout Now</span>
+						<mat-icon *ngIf="isStripePayoutLoading" class="m-l-xs">
+							<mat-spinner color="primary" diameter="20"> </mat-spinner>
+						</mat-icon>
+					</button>
+
+					<mat-divider></mat-divider>
+
+					<p
+						*ngIf="this.stripePayoutInterval == 'manual'"
+						i18n="@@balance_payout_schedule_to_manual"
+					>
+						Payout scheduled to manual
+					</p>
+					<button
+						i18n="@@balance_stripe_changeSchedule"
+						class="download"
+						mat-stroked-button
+						color="accent"
+						(click)="redirectToPayoutSettings()"
+					>
+						Change Schedule
+					</button>
+				</div>
+			</div>
+		</mat-card>
+	</div>
+
+	<div fxLayout="column" fxLayout.xs="row" fxFlex="70%">
+		<!--TABS START-->
+		<mat-tab-group
+			#matgroup
+			[(selectedIndex)]="selectedTabIndex"
+			class="section-background-white"
+		>
+			<mat-tab label="{{ transactionTab }}">
+				<div ngClass="m-t-m" fxFlex="100" fxFlex.lt-md="100" fxFlex.lt-sm="100">
+					<div
+						fxLayout="row"
+						fxLayout.lt-md="row wrap"
+						fxLayoutAlign="start center"
+						ngClass="p-l-l p-r-l"
+						ngClass.lt-sm="p-xxs"
+						fxLayoutGap="2%"
+					>
+						<!-- Search input -->
+						<div fxLayout="row" fxFlex.lt-md="100">
+							<mat-form-field
+								fxFlex.lt-md="100"
+								[formGroup]="searchInputForm"
+								appearance="outline"
+								color="primary"
+								fxFill
+							>
+								<mat-label i18n="@@balance_search_label">Search</mat-label>
+								<input
+									class="search"
+									formControlName="searchCtrl"
+									id="search-input"
+									matInput
+									type="search"
+									placeholder="search"
+									#input
+								/>
+								<img
+									matSuffix
+									height="21px"
+									src="https://res.cloudinary.com/whydonate/image/upload/v1666203387/whydonate-production/platform/svg-icons/search.svg"
+								/>
+							</mat-form-field>
+						</div>
+						<!-- Date range -->
+						<div
+							fxLayout="row"
+							fxFlex="100"
+							fxLayoutAlign="space-between baseline"
+						>
+							<mat-form-field
+								appearance="outline"
+								color="primary"
+								fxFlex.xs="60%"
+								(click)="picker.open()"
+							>
+								<mat-label i18n="@@balance_date_range_label"
+									>Enter a date range</mat-label
+								>
+								<mat-date-range-input
+									[formGroup]="range"
+									[rangePicker]="picker"
+								>
+									<input
+										readonly
+										class="inputDateStart"
+										matStartDate
+										formControlName="start"
+										placeholder="Start date"
+									/>
+									<input
+										readonly
+										class="inputDateEnd"
+										matEndDate
+										formControlName="end"
+										placeholder="End date"
+									/>
+								</mat-date-range-input>
+
+								<mat-datepicker-toggle
+									class="toggle"
+									matSuffix
+									[for]="picker"
+								></mat-datepicker-toggle>
+								<mat-date-range-picker #picker>
+									<mat-date-range-picker-actions>
+										<button
+											class="clear"
+											mat-button
+											matDateRangePickerCancel
+											(click)="clearDate($event)"
+										>
+											Clear
+										</button>
+										<button
+											class="apply"
+											mat-raised-button
+											color="primary"
+											matDateRangePickerApply
+										>
+											Apply
+										</button>
+									</mat-date-range-picker-actions>
+								</mat-date-range-picker>
+
+								<mat-error
+									i18n="@@balance_invalid_start_date_error_message"
+									*ngIf="range.controls.start.hasError('matStartDateInvalid')"
+									>Invalid start date</mat-error
+								>
+								<mat-error
+									i18n="@@balance_invalid_end_date_error_message"
+									*ngIf="range.controls.end.hasError('matEndDateInvalid')"
+									>Invalid end date</mat-error
+								>
+							</mat-form-field>
+							<!-- Download csv button -->
+							<div matTooltip="{{ csvCheck ? '' : dateRangeTooltip }}">
+								<button
+									class="download"
+									(click)="saveCsv()"
+									[disabled]="!csvCheck"
+									[ngClass]="{ 'background-grey': !csvCheck }"
+									mat-stroked-button
+									color="accent"
+									i18n="@@balance_download_csv_label"
+								>
+									Download CSV &nbsp;<img
+										height="16px"
+										src="https://res.cloudinary.com/whydonate/image/upload/v1667503294/whydonate-production/platform/svg-icons/save.svg"
+									/>
+									<mat-icon *ngIf="csvLoading" class="m-l-xs">
+										<mat-spinner color="accent" diameter="20"> </mat-spinner>
+									</mat-icon>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Loader -->
+					<mat-progress-bar
+						class="m-t-xs"
+						mode="indeterminate"
+						*ngIf="isLoading"
+					></mat-progress-bar>
+					<div class="table-container">
+						<table
+							class="mat-elevation-z1"
+							mat-table
+							[dataSource]="dataSource"
+							[style.borderLeft]="'2px solid #eee'"
+						>
+							<div *ngFor="let year of formattedWalletTransactions">
+								<div *ngFor="let month of year">
+									<p
+										style="padding-left: 14px"
+										[style.font-size.px]="16"
+										[style.font-smooth]="'always'"
+										[style.marginTop.px]="10"
+									>
+										{{ month.month }}
+									</p>
+								</div>
+							</div>
+							<!-- Position Column -->
+							<ng-container matColumnDef="date">
+								<th
+									i18n="@@balance_date_header_label"
+									mat-header-cell
+									*matHeaderCellDef
+									[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+								>
+									Date.
+								</th>
+								<td mat-cell *matCellDef="let element; let i = index">
+									<ng-container *ngIf="element.fundraiserName">
+										{{ element.date | date : 'dd-MM-yyyy' }}
+									</ng-container>
+								</td>
+							</ng-container>
+
+							<!-- Name Column -->
+							<ng-container matColumnDef="time">
+								<th
+									mat-header-cell
+									*matHeaderCellDef
+									[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+									i18n="@@balance_time_header_label"
+								>
+									Time
+								</th>
+								<td mat-cell *matCellDef="let element; let i = index">
+									<ng-container *ngIf="element.fundraiserName">
+										{{ element.time | date : 'HH:mm:SS ' }}
+									</ng-container>
+								</td>
+							</ng-container>
+
+							<!-- Weight Column -->
+							<ng-container matColumnDef="fundraiser_name">
+								<th
+									mat-header-cell
+									*matHeaderCellDef
+									[ngClass]="dataSource.data.length ? 'min-w-100px' : ''"
+									i18n="@@balance_fundraiserName_header_label"
+								>
+									Fundraiser Name
+								</th>
+								<td mat-cell *matCellDef="let element; let i = index">
+									<ng-container> {{ element.fundraiserName }} </ng-container>
+								</td>
+							</ng-container>
+
+							<!-- Symbol Column -->
+							<ng-container matColumnDef="payment_mode">
+								<th
+									mat-header-cell
+									*matHeaderCellDef
+									i18n="@@balance_payment_header_label"
+								>
+									Payment Mode
+								</th>
+								<td mat-cell *matCellDef="let element; let i = index">
+									<ng-container> {{ element.payment_method }}</ng-container>
+								</td>
+							</ng-container>
+							<ng-container matColumnDef="amount">
+								<th mat-header-cell *matHeaderCellDef>
+									<div
+										fxLayoutAlign="start center"
+										i18n="@@balance_amount_header_label"
+									>
+										Amount
+									</div>
+								</th>
+								<td mat-cell *matCellDef="let element; let i = index">
+									<ng-container *ngIf="element.fundraiserName">
+										<mat-panel-title>
+											<div fxLayoutAlign="start center">
+												<span>
+													{{ element.symbol }} {{ element.donation }}
+												</span>
+											</div>
+										</mat-panel-title>
+									</ng-container>
+									<ng-container *ngIf="!element.fundraiserName">
+										{{ element.symbol }} {{ element.amount }}
+									</ng-container>
+								</td>
+							</ng-container>
+
+							<!-- Type Column -->
+							<ng-container matColumnDef="type">
+								<th
+									mat-header-cell
+									*matHeaderCellDef
+									i18n="@@balance_type_header_label"
+								>
+									Type
+								</th>
+								<td mat-cell *matCellDef="let element; let i = index">
+									<!-- <ng-container> {{ element.type }}</ng-container> -->
+
+									<div
+										*ngIf="element.type == 'cost'"
+										i18n="@@balance_cost_header_label"
+									>
+										Payment processing costs
+									</div>
+									<div
+										*ngIf="element.type == 'commission'"
+										i18n="@@balance_commission_header_label"
+									>
+										Platform fee
+									</div>
+									<div
+										*ngIf="element.type == 'donation'"
+										i18n="@@balance_donation_header_label"
+									>
+										Donation
+									</div>
+									<div
+										*ngIf="element.type == 'reversal_transfer'"
+										i18n="@@balance_donation_header_label_reversal"
+									>
+										Reversal
+									</div>
+									<div
+										*ngIf="element.type == 'stripe_fee'"
+										i18n="@@balance_donation_header_label_stripe_fee"
+									>
+										Stripe Fee
+									</div>
+								</td>
+							</ng-container>
+							<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+							<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+						</table>
+						<div
+							*ngIf="
+								donationReceivedCount == 0 ||
+								this.searchInputCheck ||
+								this.dateFilterCheck
+							"
+							class="m-t-xxl"
+						>
+							<p
+								class="noRecord"
+								[style.fontSize.px]="25"
+								[style.textAlign]="'center'"
+								name="no_donation"
+								i18n="@@balance_table_no_transaction_record"
+							>
+								No transaction record
+							</p>
+							<p
+								[style.textAlign]="'center'"
+								name="no_donation_description"
+								i18n="@@balance_table_you_have_not_received_donation"
+							>
+								You have not received donation for any fundraiser.
+							</p>
+						</div>
+						<ng-container *ngIf="isPaginatorLoading"></ng-container>
+
+						<mat-paginator
+							[pageSizeOptions]="[20]"
+							[pageSize]="20"
+							(page)="changePage($event)"
+						>
+						</mat-paginator>
+					</div>
+				</div>
+			</mat-tab>
+
+			<mat-tab label="{{ payoutTabMollie }}">
+				<app-payout-table-mollie
+					(openTransactionsForSettlememntId)="recivedDateFromSettlement($event)"
+				></app-payout-table-mollie>
+			</mat-tab>
+		</mat-tab-group>
+		<!-- TABS END ------------------------------------------------------------------------------------------------------->
+	</div>
+</div>
+
+<!----------------------LOADING SPINNER TEMPLATE---------------------->
+<ng-template #loading>
+	<br /><br />
+	<div fxLayoutAlign="center center">
+		<mat-icon
+			><mat-spinner color="accent" diameter="20"></mat-spinner
+		></mat-icon>
+	</div>
+	<br /><br />
+</ng-template>

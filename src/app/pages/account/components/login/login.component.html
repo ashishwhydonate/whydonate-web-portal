@@ -1,0 +1,120 @@
+<!-- <app-page-loader *ngIf="this.isLoading"></app-page-loader> -->
+
+<div
+	ngClass="p-xxl"
+	ngClass.xs="p-l"
+	fxFlex="100"
+	fxLayout="row"
+	fxLayout.xs="column"
+	fxLayoutAlign="center start"
+	fxLayoutAlign.xs="start center"
+>
+	<div fxFlex="40" fxLayout="column">
+		<div fxLayout.xs="row">
+			<h1 class="cypress" i18n="@@account_components_login_loginHeading">
+				Login to your account
+			</h1>
+		</div>
+
+		<!--Validators: required, email, pattern-->
+		<form [formGroup]="loginForm">
+			<mat-form-field class="full-width" appearance="outline">
+				<mat-label i18n="@@account_login_form_email_label">Email-ID</mat-label>
+				<input
+					required
+					i18n="@@account_components_login_emailInput"
+					matInput
+					placeholder="Email Address"
+					formControlName="email"
+					id="loginEmail"
+				/>
+				<mat-error
+					i18n="@@account_components_login_emailError"
+					*ngIf="this.loginForm.controls['email'].errors"
+					>Invalid Email</mat-error
+				>
+			</mat-form-field>
+
+			<!--Validators: required-->
+			<mat-form-field class="full-width" appearance="outline">
+				<mat-label i18n="@@account_components_login_passwordLabel"
+					>Password</mat-label
+				>
+				<input
+					required
+					autocomplete="disabled"
+					id="loginPassword"
+					i18n="@@account_components_login_passwordInput"
+					matInput
+					formControlName="password"
+					type="password"
+					placeholder="Password"
+					#passwordField
+				/>
+
+				<!--type:text(visibility is on), type:password(visibility is off) -->
+				<button
+					style="position: relative; bottom: 6px"
+					mat-icon-button
+					type="button"
+					(click)="
+						passwordField.type === 'password'
+							? (passwordField.type = 'text')
+							: (passwordField.type = 'password')
+					"
+					matSuffix
+				>
+					<img
+						*ngIf="passwordField.type === 'password'"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667507211/whydonate-production/platform/svg-icons/visibilityOff.svg"
+					/>
+					<img
+						*ngIf="passwordField.type === 'text'"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667417617/whydonate-production/platform/svg-icons/visibilityOn.svg"
+					/>
+				</button>
+				<!-- <mat-icon matSuffix (click)="toggleLoginPassword()">visibility</mat-icon> -->
+			</mat-form-field>
+
+			<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="2%">
+				<!--Redirects to forgot-password component-->
+				<a
+					i18n="@@account_components_login_forgotPasswordButton"
+					class="link-decorate-style pointer"
+					id="forgotPassword"
+					(click)="routeToForgotPassword()"
+				>
+					Forgot Password ?
+				</a>
+
+				<!--login() is defined in login.component.ts file -->
+				<button
+					mat-flat-button
+					color="accent"
+					[disabled]="isLoading"
+					(click)="login()"
+					id="userLogin"
+				>
+					<span i18n="@@button_login">Login</span>
+					<mat-icon *ngIf="isLoading" class="m-l-xs">
+						<mat-spinner color="accent" diameter="20"> </mat-spinner>
+					</mat-icon>
+				</button>
+			</div>
+		</form>
+		<br /><br />
+		<div fxLayout="row" fxLayoutAlign="start baseline" fxLayoutGap="2%">
+			<h4 i18n="@@account_components_login_newToWhydonateText">
+				New to whydonate?
+			</h4>
+			<!--Redirects to registration component-->
+			<a
+				i18n="@@button_register"
+				class="link-decorate-style pointer"
+				id="registerButton"
+				(click)="routeToRegistration()"
+				>Register</a
+			>
+		</div>
+	</div>
+</div>

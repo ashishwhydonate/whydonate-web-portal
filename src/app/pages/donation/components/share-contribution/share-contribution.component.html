@@ -1,0 +1,174 @@
+<div
+	fxLayout="row"
+	fxFlex="100%"
+	fxLayoutAlign="center center"
+	ngClass="p-xxl"
+	ngClass.sm="p-m"
+	ngClass.xs="p-m"
+>
+	<div
+		fxLayout="column"
+		fxFlex="60%"
+		fxFlex.sm="90%"
+		fxFlex.xs="95%"
+		fxLayoutAlign="center center"
+		fxLayoutGap="2%"
+	>
+		<div
+			fxLayout="row"
+			fxFill
+			fxLayout.sm="column"
+			fxLayout.xs="column"
+			fxLayoutAlign="center center"
+			class="donateGreyBackground"
+			ngClass="p-m"
+		>
+			<div fxLayout="column" fxLayoutAlign="center start">
+				<h2 class="display-2">
+					<img
+						style="position:relative ; top:5px"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"/>&nbsp;
+					<span
+						i18n="@@donation_share_contribution_receivedDonation_title_label"
+						>Recieved Donation</span
+					>
+				</h2>
+				<p i18n="@@donation_donationShare_received_message" class="body-2">
+					Your donation receipt has been sent to your registered Email-ID.
+					Alternatively, download it here
+				</p>
+			</div>
+			<div fxLayout="column" fxFlex="40%" fxLayoutAlign="center end">
+				<!--Download Reciept button which upon clicking invokes downloadReciept()
+					 which opens a new page and generates a reciept-->
+				<button
+					i18n="@@button_downloadReceipt"
+					mat-flat-button
+					i18n
+					color="accent"
+					(click)="downloadReceipt()"
+				>
+					Download Receipt
+				</button>
+			</div>
+		</div>
+
+		<mat-spinner *ngIf="!this.isFundraiserLoaded"></mat-spinner>
+		<!--Share fundraiser section-->
+		<div
+			fxLayout="row"
+			fxLayoutAlign="start start"
+			class="donateGreyBackground"
+			ngClass="p-m"
+			*ngIf="this.isFundraiserLoaded"
+		>
+			<div
+				fxLayout="row"
+				fxLayout.lt-sm="row wrap"
+				fxFill
+				fxLayoutAlign="start start"
+				fxLayoutGap="2%"
+			>
+				<div
+					class="donateGreyBackground"
+					fxLayout="column"
+					fxLayout.xs="column"
+					fxLayout.sm="column"
+					fxLayoutAlign="center start"
+					fxLayoutGap="2%"
+					ngClass="p-s"
+					fxFlex="45%"
+					fxFlex.lt-sm="100%"
+				>
+					<!--SOCIAL MEDIA ICONS-->
+					<div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="2%">
+						<h2 i18n="@@donation_donationShare_friendsFamily_message">
+							Let your family and friends know about your contribution
+						</h2>
+					</div>
+					<div fxLayout="row " fxLayoutAlign="start start" fxLayoutGap="2%">
+						<p
+							i18n="@@donation_donationShare_sharebyclick_message"
+							class="body-2"
+						>
+							Share fundriaser by clicking on social media icon
+						</p>
+					</div>
+					<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="2%">
+						<app-social-share-buttons
+							[currentFundraiserData]="this.currentFundraiserData"
+							[customURL]="this.customURL"
+							[isDonationModule]="true"
+						></app-social-share-buttons>
+					</div>
+				</div>
+				<div
+					fxLayout="column"
+					fxLayout.xs="column"
+					fxLayout.sm="column"
+					fxLayoutAlign="center start"
+					fxLayoutGap="2%"
+					class="donateWhiteBackground"
+					ngClass="p-s"
+					fxFlex="55%"
+					fxFlex.lt-sm="100%"
+				>
+					<!--Fundraiser name and background image section-->
+					<div fxLayout="row wrap" class="donateGreyBackground">
+						<div
+							fxLayout="column"
+							fxFlex="100%"
+							fxLayoutAlign="space-between start"
+							ngClass="p-s"
+						>
+							<!-- <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+							<p i18n="@@donation_donationShare_happy_message" class="body-2">
+								I am happy to contribute for
+							</p>
+						</div> -->
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<h2 class="display-2">{{ this.fundraiserTitle }}</h2>
+							</div>
+							<div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+								<img class="h-100" width="75" src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,q_auto/whydonate-staging/platform/visuals/new_design_logo.svg" />
+	 							</div>
+						</div>
+						<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center start">
+							<!-- FUNDRAISER'S BACKGROUND IMAGE -->
+							<img
+								[ngStyle]="{ cover: 'fill' }"
+								class="h-100"
+								width="100%"
+								src="{{ this.backgroundImage }}"
+								(error)="handleImageError($event)"
+								alt="fundraiser background image"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div
+			fxLayout="row"
+			fxLayout.lt-sm="row wrap"
+			fxLayoutAlign="end space-between"
+			fxLayoutAlign.lt-sm="center center"
+			fxFlex="100%"
+			fxFill
+			fxLayoutGap="2%"
+		>
+			<div>
+				<!--Button which upon clicking invokes redirectToFundraiser()-->
+				<button
+					i18n="@@shareContribution_backToFundraiserPage_button"
+					mat-flat-button
+					color="accent"
+					(click)="redirectToFundraiser()"
+				>
+					Back to Fundraiser Page
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

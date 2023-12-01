@@ -1,0 +1,32 @@
+@import './styles/theme/_theme.scss';
+
+/* You can add global styles to this file, and also import other style files */
+// @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+//* INFO: Quill related imports
+@import 'quill/dist/quill.core.css';
+// @import '~quill/dist/quill.bubble.css';
+@import 'quill/dist/quill.snow.css';
+
+@import './styles/custom-material-components/mat-toolbar';
+@import './styles/custom-material-components/mat-card';
+@import './styles/custom-material-components/mat-drawer';
+@import './styles/custom-material-components/mat-radio';
+@import './styles/custom-material-components/mat-checkbox';
+@import './styles/custom-material-components/mat-button';
+@import './styles/custom-material-components/mat-table';
+@import './styles/custom-material-components/mat-dialog';
+@import './styles/custom-material-components/mat-icon';
+
+@import './styles/custom-material-components/_preview-components';
+@import './styles/custom-material-components/_cookie-consent-style';
+@import './styles/custom-material-components/_mat-snackbar-button';
+@import './styles/custom-material-components/custom-quill';
+
+@import './styles/helpers-classes/spacing-helpers';
+@import './styles/helpers-classes/color_helpers';
+@import './styles/helpers-classes/typography';
+@import './styles/helpers-classes/layout_helpers';
+@import './styles/helpers-classes/media-query';
+
+@import './styles/_deprecated';

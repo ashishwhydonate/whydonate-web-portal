@@ -1,0 +1,42 @@
+<div
+	ngClass="p-xxl"
+	ngClass.lt-md="p-l"
+	fxFlex="100%"
+	fxLayout="row"
+	fxLayout.xs="column-reverse"
+	fxLayoutGap="5%"
+>
+	<div fxFlex="100%" fxLayout="column" fxLayoutAlign="center stretch">
+		<h1 id="homePersonalAndCharity">
+			<span class="primary-text" i18n="@@home_personal_banner_title1">
+				Personal Crowdfunding </span
+			><br />
+			<span i18n="@@home_personal_banner_title2">and Charity Fundraising</span>
+		</h1>
+		<!-- <h1 i18n="@@home_personal_banner_title2"></h1> -->
+		<p
+			i18n="@@home_personal_banner_subtitle"
+			class="mat-title"
+			id="homePlatform"
+		>
+			0% Platform fee, so let’s start.
+		</p>
+		<p i18n="@@home_personal_banner_description" id="homeDescription">
+			WhyDonate makes online fundraising easy and accessible for individuals and
+			causes all over the world. WhyDonate encourages everyone to start Personal
+			fundraising for their personal causes and social causes with optimum
+			transparency and reliability.
+		</p>
+		<div fxLayoutAlign="stretch">
+			<app-start-fundraiser-button
+				id="startFundraiserButton"
+			></app-start-fundraiser-button>
+		</div>
+	</div>
+	<div fxFlex="90%" fxLayout="column wrap" fxLayoutAlign="center end">
+		<img
+			src="https://res.cloudinary.com/whydonate/image/upload/dpr_auto,f_auto,q_auto/whydonate-production/platform/visuals/home/home-personal-banner"
+			width="100%"
+		/>
+	</div>
+</div>

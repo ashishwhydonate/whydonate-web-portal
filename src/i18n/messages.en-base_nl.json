@@ -1,0 +1,22 @@
+{
+  "translations": {
+    "header_userMenu_button_customBranding": "Personaliseer",
+    "header_userMenu_button_customBranding_branding": "Branding",
+    "account_email_verification_label": "Je e-mailadres aan het controleren..",
+    "account_email_verification_label_doNotRefresh": " Klik niet op de ververs of terug knop.",
+    "account_email_verification_succesful_message": "Verificatie Geslaagd",
+    "button_cancel": "Annuleren",
+    "account_Paypal_transaction_history_message": "De PayPal transacties worden niet toegevoegd aan de bovenstaande balans. Ze worden apart overgemaakt door WhyDonate.",
+    "donation_receipt_date_field": "Datum",
+    "donation_receipt_transaction_id_field": "Transactie-ID",
+    "donation_receipt_donation_field": "Donatie",
+    "donation_receipt_tip_field": "Fooi",
+    "donation_receipt_donated_by_field": "Gedoneerd door",
+    "donation_receipt_bank_account_number_field": "Bankrekeningnummer",
+    "donation_receipt_bank_account_holder_field": "Bankrekeninghouder",
+    "balance_payout_mollie": "Uitbetalingen",
+    "button_save_apply": "Opslaan",
+    "balance_donation_header_label_stripe_fee": "Stripe Fee",
+    "balance_donation_header_label_reversal": "Reversal"
+  }
+}

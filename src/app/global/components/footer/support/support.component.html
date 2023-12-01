@@ -1,0 +1,51 @@
+<div fxLayout="column" fxLayoutAlign="start start" class="footer_header">
+	<h3 i18n="@@footer_label_support" class="footer-titles support">Support</h3>
+	<a
+		i18n="@@footer_label_helpdesk"
+		(click)="languageDetectorForHelpDesk('https://helpdesk')"
+		class="helpdesk"
+		style="cursor: pointer"
+	>
+		Helpdesk
+	</a>
+	<a
+		i18n="@@footer_label_aboutWhydonateFoundation"
+		[href]="aboutHref"
+		class="about"
+		style="cursor: pointer"
+	>
+		About Whydonate Foundation
+	</a>
+	<a
+		i18n="@@footer_label_fundraisingTipsAndTricks"
+		[href]="tipsHref"
+		class="fundraising"
+		style="cursor: pointer"
+	>
+		Fundraising Tips & Tricks
+	</a>
+	<a
+		i18n="@@footer_label_blog"
+		[href]="blogHref"
+		class="blog"
+		style="cursor: pointer"
+	>
+		Blog
+	</a>
+	<a
+		i18n="@@footer_label_fees"
+		[href]="feesHref"
+		class="fees"
+		style="cursor: pointer"
+	>
+		Fees
+	</a>
+	<a
+		i18n="@@footer_label_contact"
+		[href]="contactHref"
+		class="contact"
+		style="cursor: pointer"
+	>
+		Contact
+	</a>
+</div>

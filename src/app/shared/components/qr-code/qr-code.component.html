@@ -1,0 +1,36 @@
+<button mat-icon-button class="close-button" (click)="onCloseClick()">
+	<img src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"/>
+</button>
+<div fxLayout="row" fxLayoutAlign="center center" ngClass="m-l-xl">
+	<h2 i18n="@@qrCode_scanQRCode_title">Scan QR code</h2>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+	<qrcode
+		#parent
+		[qrdata]="newUrl.link"
+		[elementType]="'img'"
+		[width]="200"
+		[errorCorrectionLevel]="'M'"
+	>
+	</qrcode>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+	<qrcode
+		hidden
+		#parentHided
+		[qrdata]="newUrl.link"
+		[elementType]="'img'"
+		[width]="1024"
+		[errorCorrectionLevel]="'M'"
+	>
+	</qrcode>
+	<button
+		mat-flat-button
+		fxFlex="50%"
+		color="accent"
+		(click)="saveAsImage(parentHided)"
+		i18="@@qrCode_download_button"
+	>
+		Download
+	</button>
+</div>

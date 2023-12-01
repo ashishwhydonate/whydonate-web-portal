@@ -1,0 +1,135 @@
+<div fxLayout="column">
+	<div fxLayout="row" fxLayoutAlign="end center" ngClass="p-t-l p-r-l">
+		<button mat-icon-button class="close-button" (click)="onCloseClick()">
+			<img
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667418126/whydonate-production/platform/svg-icons/crossBlack.svg"
+			/>
+		</button>
+	</div>
+
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<div class="m-b-xs center">
+			<mat-label class="mat-title" i18n="@@upload_fundraiser_cover_page"
+				>Upload Fundraiser Cover Page</mat-label
+			>
+		</div>
+		<div class="center" i18n="@@upload_fundraiser_max_size" ngClass="m-m">
+			Image should be Max 5MB for High-resolution image in png or jpg format.
+			Video from Vimeo and YouTube are supported.
+		</div>
+	</div>
+
+	<div fxLayout="row" fxLayoutAlign="space-between center" ngClass="m-m">
+		<div
+			fxFlex="calc(50% - 10px)"
+			class="pale-grey-bg p-xl"
+			fxLayoutAlign="center center"
+			*ngIf="!this.isMobileView"
+		>
+			<div fxLayout="column" fxLayoutAlign="start center">
+				<img
+					height="50"
+					width="50"
+					class="m-b-m"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667415690/whydonate-production/platform/svg-icons/addPhoto.svg"
+				/>
+				<input fxHide type="file" id="upload_image_input" />
+				<button
+					id="button_edit_changeImage"
+					(click)="openFileUploader()"
+					mat-stroked-button
+					color="accent"
+					i18n="@@button_edit_changeImage"
+				>
+					Change Image
+				</button>
+			</div>
+		</div>
+
+		<div
+			fxFlex="calc(50% - 10px)"
+			fxLayoutAlign="center center"
+			*ngIf="this.isMobileView"
+		>
+			<div
+				class="whydonate-light"
+				fxFlex="100%"
+				fxLayout="column"
+				fxLayoutAlign="start center"
+			>
+				<button
+					id="button_edit_changeImage_responsive"
+					mat-fab
+					class="mat-elevation-z0"
+					color="primary"
+					[ngStyle]="{ width: '66px', height: '66px' }"
+					(click)="this.openFileUploader()"
+				>
+					<input fxHide type="file" id="upload_image_input" />
+
+					<img
+						height="33"
+						width="33"
+						class="m-b-m"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/addPhoto.svg"
+					/>
+				</button>
+			</div>
+		</div>
+
+		<span fxFlex="20px" i18n="@@span_or">Or</span>
+
+		<div
+			fxFlex="calc(50% - 10px)"
+			class="pale-grey-bg p-xl"
+			fxLayoutAlign="center center"
+			*ngIf="!this.isMobileView"
+		>
+			<div fxLayout="column" fxLayoutAlign="start center">
+				<img
+					height="50"
+					width="50"
+					class="m-b-m"
+					src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+				/>
+				<button
+					id="button_edit_changeVideo"
+					(click)="openVideoCropperDialog()"
+					mat-stroked-button
+					color="accent"
+					i18n="@@button_change_video"
+				>
+					Change Video
+				</button>
+			</div>
+		</div>
+		<div
+			fxFlex="calc(50% - 10px)"
+			fxLayoutAlign="center center"
+			*ngIf="this.isMobileView"
+		>
+			<div
+				class="whydonate-light"
+				fxFlex="100%"
+				fxLayout="column"
+				fxLayoutAlign="start center"
+			>
+				<button
+					id="button_edit_changeVideo"
+					mat-fab
+					class="mat-elevation-z0"
+					color="primary"
+					[ngStyle]="{ width: '66px', height: '66px' }"
+					(click)="this.openVideoCropperDialog()"
+				>
+					<img
+						height="33"
+						width="33"
+						class="m-b-m"
+						src="https://res.cloudinary.com/whydonate/image/upload/v1667415867/whydonate-production/platform/svg-icons/videoCall.svg"
+					/>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

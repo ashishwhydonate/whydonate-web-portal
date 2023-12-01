@@ -1,0 +1,104 @@
+<ng-template [ngIf]="collapsable" [ngIfElse]="defaultStyle">
+	<mat-accordion>
+		<mat-expansion-panel class="mat-elevation-z1" [disabled]="!stepsToDo">
+			<mat-expansion-panel-header>
+				<mat-panel-title i18n="@@stepsToDo_title">Steps to do</mat-panel-title>
+				<mat-panel-description>
+					<ng-container
+						*ngIf="!stepsToDo"
+						[ngTemplateOutlet]="loadingForAccordian"
+					></ng-container>
+				</mat-panel-description>
+			</mat-expansion-panel-header>
+			<ng-container [ngTemplateOutlet]="stepsToDoBody"></ng-container>
+		</mat-expansion-panel>
+	</mat-accordion>
+</ng-template>
+
+<ng-template #defaultStyle>
+	<ng-template [ngIf]="stepsToDo" [ngIfElse]="loading">
+		<p>
+			<mat-label class="mat-body-2" i18n="@@stepsToDo_title"
+				>Steps to do</mat-label
+			>
+		</p>
+		<ng-container [ngTemplateOutlet]="stepsToDoBody"></ng-container>
+	</ng-template>
+	<!-- <mat-card class="mat-elevation-z0">
+	</mat-card> -->
+</ng-template>
+
+<ng-template #stepsToDoBody>
+	<ng-container *ngFor="let task of stepsToDo; let i = index">
+		<p *ngIf="task.showStep" fxLayout="row" fxLayoutAlign="start center">
+			<img
+				*ngIf="!task.status"
+				class="disabled-text"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCircleDisabled.svg"
+			/>
+			<img
+				*ngIf="task.status"
+				src="https://res.cloudinary.com/whydonate/image/upload/v1667419328/whydonate-production/platform/svg-icons/checkCirclePrimary.svg"
+			/>
+			<span *ngIf="task.status">
+				&nbsp;
+				{{ task.name }}</span
+			>
+			<span *ngIf="!task.status">
+				<ng-container [ngSwitch]="i">
+					<ng-container *ngSwitchCase="1">
+						<a mat-button color="accent" (click)="routeToNewFundraiser()"
+							>&nbsp;{{ task.name }}</a
+						>
+					</ng-container>
+					<ng-container *ngSwitchCase="2">
+						<a mat-button color="accent" (click)="routeToBank()"
+							>&nbsp;{{ task.name }}</a
+						>
+					</ng-container>
+					<!-- <ng-container *ngSwitchCase="3">
+						<a mat-button color="accent" (click)="routeToPersonal()"
+							>&nbsp;{{ task.name }}</a
+						>
+					</ng-container> -->
+					<ng-container *ngSwitchCase="4">
+						<a mat-button color="accent" (click)="routeToCustomBranding()"
+							>&nbsp;{{ task.name }}</a
+						>
+					</ng-container>
+					<ng-container *ngSwitchCase="5">
+						<a mat-button color="accent" (click)="routeToSearch()"
+							>&nbsp;{{ task.name }}</a
+						>
+					</ng-container>
+
+					<ng-container *ngSwitchDefault>{{ task.name }}</ng-container>
+				</ng-container>
+			</span>
+		</p>
+	</ng-container>
+</ng-template>
+
+<!----------------------LOADING SPINNER TEMPLATE---------------------->
+<ng-template #loading>
+	<br /><br />
+	<div fxLayoutAlign="center center">
+		<mat-icon>
+			<mat-spinner
+				color="accent"
+				diameter="20"
+				i18n="@@stepsToDo_spinner"
+			></mat-spinner>
+		</mat-icon>
+	</div>
+	<br /><br />
+</ng-template>
+<ng-template #loadingForAccordian>
+	<mat-icon>
+		<mat-spinner
+			color="accent"
+			diameter="20"
+			i18n="@@stepsToDo_spinner"
+		></mat-spinner>
+	</mat-icon>
+</ng-template>

@@ -1,0 +1,32 @@
+@media only screen and (min-device-width: 768px) {
+	::ng-deep .mat-tab-label .mat-tab-label-content {
+		font-size: x-large;
+	}
+
+	.mat-stroked-button {
+		font-size: x-large;
+		line-height: 200%;
+	}
+
+	.mat-flat-button {
+		font-size: x-large;
+		line-height: 200%;
+		font-weight: bold;
+	}
+
+	.body-2 {
+		font-size: x-large;
+		line-height: 200%;
+	}
+
+	.total-charge {
+		font-size: x-large;
+		line-height: 200%;
+	}
+
+	.h2 {
+		font-size: x-large;
+		line-height: 200%;
+		font-weight: bold;
+	}
+}
