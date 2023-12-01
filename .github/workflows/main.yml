@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.16.0]
+        node-version: [18.18.0]
 
     name: angular-deployment
     steps:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --force
 
       - name: Deploy project
         run: |
