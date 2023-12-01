@@ -10,7 +10,7 @@
     "start:es": "ng serve --configuration es",
     "start:de": "ng serve --configuration de",
     "start:fr": "ng serve --configuration fr",
-    "build": "ng build",
+    "build": "ng build --aot --localize --configuration staging && npm run postbuild",
     "build-prod": "ng build --aot --output-hashing=all --localize --configuration production && npm run postbuild",
     "build-staging": "npm run build:ssr",
     "build-features": "npm run build:ssr",
@@ -29,7 +29,7 @@
     "package-clean": "npm i --force",
     "dev:ssr": "ng run whydonate-web-portal:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
-    "build:ssr": "ng build --aot --output-hashing=all --localize --configuration staging && npm run postbuild",
+    "build:ssr": "ng build --aot --localize --configuration staging && npm run postbuild",
     "prerender": "ng run whydonate-web-portal:prerender",
     "serve:ssr-en": "node dist/whydonate-web-portal/server/en/server.mjs"
   },
